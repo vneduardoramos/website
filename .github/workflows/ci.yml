@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: "file:./ci.db"
+      # Non-default value so the production secret guard passes during `next build`.
+      NEXTAUTH_SECRET: "ci-only-build-secret-not-used-at-runtime-9f3a1c"
+      NEXTAUTH_URL: "http://localhost:3000"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx prisma generate
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      # Build needs a populated DB (pages query it via generateStaticParams).
+      - run: npx prisma db push --skip-generate
+      - run: npm run db:seed
+      - run: npm run build

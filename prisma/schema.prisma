@@ -1,0 +1,256 @@
+// ViewNear CMS data model.
+//
+// Local dev uses SQLite for zero-infra setup. SQLite (via Prisma) does NOT
+// support native enums, scalar lists, OR the Json type, so:
+//   - status/role/kind fields are String (validated in app code via lib/enums.ts)
+//   - list fields (tools, skills) and structured blobs are stored as JSON-encoded
+//     String and parsed in app code via lib/utils.ts (asStringArray / asObjectArray)
+// To move to Postgres: set provider = "postgresql", swap DATABASE_URL, and you
+// may optionally promote String fields to real enums / Json / scalar lists.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String     @id @default(cuid())
+  email        String     @unique
+  passwordHash String
+  name         String?
+  role         String     @default("EDITOR") // ADMIN | EDITOR
+  posts        BlogPost[]
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+}
+
+model TeamMember {
+  id            String     @id @default(cuid())
+  slug          String     @unique
+  name          String
+  title         String
+  bio           String?
+  photo         String? // path to a headshot image in /public
+  headshotId    String?
+  headshot      Media?     @relation(fields: [headshotId], references: [id])
+  bookingUrl    String?
+  linkedinUrl   String?
+  authoredPosts BlogPost[] @relation("BlogAuthor")
+  order         Int        @default(0)
+  published     Boolean    @default(true)
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+}
+
+model Client {
+  id           String        @id @default(cuid())
+  slug         String        @unique
+  name         String
+  sector       String?
+  region       String?
+  logoColor    String? // path to placeholder logo asset
+  caseStudies  CaseStudy[]
+  testimonials Testimonial[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model Testimonial {
+  id          String   @id @default(cuid())
+  quote       String
+  authorName  String
+  authorTitle String
+  sector      String?
+  clientId    String?
+  client      Client?  @relation(fields: [clientId], references: [id])
+  featured    Boolean  @default(false)
+  published   Boolean  @default(true)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Service {
+  id             String    @id @default(cuid())
+  slug           String    @unique
+  tier           String // THINK | BUILD | GROW
+  title          String
+  summary        String
+  body           String?
+  tools          String? // string[]
+  icon           String?
+  order          Int       @default(0)
+  status         String    @default("PUBLISHED") // DRAFT | PUBLISHED | ARCHIVED
+  publishedAt    DateTime?
+  seoTitle       String?
+  seoDescription String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model Industry {
+  id             String      @id @default(cuid())
+  slug           String      @unique
+  name           String
+  headline       String
+  intro          String
+  challenges     String? // [{problem, response}]
+  deliverables   String? // [{title, description}]
+  tools          String? // string[]
+  stats          String? // [{label, value}]
+  body           String?
+  ogImage        String?
+  caseStudies    CaseStudy[]
+  status         String      @default("PUBLISHED")
+  publishedAt    DateTime?
+  order          Int         @default(0)
+  seoTitle       String?
+  seoDescription String?
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+}
+
+model CaseStudy {
+  id             String    @id @default(cuid())
+  slug           String    @unique
+  title          String
+  summary        String
+  body           String?
+  sector         String
+  region         String
+  clientId       String?
+  client         Client?   @relation(fields: [clientId], references: [id])
+  industryId     String?
+  industry       Industry? @relation(fields: [industryId], references: [id])
+  heroImage      String?
+  metrics        String? // JSON [{value,label}]
+  quote          String? // JSON {text,author,role}
+  challenge      String?
+  solution       String?
+  results        String?
+  featured       Boolean   @default(false)
+  status         String    @default("PUBLISHED")
+  publishedAt    DateTime?
+  order          Int       @default(0)
+  seoTitle       String?
+  seoDescription String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model BlogPost {
+  id             String      @id @default(cuid())
+  slug           String      @unique
+  title          String
+  excerpt        String?
+  body           String
+  keyTakeaways   String? // JSON string[]
+  coverImageId   String?
+  coverImage     Media?      @relation("BlogCover", fields: [coverImageId], references: [id])
+  coverImageUrl  String?
+  authorId       String?
+  author         User?       @relation(fields: [authorId], references: [id])
+  authorTeamId   String?
+  authorTeam     TeamMember? @relation("BlogAuthor", fields: [authorTeamId], references: [id])
+  tags           Tag[]       @relation("BlogPostTags")
+  status         String      @default("DRAFT")
+  publishedAt    DateTime?
+  seoTitle       String?
+  seoDescription String?
+  ogImage        String?
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+}
+
+model NewsEvent {
+  id             String    @id @default(cuid())
+  slug           String    @unique
+  title          String
+  kind           String    @default("announcement") // announcement | event | press
+  excerpt        String?
+  body           String
+  keyTakeaways   String? // JSON string[]
+  eventDate      DateTime?
+  venue          String?
+  agenda         String? // [{time, item}]
+  readMinutes    Int?
+  coverImage     String?
+  externalUrl    String?
+  status         String    @default("PUBLISHED")
+  publishedAt    DateTime?
+  seoTitle       String?
+  seoDescription String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model Tag {
+  id    String     @id @default(cuid())
+  slug  String     @unique
+  name  String
+  posts BlogPost[] @relation("BlogPostTags")
+}
+
+model Media {
+  id         String       @id @default(cuid())
+  filename   String
+  url        String
+  mimeType   String
+  width      Int?
+  height     Int?
+  alt        String?
+  storageKey String
+  createdAt  DateTime     @default(now())
+  blogCovers BlogPost[]   @relation("BlogCover")
+  headshots  TeamMember[]
+}
+
+model Lead {
+  id        String   @id @default(cuid())
+  firstName String
+  lastName  String
+  email     String
+  company   String?
+  message   String
+  source    String   @default("contact")
+  status    String   @default("NEW") // NEW | CONTACTED | QUALIFIED | CLOSED
+  createdAt DateTime @default(now())
+}
+
+model JobOpening {
+  id           String           @id @default(cuid())
+  slug         String           @unique
+  title        String
+  employment   String
+  location     String?
+  description  String
+  skills       String? // string[]
+  status       String           @default("PUBLISHED")
+  publishedAt  DateTime?
+  order        Int              @default(0)
+  applications JobApplication[]
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+}
+
+model JobApplication {
+  id        String      @id @default(cuid())
+  openingId String?
+  opening   JobOpening? @relation(fields: [openingId], references: [id])
+  name      String
+  email     String
+  message   String?
+  resumeUrl String?
+  createdAt DateTime    @default(now())
+}
+
+model SiteSetting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String // JSON-encoded
+  updatedAt DateTime @updatedAt
+}

@@ -1,0 +1,971 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* "Glacier" palette, bright, airy, light. Values mirror config/theme.ts. */
+:root {
+  --color-background: 255 255 255; /*  #FFFFFF pure-white canvas */
+  --color-surface: 246 250 253; /*     #F6FAFD off-white bands / cards */
+  --color-surface2: 234 244 251; /*    #EAF4FB soft tinted bands / hover fills */
+  --color-border: 224 235 244; /*      #E0EBF4 hairline borders */
+  --color-foreground: 15 37 48; /*     #0F2530 near-navy text */
+  --color-muted: 92 115 133; /*        #5C7385 secondary / caption text */
+  --color-primary: 41 181 232; /*      #29B5E8 signature sky-blue */
+  --color-primary-fg: 255 255 255;
+  --color-primary-deep: 11 110 153; /* #0B6E99 legible blue (small text / links / hovers) */
+  --color-royal: 44 83 200; /*         #2C53C8 logo royal-blue, authority anchor */
+  --color-royal-deep: 20 35 88; /*     #142358 deep indigo, the one dark authority band */
+  --color-red: 255 72 60; /*           #FF483C logo vermilion, rare high-energy accent */
+  --color-accent: 255 160 0; /*        #FFA000 logo orange, warm accent (was coral) */
+  --color-accent-fg: 26 39 51;
+  --color-success: 16 185 129;
+  --color-warning: 245 158 11;
+  --color-danger: 239 68 68;
+  --color-secondary: 34 211 238; /*    #22D3EE bright cyan, meshes / data-flow lines */
+  --color-cyan: 34 211 238;
+  --color-amber: 255 160 0;
+  --color-orange: 255 160 0; /*    #FFA000 logo orange (legacy token) */
+  --color-pastel: 196 228 247; /*  #C4E4F7 pastel sky, primary button fill */
+  --color-pastel-deep: 173 216 242; /* #ADD8F2 pastel hover */
+  --color-purple: 124 58 237; /*       #7C3AED violet, mesh third hue only */
+  --color-deep: 15 37 48; /*           legacy token (dark slabs retired) */
+}
+
+* {
+  border-color: rgb(var(--color-border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.011em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.02em;
+}
+
+/* keyboard focus visibility (a11y) */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid rgb(var(--color-primary));
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+::selection {
+  background: rgb(var(--color-primary) / 0.18);
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-[1280px] px-6;
+  }
+  .section {
+    @apply py-14 md:py-20 lg:py-24;
+  }
+  /* Eyebrow / kicker, a "cut-corner tag": one clipped corner (clip-path) with
+     a faint accent-tint fill and a 1px accent hairline (an inset box-shadow,
+     which clip-path crops along the notch). Themeable per section via the
+     --eyebrow-accent custom property (defaults to the brand deep blue); set it
+     on any ancestor to retint every eyebrow inside. `.chip` shares the look so
+     hero kickers match. See docs/decisions/0027-eyebrow-tag.md. */
+  .eyebrow,
+  .chip {
+    --_eb: var(--eyebrow-accent, var(--color-primary-deep));
+    @apply relative inline-flex items-center gap-1.5 px-3 py-1 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.18em];
+    color: rgb(var(--_eb));
+    background: rgb(var(--_eb) / 0.12);
+    box-shadow: inset 0 0 0 1px rgb(var(--_eb) / 0.36);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.5rem), calc(100% - 0.5rem) 100%, 0 100%);
+  }
+  /* On dark scrims (e.g. ShowcaseBand): light fill + hairline, white label. */
+  .eyebrow--invert {
+    color: rgb(255 255 255 / 0.9);
+    background: rgb(255 255 255 / 0.12);
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.28);
+  }
+  /* Capability tag, shares the cut-corner silhouette of .eyebrow, but a
+     neutral fill + sentence-case label (no dot). Used for the hero feature row. */
+  .pill-tag {
+    @apply inline-flex items-center px-4 py-2 text-sm font-medium text-foreground;
+    background: rgb(var(--color-surface2));
+    box-shadow: inset 0 0 0 1px rgb(var(--color-border));
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.5rem), calc(100% - 0.5rem) 100%, 0 100%);
+  }
+  /* Compact content chip (tools, sectors, tags), the same cut-corner motif as
+     the eyebrow, accent-tinted + mono, smaller notch. Replaces the old pill. */
+  .pill-chip {
+    @apply inline-flex items-center px-3 py-1 font-mono text-xs text-primaryDeep;
+    background: rgb(var(--color-primary-deep) / 0.08);
+    box-shadow: inset 0 0 0 1px rgb(var(--color-primary-deep) / 0.22);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.4rem), calc(100% - 0.4rem) 100%, 0 100%);
+  }
+  .card {
+    @apply rounded-2xl border border-border bg-surface p-6 shadow-soft transition-all duration-300;
+  }
+  .card-hover {
+    @apply hover:-translate-y-1 hover:border-primary/50 hover:shadow-soft-lg;
+  }
+  /* featured card, airy: primary hairline + faint tint fill (no orange glow) */
+  .card-feature {
+    @apply border-primary/40;
+    background-color: rgb(var(--color-surface2));
+  }
+  /* ── Buttons ──────────────────────────────────────────────────────────
+     Crafted, modern button system (see docs/decisions/0018-button-system.md).
+     Crisp rounded-xl shape, layered low shadows (no soft "glow"), a 1px inset
+     top highlight for a tactile edge, and a diagonal gradient that shifts on
+     hover. Sizes: default; `.btn-lg` for hero CTAs, `.btn-sm` for compact rows. */
+  .btn {
+    @apply relative inline-flex select-none items-center justify-center gap-2 rounded-xl px-6 py-3 font-display text-[0.95rem] font-semibold tracking-tight transition-all duration-200 ease-out;
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+  /* Rounded-rectangle (not pill); sizes scale radius + padding/text. */
+  .btn-lg {
+    @apply gap-2.5 rounded-2xl px-8 py-4 text-base;
+  }
+  .btn-sm {
+    @apply gap-1.5 rounded-lg px-4 py-2 text-sm;
+  }
+  /* Primary: FLAT solid orange sampled from the logo (#FFA000). Navy-ink text
+     (--color-foreground) stays legible on the warm fill, no gradient, no glow,
+     just a subtle layered shadow for tactile elevation. */
+  /* Primary: a confident SOLID royal-blue fill with white label, a bold,
+     decisive enterprise CTA (white-on-royal ≈ 6.6:1, AA). A faint inset top
+     highlight + a royal-tinted drop shadow keep it tactile. */
+  .btn-primary {
+    @apply btn text-white;
+    background-color: rgb(var(--color-royal));
+    border: 1px solid rgb(var(--color-royal));
+    box-shadow:
+      inset 0 1px 0 0 rgb(255 255 255 / 0.2),
+      0 1px 2px 0 rgb(15 37 48 / 0.12),
+      0 10px 24px -10px rgb(var(--color-royal) / 0.6);
+  }
+  /* Ghost: quiet surface button with a hairline that firms up on hover. */
+  .btn-ghost {
+    @apply btn border bg-surface text-foreground;
+    border-color: rgb(var(--color-border));
+    box-shadow: 0 1px 2px 0 rgb(16 24 40 / 0.05);
+  }
+  /* Light: white pill with ink text, for CTAs on dark imagery (ShowcaseBand). */
+  .btn-light {
+    @apply btn bg-white text-foreground;
+    box-shadow:
+      0 1px 2px 0 rgb(15 37 48 / 0.18),
+      0 8px 20px -10px rgb(15 37 48 / 0.5);
+  }
+  .prose-vn {
+    @apply max-w-none leading-relaxed text-muted;
+  }
+  /* Headings get scroll-margin so the sticky site header doesn't cover them
+     when jumping from the table of contents. */
+  .prose-vn h2 {
+    @apply mt-10 mb-4 scroll-mt-28 font-display text-2xl font-bold text-foreground;
+  }
+  .prose-vn h3 {
+    @apply mt-8 mb-3 scroll-mt-28 font-display text-xl font-semibold text-foreground;
+  }
+  .prose-vn p {
+    @apply mb-4;
+  }
+  .prose-vn a {
+    @apply text-primaryDeep underline-offset-2 hover:underline;
+  }
+  .prose-vn ul {
+    @apply mb-4 list-disc space-y-1 pl-6;
+  }
+  .prose-vn ol {
+    @apply mb-4 list-decimal space-y-1 pl-6;
+  }
+  .prose-vn code {
+    @apply rounded-md bg-surface2 px-1.5 py-0.5 font-mono text-sm text-primaryDeep;
+  }
+  .prose-vn pre {
+    @apply mb-4 overflow-x-auto rounded-xl border border-border bg-surface p-4 text-sm;
+  }
+  .prose-vn pre code {
+    @apply bg-transparent p-0 text-foreground;
+  }
+  .prose-vn img {
+    @apply my-6 w-full rounded-xl border border-border;
+  }
+  .prose-vn hr {
+    @apply my-10 border-border;
+  }
+  /* Plain blockquote -> pull-quote */
+  .prose-vn blockquote {
+    @apply my-7 border-l-4 border-primary/50 pl-5 font-display text-lg italic leading-relaxed text-foreground;
+  }
+  /* Blockquotes tagged by remark-callouts -> tinted callout boxes */
+  .prose-vn blockquote[data-callout] {
+    @apply not-italic my-6 rounded-xl border border-l-4 p-5 text-base font-normal leading-relaxed;
+  }
+  .prose-vn blockquote[data-callout] p {
+    @apply mb-0;
+  }
+  .prose-vn blockquote[data-callout] p + p {
+    @apply mt-3;
+  }
+  .prose-vn blockquote[data-callout="note"] {
+    @apply border-primary/30 bg-primary/5 text-foreground;
+  }
+  .prose-vn blockquote[data-callout="tip"] {
+    @apply border-secondary/40 bg-secondary/5 text-foreground;
+  }
+  .prose-vn blockquote[data-callout="warning"],
+  .prose-vn blockquote[data-callout="important"] {
+    @apply border-accent/50 bg-accent/10 text-foreground;
+  }
+  .glass {
+    @apply border-b border-border backdrop-blur-md;
+    background: rgb(var(--color-surface) / 0.82);
+  }
+  /* subtle tinted band to alternate against white sections */
+  .section-tint {
+    background: rgb(var(--color-surface2));
+    border-top: 1px solid rgb(var(--color-border) / 0.7);
+    border-bottom: 1px solid rgb(var(--color-border) / 0.7);
+  }
+  /* Light gradient-mesh panel. (Formerly a dark navy slab, name kept for
+     compatibility; all references now render as this airy light panel.)
+     Logo-true: royal + sky + a warm glow instead of cyan + purple. */
+  .panel-dark {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgb(var(--color-border));
+    background:
+      radial-gradient(115% 115% at 0% 0%, rgb(var(--color-royal) / 0.16), transparent 55%),
+      radial-gradient(110% 110% at 100% 0%, rgb(var(--color-accent) / 0.12), transparent 50%),
+      linear-gradient(180deg, rgb(var(--color-surface2)), rgb(var(--color-surface)));
+  }
+  /* Deep royal-indigo authority band, the single dark anchor. Light text;
+     a royal glow top-left + a sky glow bottom-right over a deep indigo base.
+     White text on this hits WCAG AA comfortably. */
+  .panel-indigo {
+    position: relative;
+    overflow: hidden;
+    color: rgb(255 255 255 / 0.9);
+    border: 1px solid rgb(var(--color-royal) / 0.45);
+    background:
+      radial-gradient(90% 130% at 10% 0%, rgb(var(--color-royal) / 0.5), transparent 62%),
+      radial-gradient(85% 110% at 100% 100%, rgb(var(--color-primary) / 0.22), transparent 58%),
+      linear-gradient(160deg, rgb(var(--color-royal-deep)), rgb(12 20 56));
+  }
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  box-shadow:
+    inset 0 1px 0 0 rgb(255 255 255 / 0.2),
+    0 2px 6px 0 rgb(15 37 48 / 0.14),
+    0 16px 30px -12px rgb(var(--color-royal) / 0.65);
+}
+.btn-primary:active {
+  transform: translateY(0);
+  filter: brightness(0.96);
+  box-shadow: inset 0 1px 2px 0 rgb(11 18 52 / 0.4);
+}
+.btn-ghost:hover {
+  transform: translateY(-1px);
+  border-color: rgb(var(--color-foreground) / 0.35);
+  box-shadow: 0 4px 12px -6px rgb(15 37 48 / 0.18);
+}
+.btn-ghost:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+.btn-light:hover {
+  transform: translateY(-1px);
+  background-color: rgb(255 255 255 / 0.92);
+  box-shadow:
+    0 2px 4px 0 rgb(15 37 48 / 0.2),
+    0 14px 30px -10px rgb(15 37 48 / 0.55);
+}
+.btn-light:active {
+  transform: translateY(0);
+  box-shadow: inset 0 1px 2px 0 rgb(15 37 48 / 0.2);
+}
+
+/* faint dotted grid for light hero backgrounds */
+.bg-grid {
+  background-image: radial-gradient(rgb(var(--color-primary) / 0.10) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+/* faint blueprint grid (data texture) */
+.bg-blueprint {
+  background-image:
+    linear-gradient(rgb(var(--color-primary) / 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--color-primary) / 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* bright sky hero wash, logo-true: sky + royal + a warm glow (not all-cyan) */
+.hero-wash {
+  background:
+    radial-gradient(56% 52% at 82% 6%, rgb(var(--color-secondary) / 0.18), transparent 60%),
+    radial-gradient(50% 50% at 6% 0%, rgb(var(--color-royal) / 0.16), transparent 58%),
+    radial-gradient(46% 50% at 92% 92%, rgb(var(--color-accent) / 0.12), transparent 60%),
+    linear-gradient(180deg, rgb(var(--color-surface2) / 0.6), rgb(var(--color-background)));
+}
+
+/* reusable soft mesh wash for CTA / feature panels, royal + sky + warm */
+.mesh-soft {
+  background:
+    radial-gradient(80% 80% at 12% 8%, rgb(var(--color-royal) / 0.18), transparent 55%),
+    radial-gradient(72% 72% at 92% 18%, rgb(var(--color-primary) / 0.18), transparent 55%),
+    radial-gradient(64% 72% at 60% 105%, rgb(var(--color-accent) / 0.14), transparent 60%);
+}
+
+/* balanced/pretty heading wrapping, prevents orphaned words on narrow
+   viewports and ragged multi-line display headings */
+.text-balance {
+  text-wrap: balance;
+}
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.text-gradient {
+  background: linear-gradient(
+    92deg,
+    rgb(var(--color-primary-deep)),
+    rgb(var(--color-primary))
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-gradient-accent {
+  background: linear-gradient(
+    92deg,
+    rgb(var(--color-primary)),
+    rgb(var(--color-accent))
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* High-contrast, blue-led gradient for big numerals: deep royal → bright sky →
+   cyan. More vivid and contrasting than the mono-blue .text-gradient. */
+.text-gradient-bold {
+  background: linear-gradient(
+    100deg,
+    rgb(var(--color-royal)),
+    rgb(var(--color-primary)) 55%,
+    rgb(var(--color-secondary))
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* scroll-reveal (paired with the Reveal client component) */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Reveal entrance variants (single element). Declared after .reveal so the
+   variant transform/filter wins over the base fade-up. */
+.reveal--left {
+  transform: translateX(-26px);
+}
+.reveal--right {
+  transform: translateX(26px);
+}
+.reveal--pop {
+  transform: scale(0.95);
+  transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.reveal--blur {
+  filter: blur(8px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, filter 0.6s ease-out;
+}
+.reveal--wipe {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal--left.is-visible,
+.reveal--right.is-visible,
+.reveal--pop.is-visible {
+  transform: none;
+}
+.reveal--blur.is-visible {
+  filter: none;
+}
+.reveal--wipe.is-visible {
+  clip-path: inset(0 0 0 0);
+}
+
+/* Staggered group reveal: the container; its DIRECT children cascade in. */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out, filter 0.55s ease-out;
+}
+.reveal-stagger.is-visible > * {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+.reveal-stagger[data-variant="left"] > * {
+  transform: translateX(-26px);
+}
+.reveal-stagger[data-variant="right"] > * {
+  transform: translateX(26px);
+}
+.reveal-stagger[data-variant="pop"] > * {
+  transform: scale(0.95);
+  transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.reveal-stagger[data-variant="blur"] > * {
+  filter: blur(8px);
+}
+.reveal-stagger > *:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger > *:nth-child(2) { transition-delay: 70ms; }
+.reveal-stagger > *:nth-child(3) { transition-delay: 140ms; }
+.reveal-stagger > *:nth-child(4) { transition-delay: 210ms; }
+.reveal-stagger > *:nth-child(5) { transition-delay: 280ms; }
+.reveal-stagger > *:nth-child(6) { transition-delay: 350ms; }
+.reveal-stagger > *:nth-child(7) { transition-delay: 420ms; }
+.reveal-stagger > *:nth-child(8) { transition-delay: 490ms; }
+.reveal-stagger > *:nth-child(9) { transition-delay: 560ms; }
+.reveal-stagger > *:nth-child(n + 10) { transition-delay: 630ms; }
+
+/* Scroll-linked highlight: an accent "marker" band that sweeps across text as
+   it scrolls up through the viewport (width driven by --hl, set in JS). */
+.scroll-highlight {
+  --hl: 0;
+  background-image: linear-gradient(rgb(var(--color-accent) / 0.32), rgb(var(--color-accent) / 0.32));
+  background-repeat: no-repeat;
+  background-position: 0 88%;
+  background-size: calc(var(--hl) * 100%) 36%;
+  border-radius: 3px;
+  padding: 0 0.06em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.scroll-highlight--cyan {
+  background-image: linear-gradient(rgb(var(--color-secondary) / 0.34), rgb(var(--color-secondary) / 0.34));
+}
+
+/* Hover micro-pop for cards (lift + accent ring + a faint diagonal sheen that
+   fades in on hover). The sheen lives on ::after so ::before stays free for the
+   editorial top-hairline (a card can carry both .card-pop and .card-editorial). */
+.card-pop {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.card-pop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgb(var(--color-secondary) / 0.10),
+    transparent 52%,
+    rgb(var(--color-primary) / 0.07)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.card-pop:hover::after {
+  opacity: 1;
+}
+.card-pop:hover {
+  transform: translateY(-4px);
+  border-color: rgb(var(--color-primary) / 0.5);
+  box-shadow: 0 22px 48px -24px rgb(var(--color-primary-deep) / 0.5);
+}
+
+/* ── Scroll-linked engine utilities (v2). Driven by --progress (0→1, set by
+   useStepThresholds) or --mesh-energy (set by useHeroConverge). Default to the
+   "finished" state so no-JS / SSR renders fully revealed. ── */
+.line-draw {
+  /* a left→right "current" reveal; consumer is a gradient bar */
+  clip-path: inset(0 calc((1 - var(--progress, 1)) * 100%) 0 0);
+}
+.layer-fill {
+  /* a bottom→top "assemble" reveal */
+  clip-path: inset(calc((1 - var(--progress, 1)) * 100%) 0 0 0);
+}
+.node-active {
+  /* one-time settle glow for timeline / status badges */
+  filter: drop-shadow(0 0 6px rgb(var(--color-secondary) / 0.55));
+}
+.mesh-field {
+  /* HeroMesh field calms as the hero scrolls away (energy 1→0) */
+  opacity: calc(0.45 + 0.55 * var(--mesh-energy, 1));
+}
+@keyframes beacon-pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 0.55;
+  }
+}
+.beacon {
+  animation: beacon-pulse 2.6s ease-in-out infinite;
+}
+
+/* ── v3 "Dimensional" motion: 3D folds, cutouts, parallax, fold-seam ──
+   Real perspective folds (tasteful angles), compositor-only (transform/opacity/
+   clip-path). The mobile + reduced-motion blocks below flatten everything. ── */
+
+/* Folding reveal (single Reveal variant="fold"): self-perspective so no parent
+   needed. Panel folds up from tilted-back to flat. */
+.reveal--fold {
+  transform: perspective(1300px) rotateX(-74deg);
+  transform-origin: center top;
+  backface-visibility: hidden;
+  /* Longer, less front-loaded easing so the rotation reads as a deliberate
+     "stand up", not an instant snap. */
+  transition: opacity 0.6s ease-out, transform 1.05s cubic-bezier(0.25, 0.6, 0.3, 1);
+}
+.reveal--fold.is-visible {
+  transform: perspective(1300px) rotateX(0deg);
+}
+/* Folding "deck": RevealGroup with variant fold, shared perspective on the
+   container so the staggered children fold up like cards standing up. */
+.reveal-stagger[data-variant="fold"] {
+  perspective: 1300px;
+}
+.reveal-stagger[data-variant="fold"] > * {
+  transform: rotateX(-74deg);
+  transform-origin: center top;
+  backface-visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.05s cubic-bezier(0.25, 0.6, 0.3, 1);
+}
+.reveal-stagger[data-variant="fold"].is-visible > * {
+  transform: none;
+}
+
+/* Scroll-linked fold-open (SectionFold): a gentle dimensional tilt → flat,
+   driven by --progress (0→1) with a tunable --fold-angle. */
+.fold-scroll {
+  transform: perspective(1600px) rotateX(calc((1 - var(--progress, 1)) * -1 * var(--fold-angle, 12deg)));
+  transform-origin: center top;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+/* Cutout, knockout text: the headline becomes a window onto a slowly panning
+   brand gradient (cool blues → cyan). Coral-free. */
+@keyframes knockout-pan {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+.knockout-text {
+  background-image: linear-gradient(
+    100deg,
+    rgb(var(--color-primary-deep)),
+    rgb(var(--color-primary)),
+    rgb(var(--color-secondary)),
+    rgb(var(--color-primary))
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: knockout-pan 9s ease-in-out infinite;
+}
+
+/* Cutout, brand cut-corner frame (static) + diagonal mask-wipe (animated via
+   --progress). Used as a wrapper(.clip-cut-corner) > img(.mask-wipe). The cut is
+   sized large enough to read as a deliberate brand motif, with a thin cyan
+   hairline along the bevel so it doesn't look like an incidental rounding. */
+.clip-cut-corner {
+  --cut: 2.75rem;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
+}
+.clip-cut-corner::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: var(--cut);
+  height: var(--cut);
+  background: linear-gradient(
+    135deg,
+    transparent 0 calc(50% - 2px),
+    rgb(var(--color-secondary)) calc(50% - 2px) 50%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+.mask-wipe {
+  clip-path: polygon(
+    0 0,
+    calc(var(--progress, 1) * 138%) 0,
+    calc(var(--progress, 1) * 138% - 38%) 100%,
+    0 100%
+  );
+}
+
+/* Kinetic depth, parallax layer (translateY set in JS via --py). */
+.parallax {
+  transform: translate3d(0, var(--py, 0px), 0);
+  will-change: transform;
+}
+
+/* Mobile: drop the 3D, folds become plain fades, scroll-fold flattens. */
+@media (max-width: 1023px) {
+  .reveal--fold,
+  .reveal-stagger[data-variant="fold"] > * {
+    transform: translateY(16px);
+  }
+  .reveal--fold.is-visible,
+  .reveal-stagger[data-variant="fold"].is-visible > * {
+    transform: none;
+  }
+  .fold-scroll {
+    transform: none;
+    will-change: auto;
+  }
+}
+
+/* Flowing "current" along the hero diagram's connector paths (auto-disabled
+   by the reduced-motion rule below). */
+@keyframes hero-flow {
+  to {
+    stroke-dashoffset: -18;
+  }
+}
+.hero-flow {
+  animation: hero-flow 1.1s linear infinite;
+}
+
+/* Living network-mesh hero visual. All ambient + reduced-motion-safe (the
+   block below neutralizes every animation). transform-box keeps SVG scale/
+   translate centered on each element. */
+@keyframes mesh-drift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+@keyframes mesh-twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes mesh-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+@keyframes mesh-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.55;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+@keyframes mesh-flow {
+  to {
+    stroke-dashoffset: -32;
+  }
+}
+/* A data packet (db/doc icon) gliding from an outer node into the hub. dx/dy
+   set per-token via CSS vars; base opacity 0 so reduced-motion just hides it. */
+@keyframes mesh-travel {
+  0% {
+    transform: translate(var(--dx), var(--dy));
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0px, 0px);
+    opacity: 0;
+  }
+}
+.mesh-drift {
+  animation: mesh-drift 9s ease-in-out infinite;
+}
+.mesh-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: mesh-twinkle 4.5s ease-in-out infinite;
+}
+.mesh-glow {
+  animation: mesh-glow 5s ease-in-out infinite;
+}
+.mesh-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: mesh-ring 5s ease-out infinite;
+}
+.mesh-flow {
+  animation: mesh-flow 4s linear infinite;
+}
+.mesh-travel {
+  opacity: 0;
+  animation: mesh-travel var(--dur, 7s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Editorial elevation (home design pass). Typographic hierarchy, crafted card
+   treatments, panel atmosphere, and refined micro-interactions, all within the
+   Glacier palette, compositor-only, and neutralized by the reduced-motion block
+   below. No font or color-token changes.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Type tiers, layered on top of the existing `font-display` utility (these set
+   size / leading / tracking only; the family stays Space Grotesk). */
+.display-hero {
+  font-size: clamp(2.5rem, 5.2vw, 4rem);
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+}
+.display-section {
+  font-size: clamp(1.95rem, 3.2vw, 2.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+/* Intro / lede tier, a deliberate step above muted body copy. */
+.lede {
+  font-size: clamp(1.125rem, 1.5vw, 1.35rem);
+  line-height: 1.6;
+  color: rgb(var(--color-foreground) / 0.82);
+  text-wrap: pretty;
+}
+
+/* Editorial card, a large faint index numeral sits behind the title and a top
+   hairline firms to primary on hover. The numeral is a .card-index markup span. */
+.card-editorial {
+  position: relative;
+}
+.card-editorial::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: rgb(var(--color-border));
+  transition: background 0.3s ease;
+}
+.card-editorial:hover::before {
+  background: rgb(var(--color-primary));
+}
+.card-index {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.85rem;
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgb(var(--color-primary) / 0.16);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Ledger card, a slim left rule that firms to primary on hover; gives the
+   guarantee list a distinct "ledger" rhythm vs the editorial stalls. */
+.card-ledger {
+  position: relative;
+}
+.card-ledger::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.9rem;
+  bottom: 0.9rem;
+  width: 3px;
+  border-radius: 3px;
+  background: rgb(var(--color-secondary) / 0.5);
+  transition: background 0.3s ease;
+}
+.card-ledger:hover::before {
+  background: rgb(var(--color-primary));
+}
+
+/* Editorial panel atmosphere, a soft inner top highlight + a very slow ambient
+   drift on the panel's dotted grid. Per-panel mood comes from each panel's own
+   blur-blob tints in markup (secondary / primary / balanced). */
+.panel-editorial::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 0.6);
+  pointer-events: none;
+}
+.panel-editorial .bg-grid {
+  animation: grid-drift 38s linear infinite;
+}
+@keyframes grid-drift {
+  to {
+    background-position: 26px 26px;
+  }
+}
+
+/* Micro-interactions ------------------------------------------------------- */
+/* Underline that grows from the left as the parent .group is hovered. */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1.5px;
+  transition: background-size 0.3s ease;
+}
+.group:hover .link-underline {
+  background-size: 100% 1.5px;
+}
+/* A premium diagonal light sweep on hover (lead tile, primary CTA). */
+.hover-sheen {
+  position: relative;
+  overflow: hidden;
+}
+.hover-sheen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -65%;
+  width: 45%;
+  background: linear-gradient(100deg, transparent, rgb(255 255 255 / 0.4), transparent);
+  transform: skewX(-14deg);
+  opacity: 0;
+  pointer-events: none;
+}
+.hover-sheen:hover::after,
+.group:hover .hover-sheen::after {
+  animation: sheen-sweep 0.9s ease-out;
+}
+@keyframes sheen-sweep {
+  0% {
+    left: -65%;
+    opacity: 0;
+  }
+  18% {
+    opacity: 1;
+  }
+  100% {
+    left: 135%;
+    opacity: 0;
+  }
+}
+/* A "draw the line" overlay stroke on the lead tile's chart on hover. The path
+   sets pathLength=1 so the dash math is resolution-independent. */
+.chart-draw-line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.group:hover .chart-draw-line {
+  stroke-dashoffset: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    clip-path: none !important;
+  }
+  .scroll-highlight {
+    --hl: 1 !important;
+  }
+  .card-pop:hover {
+    transform: none !important;
+  }
+  .line-draw,
+  .layer-fill {
+    clip-path: none !important;
+  }
+  .mesh-field {
+    opacity: 1 !important;
+  }
+  .beacon {
+    animation: none !important;
+  }
+  .reveal--fold,
+  .reveal-stagger[data-variant="fold"] > *,
+  .fold-scroll,
+  .parallax {
+    transform: none !important;
+  }
+  .mask-wipe {
+    clip-path: none !important;
+  }
+  .knockout-text {
+    animation: none !important;
+  }
+  .panel-editorial .bg-grid,
+  .hover-sheen::after {
+    animation: none !important;
+  }
+}

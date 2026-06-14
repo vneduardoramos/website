@@ -1,0 +1,32 @@
+/**
+ * Storage abstraction. Local filesystem adapter for dev; an S3/blob adapter
+ * can be added for production (Vercel's FS is ephemeral). Selected via
+ * STORAGE_DRIVER env var.
+ */
+import { localStorageAdapter } from "./local";
+
+export interface StoredFile {
+  url: string;
+  storageKey: string;
+}
+
+export interface StorageAdapter {
+  save(buffer: Buffer, filename: string, mimeType: string): Promise<StoredFile>;
+  /** Remove a stored object by its storageKey. Should not throw if already gone. */
+  delete(storageKey: string): Promise<void>;
+}
+
+export function getStorage(): StorageAdapter {
+  const driver = process.env.STORAGE_DRIVER ?? "local";
+  switch (driver) {
+    case "local":
+      return localStorageAdapter;
+    case "s3": {
+      // Lazy import so the AWS SDK isn't bundled for local-only deployments.
+      const { s3StorageAdapter } = require("./s3") as typeof import("./s3");
+      return s3StorageAdapter;
+    }
+    default:
+      throw new Error(`Unknown STORAGE_DRIVER "${driver}" (expected "local" or "s3").`);
+  }
+}

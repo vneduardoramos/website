@@ -1,0 +1,25 @@
+/node_modules
+/.next
+/out
+/build
+*.tsbuildinfo
+next-env.d.ts
+
+# env
+.env
+.env*.local
+
+# database (sqlite dev)
+*.db
+*.db-journal
+prisma/dev.db
+prisma/*.db
+
+# local media uploads
+/uploads
+/public/uploads
+
+# local claude code settings (personal, per-machine)
+.claude/settings.local.json
+
+.DS_Store
