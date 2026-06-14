@@ -23,3 +23,6 @@ prisma/*.db
 .claude/settings.local.json
 
 .DS_Store
+
+# one-time SQLite->Postgres data dump (local migration artifact)
+prisma/data-export.json

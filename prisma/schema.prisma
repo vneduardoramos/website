@@ -1,19 +1,19 @@
 // ViewNear CMS data model.
 //
-// Local dev uses SQLite for zero-infra setup. SQLite (via Prisma) does NOT
-// support native enums, scalar lists, OR the Json type, so:
+// Runs on PostgreSQL. For historical reasons (this model was first authored on
+// SQLite, which lacks native enums, scalar lists, and Json), some fields use
+// portable representations rather than Postgres-native types:
 //   - status/role/kind fields are String (validated in app code via lib/enums.ts)
 //   - list fields (tools, skills) and structured blobs are stored as JSON-encoded
 //     String and parsed in app code via lib/utils.ts (asStringArray / asObjectArray)
-// To move to Postgres: set provider = "postgresql", swap DATABASE_URL, and you
-// may optionally promote String fields to real enums / Json / scalar lists.
+// These can optionally be promoted to real enums / Json / scalar lists later.
 
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
