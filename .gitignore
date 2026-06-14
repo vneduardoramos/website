@@ -15,10 +15,6 @@ next-env.d.ts
 prisma/dev.db
 prisma/*.db
 
-# local media uploads
-/uploads
-/public/uploads
-
 # local claude code settings (personal, per-machine)
 .claude/settings.local.json
 
