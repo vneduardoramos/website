@@ -14,27 +14,25 @@ export function ApplicationForm({ openingTitle }: { openingTitle?: string }) {
     setError(null);
 
     const form = e.currentTarget;
+    // Send as multipart so the optional resume file rides along.
     const data = new FormData(form);
-    const payload = {
-      name: String(data.get("name") || ""),
-      email: String(data.get("email") || ""),
-      message: String(data.get("message") || ""),
-      openingTitle: String(data.get("openingTitle") || "") || undefined,
-    };
 
     try {
-      const res = await fetch("/api/careers", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (!res.ok) throw new Error("Request failed");
+      const res = await fetch("/api/careers", { method: "POST", body: data });
+      if (!res.ok) {
+        const j = await res.json().catch(() => null);
+        throw new Error(j?.error || "Request failed");
+      }
       setStatus("success");
       form.reset();
       router.push("/thank-you");
     } catch (err) {
       setStatus("error");
-      setError("Something went wrong. Please try again or email us directly.");
+      setError(
+        err instanceof Error && err.message !== "Request failed"
+          ? err.message
+          : "Something went wrong. Please try again or email us directly.",
+      );
     }
   }
 
@@ -87,6 +85,19 @@ export function ApplicationForm({ openingTitle }: { openingTitle?: string }) {
           />
         </div>
         <div>
+          <label htmlFor="app-linkedin" className="mb-2 block text-sm text-muted">
+            LinkedIn profile <span className="text-muted/70">(optional)</span>
+          </label>
+          <input
+            id="app-linkedin"
+            name="linkedinUrl"
+            type="url"
+            inputMode="url"
+            placeholder="https://www.linkedin.com/in/your-profile"
+            className="w-full rounded border border-border bg-surface2 px-4 py-3 text-foreground"
+          />
+        </div>
+        <div>
           <label htmlFor="app-message" className="mb-2 block text-sm text-muted">
             Tell us about yourself
           </label>
@@ -96,6 +107,18 @@ export function ApplicationForm({ openingTitle }: { openingTitle?: string }) {
             rows={5}
             required
             className="w-full rounded border border-border bg-surface2 px-4 py-3 text-foreground"
+          />
+        </div>
+        <div>
+          <label htmlFor="app-resume" className="mb-2 block text-sm text-muted">
+            Resume <span className="text-muted/70">(optional, PDF or Word, max 8 MB)</span>
+          </label>
+          <input
+            id="app-resume"
+            name="resume"
+            type="file"
+            accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+            className="w-full rounded border border-border bg-surface2 px-4 py-3 text-sm text-foreground file:mr-3 file:rounded-md file:border-0 file:bg-primary/15 file:px-3 file:py-1.5 file:text-sm file:font-semibold file:text-primaryDeep hover:file:bg-primary/20"
           />
         </div>
       </div>

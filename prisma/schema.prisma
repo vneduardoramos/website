@@ -246,11 +246,12 @@ model JobApplication {
   id        String      @id @default(cuid())
   openingId String?
   opening   JobOpening? @relation(fields: [openingId], references: [id])
-  name      String
-  email     String
-  message   String?
-  resumeUrl String?
-  createdAt DateTime    @default(now())
+  name        String
+  email       String
+  message     String?
+  linkedinUrl String?
+  resumeUrl   String?
+  createdAt   DateTime    @default(now())
 }
 
 model SiteSetting {
