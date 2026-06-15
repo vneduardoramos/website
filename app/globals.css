@@ -343,11 +343,14 @@ select:focus-visible,
   text-wrap: pretty;
 }
 
+/* Gradient text stops are kept on the deep end of the palette (primaryDeep /
+   royal / royalDeep) so the clipped text meets WCAG large-text contrast (>=3:1)
+   on white. Bright sky/cyan/amber are reserved for fills, borders, and icons. */
 .text-gradient {
   background: linear-gradient(
     92deg,
     rgb(var(--color-primary-deep)),
-    rgb(var(--color-primary))
+    rgb(var(--color-royal))
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -356,21 +359,20 @@ select:focus-visible,
 .text-gradient-accent {
   background: linear-gradient(
     92deg,
-    rgb(var(--color-primary)),
-    rgb(var(--color-accent))
+    rgb(var(--color-royal)),
+    rgb(var(--color-primary-deep))
   );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-/* High-contrast, blue-led gradient for big numerals: deep royal → bright sky →
-   cyan. More vivid and contrasting than the mono-blue .text-gradient. */
+/* Blue-led gradient for big numerals, all legible deep tones. */
 .text-gradient-bold {
   background: linear-gradient(
     100deg,
     rgb(var(--color-royal)),
-    rgb(var(--color-primary)) 55%,
-    rgb(var(--color-secondary))
+    rgb(var(--color-primary-deep)) 55%,
+    rgb(var(--color-royal-deep))
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -596,9 +598,9 @@ select:focus-visible,
   background-image: linear-gradient(
     100deg,
     rgb(var(--color-primary-deep)),
-    rgb(var(--color-primary)),
-    rgb(var(--color-secondary)),
-    rgb(var(--color-primary))
+    rgb(var(--color-royal)),
+    rgb(var(--color-royal-deep)),
+    rgb(var(--color-royal))
   );
   background-size: 220% 100%;
   -webkit-background-clip: text;

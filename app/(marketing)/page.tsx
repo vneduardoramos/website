@@ -19,6 +19,7 @@ import { CustomersFeature } from "@/components/marketing/home/CustomersFeature";
 import { LogoRow } from "@/components/marketing/home/ClientLogos";
 import { getClientBands } from "@/lib/client-bands";
 import { SectionDecor } from "@/components/marketing/Decor";
+import { JsonLd } from "@/components/JsonLd";
 
 export const revalidate = 60;
 
@@ -83,7 +84,7 @@ const BADGES = [
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: `${theme.brand.name}: ${theme.brand.tagline}`,
+    title: { absolute: `${theme.brand.name}: ${theme.brand.tagline}` },
     description: theme.brand.description,
     alternates: { canonical: "/" },
   };
@@ -117,6 +118,20 @@ export default async function HomePage() {
       body: "Compute that flexes to your workload and your budget: pay for what you use, scale when you need to.",
     },
   ];
+
+  // FAQPage structured data for the FAQs rendered below (helps AI/answer engines).
+  const faqLd =
+    faqs && faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }
+      : null;
 
   return (
     <>
@@ -349,6 +364,7 @@ export default async function HomePage() {
       </Section>
 
       {/* 5) FAQ */}
+      {faqLd && <JsonLd data={faqLd} />}
       {faqs && faqs.length > 0 && (
         <Section>
           <SectionHeading

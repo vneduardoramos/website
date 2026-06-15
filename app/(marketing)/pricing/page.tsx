@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { FeaturedCaseStudies } from "@/components/marketing/FeaturedCaseStudies";
@@ -7,12 +7,12 @@ import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { JsonLd } from "@/components/JsonLd";
 import { theme } from "@/config/theme";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Pricing & engagement",
   description:
     "How Viewnear engagements are scoped and priced (fixed cost, time & materials, or team augmentation), plus what drives cost. Scope and price agreed up front.",
-  alternates: { canonical: "/pricing" },
-};
+  path: "/pricing",
+});
 
 const engagementModels = [
   {

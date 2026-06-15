@@ -7,7 +7,7 @@ export function KeyTakeaways({ items }: { items: string[] }) {
   return (
     <div className="mx-auto mt-10 max-w-3xl">
       <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6">
-        <p className="font-mono text-xs font-semibold uppercase tracking-wider text-primary">
+        <p className="font-mono text-xs font-semibold uppercase tracking-wider text-primaryDeep">
           Key takeaways
         </p>
         <ul className="mt-4 space-y-3">
@@ -15,7 +15,7 @@ export function KeyTakeaways({ items }: { items: string[] }) {
             <li key={i} className="flex gap-3">
               <svg
                 viewBox="0 0 20 20"
-                className="mt-0.5 h-5 w-5 shrink-0 text-primary"
+                className="mt-0.5 h-5 w-5 shrink-0 text-primaryDeep"
                 fill="none"
                 aria-hidden
               >

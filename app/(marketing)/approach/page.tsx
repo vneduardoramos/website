@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { FeaturedCaseStudies } from "@/components/marketing/FeaturedCaseStudies";
 import { PageHero } from "@/components/marketing/PageHero";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { Methodology } from "@/components/marketing/home/Methodology";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Our Approach",
   description:
     "How Viewnear delivers: a proven Snowflake methodology plus engagement governance that de-risks the buy with fixed timelines, steering reviews, POC-before-build gates, and a clean hand-over.",
-  alternates: { canonical: "/approach" },
-};
+  path: "/approach",
+});
 
 const runPhases = [
   {

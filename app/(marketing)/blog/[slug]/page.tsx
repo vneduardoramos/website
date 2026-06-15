@@ -120,7 +120,7 @@ export default async function BlogPostPage({
                 {post.tags.map((tag) => (
                   <span
                     key={tag.slug ?? tag.name ?? String(tag)}
-                    className="font-mono text-xs font-semibold uppercase tracking-wider text-primary"
+                    className="font-mono text-xs font-semibold uppercase tracking-wider text-primaryDeep"
                   >
                     #{tag.name ?? String(tag)}
                   </span>
@@ -160,7 +160,7 @@ export default async function BlogPostPage({
                       href={author.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-primary"
+                      className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep"
                     >
                       Connect on LinkedIn →
                     </a>

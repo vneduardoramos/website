@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import {
   Section,
@@ -10,12 +10,12 @@ import { PageHero } from "@/components/marketing/PageHero";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { theme } from "@/config/theme";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Security & Trust",
   description:
     "How Viewnear keeps your data secure and governed: built on Snowflake's certified foundation, with governance, access control, and audit lineage in every engagement.",
-  alternates: { canonical: "/security" },
-};
+  path: "/security",
+});
 
 // Snowflake's platform certifications that our work inherits. We're explicit
 // that these are the platform's; we build on top of them, we don't claim them.

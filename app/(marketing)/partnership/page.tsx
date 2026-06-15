@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { LeadershipStrip } from "@/components/marketing/LeadershipStrip";
@@ -8,12 +8,12 @@ import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 import { PartnershipHighlight } from "@/components/marketing/PartnershipHighlight";
 import { theme } from "@/config/theme";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Snowflake Partnership",
   description:
     "Viewnear is a Snowflake Premier Partner and a CoCo Preferred Partner: SnowPro-certified, co-selling with Snowflake, and delivering the full native stack across the Americas.",
-  alternates: { canonical: "/partnership" },
-};
+  path: "/partnership",
+});
 
 const unlocks = [
   {

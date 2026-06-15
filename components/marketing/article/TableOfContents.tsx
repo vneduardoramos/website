@@ -55,7 +55,7 @@ export function TableOfContents({ headings }: { headings: Heading[] }) {
             className={cn(
               "block border-l-2 py-1 pl-3 transition-colors",
               active === h.id
-                ? "border-primary font-semibold text-primary"
+                ? "border-primary font-semibold text-primaryDeep"
                 : "border-transparent text-muted hover:text-foreground",
             )}
           >

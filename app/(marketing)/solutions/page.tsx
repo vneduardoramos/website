@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { FeaturedCaseStudies } from "@/components/marketing/FeaturedCaseStudies";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
@@ -8,12 +8,12 @@ import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { JsonLd } from "@/components/JsonLd";
 import { theme } from "@/config/theme";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Solutions: migrate, govern & build with AI",
   description:
     "Outcome-led Snowflake solutions: migrate to Snowflake, Cortex AI & agents, data governance & trust, and embedded analytics & data apps, delivered native, end to end.",
-  alternates: { canonical: "/solutions" },
-};
+  path: "/solutions",
+});
 
 const SOLUTIONS = [
   {

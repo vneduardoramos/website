@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { pageMeta } from "@/lib/seo";
 import {
   Section,
   SectionHeading,
@@ -38,12 +39,12 @@ const SERVICE_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   "capability-development": RocketIcon,
 };
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Services: THINK · BUILD · GROW",
   description:
     "THINK, BUILD, GROW: strategy, engineering, and enablement for modern data and AI on Snowflake.",
-  alternates: { canonical: "/services" },
-};
+  path: "/services",
+});
 
 type TierMeta = {
   eyebrow: string;

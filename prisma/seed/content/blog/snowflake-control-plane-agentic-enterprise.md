@@ -195,7 +195,7 @@ CoWork helps people use AI for work.
 
 CoCo helps teams build the systems behind that work.
 
-Viewnear's work as a Snowflake CoCo Catalyst partner fits naturally into this builder motion, helping teams explore how agentic development can be applied to real enterprise workflows.
+Viewnear's work as a Snowflake CoCo Preferred Partner fits naturally into this builder motion, helping teams explore how agentic development can be applied to real enterprise workflows.
 
 Together, CoWork and CoCo show Snowflake's broader ambition: support both the users consuming AI and the builders creating AI-powered workflows, all on top of the same governed enterprise foundation.
 

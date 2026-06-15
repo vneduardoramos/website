@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { FeaturedCaseStudies } from "@/components/marketing/FeaturedCaseStudies";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
@@ -7,12 +7,12 @@ import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { PlatformStack, type Layer } from "@/components/marketing/platform/PlatformStack";
 import { theme } from "@/config/theme";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Platform: the Snowflake-native stack",
   description:
     "We build native on Snowflake end to end (Openflow, dbt, Snowpark, Horizon Catalog, Cortex, Snowflake CoWork, Iceberg) so governance, lineage, and AI context stay in one place. No third-party sprawl.",
-  alternates: { canonical: "/platform" },
-};
+  path: "/platform",
+});
 
 const LAYERS: Layer[] = [
   {

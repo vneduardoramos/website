@@ -60,7 +60,7 @@ export function TeamCard({
       <h3 className="relative mt-3 font-display text-lg font-bold leading-tight text-foreground">
         {member.name}
       </h3>
-      <p className="relative mt-1 text-sm font-medium text-primary">{member.title}</p>
+      <p className="relative mt-1 text-sm font-medium text-primaryDeep">{member.title}</p>
       {member.linkedinUrl && (
         <a
           href={member.linkedinUrl}

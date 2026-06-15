@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Section, SectionHeading } from "@/components/marketing/ui";
 import { MetricBand } from "@/components/marketing/Blocks";
@@ -17,12 +18,12 @@ import {
 import { getTeam } from "@/lib/queries";
 import { theme } from "@/config/theme";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "About: Snowflake data & AI partner for the Americas",
   description:
     "Viewnear is a Snowflake Premier and CoCo Preferred Partner. A team versed in Snowflake and enterprise solutions at every level takes enterprises from data strategy to governed AI in production across the Americas.",
-  alternates: { canonical: "/about" },
-};
+  path: "/about",
+});
 
 const HERO_CHIPS = [
   "Snowflake Premier Partner",

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { pageMeta } from "@/lib/seo";
 import { Section } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 import { ContactForm } from "@/components/marketing/ContactForm";
@@ -7,12 +8,12 @@ import { LeadershipStrip } from "@/components/marketing/LeadershipStrip";
 import { getSetting } from "@/lib/queries";
 import { theme } from "@/config/theme";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Contact: start a data & AI project",
   description:
     "Get in touch with Viewnear, a Snowflake data & AI consultancy serving the Americas.",
-  alternates: { canonical: "/contact" },
-};
+  path: "/contact",
+});
 
 type ContactSetting = { email: string; blurb: string };
 
@@ -64,7 +65,7 @@ export default async function ContactPage() {
               <p className="text-sm text-muted">Prefer email?</p>
               <a
                 href={`mailto:${email}`}
-                className="mt-1 inline-block font-display text-xl font-bold text-accent"
+                className="mt-1 inline-block font-display text-xl font-bold text-primaryDeep"
               >
                 {email}
               </a>
@@ -91,7 +92,7 @@ export default async function ContactPage() {
               <ol className="relative mt-6 space-y-6 before:absolute before:left-[15px] before:top-3 before:bottom-3 before:w-px before:bg-border">
                 {steps.map((step, i) => (
                   <li key={step.title} className="relative flex gap-4">
-                    <span className="relative z-10 flex h-8 w-8 flex-none items-center justify-center rounded-full bg-primary font-mono text-sm text-primary-fg shadow-md ring-4 ring-background">
+                    <span className="relative z-10 flex h-8 w-8 flex-none items-center justify-center rounded-full bg-primaryDeep font-mono text-sm text-primary-fg shadow-md ring-4 ring-background">
                       {i + 1}
                     </span>
                     <div className="pt-1">

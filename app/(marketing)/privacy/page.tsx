@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { Section } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 import { SectionDecor } from "@/components/marketing/Decor";
 import { theme } from "@/config/theme";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | Viewnear",
+export const metadata = pageMeta({
+  title: "Privacy Policy",
   description:
     "How Viewnear collects, uses, and protects your personal information.",
-};
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (

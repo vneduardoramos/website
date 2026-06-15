@@ -1,4 +1,5 @@
 import { getIndustries } from "@/lib/queries";
+import { pageMeta } from "@/lib/seo";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { CoverCard } from "@/components/marketing/CoverCard";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
@@ -7,12 +8,12 @@ import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { PageHero } from "@/components/marketing/PageHero";
 import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Industries we serve",
   description:
     "Industry-specific data and AI solutions across the Americas, built on Snowflake by Viewnear.",
-  alternates: { canonical: "/industries" },
-};
+  path: "/industries",
+});
 
 export default async function IndustriesPage() {
   const industries = await getIndustries();

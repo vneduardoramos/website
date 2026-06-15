@@ -107,7 +107,7 @@ export function Methodology() {
                     <span
                       className={cn(
                         "absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-bold transition-colors duration-500",
-                        active ? "bg-primary text-primary-fg" : "bg-border text-muted",
+                        active ? "bg-primaryDeep text-primary-fg" : "bg-border text-muted",
                       )}
                     >
                       {i + 1}

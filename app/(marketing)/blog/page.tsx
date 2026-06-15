@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { getBlogPosts } from "@/lib/queries";
+import { pageMeta } from "@/lib/seo";
 import { formatDate } from "@/lib/utils";
 import { Section } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
@@ -9,14 +9,12 @@ import { coverFor } from "@/lib/covers";
 import { CtaBand } from "@/components/marketing/ui";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 
-export function generateMetadata(): Metadata {
-  return {
-    title: "Blog: field notes on Snowflake, data & AI",
-    description:
-      "Field notes, ideas, and practical guides on Snowflake, data engineering, and AI from the Viewnear team, straight from the lab.",
-    alternates: { canonical: "/blog" },
-  };
-}
+export const metadata = pageMeta({
+  title: "Blog: field notes on Snowflake, data & AI",
+  description:
+    "Field notes, ideas, and practical guides on Snowflake, data engineering, and AI from the Viewnear team, straight from the lab.",
+  path: "/blog",
+});
 
 export default async function BlogPage() {
   const posts = await getBlogPosts({});

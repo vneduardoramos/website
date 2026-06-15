@@ -196,7 +196,7 @@ export default async function CaseStudyDetailPage({
                     <p className="eyebrow">Related industry</p>
                     <Link
                       href={`/industries/${cs.industry.slug}`}
-                      className="mt-2 inline-block font-display text-lg font-bold text-primary"
+                      className="mt-2 inline-block font-display text-lg font-bold text-primaryDeep"
                     >
                       {cs.industry.name} →
                     </Link>
@@ -291,7 +291,7 @@ export default async function CaseStudyDetailPage({
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/case-studies"
-            className="text-sm font-semibold text-primary"
+            className="text-sm font-semibold text-primaryDeep"
           >
             ← Back to case studies
           </Link>

@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { Section, CtaBand } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 import { getSetting, safe } from "@/lib/queries";
 import { JsonLd } from "@/components/JsonLd";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "FAQ: partnership, delivery & pricing",
   description:
     "Answers to the questions teams ask Viewnear first: about our Snowflake partnership, how engagements run, commercials, and security.",
-  alternates: { canonical: "/faq" },
-};
+  path: "/faq",
+});
 
 export const revalidate = 60;
 

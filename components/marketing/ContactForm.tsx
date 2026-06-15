@@ -143,7 +143,7 @@ export function ContactForm() {
       </div>
 
       {status === "error" && error ? (
-        <p className="mt-4 text-sm text-accent">{error}</p>
+        <p role="alert" className="mt-4 text-sm font-medium text-danger">{error}</p>
       ) : null}
 
       <button type="submit" disabled={status === "loading"} className="btn-primary mt-6 disabled:opacity-60">

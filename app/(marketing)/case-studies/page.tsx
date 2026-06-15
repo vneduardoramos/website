@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { getCaseStudies } from "@/lib/queries";
 import { Section, CtaBand, Pill } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
@@ -7,12 +7,12 @@ import { coverForSector } from "@/lib/covers";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { PartnerBadges } from "@/components/marketing/PartnerBadges";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Case Studies",
   description:
     "Data and AI engagements across the Americas: real, anonymized results from the Snowflake-powered analytics and intelligent automation we deliver.",
-  alternates: { canonical: "/case-studies" },
-};
+  path: "/case-studies",
+});
 
 export default async function CaseStudiesPage() {
   const caseStudies = await getCaseStudies({});

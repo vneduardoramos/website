@@ -96,7 +96,7 @@ export function CoverCard({
   const bodyBlock = (
     <div className={`flex flex-1 flex-col ${featured ? "p-8 md:p-10" : "p-6"}`}>
       {kicker && (
-        <span className="mb-2 font-mono text-xs uppercase tracking-[0.18em] text-primary">
+        <span className="mb-2 font-mono text-xs uppercase tracking-[0.18em] text-primaryDeep">
           {kicker}
         </span>
       )}
@@ -137,7 +137,7 @@ export function CoverCard({
       ) : (
         meta && <p className="mt-4 text-xs text-muted">{meta}</p>
       )}
-      <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+      <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep">
         Read more
         <svg className="h-4 w-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
           <path d="M5 12h14M13 6l6 6-6 6" />

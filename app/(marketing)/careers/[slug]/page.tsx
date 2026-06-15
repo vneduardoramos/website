@@ -61,6 +61,11 @@ export default async function CareerDetailPage({
     description: job.description,
     employmentType: employmentType(job.employment),
     datePosted: (job.publishedAt ?? job.createdAt).toISOString(),
+    // Google drops postings with no validThrough after ~30 days; keep it open
+    // for 90 days from posting.
+    validThrough: new Date(
+      (job.publishedAt ?? job.createdAt).getTime() + 90 * 24 * 60 * 60 * 1000,
+    ).toISOString(),
     hiringOrganization: {
       "@type": "Organization",
       name: theme.brand.name,
@@ -97,7 +102,7 @@ export default async function CareerDetailPage({
         description={job.description}
       >
         <div className="flex flex-wrap items-center gap-3">
-          <span className="text-sm text-accent">{job.employment}</span>
+          <span className="text-sm text-primaryDeep">{job.employment}</span>
           {job.location ? (
             <span className="text-sm text-muted">· {job.location}</span>
           ) : null}

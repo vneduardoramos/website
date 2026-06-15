@@ -46,7 +46,7 @@ export function AuthorBio({ author }: { author?: ArticleAuthor | null }) {
               href={author.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary"
+              className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep"
             >
               Connect on LinkedIn →
             </a>

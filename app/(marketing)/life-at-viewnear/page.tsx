@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { Section, SectionHeading, Pill } from "@/components/marketing/ui";
@@ -14,12 +14,12 @@ import { JsonLd } from "@/components/JsonLd";
 
 export const revalidate = 60;
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Life at Viewnear",
   description:
     "Life at Viewnear, a young company headed to greatness. Outcome-led, AI-native, team-powered: how we work, what we stand for, and the benefits behind it (healthcare, dental, emotional wellness, and more).",
-  alternates: { canonical: "/life-at-viewnear" },
-};
+  path: "/life-at-viewnear",
+});
 
 /* ---- Inline icon set (Lucide-style strokes) ---- */
 const PATHS: Record<string, React.ReactNode> = {
@@ -524,7 +524,7 @@ export default async function LifeAtViewnearPage() {
                 <div className="flex items-center gap-4">
                   <span
                     className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${
-                      i === 0 ? "bg-primary text-white" : "bg-primary/15 text-primaryDeep"
+                      i === 0 ? "bg-primaryDeep text-white" : "bg-primary/15 text-primaryDeep"
                     }`}
                   >
                     <Ico name={m.icon} />
@@ -729,7 +729,7 @@ export default async function LifeAtViewnearPage() {
                         {job.title}
                       </Link>
                     </h3>
-                    <span className="text-sm text-accent">{job.employment}</span>
+                    <span className="text-sm text-primaryDeep">{job.employment}</span>
                     {job.location ? (
                       <span className="text-sm text-muted">· {job.location}</span>
                     ) : null}

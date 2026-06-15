@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
@@ -7,12 +7,12 @@ import { coverFor, coverForSector } from "@/lib/covers";
 import { formatDate } from "@/lib/utils";
 import { getBlogPosts, getCaseStudies, safe } from "@/lib/queries";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Resources: case studies & blog",
   description:
     "Case studies and blog from Viewnear, everything in one place.",
-  alternates: { canonical: "/resources" },
-};
+  path: "/resources",
+});
 
 export const revalidate = 60;
 

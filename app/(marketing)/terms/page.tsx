@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { Section } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 import { SectionDecor } from "@/components/marketing/Decor";
 import { theme } from "@/config/theme";
 
-export const metadata: Metadata = {
-  title: "Terms of Service | Viewnear",
+export const metadata = pageMeta({
+  title: "Terms of Service",
   description: "The terms that govern your use of the Viewnear website and services.",
-};
+  path: "/terms",
+});
 
 export default function TermsPage() {
   return (
