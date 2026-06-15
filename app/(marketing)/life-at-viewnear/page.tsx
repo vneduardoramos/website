@@ -8,6 +8,7 @@ import { PageHero } from "@/components/marketing/PageHero";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { ApplicationForm } from "@/components/marketing/ApplicationForm";
 import { getJobOpenings } from "@/lib/queries";
+import { BENEFITS } from "@/lib/benefits";
 import { asStringArray } from "@/lib/utils";
 import { theme } from "@/config/theme";
 import { JsonLd } from "@/components/JsonLd";
@@ -303,49 +304,6 @@ const meaning = [
   },
 ];
 
-const benefits = [
-  {
-    icon: "heart" as const,
-    title: "Health insurance",
-    body: "Comprehensive medical coverage so you and your family are looked after.",
-  },
-  {
-    icon: "shieldPlus" as const,
-    title: "Dental & vision",
-    body: "Dental and vision plans included: the everyday essentials, covered.",
-  },
-  {
-    icon: "smile" as const,
-    title: "Emotional wellness",
-    body: "Mental-health and emotional-wellbeing support, because sustained excellence needs real balance.",
-  },
-  {
-    icon: "sun" as const,
-    title: "Flexible time off",
-    body: "Time off follows local law and stays flexible (no fixed cap) as long as outcomes stay strong and teams stay covered.",
-  },
-  {
-    icon: "dollar" as const,
-    title: "Pay above market",
-    body: "Compensation targeted ~25% above market, plus performance bonuses tied to real outcomes.",
-  },
-  {
-    icon: "cap" as const,
-    title: "Learning & certifications",
-    body: "Training, SnowPro certifications, conference travel, and event sponsorships: we reinvest in your growth.",
-  },
-  {
-    icon: "mountain" as const,
-    title: "Team retreats",
-    body: "Company retreats and in-person gatherings that build the relationships behind great delivery.",
-  },
-  {
-    icon: "sparkles" as const,
-    title: "Best-in-class tools",
-    body: "Premium tooling and licensing (including the AI-native stack) so you always do your best work.",
-  },
-];
-
 const standApart = [
   { icon: "target" as const, text: "We measure outcomes, not activity." },
   { icon: "shield" as const, text: "We earn trust by delivering value, not by tracking time." },
@@ -627,7 +585,7 @@ export default async function LifeAtViewnearPage() {
           intro="Better outcomes create stronger economics, and we put those economics back into the people who deliver them. Healthcare, dental, emotional wellness, and more."
         />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 md:auto-rows-fr lg:grid-cols-4">
-          {benefits.map((b) => (
+          {BENEFITS.map((b) => (
             <div key={b.title} className="card card-hover flex h-full flex-col">
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primaryDeep">
                 <Ico name={b.icon} className="h-5 w-5" />

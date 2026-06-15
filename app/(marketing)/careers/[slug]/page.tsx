@@ -6,6 +6,8 @@ import { PageHero } from "@/components/marketing/PageHero";
 import { ApplicationForm } from "@/components/marketing/ApplicationForm";
 import { JsonLd } from "@/components/JsonLd";
 import { getJobOpeningBySlug, getJobSlugs } from "@/lib/queries";
+import { BENEFITS } from "@/lib/benefits";
+import { CheckIcon } from "@/components/marketing/home/Icons";
 import { Markdown } from "@/lib/content";
 import { asStringArray } from "@/lib/utils";
 import { theme } from "@/config/theme";
@@ -144,7 +146,42 @@ export default async function CareerDetailPage({
         </div>
       </Section>
 
-      <Section id="apply" className="section-tint">
+      {/* Life at Viewnear: culture + benefits, so candidates see the whole picture. */}
+      <Section className="section-tint">
+        <div className="mx-auto max-w-4xl">
+          <SectionHeading
+            eyebrow="Life at Viewnear"
+            title="More than the role"
+            intro="You'd join a young, high-performance team that is outcome-led, AI-native, and remote-augmented. Here is some of what comes with it."
+          />
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 md:auto-rows-fr lg:grid-cols-3">
+            {BENEFITS.map((b) => (
+              <div key={b.title} className="card flex h-full items-start gap-3">
+                <span className="mt-0.5 flex h-8 w-8 flex-none items-center justify-center rounded-lg bg-primary/15 text-primaryDeep">
+                  <CheckIcon className="h-[18px] w-[18px]" aria-hidden="true" />
+                </span>
+                <div>
+                  <h3 className="font-display text-base font-bold text-foreground">{b.title}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-muted">{b.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8">
+            <Link
+              href="/life-at-viewnear"
+              className="group inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep"
+            >
+              <span className="link-underline">See life at Viewnear</span>
+              <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+                →
+              </span>
+            </Link>
+          </div>
+        </div>
+      </Section>
+
+      <Section id="apply">
         <SectionHeading
           eyebrow="Apply"
           title="Apply for this role"
