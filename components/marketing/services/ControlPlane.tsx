@@ -1,38 +1,38 @@
-import { cn } from "@/lib/utils";
+import type { CSSProperties } from "react";
 
 // The agentic "control plane" as equal-height cards, from the governed data
-// foundation up to action. Each layer carries an accent top-border; the grid
-// uses auto-rows-fr so every card in a row is the same height.
+// foundation up to action. Cards use the brand cut-corner motif (.cut-card)
+// with a per-layer accent set via --eyebrow-accent.
 const LAYERS = [
   {
     name: "Data foundation",
     body: "One governed copy of your enterprise data: structured, semi-structured, and unstructured.",
-    accent: "border-t-royal",
+    accent: "var(--color-royal)",
   },
   {
     name: "Governance",
     body: "Access, masking, lineage, and policy with Horizon Catalog: from who can see what to what agents can do.",
-    accent: "border-t-primaryDeep",
+    accent: "var(--color-primary-deep)",
   },
   {
     name: "Business context",
     body: "Semantic Views and Horizon Context, so AI reasons from your real definitions, not guesses.",
-    accent: "border-t-secondary",
+    accent: "var(--color-secondary)",
   },
   {
     name: "Models",
     body: "Model choice through Cortex: the right model for each workload, run next to the data.",
-    accent: "border-t-purple",
+    accent: "var(--color-purple)",
   },
   {
     name: "Agents",
     body: "Governed agents (Snowflake CoWork, Snowflake CoCo) with verifiable identity and audit trails.",
-    accent: "border-t-accent",
+    accent: "var(--color-accent)",
   },
   {
     name: "Action",
     body: "Insight connected to the workflows and systems where work actually happens.",
-    accent: "border-t-success",
+    accent: "var(--color-success)",
   },
 ];
 
@@ -43,9 +43,13 @@ export function ControlPlane({ className }: { className?: string }) {
         {LAYERS.map((layer, i) => (
           <div
             key={layer.name}
-            className={cn("card card-hover flex h-full flex-col border-t-4", layer.accent)}
+            className="cut-card flex h-full flex-col p-5"
+            style={{ "--eyebrow-accent": layer.accent } as CSSProperties}
           >
-            <span className="font-mono text-xs tabular-nums text-muted">
+            <span
+              className="font-mono text-xs font-semibold tabular-nums"
+              style={{ color: "rgb(var(--eyebrow-accent))" }}
+            >
               {String(i + 1).padStart(2, "0")}
             </span>
             <h3 className="mt-2 font-display text-base font-bold text-foreground">{layer.name}</h3>
