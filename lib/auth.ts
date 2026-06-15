@@ -3,10 +3,14 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/db";
 
-// Fail fast in production rather than booting with a guessable/default secret.
+// Fail fast when the production server boots with a guessable/default secret.
+// Skipped during `next build` (NEXT_PHASE === "phase-production-build"), which
+// runs with NODE_ENV=production but doesn't have or need the runtime secret, so
+// builds don't require production env values.
 const NEXTAUTH_SECRET = process.env.NEXTAUTH_SECRET;
 if (
   process.env.NODE_ENV === "production" &&
+  process.env.NEXT_PHASE !== "phase-production-build" &&
   (!NEXTAUTH_SECRET || /change|dev-secret/i.test(NEXTAUTH_SECRET))
 ) {
   throw new Error(
