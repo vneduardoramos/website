@@ -119,7 +119,7 @@ export default async function CareerDetailPage({
         </div>
       </PageHero>
 
-      <Section>
+      <Section className="pt-8 md:pt-10">
         <div className="mx-auto max-w-3xl">
           {job.body ? (
             <div className="prose-vn">
