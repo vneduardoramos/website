@@ -34,12 +34,12 @@ import { theme } from "@/config/theme";
 
 import type { ComponentType, SVGProps } from "react";
 const SERVICE_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
-  "ai-data-strategy": CompassIcon,
-  "cloud-architecture": DatabaseIcon,
-  "data-engineering": PipelineIcon,
-  "data-visualisation": ChartIcon,
-  "embedded-analytics": CpuIcon,
-  "capability-development": RocketIcon,
+  "ai-data-strategy": CompassIcon, // strategy / direction
+  "data-visualisation": CpuIcon, // AI Analytics & Agents (AI/compute)
+  "cloud-architecture": DataStackIcon, // layered data foundation
+  "data-engineering": PipelineIcon, // pipelines
+  "embedded-analytics": ChartIcon, // analytics embedded in product
+  "capability-development": RocketIcon, // growth / enablement
 };
 
 export const metadata = pageMeta({
