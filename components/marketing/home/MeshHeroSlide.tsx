@@ -115,6 +115,35 @@ export function MeshHeroSlide({ subhead }: { subhead?: string }) {
           <p className="mt-8 font-mono text-xs uppercase tracking-widest text-muted">
             SnowPro-certified team · Americas-focused delivery
           </p>
+
+          {/* Badges on mobile/tablet: a centered row beneath the copy, with the
+              Premier Partner badge larger in the middle and the other two
+              flanking it left and right. The desktop triangle overlay (lg+) is
+              hidden here, and this row is hidden there, so badges show on every
+              breakpoint. BADGES = [premier, coco, snowpro]. */}
+          <div className="mt-8 flex w-full items-center justify-between gap-3 lg:hidden">
+            <Image
+              src={BADGES[2].src}
+              alt={BADGES[2].alt}
+              width={BADGES[2].w}
+              height={BADGES[2].h}
+              className="h-auto w-[29%] drop-shadow-[0_8px_20px_rgba(15,37,48,0.18)]"
+            />
+            <Image
+              src={BADGES[0].src}
+              alt={BADGES[0].alt}
+              width={BADGES[0].w}
+              height={BADGES[0].h}
+              className="h-auto w-[37%] drop-shadow-[0_12px_28px_rgba(15,37,48,0.22)]"
+            />
+            <Image
+              src={BADGES[1].src}
+              alt={BADGES[1].alt}
+              width={BADGES[1].w}
+              height={BADGES[1].h}
+              className="h-auto w-[29%] drop-shadow-[0_8px_20px_rgba(15,37,48,0.18)]"
+            />
+          </div>
         </div>
       </div>
     </div>

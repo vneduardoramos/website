@@ -21,7 +21,10 @@ export function LogoRow({
   return (
     <div
       className={cn(
-        "flex flex-wrap items-center justify-center gap-x-8 gap-y-6 md:justify-between md:gap-x-6",
+        // Mobile: a tidy 2-column grid (each logo centered in its cell) so a
+        // 4-logo band reads as a clean 2x2 instead of scattered wrapped rows.
+        // md+: revert to a single spread-out row across the band width.
+        "grid grid-cols-2 place-items-center gap-x-8 gap-y-8 md:flex md:flex-wrap md:items-center md:justify-between md:gap-x-6 md:gap-y-6",
         className,
       )}
     >
