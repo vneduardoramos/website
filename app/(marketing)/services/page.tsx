@@ -250,7 +250,7 @@ const aiUseCases = [
     body: "AI Agent Identity and access controls, so every agent works within your policies, with full audit trails.",
   },
   {
-    icon: DatabaseIcon,
+    icon: SnowflakeIcon,
     title: "AI-ready data foundation",
     body: "The prerequisite: a governed Snowflake foundation and trusted business context every model and agent relies on.",
   },
