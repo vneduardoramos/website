@@ -74,12 +74,12 @@ export const theme = {
   nav: [
     { label: "Home", href: "/" },
     {
-      label: "Company",
+      label: "Services",
       children: [
-        { label: "About", href: "/about" },
-        { label: "Partnership", href: "/partnership" },
-        { label: "Life at Viewnear", href: "/life-at-viewnear" },
-        { label: "Security & Trust", href: "/security" },
+        { label: "Services overview", href: "/services" },
+        { label: "Solutions", href: "/solutions" },
+        { label: "Approach", href: "/approach" },
+        { label: "Pricing", href: "/pricing" },
       ],
     },
     {
@@ -95,12 +95,12 @@ export const theme = {
       ],
     },
     {
-      label: "Services",
+      label: "Company",
       children: [
-        { label: "Services overview", href: "/services" },
-        { label: "Solutions", href: "/solutions" },
-        { label: "Approach", href: "/approach" },
-        { label: "Pricing", href: "/pricing" },
+        { label: "About", href: "/about" },
+        { label: "Partnership", href: "/partnership" },
+        { label: "Life at Viewnear", href: "/life-at-viewnear" },
+        { label: "Security & Trust", href: "/security" },
       ],
     },
     {
