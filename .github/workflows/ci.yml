@@ -8,8 +8,26 @@ on:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: viewnear_ci
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     env:
-      DATABASE_URL: "file:./ci.db"
+      # CI Postgres (the service above). No pooler in CI, so the direct URL
+      # mirrors DATABASE_URL; both are needed because the schema declares
+      # url + directUrl.
+      DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/viewnear_ci?schema=public"
+      DIRECT_DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/viewnear_ci?schema=public"
       # Non-default value so the production secret guard passes during `next build`.
       NEXTAUTH_SECRET: "ci-only-build-secret-not-used-at-runtime-9f3a1c"
       NEXTAUTH_URL: "http://localhost:3000"
