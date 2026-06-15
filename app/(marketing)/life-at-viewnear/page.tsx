@@ -9,6 +9,7 @@ import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { ApplicationForm } from "@/components/marketing/ApplicationForm";
 import { getJobOpenings } from "@/lib/queries";
 import { BENEFITS } from "@/lib/benefits";
+import { BenefitsGrid } from "@/components/marketing/BenefitsGrid";
 import { asStringArray } from "@/lib/utils";
 import { theme } from "@/config/theme";
 import { JsonLd } from "@/components/JsonLd";
@@ -584,17 +585,7 @@ export default async function LifeAtViewnearPage() {
           title="We reinvest in the team"
           intro="Better outcomes create stronger economics, and we put those economics back into the people who deliver them. Healthcare, dental, emotional wellness, and more."
         />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 md:auto-rows-fr lg:grid-cols-4">
-          {BENEFITS.map((b) => (
-            <div key={b.title} className="card card-hover flex h-full flex-col">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primaryDeep">
-                <Ico name={b.icon} className="h-5 w-5" />
-              </span>
-              <h3 className="mt-4 font-display text-base font-bold text-foreground">{b.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{b.body}</p>
-            </div>
-          ))}
-        </div>
+        <BenefitsGrid items={BENEFITS} className="mt-12" />
       </Section>
 
       {/* WHY VIEWNEAR STANDS APART + FLYWHEEL */}
