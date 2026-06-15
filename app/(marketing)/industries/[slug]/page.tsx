@@ -141,7 +141,7 @@ export default async function IndustryDetailPage({
                 <span className="text-gradient">{industry.name}</span>.
               </>
             }
-            body={`We pair SnowPro-certified practitioners who know ${industry.name.toLowerCase()} with a Snowflake-first platform (we're a Snowflake Premier Partner) so the data models, governance, and dashboards we build speak your language and move the metrics your teams already report on.`}
+            body={`We pair consultants with deep ${industry.name.toLowerCase()} expertise with our SnowPro-certified Snowflake engineers (we're a Snowflake Premier Partner). Together they map your challenges, shape the roadmap, and build the data models, governance, and dashboards, so the solution speaks your language and moves the metrics your teams already report on.`}
             bullets={flavor.bullets}
             image={`/assets/images/industries/${industry.slug}-2.jpg`}
             imageAlt={`${industry.name} data and AI solutions built on Snowflake`}

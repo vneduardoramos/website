@@ -301,7 +301,7 @@ export const DEFAULT_FLAVOR: IndustryFlavor = {
   ],
   bullets: [
     "Sector-specific data models and governance built in from the start",
-    "Certified practitioners who speak your business language",
+    "Industry consultants paired with SnowPro-certified Snowflake engineers",
     "Measurable outcomes tied to the metrics your teams report on",
     "A roadmap that scales from first win to platform-wide adoption",
   ],

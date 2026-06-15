@@ -36,7 +36,7 @@ export default async function IndustriesPage() {
               <span className="text-gradient">tailored to your world</span>.
             </>
           }
-          body="Every sector has its own data, regulations, and pressures. We pair practitioners who know your industry with a Snowflake-first platform, so the solutions we build speak your language and move your metrics."
+          body="Every sector has its own data, regulations, and pressures. We pair consultants who know your industry with our SnowPro-certified Snowflake engineers to map the problem, shape the roadmap, and build the solution, so what we deliver speaks your language and moves your metrics."
           bullets={[
             "Pre-built accelerators tuned to each sector's data patterns",
             "Compliance and governance baked into the architecture",
