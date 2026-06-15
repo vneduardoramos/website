@@ -69,7 +69,6 @@ export const theme = {
 
   socials: {
     linkedin: "https://www.linkedin.com/company/viewnear/",
-    youtube: "https://www.youtube.com/@viewnear",
   },
 
   nav: [

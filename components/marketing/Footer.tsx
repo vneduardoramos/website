@@ -89,7 +89,6 @@ export function Footer() {
             <Link href="/privacy" className="transition-colors hover:text-primaryDeep">Privacy</Link>
             <Link href="/terms" className="transition-colors hover:text-primaryDeep">Terms</Link>
             <a href={theme.socials.linkedin} className="transition-colors hover:text-primaryDeep">LinkedIn</a>
-            <a href={theme.socials.youtube} className="transition-colors hover:text-primaryDeep">YouTube</a>
           </div>
         </div>
       </div>

@@ -59,7 +59,7 @@ const ORG_JSONLD = {
   url: theme.brand.url,
   logo: `${theme.brand.url}/assets/viewnear-logo.png`,
   description: theme.brand.description,
-  sameAs: [theme.socials.linkedin, theme.socials.youtube],
+  sameAs: [theme.socials.linkedin],
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
