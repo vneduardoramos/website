@@ -184,6 +184,13 @@ async function main() {
     };
     await prisma.jobOpening.upsert({ where: { slug: j.slug }, update: data, create: data });
   }
+  // Prune openings no longer in the seed list so removed roles disappear on
+  // reseed (job openings are seed-managed). Applications keep their record;
+  // their optional openingId is set null by the FK.
+  const pruned = await prisma.jobOpening.deleteMany({
+    where: { slug: { notIn: jobOpenings.map((j) => j.slug) } },
+  });
+  if (pruned.count > 0) console.log(`Pruned ${pruned.count} stale job opening(s).`);
 
   const counts = {
     services: await prisma.service.count(),
