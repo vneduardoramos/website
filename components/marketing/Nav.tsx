@@ -68,12 +68,15 @@ const NAV_FEATURED: Record<string, Featured> = {
 
 // One restrained accent per panel: a thin top rule, the featured eyebrow + CTA
 // pill, and the card hover border/label. Opacities stay on 5-step multiples.
-type Accent = { text: string; bar: string; soft: string; linkHover: string; hoverBorder: string };
+// `eb` is the raw color CSS variable used to drive --eyebrow-accent on the
+// featured card (its cut-corner hairline, eyebrow tag, and accent wash all tint
+// from it). The Tailwind class fields stay for the link/CTA accents.
+type Accent = { text: string; bar: string; soft: string; linkHover: string; hoverBorder: string; eb: string };
 const PANEL_ACCENT: Record<string, Accent> = {
-  Company: { text: "text-royal", bar: "bg-royal", soft: "bg-royal/10", linkHover: "group-hover/card:text-royal", hoverBorder: "hover:border-royal/40" },
-  Industries: { text: "text-primaryDeep", bar: "bg-primaryDeep", soft: "bg-primaryDeep/10", linkHover: "group-hover/card:text-primaryDeep", hoverBorder: "hover:border-primaryDeep/40" },
-  Services: { text: "text-purple", bar: "bg-purple", soft: "bg-purple/10", linkHover: "group-hover/card:text-purple", hoverBorder: "hover:border-purple/40" },
-  Resources: { text: "text-accent", bar: "bg-accent", soft: "bg-accent/10", linkHover: "group-hover/card:text-accent", hoverBorder: "hover:border-accent/40" },
+  Company: { text: "text-royal", bar: "bg-royal", soft: "bg-royal/10", linkHover: "group-hover/card:text-royal", hoverBorder: "hover:border-royal/40", eb: "var(--color-royal)" },
+  Industries: { text: "text-primaryDeep", bar: "bg-primaryDeep", soft: "bg-primaryDeep/10", linkHover: "group-hover/card:text-primaryDeep", hoverBorder: "hover:border-primaryDeep/40", eb: "var(--color-primary-deep)" },
+  Services: { text: "text-purple", bar: "bg-purple", soft: "bg-purple/10", linkHover: "group-hover/card:text-purple", hoverBorder: "hover:border-purple/40", eb: "var(--color-purple)" },
+  Resources: { text: "text-accent", bar: "bg-accent", soft: "bg-accent/10", linkHover: "group-hover/card:text-accent", hoverBorder: "hover:border-accent/40", eb: "var(--color-accent)" },
 };
 
 const SNOWFLAKE_STACK = ["Cortex", "Horizon", "Openflow", "Snowpark", "Iceberg", "dbt"];
@@ -232,18 +235,23 @@ function MegaFeatured({
     <Link
       href={href}
       onClick={onNav}
-      className="group/feat card-pop relative flex flex-col justify-between overflow-hidden rounded-xl border border-border bg-gradient-to-br from-surface2 to-surface p-5"
+      style={{
+        // Drive the cut-card hairline, the eyebrow tag, and a faint diagonal
+        // accent wash all from this panel's accent color.
+        "--eyebrow-accent": accent.eb,
+        background: `linear-gradient(135deg, rgb(${accent.eb} / 0.10), rgb(var(--color-surface)) 70%)`,
+      } as React.CSSProperties}
+      className="group/feat cut-card flex flex-col justify-between p-5"
     >
       <div>
-        <span className={cn("text-xs font-medium uppercase tracking-wide", accent.text)}>{eyebrow}</span>
-        <span className="mt-2 block text-lg font-semibold leading-snug text-foreground">{title}</span>
+        <span className="eyebrow">{eyebrow}</span>
+        <span className="mt-3 block text-lg font-semibold leading-snug text-foreground">{title}</span>
         {sub && <span className="mt-1 block text-sm text-muted">{sub}</span>}
         {extra}
       </div>
       <span
         className={cn(
-          "mt-4 inline-flex items-center gap-1.5 self-start rounded-full px-3 py-1 text-sm font-semibold",
-          accent.soft,
+          "mt-4 inline-flex items-center gap-1.5 self-start text-sm font-semibold",
           accent.text
         )}
       >
