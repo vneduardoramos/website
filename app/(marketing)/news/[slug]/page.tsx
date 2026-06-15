@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Img as Image } from "@/components/marketing/Img";
 import { Breadcrumbs } from "@/components/marketing/Breadcrumbs";
 import { notFound } from "next/navigation";
 import { getNewsBySlug, getNews, getNewsSlugs } from "@/lib/queries";

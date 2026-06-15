@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { Img as Image } from "@/components/marketing/Img";
 import { Breadcrumbs } from "@/components/marketing/Breadcrumbs";
 import { notFound } from "next/navigation";
 import { getIndustryBySlug, getIndustrySlugs, getIndustries } from "@/lib/queries";

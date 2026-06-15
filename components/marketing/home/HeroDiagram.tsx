@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Img as Image } from "@/components/marketing/Img";
 import {
   SnowflakeIcon,
   DatabaseIcon,

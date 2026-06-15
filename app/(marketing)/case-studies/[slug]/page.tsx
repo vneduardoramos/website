@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/marketing/Breadcrumbs";
-import Image from "next/image";
+import { Img as Image } from "@/components/marketing/Img";
 import { notFound } from "next/navigation";
 import { getCaseStudyBySlug, getCaseStudySlugs, getCaseStudies } from "@/lib/queries";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";

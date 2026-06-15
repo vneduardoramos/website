@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Img as Image } from "@/components/marketing/Img";
 import Link from "next/link";
 import { PartnerBadges } from "@/components/marketing/PartnerBadges";
 import { SnowflakeLockup } from "@/components/marketing/SnowflakeLockup";

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Img as Image } from "@/components/marketing/Img";
 import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Section, SectionHeading } from "@/components/marketing/ui";

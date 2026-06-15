@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import { Img as Image } from "@/components/marketing/Img";
 import { Reveal } from "@/components/marketing/Motion";
 import { LogoRow } from "@/components/marketing/home/ClientLogos";
 import type { BandLogo } from "@/lib/client-bands";

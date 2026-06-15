@@ -1,7 +1,7 @@
 "use client";
 
 import type { ComponentType, SVGProps } from "react";
-import Image from "next/image";
+import { Img as Image } from "@/components/marketing/Img";
 import { SnowflakeIcon, CheckIcon, CpuIcon, ShieldIcon } from "@/components/marketing/home/Icons";
 import { useParallax } from "@/components/marketing/Motion";
 

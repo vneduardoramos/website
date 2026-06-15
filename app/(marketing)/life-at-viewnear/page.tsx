@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { pageMeta } from "@/lib/seo";
-import Image from "next/image";
+import { Img as Image } from "@/components/marketing/Img";
 import Link from "next/link";
 import { Section, SectionHeading, Pill } from "@/components/marketing/ui";
 import { InlineCta } from "@/components/marketing/Blocks";

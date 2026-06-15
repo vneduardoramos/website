@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import { Img as Image } from "@/components/marketing/Img";
 import type { Metadata } from "next";
 import { getSetting, getServices, safe } from "@/lib/queries";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
