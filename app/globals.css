@@ -356,11 +356,15 @@ select:focus-visible,
   background-clip: text;
   color: transparent;
 }
+/* Vibrant display gradient (the home "do more" headline). Bold blue -> violet
+   -> magenta, with all stops deep enough to meet WCAG large-text contrast on
+   white (>=3:1). Reserved for large headings, not small/body text. */
 .text-gradient-accent {
   background: linear-gradient(
-    92deg,
+    95deg,
     rgb(var(--color-royal)),
-    rgb(var(--color-primary-deep))
+    rgb(var(--color-purple)) 50%,
+    #db2777
   );
   -webkit-background-clip: text;
   background-clip: text;
