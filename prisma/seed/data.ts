@@ -56,7 +56,7 @@ export const services = [
     tier: "THINK",
     title: "Data & AI Strategy",
     summary:
-      "We help you identify where data and AI create real business value, prioritize initiatives with the highest return, and build a roadmap that turns ambition into a practical plan of action.",
+      "Turn AI ambition into a board-ready roadmap: where data and AI create measurable ROI, sequenced by value and grounded in what your data can actually support, on a clear path to the agentic enterprise.",
     tools: [],
     order: 1,
     body: "Invest with confidence and know exactly what to build next. We work with CEOs and CTOs to turn 'we need an AI strategy' into a costed, sequenced roadmap grounded in your current data readiness and focused on the use cases with the clearest return.",
@@ -66,9 +66,9 @@ export const services = [
     tier: "BUILD",
     title: "Cloud Architecture & Data Foundation",
     summary:
-      "Modern, Snowflake-first data foundations designed for scale: from initial architecture through full migration, optimization, and ongoing governance on the world's leading data cloud.",
+      "The AI-ready foundation: a governed, Snowflake-first data platform built to scale, the single source of truth every model and agent depends on.",
     tools: ["Snowflake", "Openflow", "Iceberg"],
-    order: 2,
+    order: 3,
     body: "Give every team one fast, scalable foundation to build on. We design and deliver cloud-native platforms on Snowflake, sized for the AI workloads you are planning rather than just the reporting you run today, with security and governance built in from the start.",
   },
   {
@@ -76,19 +76,19 @@ export const services = [
     tier: "BUILD",
     title: "Data Engineering & Pipelines",
     summary:
-      "Reliable pipelines that bring together data from every source (APIs, databases, flat files) into a single, governed layer your teams can actually trust.",
+      "Always-current, trusted data: governed pipelines that unify every source so your analytics and AI run on inputs you can stake decisions on.",
     tools: ["Snowflake", "Openflow", "dbt"],
-    order: 3,
+    order: 4,
     body: "Stop chasing numbers across systems. We build automated, secure pipelines that pull every source (APIs, databases, flat files) into your warehouse reliably and on schedule, so your teams work from data they can trust and your AI workloads have clean, current inputs.",
   },
   {
     slug: "data-visualisation",
     tier: "BUILD",
-    title: "Analytics & Data Visualization",
+    title: "AI Analytics & Agents",
     summary:
-      "Beautiful, actionable dashboards built for the people who use them: from executive KPI views to deep operational reports in Snowsight and Streamlit in Snowflake, plus natural-language answers through Cortex Analyst and Snowflake CoWork.",
-    tools: ["Snowsight", "Streamlit", "Cortex Analyst", "CoWork"],
-    order: 4,
+      "Put governed AI to work: Cortex Analyst and Snowflake CoWork agents that turn your governed data into cited, decision-ready answers, embedded where leaders already work.",
+    tools: ["Cortex Analyst", "Snowflake CoWork", "Snowsight", "Streamlit"],
+    order: 2,
     body: "Put answers in the hands of the people making decisions. We build the reporting and self-service layer natively in Snowflake: Snowsight dashboards and Streamlit apps for the views teams live in, with Cortex Analyst answering questions over your governed Semantic Views and Snowflake CoWork (the personal AI agent) letting business users explore and act in plain language, so anyone who needs insight can find it themselves, no waiting on the data team and no exporting to spreadsheets.",
   },
   {
@@ -96,7 +96,7 @@ export const services = [
     tier: "BUILD",
     title: "Embedded Analytics",
     summary:
-      "Differentiate your product by embedding analytics directly into your applications and client workflows, making your platform smarter without lifting a finger.",
+      "Differentiate your product: Cortex-powered intelligence embedded into your apps and client workflows, turning your platform into a competitive edge.",
     tools: ["Streamlit", "Cortex"],
     order: 5,
     body: "Make analytics a feature your customers pay for. We embed dashboards and reporting directly into your applications, client portals, and partner interfaces, so the insight lives where users already work and your product stands apart from competitors.",
@@ -106,7 +106,7 @@ export const services = [
     tier: "GROW",
     title: "Capability Development",
     summary:
-      "We don't just deliver and walk away. We embed alongside your team, upskill your people, and build internal data capability that keeps growing long after the project ends.",
+      "Compound the advantage: we embed with your team and build the in-house fluency to scale your AI use cases long after launch.",
     tools: [],
     order: 6,
     body: "Capability that outlasts the engagement. Our certified practitioners embed alongside your people, coaching through real delivery and building fluency at every level (from executive data literacy to hands-on tool training for analysts and engineers) so your team keeps improving on its own.",
