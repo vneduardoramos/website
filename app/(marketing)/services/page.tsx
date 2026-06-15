@@ -23,7 +23,10 @@ import {
   CpuIcon,
   RocketIcon,
   SnowflakeIcon,
+  ShieldIcon,
+  DataStackIcon,
 } from "@/components/marketing/home/Icons";
+import { ControlPlane } from "@/components/marketing/services/ControlPlane";
 import { getServicesByTier, getSetting, getTestimonials } from "@/lib/queries";
 import { asStringArray } from "@/lib/utils";
 import { JsonLd } from "@/components/JsonLd";
@@ -61,7 +64,7 @@ const tierMeta: Record<string, TierMeta> = {
     eyebrow: "Strategy",
     num: "01",
     intro:
-      "Set the direction. We align your data and AI ambitions with measurable business outcomes before a single pipeline is built.",
+      "Set the direction. We pinpoint where data and AI create real value and sequence a roadmap toward the agentic enterprise, grounded in what your data can support today.",
     tile: "bg-primary",
     num_cls: "text-primary/15",
     bar: "bg-primary",
@@ -72,7 +75,7 @@ const tierMeta: Record<string, TierMeta> = {
     eyebrow: "Engineering",
     num: "02",
     intro:
-      "Make it real. We design and ship the data foundations, pipelines, and models that turn strategy into working systems.",
+      "Make it real. We build the governed Snowflake foundation that AI actually needs, then the pipelines, models, and agents that run on it.",
     tile: "bg-secondary",
     num_cls: "text-secondary/15",
     bar: "bg-secondary",
@@ -83,7 +86,7 @@ const tierMeta: Record<string, TierMeta> = {
     eyebrow: "Enablement",
     num: "03",
     intro:
-      "Compound the value. We help your teams operate, scale, and continuously improve what we build together.",
+      "Compound the value. We help your teams scale AI use cases and agents into production, and keep improving them long after launch.",
     tile: "bg-accent",
     num_cls: "text-accent/15",
     bar: "bg-accent",
@@ -218,6 +221,41 @@ const stack = [
   },
 ];
 
+// Production AI we deliver on the control plane. Each pairs a capability with
+// the governance that makes it safe.
+const aiUseCases = [
+  {
+    icon: ChartIcon,
+    title: "Cortex AI & analytics",
+    body: "Cortex AISQL and Cortex Analyst answer questions over your governed Semantic Views: cited, not hallucinated.",
+  },
+  {
+    icon: CpuIcon,
+    title: "Snowflake CoWork",
+    body: "A personal AI agent that gives knowledge workers cited, governed answers and dashboards.",
+  },
+  {
+    icon: DataStackIcon,
+    title: "Snowflake CoCo",
+    body: "A coding agent for enterprise AI development, validated before it reaches production.",
+  },
+  {
+    icon: DatabaseIcon,
+    title: "RAG & semantic search",
+    body: "Retrieval and semantic search grounded in your governed data, so answers stay accurate and current.",
+  },
+  {
+    icon: ShieldIcon,
+    title: "Governed agents",
+    body: "AI Agent Identity and access controls, so every agent works within your policies, with full audit trails.",
+  },
+  {
+    icon: SnowflakeIcon,
+    title: "AI-ready data foundation",
+    body: "The prerequisite: a governed Snowflake foundation and trusted business context every model and agent relies on.",
+  },
+];
+
 export default async function ServicesPage() {
   const [tiers, faqs, testimonials] = await Promise.all([
     getServicesByTier(),
@@ -253,14 +291,14 @@ export default async function ServicesPage() {
         eyebrow="Services"
         title={
           <>
-            From strategy to{" "}
+            From strategy to the{" "}
             <ScrollHighlight color="cyan">
-              <span className="text-gradient">scale</span>
+              <span className="text-gradient">agentic enterprise</span>
             </ScrollHighlight>
             .
           </>
         }
-        description="Three tiers of engagement (THINK, BUILD, GROW) covering the full lifecycle of your data and AI investments."
+        description="Snowflake is becoming the control plane for the agentic enterprise. We take you there end to end: a governed data foundation first, then the AI and agents that run on it, across THINK, BUILD, and GROW."
       />
 
       {tiers.map(({ tier, services }) => {
@@ -326,6 +364,78 @@ export default async function ServicesPage() {
           </Section>
         );
       })}
+
+      {/* AGENTIC AI: the control-plane thesis + the AI we deliver on it */}
+      <Section className="section-tint relative overflow-hidden">
+        <SectionDecor variant="flow" />
+        <div className="relative">
+          <SectionHeading
+            size="hero"
+            eyebrow="Where this is heading"
+            title={
+              <>
+                Built for the{" "}
+                <ScrollHighlight color="cyan">
+                  <span className="text-gradient">agentic enterprise</span>
+                </ScrollHighlight>
+                .
+              </>
+            }
+            intro="Snowflake is becoming the control plane for the agentic enterprise: the governed layer where data, business context, models, agents, and workflows come together. Agentic AI does not start with agents. It starts with governed data and trusted context, and that is exactly what we build."
+          />
+          <div className="mt-12 grid items-start gap-10 lg:grid-cols-[1fr_1.1fr]">
+            <div>
+              <p className="text-lg leading-relaxed text-foreground/90">
+                As AI moves from answering questions to taking action, governance shifts from{" "}
+                <ScrollHighlight color="cyan">who can see what</ScrollHighlight> to what agents are
+                allowed to do. We deliver every layer of that control plane on Snowflake, so your
+                agents stay grounded, governed, and auditable.
+              </p>
+              <div className="mt-8">
+                <InlineCta
+                  title="Snowflake is becoming the control plane for the agentic enterprise"
+                  href="/blog/snowflake-control-plane-agentic-enterprise"
+                  label="Read the thesis"
+                />
+              </div>
+              <p className="mt-6 text-sm text-muted">
+                See the full Snowflake-native stack on the{" "}
+                <Link href="/platform" className="font-semibold text-primaryDeep link-underline">
+                  platform
+                </Link>
+                .
+              </p>
+            </div>
+            <ControlPlane />
+          </div>
+        </div>
+        <WaveDivider position="bottom" fill="fill-background" />
+      </Section>
+
+      <Section>
+        <SectionHeading
+          eyebrow="Applied AI"
+          title="The AI we put into production"
+          intro="Production AI that runs securely next to your governed data, grounded in Horizon Context and Semantic Views: cited, not hallucinated."
+        />
+        <RevealGroup
+          className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3"
+          variant="pop"
+        >
+          {aiUseCases.map((u) => {
+            const Icon = u.icon;
+            return (
+              <div key={u.title} className="card card-hover flex h-full flex-col bg-background">
+                <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primaryDeep">
+                  <Icon className="h-5 w-5" />
+                </span>
+                <h3 className="font-display text-lg font-bold text-foreground">{u.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{u.body}</p>
+              </div>
+            );
+          })}
+        </RevealGroup>
+      </Section>
 
       <Section className="section-tint">
         <FeatureSplit
