@@ -136,35 +136,6 @@ export function IndustryCard({
   );
 }
 
-function monogram(name: string) {
-  const parts = name.split(/\s+/).filter(Boolean);
-  return ((parts[0]?.[0] ?? "") + (parts[1]?.[0] ?? "")).toUpperCase() || "•";
-}
-
-export function TestimonialCard({
-  t,
-}: {
-  t: { quote: string; authorName: string; authorTitle: string; sector?: string | null };
-}) {
-  return (
-    <figure className="card card-hover flex h-full flex-col">
-      <div className="flex items-center gap-3">
-        <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/15 font-display text-base font-bold text-primaryDeep ring-1 ring-primary/30">
-          {monogram(t.authorName)}
-        </span>
-        {t.sector && <span className="pill-chip">{t.sector}</span>}
-      </div>
-      <blockquote className="mt-5 flex-1 text-xl leading-relaxed text-foreground">
-        {t.quote}
-      </blockquote>
-      <figcaption className="mt-6 text-sm">
-        <span className="font-semibold text-foreground">{t.authorName}</span>
-        <span className="block text-muted">{t.authorTitle}</span>
-      </figcaption>
-    </figure>
-  );
-}
-
 export function CtaBand({
   title = "Let's make Snowflake do more.",
   subtitle = "Tell us where you are (migrating, scaling, or building AI) and we'll map the fastest path to value.",

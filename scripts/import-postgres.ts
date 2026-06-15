@@ -30,7 +30,6 @@ async function main() {
 
   // Depend on Client / Industry.
   await prisma.caseStudy.createMany({ data: data.caseStudy });
-  await prisma.testimonial.createMany({ data: data.testimonial });
 
   // BlogPost: m2m with Tag, so create one-by-one and connect tags.
   for (const row of data.blogPost as BlogPostRow[]) {
@@ -64,7 +63,6 @@ async function main() {
   await check("industry", await prisma.industry.count());
   await check("service", await prisma.service.count());
   await check("caseStudy", await prisma.caseStudy.count());
-  await check("testimonial", await prisma.testimonial.count());
   await check("blogPost", await prisma.blogPost.count());
   await check("newsEvent", await prisma.newsEvent.count());
   await check("lead", await prisma.lead.count());

@@ -142,19 +142,11 @@ export async function getNewsBySlug(slug: string) {
   return prisma.newsEvent.findFirst({ where: { slug, ...PUBLISHED } });
 }
 
-// ---------- Team / testimonials / clients ----------
+// ---------- Team / clients ----------
 export async function getTeam() {
   return prisma.teamMember.findMany({
     where: { published: true },
     orderBy: { order: "asc" },
-  });
-}
-
-export async function getTestimonials(opts?: { featured?: boolean }) {
-  return prisma.testimonial.findMany({
-    where: { published: true, ...(opts?.featured ? { featured: true } : {}) },
-    orderBy: { order: "asc" },
-    include: { client: true },
   });
 }
 

@@ -9,7 +9,6 @@ import {
   clients,
   caseStudies,
   team,
-  testimonials,
   news,
   blogPosts,
   jobOpenings,
@@ -123,12 +122,6 @@ async function main() {
       update: { ...t, published: true },
       create: { ...t, published: true },
     });
-  }
-
-  // --- Testimonials (slug-free; key by quote+author for idempotency) ---
-  await prisma.testimonial.deleteMany({});
-  for (const t of testimonials) {
-    await prisma.testimonial.create({ data: { ...t, published: true } });
   }
 
   // --- News & events ---

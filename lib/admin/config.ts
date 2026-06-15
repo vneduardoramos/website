@@ -233,22 +233,6 @@ export const ADMIN_MODELS: Record<string, AdminModel> = {
       statusField,
     ],
   },
-  testimonial: {
-    key: "testimonial",
-    label: "Testimonial",
-    plural: "Testimonials",
-    hasStatus: false,
-    listFields: ["authorName", "sector"],
-    defaultOrderBy: { order: "asc" },
-    fields: [
-      { name: "quote", label: "Quote", type: "textarea", required: true },
-      { name: "authorName", label: "Author Name", type: "text", required: true },
-      { name: "authorTitle", label: "Author Title", type: "text", required: true },
-      { name: "sector", label: "Sector", type: "text" },
-      { name: "featured", label: "Featured", type: "boolean" },
-      { name: "order", label: "Order", type: "number" },
-    ],
-  },
   client: {
     key: "client",
     label: "Client",

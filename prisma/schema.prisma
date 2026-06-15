@@ -58,24 +58,8 @@ model Client {
   region       String?
   logoColor    String? // path to placeholder logo asset
   caseStudies  CaseStudy[]
-  testimonials Testimonial[]
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
-}
-
-model Testimonial {
-  id          String   @id @default(cuid())
-  quote       String
-  authorName  String
-  authorTitle String
-  sector      String?
-  clientId    String?
-  client      Client?  @relation(fields: [clientId], references: [id])
-  featured    Boolean  @default(false)
-  published   Boolean  @default(true)
-  order       Int      @default(0)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
 }
 
 model Service {

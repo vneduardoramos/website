@@ -21,7 +21,6 @@ async function main() {
     industry: await prisma.industry.findMany(),
     service: await prisma.service.findMany(),
     caseStudy: await prisma.caseStudy.findMany(),
-    testimonial: await prisma.testimonial.findMany(),
     blogPost: await prisma.blogPost.findMany({
       include: { tags: { select: { id: true } } },
     }),

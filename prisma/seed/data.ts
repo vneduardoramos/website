@@ -308,12 +308,6 @@ export const team = [
   { slug: "eduardo-ramos", name: "Eduardo Javier Ramos", title: "CEO", photo: "/assets/images/team/eduardo-ramos.png", linkedinUrl: "https://www.linkedin.com/in/eduardojramos/", order: 6 },
 ];
 
-export const testimonials = [
-  { quote: "Viewnear stood up a governed warehouse that replaced our manual regulatory reporting; month-end close went from three days to under two hours.", authorName: "Marcus T.", authorTitle: "Chief Operating Officer, Northwind Bank", sector: "Financial Services", featured: true, order: 1 },
-  { quote: "They consolidated five fragmented finance systems into one trusted source our team reports from every morning.", authorName: "Lucia R.", authorTitle: "Head of Business Intelligence, AndesPay", sector: "Financial Services", featured: true, order: 2 },
-  { quote: "Viewnear turned scattered production and logistics data into dashboards our managers use to run the floor.", authorName: "Daniela M.", authorTitle: "Head of Client Care, Costera Foods", sector: "Retail & CPG", featured: true, order: 3 },
-];
-
 export const news = [
   { slug: "viewnear-snowflake-elite-partner", kind: "announcement", title: "Viewnear named a Snowflake Premier Partner and CoCo Preferred Partner", excerpt: "Viewnear is recognized as a Snowflake Premier Partner and a Snowflake CoCo Preferred Partner.", body: "Viewnear is now a Snowflake Premier Partner and a Snowflake CoCo Preferred Partner, a status earned through SnowPro-certified engineers and a verified, end-to-end delivery track record. Clients can procure Snowflake through Viewnear on consumption-based terms and rely on a single accountable team across the Americas." },
   { slug: "viewnear-elite-partner-founder-story", kind: "press", title: "How Viewnear became a Snowflake partner in just four years", excerpt: "The founder story behind Viewnear's rapid rise.", body: "From a small specialist team to a trusted Snowflake Services Partner serving clients across Canada, the USA, Mexico, LATAM, and the Caribbean: the story of how Viewnear became a Snowflake partner in just four years by building deep expertise and a verified delivery track record." },

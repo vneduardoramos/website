@@ -4,7 +4,6 @@ import {
   Section,
   SectionHeading,
   Pill,
-  TestimonialCard,
   CtaBand,
 } from "@/components/marketing/ui";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
@@ -28,7 +27,7 @@ import {
   PenIcon,
 } from "@/components/marketing/home/Icons";
 import { ControlPlane } from "@/components/marketing/services/ControlPlane";
-import { getServicesByTier, getSetting, getTestimonials } from "@/lib/queries";
+import { getServicesByTier, getSetting } from "@/lib/queries";
 import { asStringArray } from "@/lib/utils";
 import { JsonLd } from "@/components/JsonLd";
 import { theme } from "@/config/theme";
@@ -258,10 +257,9 @@ const aiUseCases = [
 ];
 
 export default async function ServicesPage() {
-  const [tiers, faqs, testimonials] = await Promise.all([
+  const [tiers, faqs] = await Promise.all([
     getServicesByTier(),
     getSetting<{ q: string; a: string }[]>("faqs"),
-    getTestimonials({ featured: true }),
   ]);
 
   const provider = {
@@ -677,20 +675,6 @@ export default async function ServicesPage() {
               </details>
             ))}
           </div>
-        </Section>
-      )}
-
-      {testimonials.length > 0 && (
-        <Section className="bg-surface">
-          <SectionHeading
-            eyebrow="Customer feedback"
-            title="The impact teams describe"
-          />
-          <RevealGroup className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12" variant="fade-up">
-            {testimonials.map((t, i) => (
-              <TestimonialCard key={i} t={t} />
-            ))}
-          </RevealGroup>
         </Section>
       )}
 
