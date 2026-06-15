@@ -21,7 +21,7 @@ const FEATURED = {
   sector: "Insurance",
   region: "Americas",
   slug: FEATURED_CASE_SLUG,
-  title: "Automating claims classification with Snowflake Cortex AI",
+  title: "From hand-sorted documents to 95% accurate claims classification in seconds",
   summary:
     "Sorting documents from many insurance providers by hand caused delays, errors, and lost files. Using Snowflake Cortex AI functions like AI_EXTRACT, Viewnear automated classification and extraction, lifting accuracy from 60% to 95% and cutting per-document handling to four seconds.",
   metrics: [
