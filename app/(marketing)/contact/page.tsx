@@ -4,6 +4,7 @@ import { Section } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 import { ContactForm } from "@/components/marketing/ContactForm";
 import { SectionDecor } from "@/components/marketing/Decor";
+import { SnowflakeLockup } from "@/components/marketing/SnowflakeLockup";
 import { LeadershipStrip } from "@/components/marketing/LeadershipStrip";
 import { getSetting } from "@/lib/queries";
 import { theme } from "@/config/theme";
@@ -114,6 +115,12 @@ export default async function ContactPage() {
                 <span className="pill-chip">CoCo Preferred Partner</span>
                 <span className="pill-chip">SnowPro-certified</span>
               </div>
+              <SnowflakeLockup
+                variant="default"
+                label="Built on Snowflake"
+                height={24}
+                className="mt-5"
+              />
             </div>
             <ContactForm />
           </div>

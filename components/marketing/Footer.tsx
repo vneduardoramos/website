@@ -2,6 +2,7 @@ import Link from "next/link";
 import { theme } from "@/config/theme";
 import { Logo } from "@/components/marketing/Logo";
 import { PartnerBadges } from "@/components/marketing/PartnerBadges";
+import { SnowflakeLockup } from "@/components/marketing/SnowflakeLockup";
 
 const groups = [
   {
@@ -63,6 +64,12 @@ export function Footer() {
               </a>
             </p>
             <PartnerBadges variant="logos" size="sm" className="mt-6" />
+            <SnowflakeLockup
+              variant="default"
+              label="Built on Snowflake"
+              height={22}
+              className="mt-6"
+            />
           </div>
           {groups.map((g) => (
             <div key={g.title}>

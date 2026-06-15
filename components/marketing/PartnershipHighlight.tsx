@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PartnerBadges } from "@/components/marketing/PartnerBadges";
+import { SnowflakeLockup } from "@/components/marketing/SnowflakeLockup";
 import { SectionDecor } from "@/components/marketing/Decor";
 
 const STATS = [
@@ -40,7 +41,14 @@ export function PartnershipHighlight({
             like Accenture, Deloitte, IBM, and Capgemini.
           </p>
 
-          <div className="mt-8">
+          <SnowflakeLockup
+            variant="default"
+            label="Built on Snowflake"
+            height={28}
+            className="mt-8"
+          />
+
+          <div className="mt-6">
             <PartnerBadges variant="logos" />
           </div>
 

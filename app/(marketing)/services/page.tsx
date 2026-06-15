@@ -8,6 +8,7 @@ import {
   CtaBand,
 } from "@/components/marketing/ui";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
+import { SnowflakeLockup } from "@/components/marketing/SnowflakeLockup";
 import { LeadershipStrip } from "@/components/marketing/LeadershipStrip";
 import { ShowcaseBand } from "@/components/marketing/ShowcaseBand";
 import { MetricBand, InlineCta } from "@/components/marketing/Blocks";
@@ -438,6 +439,12 @@ export default async function ServicesPage() {
       </Section>
 
       <Section className="section-tint">
+        <SnowflakeLockup
+          variant="default"
+          label="Built on Snowflake"
+          height={30}
+          className="mb-10"
+        />
         <FeatureSplit
           eyebrow="The Snowflake stack"
           title={
