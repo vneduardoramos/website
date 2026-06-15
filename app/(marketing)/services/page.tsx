@@ -383,26 +383,30 @@ export default async function ServicesPage() {
             }
             intro="Snowflake is becoming the control plane for the agentic enterprise: the governed layer where data, business context, models, agents, and workflows come together. Agentic AI does not start with agents. It starts with governed data and trusted context, and that is exactly what we build."
           />
-          <p className="mt-8 max-w-3xl text-lg leading-relaxed text-foreground/90">
-            As AI moves from answering questions to taking action, governance shifts from{" "}
-            <ScrollHighlight color="cyan">who can see what</ScrollHighlight> to what agents are
-            allowed to do. We deliver every layer of that control plane on Snowflake, so your agents
-            stay grounded, governed, and auditable.
-          </p>
-          <ControlPlane className="mt-12" />
-          <div className="mt-12 max-w-2xl">
-            <InlineCta
-              title="Snowflake is becoming the control plane for the agentic enterprise"
-              href="/blog/snowflake-control-plane-agentic-enterprise"
-              label="Read the thesis"
-            />
-            <p className="mt-6 text-sm text-muted">
-              See the full Snowflake-native stack on the{" "}
-              <Link href="/platform" className="font-semibold text-primaryDeep link-underline">
-                platform
-              </Link>
-              .
-            </p>
+          <div className="mt-12 grid items-start gap-10 lg:grid-cols-[1fr_1.1fr]">
+            <div>
+              <p className="text-lg leading-relaxed text-foreground/90">
+                As AI moves from answering questions to taking action, governance shifts from{" "}
+                <ScrollHighlight color="cyan">who can see what</ScrollHighlight> to what agents are
+                allowed to do. We deliver every layer of that control plane on Snowflake, so your
+                agents stay grounded, governed, and auditable.
+              </p>
+              <div className="mt-8">
+                <InlineCta
+                  title="Snowflake is becoming the control plane for the agentic enterprise"
+                  href="/blog/snowflake-control-plane-agentic-enterprise"
+                  label="Read the thesis"
+                />
+              </div>
+              <p className="mt-6 text-sm text-muted">
+                See the full Snowflake-native stack on the{" "}
+                <Link href="/platform" className="font-semibold text-primaryDeep link-underline">
+                  platform
+                </Link>
+                .
+              </p>
+            </div>
+            <ControlPlane />
           </div>
         </div>
         <WaveDivider position="bottom" fill="fill-background" />

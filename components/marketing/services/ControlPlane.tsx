@@ -39,7 +39,7 @@ const LAYERS = [
 export function ControlPlane({ className }: { className?: string }) {
   return (
     <div className={className}>
-      <div className="grid gap-4 sm:grid-cols-2 md:auto-rows-fr lg:grid-cols-3">
+      <div className="grid auto-rows-fr gap-3">
         {LAYERS.map((layer, i) => (
           <div
             key={layer.name}
