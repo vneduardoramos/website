@@ -22,3 +22,6 @@ prisma/*.db
 
 # one-time SQLite->Postgres data dump (local migration artifact)
 prisma/data-export.json
+
+# visual-companion brainstorm artifacts
+.superpowers/
