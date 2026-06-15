@@ -6,6 +6,7 @@ import { PageHero } from "@/components/marketing/PageHero";
 import { ApplicationForm } from "@/components/marketing/ApplicationForm";
 import { JsonLd } from "@/components/JsonLd";
 import { getJobOpeningBySlug, getJobSlugs } from "@/lib/queries";
+import { Markdown } from "@/lib/content";
 import { asStringArray } from "@/lib/utils";
 import { theme } from "@/config/theme";
 import { pageMeta } from "@/lib/seo";
@@ -113,11 +114,20 @@ export default async function CareerDetailPage({
 
       <Section>
         <div className="mx-auto max-w-3xl">
-          <SectionHeading eyebrow="About the role" title="What you'll do" />
-          <p className="mt-6 text-lg leading-relaxed text-muted">{job.description}</p>
+          {job.body ? (
+            <div className="prose-vn">
+              <Markdown>{job.body}</Markdown>
+            </div>
+          ) : (
+            // Fallback for roles without a detailed body yet.
+            <>
+              <SectionHeading eyebrow="About the role" title="What you'll do" />
+              <p className="mt-6 text-lg leading-relaxed text-muted">{job.description}</p>
+            </>
+          )}
 
           {skills.length > 0 ? (
-            <div className="mt-8">
+            <div className="mt-10 border-t border-border pt-8">
               <p className="eyebrow mb-3">Skills &amp; tools</p>
               <div className="flex flex-wrap gap-2">
                 {skills.map((s) => (

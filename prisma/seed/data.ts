@@ -344,10 +344,67 @@ export const blogPosts = [
 ];
 
 export const jobOpenings = [
-  { slug: "senior-data-engineer", title: "Senior Data Engineer", employment: "Full-time · Hybrid", location: "Toronto / Remote (Americas)", description: "Build reliable, governed data pipelines on Snowflake for clients across the Americas.", skills: ["Snowflake", "SQL", "Python", "Openflow", "dbt"], order: 1 },
-  { slug: "analytics-consultant", title: "Analytics Consultant", employment: "Full-time · Hybrid", location: "USA / Remote", description: "Turn governed data into decisions with Snowsight, Streamlit, and Snowflake CoWork.", skills: ["Snowsight", "Streamlit", "Cortex Analyst", "Data modelling"], order: 2 },
-  { slug: "data-strategy-lead", title: "Data Strategy Lead", employment: "Full-time · Remote", location: "Remote (Americas)", description: "Work with executive teams to sequence AI and data roadmaps grounded in reality.", skills: ["Strategy", "Stakeholder management", "AI use cases"], order: 3 },
-  { slug: "cloud-platform-architect", title: "Cloud Platform Architect", employment: "Full-time · Hybrid", location: "Mexico City / Remote", description: "Design Snowflake-first data platforms built for AI workloads at scale.", skills: ["Snowflake", "Cloud architecture", "Governance", "Security"], order: 4 },
+  {
+    slug: "senior-data-ai-engineer",
+    title: "Senior Data & AI Engineer",
+    employment: "Full-time",
+    location: "Remote (Americas)",
+    description: "Design, build, and scale modern data and AI solutions on Snowflake, turning complex business operations into trusted, production-ready systems.",
+    skills: ["Snowflake", "SQL", "Python", "Snowpark", "Cortex", "RAG & LLMs", "dbt", "Data modeling"],
+    order: 1,
+    body: `## About the role
+
+At Viewnear, we help companies turn data into real business value through modern analytics, cloud data platforms, and AI-ready solutions. As a Snowflake Partner, we work closely with organizations that want to modernize their data stack, improve decision-making, and build a trusted foundation for AI.
+
+We're looking for a Senior Data & AI Engineer who brings strong technical depth, ownership, and execution discipline to our Snowflake practice.
+
+This role is for someone who knows that great data and AI work is not built through big talk. It is built through clean architecture, reliable pipelines, thoughtful modeling, strong engineering habits, and the willingness to solve complex problems when the path is not perfectly clear.
+
+You will help design, build, and scale modern data and AI solutions on Snowflake, turning complex business operations into trusted, usable, production-ready systems.
+
+## What you'll do
+
+You will lead the design and implementation of data platforms, pipelines, data models, and AI-ready architectures using Snowflake as the core cloud data platform.
+
+You will work closely with business, analytics, engineering, and leadership teams to understand operational challenges, translate them into technical requirements, and deliver solutions that create measurable business value.
+
+You will help bring AI use cases from concept to production by preparing trusted data, building scalable integration patterns, and supporting solutions such as LLM applications, RAG architectures, semantic search, automation workflows, and AI-powered analytics.
+
+This is a hands-on role. You will write SQL and Python, design data models, build ELT pipelines, review technical designs, troubleshoot performance issues, document decisions, and mentor others on the team.
+
+## What we're looking for
+
+Strong experience across:
+
+- Snowflake architecture, development, performance tuning, cost optimization, and security
+- Data engineering with SQL, Python, Snowpark, Snowflake Cortex, Tasks, Streams, Dynamic Tables, and Stored Procedures
+- ELT pipeline design, data modeling, dimensional modeling, semantic layers, and analytics engineering
+- Data integration patterns using APIs, files, external stages, cloud storage, and orchestration tools
+- AI and ML enablement: trusted data pipelines, vector search, RAG patterns, LLM integrations, and production AI workflows
+- Building production-grade systems with testing, monitoring, governance, access control, documentation, and cost awareness
+- Working directly with business stakeholders to clarify needs and turn them into practical technical solutions
+- Leading technical conversations without ego and raising the quality bar for the team
+
+Experience with dbt, Airflow, Fivetran, Matillion, Coalesce, Sigma, Power BI, Tableau, Azure, AWS, or GCP is a plus.
+
+## The kind of person who succeeds here
+
+You are the person who keeps showing up.
+
+You take ownership of messy source systems, unclear requirements, broken pipelines, performance bottlenecks, and ambitious goals, then work through them with patience and precision.
+
+You do not need everything to be perfect before you start. You know how to ask the right questions, make smart tradeoffs, and move the work forward.
+
+You care about clean architecture, but you also care about getting useful solutions into people's hands. You understand that trust in data is earned one correct number, one reliable pipeline, and one well-built solution at a time.
+
+You bring technical depth, but also humility. You help others get better. You make the team stronger.
+
+## What success looks like
+
+Success means our clients trust their data, AI use cases move beyond demos, pipelines run reliably, and business teams make faster, better decisions.
+
+You will help build the Snowflake foundation that allows ambitious ideas to become real systems. We're looking for someone ready to do the work, carry responsibility, and help the team win.`,
+  },
 ];
 
 // Flat list with a `category` for grouping on /faq; home & services read q/a only.

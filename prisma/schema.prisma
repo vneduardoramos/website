@@ -227,7 +227,8 @@ model JobOpening {
   title        String
   employment   String
   location     String?
-  description  String
+  description  String // short summary (hero subtitle, listing card, SEO)
+  body         String? // full role detail, Markdown (About the role / What you'll do / What we're looking for)
   skills       String? // string[]
   status       String           @default("PUBLISHED")
   publishedAt  DateTime?

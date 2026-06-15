@@ -177,6 +177,7 @@ async function main() {
       employment: j.employment,
       location: j.location,
       description: j.description,
+      body: readBody("careers", j.slug) ?? j.body ?? null,
       skills: J(j.skills),
       order: j.order,
       status: "PUBLISHED",
