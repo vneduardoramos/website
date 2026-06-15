@@ -9,7 +9,7 @@ import {
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { LeadershipStrip } from "@/components/marketing/LeadershipStrip";
 import { ShowcaseBand } from "@/components/marketing/ShowcaseBand";
-import { LogoStrip, MetricBand, InlineCta } from "@/components/marketing/Blocks";
+import { MetricBand, InlineCta } from "@/components/marketing/Blocks";
 import { PageHero } from "@/components/marketing/PageHero";
 import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
@@ -171,6 +171,49 @@ const runPhases = [
   {
     title: "Built to hand over",
     body: "Documentation, enablement, and a transition plan in every engagement, so your team runs and extends the work confidently.",
+  },
+];
+
+const stack = [
+  {
+    layer: "Foundation",
+    name: "Snowflake",
+    body: "The single governed platform every layer runs on: one copy of your data, one place to secure, and one lineage to audit.",
+  },
+  {
+    layer: "Ingestion",
+    name: "Openflow",
+    body: "Managed integration on Apache NiFi for batch and streaming, so every source lands governed without bolting on a separate ETL vendor.",
+  },
+  {
+    layer: "Transformation",
+    name: "dbt",
+    body: "Our transformation framework of choice, run natively against Snowflake for tested, documented, version-controlled models.",
+  },
+  {
+    layer: "Engineering",
+    name: "Snowpark",
+    body: "Python, Java, and Scala pipelines and UDFs that execute next to the data: no movement, no separate compute to secure.",
+  },
+  {
+    layer: "Open storage",
+    name: "Apache Iceberg",
+    body: "An open, governed copy of your data that stays portable and queryable by any engine, so you are never locked in.",
+  },
+  {
+    layer: "Governance",
+    name: "Horizon Catalog",
+    body: "Lineage, access history, classification, and policy across your estate: the audit trail and trusted context AI depends on.",
+  },
+  {
+    layer: "AI & agents",
+    name: "Cortex",
+    body: "LLM and ML functions that run securely beside governed data, from SQL-level calls to natural-language analytics.",
+  },
+  {
+    layer: "Apps & consumption",
+    name: "Streamlit",
+    body: "Interactive data apps shipped right next to the data, so insight lands where people already work.",
   },
 ];
 
@@ -389,19 +432,28 @@ export default async function ServicesPage() {
       </Section>
 
       <Section className="section-tint">
-        <LogoStrip
-          label="The Snowflake-native stack we build on"
-          items={[
-            "Snowflake",
-            "Openflow",
-            "dbt",
-            "Snowpark",
-            "Cortex",
-            "Horizon Catalog",
-            "Streamlit",
-            "Iceberg",
-          ]}
+        <SectionHeading
+          eyebrow="What we build on"
+          title="The Snowflake-native stack we build on"
+          intro="We build natively on Snowflake end to end, leading with these products over third-party tools. One governed copy of your data, one lineage to audit, and trusted context every AI agent can rely on."
         />
+        <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-4" variant="pop">
+          {stack.map((s) => (
+            <div key={s.name} className="card card-hover flex h-full flex-col bg-background">
+              <span className="font-mono text-xs uppercase tracking-[0.18em] text-primaryDeep">
+                {s.layer}
+              </span>
+              <h3 className="mt-3 font-display text-lg font-bold text-foreground">
+                {s.name}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted">{s.body}</p>
+            </div>
+          ))}
+        </RevealGroup>
+        <p className="mt-8 text-sm text-muted">
+          dbt is the one external framework we run, natively against Snowflake. Everything
+          else is Snowflake-native, so governance and AI context stay in one place.
+        </p>
         <div className="mx-auto mt-12 max-w-3xl">
           <InlineCta
             title="See the full Snowflake-native stack we build on"
