@@ -1,10 +1,12 @@
 import Link from "next/link";
+import type { ComponentType, SVGProps } from "react";
 import {
   DatabaseIcon,
   PipelineIcon,
   ChartIcon,
   CpuIcon,
-  ShieldIcon,
+  CompassIcon,
+  RocketIcon,
   SnowflakeIcon,
   CheckIcon,
 } from "./Icons";
@@ -12,7 +14,17 @@ import { RevealGroup } from "@/components/marketing/Motion";
 
 type Service = { slug: string; title: string; summary: string };
 
-const ICONS = [DatabaseIcon, PipelineIcon, ChartIcon, CpuIcon, ShieldIcon, SnowflakeIcon];
+// Icon per service slug (matches the services page), so each card's icon fits
+// its service. AI Analytics & Agents gets the chip; falls back to the Snowflake mark.
+const SERVICE_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
+  "ai-data-strategy": CompassIcon,
+  "data-visualisation": CpuIcon, // AI Analytics & Agents
+  "cloud-architecture": DatabaseIcon,
+  "data-engineering": PipelineIcon,
+  "embedded-analytics": ChartIcon,
+  "capability-development": RocketIcon,
+};
+const iconFor = (slug: string) => SERVICE_ICONS[slug] ?? SnowflakeIcon;
 
 // Subtle, persuasive company facts for the no-card filler (left column, row 2).
 const FILLER_POINTS = [
@@ -27,10 +39,10 @@ export function ServicesGrid({ services }: { services: Service[] }) {
   const [lead, ...rest] = cards;
   if (!lead) return null;
 
-  const LeadIcon = ICONS[0];
+  const LeadIcon = iconFor(lead.slug);
 
-  const renderCard = (svc: Service, restIndex: number) => {
-    const Icon = ICONS[(restIndex + 1) % ICONS.length];
+  const renderCard = (svc: Service) => {
+    const Icon = iconFor(svc.slug);
     return (
       <Link key={svc.slug} href="/services" className="card card-hover group flex h-full flex-col">
         <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primaryDeep">
@@ -82,7 +94,7 @@ export function ServicesGrid({ services }: { services: Service[] }) {
           </Link>
 
           {/* Top-right tile (Data Engineering) */}
-          {rest[0] && renderCard(rest[0], 0)}
+          {rest[0] && renderCard(rest[0])}
 
           {/* No-card filler: subtle, persuasive company facts (left column, row 2) */}
           <div className="flex flex-col justify-center py-2 lg:col-span-2 lg:pr-6">
@@ -108,7 +120,7 @@ export function ServicesGrid({ services }: { services: Service[] }) {
           </div>
 
           {/* Right tile (Analytics) + the remaining three tiles */}
-          {rest.slice(1).map((svc, i) => renderCard(svc, i + 1))}
+          {rest.slice(1).map((svc) => renderCard(svc))}
         </RevealGroup>
       </div>
     </section>
