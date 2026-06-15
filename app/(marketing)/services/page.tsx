@@ -24,7 +24,7 @@ import {
   RocketIcon,
   SnowflakeIcon,
   ShieldIcon,
-  DataStackIcon,
+  PenIcon,
 } from "@/components/marketing/home/Icons";
 import { ControlPlane } from "@/components/marketing/services/ControlPlane";
 import { getServicesByTier, getSetting, getTestimonials } from "@/lib/queries";
@@ -36,7 +36,7 @@ import type { ComponentType, SVGProps } from "react";
 const SERVICE_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   "ai-data-strategy": CompassIcon, // strategy / direction
   "data-visualisation": CpuIcon, // AI Analytics & Agents (AI/compute)
-  "cloud-architecture": DataStackIcon, // layered data foundation
+  "cloud-architecture": DatabaseIcon, // data foundation
   "data-engineering": PipelineIcon, // pipelines
   "embedded-analytics": ChartIcon, // analytics embedded in product
   "capability-development": RocketIcon, // growth / enablement
@@ -225,22 +225,22 @@ const stack = [
 // the governance that makes it safe.
 const aiUseCases = [
   {
-    icon: ChartIcon,
+    icon: CpuIcon,
     title: "Cortex AI & analytics",
     body: "Cortex AISQL and Cortex Analyst answer questions over your governed Semantic Views: cited, not hallucinated.",
   },
   {
-    icon: CpuIcon,
+    icon: ChartIcon,
     title: "Snowflake CoWork",
     body: "A personal AI agent that gives knowledge workers cited, governed answers and dashboards.",
   },
   {
-    icon: DataStackIcon,
+    icon: PenIcon,
     title: "Snowflake CoCo",
     body: "A coding agent for enterprise AI development, validated before it reaches production.",
   },
   {
-    icon: DatabaseIcon,
+    icon: CompassIcon,
     title: "RAG & semantic search",
     body: "Retrieval and semantic search grounded in your governed data, so answers stay accurate and current.",
   },
@@ -250,7 +250,7 @@ const aiUseCases = [
     body: "AI Agent Identity and access controls, so every agent works within your policies, with full audit trails.",
   },
   {
-    icon: SnowflakeIcon,
+    icon: DatabaseIcon,
     title: "AI-ready data foundation",
     body: "The prerequisite: a governed Snowflake foundation and trusted business context every model and agent relies on.",
   },
