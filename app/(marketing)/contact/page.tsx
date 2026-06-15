@@ -73,8 +73,8 @@ export default async function ContactPage() {
             <div className="relative mt-10 overflow-hidden rounded-2xl border border-border shadow-lg">
               <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-tr from-primary/25 via-transparent to-accent/15" />
               <Image
-                src="/assets/images/photos/collaboration.jpg"
-                alt="Viewnear consultants collaborating"
+                src="/assets/images/photos/contact-handshake.jpg"
+                alt="A warm handshake welcoming a new Viewnear client"
                 width={720}
                 height={480}
                 className="aspect-[3/2] w-full object-cover"
