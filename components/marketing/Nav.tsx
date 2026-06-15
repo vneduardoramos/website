@@ -375,11 +375,21 @@ export function Nav({ navData }: { navData?: NavData }) {
                       : "pointer-events-none invisible translate-y-2 opacity-0"
                   )}
                 >
-                  <div className="relative overflow-hidden rounded-2xl border border-border bg-surface/95 p-4 shadow-soft-lg backdrop-blur">
-                    <span
-                      className={cn("pointer-events-none absolute inset-x-0 top-0 h-0.5", accent.bar)}
-                      aria-hidden="true"
-                    />
+                  <div
+                    style={{
+                      // The big "main card" wears the brand cut-corner motif: a
+                      // clipped corner + a 1px accent hairline framing the whole
+                      // panel, themed to this menu's accent. Drop-shadow (not
+                      // box-shadow) so the float respects the clipped silhouette.
+                      "--eyebrow-accent": accent.eb,
+                      clipPath:
+                        "polygon(0 0, 100% 0, 100% calc(100% - 1rem), calc(100% - 1rem) 100%, 0 100%)",
+                      boxShadow: `inset 0 0 0 1px rgb(${accent.eb} / 0.3)`,
+                      background: "rgb(var(--color-surface) / 0.97)",
+                      filter: "drop-shadow(0 16px 30px rgb(15 37 48 / 0.14))",
+                    } as React.CSSProperties}
+                    className="relative p-5 backdrop-blur"
+                  >
                     <div className="grid gap-6 lg:grid-cols-[1fr_18rem]">
                       <ul
                         className={cn(
