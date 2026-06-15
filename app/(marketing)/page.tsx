@@ -77,7 +77,7 @@ const HORIZONS = [
 // they read on the deep indigo Proof & Trust band).
 const BADGES = [
   { src: "/assets/images/certs/premier.webp", alt: "Snowflake Premier Partner badge", w: 460, h: 460 },
-  { src: "/assets/images/certs/coco-preferred.png", alt: "Snowflake CoCo Catalyst Partner badge", w: 1910, h: 1572 },
+  { src: "/assets/images/certs/coco-preferred.png", alt: "Snowflake CoCo Preferred Partner badge", w: 1910, h: 1572 },
   { src: "/assets/images/certs/snowpro-core.png", alt: "SnowPro Core certification badge", w: 487, h: 402 },
 ];
 
@@ -249,7 +249,7 @@ export default async function HomePage() {
                   A Snowflake partner enterprises trust.
                 </h2>
                 <p className="mt-4 max-w-lg text-lg leading-relaxed text-white/75">
-                  Recognized in Snowflake&rsquo;s CoCo Catalyst program at Summit 2026,
+                  Recognized in Snowflake&rsquo;s CoCo Preferred Partner program at Summit 2026,
                   alongside Accenture, Deloitte, IBM, and Capgemini.
                 </p>
                 <div className="mt-7 flex flex-wrap items-center gap-6">
@@ -310,7 +310,7 @@ export default async function HomePage() {
         <MetricBand
           metrics={[
             { value: "Premier", label: "Snowflake Partner tier" },
-            { value: "CoCo", label: "Catalyst Partner" },
+            { value: "CoCo", label: "Preferred Partner" },
             { value: "8–16 wks", label: "Typical time to production" },
             { value: "Americas", label: "Where we deliver" },
           ]}

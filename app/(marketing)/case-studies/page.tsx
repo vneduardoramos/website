@@ -119,7 +119,7 @@ export default async function CaseStudiesPage() {
             Proof you can verify today.
           </h2>
           <p className="mt-3 max-w-2xl text-muted">
-            Viewnear is a Snowflake Premier Partner and a CoCo Catalyst partner,
+            Viewnear is a Snowflake Premier Partner and a CoCo Preferred Partner,
             with a SnowPro-certified team. That status is verifiable today,
             independent of any single engagement.
           </p>

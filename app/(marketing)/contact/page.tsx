@@ -110,7 +110,7 @@ export default async function ContactPage() {
               <p className="eyebrow">Verified credentials</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 <span className="pill-chip">Snowflake Premier Partner</span>
-                <span className="pill-chip">CoCo Catalyst</span>
+                <span className="pill-chip">CoCo Preferred Partner</span>
                 <span className="pill-chip">SnowPro-certified</span>
               </div>
             </div>

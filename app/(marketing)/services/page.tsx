@@ -125,7 +125,7 @@ const engagementModels = [
 // What every client gets regardless of which model they choose: the UVP.
 const engagementValue = [
   { title: "One certified team, versed at every level", body: "One accountable team: the people who scope your work are the ones who deliver it." },
-  { title: "Premier & CoCo Catalyst", body: "A SnowPro-certified team and a verified, end-to-end Snowflake delivery track record." },
+  { title: "Premier & CoCo Preferred Partner", body: "A SnowPro-certified team and a verified, end-to-end Snowflake delivery track record." },
   { title: "Priced to outcomes", body: "Scope and price agreed up front, whatever the model, so there are no surprises." },
   { title: "Governance built in", body: "Security, lineage, and access control designed in from the first table, not bolted on." },
   { title: "Handover and enablement", body: "Full handover, documentation, and enablement so your team runs it confidently." },

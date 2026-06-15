@@ -26,8 +26,8 @@ export const siteSettings: Record<string, unknown> = {
         body: "A top-tier Snowflake Services Partner with SnowPro-certified engineers and a verified, end-to-end delivery track record across the Americas: from architecture and migration to analytics and AI.",
       },
       {
-        title: "Snowflake CoCo Catalyst Partner",
-        body: "Recognized in Snowflake's CoCo Catalyst program for building on Snowflake CoCo, the coding agent, to ship enterprise data products and AI: governed and validated before they reach production.",
+        title: "Snowflake CoCo Preferred Partner",
+        body: "Recognized as a Snowflake CoCo Preferred Partner for building on Snowflake CoCo, the coding agent, to ship enterprise data products and AI: governed and validated before they reach production.",
       },
       {
         title: "Snowflake procurement, simplified",
@@ -315,9 +315,8 @@ export const testimonials = [
 ];
 
 export const news = [
-  { slug: "viewnear-snowflake-elite-partner", kind: "announcement", title: "Viewnear named a Snowflake Premier Partner and CoCo Catalyst Partner", excerpt: "Viewnear is recognized as a Snowflake Premier Partner and a CoCo Catalyst partner.", body: "Viewnear is now a Snowflake Premier Partner and is recognized in Snowflake's CoCo Catalyst program, a status earned through SnowPro-certified engineers and a verified, end-to-end delivery track record. Clients can procure Snowflake through Viewnear on consumption-based terms and rely on a single accountable team across the Americas." },
+  { slug: "viewnear-snowflake-elite-partner", kind: "announcement", title: "Viewnear named a Snowflake Premier Partner and CoCo Preferred Partner", excerpt: "Viewnear is recognized as a Snowflake Premier Partner and a Snowflake CoCo Preferred Partner.", body: "Viewnear is now a Snowflake Premier Partner and a Snowflake CoCo Preferred Partner, a status earned through SnowPro-certified engineers and a verified, end-to-end delivery track record. Clients can procure Snowflake through Viewnear on consumption-based terms and rely on a single accountable team across the Americas." },
   { slug: "viewnear-elite-partner-founder-story", kind: "press", title: "How Viewnear became a Snowflake partner in just four years", excerpt: "The founder story behind Viewnear's rapid rise.", body: "From a small specialist team to a trusted Snowflake Services Partner serving clients across Canada, the USA, Mexico, LATAM, and the Caribbean: the story of how Viewnear became a Snowflake partner in just four years by building deep expertise and a verified delivery track record." },
-  { slug: "viewnear-data-superhero", kind: "announcement", title: "Viewnear director named a Snowflake Data Superhero", excerpt: "Recognition for community contribution and technical leadership.", body: "A Viewnear director has been named a Snowflake Data Superhero, recognizing sustained contribution to the data community and technical leadership across the Americas." },
   { slug: "viewnear-executive-roundtable", kind: "event", title: "Executive roundtable explores AI and data strategy in financial services", excerpt: "Viewnear hosts an executive roundtable on AI and data strategy.", body: "Viewnear convened senior leaders to explore how AI and data strategy are reshaping financial services, with practical sessions on Snowflake Cortex and governed AI.", venue: "Toronto, Canada", agenda: [{ time: "09:00", item: "Welcome & breakfast" }, { time: "09:30", item: "Keynote: There is no AI strategy without a data strategy" }, { time: "10:30", item: "Panel: AI in financial services" }] },
   { slug: "viewnear-manufacturing-collaboration", kind: "event", title: "Manufacturing data collaboration workshop explores value realisation", excerpt: "A workshop on realising value from manufacturing data.", body: "Viewnear ran a collaborative workshop with manufacturing leaders exploring how to realise measurable value from shop-floor and operational data on Snowflake." },
   { slug: "viewnear-americas-expansion", kind: "announcement", title: "Viewnear expands across the Americas", excerpt: "New presence to support clients across North and Latin America.", body: "Viewnear announces expanded operations to better serve clients across Canada, the USA, Mexico, LATAM, and the Caribbean." },
@@ -409,7 +408,7 @@ You will help build the Snowflake foundation that allows ambitious ideas to beco
 
 // Flat list with a `category` for grouping on /faq; home & services read q/a only.
 export const faqs = [
-  { category: "Partnership & certifications", q: "What Snowflake partner status does Viewnear hold?", a: "Viewnear is a Snowflake Premier Partner and a Snowflake CoCo Catalyst partner, with SnowPro-certified engineers and a verified, end-to-end delivery track record across the Americas." },
+  { category: "Partnership & certifications", q: "What Snowflake partner status does Viewnear hold?", a: "Viewnear is a Snowflake Premier Partner and a Snowflake CoCo Preferred Partner, with SnowPro-certified engineers and a verified, end-to-end delivery track record across the Americas." },
   { category: "Partnership & certifications", q: "What does a Premier Partner unlock for us?", a: "Co-sell alignment with your Snowflake account team, the option to procure Snowflake through us (consumption-based, so you pay for what you use), early access to new capabilities (Cortex, Openflow, Horizon Catalog, CoCo, and CoWork), and certified delivery on every engagement." },
   { category: "Partnership & certifications", q: "How does Snowflake pricing work, and can we buy it through Viewnear?", a: "Snowflake is consumption-based: you pay for the compute (credits) and storage you actually use, on one open platform. You can procure your Snowflake capacity through Viewnear for simpler commercial terms and account management under one accountable partner." },
   { category: "Delivery & engagements", q: "How long does a Snowflake implementation take?", a: "A typical initial production build runs 8–16 weeks, depending on data volume, source complexity, and the number of use cases in scope. We deliver value from sprint one." },

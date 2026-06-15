@@ -16,7 +16,7 @@ const PILLS = [
 // Official Snowflake badges, spread in a large triangle over the mesh.
 const BADGES = [
   { src: "/assets/images/certs/premier.webp", alt: "Snowflake Premier Partner badge", w: 460, h: 460 },
-  { src: "/assets/images/certs/coco-preferred.png", alt: "Snowflake CoCo Catalyst Partner badge", w: 1910, h: 1572 },
+  { src: "/assets/images/certs/coco-preferred.png", alt: "Snowflake CoCo Preferred Partner badge", w: 1910, h: 1572 },
   { src: "/assets/images/certs/snowpro-core.png", alt: "SnowPro Core certification badge", w: 487, h: 402 },
 ];
 // Positions (% of the hero): a tighter triangle around the hub.
@@ -86,7 +86,7 @@ export function MeshHeroSlide({ subhead }: { subhead?: string }) {
 
       <div className="container-page relative z-10 pt-20 pb-28 md:pt-24 lg:pb-24">
         <div className="max-w-xl">
-          <span className="chip">Snowflake Premier Partner · CoCo Catalyst</span>
+          <span className="chip">Snowflake Premier Partner · CoCo Preferred Partner</span>
 
           <h1 className="mt-6 text-balance font-display text-4xl font-bold leading-[1.04] tracking-tight text-foreground md:text-[3.6rem]">
             Make Snowflake <span className="text-gradient-accent">do more</span>, from strategy to AI.

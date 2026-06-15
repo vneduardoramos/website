@@ -4,7 +4,7 @@ import { HeroBackground } from "@/components/marketing/HeroBackground";
 
 /**
  * Hero carousel slide: the Snowflake partnership proof, Premier + recognized
- * in the CoCo Catalyst program, featured at Summit 2026. Mirrors the former
+ * in the CoCo Preferred Partner program, featured at Summit 2026. Mirrors the former
  * PartnershipHighlight section, hero-sized.
  */
 export function PartnershipSlide() {
@@ -19,7 +19,7 @@ export function PartnershipSlide() {
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-muted md:text-xl">
             Viewnear is a Snowflake Premier Partner, recognized in Snowflake&apos;s{" "}
-            <span className="text-foreground">CoCo Catalyst</span> program. At Snowflake Summit
+            <span className="text-foreground">CoCo Preferred Partner</span> program. At Snowflake Summit
             2026 we were featured among the partners driving the most momentum on Snowflake CoCo,
             the data-native coding agent, out of 1,300+ worldwide, alongside firms like Accenture,
             Deloitte, IBM, and Capgemini.
@@ -45,7 +45,7 @@ export function PartnershipSlide() {
           <div className="overflow-hidden rounded-3xl border border-border shadow-soft-lg">
             <Image
               src="/assets/images/certs/coco-momentum-summit-2026.png"
-              alt="Snowflake Summit 2026 keynote: CoCo Catalyst partner momentum, featuring Viewnear among partners including Accenture, Deloitte, IBM, and Capgemini"
+              alt="Snowflake Summit 2026 keynote: CoCo Preferred Partner momentum, featuring Viewnear among partners including Accenture, Deloitte, IBM, and Capgemini"
               width={1500}
               height={1500}
               priority
@@ -54,7 +54,7 @@ export function PartnershipSlide() {
             />
           </div>
           <figcaption className="mt-3 text-center text-xs text-muted">
-            Snowflake Summit 2026: CoCo Catalyst partner momentum, platform keynote
+            Snowflake Summit 2026: CoCo Preferred Partner momentum, platform keynote
           </figcaption>
         </figure>
       </div>

@@ -11,7 +11,7 @@ import { theme } from "@/config/theme";
 export const metadata: Metadata = {
   title: "Snowflake Partnership",
   description:
-    "Viewnear is a Snowflake Premier Partner and a CoCo Catalyst partner: SnowPro-certified, co-selling with Snowflake, and delivering the full native stack across the Americas.",
+    "Viewnear is a Snowflake Premier Partner and a CoCo Preferred Partner: SnowPro-certified, co-selling with Snowflake, and delivering the full native stack across the Americas.",
   alternates: { canonical: "/partnership" },
 };
 
@@ -83,7 +83,7 @@ export default function PartnershipPage() {
                 <ScrollHighlight color="cyan">
                   <span className="text-gradient">Premier Partner</span>
                 </ScrollHighlight>
-                , and CoCo Catalyst.
+                , and CoCo Preferred Partner.
               </>
             }
             description={`${theme.brand.name} holds two of Snowflake's highest partner recognitions. It means certified depth, co-sell alignment, and early access to what's next, all delivered by one accountable team across the Americas.`}
@@ -91,8 +91,8 @@ export default function PartnershipPage() {
         </div>
       </div>
 
-      {/* Badges + CoCo Catalyst momentum */}
-      <PartnershipHighlight title="Two recognitions, and CoCo Catalyst momentum to back them" />
+      {/* Badges + CoCo Preferred Partner momentum */}
+      <PartnershipHighlight title="Two recognitions, and CoCo Preferred Partner momentum to back them" />
 
       {/* What it unlocks */}
       <Section>

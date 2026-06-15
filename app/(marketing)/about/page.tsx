@@ -20,13 +20,13 @@ import { theme } from "@/config/theme";
 export const metadata = {
   title: "About: Snowflake data & AI partner for the Americas",
   description:
-    "Viewnear is a Snowflake Premier and CoCo Catalyst partner. A team versed in Snowflake and enterprise solutions at every level takes enterprises from data strategy to governed AI in production across the Americas.",
+    "Viewnear is a Snowflake Premier and CoCo Preferred Partner. A team versed in Snowflake and enterprise solutions at every level takes enterprises from data strategy to governed AI in production across the Americas.",
   alternates: { canonical: "/about" },
 };
 
 const HERO_CHIPS = [
   "Snowflake Premier Partner",
-  "CoCo Catalyst",
+  "CoCo Preferred Partner",
   "SnowPro-certified",
   "Americas-focused delivery",
 ];
@@ -41,7 +41,7 @@ const operating = [
 
 // Verifiable credential snapshot (no vanity metrics).
 const trackRecord = [
-  { value: "Premier", label: "Snowflake Premier + CoCo Catalyst Partner" },
+  { value: "Premier", label: "Snowflake Premier + CoCo Preferred Partner" },
   { value: "SnowPro", label: "SnowPro-certified across the team" },
   { value: "15+", label: "Years building data & enterprise AI" },
   { value: "5", label: "Countries across the Americas" },
@@ -102,7 +102,7 @@ const staffing = [
 
 const credentials = [
   "Snowflake Premier Partner",
-  "Snowflake CoCo Catalyst Partner",
+  "Snowflake CoCo Preferred Partner",
   "SnowPro-certified engineers",
 ];
 
@@ -122,7 +122,7 @@ export default async function AboutPage() {
             .
           </>
         }
-        description="Viewnear is a Snowflake Premier and CoCo Catalyst partner. A team versed in Snowflake and enterprise solutions at every level takes enterprises from data strategy to governed AI in production, across Canada, the USA, Mexico, LATAM, and the Caribbean."
+        description="Viewnear is a Snowflake Premier and CoCo Preferred Partner. A team versed in Snowflake and enterprise solutions at every level takes enterprises from data strategy to governed AI in production, across Canada, the USA, Mexico, LATAM, and the Caribbean."
       >
         <div className="mt-7 flex flex-wrap justify-center gap-2.5">
           {HERO_CHIPS.map((c) => (
@@ -133,7 +133,7 @@ export default async function AboutPage() {
         </div>
       </PageHero>
 
-      {/* Snowflake partnership: Premier + CoCo Catalyst + Summit 2026 (lead section) */}
+      {/* Snowflake partnership: Premier + CoCo Preferred Partner + Summit 2026 (lead section) */}
       <PartnershipHighlight showCta />
 
       {/* Who we are / how we operate (folds in a brief origin) */}

@@ -1,11 +1,30 @@
-import { Nav } from "@/components/marketing/Nav";
+import { Nav, type NavData } from "@/components/marketing/Nav";
 import { Footer } from "@/components/marketing/Footer";
+import { safe, getBlogPosts, getCaseStudies } from "@/lib/queries";
 
-export default function MarketingLayout({
+// Small content-aware bits surfaced in the mega-menu featured tiles. Fetched
+// here (server) and passed to the client <Nav>; each falls back gracefully.
+async function getNavData(): Promise<NavData> {
+  const [posts, cases] = await Promise.all([
+    safe(getBlogPosts({ take: 1 }), []),
+    safe(getCaseStudies({ featured: true, take: 1 }), []),
+  ]);
+  const fmtDate = (d: Date | null) =>
+    d ? new Date(d).toLocaleDateString("en-US", { month: "short", year: "numeric" }) : "";
+  const post = posts[0];
+  const cs = cases[0];
+  return {
+    latestPost: post ? { title: post.title, slug: post.slug, date: fmtDate(post.publishedAt) } : null,
+    featuredCase: cs ? { title: cs.title, slug: cs.slug, sector: cs.sector } : null,
+  };
+}
+
+export default async function MarketingLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const navData = await getNavData();
   return (
     <div className="flex min-h-screen flex-col">
       <a
@@ -14,7 +33,7 @@ export default function MarketingLayout({
       >
         Skip to main content
       </a>
-      <Nav />
+      <Nav navData={navData} />
       <main id="main-content" className="flex-1">{children}</main>
       <Footer />
     </div>

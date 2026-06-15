@@ -16,7 +16,7 @@ const ICONS = [DatabaseIcon, PipelineIcon, ChartIcon, CpuIcon, ShieldIcon, Snowf
 
 // Subtle, persuasive company facts for the no-card filler (left column, row 2).
 const FILLER_POINTS = [
-  "Snowflake Premier + CoCo Catalyst partner",
+  "Snowflake Premier + CoCo Preferred Partner",
   "SnowPro-certified, end to end",
   "15+ years in data & enterprise AI",
   "Most platforms live in 8–16 weeks",

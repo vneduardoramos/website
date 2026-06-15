@@ -7,13 +7,13 @@ import { cn } from "@/lib/utils";
 
 export const CERTIFICATIONS = [
   "Snowflake Premier Partner",
-  "Snowflake CoCo Catalyst Partner",
+  "Snowflake CoCo Preferred Partner",
 ] as const;
 
 // Official Snowflake partner + certification badge artwork.
 const BADGE_IMAGES = [
   { src: "/assets/images/certs/premier.webp", alt: "Snowflake Premier Partner badge", w: 460, h: 460 },
-  { src: "/assets/images/certs/coco-preferred.png", alt: "Snowflake CoCo Catalyst Partner badge", w: 1910, h: 1572 },
+  { src: "/assets/images/certs/coco-preferred.png", alt: "Snowflake CoCo Preferred Partner badge", w: 1910, h: 1572 },
   { src: "/assets/images/certs/snowpro-core.png", alt: "SnowPro Core certification badge", w: 487, h: 402 },
 ];
 

@@ -6,12 +6,12 @@ import { SectionDecor } from "@/components/marketing/Decor";
 const STATS = [
   { value: "1,300+", label: "Snowflake partners worldwide" },
   { value: "2026", label: "Featured on the Summit platform keynote" },
-  { value: "2", label: "Premier Partner + CoCo Catalyst recognition" },
+  { value: "2", label: "Premier Partner + CoCo Preferred Partner recognition" },
 ];
 
 /**
  * Prominent partnership proof block: the official badges (large), the facts, the
- * CoCo Catalyst keynote slide, and stat tiles. Reused on home,
+ * CoCo Preferred Partner keynote slide, and stat tiles. Reused on home,
  * About, and the Partnership page (`showCta` adds a link to /partnership).
  */
 export function PartnershipHighlight({
@@ -34,7 +34,7 @@ export function PartnershipHighlight({
             Viewnear is a{" "}
             <strong className="font-semibold text-foreground">Snowflake Premier Partner</strong>,
             recognized in Snowflake&apos;s{" "}
-            <strong className="font-semibold text-foreground">CoCo Catalyst</strong> program. At
+            <strong className="font-semibold text-foreground">CoCo Preferred Partner</strong> program. At
             Snowflake Summit 2026 we were featured among the partners driving the most momentum on
             Snowflake CoCo, the data-native coding agent, out of 1,300+ worldwide, alongside firms
             like Accenture, Deloitte, IBM, and Capgemini.
@@ -67,7 +67,7 @@ export function PartnershipHighlight({
           <div className="overflow-hidden rounded-2xl border border-border shadow-soft-lg">
             <Image
               src="/assets/images/certs/coco-momentum-summit-2026.png"
-              alt="Snowflake Summit 2026 keynote: CoCo Catalyst partner momentum, featuring Viewnear among partners including Accenture, Deloitte, IBM, and Capgemini"
+              alt="Snowflake Summit 2026 keynote: CoCo Preferred Partner momentum, featuring Viewnear among partners including Accenture, Deloitte, IBM, and Capgemini"
               width={1500}
               height={1500}
               className="h-auto w-full"
@@ -75,7 +75,7 @@ export function PartnershipHighlight({
             />
           </div>
           <figcaption className="mt-3 text-center text-xs text-muted">
-            Snowflake Summit 2026: CoCo Catalyst partner momentum, platform keynote
+            Snowflake Summit 2026: CoCo Preferred Partner momentum, platform keynote
           </figcaption>
         </figure>
       </div>

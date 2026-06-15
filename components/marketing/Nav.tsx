@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { theme } from "@/config/theme";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/marketing/Logo";
+import { getFlavor } from "@/components/marketing/industries/flavor";
 
 type NavItem = {
   label: string;
@@ -36,13 +37,13 @@ const NAV_DESCRIPTIONS: Record<string, string> = {
   "/faq": "Common questions",
 };
 
-// Optional featured tile per top-level section, keyed by section label.
+// Static featured tile per section (fallback when no live content applies).
 type Featured = { eyebrow: string; title: string; pitch: string; href: string };
 const NAV_FEATURED: Record<string, Featured> = {
   Company: {
     eyebrow: "Partnership",
     title: "Snowflake Premier Partner",
-    pitch: "Premier & CoCo Catalyst: proven delivery at scale.",
+    pitch: "Premier & CoCo Preferred Partner: proven delivery at scale.",
     href: "/partnership",
   },
   Services: {
@@ -65,6 +66,26 @@ const NAV_FEATURED: Record<string, Featured> = {
   },
 };
 
+// One restrained accent per panel: a thin top rule, the featured eyebrow + CTA
+// pill, and the card hover border/label. Opacities stay on 5-step multiples.
+type Accent = { text: string; bar: string; soft: string; linkHover: string; hoverBorder: string };
+const PANEL_ACCENT: Record<string, Accent> = {
+  Company: { text: "text-royal", bar: "bg-royal", soft: "bg-royal/10", linkHover: "group-hover/card:text-royal", hoverBorder: "hover:border-royal/40" },
+  Industries: { text: "text-primaryDeep", bar: "bg-primaryDeep", soft: "bg-primaryDeep/10", linkHover: "group-hover/card:text-primaryDeep", hoverBorder: "hover:border-primaryDeep/40" },
+  Services: { text: "text-purple", bar: "bg-purple", soft: "bg-purple/10", linkHover: "group-hover/card:text-purple", hoverBorder: "hover:border-purple/40" },
+  Resources: { text: "text-accent", bar: "bg-accent", soft: "bg-accent/10", linkHover: "group-hover/card:text-accent", hoverBorder: "hover:border-accent/40" },
+};
+
+const SNOWFLAKE_STACK = ["Cortex", "Horizon", "Openflow", "Snowpark", "Iceberg", "dbt"];
+
+// Live content surfaced in the featured tiles, fetched server-side in the
+// marketing layout and passed in. Optional so <Nav /> still renders (with the
+// static fallback tiles) where no data is provided (e.g. not-found).
+export type NavData = {
+  latestPost?: { title: string; slug: string; date: string } | null;
+  featuredCase?: { title: string; slug: string; sector: string } | null;
+};
+
 function Chevron({ className }: { className?: string }) {
   return (
     <svg
@@ -82,7 +103,158 @@ function Chevron({ className }: { className?: string }) {
   );
 }
 
-export function Nav() {
+// Industries link: the sector icon in that sector's own feature color
+// (from the flavor system) + label + description.
+function IndustryCard({
+  href,
+  label,
+  onNav,
+}: {
+  href: string;
+  label: string;
+  onNav: () => void;
+}) {
+  const flavor = getFlavor(href.replace("/industries/", ""));
+  const Icon = flavor.icon;
+  return (
+    <li>
+      <Link
+        href={href}
+        onClick={onNav}
+        className="group/card flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-surface2"
+      >
+        <span className={cn("mt-0.5 flex h-8 w-8 flex-none items-center justify-center rounded-lg", flavor.tile)}>
+          <Icon className="h-[18px] w-[18px]" aria-hidden="true" />
+        </span>
+        <span className="min-w-0">
+          <span className="block text-base font-medium text-foreground">{label}</span>
+          {NAV_DESCRIPTIONS[href] && (
+            <span className="mt-0.5 block text-sm text-muted">{NAV_DESCRIPTIONS[href]}</span>
+          )}
+        </span>
+      </Link>
+    </li>
+  );
+}
+
+// Company / Services / Resources link: a bordered card (no icon) that lifts and
+// picks up the panel accent on hover.
+function NavCard({
+  href,
+  label,
+  accent,
+  onNav,
+}: {
+  href: string;
+  label: string;
+  accent: Accent;
+  onNav: () => void;
+}) {
+  return (
+    <li>
+      <Link
+        href={href}
+        onClick={onNav}
+        className={cn(
+          "group/card flex h-full flex-col rounded-xl border border-border bg-background p-4 transition duration-200 hover:-translate-y-0.5 hover:shadow-soft",
+          accent.hoverBorder
+        )}
+      >
+        <span className={cn("block text-base font-semibold text-foreground transition-colors", accent.linkHover)}>
+          {label}
+        </span>
+        {NAV_DESCRIPTIONS[href] && (
+          <span className="mt-1 block text-sm leading-relaxed text-muted">{NAV_DESCRIPTIONS[href]}</span>
+        )}
+      </Link>
+    </li>
+  );
+}
+
+// Per-section featured tile: a premium gradient card, content-aware where live
+// data exists, otherwise the static NAV_FEATURED tile.
+function MegaFeatured({
+  label,
+  navData,
+  accent,
+  onNav,
+}: {
+  label: string;
+  navData?: NavData;
+  accent: Accent;
+  onNav: () => void;
+}) {
+  let href: string;
+  let eyebrow: string;
+  let title: string;
+  let sub: string | null = null;
+  let cta = "Learn more";
+  let extra: React.ReactNode = null;
+
+  if (label === "Industries" && navData?.featuredCase) {
+    const c = navData.featuredCase;
+    href = `/case-studies/${c.slug}`;
+    eyebrow = c.sector;
+    title = c.title;
+    sub = "A recent outcome we delivered.";
+    cta = "Read the case study";
+  } else if (label === "Resources" && navData?.latestPost) {
+    const p = navData.latestPost;
+    href = `/blog/${p.slug}`;
+    eyebrow = "Latest from the blog";
+    title = p.title;
+    sub = p.date || null;
+    cta = "Read post";
+  } else if (label === "Services") {
+    href = "/platform";
+    eyebrow = "Platform";
+    title = "Built on the Snowflake-native stack";
+    cta = "Explore the platform";
+    extra = (
+      <div className="mt-3 flex flex-wrap gap-1.5">
+        {SNOWFLAKE_STACK.map((s) => (
+          <span key={s} className="pill-chip">
+            {s}
+          </span>
+        ))}
+      </div>
+    );
+  } else {
+    const f = NAV_FEATURED[label];
+    if (!f) return null;
+    href = f.href;
+    eyebrow = f.eyebrow;
+    title = f.title;
+    sub = f.pitch;
+  }
+
+  return (
+    <Link
+      href={href}
+      onClick={onNav}
+      className="group/feat card-pop relative flex flex-col justify-between overflow-hidden rounded-xl border border-border bg-gradient-to-br from-surface2 to-surface p-5"
+    >
+      <div>
+        <span className={cn("text-xs font-medium uppercase tracking-wide", accent.text)}>{eyebrow}</span>
+        <span className="mt-2 block text-lg font-semibold leading-snug text-foreground">{title}</span>
+        {sub && <span className="mt-1 block text-sm text-muted">{sub}</span>}
+        {extra}
+      </div>
+      <span
+        className={cn(
+          "mt-4 inline-flex items-center gap-1.5 self-start rounded-full px-3 py-1 text-sm font-semibold",
+          accent.soft,
+          accent.text
+        )}
+      >
+        {cta}
+        <span className="transition-transform duration-200 group-hover/feat:translate-x-0.5">→</span>
+      </span>
+    </Link>
+  );
+}
+
+export function Nav({ navData }: { navData?: NavData }) {
   const [open, setOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
@@ -151,8 +323,9 @@ export function Nav() {
               );
             }
 
-            const featured = NAV_FEATURED[item.label];
             const isOpen = openMenu === item.label;
+            const isIndustries = item.label === "Industries";
+            const accent = PANEL_ACCENT[item.label] ?? PANEL_ACCENT.Company;
 
             return (
               // `static` lets the absolute mega-panel anchor to the nav
@@ -188,60 +361,52 @@ export function Nav() {
                 <div
                   id={`mega-${item.label}`}
                   className={cn(
-                    "absolute left-0 right-0 top-full z-50 px-0 pt-3 transition-all duration-200",
+                    "absolute left-0 right-0 top-full z-50 px-0 pt-3 transition-all duration-300 ease-out",
                     isOpen
                       ? "visible translate-y-0 opacity-100"
-                      : "pointer-events-none invisible translate-y-1 opacity-0"
+                      : "pointer-events-none invisible translate-y-2 opacity-0"
                   )}
                 >
-                  <div className="rounded-2xl border border-border bg-surface/95 p-4 shadow-soft-lg backdrop-blur">
-                    <div className={cn("grid gap-6", featured ? "lg:grid-cols-[1fr_18rem]" : "lg:grid-cols-1")}>
-                      <ul className="grid gap-1 sm:grid-cols-2 lg:grid-cols-3">
-                        {item.children.map((c) => (
-                          <li key={c.href}>
-                            <Link
+                  <div className="relative overflow-hidden rounded-2xl border border-border bg-surface/95 p-4 shadow-soft-lg backdrop-blur">
+                    <span
+                      className={cn("pointer-events-none absolute inset-x-0 top-0 h-0.5", accent.bar)}
+                      aria-hidden="true"
+                    />
+                    <div className="grid gap-6 lg:grid-cols-[1fr_18rem]">
+                      <ul
+                        className={cn(
+                          "grid sm:grid-cols-2",
+                          isIndustries
+                            ? "gap-1 lg:grid-cols-3"
+                            : "gap-2 md:auto-rows-fr lg:grid-cols-2"
+                        )}
+                      >
+                        {item.children.map((c) =>
+                          isIndustries ? (
+                            <IndustryCard
+                              key={c.href}
                               href={c.href}
-                              onClick={() => setOpenMenu(null)}
-                              className="group/card block rounded-xl px-3 py-2.5 transition-colors hover:bg-surface2"
-                            >
-                              <span className="block text-base font-medium text-foreground transition-colors group-hover/card:text-primaryDeep">
-                                {c.label}
-                              </span>
-                              {NAV_DESCRIPTIONS[c.href] && (
-                                <span className="mt-0.5 block text-sm text-muted">
-                                  {NAV_DESCRIPTIONS[c.href]}
-                                </span>
-                              )}
-                            </Link>
-                          </li>
-                        ))}
+                              label={c.label}
+                              onNav={() => setOpenMenu(null)}
+                            />
+                          ) : (
+                            <NavCard
+                              key={c.href}
+                              href={c.href}
+                              label={c.label}
+                              accent={accent}
+                              onNav={() => setOpenMenu(null)}
+                            />
+                          )
+                        )}
                       </ul>
 
-                      {featured && (
-                        <Link
-                          href={featured.href}
-                          onClick={() => setOpenMenu(null)}
-                          className="group/feat flex flex-col justify-between rounded-xl border border-border bg-surface2 p-5 transition-colors hover:bg-primary/15"
-                        >
-                          <div>
-                            <span className="text-xs font-medium uppercase tracking-wide text-primaryDeep">
-                              {featured.eyebrow}
-                            </span>
-                            <span className="mt-2 block text-lg font-semibold text-foreground">
-                              {featured.title}
-                            </span>
-                            <span className="mt-1 block text-sm text-muted">
-                              {featured.pitch}
-                            </span>
-                          </div>
-                          <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primaryDeep">
-                            Learn more
-                            <span className="transition-transform duration-200 group-hover/feat:translate-x-0.5">
-                              →
-                            </span>
-                          </span>
-                        </Link>
-                      )}
+                      <MegaFeatured
+                        label={item.label}
+                        navData={navData}
+                        accent={accent}
+                        onNav={() => setOpenMenu(null)}
+                      />
                     </div>
                   </div>
                 </div>
