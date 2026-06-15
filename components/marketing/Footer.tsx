@@ -64,12 +64,7 @@ export function Footer() {
               </a>
             </p>
             <PartnerBadges variant="logos" size="sm" className="mt-6" />
-            <SnowflakeLockup
-              variant="default"
-              label="Built on Snowflake"
-              height={22}
-              className="mt-6"
-            />
+            <SnowflakeLockup variant="default" height={24} className="mt-6" />
           </div>
           {groups.map((g) => (
             <div key={g.title}>

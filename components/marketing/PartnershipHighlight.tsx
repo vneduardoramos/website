@@ -41,12 +41,7 @@ export function PartnershipHighlight({
             like Accenture, Deloitte, IBM, and Capgemini.
           </p>
 
-          <SnowflakeLockup
-            variant="default"
-            label="Built on Snowflake"
-            height={28}
-            className="mt-8"
-          />
+          <SnowflakeLockup variant="default" height={30} className="mt-8" />
 
           <div className="mt-6">
             <PartnerBadges variant="logos" />

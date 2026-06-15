@@ -115,12 +115,7 @@ export default async function ContactPage() {
                 <span className="pill-chip">CoCo Preferred Partner</span>
                 <span className="pill-chip">SnowPro-certified</span>
               </div>
-              <SnowflakeLockup
-                variant="default"
-                label="Built on Snowflake"
-                height={24}
-                className="mt-5"
-              />
+              <SnowflakeLockup variant="default" height={26} className="mt-5" />
             </div>
             <ContactForm />
           </div>

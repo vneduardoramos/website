@@ -439,12 +439,7 @@ export default async function ServicesPage() {
       </Section>
 
       <Section className="section-tint">
-        <SnowflakeLockup
-          variant="default"
-          label="Built on Snowflake"
-          height={30}
-          className="mb-10"
-        />
+        <SnowflakeLockup variant="default" height={32} className="mb-10" />
         <FeatureSplit
           eyebrow="The Snowflake stack"
           title={
