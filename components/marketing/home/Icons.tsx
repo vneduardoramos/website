@@ -173,3 +173,15 @@ export function ArrowRightIcon(props: IconProps) {
     </svg>
   );
 }
+
+// Migration / modernization: a source store on the left moving to a target on
+// the right (legacy platform -> Snowflake foundation).
+export function MigrationIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="2" y="8" width="7" height="9" rx="1.5" />
+      <rect x="15" y="8" width="7" height="9" rx="1.5" />
+      <path d="M9 12.5h4.5M12 10l2.5 2.5L12 15" />
+    </svg>
+  );
+}

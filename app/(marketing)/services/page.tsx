@@ -25,6 +25,9 @@ import {
   SnowflakeIcon,
   ShieldIcon,
   PenIcon,
+  MigrationIcon,
+  DataStackIcon,
+  ArrowRightIcon,
 } from "@/components/marketing/home/Icons";
 import { ControlPlane } from "@/components/marketing/services/ControlPlane";
 import { getServicesByTier, getSetting } from "@/lib/queries";
@@ -37,6 +40,7 @@ const SERVICE_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   "ai-data-strategy": CompassIcon, // strategy / direction
   "data-visualisation": CpuIcon, // AI Analytics & Agents (AI/compute)
   "cloud-architecture": DatabaseIcon, // data foundation
+  "data-modernization": MigrationIcon, // legacy platform -> Snowflake
   "data-engineering": PipelineIcon, // pipelines
   "embedded-analytics": ChartIcon, // analytics embedded in product
   "capability-development": RocketIcon, // growth / enablement
@@ -256,6 +260,51 @@ const aiUseCases = [
   },
 ];
 
+// Source platforms and scenarios we modernize onto Snowflake. Named explicitly so
+// decision-makers see their stack on the list.
+const migrationSources = [
+  {
+    icon: DatabaseIcon,
+    title: "Teradata",
+    body: "Retire costly Teradata licenses and hardware; move workloads onto elastic Snowflake compute.",
+  },
+  {
+    icon: DatabaseIcon,
+    title: "Oracle & Exadata",
+    body: "Migrate Oracle and Exadata warehouses with automated SQL translation and validated parity.",
+  },
+  {
+    icon: DataStackIcon,
+    title: "Netezza",
+    body: "Move IBM Netezza appliances onto a governed cloud foundation before end-of-support forces it.",
+  },
+  {
+    icon: DatabaseIcon,
+    title: "SQL Server & on-prem EDW",
+    body: "Consolidate on-prem SQL Server and legacy enterprise warehouses into one scalable source of truth.",
+  },
+  {
+    icon: DataStackIcon,
+    title: "Hadoop, Hive & data lakes",
+    body: "Replace brittle Hadoop and Hive estates with governed Snowflake tables and open Iceberg formats.",
+  },
+  {
+    icon: ArrowRightIcon,
+    title: "Redshift, BigQuery & Synapse",
+    body: "Cloud-to-cloud moves off Redshift, BigQuery, or Synapse onto one governed Snowflake platform.",
+  },
+  {
+    icon: PipelineIcon,
+    title: "Legacy ETL",
+    body: "Re-platform Informatica, DataStage, and SSIS pipelines to Openflow and dbt: versioned and observable.",
+  },
+  {
+    icon: SnowflakeIcon,
+    title: "Lakehouse & Iceberg consolidation",
+    body: "Unify scattered lakes and warehouses into a single governed lakehouse on Apache Iceberg.",
+  },
+];
+
 export default async function ServicesPage() {
   const [tiers, faqs] = await Promise.all([
     getServicesByTier(),
@@ -430,6 +479,31 @@ export default async function ServicesPage() {
                 </span>
                 <h3 className="font-display text-lg font-bold text-foreground">{u.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{u.body}</p>
+              </div>
+            );
+          })}
+        </RevealGroup>
+      </Section>
+
+      <Section>
+        <SectionHeading
+          eyebrow="Modernization"
+          title="What we migrate to Snowflake"
+          intro="We move you off legacy platforms and cloud warehouses onto one governed Snowflake foundation, with automated translation and parity validation so you cut over with confidence."
+        />
+        <RevealGroup
+          className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-4"
+          variant="pop"
+        >
+          {migrationSources.map((m) => {
+            const Icon = m.icon;
+            return (
+              <div key={m.title} className="card card-hover flex h-full flex-col bg-background">
+                <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primaryDeep">
+                  <Icon className="h-5 w-5" />
+                </span>
+                <h3 className="font-display text-lg font-bold text-foreground">{m.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{m.body}</p>
               </div>
             );
           })}
