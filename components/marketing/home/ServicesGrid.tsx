@@ -9,7 +9,6 @@ import {
   RocketIcon,
   SnowflakeIcon,
   CheckIcon,
-  MigrationIcon,
 } from "./Icons";
 import { RevealGroup } from "@/components/marketing/Motion";
 
@@ -21,25 +20,11 @@ const SERVICE_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   "ai-data-strategy": CompassIcon,
   "data-visualisation": CpuIcon, // AI Analytics & Agents
   "cloud-architecture": DatabaseIcon,
-  "data-modernization": MigrationIcon,
   "data-engineering": PipelineIcon,
   "embedded-analytics": ChartIcon,
   "capability-development": RocketIcon,
 };
 const iconFor = (slug: string) => SERVICE_ICONS[slug] ?? SnowflakeIcon;
-
-// The home grid is composed explicitly: getServices() sorts by tier (which is
-// alphabetical, so it can't drive home prominence). Preferred slugs lead (AI
-// Analytics is the feature card); any others backfill. Capped at 6, so when all
-// services are present, Capability Development is the one that drops off here.
-const HOME_ORDER = [
-  "data-visualisation", // AI Analytics & Agents (lead / feature card)
-  "cloud-architecture",
-  "data-modernization",
-  "data-engineering",
-  "embedded-analytics",
-  "ai-data-strategy",
-];
 
 // Subtle, persuasive company facts for the no-card filler (left column, row 2).
 const FILLER_POINTS = [
@@ -50,12 +35,7 @@ const FILLER_POINTS = [
 ];
 
 export function ServicesGrid({ services }: { services: Service[] }) {
-  const bySlug = new Map(services.map((s) => [s.slug, s]));
-  const ordered = [
-    ...HOME_ORDER.map((slug) => bySlug.get(slug)).filter((s): s is Service => Boolean(s)),
-    ...services.filter((s) => !HOME_ORDER.includes(s.slug)),
-  ];
-  const cards = ordered.slice(0, 6);
+  const cards = services.slice(0, 6);
   const [lead, ...rest] = cards;
   if (!lead) return null;
 

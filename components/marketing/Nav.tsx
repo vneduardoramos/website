@@ -22,10 +22,6 @@ const NAV_DESCRIPTIONS: Record<string, string> = {
   "/life-at-viewnear": "Culture, roles & benefits",
   "/services": "THINK · BUILD · GROW",
   "/solutions": "Migrate, AI, governance, apps",
-  "/solutions/migrate": "Off Teradata, Oracle, Hadoop",
-  "/solutions/applied-ai": "Cortex, agents, cited answers",
-  "/solutions/governance": "Lineage, access, audit-ready",
-  "/solutions/embedded-analytics": "Dashboards & apps in-product",
   "/approach": "Methodology & de-risking",
   "/pricing": "Engagement models & cost",
   "/industries/construction-real-estate": "Projects, property & assets",
@@ -315,7 +311,7 @@ export function Nav({ navData }: { navData?: NavData }) {
           : "border-b border-transparent bg-transparent"
       )}
     >
-      <nav className="container-page relative flex h-[4.8rem] items-center justify-between">
+      <nav className="container-page relative z-50 flex h-[4.8rem] items-center justify-between">
         <Link href="/" className="flex items-center" aria-label={`${theme.brand.name} home`}>
           <Logo variant="dark" height={25} />
         </Link>
@@ -373,10 +369,13 @@ export function Nav({ navData }: { navData?: NavData }) {
                 <div
                   id={`mega-${item.label}`}
                   className={cn(
-                    "absolute left-0 right-0 top-full z-50 px-0 pt-3 transition-all duration-300 ease-out",
+                    // `fixed inset-x-0` breaks the panel out of the centered nav
+                    // container so the surface runs flush to both viewport edges
+                    // (full-bleed), anchored just under the 4.8rem nav bar.
+                    "fixed inset-x-0 top-[4.8rem] z-50 transition-all duration-300 ease-out",
                     isOpen
                       ? "visible translate-y-0 opacity-100"
-                      : "pointer-events-none invisible translate-y-2 opacity-0"
+                      : "pointer-events-none invisible -translate-y-2 opacity-0"
                   )}
                 >
                   <div
@@ -388,47 +387,52 @@ export function Nav({ navData }: { navData?: NavData }) {
                       "--eyebrow-accent": accent.eb,
                       clipPath:
                         "polygon(0 0, 100% 0, 100% calc(100% - 1rem), calc(100% - 1rem) 100%, 0 100%)",
-                      boxShadow: `inset 0 0 0 1px rgb(${accent.eb} / 0.3)`,
-                      background: "rgb(var(--color-surface) / 0.97)",
-                      filter: "drop-shadow(0 16px 30px rgb(15 37 48 / 0.14))",
+                      boxShadow: `inset 0 0 0 1px rgb(${accent.eb} / 0.4)`,
+                      background: "rgb(var(--color-surface))",
+                      filter:
+                        "drop-shadow(0 10px 20px rgb(15 37 48 / 0.12)) drop-shadow(0 30px 55px rgb(15 37 48 / 0.28))",
                     } as React.CSSProperties}
-                    className="relative p-5 backdrop-blur"
+                    className="relative backdrop-blur"
                   >
-                    <div className="grid gap-6 lg:grid-cols-[1fr_18rem]">
-                      <ul
-                        className={cn(
-                          "grid sm:grid-cols-2",
-                          isIndustries
-                            ? "gap-1 lg:grid-cols-3"
-                            : "gap-2 md:auto-rows-fr lg:grid-cols-2"
-                        )}
-                      >
-                        {item.children.map((c) =>
-                          isIndustries ? (
-                            <IndustryCard
-                              key={c.href}
-                              href={c.href}
-                              label={c.label}
-                              onNav={() => setOpenMenu(null)}
-                            />
-                          ) : (
-                            <NavCard
-                              key={c.href}
-                              href={c.href}
-                              label={c.label}
-                              accent={accent}
-                              onNav={() => setOpenMenu(null)}
-                            />
-                          )
-                        )}
-                      </ul>
+                    {/* Surface is full-bleed; this wrapper re-aligns the content
+                        to the same max-width/gutters as the logo and nav items. */}
+                    <div className="container-page py-5">
+                      <div className="grid gap-6 lg:grid-cols-[1fr_18rem]">
+                        <ul
+                          className={cn(
+                            "grid sm:grid-cols-2",
+                            isIndustries
+                              ? "gap-1 lg:grid-cols-3"
+                              : "gap-2 md:auto-rows-fr lg:grid-cols-2"
+                          )}
+                        >
+                          {item.children.map((c) =>
+                            isIndustries ? (
+                              <IndustryCard
+                                key={c.href}
+                                href={c.href}
+                                label={c.label}
+                                onNav={() => setOpenMenu(null)}
+                              />
+                            ) : (
+                              <NavCard
+                                key={c.href}
+                                href={c.href}
+                                label={c.label}
+                                accent={accent}
+                                onNav={() => setOpenMenu(null)}
+                              />
+                            )
+                          )}
+                        </ul>
 
-                      <MegaFeatured
-                        label={item.label}
-                        navData={navData}
-                        accent={accent}
-                        onNav={() => setOpenMenu(null)}
-                      />
+                        <MegaFeatured
+                          label={item.label}
+                          navData={navData}
+                          accent={accent}
+                          onNav={() => setOpenMenu(null)}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -458,6 +462,20 @@ export function Nav({ navData }: { navData?: NavData }) {
           </div>
         </button>
       </nav>
+
+      {/* Scrim: when a mega-panel is open, darken + de-focus the whole page
+          behind it so the bright panel reads as the single focal surface. The
+          nav bar (z-50) stays crisp above it; the panel paints with the nav.
+          Sits below the panel, above all page content. Closes on hover/click. */}
+      <div
+        aria-hidden="true"
+        onMouseEnter={scheduleClose}
+        onClick={() => setOpenMenu(null)}
+        className={cn(
+          "fixed inset-x-0 bottom-0 top-[4.8rem] z-40 hidden bg-foreground/45 backdrop-blur-[2px] transition-opacity duration-300 ease-out lg:block",
+          openMenu ? "opacity-100" : "pointer-events-none opacity-0"
+        )}
+      />
 
       {open && (
         <div id="mobile-menu" className="border-t border-border bg-surface lg:hidden">

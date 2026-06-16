@@ -72,23 +72,13 @@ export const services = [
     body: "Give every team one fast, scalable foundation to build on. We design and deliver cloud-native platforms on Snowflake, sized for the AI workloads you are planning rather than just the reporting you run today, with security and governance built in from the start.",
   },
   {
-    slug: "data-modernization",
-    tier: "BUILD",
-    title: "Data Modernization & Migration",
-    summary:
-      "Get off costly legacy platforms without the risk. We migrate Teradata, Oracle, Netezza, Hadoop, and cloud warehouses onto one governed Snowflake foundation, with automated SQL translation and validation at every step.",
-    tools: ["Snowflake", "SnowConvert", "Openflow", "dbt", "Iceberg"],
-    order: 4,
-    body: "Retire the licenses, hardware, and brittle pipelines holding you back. We modernize legacy estates onto Snowflake the low-risk way: a dependency assessment first, then automated schema and SQL translation, row-level parity validation so results match before you cut over, and Openflow and dbt pipelines that keep data fresh from day one. The result is not a lift-and-shift of old problems, it is a governed, Cortex-ready foundation your analytics and AI can build on.",
-  },
-  {
     slug: "data-engineering",
     tier: "BUILD",
     title: "Data Engineering & Pipelines",
     summary:
       "Always-current, trusted data: governed pipelines that unify every source so your analytics and AI run on inputs you can stake decisions on.",
     tools: ["Snowflake", "Openflow", "dbt"],
-    order: 5,
+    order: 4,
     body: "Stop chasing numbers across systems. We build automated, secure pipelines that pull every source (APIs, databases, flat files) into your warehouse reliably and on schedule, so your teams work from data they can trust and your AI workloads have clean, current inputs.",
   },
   {
@@ -108,7 +98,7 @@ export const services = [
     summary:
       "Differentiate your product: Cortex-powered intelligence embedded into your apps and client workflows, turning your platform into a competitive edge.",
     tools: ["Streamlit", "Cortex"],
-    order: 6,
+    order: 5,
     body: "Make analytics a feature your customers pay for. We embed dashboards and reporting directly into your applications, client portals, and partner interfaces, so the insight lives where users already work and your product stands apart from competitors.",
   },
   {
@@ -118,7 +108,7 @@ export const services = [
     summary:
       "Compound the advantage: we embed with your team and build the in-house fluency to scale your AI use cases long after launch.",
     tools: [],
-    order: 7,
+    order: 6,
     body: "Capability that outlasts the engagement. Our certified practitioners embed alongside your people, coaching through real delivery and building fluency at every level (from executive data literacy to hands-on tool training for analysts and engineers) so your team keeps improving on its own.",
   },
 ];
