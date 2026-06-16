@@ -77,7 +77,11 @@ export const theme = {
       label: "Services",
       children: [
         { label: "Services overview", href: "/services" },
-        { label: "Solutions", href: "/solutions" },
+        { label: "Solutions overview", href: "/solutions" },
+        { label: "Migrate to Snowflake", href: "/solutions/migrate" },
+        { label: "Cortex AI & agents", href: "/solutions/applied-ai" },
+        { label: "Data governance & trust", href: "/solutions/governance" },
+        { label: "Embedded analytics & data apps", href: "/solutions/embedded-analytics" },
         { label: "Approach", href: "/approach" },
         { label: "Pricing", href: "/pricing" },
       ],
