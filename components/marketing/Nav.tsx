@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import type { ComponentType, SVGProps } from "react";
 import { theme } from "@/config/theme";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/marketing/Logo";
@@ -81,6 +82,156 @@ const PANEL_ACCENT: Record<string, Accent> = {
 
 const SNOWFLAKE_STACK = ["Cortex", "Horizon", "Openflow", "Snowpark", "Iceberg", "dbt"];
 
+// ─── Mega-menu link icons ───────────────────────────────────────────────────
+// One representative line icon per Services / Company / Resources link, drawn in
+// the same 24×24 / 1.8-stroke style as the industry flavor icons so every panel
+// reads as one icon family. Keyed by href; tinted with the panel accent.
+const ic = {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 1.8,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+};
+
+// Services
+function LayersIcon(p: SVGProps<SVGSVGElement>) {
+  // stacked tiers → THINK · BUILD · GROW
+  return (
+    <svg {...ic} {...p}>
+      <path d="M12 3 3 7.5l9 4.5 9-4.5L12 3z" />
+      <path d="m3 12 9 4.5 9-4.5" />
+      <path d="m3 16.5 9 4.5 9-4.5" />
+    </svg>
+  );
+}
+function BulbIcon(p: SVGProps<SVGSVGElement>) {
+  // lightbulb → ideas applied as solutions
+  return (
+    <svg {...ic} {...p}>
+      <path d="M9 18h6" />
+      <path d="M10 21h4" />
+      <path d="M12 3a6 6 0 0 0-3.8 10.6c.5.4.8 1 .8 1.6v.3h6v-.3c0-.6.3-1.2.8-1.6A6 6 0 0 0 12 3z" />
+    </svg>
+  );
+}
+function CompassIcon(p: SVGProps<SVGSVGElement>) {
+  // compass → methodology / direction
+  return (
+    <svg {...ic} {...p}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="m15.5 8.5-2.2 4.8L8.5 15.5l2.2-4.8z" />
+    </svg>
+  );
+}
+function TagIcon(p: SVGProps<SVGSVGElement>) {
+  // price tag → engagement models & cost
+  return (
+    <svg {...ic} {...p}>
+      <path d="M4 13 11 6a2 2 0 0 1 1.4-.6l4.6.1a2 2 0 0 1 2 2l.1 4.6a2 2 0 0 1-.6 1.4l-7 7a2 2 0 0 1-2.8 0L4 15.8a2 2 0 0 1 0-2.8z" />
+      <circle cx="15" cy="9" r="1.3" />
+    </svg>
+  );
+}
+
+// Company
+function UsersIcon(p: SVGProps<SVGSVGElement>) {
+  // two people → who we are
+  return (
+    <svg {...ic} {...p}>
+      <circle cx="9" cy="8" r="3.2" />
+      <path d="M3.5 19a5.5 5.5 0 0 1 11 0" />
+      <path d="M16 5.3a3.2 3.2 0 0 1 0 5.4" />
+      <path d="M17.2 14.4A5.5 5.5 0 0 1 20.5 19" />
+    </svg>
+  );
+}
+function LinkRingsIcon(p: SVGProps<SVGSVGElement>) {
+  // interlocking rings → partnership / alliance
+  return (
+    <svg {...ic} {...p}>
+      <circle cx="9" cy="12" r="5" />
+      <circle cx="15" cy="12" r="5" />
+    </svg>
+  );
+}
+function SunIcon(p: SVGProps<SVGSVGElement>) {
+  // sun → culture & energy of life at Viewnear
+  return (
+    <svg {...ic} {...p}>
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8" />
+    </svg>
+  );
+}
+function ShieldCheckIcon(p: SVGProps<SVGSVGElement>) {
+  // shield + check → security, governance & compliance
+  return (
+    <svg {...ic} {...p}>
+      <path d="M12 3 5 6v5.5c0 4.3 3 7.4 7 8.9 4-1.5 7-4.6 7-8.9V6l-7-3z" />
+      <path d="m9 12 2 2 4-4" />
+    </svg>
+  );
+}
+
+// Resources
+function GridIcon(p: SVGProps<SVGSVGElement>) {
+  // 2×2 grid → everything in one place
+  return (
+    <svg {...ic} {...p}>
+      <rect x="4" y="4" width="7" height="7" rx="1.5" />
+      <rect x="13" y="4" width="7" height="7" rx="1.5" />
+      <rect x="4" y="13" width="7" height="7" rx="1.5" />
+      <rect x="13" y="13" width="7" height="7" rx="1.5" />
+    </svg>
+  );
+}
+function TrendIcon(p: SVGProps<SVGSVGElement>) {
+  // upward trend chart → proof & outcomes
+  return (
+    <svg {...ic} {...p}>
+      <path d="M4 4v16h16" />
+      <path d="m7.5 14 3.2-3.6 3 2.4L20 7" />
+      <path d="M16.5 7H20v3.5" />
+    </svg>
+  );
+}
+function PenIcon(p: SVGProps<SVGSVGElement>) {
+  // pen → blog field notes
+  return (
+    <svg {...ic} {...p}>
+      <path d="M16.5 4.5 19.5 7.5 9 18l-4 1 1-4 10.5-10.5z" />
+      <path d="m14.5 6.5 3 3" />
+    </svg>
+  );
+}
+function ChatQuestionIcon(p: SVGProps<SVGSVGElement>) {
+  // speech bubble + ? → common questions
+  return (
+    <svg {...ic} {...p}>
+      <path d="M5 4h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H10l-4 4v-4H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" />
+      <path d="M9.6 8.2a2.3 2.3 0 0 1 4.3 1c0 1.5-1.9 1.7-1.9 3.1" />
+      <path d="M12 14.6h.01" />
+    </svg>
+  );
+}
+
+const NAV_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
+  "/services": LayersIcon,
+  "/solutions": BulbIcon,
+  "/approach": CompassIcon,
+  "/pricing": TagIcon,
+  "/about": UsersIcon,
+  "/partnership": LinkRingsIcon,
+  "/life-at-viewnear": SunIcon,
+  "/security": ShieldCheckIcon,
+  "/resources": GridIcon,
+  "/case-studies": TrendIcon,
+  "/blog": PenIcon,
+  "/faq": ChatQuestionIcon,
+};
+
 // Live content surfaced in the featured tiles, fetched server-side in the
 // marketing layout and passed in. Optional so <Nav /> still renders (with the
 // static fallback tiles) where no data is provided (e.g. not-found).
@@ -106,19 +257,23 @@ function Chevron({ className }: { className?: string }) {
   );
 }
 
-// Industries link: the sector icon in that sector's own feature color
-// (from the flavor system) + label + description.
-function IndustryCard({
+// Every mega-menu link reads the same: a representative line icon in an
+// accent-tinted tile + label + description. Industries pass the sector's own
+// flavor icon/tile; Services/Company/Resources pass a NAV_ICONS icon tinted with
+// the panel accent (`tile` = e.g. "bg-royal/10 text-royal").
+function MenuLink({
   href,
   label,
+  Icon,
+  tile,
   onNav,
 }: {
   href: string;
   label: string;
+  Icon: ComponentType<SVGProps<SVGSVGElement>>;
+  tile: string;
   onNav: () => void;
 }) {
-  const flavor = getFlavor(href.replace("/industries/", ""));
-  const Icon = flavor.icon;
   return (
     <li>
       <Link
@@ -126,7 +281,7 @@ function IndustryCard({
         onClick={onNav}
         className="group/card flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-surface2"
       >
-        <span className={cn("mt-0.5 flex h-8 w-8 flex-none items-center justify-center rounded-lg", flavor.tile)}>
+        <span className={cn("mt-0.5 flex h-8 w-8 flex-none items-center justify-center rounded-lg", tile)}>
           <Icon className="h-[18px] w-[18px]" aria-hidden="true" />
         </span>
         <span className="min-w-0">
@@ -135,40 +290,6 @@ function IndustryCard({
             <span className="mt-0.5 block text-sm text-muted">{NAV_DESCRIPTIONS[href]}</span>
           )}
         </span>
-      </Link>
-    </li>
-  );
-}
-
-// Company / Services / Resources link: a bordered card (no icon) that lifts and
-// picks up the panel accent on hover.
-function NavCard({
-  href,
-  label,
-  accent,
-  onNav,
-}: {
-  href: string;
-  label: string;
-  accent: Accent;
-  onNav: () => void;
-}) {
-  return (
-    <li>
-      <Link
-        href={href}
-        onClick={onNav}
-        className={cn(
-          "group/card flex h-full flex-col rounded-xl border border-border bg-background p-4 transition duration-200 hover:-translate-y-0.5 hover:shadow-soft",
-          accent.hoverBorder
-        )}
-      >
-        <span className={cn("block text-base font-semibold text-foreground transition-colors", accent.linkHover)}>
-          {label}
-        </span>
-        {NAV_DESCRIPTIONS[href] && (
-          <span className="mt-1 block text-sm leading-relaxed text-muted">{NAV_DESCRIPTIONS[href]}</span>
-        )}
       </Link>
     </li>
   );
@@ -400,30 +521,36 @@ export function Nav({ navData }: { navData?: NavData }) {
                       <div className="grid gap-6 lg:grid-cols-[1fr_18rem]">
                         <ul
                           className={cn(
-                            "grid sm:grid-cols-2",
-                            isIndustries
-                              ? "gap-1 lg:grid-cols-3"
-                              : "gap-2 md:auto-rows-fr lg:grid-cols-2"
+                            // self-start so the list keeps its natural height and
+                            // doesn't stretch its rows to match the tall featured
+                            // tile (which would spread the items apart).
+                            "grid gap-1 self-start sm:grid-cols-2",
+                            isIndustries && "lg:grid-cols-3"
                           )}
                         >
-                          {item.children.map((c) =>
-                            isIndustries ? (
-                              <IndustryCard
+                          {item.children.map((c) => {
+                            // Industries pull their icon + tinted tile from the
+                            // sector flavor; the other panels use a per-link icon
+                            // tinted with the panel accent.
+                            const flavor = isIndustries
+                              ? getFlavor(c.href.replace("/industries/", ""))
+                              : null;
+                            const Icon = flavor ? flavor.icon : NAV_ICONS[c.href];
+                            if (!Icon) return null;
+                            const tile = flavor
+                              ? flavor.tile
+                              : cn(accent.soft, accent.text);
+                            return (
+                              <MenuLink
                                 key={c.href}
                                 href={c.href}
                                 label={c.label}
+                                Icon={Icon}
+                                tile={tile}
                                 onNav={() => setOpenMenu(null)}
                               />
-                            ) : (
-                              <NavCard
-                                key={c.href}
-                                href={c.href}
-                                label={c.label}
-                                accent={accent}
-                                onNav={() => setOpenMenu(null)}
-                              />
-                            )
-                          )}
+                            );
+                          })}
                         </ul>
 
                         <MegaFeatured
