@@ -99,6 +99,8 @@ export const theme = {
       children: [
         { label: "About", href: "/about" },
         { label: "Partnership", href: "/partnership" },
+        // Nearshore Advantage (/nearshore) is built but hidden from the nav while
+        // the page is still being worked on. Re-add here to surface it.
         { label: "Life at Viewnear", href: "/life-at-viewnear" },
         { label: "Security & Trust", href: "/security" },
       ],

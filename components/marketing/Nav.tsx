@@ -19,6 +19,7 @@ type NavItem = {
 const NAV_DESCRIPTIONS: Record<string, string> = {
   "/about": "Who we are",
   "/partnership": "Premier & CoCo, and why partner",
+  "/nearshore": "Snowflake delivery in your time zone",
   "/security": "Governance & compliance",
   "/life-at-viewnear": "Culture, roles & benefits",
   "/services": "THINK · BUILD · GROW",
@@ -156,6 +157,15 @@ function LinkRingsIcon(p: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+function MapPinIcon(p: SVGProps<SVGSVGElement>) {
+  // location pin → nearshore delivery from Monterrey
+  return (
+    <svg {...ic} {...p}>
+      <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z" />
+      <circle cx="12" cy="10" r="2.5" />
+    </svg>
+  );
+}
 function SunIcon(p: SVGProps<SVGSVGElement>) {
   // sun → culture & energy of life at Viewnear
   return (
@@ -224,6 +234,7 @@ const NAV_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   "/pricing": TagIcon,
   "/about": UsersIcon,
   "/partnership": LinkRingsIcon,
+  "/nearshore": MapPinIcon,
   "/life-at-viewnear": SunIcon,
   "/security": ShieldCheckIcon,
   "/resources": GridIcon,
