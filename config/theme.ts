@@ -89,9 +89,9 @@ export const theme = {
         { label: "Education", href: "/industries/education" },
         { label: "Financial Services", href: "/industries/financial-services" },
         { label: "Manufacturing", href: "/industries/manufacturing" },
-        { label: "Media, Entertainment & Advertising", href: "/industries/media-entertainment-advertising" },
         { label: "Retail & CPG", href: "/industries/retail-cpg" },
         { label: "Technology and Telco", href: "/industries/technology-telco" },
+        { label: "Media, Entertainment & Advertising", href: "/industries/media-entertainment-advertising" },
       ],
     },
     {
