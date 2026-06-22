@@ -10,7 +10,7 @@ export const siteSettings: Record<string, unknown> = {
     // headline mirrors the hero H1 rendered in MeshHeroSlide (kept in sync for reference).
     headline: "Make Snowflake do more, from strategy to AI.",
     subhead:
-      "Whether you're migrating off a legacy warehouse, scaling a governed lakehouse, or grounding AI in real business context, our certified team helps you move faster and get it right the first time, across the Americas.",
+      "You've chosen Snowflake. Making it deliver, data your teams trust, AI that reaches production, value that shows up fast, is the harder part. That's the work we do, as a certified team that operates like an extension of yours.",
   },
   stats: [
     { label: "Snowflake partner tier", value: "Premier" },
