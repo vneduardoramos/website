@@ -31,7 +31,10 @@ const config: Config = {
         accent: {
           DEFAULT: withVar("--color-accent"),
           fg: withVar("--color-accent-fg"),
+          deep: withVar("--color-accent-deep"),
         },
+        accentDeep: withVar("--color-accent-deep"),
+        gold: withVar("--color-gold"),
         success: withVar("--color-success"),
         warning: withVar("--color-warning"),
         danger: withVar("--color-danger"),

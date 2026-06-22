@@ -44,6 +44,8 @@ export const theme = {
     red: "255 72 60", //          #FF483C logo vermilion: rare high-energy accent (not the semantic danger)
     accent: "255 160 0", //       #FFA000 logo orange, the warm accent (was coral #FF8A4C; folded into the logo color)
     accentFg: "26 39 51", //      #1A2733 dark ink on the warm accent
+    accentDeep: "180 83 9", //    #B45309 legible burnt-orange: warm eyebrows/links/small text on light bands
+    gold: "251 191 36", //        #FBBF24 bright amber-gold: the warm "yellow" for fills/glows only (not small text)
     success: "16 185 129",
     warning: "245 158 11",
     danger: "239 68 68",

@@ -146,10 +146,10 @@ export function CtaBand({
   return (
     <section className="section">
       <div className="container-page">
-        <div className="panel-dark panel-editorial relative overflow-hidden rounded-3xl p-10 text-center shadow-soft md:p-16">
+        <div className="panel-sunset panel-editorial relative overflow-hidden rounded-3xl p-10 text-center shadow-soft md:p-16">
           <div className="bg-grid pointer-events-none absolute inset-0 opacity-50" />
-          <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-secondary/20 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-20 -left-16 h-56 w-56 rounded-full bg-primary/15 blur-3xl" />
+          <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-gold/25 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-20 -left-16 h-56 w-56 rounded-full bg-accent/20 blur-3xl" />
           <div className="relative">
             <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
               {title}
