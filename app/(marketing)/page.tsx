@@ -31,19 +31,20 @@ type PartnershipSetting = {
 type FaqItem = { q: string; a: string };
 
 // ── Narrative beats (the story spine) ───────────────────────────────────────
-// Problem / "why now": the tension that makes the rest matter.
-const STALLS = [
+// Why ViewNear: for warm leads who already know they're moving to Snowflake,
+// the reasons we're the right partner to do it with.
+const WHY_VIEWNEAR = [
   {
-    title: "Vendor sprawl",
-    body: "Five tools stitched together, each with its own copy of the data and its own bill, and no one sure which number is right.",
+    title: "Depth at every level",
+    body: "The person who scopes your work and the engineer who builds it are both SnowPro-certified. You get senior judgment end to end, not a senior pitch and a junior handoff.",
   },
   {
-    title: "Data you can't trust",
-    body: "Reports that disagree, no lineage, no governance, so leadership second-guesses the dashboard instead of acting on it.",
+    title: "A dedicated, boutique team",
+    body: "A committed team that learns your data and your goals, not a rotating bench billed from a delivery pyramid. The people in the kickoff are the people who ship.",
   },
   {
-    title: "AI stuck in pilots",
-    body: "Proofs of concept that never reach production, because the data underneath them was never ready.",
+    title: "A certified Snowflake partner",
+    body: "A Snowflake Premier and CoCo Preferred partner, with a direct line to Snowflake's engineering and roadmap when your build needs it.",
   },
 ];
 
@@ -138,21 +139,21 @@ export default async function HomePage() {
       {/* 1) HERO */}
       <Hero subhead={hero?.subhead} />
 
-      {/* 2) PROBLEM / WHY NOW: the tension */}
+      {/* 2) WHY VIEWNEAR: the right partner, depth at every level */}
       <Section>
         <SectionHeading
           size="hero"
-          eyebrow="Why now"
+          eyebrow="Why ViewNear"
           title={
             <>
-              Execution got cheap.{" "}
-              <ScrollHighlight>Knowing what to build didn&rsquo;t.</ScrollHighlight>
+              The tools are everywhere now.{" "}
+              <ScrollHighlight>The team that makes them pay off isn&rsquo;t.</ScrollHighlight>
             </>
           }
-          intro="Cloud platforms, AI, and agents made building faster than ever, so the advantage moved upstream: to the teams who can define the right thing to build and trust the data underneath it. Most can't yet. Here's where it stalls."
+          intro="Plenty of firms can stand up Snowflake. Far fewer bring senior judgment to every call, know the platform deeply enough to get it right the first time, and stay accountable long after launch. That's the difference here."
         />
         <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-3" variant="pop">
-          {STALLS.map((s, i) => (
+          {WHY_VIEWNEAR.map((s, i) => (
             <div key={s.title} className="card card-pop card-editorial flex h-full flex-col">
               <span className="card-index font-display" aria-hidden="true">
                 {String(i + 1).padStart(2, "0")}
@@ -165,9 +166,8 @@ export default async function HomePage() {
           ))}
         </RevealGroup>
         <p className="mt-8 max-w-2xl text-lg text-foreground/90">
-          That&rsquo;s the job we do: turn scattered, untrusted data into{" "}
-          <ScrollHighlight color="cyan">one governed Snowflake foundation</ScrollHighlight> your teams act on,
-          and put AI to work on top of it.
+          Most engagements start with one use case and grow, because teams keep coming back to{" "}
+          <ScrollHighlight color="cyan">the people who delivered the first one.</ScrollHighlight>
         </p>
       </Section>
 
