@@ -10,7 +10,6 @@ import { ServicesGrid } from "@/components/marketing/home/ServicesGrid";
 import { Methodology } from "@/components/marketing/home/Methodology";
 import { FoundationPhoto, AiPhoto } from "@/components/marketing/home/SplitVisuals";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
-import { MetricBand } from "@/components/marketing/Blocks";
 import { Faq } from "@/components/marketing/Faq";
 import { RevealGroup, ScrollHighlight, SectionFold } from "@/components/marketing/Motion";
 import { HorizonScene } from "@/components/marketing/home/HorizonScene";
@@ -241,6 +240,26 @@ export default async function HomePage() {
             </div>
           ))}
         </RevealGroup>
+
+        {/* The build-vs-buy case: same risk-reduction beat, now carrying the
+            speed/cost contrast against hiring in-house, so the whole "safe bet"
+            story lands in one place. */}
+        <div className="mt-12 flex flex-col items-start justify-between gap-6 rounded-2xl border border-border bg-surface p-6 shadow-soft md:flex-row md:items-center md:p-8">
+          <div>
+            <p className="text-balance font-display text-xl font-bold leading-snug text-foreground md:text-2xl">
+              <span className="text-primaryDeep">8–16 weeks</span> to production, vs.{" "}
+              <span className="text-red">6–12 months</span> building the team in-house.
+            </p>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
+              A Snowflake-certified team, versed at every level: no hiring runway, no ramp,
+              no key-person risk.
+            </p>
+          </div>
+          <div className="flex shrink-0 flex-wrap gap-3">
+            <Link href="/contact" className="btn-primary">Talk to an architect</Link>
+            <Link href="/partnership" className="btn-ghost">See the comparison</Link>
+          </div>
+        </div>
       </Section>
 
       {/* PROOF: featured case study, framed by real client logos */}
@@ -320,36 +339,8 @@ export default async function HomePage() {
         </SectionFold>
       </Section>
 
-      {/* 4c) METRIC BAND + build-vs-buy / architect CTA */}
+      {/* TRANSFORMATION: where this takes you (by horizon), a compact static grid. */}
       <Section className="section-tint">
-        <MetricBand
-          metrics={[
-            { value: "Premier", label: "Snowflake Partner tier" },
-            { value: "CoCo", label: "Preferred Partner" },
-            { value: "8–16 wks", label: "Typical time to production" },
-            { value: "Americas", label: "Where we deliver" },
-          ]}
-        />
-        <div className="mt-12 flex flex-col items-start justify-between gap-6 rounded-2xl border border-border bg-surface p-6 shadow-soft md:flex-row md:items-center md:p-8">
-          <div>
-            <p className="text-balance font-display text-xl font-bold leading-snug text-foreground md:text-2xl">
-              <span className="text-primaryDeep">8–16 weeks</span> to production, vs.{" "}
-              <span className="text-red">6–12 months</span> building the team in-house.
-            </p>
-            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
-              A Snowflake-certified team, versed at every level: no hiring runway, no ramp,
-              no key-person risk.
-            </p>
-          </div>
-          <div className="flex shrink-0 flex-wrap gap-3">
-            <Link href="/contact" className="btn-primary">Talk to an architect</Link>
-            <Link href="/partnership" className="btn-ghost">See the comparison</Link>
-          </div>
-        </div>
-      </Section>
-
-      {/* 4d) TRANSFORMATION: where this takes you (by horizon), a compact static grid. */}
-      <Section>
         <HorizonScene
           horizons={HORIZONS}
           heading={
