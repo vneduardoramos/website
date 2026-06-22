@@ -26,7 +26,7 @@ export default async function IndustriesPage() {
         description="From regulated enterprises to high-growth challengers, we bring deep domain expertise and a modern Snowflake-first data stack to the industries we serve across the Americas."
       />
 
-      <Section className="section-tint relative overflow-hidden">
+      <Section className="section-warm relative overflow-hidden">
         <SectionDecor variant="dots" />
         <div className="relative">
         <FeatureSplit

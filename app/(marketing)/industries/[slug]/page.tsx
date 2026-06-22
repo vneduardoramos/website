@@ -130,7 +130,7 @@ export default async function IndustryDetailPage({
       </section>
 
       {/* Engagement overview - bullets tailored to the sector */}
-      <Section className="section-tint relative overflow-hidden">
+      <Section className="section-warm relative overflow-hidden">
         <SectionDecor variant={flavor.decor} />
         <div className="relative">
           <FeatureSplit

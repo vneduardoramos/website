@@ -92,7 +92,7 @@ export default function ApproachPage() {
       </Section>
 
       {/* Value by horizon */}
-      <Section className="section-tint">
+      <Section className="section-warm">
         <SectionHeading
           eyebrow="Business impact"
           title="What changes, and when"

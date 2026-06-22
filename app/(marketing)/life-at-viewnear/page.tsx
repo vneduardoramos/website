@@ -468,7 +468,7 @@ export default async function LifeAtViewnearPage() {
       </Section>
 
       {/* THE VIEWNEAR MODEL */}
-      <Section className="section-tint relative overflow-hidden">
+      <Section className="section-warm relative overflow-hidden">
         <SectionDecor variant="grid" />
         <div className="relative">
           <SectionHeading
@@ -589,7 +589,7 @@ export default async function LifeAtViewnearPage() {
       </Section>
 
       {/* WHY VIEWNEAR STANDS APART + FLYWHEEL */}
-      <Section className="section-tint relative overflow-hidden">
+      <Section className="section-warm relative overflow-hidden">
         <SectionDecor variant="flow" />
         <div className="relative">
           <SectionHeading

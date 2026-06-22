@@ -59,7 +59,7 @@ export function ServicesGrid({ services }: { services: Service[] }) {
   };
 
   return (
-    <section className="section section-tint">
+    <section className="section section-warm">
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
           <span className="chip">What we offer</span>

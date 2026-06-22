@@ -147,7 +147,7 @@ export default async function CareerDetailPage({
       </Section>
 
       {/* Life at Viewnear: culture + benefits, so candidates see the whole picture. */}
-      <Section className="section-tint">
+      <Section className="section-warm">
         <div className="mx-auto max-w-4xl">
           <SectionHeading
             eyebrow="Life at Viewnear"

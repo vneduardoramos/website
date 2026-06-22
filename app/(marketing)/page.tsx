@@ -244,7 +244,7 @@ export default async function HomePage() {
         {/* The build-vs-buy case: same risk-reduction beat, now carrying the
             speed/cost contrast against hiring in-house, so the whole "safe bet"
             story lands in one place. */}
-        <div className="mt-12 flex flex-col items-start justify-between gap-6 rounded-2xl border border-border bg-surface p-6 shadow-soft md:flex-row md:items-center md:p-8">
+        <div className="panel-warm mt-12 flex flex-col items-start justify-between gap-6 rounded-2xl p-6 shadow-soft md:flex-row md:items-center md:p-8">
           <div>
             <p className="text-balance font-display text-xl font-bold leading-snug text-foreground md:text-2xl">
               <span className="text-primaryDeep">8–16 weeks</span> to production, vs.{" "}

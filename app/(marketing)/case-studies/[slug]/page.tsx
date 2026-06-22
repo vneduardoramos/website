@@ -230,7 +230,7 @@ export default async function CaseStudyDetailPage({
 
       {/* ── Pull quote (tinted) ─────────────────────────────────── */}
       {quote?.text && (
-        <Section className="section-tint relative overflow-hidden">
+        <Section className="section-warm relative overflow-hidden">
           <SectionDecor variant="swoosh" />
           <figure className="relative mx-auto max-w-3xl text-center">
             <svg

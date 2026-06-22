@@ -190,7 +190,7 @@ export default async function NewsDetailPage({
 
       {/* More news */}
       {more.length > 0 ? (
-        <Section className="section-tint">
+        <Section className="section-warm">
           <SectionHeading eyebrow="Newsroom" title="More news & events" />
           <div className="mt-10 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3">
             {more.map((n) => (

@@ -112,7 +112,7 @@ export default function PartnershipPage() {
       </Section>
 
       {/* Build vs partner comparison */}
-      <Section id="comparison" className="section-tint relative overflow-hidden">
+      <Section id="comparison" className="section-warm relative overflow-hidden">
         <SectionDecor variant="grid" />
         <div className="relative">
           <SectionHeading

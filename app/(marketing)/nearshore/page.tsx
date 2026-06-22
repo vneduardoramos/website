@@ -223,7 +223,7 @@ export default async function NearshorePage() {
       </Section>
 
       {/* What we deliver nearshore */}
-      <Section className="section-tint relative overflow-hidden">
+      <Section className="section-warm relative overflow-hidden">
         <SectionDecor variant="grid" />
         <div className="relative">
           <SectionHeading

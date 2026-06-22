@@ -80,7 +80,7 @@ export default async function BlogPage() {
         </Section>
       ) : null}
 
-      <section className="section section-tint relative overflow-hidden">
+      <section className="section section-warm relative overflow-hidden">
         <WaveDivider position="top" fill="fill-background" />
         <SectionDecor variant="grid" />
         <div className="container-page relative">

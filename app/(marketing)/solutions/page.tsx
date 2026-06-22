@@ -127,7 +127,7 @@ export default function SolutionsPage() {
       {SOLUTIONS.map((s, i) => (
         <Section
           key={s.eyebrow}
-          className={i % 2 === 1 ? "section-tint relative overflow-hidden" : "relative overflow-hidden"}
+          className={i % 2 === 1 ? "section-warm relative overflow-hidden" : "relative overflow-hidden"}
         >
           {i % 2 === 1 && <SectionDecor variant="dots" />}
           <div className="relative">

@@ -436,7 +436,7 @@ export default async function ServicesPage() {
         </RevealGroup>
       </Section>
 
-      <Section className="section-tint">
+      <Section className="section-warm">
         <SnowflakeLockup variant="default" height={32} className="mb-10" />
         <FeatureSplit
           eyebrow="The Snowflake stack"
@@ -542,7 +542,7 @@ export default async function ServicesPage() {
         </div>
       </Section>
 
-      <Section className="section-tint">
+      <Section className="section-warm">
         <SectionHeading
           eyebrow="What we build on"
           title="The Snowflake-native stack we build on"
@@ -612,7 +612,7 @@ export default async function ServicesPage() {
         </RevealGroup>
 
         {/* UVP: what's constant across every model */}
-        <div className="mt-12 rounded-3xl border border-border bg-background p-8 md:p-10">
+        <div className="panel-warm mt-12 rounded-3xl p-8 md:p-10">
           <div className="max-w-2xl">
             <p className="eyebrow">Constant across every model</p>
             <h3 className="mt-4 font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">

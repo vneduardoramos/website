@@ -61,7 +61,7 @@ export default async function NewsPage() {
 
           {/* Rest of the items */}
           {rest.length > 0 ? (
-            <Section className="section-tint">
+            <Section className="section-warm">
               <SectionHeading
                 eyebrow="More updates"
                 title="All news & events"

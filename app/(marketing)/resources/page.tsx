@@ -69,7 +69,7 @@ export default async function ResourcesPage() {
 
       {/* Blog */}
       {posts.length > 0 && (
-        <Section className="section-tint">
+        <Section className="section-warm">
           <div className="flex items-end justify-between gap-4">
             <SectionHeading eyebrow="From the lab" title="Blog" />
             <SeeAll href="/blog" label="All posts" />

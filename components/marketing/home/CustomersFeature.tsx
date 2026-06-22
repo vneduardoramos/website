@@ -42,7 +42,7 @@ function BrandSwoosh({ className = "" }: { className?: string }) {
 
 export function CustomersFeature({ bottomLogos }: { bottomLogos: BandLogo[] }) {
   return (
-    <section className="section section-tint relative overflow-hidden">
+    <section className="section section-warm relative overflow-hidden">
       <div className="container-page">
         {/* heading row */}
         <div className="flex flex-wrap items-end justify-between gap-5">

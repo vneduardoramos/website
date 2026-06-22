@@ -59,7 +59,7 @@ export default async function ContactPage() {
         </div>
       </div>
 
-      <Section>
+      <Section className="section-warm">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <div>
             <div>

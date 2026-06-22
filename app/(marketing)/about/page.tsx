@@ -235,7 +235,7 @@ export default async function AboutPage() {
       </Section>
 
       {/* Our team, versed at every level, plus the leadership behind it */}
-      <Section id="team" className="section-tint">
+      <Section id="team" className="section-warm">
         <SectionHeading
           eyebrow="Our team"
           title="Versed in Snowflake and enterprise, at every level"

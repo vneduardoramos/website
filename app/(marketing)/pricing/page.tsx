@@ -97,7 +97,7 @@ export default function PricingPage() {
         </div>
       </Section>
 
-      <Section className="section-tint relative overflow-hidden">
+      <Section className="section-warm relative overflow-hidden">
         <SectionDecor variant="grid" />
         <div className="relative grid items-start gap-10 lg:grid-cols-2">
           <div>
@@ -123,7 +123,7 @@ export default function PricingPage() {
               <span className="transition-transform group-hover:translate-x-0.5">→</span>
             </Link>
           </div>
-          <div className="rounded-2xl border border-border bg-background p-8">
+          <div className="panel-warm rounded-2xl p-8">
             <p className="eyebrow mb-2">Value by horizon</p>
             <ul className="mt-4 space-y-6">
               {impactByPhase.map((p) => (

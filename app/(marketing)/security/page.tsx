@@ -137,7 +137,7 @@ export default function SecurityPage() {
       </Section>
 
       {/* Governance overview split */}
-      <Section className="section-tint relative overflow-hidden">
+      <Section className="section-warm relative overflow-hidden">
         <SectionDecor variant="flow" />
         <div className="relative">
           <FeatureSplit

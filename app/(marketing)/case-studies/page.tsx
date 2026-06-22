@@ -81,7 +81,7 @@ export default async function CaseStudiesPage() {
           {rest.length > 0 && (
             <div className="relative">
               <WaveDivider position="top" fill="fill-surface2" />
-              <Section className="section-tint relative overflow-hidden">
+              <Section className="section-warm relative overflow-hidden">
                 <SectionDecor variant="grid" />
                 <div className="relative">
                   <p className="eyebrow mb-8">More engagements</p>
@@ -113,7 +113,7 @@ export default async function CaseStudiesPage() {
       {/* ── Real, verifiable proof (credibility rests here) ──────── */}
       <Section className="relative overflow-hidden">
         <SectionDecor variant="dots" />
-        <div className="relative rounded-3xl border border-border bg-surface p-8 md:p-10">
+        <div className="panel-warm relative rounded-3xl p-8 md:p-10">
           <p className="eyebrow mb-3">Verified proof</p>
           <h2 className="max-w-2xl text-balance font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
             Proof you can verify today.
