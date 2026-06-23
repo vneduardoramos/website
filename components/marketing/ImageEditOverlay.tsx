@@ -152,7 +152,11 @@ export function ImageEditOverlay({ request, onClose }: { request: EditRequest; o
                   alt=""
                   draggable={false}
                   className="h-full w-full object-cover"
-                  style={{ objectPosition: `${focalX}% ${focalY}%`, transform: zoom > 1 ? `scale(${zoom})` : undefined }}
+                  style={{
+                    objectPosition: `${focalX}% ${focalY}%`,
+                    transform: zoom > 1 ? `scale(${zoom})` : undefined,
+                    transformOrigin: `${focalX}% ${focalY}%`,
+                  }}
                 />
                 <span className="pointer-events-none absolute bottom-2 left-2 rounded bg-foreground/70 px-2 py-0.5 text-xs text-white">
                   Drag to reposition

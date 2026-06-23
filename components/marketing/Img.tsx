@@ -1,7 +1,7 @@
 "use client";
 import Image, { type ImageProps } from "next/image";
 import blur from "@/lib/blur-manifest.json";
-import { applyOverride } from "@/lib/image-overrides";
+import { applyOverride, isOverrideActive } from "@/lib/image-overrides";
 import { useImageOverride } from "@/components/marketing/ImageOverrideProvider";
 import { useEditMode } from "@/components/marketing/EditModeProvider";
 
@@ -23,6 +23,13 @@ export function Img({ src, alt, placeholder, blurDataURL, editKey, style, ...pro
   const isSvg = typeof effSrc === "string" && effSrc.toLowerCase().endsWith(".svg");
   const isRemote = typeof effSrc === "string" && /^https?:\/\//.test(effSrc);
   const fill = (props as { fill?: boolean }).fill;
+  // Treat as overlay-positioned (absolute) when the image fills via the `fill`
+  // prop OR its className positions it absolutely (e.g. `absolute inset-0
+  // h-full w-full`). Such images give a wrapper no intrinsic height, so the
+  // wrapper must itself be `absolute inset-0` to avoid collapsing to 0px.
+  const cls = typeof (props as { className?: string }).className === "string" ? (props as { className?: string }).className! : "";
+  const overlay = Boolean(fill) || /\babsolute\b/.test(cls);
+  const active = isOverrideActive(override);
   const img = isSvg ? (
     <Image src={effSrc} alt={effAlt} style={mergedStyle} {...props} />
   ) : (
@@ -37,17 +44,36 @@ export function Img({ src, alt, placeholder, blurDataURL, editKey, style, ...pro
     />
   );
 
-  if (!(isAdmin && editMode) || !key) return img;
+  const editing = isAdmin && editMode && Boolean(key);
+
+  // CRITICAL: with no active override and not editing, return the bare image so
+  // the anonymous / unedited render path stays byte-identical to before.
+  if (!active && !editing) return img;
+
+  // A clip wrapper is needed whenever the cropper CSS is applied (so the
+  // magnified image is clipped to its slot) and/or while editing (for the Edit
+  // button). Make it fill-aware exactly like the original edit wrapper so it
+  // never collapses a `fill` image or alters layout for a sized one.
+  const wrapperClass = [
+    editing ? "group/imgedit" : "",
+    overlay ? "absolute inset-0" : "relative block",
+    active ? "overflow-hidden" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <span className={fill ? "group/imgedit absolute inset-0" : "group/imgedit relative block"}>
+    <span className={wrapperClass}>
       {img}
-      <button
-        type="button"
-        onClick={(e) => { e.preventDefault(); openEditor({ key, baseSrc, alt: typeof effAlt === "string" ? effAlt : "", override: override ?? null }); }}
-        className="absolute right-2 top-2 z-20 rounded-md bg-royal/90 px-2 py-1 text-xs font-semibold text-white opacity-0 shadow-soft transition-opacity group-hover/imgedit:opacity-100"
-      >
-        Edit
-      </button>
+      {editing && (
+        <button
+          type="button"
+          onClick={(e) => { e.preventDefault(); openEditor({ key, baseSrc, alt: typeof effAlt === "string" ? effAlt : "", override: override ?? null }); }}
+          className="absolute right-2 top-2 z-20 rounded-md bg-royal/90 px-2 py-1 text-xs font-semibold text-white opacity-0 shadow-soft transition-opacity group-hover/imgedit:opacity-100"
+        >
+          Edit
+        </button>
+      )}
     </span>
   );
 }

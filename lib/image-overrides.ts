@@ -11,19 +11,55 @@ export type ImageOverrideData = {
 
 export type OverrideMap = Record<string, ImageOverrideData>;
 
-/** Pure: compute the effective src/style/alt for an image given its override. */
+/**
+ * Is this override doing anything visible? An override is "active" when it
+ * pans (focal off-center), zooms in, or replaces the source. Only then do we
+ * apply the cropper CSS / wrap the live image — when inactive the render path
+ * must stay byte-identical to the unedited default.
+ */
+export function isOverrideActive(ov: ImageOverrideData | null): boolean {
+  if (!ov) return false;
+  return ov.focalX !== 50 || ov.focalY !== 50 || ov.zoom > 1 || Boolean(ov.mediaUrl);
+}
+
+/**
+ * Pure: compute the effective src/style/alt for an image given its override.
+ *
+ * Cropper model (identical in the editor preview and the live render):
+ *   - the image fills its slot via `object-fit: cover`
+ *   - `object-position: focalX% focalY%` pans the natural cover overflow
+ *   - `transform: scale(zoom)` with `transform-origin` at the focal point
+ *     magnifies the image, anchored on the focal point, which GUARANTEES a
+ *     large pannable region once zoomed
+ * The caller (Img / the editor frame) supplies the `overflow: hidden` slot
+ * that clips the magnified image. `focalX/focalY` are reinterpreted as the
+ * focal/pan point; `zoom` as magnification. No schema change.
+ */
 export function applyOverride(
   src: string,
   ov: ImageOverrideData | null,
 ): { src: string; style?: CSSProperties; alt?: string } {
   if (!ov) return { src, style: undefined, alt: undefined };
-  const style: CSSProperties = {};
-  if (ov.focalX !== 50 || ov.focalY !== 50) style.objectPosition = `${ov.focalX}% ${ov.focalY}%`;
-  if (ov.zoom > 1) style.transform = `scale(${ov.zoom})`;
+  // Alt text and a replaced src are honored even when the framing is neutral
+  // (they don't change the cover/transform render path).
+  if (!isOverrideActive(ov)) {
+    return { src: ov.mediaUrl || src, style: undefined, alt: ov.alt ?? undefined };
+  }
+  const o = ov;
+  const style: CSSProperties = {
+    // Force cover so the focal point + zoom crop applies even to images whose
+    // component never set object-fit (root cause B: sized non-cover images).
+    objectFit: "cover",
+    objectPosition: `${o.focalX}% ${o.focalY}%`,
+  };
+  if (o.zoom > 1) {
+    style.transform = `scale(${o.zoom})`;
+    style.transformOrigin = `${o.focalX}% ${o.focalY}%`;
+  }
   return {
-    src: ov.mediaUrl || src,
-    style: Object.keys(style).length ? style : undefined,
-    alt: ov.alt ?? undefined,
+    src: o.mediaUrl || src,
+    style,
+    alt: o.alt ?? undefined,
   };
 }
 
