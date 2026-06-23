@@ -16,11 +16,11 @@ export const metadata = pageMeta({
   path: "/data-ai",
 });
 
-const HERO_CHIPS = ["14+ models", "8 labs", "Runs in your Snowflake", "Governed by default"];
+const HERO_CHIPS = ["14+ models", "6 leading labs", "Runs in your Snowflake", "Governed by default"];
 
 const METRICS = [
   { value: "14+", label: "Models in Cortex" },
-  { value: "8", label: "Labs, one interface" },
+  { value: "6", label: "Leading labs, one interface" },
   { value: "0", label: "Data movement" },
   { value: "1 line", label: "To swap models" },
 ];
@@ -61,7 +61,7 @@ export default function DataAiPage() {
             align="center"
             eyebrow="Model-agnostic"
             title="One foundation. Every major model."
-            intro="Anthropic, OpenAI, Meta, Mistral, Google, DeepSeek, Snowflake and more, all callable on your governed data. Move between them with a single line of SQL as better models arrive."
+            intro="Anthropic, OpenAI, Meta, Mistral, Google, and DeepSeek, all callable on your governed data. Move between them with a single line of SQL as better models arrive."
           />
           <div className="mt-14">
             <ModelWall />

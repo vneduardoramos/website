@@ -18,13 +18,14 @@ export type ModelProvider = {
   color: string; // brand color for the active "lit" state
 };
 
+// Model strings verified against the Cortex AISQL regional-availability docs.
+// Arctic is embeddings-only (not callable in AI_COMPLETE) and Reka is deprecated,
+// so both are omitted; the wall shows the current text-generation labs.
 export const MODEL_PROVIDERS: ModelProvider[] = [
   { key: "anthropic", name: "Anthropic", family: "Claude", token: "claude-opus-4-8", src: "/assets/images/providers/anthropic.svg", color: "#D97757" },
   { key: "openai", name: "OpenAI", family: "GPT", token: "openai-gpt-4.1", src: "/assets/images/providers/openai.svg", color: "#0F0F0F" },
   { key: "meta", name: "Meta", family: "Llama", token: "llama3.3-70b", src: "/assets/images/providers/meta.svg", color: "#1877F2" },
   { key: "mistral", name: "Mistral AI", family: "Mistral", token: "mistral-large2", src: "/assets/images/providers/mistral.svg", color: "#FA520F" },
-  { key: "gemini", name: "Google", family: "Gemini", token: "gemini-2.5-pro", src: "/assets/images/providers/gemini.svg", color: "#1C69FF" },
+  { key: "gemini", name: "Google", family: "Gemini", token: "gemini-3.1-pro", src: "/assets/images/providers/gemini.svg", color: "#1C69FF" },
   { key: "deepseek", name: "DeepSeek", family: "DeepSeek", token: "deepseek-r1", src: "/assets/images/providers/deepseek.svg", color: "#4D6BFE" },
-  { key: "snowflake", name: "Snowflake", family: "Arctic", token: "snowflake-arctic", src: "/assets/images/providers/snowflake.svg", color: "#29B5E8" },
-  { key: "reka", name: "Reka AI", family: "Reka", token: "reka-flash", color: "#5B5BD6" },
 ];

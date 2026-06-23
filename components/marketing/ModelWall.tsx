@@ -26,7 +26,7 @@ export function ModelWall() {
   return (
     <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
       {/* The wall */}
-      <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+      <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
         {MODEL_PROVIDERS.map((p, i) => {
           const lit = reduced || i === active;
           const markColor = lit ? p.color : "#94A3B8";
