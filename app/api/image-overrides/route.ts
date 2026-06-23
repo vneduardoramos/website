@@ -28,6 +28,8 @@ export async function POST(req: Request) {
 export async function DELETE(req: Request) {
   const session = await getServerSession(authOptions);
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  const rl = rateLimit(`imgov:${clientIp(req)}`, { limit: 60, windowMs: 60_000 });
+  if (!rl.ok) return tooMany(rl.retryAfter);
   const key = new URL(req.url).searchParams.get("key");
   if (!key) return NextResponse.json({ error: "Missing key" }, { status: 400 });
   await prisma.imageOverride.deleteMany({ where: { key } });

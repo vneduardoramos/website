@@ -21,6 +21,8 @@ export function Img({ src, alt, placeholder, blurDataURL, editKey, style, ...pro
   const mergedStyle = { ...resolved.style, ...(style as object) };
 
   const isSvg = typeof effSrc === "string" && effSrc.toLowerCase().endsWith(".svg");
+  const isRemote = typeof effSrc === "string" && /^https?:\/\//.test(effSrc);
+  const fill = (props as { fill?: boolean }).fill;
   const img = isSvg ? (
     <Image src={effSrc} alt={effAlt} style={mergedStyle} {...props} />
   ) : (
@@ -30,13 +32,14 @@ export function Img({ src, alt, placeholder, blurDataURL, editKey, style, ...pro
       placeholder={placeholder ?? "blur"}
       blurDataURL={blurDataURL ?? (typeof effSrc === "string" ? MANIFEST[effSrc] : undefined) ?? FALLBACK_BLUR}
       style={mergedStyle}
+      unoptimized={isRemote || undefined}
       {...props}
     />
   );
 
   if (!(isAdmin && editMode) || !key) return img;
   return (
-    <span className="group/imgedit relative block">
+    <span className={fill ? "group/imgedit absolute inset-0" : "group/imgedit relative block"}>
       {img}
       <button
         type="button"
