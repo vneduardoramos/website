@@ -14,7 +14,7 @@ type PexelsState =
   | { status: "idle" }
   | { status: "loading" }
   | { status: "not-configured" }
-  | { status: "results"; photos: PexelsPhoto[] }
+  | { status: "results"; photos: PexelsPhoto[]; hasMore: boolean }
   | { status: "empty" };
 
 export function ImageEditOverlay({ request, onClose }: { request: EditRequest; onClose: () => void }) {
@@ -30,6 +30,7 @@ export function ImageEditOverlay({ request, onClose }: { request: EditRequest; o
   const [pexelsQuery, setPexelsQuery] = useState("");
   const [pexelsState, setPexelsState] = useState<PexelsState>({ status: "idle" });
   const [pexelsPickBusy, setPexelsPickBusy] = useState<number | null>(null);
+  const [page, setPage] = useState(1);
 
   const previewSrc = mediaUrl || request.baseSrc;
 
@@ -74,13 +75,12 @@ export function ImageEditOverlay({ request, onClose }: { request: EditRequest; o
     } catch (e) { setError(e instanceof Error ? e.message : "Reset failed"); setBusy(false); }
   }
 
-  async function searchPexels() {
-    const q = pexelsQuery.trim();
+  async function searchPexelsPage(q: string, targetPage: number) {
     if (!q) return;
     setPexelsState({ status: "loading" });
     setError(null);
     try {
-      const res = await fetch(`/api/pexels/search?q=${encodeURIComponent(q)}`);
+      const res = await fetch(`/api/pexels/search?q=${encodeURIComponent(q)}&page=${targetPage}`);
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || "Search failed");
       if (!json.configured) {
@@ -91,11 +91,19 @@ export function ImageEditOverlay({ request, onClose }: { request: EditRequest; o
         setPexelsState({ status: "empty" });
         return;
       }
-      setPexelsState({ status: "results", photos: json.photos });
+      setPage(json.page as number);
+      setPexelsState({ status: "results", photos: json.photos, hasMore: Boolean(json.hasMore) });
     } catch (e) {
       setError(e instanceof Error ? e.message : "Pexels search failed");
       setPexelsState({ status: "idle" });
     }
+  }
+
+  async function searchPexels() {
+    const q = pexelsQuery.trim();
+    if (!q) return;
+    setPage(1);
+    await searchPexelsPage(q, 1);
   }
 
   async function pickPexelsPhoto(photo: PexelsPhoto) {
@@ -119,104 +127,145 @@ export function ImageEditOverlay({ request, onClose }: { request: EditRequest; o
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/60 p-4" role="dialog" aria-modal="true">
-      <div className="w-full max-w-lg rounded-2xl bg-background p-6 shadow-soft-lg">
-        <h2 className="font-display text-lg font-bold text-foreground">Edit image</h2>
-        <div
-          ref={frameRef}
-          onMouseMove={onDrag}
-          className="relative mt-4 aspect-[16/10] w-full cursor-move overflow-hidden rounded-xl border border-border bg-surface2"
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={previewSrc}
-            alt=""
-            className="h-full w-full object-cover"
-            style={{ objectPosition: `${focalX}% ${focalY}%`, transform: zoom > 1 ? `scale(${zoom})` : undefined }}
-          />
-          <span className="pointer-events-none absolute bottom-2 left-2 rounded bg-foreground/70 px-2 py-0.5 text-xs text-white">
-            Drag to reposition
-          </span>
+      <div className="flex w-full max-w-4xl flex-col rounded-2xl bg-background shadow-soft-lg" style={{ maxHeight: "88vh" }}>
+
+        {/* Header */}
+        <div className="flex-none px-6 pt-6 pb-4 border-b border-border">
+          <h2 className="font-display text-lg font-bold text-foreground">Edit image</h2>
         </div>
 
-        <label className="mt-4 block text-sm font-medium text-foreground">Zoom
-          <input type="range" min={1} max={3} step={0.05} value={zoom} onChange={(e) => setZoom(Number(e.target.value))} className="mt-1 w-full" />
-        </label>
+        {/* Scrollable body */}
+        <div className="flex-1 overflow-y-auto px-6 py-4">
+          <div className="grid md:grid-cols-2 gap-6">
 
-        <label className="mt-3 block text-sm font-medium text-foreground">Alt text
-          <input value={alt} onChange={(e) => setAlt(e.target.value)} className="mt-1 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm" />
-        </label>
-
-        <input type="file" accept="image/*" onChange={(e) => { const f = e.target.files?.[0]; if (f) upload(f); }} className="mt-3 block text-sm" />
-
-        {/* Pexels search section */}
-        <div className="mt-5 border-t border-border pt-4">
-          <p className="mb-2 text-sm font-medium text-foreground">Search Pexels</p>
-          <div className="flex gap-2">
-            <input
-              type="text"
-              value={pexelsQuery}
-              onChange={(e) => setPexelsQuery(e.target.value)}
-              onKeyDown={(e) => { if (e.key === "Enter") searchPexels(); }}
-              placeholder="e.g. data analytics"
-              className="flex-1 rounded-lg border border-border bg-surface px-3 py-2 text-sm"
-            />
-            <button
-              type="button"
-              onClick={searchPexels}
-              disabled={pexelsState.status === "loading" || !pexelsQuery.trim()}
-              className="btn-ghost btn-sm"
-            >
-              {pexelsState.status === "loading" ? "Searching..." : "Search"}
-            </button>
-          </div>
-
-          {pexelsState.status === "not-configured" && (
-            <p className="mt-2 text-xs text-foreground/50">Pexels search isn&apos;t set up.</p>
-          )}
-
-          {pexelsState.status === "empty" && (
-            <p className="mt-2 text-sm text-foreground/60">No results.</p>
-          )}
-
-          {pexelsState.status === "results" && (
-            <div className="mt-3 max-h-56 overflow-y-auto rounded-lg">
-              <div className="grid grid-cols-3 gap-2">
-                {pexelsState.photos.map((photo) => (
-                  <button
-                    key={photo.id}
-                    type="button"
-                    onClick={() => pickPexelsPhoto(photo)}
-                    disabled={pexelsPickBusy !== null}
-                    className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary"
-                    title={photo.photographer ? `Photo by ${photo.photographer}` : photo.alt}
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={photo.thumb}
-                      alt={photo.alt}
-                      className="h-full w-full object-cover"
-                    />
-                    {pexelsPickBusy === photo.id && (
-                      <span className="absolute inset-0 flex items-center justify-center rounded-lg bg-foreground/50 text-xs text-white">
-                        Loading...
-                      </span>
-                    )}
-                  </button>
-                ))}
+            {/* LEFT — preview, zoom, alt, upload */}
+            <div className="flex flex-col gap-4">
+              <div
+                ref={frameRef}
+                onMouseMove={onDrag}
+                className="relative aspect-[16/10] w-full cursor-move overflow-hidden rounded-xl border border-border bg-surface2"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={previewSrc}
+                  alt=""
+                  className="h-full w-full object-cover"
+                  style={{ objectPosition: `${focalX}% ${focalY}%`, transform: zoom > 1 ? `scale(${zoom})` : undefined }}
+                />
+                <span className="pointer-events-none absolute bottom-2 left-2 rounded bg-foreground/70 px-2 py-0.5 text-xs text-white">
+                  Drag to reposition
+                </span>
               </div>
+
+              <label className="block text-sm font-medium text-foreground">Zoom
+                <input type="range" min={1} max={3} step={0.05} value={zoom} onChange={(e) => setZoom(Number(e.target.value))} className="mt-1 w-full" />
+              </label>
+
+              <label className="block text-sm font-medium text-foreground">Alt text
+                <input value={alt} onChange={(e) => setAlt(e.target.value)} className="mt-1 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm" />
+              </label>
+
+              <input type="file" accept="image/*" onChange={(e) => { const f = e.target.files?.[0]; if (f) upload(f); }} className="block text-sm" />
             </div>
-          )}
+
+            {/* RIGHT — Pexels search */}
+            <div className="flex flex-col gap-3">
+              <p className="text-sm font-medium text-foreground">Search Pexels</p>
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={pexelsQuery}
+                  onChange={(e) => setPexelsQuery(e.target.value)}
+                  onKeyDown={(e) => { if (e.key === "Enter") searchPexels(); }}
+                  placeholder="e.g. data analytics"
+                  className="flex-1 rounded-lg border border-border bg-surface px-3 py-2 text-sm"
+                />
+                <button
+                  type="button"
+                  onClick={searchPexels}
+                  disabled={pexelsState.status === "loading" || !pexelsQuery.trim()}
+                  className="btn-ghost btn-sm"
+                >
+                  {pexelsState.status === "loading" ? "Searching..." : "Search"}
+                </button>
+              </div>
+
+              {pexelsState.status === "not-configured" && (
+                <p className="text-xs text-foreground/50">Pexels search isn&apos;t set up.</p>
+              )}
+
+              {pexelsState.status === "empty" && (
+                <p className="text-sm text-foreground/60">No results.</p>
+              )}
+
+              {pexelsState.status === "results" && (
+                <div className="flex flex-col gap-2">
+                  <div className="overflow-y-auto rounded-lg" style={{ maxHeight: "320px" }}>
+                    <div className="grid grid-cols-3 gap-2">
+                      {pexelsState.photos.map((photo) => (
+                        <button
+                          key={photo.id}
+                          type="button"
+                          onClick={() => pickPexelsPhoto(photo)}
+                          disabled={pexelsPickBusy !== null}
+                          className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary"
+                          title={photo.photographer ? `Photo by ${photo.photographer}` : photo.alt}
+                        >
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={photo.thumb}
+                            alt={photo.alt}
+                            className="h-full w-full object-cover"
+                          />
+                          {pexelsPickBusy === photo.id && (
+                            <span className="absolute inset-0 flex items-center justify-center rounded-lg bg-foreground/50 text-xs text-white">
+                              Loading...
+                            </span>
+                          )}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Pagination controls */}
+                  <div className="flex items-center justify-between gap-2 pt-1">
+                    <button
+                      type="button"
+                      disabled={page <= 1}
+                      onClick={() => searchPexelsPage(pexelsQuery.trim(), page - 1)}
+                      className="btn-ghost btn-sm"
+                    >
+                      Prev
+                    </button>
+                    <span className="text-xs text-foreground/60">Page {page}</span>
+                    <button
+                      type="button"
+                      disabled={!pexelsState.hasMore}
+                      onClick={() => searchPexelsPage(pexelsQuery.trim(), page + 1)}
+                      className="btn-ghost btn-sm"
+                    >
+                      Next
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {error && <p className="mt-4 text-sm text-red">{error}</p>}
         </div>
 
-        {error && <p className="mt-3 text-sm text-red">{error}</p>}
-
-        <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
-          <button type="button" onClick={reset} disabled={busy} className="btn-ghost btn-sm">Reset to default</button>
-          <div className="flex gap-2">
-            <button type="button" onClick={onClose} disabled={busy} className="btn-ghost btn-sm">Cancel</button>
-            <button type="button" onClick={save} disabled={busy} className="btn-primary btn-sm">{busy ? "Saving..." : "Save"}</button>
+        {/* Footer — always visible */}
+        <div className="flex-none border-t border-border px-6 py-4">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <button type="button" onClick={reset} disabled={busy} className="btn-ghost btn-sm">Reset to default</button>
+            <div className="flex gap-2">
+              <button type="button" onClick={onClose} disabled={busy} className="btn-ghost btn-sm">Cancel</button>
+              <button type="button" onClick={save} disabled={busy} className="btn-primary btn-sm">{busy ? "Saving..." : "Save"}</button>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   );

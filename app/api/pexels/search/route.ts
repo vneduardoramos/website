@@ -55,5 +55,11 @@ export async function GET(req: Request) {
     };
   });
 
-  return NextResponse.json({ ok: true, configured: true, photos });
+  return NextResponse.json({
+    ok: true,
+    configured: true,
+    photos,
+    page,
+    hasMore: Boolean(data.next_page),
+  });
 }
