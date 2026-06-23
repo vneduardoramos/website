@@ -32,6 +32,9 @@ export function ImageEditOverlay({ request, onClose }: { request: EditRequest; o
   const [pexelsPickBusy, setPexelsPickBusy] = useState<number | null>(null);
   const [page, setPage] = useState(1);
 
+  const [urlInput, setUrlInput] = useState("");
+  const [urlBusy, setUrlBusy] = useState(false);
+
   const previewSrc = mediaUrl || request.baseSrc;
 
   async function upload(file: File) {
@@ -44,6 +47,24 @@ export function ImageEditOverlay({ request, onClose }: { request: EditRequest; o
       setMediaUrl(json.media.url);
     } catch (e) { setError(e instanceof Error ? e.message : "Upload failed"); }
     finally { setBusy(false); }
+  }
+
+  async function snapFromUrl() {
+    const u = urlInput.trim();
+    if (!u) return;
+    setUrlBusy(true); setError(null);
+    try {
+      const res = await fetch("/api/image-from-url", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ url: u }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || "Could not fetch that image");
+      setMediaUrl(json.url);
+      setUrlInput("");
+    } catch (e) { setError(e instanceof Error ? e.message : "Could not fetch that image"); }
+    finally { setUrlBusy(false); }
   }
 
   function onDrag(e: React.MouseEvent) {
@@ -172,6 +193,29 @@ export function ImageEditOverlay({ request, onClose }: { request: EditRequest; o
               </label>
 
               <input type="file" accept="image/*" onChange={(e) => { const f = e.target.files?.[0]; if (f) upload(f); }} className="block text-sm" />
+
+              <div className="flex flex-col gap-1">
+                <label className="text-sm font-medium text-foreground">Or paste an image URL</label>
+                <div className="flex gap-2">
+                  <input
+                    type="url"
+                    value={urlInput}
+                    onChange={(e) => setUrlInput(e.target.value)}
+                    onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); snapFromUrl(); } }}
+                    placeholder="https://example.com/photo.jpg"
+                    className="flex-1 rounded-lg border border-border bg-surface px-3 py-2 text-sm"
+                  />
+                  <button
+                    type="button"
+                    onClick={snapFromUrl}
+                    disabled={urlBusy || !urlInput.trim()}
+                    className="btn-ghost btn-sm whitespace-nowrap"
+                  >
+                    {urlBusy ? "Snapping..." : "Snap it"}
+                  </button>
+                </div>
+                <p className="text-xs text-foreground/50">We copy the image into your storage and use that copy.</p>
+              </div>
             </div>
 
             {/* RIGHT — Pexels search */}
