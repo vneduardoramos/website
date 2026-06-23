@@ -2,6 +2,21 @@
 import { useRef, useState } from "react";
 import type { EditRequest } from "@/components/marketing/EditModeProvider";
 
+interface PexelsPhoto {
+  id: number;
+  thumb: string;
+  full: string;
+  alt: string;
+  photographer: string;
+}
+
+type PexelsState =
+  | { status: "idle" }
+  | { status: "loading" }
+  | { status: "not-configured" }
+  | { status: "results"; photos: PexelsPhoto[] }
+  | { status: "empty" };
+
 export function ImageEditOverlay({ request, onClose }: { request: EditRequest; onClose: () => void }) {
   const [mediaUrl, setMediaUrl] = useState<string | null>(null);
   const [focalX, setFocalX] = useState(50);
@@ -11,6 +26,10 @@ export function ImageEditOverlay({ request, onClose }: { request: EditRequest; o
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const frameRef = useRef<HTMLDivElement>(null);
+
+  const [pexelsQuery, setPexelsQuery] = useState("");
+  const [pexelsState, setPexelsState] = useState<PexelsState>({ status: "idle" });
+  const [pexelsPickBusy, setPexelsPickBusy] = useState<number | null>(null);
 
   const previewSrc = mediaUrl || request.baseSrc;
 
@@ -55,6 +74,49 @@ export function ImageEditOverlay({ request, onClose }: { request: EditRequest; o
     } catch (e) { setError(e instanceof Error ? e.message : "Reset failed"); setBusy(false); }
   }
 
+  async function searchPexels() {
+    const q = pexelsQuery.trim();
+    if (!q) return;
+    setPexelsState({ status: "loading" });
+    setError(null);
+    try {
+      const res = await fetch(`/api/pexels/search?q=${encodeURIComponent(q)}`);
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || "Search failed");
+      if (!json.configured) {
+        setPexelsState({ status: "not-configured" });
+        return;
+      }
+      if (!json.photos || json.photos.length === 0) {
+        setPexelsState({ status: "empty" });
+        return;
+      }
+      setPexelsState({ status: "results", photos: json.photos });
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Pexels search failed");
+      setPexelsState({ status: "idle" });
+    }
+  }
+
+  async function pickPexelsPhoto(photo: PexelsPhoto) {
+    setPexelsPickBusy(photo.id);
+    setError(null);
+    try {
+      const res = await fetch("/api/pexels/select", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ url: photo.full }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || "Failed to select photo");
+      setMediaUrl(json.url);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Failed to select photo");
+    } finally {
+      setPexelsPickBusy(null);
+    }
+  }
+
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/60 p-4" role="dialog" aria-modal="true">
       <div className="w-full max-w-lg rounded-2xl bg-background p-6 shadow-soft-lg">
@@ -85,6 +147,66 @@ export function ImageEditOverlay({ request, onClose }: { request: EditRequest; o
         </label>
 
         <input type="file" accept="image/*" onChange={(e) => { const f = e.target.files?.[0]; if (f) upload(f); }} className="mt-3 block text-sm" />
+
+        {/* Pexels search section */}
+        <div className="mt-5 border-t border-border pt-4">
+          <p className="mb-2 text-sm font-medium text-foreground">Search Pexels</p>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={pexelsQuery}
+              onChange={(e) => setPexelsQuery(e.target.value)}
+              onKeyDown={(e) => { if (e.key === "Enter") searchPexels(); }}
+              placeholder="e.g. data analytics"
+              className="flex-1 rounded-lg border border-border bg-surface px-3 py-2 text-sm"
+            />
+            <button
+              type="button"
+              onClick={searchPexels}
+              disabled={pexelsState.status === "loading" || !pexelsQuery.trim()}
+              className="btn-ghost btn-sm"
+            >
+              {pexelsState.status === "loading" ? "Searching..." : "Search"}
+            </button>
+          </div>
+
+          {pexelsState.status === "not-configured" && (
+            <p className="mt-2 text-xs text-foreground/50">Pexels search isn&apos;t set up.</p>
+          )}
+
+          {pexelsState.status === "empty" && (
+            <p className="mt-2 text-sm text-foreground/60">No results.</p>
+          )}
+
+          {pexelsState.status === "results" && (
+            <div className="mt-3 max-h-56 overflow-y-auto rounded-lg">
+              <div className="grid grid-cols-3 gap-2">
+                {pexelsState.photos.map((photo) => (
+                  <button
+                    key={photo.id}
+                    type="button"
+                    onClick={() => pickPexelsPhoto(photo)}
+                    disabled={pexelsPickBusy !== null}
+                    className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary"
+                    title={photo.photographer ? `Photo by ${photo.photographer}` : photo.alt}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={photo.thumb}
+                      alt={photo.alt}
+                      className="h-full w-full object-cover"
+                    />
+                    {pexelsPickBusy === photo.id && (
+                      <span className="absolute inset-0 flex items-center justify-center rounded-lg bg-foreground/50 text-xs text-white">
+                        Loading...
+                      </span>
+                    )}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
 
         {error && <p className="mt-3 text-sm text-red">{error}</p>}
 
