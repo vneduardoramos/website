@@ -25,3 +25,7 @@ prisma/data-export.json
 
 # visual-companion brainstorm artifacts
 .superpowers/
+
+# Playwright e2e output
+/test-results/
+/playwright-report/
