@@ -95,18 +95,19 @@ export default async function HomePage() {
       {/* 2) BUILT FOR OUTCOMES: thesis header, the argument, and the source article
           as a featured read in its own column. */}
       <Section>
-        <SectionHeading
-          size="hero"
-          align="left"
-          eyebrow="Built for outcomes"
-          title={
-            <>
-              The hour was never the point.{" "}
-              <ScrollHighlight>The result always was.</ScrollHighlight>
-            </>
-          }
-          intro="For decades a services invoice was headcount times a rate, because the value lived in the manual work. AI has dissolved that link: the mechanical execution is increasingly automated, and the expertise that matters has moved upstream, into deciding what to build, orchestrating the agents that build it, and standing behind what they produce."
-        />
+        <div>
+          <h2 className="font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl md:leading-[1.1] xl:whitespace-nowrap xl:text-[2.5rem]">
+            The hour was never the point.{" "}
+            <ScrollHighlight>The result always was.</ScrollHighlight>
+          </h2>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
+            For decades a services invoice was headcount times a rate, because the value
+            lived in the manual work. AI has dissolved that link: the mechanical execution
+            is increasingly automated, and the expertise that matters has moved upstream,
+            into deciding what to build, orchestrating the agents that build it, and
+            standing behind what they produce.
+          </p>
+        </div>
 
         <div className="mt-14 grid gap-10 lg:grid-cols-12 lg:items-start lg:gap-16">
           {/* The argument */}
@@ -124,15 +125,15 @@ export default async function HomePage() {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
-                    <h3 className="font-display text-xl font-bold leading-snug text-foreground md:text-2xl">
+                    <h3 className="font-display text-lg font-bold leading-snug text-foreground">
                       {s.title}
                     </h3>
-                    <p className="mt-3 text-lg leading-relaxed text-muted">{s.body}</p>
+                    <p className="mt-2 text-base leading-relaxed text-muted">{s.body}</p>
                   </div>
                 </li>
               ))}
             </RevealGroup>
-            <p className="mt-10 border-t border-border pt-8 text-xl font-medium leading-relaxed text-foreground/90">
+            <p className="mt-9 border-t border-border pt-7 text-lg font-medium leading-relaxed text-foreground/90">
               Not a cheaper way to buy services. A more honest one: the target is set up
               front, senior judgment runs the whole way through, and{" "}
               <ScrollHighlight color="cyan">the result is ours to answer for.</ScrollHighlight>
@@ -158,10 +159,10 @@ export default async function HomePage() {
                 <span className="font-mono text-xs font-semibold uppercase tracking-widest text-primaryDeep">
                   Read the thesis
                 </span>
-                <h3 className="mt-2 font-display text-xl font-bold leading-snug text-foreground">
+                <h3 className="mt-2 font-display text-lg font-bold leading-snug text-foreground">
                   From Hours to Outcomes: How AI Changed the Economics of Services
                 </h3>
-                <p className="mt-3 text-base leading-relaxed text-muted">
+                <p className="mt-2 text-sm leading-relaxed text-muted">
                   We don&rsquo;t sell hours or headcount, we design outcomes. AI has shifted
                   where value is created, moving the expertise upstream into steering
                   solutions, orchestrating agents, and owning the result.
