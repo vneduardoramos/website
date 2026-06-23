@@ -32,7 +32,7 @@ const SOLUTIONS = [
       "Governed, documented, and handed over to your team",
     ],
     image: "/assets/images/photos/network.jpg",
-    cta: { label: "Plan your migration", href: "/contact" },
+    cta: { label: "Every source platform we migrate", href: "/migrations" },
   },
   {
     eyebrow: "Applied AI",

@@ -79,6 +79,7 @@ export const theme = {
       label: "Services",
       children: [
         { label: "Solutions", href: "/solutions", group: "What we do" },
+        { label: "Migrations", href: "/migrations", group: "What we do" },
         { label: "Data + AI", href: "/data-ai", group: "What we do" },
         { label: "Platform", href: "/platform", group: "What we do" },
         { label: "Services overview", href: "/services", group: "How we work" },

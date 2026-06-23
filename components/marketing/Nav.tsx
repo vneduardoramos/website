@@ -25,6 +25,7 @@ const NAV_DESCRIPTIONS: Record<string, string> = {
   "/life-at-viewnear": "Culture, roles & benefits",
   "/services": "How we engage: THINK · BUILD · GROW",
   "/solutions": "What we solve: migrate, AI, govern, apps",
+  "/migrations": "Off Teradata, Oracle, Hadoop & more",
   "/data-ai": "Every major model, on your data",
   "/platform": "The Snowflake-native stack",
   "/approach": "Methodology & de-risking",
@@ -105,6 +106,15 @@ function LayersIcon(p: SVGProps<SVGSVGElement>) {
       <path d="M12 3 3 7.5l9 4.5 9-4.5L12 3z" />
       <path d="m3 12 9 4.5 9-4.5" />
       <path d="m3 16.5 9 4.5 9-4.5" />
+    </svg>
+  );
+}
+function MigrateIcon(p: SVGProps<SVGSVGElement>) {
+  // arrow crossing between two stores → migration to Snowflake
+  return (
+    <svg {...ic} {...p}>
+      <path d="M4 7h7M8 4 11 7l-3 3" />
+      <path d="M20 17h-7m3-3-3 3 3 3" />
     </svg>
   );
 }
@@ -250,6 +260,7 @@ function ChatQuestionIcon(p: SVGProps<SVGSVGElement>) {
 const NAV_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   "/services": LayersIcon,
   "/solutions": BulbIcon,
+  "/migrations": MigrateIcon,
   "/data-ai": SparkIcon,
   "/platform": DatabaseIcon,
   "/approach": CompassIcon,
