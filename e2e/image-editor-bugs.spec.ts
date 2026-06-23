@@ -82,13 +82,20 @@ test("Bug 2 – focal drag updates object-position on live image", async ({ page
   await openFirstEditor(page);
 
   const dialog = page.locator(editorLocator);
-  const frame = dialog.locator(".cursor-move").first();
+  const frame = dialog.locator(".cursor-grab").first();
+  // Capture the preview img BEFORE dragging — mid-drag the frame class flips to
+  // `cursor-grabbing`, so a `.cursor-grab img` locator would no longer match.
+  const previewImg = dialog.locator("img").first();
+  // Zoom in so there is pannable range in the vertical axis regardless of the
+  // image's aspect (grab-pan needs room to move).
+  await dialog.locator('input[type="range"]').fill("1.8");
   const box = await frame.boundingBox();
   expect(box).not.toBeNull();
 
-  // Drag from near the top toward the bottom of the frame
+  // Grab-pan: drag the image downward. The image follows the cursor, so the
+  // viewport reveals the TOP of the image -> object-position Y moves toward 0%.
   const centerX = box!.x + box!.width / 2;
-  const topY = box!.y + box!.height * 0.1;
+  const topY = box!.y + box!.height * 0.15;
   const bottomY = box!.y + box!.height * 0.85;
 
   await page.mouse.move(centerX, topY);
@@ -100,16 +107,16 @@ test("Bug 2 – focal drag updates object-position on live image", async ({ page
   }
 
   // Read object-position while mouse is still down (focal state should be updated)
-  const previewImg = frame.locator("img").first();
   const objPosDuringDrag = await previewImg.evaluate(
     (el) => (el as HTMLImageElement).style.objectPosition
   );
   await page.mouse.up();
 
-  // Parse focalY from "X% Y%"; if still 50% the drag did nothing
+  // Parse focalY from "X% Y%"; dragging the image down reveals its top, so
+  // focalY should drop well below the 50% default.
   const parts = objPosDuringDrag.trim().split(/\s+/);
   const focalY = parts[1] ? parseFloat(parts[1]) : 50;
-  expect(focalY).toBeGreaterThan(60); // dragged toward bottom
+  expect(focalY).toBeLessThan(45);
 
   // Save and verify the live image has a non-default object-position
   await dialog.getByRole("button", { name: /save/i }).click();

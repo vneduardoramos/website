@@ -4,7 +4,15 @@ import { useSession } from "next-auth/react";
 import { ImageEditOverlay } from "@/components/marketing/ImageEditOverlay";
 import type { ImageOverrideData } from "@/lib/image-overrides";
 
-export type EditRequest = { key: string; baseSrc: string; alt: string; override: ImageOverrideData | null };
+export type EditRequest = {
+  key: string;
+  baseSrc: string;
+  alt: string;
+  override: ImageOverrideData | null;
+  /** Rendered size of the real image slot (px), so the editor preview matches its shape. */
+  slotWidth: number;
+  slotHeight: number;
+};
 type Ctx = { isAdmin: boolean; editMode: boolean; openEditor: (r: EditRequest) => void };
 
 const EditModeCtx = createContext<Ctx>({ isAdmin: false, editMode: false, openEditor: () => {} });

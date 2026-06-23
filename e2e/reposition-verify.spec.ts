@@ -121,7 +121,7 @@ async function zoomDragSave(page: Page, zoom: string) {
   const dialog = page.locator(editorLocator);
   await dialog.locator('input[type="range"]').fill(zoom);
 
-  const frame = dialog.locator(".cursor-move").first();
+  const frame = dialog.locator(".cursor-grab").first();
   const box = await frame.boundingBox();
   expect(box).not.toBeNull();
   // Drag from lower-right toward upper-left so focal moves well off-center.

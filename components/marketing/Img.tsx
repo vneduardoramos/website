@@ -72,7 +72,18 @@ export function Img({ src, alt, placeholder, blurDataURL, editKey, style, ...pro
       {editing && (
         <button
           type="button"
-          onClick={(e) => { e.preventDefault(); openEditor({ key, baseSrc, alt: typeof effAlt === "string" ? effAlt : "", override: override ?? null }); }}
+          onClick={(e) => {
+            e.preventDefault();
+            const slot = e.currentTarget.parentElement?.getBoundingClientRect();
+            openEditor({
+              key,
+              baseSrc,
+              alt: typeof effAlt === "string" ? effAlt : "",
+              override: override ?? null,
+              slotWidth: slot?.width ?? 0,
+              slotHeight: slot?.height ?? 0,
+            });
+          }}
           className="absolute right-2 top-2 z-20 rounded-md bg-royal/90 px-2 py-1 text-xs font-semibold text-white opacity-0 shadow-soft transition-opacity group-hover/imgedit:opacity-100"
         >
           Edit
