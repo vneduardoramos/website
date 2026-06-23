@@ -4,6 +4,9 @@ import { Footer } from "@/components/marketing/Footer";
 import { safe, getBlogPosts, getCaseStudies } from "@/lib/queries";
 import { prisma } from "@/lib/db";
 import type { OverrideMap } from "@/lib/image-overrides";
+import { AuthProvider } from "@/components/admin/SessionProvider";
+import { ImageOverrideProvider } from "@/components/marketing/ImageOverrideProvider";
+import { EditModeProvider } from "@/components/marketing/EditModeProvider";
 
 // Small content-aware bits surfaced in the mega-menu featured tiles. Fetched
 // here (server) and passed to the client <Nav>; each falls back gracefully.
@@ -42,18 +45,23 @@ export default async function MarketingLayout({
 }) {
   const navData = await getNavData();
   const overrides = await getImageOverrides();
-  void overrides; // wired into the provider in Task 10
   return (
-    <div className="flex min-h-screen flex-col">
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-primaryDeep focus:px-4 focus:py-2 focus:text-white focus:shadow-soft-lg"
-      >
-        Skip to main content
-      </a>
-      <Nav navData={navData} />
-      <main id="main-content" className="flex-1">{children}</main>
-      <Footer />
-    </div>
+    <AuthProvider>
+      <ImageOverrideProvider value={overrides}>
+        <EditModeProvider>
+          <div className="flex min-h-screen flex-col">
+            <a
+              href="#main-content"
+              className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-primaryDeep focus:px-4 focus:py-2 focus:text-white focus:shadow-soft-lg"
+            >
+              Skip to main content
+            </a>
+            <Nav navData={navData} />
+            <main id="main-content" className="flex-1">{children}</main>
+            <Footer />
+          </div>
+        </EditModeProvider>
+      </ImageOverrideProvider>
+    </AuthProvider>
   );
 }
