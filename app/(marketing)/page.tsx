@@ -3,16 +3,13 @@ import { Img as Image } from "@/components/marketing/Img";
 import type { Metadata } from "next";
 import { getSetting, getServices, safe } from "@/lib/queries";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
-import { LatestPosts } from "@/components/marketing/LatestPosts";
 import { theme } from "@/config/theme";
 import { Hero } from "@/components/marketing/home/Hero";
 import { ServicesGrid } from "@/components/marketing/home/ServicesGrid";
-import { Methodology } from "@/components/marketing/home/Methodology";
 import { FoundationPhoto, AiPhoto } from "@/components/marketing/home/SplitVisuals";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { Faq } from "@/components/marketing/Faq";
 import { RevealGroup, ScrollHighlight, SectionFold } from "@/components/marketing/Motion";
-import { HorizonScene } from "@/components/marketing/home/HorizonScene";
 import { IndustriesStrip } from "@/components/marketing/home/IndustriesStrip";
 import { CustomersFeature } from "@/components/marketing/home/CustomersFeature";
 import { LogoRow } from "@/components/marketing/home/ClientLogos";
@@ -23,27 +20,23 @@ import { JsonLd } from "@/components/JsonLd";
 export const revalidate = 60;
 
 type HeroSetting = { headline: string; subhead: string };
-type PartnershipSetting = {
-  title: string;
-  points: { title: string; body: string }[];
-};
 type FaqItem = { q: string; a: string };
 
 // ── Narrative beats (the story spine) ───────────────────────────────────────
-// Why ViewNear: for warm leads who already know they're moving to Snowflake,
-// the reasons we're the right partner to do it with.
+// Built for outcomes: the economics-of-services thesis, drawn from the
+// "From Hours to Outcomes" article. Fresh wording, three beats.
 const WHY_VIEWNEAR = [
   {
-    title: "Depth at every level",
-    body: "The person who scopes your work and the engineer who builds it are both SnowPro-certified. You get senior judgment end to end, not a senior pitch and a junior handoff.",
+    title: "Automation broke the billable hour",
+    body: "Hourly rates made sense when value came from people doing the work by hand. AI now absorbs most of that work, so paying by the hour quietly rewards slowness and taxes the very efficiency you came for. We attach our fee to the result, which means finishing sooner is a win on both sides of the table.",
   },
   {
-    title: "A dedicated, boutique team",
-    body: "A committed team that learns your data and your goals, not a rotating bench billed from a delivery pyramid. The people in the kickoff are the people who ship.",
+    title: "The expertise moved upstream",
+    body: "The scarce skill is no longer typing the code or moving the data. It is framing the right problem, shaping the solution, directing the agents that execute, and judging whether the output can be trusted. That work is more senior, not less, and it is where we concentrate.",
   },
   {
-    title: "A certified Snowflake partner",
-    body: "A Snowflake Premier and CoCo Preferred partner, with a direct line to Snowflake's engineering and roadmap when your build needs it.",
+    title: "We design the outcome, then the delivery",
+    body: "We begin from the result you need and build the delivery backward: experienced people on the decisions, AI agents on the execution, the balance retuned as the work shifts. You are not renting a fixed team or a block of hours. You are buying the outcome, and answering for it stays our job.",
   },
 ];
 
@@ -53,25 +46,6 @@ const DERISK = [
   { title: "You stay in control", body: "Regular steering, a shared backlog, and clear decision gates keep scope, budget, and priorities yours." },
   { title: "Value from sprint one", body: "Most platforms reach production in 8–16 weeks, with something useful shipped from the very first sprint." },
   { title: "Built to hand over", body: "Documentation, enablement, and a transition plan in every engagement, so your team runs and extends the work confidently." },
-];
-
-// The transformation: before → after, by horizon.
-const HORIZONS = [
-  {
-    phase: "First 90 days",
-    title: "Foundations & first value",
-    body: "A governed Snowflake foundation live, priority data flowing, and the first production dashboards in hand. Real decisions running on trusted data inside the first quarter.",
-  },
-  {
-    phase: "6–12 months",
-    title: "Scale & self-service",
-    body: "Analytics and AI use cases rolled out across teams, self-service adopted, and manual reporting retired. Decisions run on current, trusted numbers.",
-  },
-  {
-    phase: "18+ months",
-    title: "Compounding advantage",
-    body: "New use cases shipped in weeks, run cost tuned, and a team fluent enough to keep extending it on their own. Data and AI become a durable edge.",
-  },
 ];
 
 // Official Snowflake credibility badges (real artwork; shown on white chips so
@@ -91,33 +65,13 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function HomePage() {
-  const [hero, services, partnership, faqs, bands] =
+  const [hero, services, faqs, bands] =
     await Promise.all([
       safe(getSetting<HeroSetting>("hero"), null),
       safe(getServices(), []),
-      safe(getSetting<PartnershipSetting>("partnership"), null),
       safe(getSetting<FaqItem[]>("faqs"), null),
       getClientBands(),
     ]);
-
-  const whyPoints = partnership?.points?.slice(0, 4) ?? [
-    {
-      title: "Snowflake Premier Partner",
-      body: "A top-tier Snowflake Services Partner with SnowPro-certified engineers and a verified, end-to-end delivery track record across the Americas.",
-    },
-    {
-      title: "One Governed Foundation",
-      body: "A single source of truth for analytics, engineering, and AI, with no silos and no data sprawl.",
-    },
-    {
-      title: "Cortex AI Built-In",
-      body: "Production-grade LLMs and ML run securely next to your governed data, not bolted on.",
-    },
-    {
-      title: "Elastic Scale",
-      body: "Compute that flexes to your workload and your budget: pay for what you use, scale when you need to.",
-    },
-  ];
 
   // FAQPage structured data for the FAQs rendered below (helps AI/answer engines).
   const faqLd =
@@ -138,37 +92,97 @@ export default async function HomePage() {
       {/* 1) HERO */}
       <Hero subhead={hero?.subhead} />
 
-      {/* 2) WHY VIEWNEAR: the right partner, depth at every level */}
+      {/* 2) BUILT FOR OUTCOMES: thesis header, the argument, and the source article
+          as a featured read in its own column. */}
       <Section>
         <SectionHeading
           size="hero"
-          eyebrow="Why ViewNear"
+          align="left"
+          eyebrow="Built for outcomes"
           title={
             <>
-              The tools are everywhere now.{" "}
-              <ScrollHighlight>The team that makes them pay off isn&rsquo;t.</ScrollHighlight>
+              The hour was never the point.{" "}
+              <ScrollHighlight>The result always was.</ScrollHighlight>
             </>
           }
-          intro="Plenty of firms can stand up Snowflake. Far fewer bring senior judgment to every call, know the platform deeply enough to get it right the first time, and stay accountable long after launch. That's the difference here."
+          intro="For decades a services invoice was headcount times a rate, because the value lived in the manual work. AI has dissolved that link: the mechanical execution is increasingly automated, and the expertise that matters has moved upstream, into deciding what to build, orchestrating the agents that build it, and standing behind what they produce."
         />
-        <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-3" variant="pop">
-          {WHY_VIEWNEAR.map((s, i) => (
-            <div key={s.title} className="card card-pop card-editorial flex h-full flex-col">
-              <span className="card-index font-display" aria-hidden="true">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <div className="relative">
-                <h3 className="font-display text-lg font-bold text-foreground">{s.title}</h3>
-                <p className="mt-3 text-muted">{s.body}</p>
+
+        <div className="mt-14 grid gap-10 lg:grid-cols-12 lg:items-start lg:gap-16">
+          {/* The argument */}
+          <div className="lg:col-span-7">
+            <RevealGroup as="ul" variant="fade-up">
+              {WHY_VIEWNEAR.map((s, i) => (
+                <li
+                  key={s.title}
+                  className="flex gap-5 border-t border-border py-7 first:border-t-0 first:pt-0 md:gap-7"
+                >
+                  <span
+                    className="mt-1 font-mono text-sm font-semibold tracking-widest text-primaryDeep"
+                    aria-hidden="true"
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3 className="font-display text-xl font-bold leading-snug text-foreground md:text-2xl">
+                      {s.title}
+                    </h3>
+                    <p className="mt-3 text-lg leading-relaxed text-muted">{s.body}</p>
+                  </div>
+                </li>
+              ))}
+            </RevealGroup>
+            <p className="mt-10 border-t border-border pt-8 text-xl font-medium leading-relaxed text-foreground/90">
+              Not a cheaper way to buy services. A more honest one: the target is set up
+              front, senior judgment runs the whole way through, and{" "}
+              <ScrollHighlight color="cyan">the result is ours to answer for.</ScrollHighlight>
+            </p>
+          </div>
+
+          {/* The source: a featured read in its own column */}
+          <div className="lg:col-span-5">
+            <Link
+              href="/blog/from-hours-to-outcomes-ai-economics-services"
+              className="group block overflow-hidden rounded-3xl border border-border bg-surface shadow-soft transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-soft-lg lg:sticky lg:top-28"
+            >
+              <div className="relative aspect-[16/10] w-full overflow-hidden">
+                <Image
+                  src="/assets/images/blog/from-hours-to-outcomes-ai-economics-services.jpg"
+                  alt="From Hours to Outcomes article"
+                  width={720}
+                  height={450}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
-            </div>
-          ))}
-        </RevealGroup>
-        <p className="mt-8 max-w-2xl text-lg text-foreground/90">
-          Most engagements start with one use case and grow, because teams keep coming back to{" "}
-          <ScrollHighlight color="cyan">the people who delivered the first one.</ScrollHighlight>
-        </p>
+              <div className="p-6 md:p-7">
+                <span className="font-mono text-xs font-semibold uppercase tracking-widest text-primaryDeep">
+                  Read the thesis
+                </span>
+                <h3 className="mt-2 font-display text-xl font-bold leading-snug text-foreground">
+                  From Hours to Outcomes: How AI Changed the Economics of Services
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-muted">
+                  We don&rsquo;t sell hours or headcount, we design outcomes. AI has shifted
+                  where value is created, moving the expertise upstream into steering
+                  solutions, orchestrating agents, and owning the result.
+                </p>
+                <span className="mt-5 inline-flex items-center gap-1.5 font-semibold text-primaryDeep">
+                  Read the article
+                  <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">&rarr;</span>
+                </span>
+              </div>
+            </Link>
+          </div>
+        </div>
       </Section>
+
+      {/* PROOF EARLY: who already trusts us, right after the thesis */}
+      <section className="pt-2 pb-2 md:pt-4 md:pb-3">
+        <div className="container-page">
+          <LogoRow logos={bands.top} />
+        </div>
+      </section>
+      <CustomersFeature bottomLogos={bands.bottom} />
 
       {/* 3) THE PATH: customer-first foundation + AI */}
       <Section className="section-tint">
@@ -215,11 +229,8 @@ export default async function HomePage() {
       {/* 3b) WHO WE SERVE: industries */}
       <IndustriesStrip />
 
-      {/* 4) HOW WE DO IT */}
-      <Methodology />
-
       {/* 4a) DE-RISKED BY DESIGN: quiet the "big bet" fear */}
-      <Section>
+      <Section className="section-tint">
         <SectionHeading
           eyebrow="Low-risk by design"
           title="A big bet that doesn't feel like one"
@@ -262,96 +273,45 @@ export default async function HomePage() {
         </div>
       </Section>
 
-      {/* PROOF: featured case study, framed by real client logos */}
-      {/* Top frame: a quiet white logo band leading into the tinted Customers section */}
-      <section className="pt-4 pb-2 md:pt-6 md:pb-3">
-        <div className="container-page">
-          <LogoRow logos={bands.top} />
-        </div>
-      </section>
-      <CustomersFeature bottomLogos={bands.bottom} />
-
       {/* 4b) PROOF & TRUST: the deep royal-indigo authority band */}
       <Section>
         <SectionFold angle={12}>
           <div className="panel-indigo relative overflow-hidden rounded-3xl p-8 shadow-xl md:p-14">
-            <div className="relative grid gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
-              {/* positioning + real proof + badges + trust */}
-              <div>
-                <p className="eyebrow eyebrow--invert mb-4">Proof, not promises</p>
-                <h2 className="max-w-xl font-display text-3xl font-bold tracking-tight text-white md:text-[2.6rem] md:leading-[1.08]">
-                  A Snowflake partner enterprises trust.
-                </h2>
-                <p className="mt-4 max-w-lg text-lg leading-relaxed text-white/75">
-                  Recognized in Snowflake&rsquo;s CoCo Preferred Partner program at Summit 2026,
-                  alongside Accenture, Deloitte, IBM, and Capgemini.
-                </p>
-                <div className="mt-7 flex flex-wrap items-center gap-6">
-                  {BADGES.map((b) => (
-                    <Image
-                      key={b.src}
-                      src={b.src}
-                      alt={b.alt}
-                      width={b.w}
-                      height={b.h}
-                      className="h-14 w-auto"
-                    />
-                  ))}
-                </div>
-                <p className="mt-7 max-w-lg text-sm leading-relaxed text-white/70">
-                  Everything we build inherits Snowflake&rsquo;s independently audited
-                  controls (SOC 2 Type II, ISO 27001, HIPAA), extended by our
-                  governed delivery practices.{" "}
-                  <Link
-                    href="/security"
-                    className="font-semibold text-white underline-offset-4 hover:underline"
-                  >
-                    How we secure your data &rarr;
-                  </Link>
-                </p>
-              </div>
-              {/* why Snowflake: differentiators, in light-on-indigo */}
-              <div className="grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:content-center">
-                {whyPoints.map((p) => (
-                  <div key={p.title} className="flex gap-3.5">
-                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/15 text-white ring-1 ring-white/25">
-                      <svg
-                        viewBox="0 0 24 24"
-                        className="h-3.5 w-3.5"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth={3}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M20 6 9 17l-5-5" />
-                      </svg>
-                    </span>
-                    <div>
-                      <h3 className="font-display text-base font-bold text-white">{p.title}</h3>
-                      <p className="mt-1 text-sm leading-relaxed text-white/70">{p.body}</p>
-                    </div>
-                  </div>
+            <div className="relative max-w-3xl">
+              <p className="eyebrow eyebrow--invert mb-4">Proof, not promises</p>
+              <h2 className="max-w-xl font-display text-3xl font-bold tracking-tight text-white md:text-[2.6rem] md:leading-[1.08]">
+                A Snowflake partner enterprises trust.
+              </h2>
+              <p className="mt-4 max-w-lg text-lg leading-relaxed text-white/75">
+                Recognized in Snowflake&rsquo;s CoCo Preferred Partner program at Summit 2026,
+                alongside Accenture, Deloitte, IBM, and Capgemini.
+              </p>
+              <div className="mt-7 flex flex-wrap items-center gap-6">
+                {BADGES.map((b) => (
+                  <Image
+                    key={b.src}
+                    src={b.src}
+                    alt={b.alt}
+                    width={b.w}
+                    height={b.h}
+                    className="h-14 w-auto"
+                  />
                 ))}
               </div>
+              <p className="mt-7 max-w-lg text-sm leading-relaxed text-white/70">
+                Everything we build inherits Snowflake&rsquo;s independently audited
+                controls (SOC 2 Type II, ISO 27001, HIPAA), extended by our
+                governed delivery practices.{" "}
+                <Link
+                  href="/security"
+                  className="font-semibold text-white underline-offset-4 hover:underline"
+                >
+                  How we secure your data &rarr;
+                </Link>
+              </p>
             </div>
           </div>
         </SectionFold>
-      </Section>
-
-      {/* TRANSFORMATION: where this takes you (by horizon), a compact static grid. */}
-      <Section className="section-tint">
-        <HorizonScene
-          horizons={HORIZONS}
-          heading={
-            <SectionHeading
-              size="hero"
-              eyebrow="What changes"
-              title="Where this takes you"
-              intro="A practical view of the journey, by horizon: value early, scale through the year, a durable advantage after that."
-            />
-          }
-        />
       </Section>
 
       {/* 5) FAQ */}
@@ -369,9 +329,7 @@ export default async function HomePage() {
         </Section>
       )}
 
-      {/* 7) CTA: restate the stakes, confident close */}
-      <LatestPosts tint />
-
+      {/* CTA: restate the stakes, confident close */}
       <CtaBand
         title="Make this the quarter your data starts paying off."
         subtitle="Every quarter on ungoverned data is decisions made half-blind. Tell us where you are, and we'll map the fastest path to data and AI you can trust."
