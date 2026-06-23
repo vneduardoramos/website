@@ -86,9 +86,7 @@ export function MeshHeroSlide({ subhead }: { subhead?: string }) {
 
       <div className="container-page relative z-10 pt-20 pb-28 md:pt-24 lg:pb-24">
         <div className="max-w-xl">
-          <span className="chip">Snowflake Premier Partner · CoCo Preferred Partner</span>
-
-          <h1 className="mt-6 text-balance font-display text-4xl font-bold leading-[1.04] tracking-tight text-foreground md:text-[3.6rem]">
+          <h1 className="text-balance font-display text-4xl font-bold leading-[1.04] tracking-tight text-foreground md:text-[3.6rem]">
             Make Snowflake <span className="text-gradient-accent">do more</span>, from strategy to AI.
           </h1>
 
