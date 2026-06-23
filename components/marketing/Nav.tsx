@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import type { ComponentType, SVGProps } from "react";
 import { theme } from "@/config/theme";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/marketing/Logo";
 import { getFlavor } from "@/components/marketing/industries/flavor";
+import { MODEL_PROVIDERS } from "@/lib/model-providers";
 
 type NavItem = {
   label: string;
@@ -22,8 +23,10 @@ const NAV_DESCRIPTIONS: Record<string, string> = {
   "/nearshore": "Snowflake delivery in your time zone",
   "/security": "Governance & compliance",
   "/life-at-viewnear": "Culture, roles & benefits",
-  "/services": "THINK · BUILD · GROW",
-  "/solutions": "Migrate, AI, governance, apps",
+  "/services": "How we engage: THINK · BUILD · GROW",
+  "/solutions": "What we solve: migrate, AI, govern, apps",
+  "/data-ai": "Every major model, on your data",
+  "/platform": "The Snowflake-native stack",
   "/approach": "Methodology & de-risking",
   "/pricing": "Engagement models & cost",
   "/industries/construction-real-estate": "Projects, property & assets",
@@ -49,10 +52,10 @@ const NAV_FEATURED: Record<string, Featured> = {
     href: "/partnership",
   },
   Services: {
-    eyebrow: "Platform",
-    title: "Built on Snowflake",
-    pitch: "See how we deliver on a single, governed Snowflake foundation.",
-    href: "/platform",
+    eyebrow: "Data + AI",
+    title: "Every major model, governed",
+    pitch: "Run the leading LLMs next to your data, swap them with one line of SQL.",
+    href: "/data-ai",
   },
   Industries: {
     eyebrow: "Financial Services",
@@ -77,11 +80,9 @@ type Accent = { text: string; bar: string; soft: string; linkHover: string; hove
 const PANEL_ACCENT: Record<string, Accent> = {
   Company: { text: "text-royal", bar: "bg-royal", soft: "bg-royal/10", linkHover: "group-hover/card:text-royal", hoverBorder: "hover:border-royal/40", eb: "var(--color-royal)" },
   Industries: { text: "text-primaryDeep", bar: "bg-primaryDeep", soft: "bg-primaryDeep/10", linkHover: "group-hover/card:text-primaryDeep", hoverBorder: "hover:border-primaryDeep/40", eb: "var(--color-primary-deep)" },
-  Services: { text: "text-purple", bar: "bg-purple", soft: "bg-purple/10", linkHover: "group-hover/card:text-purple", hoverBorder: "hover:border-purple/40", eb: "var(--color-purple)" },
+  Services: { text: "text-royal", bar: "bg-royal", soft: "bg-royal/10", linkHover: "group-hover/card:text-royal", hoverBorder: "hover:border-royal/40", eb: "var(--color-royal)" },
   Resources: { text: "text-accent", bar: "bg-accent", soft: "bg-accent/10", linkHover: "group-hover/card:text-accent", hoverBorder: "hover:border-accent/40", eb: "var(--color-accent)" },
 };
-
-const SNOWFLAKE_STACK = ["Cortex", "Horizon", "Openflow", "Snowpark", "Iceberg", "dbt"];
 
 // ─── Mega-menu link icons ───────────────────────────────────────────────────
 // One representative line icon per Services / Company / Resources link, drawn in
@@ -104,6 +105,25 @@ function LayersIcon(p: SVGProps<SVGSVGElement>) {
       <path d="M12 3 3 7.5l9 4.5 9-4.5L12 3z" />
       <path d="m3 12 9 4.5 9-4.5" />
       <path d="m3 16.5 9 4.5 9-4.5" />
+    </svg>
+  );
+}
+function DatabaseIcon(p: SVGProps<SVGSVGElement>) {
+  // stacked data cylinders → the Snowflake-native platform stack
+  return (
+    <svg {...ic} {...p}>
+      <ellipse cx="12" cy="5" rx="7" ry="3" />
+      <path d="M5 5v6c0 1.7 3.1 3 7 3s7-1.3 7-3V5" />
+      <path d="M5 11v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" />
+    </svg>
+  );
+}
+function SparkIcon(p: SVGProps<SVGSVGElement>) {
+  // four-point AI spark → Data + AI / model choice
+  return (
+    <svg {...ic} {...p}>
+      <path d="M12 3c.6 3.6 1.8 4.8 5.4 5.4-3.6.6-4.8 1.8-5.4 5.4-.6-3.6-1.8-4.8-5.4-5.4 3.6-.6 4.8-1.8 5.4-5.4z" />
+      <path d="M18.5 14.5c.3 1.6.8 2.1 2.4 2.4-1.6.3-2.1.8-2.4 2.4-.3-1.6-.8-2.1-2.4-2.4 1.6-.3 2.1-.8 2.4-2.4z" />
     </svg>
   );
 }
@@ -230,6 +250,8 @@ function ChatQuestionIcon(p: SVGProps<SVGSVGElement>) {
 const NAV_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   "/services": LayersIcon,
   "/solutions": BulbIcon,
+  "/data-ai": SparkIcon,
+  "/platform": DatabaseIcon,
   "/approach": CompassIcon,
   "/pricing": TagIcon,
   "/about": UsersIcon,
@@ -281,8 +303,8 @@ function MenuLink({
 }: {
   href: string;
   label: string;
-  Icon: ComponentType<SVGProps<SVGSVGElement>>;
-  tile: string;
+  Icon?: ComponentType<SVGProps<SVGSVGElement>>;
+  tile?: string;
   onNav: () => void;
 }) {
   return (
@@ -292,9 +314,11 @@ function MenuLink({
         onClick={onNav}
         className="group/card flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-surface2"
       >
-        <span className={cn("mt-0.5 flex h-8 w-8 flex-none items-center justify-center rounded-lg", tile)}>
-          <Icon className="h-[18px] w-[18px]" aria-hidden="true" />
-        </span>
+        {Icon && (
+          <span className={cn("mt-0.5 flex h-8 w-8 flex-none items-center justify-center rounded-lg", tile)}>
+            <Icon className="h-[18px] w-[18px]" aria-hidden="true" />
+          </span>
+        )}
         <span className="min-w-0">
           <span className="block text-base font-medium text-foreground">{label}</span>
           {NAV_DESCRIPTIONS[href] && (
@@ -341,15 +365,15 @@ function MegaFeatured({
     sub = p.date || null;
     cta = "Read post";
   } else if (label === "Services") {
-    href = "/platform";
-    eyebrow = "Platform";
-    title = "Built on the Snowflake-native stack";
-    cta = "Explore the platform";
+    href = "/data-ai";
+    eyebrow = "Data + AI";
+    title = "Every major model, governed";
+    cta = "Explore Data + AI";
     extra = (
       <div className="mt-3 flex flex-wrap gap-1.5">
-        {SNOWFLAKE_STACK.map((s) => (
-          <span key={s} className="pill-chip">
-            {s}
+        {MODEL_PROVIDERS.map((p) => (
+          <span key={p.key} className="pill-chip">
+            {p.family}
           </span>
         ))}
       </div>
@@ -539,29 +563,60 @@ export function Nav({ navData }: { navData?: NavData }) {
                             isIndustries && "lg:grid-cols-3"
                           )}
                         >
-                          {item.children.map((c) => {
-                            // Industries pull their icon + tinted tile from the
-                            // sector flavor; the other panels use a per-link icon
-                            // tinted with the panel accent.
-                            const flavor = isIndustries
-                              ? getFlavor(c.href.replace("/industries/", ""))
-                              : null;
-                            const Icon = flavor ? flavor.icon : NAV_ICONS[c.href];
-                            if (!Icon) return null;
-                            const tile = flavor
-                              ? flavor.tile
-                              : cn(accent.soft, accent.text);
-                            return (
-                              <MenuLink
-                                key={c.href}
-                                href={c.href}
-                                label={c.label}
-                                Icon={Icon}
-                                tile={tile}
-                                onNav={() => setOpenMenu(null)}
-                              />
-                            );
-                          })}
+                          {(() => {
+                            type Kid = { href: string; label: string; group?: string };
+                            // Only Industries shows per-link icons (the distinctive
+                            // sector marks). Other panels are icon-free: just label
+                            // + description, with group color carried by the header.
+                            const renderChild = (c: Kid) => {
+                              const flavor = isIndustries
+                                ? getFlavor(c.href.replace("/industries/", ""))
+                                : null;
+                              return (
+                                <MenuLink
+                                  key={c.href}
+                                  href={c.href}
+                                  label={c.label}
+                                  Icon={flavor ? flavor.icon : undefined}
+                                  tile={flavor ? flavor.tile : undefined}
+                                  onNav={() => setOpenMenu(null)}
+                                />
+                              );
+                            };
+
+                            // Two-tone the grouped panel via the headers: "what we
+                            // do" cool, "how we work" warm, so the groups read
+                            // distinct without per-link icons.
+                            const groupHeader = (name: string) =>
+                              /how we work/i.test(name) ? "text-accentDeep/80" : "text-royal/75";
+
+                            // When children declare a `group`, render a small
+                            // header per group (spanning both columns); otherwise
+                            // render the flat list exactly as before.
+                            const kids = item.children as ReadonlyArray<Kid>;
+                            if (!kids.some((c) => c.group)) return kids.map((c) => renderChild(c));
+
+                            const groups: { name: string; items: Kid[] }[] = [];
+                            for (const c of kids) {
+                              const name = c.group ?? "";
+                              let bucket = groups.find((g) => g.name === name);
+                              if (!bucket) {
+                                bucket = { name, items: [] };
+                                groups.push(bucket);
+                              }
+                              bucket.items.push(c);
+                            }
+                            return groups.map((g) => (
+                              <Fragment key={g.name}>
+                                <li className="mt-3 px-3 first:mt-0 sm:col-span-2">
+                                  <span className={cn("font-mono text-xs uppercase tracking-wider", groupHeader(g.name))}>
+                                    {g.name}
+                                  </span>
+                                </li>
+                                {g.items.map((c) => renderChild(c))}
+                              </Fragment>
+                            ));
+                          })()}
                         </ul>
 
                         <MegaFeatured

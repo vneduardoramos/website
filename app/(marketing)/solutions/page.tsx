@@ -50,7 +50,7 @@ const SOLUTIONS = [
       "AI Agent Identity and access controls built in",
     ],
     image: "/assets/images/photos/circuit.jpg",
-    cta: { label: "Explore AI use cases", href: "/contact" },
+    cta: { label: "Go deeper: every major model", href: "/data-ai" },
     reverse: true,
   },
   {

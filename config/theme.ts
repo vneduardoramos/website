@@ -78,10 +78,12 @@ export const theme = {
     {
       label: "Services",
       children: [
-        { label: "Services overview", href: "/services" },
-        { label: "Solutions", href: "/solutions" },
-        { label: "Approach", href: "/approach" },
-        { label: "Pricing", href: "/pricing" },
+        { label: "Solutions", href: "/solutions", group: "What we do" },
+        { label: "Data + AI", href: "/data-ai", group: "What we do" },
+        { label: "Platform", href: "/platform", group: "What we do" },
+        { label: "Services overview", href: "/services", group: "How we work" },
+        { label: "Approach", href: "/approach", group: "How we work" },
+        { label: "Pricing", href: "/pricing", group: "How we work" },
       ],
     },
     {
