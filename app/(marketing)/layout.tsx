@@ -1,6 +1,9 @@
+import { unstable_cache } from "next/cache";
 import { Nav, type NavData } from "@/components/marketing/Nav";
 import { Footer } from "@/components/marketing/Footer";
 import { safe, getBlogPosts, getCaseStudies } from "@/lib/queries";
+import { prisma } from "@/lib/db";
+import type { OverrideMap } from "@/lib/image-overrides";
 
 // Small content-aware bits surfaced in the mega-menu featured tiles. Fetched
 // here (server) and passed to the client <Nav>; each falls back gracefully.
@@ -19,12 +22,27 @@ async function getNavData(): Promise<NavData> {
   };
 }
 
+const getImageOverrides = unstable_cache(
+  async (): Promise<OverrideMap> => {
+    const rows = await prisma.imageOverride.findMany();
+    const map: OverrideMap = {};
+    for (const r of rows) {
+      map[r.key] = { key: r.key, mediaUrl: r.mediaUrl, focalX: r.focalX, focalY: r.focalY, zoom: r.zoom, alt: r.alt };
+    }
+    return map;
+  },
+  ["image-overrides"],
+  { tags: ["image-overrides"] },
+);
+
 export default async function MarketingLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   const navData = await getNavData();
+  const overrides = await getImageOverrides();
+  void overrides; // wired into the provider in Task 10
   return (
     <div className="flex min-h-screen flex-col">
       <a
