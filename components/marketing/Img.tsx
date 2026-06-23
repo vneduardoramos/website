@@ -11,7 +11,11 @@ const FALLBACK_BLUR =
 
 export function Img({ src, alt, placeholder, blurDataURL, editKey, style, ...props }: ImageProps & { editKey?: string }) {
   const key = editKey ?? (typeof src === "string" ? src : "");
-  const override = useImageOverride(key);
+  const rawOverride = useImageOverride(key);
+  // No stable key (e.g. a StaticImport src with no explicit editKey) => no
+  // override can apply: neutralize so resolved src/style and `active` stay
+  // consistent and we never emit a clip wrapper for a keyless image.
+  const override = key ? rawOverride : null;
   const { isAdmin, editMode, openEditor } = useEditMode();
 
   const baseSrc = typeof src === "string" ? src : "";
