@@ -1,33 +1,50 @@
+"use client";
 import Image, { type ImageProps } from "next/image";
 import blur from "@/lib/blur-manifest.json";
+import { applyOverride } from "@/lib/image-overrides";
+import { useImageOverride } from "@/components/marketing/ImageOverrideProvider";
+import { useEditMode } from "@/components/marketing/EditModeProvider";
 
 const MANIFEST = blur as Record<string, string>;
-
-// Neutral surface-toned preview for images not in the manifest (e.g. just
-// added, before `npm run blur` is re-run): they still fade in from this wash
-// instead of popping. Regenerate the manifest to give them a real preview.
 const FALLBACK_BLUR =
   "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAAAQAwCdASoUABQAPxGCuVWsKKWjKAgBgCIJaQDH5BhwXgAA/u8T3uP1gtQAAA==";
 
-/**
- * Drop-in next/image replacement that always renders a blur-up placeholder, so
- * images sharpen into place instead of popping in once they load. Path-based
- * images get their preview from lib/blur-manifest.json (regenerate with
- * `npm run blur`); unknown paths fall back to a neutral wash. SVGs pass straight
- * through, since next/image rejects blur placeholders on SVG.
- */
-export function Img({ src, alt, placeholder, blurDataURL, ...props }: ImageProps) {
-  const key = typeof src === "string" ? src : undefined;
-  if (key && key.toLowerCase().endsWith(".svg")) {
-    return <Image src={src} alt={alt} {...props} />;
-  }
-  return (
+export function Img({ src, alt, placeholder, blurDataURL, editKey, style, ...props }: ImageProps & { editKey?: string }) {
+  const key = editKey ?? (typeof src === "string" ? src : "");
+  const override = useImageOverride(key);
+  const { isAdmin, editMode, openEditor } = useEditMode();
+
+  const baseSrc = typeof src === "string" ? src : "";
+  const resolved = applyOverride(baseSrc, override);
+  const effSrc = typeof src === "string" ? resolved.src : src;
+  const effAlt = resolved.alt ?? alt;
+  const mergedStyle = { ...resolved.style, ...(style as object) };
+
+  const isSvg = typeof effSrc === "string" && effSrc.toLowerCase().endsWith(".svg");
+  const img = isSvg ? (
+    <Image src={effSrc} alt={effAlt} style={mergedStyle} {...props} />
+  ) : (
     <Image
-      src={src}
-      alt={alt}
+      src={effSrc}
+      alt={effAlt}
       placeholder={placeholder ?? "blur"}
-      blurDataURL={blurDataURL ?? (key ? MANIFEST[key] : undefined) ?? FALLBACK_BLUR}
+      blurDataURL={blurDataURL ?? (typeof effSrc === "string" ? MANIFEST[effSrc] : undefined) ?? FALLBACK_BLUR}
+      style={mergedStyle}
       {...props}
     />
+  );
+
+  if (!(isAdmin && editMode) || !key) return img;
+  return (
+    <span className="group/imgedit relative block">
+      {img}
+      <button
+        type="button"
+        onClick={(e) => { e.preventDefault(); openEditor({ key, baseSrc, alt: typeof effAlt === "string" ? effAlt : "" }); }}
+        className="absolute right-2 top-2 z-20 rounded-md bg-royal/90 px-2 py-1 text-xs font-semibold text-white opacity-0 shadow-soft transition-opacity group-hover/imgedit:opacity-100"
+      >
+        Edit
+      </button>
+    </span>
   );
 }
