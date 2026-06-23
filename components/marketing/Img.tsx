@@ -43,7 +43,7 @@ export function Img({ src, alt, placeholder, blurDataURL, editKey, style, ...pro
       {img}
       <button
         type="button"
-        onClick={(e) => { e.preventDefault(); openEditor({ key, baseSrc, alt: typeof effAlt === "string" ? effAlt : "" }); }}
+        onClick={(e) => { e.preventDefault(); openEditor({ key, baseSrc, alt: typeof effAlt === "string" ? effAlt : "", override: override ?? null }); }}
         className="absolute right-2 top-2 z-20 rounded-md bg-royal/90 px-2 py-1 text-xs font-semibold text-white opacity-0 shadow-soft transition-opacity group-hover/imgedit:opacity-100"
       >
         Edit

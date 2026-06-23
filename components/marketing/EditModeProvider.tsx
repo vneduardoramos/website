@@ -2,8 +2,9 @@
 import { createContext, useContext, useState } from "react";
 import { useSession } from "next-auth/react";
 import { ImageEditOverlay } from "@/components/marketing/ImageEditOverlay";
+import type { ImageOverrideData } from "@/lib/image-overrides";
 
-export type EditRequest = { key: string; baseSrc: string; alt: string };
+export type EditRequest = { key: string; baseSrc: string; alt: string; override: ImageOverrideData | null };
 type Ctx = { isAdmin: boolean; editMode: boolean; openEditor: (r: EditRequest) => void };
 
 const EditModeCtx = createContext<Ctx>({ isAdmin: false, editMode: false, openEditor: () => {} });

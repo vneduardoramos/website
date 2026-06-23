@@ -18,11 +18,11 @@ type PexelsState =
   | { status: "empty" };
 
 export function ImageEditOverlay({ request, onClose }: { request: EditRequest; onClose: () => void }) {
-  const [mediaUrl, setMediaUrl] = useState<string | null>(null);
-  const [focalX, setFocalX] = useState(50);
-  const [focalY, setFocalY] = useState(50);
-  const [zoom, setZoom] = useState(1);
-  const [alt, setAlt] = useState(request.alt);
+  const [mediaUrl, setMediaUrl] = useState<string | null>(request.override?.mediaUrl ?? null);
+  const [focalX, setFocalX] = useState(request.override?.focalX ?? 50);
+  const [focalY, setFocalY] = useState(request.override?.focalY ?? 50);
+  const [zoom, setZoom] = useState(request.override?.zoom ?? 1);
+  const [alt, setAlt] = useState(request.override?.alt ?? request.alt);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const frameRef = useRef<HTMLDivElement>(null);
@@ -143,12 +143,14 @@ export function ImageEditOverlay({ request, onClose }: { request: EditRequest; o
               <div
                 ref={frameRef}
                 onMouseMove={onDrag}
-                className="relative aspect-[16/10] w-full cursor-move overflow-hidden rounded-xl border border-border bg-surface2"
+                onMouseDown={(e) => e.preventDefault()}
+                className="relative aspect-[16/10] w-full cursor-move select-none overflow-hidden rounded-xl border border-border bg-surface2"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={previewSrc}
                   alt=""
+                  draggable={false}
                   className="h-full w-full object-cover"
                   style={{ objectPosition: `${focalX}% ${focalY}%`, transform: zoom > 1 ? `scale(${zoom})` : undefined }}
                 />
