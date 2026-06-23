@@ -244,3 +244,15 @@ model SiteSetting {
   value     String // JSON-encoded
   updatedAt DateTime @updatedAt
 }
+
+model ImageOverride {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  mediaUrl  String?
+  focalX    Float    @default(50)
+  focalY    Float    @default(50)
+  zoom      Float    @default(1)
+  alt       String?
+  updatedBy String?
+  updatedAt DateTime @updatedAt
+}
