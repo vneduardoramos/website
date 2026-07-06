@@ -1,4 +1,3 @@
-import { Img as Image } from "@/components/marketing/Img";
 import { pageMeta } from "@/lib/seo";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
@@ -95,24 +94,6 @@ export default function PartnershipPage() {
 
       {/* Badges + CoCo Preferred Partner momentum */}
       <PartnershipHighlight title="Two recognitions, and CoCo Preferred Partner momentum to back them" />
-
-      {/* The wall itself: the physical proof behind the keynote slide above. */}
-      <Section className="pt-0">
-        <figure className="mx-auto max-w-2xl">
-          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl ring-1 ring-border">
-            <Image
-              src="/assets/images/life/partner-momentum.jpg"
-              alt="Snowflake's CoCo Partner Momentum wall at Summit 2026, listing Viewnear among the featured partners"
-              fill
-              sizes="(min-width: 768px) 672px, 100vw"
-              className="object-cover"
-            />
-          </div>
-          <figcaption className="mt-3 text-center font-mono text-xs text-muted">
-            Snowflake&rsquo;s CoCo Partner Momentum wall &middot; Summit 2026
-          </figcaption>
-        </figure>
-      </Section>
 
       {/* What it unlocks */}
       <Section>
