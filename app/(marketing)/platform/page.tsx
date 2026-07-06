@@ -4,7 +4,8 @@ import { FeaturedCaseStudies } from "@/components/marketing/FeaturedCaseStudies"
 import { PageHero } from "@/components/marketing/PageHero";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import type { Layer } from "@/components/marketing/platform/PlatformStack";
-import { StackDiagram, ProductIndex } from "@/components/marketing/platform/StackDiagram";
+import { ProductIndex } from "@/components/marketing/platform/StackDiagram";
+import { StackStory } from "@/components/marketing/platform/StackStory";
 import { RevealGroup } from "@/components/marketing/Motion";
 import { theme } from "@/config/theme";
 
@@ -77,10 +78,6 @@ const LAYERS: Layer[] = [
   },
 ];
 
-// The flow layers (top to bottom) and the governance rail that wraps them.
-const GOVERNANCE = LAYERS.find((l) => l.layer.startsWith("Governance"))!;
-const FLOW = LAYERS.filter((l) => l !== GOVERNANCE);
-
 // Why-native proof points (formerly a FeatureSplit with a stock photo).
 const WHY_NATIVE = [
   { title: "One governed copy", body: "No exports, no shadow stacks: the data stays in one place with governance attached." },
@@ -107,14 +104,14 @@ export default function PlatformPage() {
         </div>
       </div>
 
-      {/* The stack, drawn as a stack: the page's centerpiece */}
+      {/* The stack, narrated as an engagement: the page's centerpiece */}
       <Section>
         <SectionHeading
-          eyebrow="The stack"
-          title="Watch your data move through it"
-          intro="Sources land at the top, decisions leave at the bottom, and governance wraps every layer in between. These are the Snowflake-native products we build on; dbt is the one external framework we run, natively against Snowflake."
+          eyebrow="How it comes together"
+          title="One build, start to finish"
+          intro="What actually happens when we build on Snowflake: who does what, and where each product earns its place in the story. dbt is the one external framework we run, natively against Snowflake."
         />
-        <StackDiagram flow={FLOW} rail={GOVERNANCE} />
+        <StackStory />
       </Section>
 
       {/* Why native: the argument, typographic (no stock imagery) */}
