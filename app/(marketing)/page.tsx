@@ -15,6 +15,7 @@ import { CustomersFeature } from "@/components/marketing/home/CustomersFeature";
 import { LogoRow } from "@/components/marketing/home/ClientLogos";
 import { getClientBands } from "@/lib/client-bands";
 import { SectionDecor } from "@/components/marketing/Decor";
+import { LeadershipStrip, FaceStack } from "@/components/marketing/LeadershipStrip";
 import { JsonLd } from "@/components/JsonLd";
 
 export const revalidate = 60;
@@ -192,6 +193,8 @@ export default async function HomePage() {
               front, senior judgment runs the whole way through, and{" "}
               <ScrollHighlight color="cyan">the result is ours to answer for.</ScrollHighlight>
             </p>
+            {/* The accountability claim, with the accountable faces right under it. */}
+            <LeadershipStrip label="The people who answer for it." className="mt-7" />
           </div>
 
           {/* The source: a featured read in its own column */}
@@ -268,9 +271,13 @@ export default async function HomePage() {
               runway, no ramp, no key-person risk.
             </p>
           </div>
-          <div className="flex shrink-0 flex-wrap gap-3">
-            <Link href="/contact" className="btn-primary">Talk to an architect</Link>
-            <Link href="/partnership" className="btn-ghost">See the comparison</Link>
+          <div className="flex shrink-0 flex-wrap items-center gap-4">
+            {/* The CTA promises a person; show the actual people. */}
+            <FaceStack slugs={["eduardo-ramos", "jc-rodriguez", "rene-trevino"]} />
+            <div className="flex flex-wrap gap-3">
+              <Link href="/contact" className="btn-primary">Talk to an architect</Link>
+              <Link href="/partnership" className="btn-ghost">See the comparison</Link>
+            </div>
           </div>
         </div>
       </Section>
@@ -279,38 +286,56 @@ export default async function HomePage() {
       <Section>
         <SectionFold angle={12}>
           <div className="panel-indigo relative overflow-hidden rounded-3xl p-8 shadow-xl md:p-14">
-            <div className="relative max-w-3xl">
-              <p className="eyebrow eyebrow--invert mb-4">Proof, not promises</p>
-              <h2 className="max-w-xl font-display text-3xl font-bold tracking-tight text-white md:text-[2.6rem] md:leading-[1.08]">
-                A Snowflake partner enterprises trust.
-              </h2>
-              <p className="mt-4 max-w-lg text-lg leading-relaxed text-white/75">
-                Recognized in Snowflake&rsquo;s CoCo Preferred Partner program at Summit 2026,
-                alongside Accenture, Deloitte, IBM, and Capgemini.
-              </p>
-              <div className="mt-7 flex flex-wrap items-center gap-6">
-                {BADGES.map((b) => (
-                  <Image
-                    key={b.src}
-                    src={b.src}
-                    alt={b.alt}
-                    width={b.w}
-                    height={b.h}
-                    className="h-14 w-auto"
-                  />
-                ))}
+            <div className="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+              <div>
+                <p className="eyebrow eyebrow--invert mb-4">Proof, not promises</p>
+                <h2 className="max-w-xl font-display text-3xl font-bold tracking-tight text-white md:text-[2.6rem] md:leading-[1.08]">
+                  A Snowflake partner enterprises trust.
+                </h2>
+                <p className="mt-4 max-w-lg text-lg leading-relaxed text-white/75">
+                  Recognized in Snowflake&rsquo;s CoCo Preferred Partner program at Summit 2026,
+                  alongside Accenture, Deloitte, IBM, and Capgemini.
+                </p>
+                <div className="mt-7 flex flex-wrap items-center gap-6">
+                  {BADGES.map((b) => (
+                    <Image
+                      key={b.src}
+                      src={b.src}
+                      alt={b.alt}
+                      width={b.w}
+                      height={b.h}
+                      className="h-14 w-auto"
+                    />
+                  ))}
+                </div>
+                <p className="mt-7 max-w-lg text-sm leading-relaxed text-white/70">
+                  Everything we build inherits Snowflake&rsquo;s independently audited
+                  controls (SOC 2 Type II, ISO 27001, HIPAA), extended by our
+                  governed delivery practices.{" "}
+                  <Link
+                    href="/security"
+                    className="font-semibold text-white underline-offset-4 hover:underline"
+                  >
+                    How we secure your data &rarr;
+                  </Link>
+                </p>
               </div>
-              <p className="mt-7 max-w-lg text-sm leading-relaxed text-white/70">
-                Everything we build inherits Snowflake&rsquo;s independently audited
-                controls (SOC 2 Type II, ISO 27001, HIPAA), extended by our
-                governed delivery practices.{" "}
-                <Link
-                  href="/security"
-                  className="font-semibold text-white underline-offset-4 hover:underline"
-                >
-                  How we secure your data &rarr;
-                </Link>
-              </p>
+              {/* The recognition, photographed: Viewnear on Snowflake's CoCo
+                  Partner Momentum wall. A badge asserts; the photo proves. */}
+              <figure>
+                <div className="relative aspect-[16/11] overflow-hidden rounded-2xl ring-1 ring-white/15">
+                  <Image
+                    src="/assets/images/life/partner-momentum.jpg"
+                    alt="Snowflake's CoCo Global Partner Momentum wall listing Viewnear among Snowflake partners"
+                    fill
+                    sizes="(max-width:1024px) 100vw, 40vw"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="mt-3 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-white/60">
+                  Snowflake&rsquo;s CoCo Partner Momentum wall &middot; Summit 2026
+                </figcaption>
+              </figure>
             </div>
           </div>
         </SectionFold>

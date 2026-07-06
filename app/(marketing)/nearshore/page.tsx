@@ -1,4 +1,5 @@
 import type { SVGProps } from "react";
+import { Img as Image } from "@/components/marketing/Img";
 import { pageMeta } from "@/lib/seo";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
@@ -42,14 +43,6 @@ const ibase = {
   strokeLinecap: "round" as const,
   strokeLinejoin: "round" as const,
 };
-function ClockIcon(p: SVGProps<SVGSVGElement>) {
-  return (
-    <svg {...ibase} {...p} aria-hidden="true">
-      <circle cx="12" cy="12" r="9" />
-      <path d="M12 7v5l3 2" />
-    </svg>
-  );
-}
 function ChatIcon(p: SVGProps<SVGSVGElement>) {
   return (
     <svg {...ibase} {...p} aria-hidden="true">
@@ -80,11 +73,6 @@ function CalendarIcon(p: SVGProps<SVGSVGElement>) {
 
 // Why nearshore with Viewnear: the real differentiators, reframed for data + AI.
 const reasons = [
-  {
-    Icon: ClockIcon,
-    title: "Your time zone, not a handoff",
-    body: "We work from Monterrey on your clock. Questions get answered the same afternoon, not the next morning, so reviews and decisions keep pace with your team.",
-  },
   {
     Icon: SnowflakeIcon,
     title: "Snowflake depth at every level",
@@ -196,6 +184,29 @@ export default async function NearshorePage() {
             intro="Nearshore gives you the cost and capacity advantages of a distributed team while keeping the proximity, hours, and communication of one in the building."
           />
           <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3" variant="pop">
+            {/* The time-zone card, carried by the actual office: a real address
+                beats an icon for proving "nearshore" means a real team here. */}
+            <div className="relative min-h-[220px] overflow-hidden rounded-2xl border border-border shadow-soft">
+              <Image
+                src="/assets/images/life/monterrey-building.jpg"
+                alt="Viewnear's Monterrey office building at Pueblo Serena"
+                fill
+                sizes="(max-width:768px) 100vw, 33vw"
+                className="object-cover"
+              />
+              <div
+                aria-hidden
+                className="absolute inset-0 bg-gradient-to-t from-deep/85 via-deep/25 to-transparent"
+              />
+              <div className="absolute inset-x-0 bottom-0 p-5">
+                <h3 className="font-display text-lg font-bold text-white">
+                  Your time zone, not a handoff
+                </h3>
+                <p className="mt-1 font-mono text-[0.66rem] uppercase tracking-[0.14em] text-white/75">
+                  Our Monterrey hub &middot; on your clock
+                </p>
+              </div>
+            </div>
             {reasons.map(({ Icon, title, body }) => (
               <div key={title} className="card card-hover flex h-full flex-col">
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primaryDeep">

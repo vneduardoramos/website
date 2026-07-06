@@ -12,7 +12,7 @@ import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 export const metadata = pageMeta({
   title: "Blog: field notes on Snowflake, data & AI",
   description:
-    "Field notes, ideas, and practical guides on Snowflake, data engineering, and AI from the Viewnear team, straight from the lab.",
+    "Field notes, ideas, and practical guides on Snowflake, data engineering, and AI from the Viewnear team, straight from real engagements.",
   path: "/blog",
 });
 

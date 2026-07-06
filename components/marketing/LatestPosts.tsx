@@ -11,7 +11,7 @@ import { getBlogPosts, safe } from "@/lib/queries";
  * LeadershipStrip, so the host page needs no query wiring.
  */
 export async function LatestPosts({
-  eyebrow = "From the lab",
+  eyebrow = "Field notes",
   title = "Latest from the blog",
   take = 3,
   tint = false,
@@ -46,7 +46,19 @@ export async function LatestPosts({
             kicker={post.tags?.[0]?.name}
             title={post.title}
             excerpt={post.excerpt}
-            meta={`${post.authorTeam?.name ?? "Viewnear"} · ${formatDate(post.publishedAt)}`}
+            author={
+              post.authorTeam
+                ? {
+                    name: post.authorTeam.name,
+                    photo: post.authorTeam.headshot?.url ?? post.authorTeam.photo,
+                  }
+                : undefined
+            }
+            meta={
+              post.authorTeam
+                ? formatDate(post.publishedAt)
+                : `Viewnear · ${formatDate(post.publishedAt)}`
+            }
           />
         ))}
       </div>

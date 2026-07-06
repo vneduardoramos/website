@@ -6,6 +6,7 @@ import { MetricBand } from "@/components/marketing/Blocks";
 import { TeamCard } from "@/components/marketing/TeamCard";
 import { PageHero } from "@/components/marketing/PageHero";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
+import { FieldStrip } from "@/components/marketing/FieldStrip";
 import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 import { PartnershipHighlight } from "@/components/marketing/PartnershipHighlight";
 import {
@@ -250,6 +251,10 @@ export default async function AboutPage() {
           </div>
         )}
       </Section>
+
+      {/* The candid layer under the headshots: real Snowflake events, real booth,
+          real dinners. Proof the team above actually shows up in the field. */}
+      <FieldStrip />
 
       {/* Enterprise close: talk to an architect */}
       <section className="section">

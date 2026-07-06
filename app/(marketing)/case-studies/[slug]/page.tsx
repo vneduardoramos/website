@@ -7,6 +7,7 @@ import { getCaseStudyBySlug, getCaseStudySlugs, getCaseStudies } from "@/lib/que
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { MetricBand } from "@/components/marketing/Blocks";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
+import { LeadershipStrip } from "@/components/marketing/LeadershipStrip";
 import { CoverCard } from "@/components/marketing/CoverCard";
 import { coverForSector } from "@/lib/covers";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
@@ -155,6 +156,12 @@ export default async function CaseStudyDetailPage({
             <MetricBand metrics={metrics} />
           </div>
         </div>
+        {/* Anonymization flipped into a strength: the client stays unnamed,
+            the people who delivered don't. */}
+        <LeadershipStrip
+          label="Delivered by our team. The client's name is withheld; ours isn't."
+          className="mt-8 justify-center"
+        />
       </Section>
 
       {/* ── Story (challenge / solution / results via Markdown) ──── */}

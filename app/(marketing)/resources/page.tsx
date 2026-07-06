@@ -79,12 +79,24 @@ export default async function ResourcesPage() {
               <CoverCard
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                image={coverFor(post.slug)}
+                image={post.coverImageUrl ?? coverFor(post.slug)}
                 imageAlt={post.title}
                 kicker={post.tags?.[0]?.name}
                 title={post.title}
                 excerpt={post.excerpt}
-                meta={`${post.author?.name ?? "Viewnear"} · ${formatDate(post.publishedAt)}`}
+                author={
+                  post.authorTeam
+                    ? {
+                        name: post.authorTeam.name,
+                        photo: post.authorTeam.headshot?.url ?? post.authorTeam.photo,
+                      }
+                    : undefined
+                }
+                meta={
+                  post.authorTeam
+                    ? formatDate(post.publishedAt)
+                    : `Viewnear · ${formatDate(post.publishedAt)}`
+                }
               />
             ))}
           </div>

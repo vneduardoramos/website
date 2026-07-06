@@ -62,3 +62,53 @@ export async function LeadershipStrip({
     </div>
   );
 }
+
+/**
+ * Just the overlapping avatar row (no label, no link), for tight spots where
+ * faces sit beside a CTA. `slugs` picks and orders specific people; otherwise
+ * the first `max` by team order.
+ */
+export async function FaceStack({
+  slugs,
+  max = 3,
+  className = "",
+}: {
+  slugs?: string[];
+  max?: number;
+  className?: string;
+}) {
+  const team = await getTeam();
+  if (!team || team.length === 0) return null;
+  const people = slugs
+    ? slugs
+        .map((s) => team.find((m) => m.slug === s))
+        .filter((m): m is (typeof team)[number] => Boolean(m))
+    : team.slice(0, max);
+  if (people.length === 0) return null;
+
+  return (
+    <div className={`flex -space-x-2.5 ${className}`}>
+      {people.map((m) =>
+        m.photo ? (
+          <Image
+            key={m.slug}
+            src={m.photo}
+            alt={m.name}
+            width={40}
+            height={40}
+            sizes="40px"
+            className="h-10 w-10 rounded-full object-cover ring-2 ring-background"
+          />
+        ) : (
+          <span
+            key={m.slug}
+            aria-label={m.name}
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/15 text-[11px] font-bold text-primaryDeep ring-2 ring-background"
+          >
+            {initials(m.name)}
+          </span>
+        ),
+      )}
+    </div>
+  );
+}

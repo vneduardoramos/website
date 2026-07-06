@@ -1,6 +1,7 @@
 import { pageMeta } from "@/lib/seo";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
+import { FieldStrip } from "@/components/marketing/FieldStrip";
 import { LeadershipStrip } from "@/components/marketing/LeadershipStrip";
 import { PageHero } from "@/components/marketing/PageHero";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
@@ -198,6 +199,10 @@ export default function PartnershipPage() {
         </div>
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
+
+      {/* Real event photography: partner-ecosystem presence you can see.
+          team-booth is excluded here since the FeatureSplit above already uses it. */}
+      <FieldStrip items={["team-group", "team-stage", "partner-momentum", "team-dinner"]} />
 
       <CtaBand
         title="Put a certified partner on it."
