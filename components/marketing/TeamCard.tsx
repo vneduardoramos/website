@@ -67,9 +67,9 @@ export function TeamCard({
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`${member.name} on LinkedIn`}
-          className="relative mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-muted transition-colors hover:text-primaryDeep"
+          className="relative mt-3 inline-flex items-center gap-1.5 font-mono text-xs text-muted transition-colors hover:text-primaryDeep"
         >
-          <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+          <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="currentColor" aria-hidden="true">
             <path d={LINKEDIN_PATH} />
           </svg>
           LinkedIn

@@ -4,6 +4,9 @@ import { FeaturedCaseStudies } from "@/components/marketing/FeaturedCaseStudies"
 import { PageHero } from "@/components/marketing/PageHero";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { Methodology } from "@/components/marketing/home/Methodology";
+import { ApproachStory } from "@/components/marketing/approach/ApproachStory";
+import { PlateCard } from "@/components/marketing/Cards";
+import { RevealGroup } from "@/components/marketing/Motion";
 
 export const metadata = pageMeta({
   title: "Our approach",
@@ -67,6 +70,16 @@ export default function ApproachPage() {
         </div>
       </div>
 
+      {/* The centerpiece: the engagement narrated from the sponsor's seat */}
+      <Section>
+        <SectionHeading
+          eyebrow="The experience"
+          title="What an engagement feels like from your seat"
+          intro="The reviews you run, the demos you watch, and the decisions that stay yours: one engagement, from the first scoping session to handover."
+        />
+        <ApproachStory />
+      </Section>
+
       {/* The six-step methodology (shared with home) */}
       <Methodology />
 
@@ -98,17 +111,13 @@ export default function ApproachPage() {
           title="What changes, and when"
           intro="A practical view of the value an engagement returns, by horizon, not by feature list."
         />
-        <div className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-3">
-          {impactByPhase.map((p) => (
-            <div key={p.phase} className="card card-hover flex h-full flex-col bg-background">
-              <span className="font-mono text-xs uppercase tracking-[0.18em] text-primaryDeep">
-                {p.phase}
-              </span>
-              <h3 className="mt-3 font-display text-xl font-bold text-foreground">{p.title}</h3>
-              <p className="mt-3 text-muted">{p.body}</p>
-            </div>
+        <RevealGroup className="mt-12 grid gap-5 md:auto-rows-fr md:grid-cols-3" variant="pop">
+          {impactByPhase.map((p, i) => (
+            <PlateCard key={p.phase} label={p.phase} refCode={`H${i + 1}`} title={p.title}>
+              {p.body}
+            </PlateCard>
           ))}
-        </div>
+        </RevealGroup>
       </Section>
 
       <FeaturedCaseStudies tint title="How it plays out in practice" />

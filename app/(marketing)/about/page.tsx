@@ -16,6 +16,7 @@ import {
   DocIcon,
   CompassIcon,
 } from "@/components/marketing/home/Icons";
+import { PlateCard } from "@/components/marketing/Cards";
 import { getTeam } from "@/lib/queries";
 import { theme } from "@/config/theme";
 
@@ -75,6 +76,35 @@ const principles = [
     Icon: CompassIcon,
     title: "The Americas' home team",
     body: "Local expertise and time-zone alignment across Canada, the USA, Mexico, LATAM, and the Caribbean.",
+  },
+];
+
+// The firm's arc in four plates. No dates we can't verify; each line is
+// grounded in copy that already lives elsewhere on the site.
+const milestones = [
+  {
+    label: "Origin",
+    refCode: "T1",
+    title: "Founded in Monterrey",
+    body: "A specialist Snowflake practice from day one: one platform, studied deeply, on every engagement.",
+  },
+  {
+    label: "Footprint",
+    refCode: "T2",
+    title: "Two hubs",
+    body: "Austin and Monterrey, one team on the same working hours, delivering across the Americas.",
+  },
+  {
+    label: "Partner tier",
+    refCode: "T3",
+    title: "Snowflake Premier Partner",
+    body: "Certified delivery and a verified track record, measured on outcomes rather than breadth of logos.",
+  },
+  {
+    label: "Momentum",
+    refCode: "T4",
+    title: "CoCo Preferred Partner",
+    body: "Recognized at Snowflake Summit 2026 alongside the global systems integrators for momentum on Snowflake CoCo.",
   },
 ];
 
@@ -140,6 +170,19 @@ export default async function AboutPage() {
             </div>
           }
         />
+
+        {/* The arc so far: a compact firm timeline under the origin story. */}
+        <div className="mt-16 flex items-center gap-4">
+          <p className="eyebrow">The arc so far</p>
+          <span className="h-px flex-1 bg-border" />
+        </div>
+        <RevealGroup className="mt-6 grid gap-5 sm:grid-cols-2 md:auto-rows-fr md:grid-cols-4" variant="pop">
+          {milestones.map((m) => (
+            <PlateCard key={m.refCode} label={m.label} refCode={m.refCode} title={m.title}>
+              {m.body}
+            </PlateCard>
+          ))}
+        </RevealGroup>
       </Section>
 
       {/* Track record: verifiable credentials */}

@@ -75,13 +75,16 @@ export default async function HomePage() {
       getClientBands(),
     ]);
 
+  // The home page teases the first five questions; /faq carries the full list.
+  const homeFaqs = faqs?.slice(0, 5) ?? null;
+
   // FAQPage structured data for the FAQs rendered below (helps AI/answer engines).
   const faqLd =
-    faqs && faqs.length > 0
+    homeFaqs && homeFaqs.length > 0
       ? {
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          mainEntity: faqs.map((f) => ({
+          mainEntity: homeFaqs.map((f) => ({
             "@type": "Question",
             name: f.q,
             acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -336,7 +339,7 @@ export default async function HomePage() {
 
       {/* 5) FAQ */}
       {faqLd && <JsonLd data={faqLd} />}
-      {faqs && faqs.length > 0 && (
+      {homeFaqs && homeFaqs.length > 0 && (
         <Section>
           <SectionHeading
             eyebrow="Questions"
@@ -344,7 +347,18 @@ export default async function HomePage() {
             center
           />
           <div className="mt-12">
-            <Faq items={faqs} />
+            <Faq items={homeFaqs} />
+          </div>
+          <div className="mt-8 text-center">
+            <Link
+              href="/faq"
+              className="group inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep"
+            >
+              <span className="link-underline">All questions answered</span>
+              <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+                &rarr;
+              </span>
+            </Link>
           </div>
         </Section>
       )}

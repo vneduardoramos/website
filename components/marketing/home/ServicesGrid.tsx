@@ -1,30 +1,8 @@
 import Link from "next/link";
-import type { ComponentType, SVGProps } from "react";
-import {
-  DatabaseIcon,
-  PipelineIcon,
-  ChartIcon,
-  CpuIcon,
-  CompassIcon,
-  RocketIcon,
-  SnowflakeIcon,
-  CheckIcon,
-} from "./Icons";
+import { CheckIcon } from "./Icons";
 import { RevealGroup } from "@/components/marketing/Motion";
 
 type Service = { slug: string; title: string; summary: string };
-
-// Icon per service slug (matches the services page), so each card's icon fits
-// its service. AI Analytics & Agents gets the chip; falls back to the Snowflake mark.
-const SERVICE_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
-  "ai-data-strategy": CompassIcon,
-  "data-visualisation": CpuIcon, // AI Analytics & Agents
-  "cloud-architecture": DatabaseIcon,
-  "data-engineering": PipelineIcon,
-  "embedded-analytics": ChartIcon,
-  "capability-development": RocketIcon,
-};
-const iconFor = (slug: string) => SERVICE_ICONS[slug] ?? SnowflakeIcon;
 
 // No-card tile (left column, row 2): the engagement models, the one commercial
 // fact the home page doesn't state anywhere else. Mirrors /pricing.
@@ -40,24 +18,27 @@ export function ServicesGrid({ services }: { services: Service[] }) {
   const [lead, ...rest] = cards;
   if (!lead) return null;
 
-  const LeadIcon = iconFor(lead.slug);
-
-  const renderCard = (svc: Service) => {
-    const Icon = iconFor(svc.slug);
-    return (
-      <Link key={svc.slug} href="/services" className="card card-hover group flex h-full flex-col">
-        <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primaryDeep">
-          <Icon className="h-5 w-5" />
-        </span>
-        <h3 className="mt-4 font-display text-lg font-bold text-foreground">{svc.title}</h3>
-        <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-muted">{svc.summary}</p>
-        <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep">
-          <span className="link-underline">Learn more</span>
-          <span className="transition-transform group-hover:translate-x-0.5">→</span>
-        </span>
-      </Link>
-    );
-  };
+  // Ledger-language service card: eyebrow + № index over a dotted rule, no
+  // icon tiles, no lift-on-hover. Restyled in place (not LedgerCard itself)
+  // so the whole card stays one clickable link.
+  const renderCard = (svc: Service, index: number) => (
+    <Link
+      key={svc.slug}
+      href="/services"
+      className="group flex h-full flex-col rounded-[10px] border border-border bg-background px-5 pb-5 pt-4 transition-colors hover:border-primary/50"
+    >
+      <div className="flex items-baseline justify-between gap-3 border-b border-dotted border-primary/40 pb-3">
+        <span className="eyebrow">Service</span>
+        <span className="font-mono text-xs text-muted">№ {String(index).padStart(2, "0")}</span>
+      </div>
+      <h3 className="mt-3.5 font-display text-lg font-bold text-foreground">{svc.title}</h3>
+      <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-muted">{svc.summary}</p>
+      <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep">
+        <span className="link-underline">Learn more</span>
+        <span className="transition-transform group-hover:translate-x-0.5">→</span>
+      </span>
+    </Link>
+  );
 
   return (
     <section className="section section-warm">
@@ -78,16 +59,17 @@ export function ServicesGrid({ services }: { services: Service[] }) {
             DOM order is interleaved so the grid lands: row1 [lead | Data Eng],
             row2 [no-card facts | Analytics], row3 [the remaining three]. */}
         <RevealGroup variant="fold" className="mt-14 grid gap-5 lg:auto-rows-fr lg:grid-cols-3">
-          {/* Lead / anchor tile: its own card */}
+          {/* Lead / anchor tile: same ledger language at a larger scale */}
           <Link
             href="/services"
-            className="card card-hover card-feature hover-sheen group flex h-full flex-col overflow-hidden lg:col-span-2"
+            className="group flex h-full flex-col rounded-[10px] border border-border bg-background px-6 pb-6 pt-5 transition-colors hover:border-primary/50 lg:col-span-2"
           >
-            <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent text-white shadow-[0_6px_16px_-8px_rgb(var(--color-accent)/0.7)]">
-              <LeadIcon className="h-6 w-6" />
-            </span>
-            <h3 className="mt-5 font-display text-2xl font-bold text-foreground">{lead.title}</h3>
-            <p className="mt-3 max-w-lg text-base leading-relaxed text-muted">{lead.summary}</p>
+            <div className="flex items-baseline justify-between gap-3 border-b border-dotted border-primary/40 pb-3">
+              <span className="eyebrow">Service</span>
+              <span className="font-mono text-xs text-muted">№ 01</span>
+            </div>
+            <h3 className="mt-4 font-display text-2xl font-bold text-foreground">{lead.title}</h3>
+            <p className="mt-3 max-w-lg flex-1 text-base leading-relaxed text-muted">{lead.summary}</p>
             <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep">
               <span className="link-underline">Learn more</span>
               <span className="transition-transform group-hover:translate-x-0.5">→</span>
@@ -95,7 +77,7 @@ export function ServicesGrid({ services }: { services: Service[] }) {
           </Link>
 
           {/* Top-right tile (Data Engineering) */}
-          {rest[0] && renderCard(rest[0])}
+          {rest[0] && renderCard(rest[0], 2)}
 
           {/* No-card tile: how to engage (left column, row 2) */}
           <div className="flex flex-col justify-center py-2 lg:col-span-2 lg:pr-6">
@@ -121,7 +103,7 @@ export function ServicesGrid({ services }: { services: Service[] }) {
           </div>
 
           {/* Right tile (Analytics) + the remaining three tiles */}
-          {rest.slice(1).map((svc) => renderCard(svc))}
+          {rest.slice(1).map((svc, i) => renderCard(svc, i + 3))}
         </RevealGroup>
       </div>
     </section>

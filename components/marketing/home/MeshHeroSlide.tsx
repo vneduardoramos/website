@@ -51,7 +51,7 @@ export function MeshHeroSlide({ subhead }: { subhead?: string }) {
 
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link href="/contact" className="btn-primary btn-lg group">
-              Start a conversation
+              Talk to an architect
               <span className="transition-transform group-hover:translate-x-0.5">→</span>
             </Link>
             <Link href="/services" className="btn-ghost btn-lg">

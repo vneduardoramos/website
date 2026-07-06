@@ -76,10 +76,15 @@ export default async function CaseStudyDetailPage({
     null,
   );
 
-  // Related case studies in the same sector (up to 3 others).
-  const related = (await getCaseStudies({}))
+  // All studies in index-page order (order asc): related picks + prev/next nav.
+  const all = await getCaseStudies({});
+  const related = all
     .filter((other) => other.slug !== cs.slug && other.sector === cs.sector)
     .slice(0, 3);
+  const currentIndex = all.findIndex((other) => other.slug === cs.slug);
+  const prev = currentIndex > 0 ? all[currentIndex - 1] : null;
+  const next =
+    currentIndex >= 0 && currentIndex < all.length - 1 ? all[currentIndex + 1] : null;
 
   const caseStudyLd = {
     "@context": "https://schema.org",
@@ -295,8 +300,43 @@ export default async function CaseStudyDetailPage({
         </Section>
       )}
 
+      {/* ── Prev / next engagement (quiet, hairline-top) ────────── */}
+      {(prev || next) && (
+        <div className="container-page">
+          <nav
+            aria-label="More engagements"
+            className="grid gap-8 border-t border-border pt-10 sm:grid-cols-2"
+          >
+            <div>
+              {prev && (
+                <Link href={`/case-studies/${prev.slug}`} className="group inline-block">
+                  <span className="font-mono text-xs uppercase tracking-wider text-muted">
+                    ← Previous engagement
+                  </span>
+                  <span className="mt-1.5 block font-display text-base font-bold leading-snug text-foreground transition-colors group-hover:text-primaryDeep">
+                    {prev.title}
+                  </span>
+                </Link>
+              )}
+            </div>
+            <div className="sm:text-right">
+              {next && (
+                <Link href={`/case-studies/${next.slug}`} className="group inline-block">
+                  <span className="font-mono text-xs uppercase tracking-wider text-muted">
+                    Next engagement →
+                  </span>
+                  <span className="mt-1.5 block font-display text-base font-bold leading-snug text-foreground transition-colors group-hover:text-primaryDeep">
+                    {next.title}
+                  </span>
+                </Link>
+              )}
+            </div>
+          </nav>
+        </div>
+      )}
+
       <div className="container-page">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto mt-10 max-w-3xl text-center">
           <Link
             href="/case-studies"
             className="text-sm font-semibold text-primaryDeep"

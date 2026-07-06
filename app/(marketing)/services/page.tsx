@@ -3,7 +3,6 @@ import { pageMeta } from "@/lib/seo";
 import {
   Section,
   SectionHeading,
-  Pill,
   CtaBand,
 } from "@/components/marketing/ui";
 import { LeadershipStrip } from "@/components/marketing/LeadershipStrip";
@@ -13,30 +12,10 @@ import { PageHero } from "@/components/marketing/PageHero";
 import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { Markdown } from "@/lib/content";
-import {
-  CompassIcon,
-  DatabaseIcon,
-  PipelineIcon,
-  ChartIcon,
-  CpuIcon,
-  RocketIcon,
-  SnowflakeIcon,
-} from "@/components/marketing/home/Icons";
-import { ControlPlane } from "@/components/marketing/services/ControlPlane";
 import { getServicesByTier, getSetting } from "@/lib/queries";
 import { asStringArray } from "@/lib/utils";
 import { JsonLd } from "@/components/JsonLd";
 import { theme } from "@/config/theme";
-
-import type { ComponentType, SVGProps } from "react";
-const SERVICE_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
-  "ai-data-strategy": CompassIcon, // strategy / direction
-  "data-visualisation": CpuIcon, // AI Analytics & Agents (AI/compute)
-  "cloud-architecture": DatabaseIcon, // data foundation
-  "data-engineering": PipelineIcon, // pipelines
-  "embedded-analytics": ChartIcon, // analytics embedded in product
-  "capability-development": RocketIcon, // growth / enablement
-};
 
 export const metadata = pageMeta({
   title: "Services: THINK · BUILD · GROW",
@@ -49,7 +28,6 @@ type TierMeta = {
   eyebrow: string;
   num: string;
   intro: string;
-  tile: string; // icon tile bg (static class for Tailwind)
   num_cls: string; // big faded index color
   bar: string; // accent bar color
   decor: "dots" | "grid" | "swoosh";
@@ -61,7 +39,6 @@ const tierMeta: Record<string, TierMeta> = {
     num: "01",
     intro:
       "Set the direction. We pinpoint where data and AI create real value and sequence a roadmap you can execute, grounded in what your data can support today.",
-    tile: "bg-primary",
     num_cls: "text-primary/15",
     bar: "bg-primary",
     decor: "dots",
@@ -72,7 +49,6 @@ const tierMeta: Record<string, TierMeta> = {
     num: "02",
     intro:
       "Make it real. We build the governed Snowflake foundation that AI actually needs, then the pipelines, models, and agents that run on it, integrated with the systems your business runs on.",
-    tile: "bg-secondary",
     num_cls: "text-secondary/15",
     bar: "bg-secondary",
     decor: "grid",
@@ -83,7 +59,6 @@ const tierMeta: Record<string, TierMeta> = {
     num: "03",
     intro:
       "Compound the value. We help your teams scale AI use cases and agents into production, and keep improving them long after launch.",
-    tile: "bg-accent",
     num_cls: "text-accent/15",
     bar: "bg-accent",
     decor: "swoosh",
@@ -222,8 +197,12 @@ export default async function ServicesPage() {
         description="Strategy, engineering, and enablement under one accountable team: a governed data foundation first, then the AI and agents that run on it, across THINK, BUILD, and GROW."
       />
 
-      {tiers.map(({ tier, services }) => {
+      {tiers.map(({ tier, services }, tierIdx) => {
         const meta = tierMeta[tier];
+        // Running two-digit index across the whole page (01…06).
+        const offset = tiers
+          .slice(0, tierIdx)
+          .reduce((n, t) => n + t.services.length, 0);
         return (
           <Section
             key={tier}
@@ -249,34 +228,28 @@ export default async function ServicesPage() {
               <p className="mt-5 max-w-2xl text-lg text-muted">{meta?.intro}</p>
 
               {/* services grid */}
-              <RevealGroup className="mt-12 grid gap-6 md:grid-cols-2" variant="pop">
-                {services.map((service) => {
+              <RevealGroup className="mt-12 grid gap-5 md:grid-cols-2" variant="pop">
+                {services.map((service, i) => {
                   const tools = asStringArray(service.tools);
-                  const Icon = SERVICE_ICONS[service.slug] ?? SnowflakeIcon;
                   return (
-                    <div key={service.slug} className="card card-hover flex flex-col">
-                      <div
-                        className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl ${meta?.tile} text-white shadow-md`}
-                      >
-                        <Icon className="h-6 w-6" />
-                      </div>
-                      <h3 className="font-display text-xl font-bold text-foreground">
-                        {service.title}
-                      </h3>
-                      <p className="mt-2 text-muted">{service.summary}</p>
+                    <LedgerCard
+                      key={service.slug}
+                      eyebrow={meta?.eyebrow ?? tier}
+                      index={String(offset + i + 1).padStart(2, "0")}
+                      title={service.title}
+                      foot={
+                        tools.length > 0
+                          ? ["Tools", tools.join(" · ")]
+                          : undefined
+                      }
+                    >
+                      <p>{service.summary}</p>
                       {service.body && (
                         <div className="prose-vn mt-3 text-sm">
                           <Markdown>{service.body}</Markdown>
                         </div>
                       )}
-                      {tools.length > 0 && (
-                        <div className="mt-auto flex flex-wrap gap-2 pt-6">
-                          {tools.map((tool) => (
-                            <Pill key={tool}>{tool}</Pill>
-                          ))}
-                        </div>
-                      )}
-                    </div>
+                    </LedgerCard>
                   );
                 })}
               </RevealGroup>
@@ -304,34 +277,23 @@ export default async function ServicesPage() {
             }
             intro="Agentic AI does not start with agents. It starts with governed data and trusted context: one layer where data, business context, models, and workflows come together, and exactly what we build."
           />
-          <div className="mt-12 grid items-start gap-10 lg:grid-cols-[1fr_1.1fr]">
-            <div>
-              <p className="text-lg leading-relaxed text-foreground/90">
-                As AI moves from answering questions to taking action, governance shifts from{" "}
-                <ScrollHighlight color="cyan">who can see what</ScrollHighlight> to what agents are
-                allowed to do. We deliver every layer of that control plane on Snowflake, so your
-                agents stay grounded, governed, and auditable.
-              </p>
-              <div className="mt-8">
-                <InlineCta
-                  title="Snowflake is becoming the control plane for the agentic enterprise"
-                  href="/blog/snowflake-control-plane-agentic-enterprise"
-                  label="Read the thesis"
-                />
-              </div>
-              <p className="mt-6 text-sm text-muted">
-                See the AI we put into production on the{" "}
-                <Link href="/solutions" className="font-semibold text-primaryDeep link-underline">
-                  solutions page
-                </Link>
-                , and how we pick the model for each job on{" "}
-                <Link href="/data-ai" className="font-semibold text-primaryDeep link-underline">
-                  data &amp; AI
-                </Link>
-                .
-              </p>
-            </div>
-            <ControlPlane />
+          <p className="mt-6 max-w-2xl text-sm text-muted">
+            See the AI we put into production on the{" "}
+            <Link href="/solutions" className="font-semibold text-primaryDeep link-underline">
+              solutions page
+            </Link>
+            , and how we pick the model for each job on{" "}
+            <Link href="/data-ai" className="font-semibold text-primaryDeep link-underline">
+              data &amp; AI
+            </Link>
+            .
+          </p>
+          <div className="mt-10 max-w-3xl">
+            <InlineCta
+              title="Snowflake is becoming the control plane for the agentic enterprise"
+              href="/blog/snowflake-control-plane-agentic-enterprise"
+              label="Read the thesis"
+            />
           </div>
         </div>
         <WaveDivider position="bottom" fill="fill-background" />

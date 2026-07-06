@@ -14,6 +14,7 @@ import {
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { ShowcaseBand } from "@/components/marketing/ShowcaseBand";
 import { MetricBand } from "@/components/marketing/Blocks";
+import { PlateCard } from "@/components/marketing/Cards";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { HeroBackground } from "@/components/marketing/HeroBackground";
 import { MaskReveal } from "@/components/marketing/Motion";
@@ -60,6 +61,8 @@ export default async function IndustryDetailPage({
   const flavor = getFlavor(industry.slug);
   const Icon = flavor.icon;
   const sectorImage = `/assets/images/industries/${industry.slug}.jpg`;
+  // Short sector reference code for the compliance plate (e.g. "FIN", "EDU").
+  const sectorCode = industry.slug.slice(0, 3).toUpperCase();
 
   // The one case study for this industry, showcased prominently below.
   const story = industry.caseStudies?.[0];
@@ -151,17 +154,33 @@ export default async function IndustryDetailPage({
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
 
-      {/* Sector metrics: target ranges typical for the sector, not claimed
-          engagement results (the real proof is the featured case study below). */}
+      {/* Sector metrics: when this industry has a real case study with metrics,
+          show those measured results; otherwise fall back to the sector's
+          target ranges (not claimed engagement results). */}
       <Section>
-        <SectionHeading
-          eyebrow="By the numbers"
-          title="What we build toward"
-          intro={`The targets a ${industry.name.toLowerCase()} engagement is scoped against, agreed with you up front.`}
-        />
-        <div className="mt-12">
-          <MetricBand metrics={flavor.metrics} />
-        </div>
+        {storyMetrics.length > 0 ? (
+          <>
+            <SectionHeading
+              eyebrow="By the numbers"
+              title="What changed"
+              intro={`Measured on a real ${industry.name.toLowerCase()} engagement; client name withheld.`}
+            />
+            <div className="mt-12">
+              <MetricBand metrics={storyMetrics} />
+            </div>
+          </>
+        ) : (
+          <>
+            <SectionHeading
+              eyebrow="By the numbers"
+              title="What we build toward"
+              intro={`The targets a ${industry.name.toLowerCase()} engagement is scoped against, agreed with you up front.`}
+            />
+            <div className="mt-12">
+              <MetricBand metrics={flavor.metrics} />
+            </div>
+          </>
+        )}
       </Section>
 
       {/* Challenges */}
@@ -249,23 +268,20 @@ export default async function IndustryDetailPage({
 
       {/* Governance & compliance - CXO trust signal */}
       <Section>
-        <div className="flex flex-col items-start gap-5 rounded-2xl border border-border bg-surface p-8 shadow-soft sm:flex-row sm:items-center">
-          <span
-            className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${flavor.tile}`}
-            aria-hidden="true"
+        <div className="max-w-xl">
+          <PlateCard
+            label="Compliance"
+            refCode={sectorCode}
+            title="Built for your regulators"
           >
-            <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 3l7 3v5c0 4.4-3 8.3-7 9.5C8 19.3 5 15.4 5 11V6l7-3z" />
-              <path d="M9 12l2 2 4-4" />
-            </svg>
-          </span>
-          <div className="flex-1">
-            <p className="eyebrow mb-1">Governance &amp; compliance</p>
-            <p className="text-foreground/90">{flavor.compliance}</p>
-          </div>
-          <Link href="/security" className="btn-ghost shrink-0">
-            How we keep data safe →
-          </Link>
+            {flavor.compliance}{" "}
+            <Link
+              href="/security"
+              className="font-semibold text-primaryDeep underline-offset-4 hover:underline"
+            >
+              How we keep data safe →
+            </Link>
+          </PlateCard>
         </div>
       </Section>
 

@@ -1,72 +1,46 @@
 /**
  * Shared benefits, surfaced both on /life-at-viewnear and on each job page so
- * the two never drift. `icon` + `accent` are rendered by BenefitsGrid.
+ * the two never drift. `label` is the short ledger eyebrow BenefitsGrid renders.
  */
-export type BenefitIcon =
-  | "heart"
-  | "shieldPlus"
-  | "smile"
-  | "sun"
-  | "cap"
-  | "mountain"
-  | "sparkles";
-
-export type BenefitAccent =
-  | "red"
-  | "blue"
-  | "purple"
-  | "amber"
-  | "cyan"
-  | "green"
-  | "indigo";
-
 export type Benefit = {
-  icon: BenefitIcon;
-  accent: BenefitAccent;
+  label: string;
   title: string;
   body: string;
 };
 
 export const BENEFITS: Benefit[] = [
   {
-    icon: "heart",
-    accent: "blue",
+    label: "Health",
     title: "Health insurance",
     body: "Comprehensive medical coverage for you and your whole family.",
   },
   {
-    icon: "shieldPlus",
-    accent: "blue",
+    label: "Health",
     title: "Dental & vision",
     body: "Optional dental and vision plans for the everyday essentials.",
   },
   {
-    icon: "smile",
-    accent: "blue",
+    label: "Wellness",
     title: "Emotional wellness",
     body: "Optional mental-health and emotional-wellbeing support, because demanding work needs real balance.",
   },
   {
-    icon: "sun",
-    accent: "amber",
+    label: "Balance",
     title: "Flexible time off",
     body: "Time off follows local law and stays flexible (no fixed cap) as long as outcomes stay strong and teams stay covered.",
   },
   {
-    icon: "cap",
-    accent: "blue",
+    label: "Growth",
     title: "Learning & certifications",
     body: "Training, SnowPro certifications, conference travel, and event sponsorships: we reinvest in your growth.",
   },
   {
-    icon: "mountain",
-    accent: "blue",
+    label: "Together",
     title: "Team retreats",
     body: "Company retreats and in-person gatherings that build the relationships behind great delivery.",
   },
   {
-    icon: "sparkles",
-    accent: "blue",
+    label: "Tooling",
     title: "The tools to do the work",
     body: "Modern hardware, paid AI tooling, and the licenses your projects need, from day one.",
   },

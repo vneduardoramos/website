@@ -4,8 +4,8 @@ import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { MetricBand } from "@/components/marketing/Blocks";
-import { PartnerBadges } from "@/components/marketing/PartnerBadges";
 import { LogoRow } from "@/components/marketing/home/ClientLogos";
+import { TwoClocks } from "@/components/marketing/nearshore/TwoClocks";
 import { getClientBands } from "@/lib/client-bands";
 import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
@@ -125,6 +125,8 @@ export default async function NearshorePage() {
                 </span>
               ))}
             </div>
+            {/* The time-zone claim, proven by the actual clocks. */}
+            <TwoClocks />
           </PageHero>
         </div>
       </div>
@@ -245,18 +247,9 @@ export default async function NearshorePage() {
         />
       </Section>
 
-      {/* Partner credibility */}
-      <Section className="text-center">
-        <SectionHeading
-          align="center"
-          eyebrow="Backed by Snowflake"
-          title="A certified partner behind every engagement"
-          intro="The nearshore team carries the same recognitions as the rest of Viewnear: two of Snowflake's highest partner statuses, with certified delivery on every project."
-        />
-        <div className="mt-12 flex justify-center">
-          <PartnerBadges variant="logos" />
-        </div>
-      </Section>
+      {/* (Partner badges intentionally not repeated here: the credentials band
+          above already carries Premier + CoCo Preferred, and the hero chips name
+          both. One trust layer fewer, same claims.) */}
 
       <CtaBand
         title="Put a nearshore Snowflake team on it."

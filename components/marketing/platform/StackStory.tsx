@@ -86,11 +86,15 @@ const BEATS: { title: string; body: React.ReactNode }[] = [
 export function StackStory() {
   return (
     <RevealGroup as="ol" variant="fade-up" className="relative mt-14 max-w-3xl">
-      {/* the spine */}
+      {/* the spine: static hairline everywhere; browsers with CSS scroll-driven
+          animations (and motion allowed) also get a quiet top-to-bottom fill
+          that tracks reading progress. See .spine-progress in globals.css. */}
       <span
         aria-hidden
         className="absolute bottom-4 left-[7px] top-2 w-px bg-border"
-      />
+      >
+        <span className="spine-progress absolute inset-0 bg-primaryDeep/40" />
+      </span>
       {BEATS.map((b, i) => (
         <li key={b.title} className="relative pb-11 pl-10 last:pb-0">
           <span

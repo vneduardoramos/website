@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { pageMeta } from "@/lib/seo";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { FeaturedCaseStudies } from "@/components/marketing/FeaturedCaseStudies";
@@ -33,6 +34,10 @@ const SOLUTIONS = [
     ],
     image: "/assets/images/photos/network.jpg",
     cta: { label: "Every source platform we migrate", href: "/migrations" },
+    proof: {
+      label: "See it in production: live in seven weeks →",
+      href: "/case-studies/real-time-student-data-pipeline",
+    },
   },
   {
     eyebrow: "Applied AI",
@@ -51,6 +56,10 @@ const SOLUTIONS = [
     ],
     image: "/assets/images/photos/circuit.jpg",
     cta: { label: "Go deeper: every major model", href: "/data-ai" },
+    proof: {
+      label: "See it in production: 95% claims accuracy →",
+      href: "/case-studies/insurance-claims-cortex-ai",
+    },
     reverse: true,
   },
   {
@@ -70,6 +79,10 @@ const SOLUTIONS = [
     ],
     image: "/assets/images/photos/datacenter.jpg",
     cta: { label: "See Security & Trust", href: "/security" },
+    proof: {
+      label: "See it in production: one golden record across eight domains →",
+      href: "/case-studies/corporate-mdm-golden-record",
+    },
   },
   {
     eyebrow: "Consumption",
@@ -88,6 +101,10 @@ const SOLUTIONS = [
     ],
     image: "/assets/images/photos/dashboard.jpg",
     cta: { label: "Talk to our team", href: "/contact" },
+    proof: {
+      label: "See it in production: a natural-language catalog agent →",
+      href: "/case-studies/sku-catalog-governance",
+    },
     reverse: true,
   },
 ];
@@ -141,6 +158,15 @@ export default function SolutionsPage() {
               reverse={s.reverse}
               cta={s.cta}
             />
+            {/* Quiet proof line: the matching real engagement, under the text column. */}
+            <p className={`mt-6 text-sm ${s.reverse ? "md:text-right" : ""}`}>
+              <Link
+                href={s.proof.href}
+                className="font-semibold text-primaryDeep underline-offset-4 hover:underline"
+              >
+                {s.proof.label}
+              </Link>
+            </p>
           </div>
           {i % 2 === 1 && <WaveDivider position="bottom" fill="fill-background" />}
         </Section>

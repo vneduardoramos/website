@@ -6,7 +6,7 @@ import { ContactForm } from "@/components/marketing/ContactForm";
 import { SectionDecor } from "@/components/marketing/Decor";
 import { SnowflakeLockup } from "@/components/marketing/SnowflakeLockup";
 import { LeadershipStrip } from "@/components/marketing/LeadershipStrip";
-import { getSetting } from "@/lib/queries";
+import { getSetting, getTeam } from "@/lib/queries";
 import { theme } from "@/config/theme";
 
 export const metadata = pageMeta({
@@ -33,9 +33,18 @@ const steps = [
   },
 ];
 
+// Both offices, exactly as listed on /life-at-viewnear.
+const offices = ["Austin, TX · 10900 Stonelake Blvd", "Monterrey, MX · Valle Alto"];
+
 export default async function ContactPage() {
-  const contact = await getSetting<ContactSetting>("contact");
+  const [contact, team] = await Promise.all([
+    getSetting<ContactSetting>("contact"),
+    getTeam(),
+  ]);
   const email = contact?.email ?? theme.brand.email;
+  // First published member with a booking link, if any (none seeded today:
+  // the block below renders nothing until a bookingUrl lands in the CMS).
+  const bookingUrl = team.find((m) => m.bookingUrl)?.bookingUrl;
 
   return (
     <>
@@ -115,8 +124,31 @@ export default async function ContactPage() {
                 <span className="pill-chip">SnowPro-certified</span>
               </div>
               <SnowflakeLockup variant="default" height={26} className="mt-5" />
+              <div className="mt-5 flex flex-wrap gap-2">
+                {offices.map((o) => (
+                  <span
+                    key={o}
+                    className="inline-flex items-center rounded-full border border-border bg-surface px-3 py-1 font-mono text-[0.66rem] tracking-wide text-muted"
+                  >
+                    {o}
+                  </span>
+                ))}
+              </div>
             </div>
             <ContactForm />
+            {bookingUrl && (
+              <p className="mt-6 text-sm text-muted">
+                Prefer to skip the form?{" "}
+                <a
+                  href={bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-primaryDeep underline-offset-4 hover:underline"
+                >
+                  Book 30 minutes with an architect &rarr;
+                </a>
+              </p>
+            )}
           </div>
         </div>
       </Section>

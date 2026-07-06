@@ -6,6 +6,7 @@ import {
   CtaBand,
 } from "@/components/marketing/ui";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
+import { PlateCard } from "@/components/marketing/Cards";
 import { PageHero } from "@/components/marketing/PageHero";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { theme } from "@/config/theme";
@@ -30,29 +31,45 @@ const platformCompliance = [
 
 const practices = [
   {
+    label: "Access",
     title: "Least-privilege access",
     body: "Role-based access control modeled to your org, so people see only the data they need, enforced in Snowflake, not bolted on after.",
   },
   {
+    label: "Lineage",
     title: "Lineage & auditability",
     body: "Horizon Catalog lineage and access history mean every figure is traceable to its source and every access is logged for audit.",
   },
   {
+    label: "PII",
     title: "PII classification",
     body: "Sensitive data is classified, masked, and protected with tagging and row/column policies from the first table we build.",
   },
   {
+    label: "Residency",
     title: "Data residency by region",
     body: "We deploy in the Snowflake region you require across the Americas, so data stays where your policy and regulators need it.",
   },
   {
+    label: "Secrets",
     title: "Secrets & key management",
     body: "Credentials and keys are managed through your cloud's secrets and KMS services: never hard-coded, never shared in the clear.",
   },
   {
+    label: "Delivery",
     title: "Secure delivery practices",
     body: "Code review, least-privilege delivery accounts, and environment separation are standard on every engagement.",
   },
+];
+
+// The two halves of the trust story: what Snowflake's audits cover, and the
+// delivery practices we bring on top. Rendered as the inherited-vs-ours board.
+const inheritedControls = ["SOC 2 Type II", "ISO 27001", "HIPAA", "PCI DSS"];
+const ourControls = [
+  "Least-privilege access",
+  "Lineage & auditability",
+  "PII classification",
+  "Secure delivery practices",
 ];
 
 const verticals = [
@@ -109,6 +126,36 @@ export default function SecurityPage() {
               </div>
             ))}
           </div>
+
+          {/* Inherited vs. ours: the platform's audits on one side, our delivery practices on the other. */}
+          <div className="mt-10 overflow-hidden rounded-3xl border border-border bg-surface">
+            <div className="grid divide-y divide-border md:grid-cols-2 md:divide-x md:divide-y-0">
+              <div className="p-6 md:p-8">
+                <p className="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-primaryDeep">
+                  Snowflake&rsquo;s audited controls
+                </p>
+                <ul className="mt-4 divide-y divide-border">
+                  {inheritedControls.map((c) => (
+                    <li key={c} className="py-2.5 text-sm text-foreground/90">
+                      {c}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="p-6 md:p-8">
+                <p className="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-primaryDeep">
+                  Viewnear delivery practices
+                </p>
+                <ul className="mt-4 divide-y divide-border">
+                  {ourControls.map((c) => (
+                    <li key={c} className="py-2.5 text-sm text-foreground/90">
+                      {c}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
@@ -120,18 +167,16 @@ export default function SecurityPage() {
           title="How we keep your data safe"
           intro="The controls we apply on every engagement by default, never as optional add-ons."
         />
-        <div className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3">
-          {practices.map((p) => (
-            <div key={p.title} className="card card-hover flex h-full flex-col">
-              <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primaryDeep">
-                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.9} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M12 3l7 3v5c0 4.4-3 8.3-7 9.5C8 19.3 5 15.4 5 11V6l7-3z" />
-                  <path d="M9 12l2 2 4-4" />
-                </svg>
-              </span>
-              <h3 className="font-display text-lg font-bold text-foreground">{p.title}</h3>
-              <p className="mt-3 text-muted">{p.body}</p>
-            </div>
+        <div className="mt-12 grid gap-5 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3">
+          {practices.map((p, i) => (
+            <PlateCard
+              key={p.title}
+              label={p.label}
+              refCode={`CTRL-0${i + 1}`}
+              title={p.title}
+            >
+              {p.body}
+            </PlateCard>
           ))}
         </div>
       </Section>

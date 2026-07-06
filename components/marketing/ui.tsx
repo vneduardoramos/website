@@ -157,7 +157,7 @@ export function CtaBand({
             <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-muted">{subtitle}</p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link href="/contact" className="btn-primary btn-lg hover-sheen">
-                Start a conversation
+                Talk to an architect
               </Link>
               <Link href="/services" className="btn-ghost btn-lg">
                 Explore services

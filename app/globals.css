@@ -955,6 +955,35 @@ select:focus-visible,
   stroke-dashoffset: 0;
 }
 
+/* ---- StackStory spine progress (platform page) ----
+   A second span layered over the static hairline spine fills top-to-bottom as
+   the story scrolls through the viewport, via CSS scroll-driven animations.
+   Progressive enhancement only: without `animation-timeline: view()` support,
+   or with reduced motion, the fill stays at scaleY(0) and the plain static
+   hairline underneath is all anyone sees. */
+.spine-progress {
+  transform: scaleY(0);
+  transform-origin: top;
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .spine-progress {
+      /* `animation-timeline` must follow the shorthand (the shorthand resets it). */
+      animation: spine-fill linear both;
+      animation-timeline: view();
+      animation-range: entry 20% cover 85%;
+    }
+  }
+}
+@keyframes spine-fill {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

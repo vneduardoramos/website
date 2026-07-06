@@ -27,9 +27,16 @@ function SeeAll({ href, label }: { href: string; label: string }) {
 
 export default async function ResourcesPage() {
   const [posts, caseStudies] = await Promise.all([
-    safe(getBlogPosts({ take: 3 }), []),
-    safe(getCaseStudies({ featured: true, take: 3 }), []),
+    safe(getBlogPosts({ take: 4 }), []),
+    safe(getCaseStudies({ featured: true, take: 4 }), []),
   ]);
+
+  // Lead with one study + one post; the grids below carry the rest so
+  // nothing appears twice on the page.
+  const featuredStudy = caseStudies[0];
+  const featuredPost = posts[0];
+  const restStudies = caseStudies.slice(1);
+  const restPosts = posts.slice(1);
 
   return (
     <>
@@ -43,15 +50,67 @@ export default async function ResourcesPage() {
         description="Case studies from real Snowflake engagements and field notes from the consultants who ran them. If you are planning a data & AI move, this is what it looks like in practice."
       />
 
+      {/* Start here: one engagement + one field note, large and side by side */}
+      {(featuredStudy || featuredPost) && (
+        <Section>
+          <SectionHeading
+            eyebrow="Start here"
+            title="One engagement, one field note"
+            intro="A real case study and a recent post from the team, the fastest way to see how we work."
+          />
+          <div className="mt-10 grid gap-6 md:auto-rows-fr md:grid-cols-2">
+            {featuredStudy && (
+              <CoverCard
+                href={`/case-studies/${featuredStudy.slug}`}
+                image={
+                  featuredStudy.heroImage ??
+                  coverForSector(featuredStudy.sector, featuredStudy.slug)
+                }
+                imageAlt={`${featuredStudy.title}: ${featuredStudy.sector}`}
+                kicker={`Case study · ${featuredStudy.sector}`}
+                title={featuredStudy.title}
+                excerpt={featuredStudy.summary}
+                meta={featuredStudy.client?.name ?? undefined}
+              />
+            )}
+            {featuredPost && (
+              <CoverCard
+                href={`/blog/${featuredPost.slug}`}
+                image={featuredPost.coverImageUrl ?? coverFor(featuredPost.slug)}
+                imageAlt={featuredPost.title}
+                kicker={`Blog · ${featuredPost.tags?.[0]?.name ?? "Field notes"}`}
+                title={featuredPost.title}
+                excerpt={featuredPost.excerpt}
+                author={
+                  featuredPost.authorTeam
+                    ? {
+                        name: featuredPost.authorTeam.name,
+                        photo:
+                          featuredPost.authorTeam.headshot?.url ??
+                          featuredPost.authorTeam.photo,
+                      }
+                    : undefined
+                }
+                meta={
+                  featuredPost.authorTeam
+                    ? formatDate(featuredPost.publishedAt)
+                    : `Viewnear · ${formatDate(featuredPost.publishedAt)}`
+                }
+              />
+            )}
+          </div>
+        </Section>
+      )}
+
       {/* Case studies */}
-      {caseStudies.length > 0 && (
+      {restStudies.length > 0 && (
         <Section>
           <div className="flex items-end justify-between gap-4">
             <SectionHeading eyebrow="Proof" title="Case studies" />
             <SeeAll href="/case-studies" label="All case studies" />
           </div>
           <div className="mt-10 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3">
-            {caseStudies.map((cs) => (
+            {restStudies.map((cs) => (
               <CoverCard
                 key={cs.slug}
                 href={`/case-studies/${cs.slug}`}
@@ -68,14 +127,14 @@ export default async function ResourcesPage() {
       )}
 
       {/* Blog */}
-      {posts.length > 0 && (
+      {restPosts.length > 0 && (
         <Section className="section-warm">
           <div className="flex items-end justify-between gap-4">
             <SectionHeading eyebrow="Field notes" title="Blog" />
             <SeeAll href="/blog" label="All posts" />
           </div>
           <div className="mt-10 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post) => (
+            {restPosts.map((post) => (
               <CoverCard
                 key={post.slug}
                 href={`/blog/${post.slug}`}

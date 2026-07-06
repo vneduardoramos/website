@@ -235,6 +235,16 @@ export default function MigrationsPage() {
           imageAlt="Converted objects being reviewed change by change in Snowflake Workspaces"
           ratio="wide-text"
         />
+        {/* One quiet, real proof point for the claim above. */}
+        <p className="mt-10 text-center text-sm text-muted">
+          Live example:{" "}
+          <Link
+            href="/case-studies/real-time-student-data-pipeline"
+            className="font-semibold text-primaryDeep underline-offset-4 hover:underline"
+          >
+            real-time student data across campuses, live in seven weeks &rarr;
+          </Link>
+        </p>
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
 

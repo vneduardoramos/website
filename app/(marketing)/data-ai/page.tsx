@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Img as Image } from "@/components/marketing/Img";
 import { pageMeta } from "@/lib/seo";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
@@ -84,9 +85,30 @@ export default function DataAiPage() {
             "Access, masking, and lineage inherited from Snowflake Horizon",
             "Cortex Guard and AI guardrails on every call",
           ]}
-          image="/assets/images/photos/data-foundation.jpg"
-          imageAlt="A governed Snowflake data foundation"
-          ratio="wide-text"
+          ratio="wide-visual"
+          visual={
+            /* Real product screen, in the ProductShots browser-frame treatment. */
+            <figure>
+              <div className="overflow-hidden rounded-2xl border border-border bg-surface shadow-soft">
+                <div aria-hidden className="flex items-center gap-1.5 border-b border-border bg-surface2 px-4 py-2.5">
+                  <span className="h-2 w-2 rounded-full bg-red/70" />
+                  <span className="h-2 w-2 rounded-full bg-gold" />
+                  <span className="h-2 w-2 rounded-full bg-success/80" />
+                </div>
+                <Image
+                  src="/assets/images/product/cowork-home.webp"
+                  alt="Snowflake CoWork answering questions with cited results from governed data"
+                  width={1920}
+                  height={860}
+                  sizes="(max-width:768px) 100vw, 50vw"
+                  className="w-full"
+                />
+              </div>
+              <figcaption className="mt-3 px-1 text-sm text-muted">
+                Snowflake CoWork answering from governed data (demo environment).
+              </figcaption>
+            </figure>
+          }
         />
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
@@ -112,6 +134,9 @@ export default function DataAiPage() {
       {/* By the numbers + link out to Cortex depth */}
       <Section className="section-warm">
         <MetricBand metrics={METRICS} />
+        <p className="mt-6 text-center font-mono text-xs text-muted">
+          Catalog as of mid-2026; it grows monthly.
+        </p>
         <p className="mt-10 text-center text-sm text-muted">
           Want the full Cortex stack (Analyst, Search, Agents, AISQL)?{" "}
           <Link href="/solutions" className="font-semibold text-primaryDeep underline-offset-4 hover:underline">

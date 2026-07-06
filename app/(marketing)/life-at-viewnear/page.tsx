@@ -3,6 +3,7 @@ import { pageMeta } from "@/lib/seo";
 import { Img as Image } from "@/components/marketing/Img";
 import Link from "next/link";
 import { Section, SectionHeading, Pill } from "@/components/marketing/ui";
+import { LedgerCard } from "@/components/marketing/Cards";
 import { InlineCta } from "@/components/marketing/Blocks";
 import { PageHero } from "@/components/marketing/PageHero";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
@@ -659,43 +660,34 @@ export default async function LifeAtViewnearPage() {
             No open roles right now, but we are always meeting great people. Reach out below.
           </p>
         ) : (
-          <div className="mt-12 space-y-6">
+          <div className="mt-12 grid gap-5">
             {openings.map((job) => {
               const skills = asStringArray(job.skills);
               return (
-                <div key={job.slug} className="card p-8">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <h3 className="font-display text-2xl font-bold text-foreground">
-                      <Link
-                        href={`/careers/${job.slug}`}
-                        className="transition-colors hover:text-primaryDeep"
-                      >
-                        {job.title}
-                      </Link>
-                    </h3>
-                    <span className="text-sm text-primaryDeep">{job.employment}</span>
-                    {job.location ? (
-                      <span className="text-sm text-muted">· {job.location}</span>
-                    ) : null}
-                  </div>
-                  <p className="mt-4 text-muted">{job.description}</p>
+                <LedgerCard
+                  key={job.slug}
+                  eyebrow={job.employment}
+                  title={job.title}
+                  foot={job.location ? ["Location", job.location] : undefined}
+                >
+                  <p>{job.description}</p>
                   {skills.length > 0 ? (
-                    <div className="mt-5 flex flex-wrap gap-2">
+                    <div className="mt-4 flex flex-wrap gap-2">
                       {skills.map((s) => (
                         <Pill key={s}>{s}</Pill>
                       ))}
                     </div>
                   ) : null}
-                  <div className="mt-6">
+                  <div className="mt-5">
                     <Link
                       href={`/careers/${job.slug}`}
-                      className="inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep"
+                      className="inline-flex items-center gap-1 font-semibold text-primaryDeep"
                     >
                       View role &amp; apply
                       <span aria-hidden="true">&rarr;</span>
                     </Link>
                   </div>
-                </div>
+                </LedgerCard>
               );
             })}
           </div>

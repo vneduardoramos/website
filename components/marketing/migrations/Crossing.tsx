@@ -131,6 +131,20 @@ export function CutoverTimeline({ phases }: { phases: Phase[] }) {
           ))}
         </div>
 
+        {/* week ruler: honest ticks under the phases. Real timelines vary, so
+            the ruler is labeled as a typical arc rather than a promise. */}
+        <div className="mt-4 grid grid-cols-[110px_repeat(5,1fr)] gap-x-4 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-muted">
+          <span>Typical arc</span>
+          {["wk 0", "wk 2", "wk 5", "wk 8", "wk 12"].map((w) => (
+            <span key={w} className="border-l border-border pl-3">
+              {w}
+            </span>
+          ))}
+        </div>
+        <p className="mt-1.5 text-right font-mono text-[0.62rem] text-muted">
+          a typical 8&ndash;16 week arc
+        </p>
+
         {/* the two tracks */}
         <div className="mt-5 grid grid-cols-[110px_repeat(5,1fr)] items-center gap-x-4 gap-y-3">
           <span className="font-mono text-[0.64rem] uppercase tracking-[0.14em] text-muted">Legacy</span>

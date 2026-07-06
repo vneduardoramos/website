@@ -1,6 +1,7 @@
 import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
+import { LedgerCard } from "@/components/marketing/Cards";
 import { FeaturedCaseStudies } from "@/components/marketing/FeaturedCaseStudies";
 import { PageHero } from "@/components/marketing/PageHero";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
@@ -18,17 +19,17 @@ const engagementModels = [
   {
     title: "Fixed cost",
     body: "A defined scope, timeline, and price agreed up front. Best when the outcome is clear and you want budget certainty from day one.",
-    bestFor: "Best for: defined foundation builds and migrations",
+    bestFor: "Defined foundation builds & migrations",
   },
   {
     title: "Time & materials",
     body: "Flexible, iterative delivery billed by effort against a shared backlog. Ideal for evolving requirements and discovery-led work.",
-    bestFor: "Best for: discovery, POCs, and evolving scope",
+    bestFor: "Discovery, POCs & evolving scope",
   },
   {
     title: "Team augmentation",
     body: "Embed our certified practitioners alongside yours. We accelerate delivery while leveling up your in-house capability.",
-    bestFor: "Best for: scaling an existing team fast",
+    bestFor: "Scaling an existing team fast",
   },
 ];
 
@@ -84,16 +85,26 @@ export default function PricingPage() {
           title="Engagement models"
           intro="Flexible ways to partner, matched to the shape of your problem."
         />
-        <div className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-3">
-          {engagementModels.map((m) => (
-            <div key={m.title} className="card card-hover flex h-full flex-col">
-              <h3 className="font-display text-xl font-bold">{m.title}</h3>
-              <p className="mt-3 text-muted">{m.body}</p>
-              <p className="mt-auto pt-5 font-mono text-xs uppercase tracking-wider text-primaryDeep">
-                {m.bestFor}
-              </p>
-            </div>
+        <div className="mt-12 grid gap-5 md:auto-rows-fr md:grid-cols-3">
+          {engagementModels.map((m, i) => (
+            <LedgerCard
+              key={m.title}
+              eyebrow={m.title}
+              index={`0${i + 1}`}
+              foot={["Best for", m.bestFor]}
+            >
+              {m.body}
+            </LedgerCard>
           ))}
+        </div>
+
+        {/* Worked example: the shape of a first engagement, no invented prices. */}
+        <div className="panel-warm mt-10 rounded-3xl p-8">
+          <p className="eyebrow mb-2">A worked example</p>
+          <p className="max-w-3xl text-muted">
+            The shape of a typical first engagement: a governed foundation reaching production in
+            8–16 weeks, a fixed price agreed at scoping, and a named team you meet before you sign.
+          </p>
         </div>
       </Section>
 
