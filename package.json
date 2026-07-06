@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && prisma db push --skip-generate --accept-data-loss && next build",
+    "build": "prisma generate && prisma db push --skip-generate --accept-data-loss && tsx scripts/content-sync.ts import && next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
@@ -13,6 +13,8 @@
     "db:push": "prisma db push",
     "db:seed": "prisma db seed",
     "db:reset": "prisma db push --force-reset && prisma db seed",
+    "content:export": "tsx scripts/content-sync.ts export",
+    "content:import": "tsx scripts/content-sync.ts import --force",
     "blur": "node scripts/gen-blur.mjs"
   },
   "prisma": {
