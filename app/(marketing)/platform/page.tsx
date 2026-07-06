@@ -1,10 +1,11 @@
 import { pageMeta } from "@/lib/seo";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { FeaturedCaseStudies } from "@/components/marketing/FeaturedCaseStudies";
-import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { PageHero } from "@/components/marketing/PageHero";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
-import { PlatformStack, type Layer } from "@/components/marketing/platform/PlatformStack";
+import type { Layer } from "@/components/marketing/platform/PlatformStack";
+import { StackDiagram, ProductIndex } from "@/components/marketing/platform/StackDiagram";
+import { RevealGroup } from "@/components/marketing/Motion";
 import { theme } from "@/config/theme";
 
 export const metadata = pageMeta({
@@ -76,6 +77,18 @@ const LAYERS: Layer[] = [
   },
 ];
 
+// The flow layers (top to bottom) and the governance rail that wraps them.
+const GOVERNANCE = LAYERS.find((l) => l.layer.startsWith("Governance"))!;
+const FLOW = LAYERS.filter((l) => l !== GOVERNANCE);
+
+// Why-native proof points (formerly a FeatureSplit with a stock photo).
+const WHY_NATIVE = [
+  { title: "One governed copy", body: "No exports, no shadow stacks: the data stays in one place with governance attached." },
+  { title: "One lineage to audit", body: "Lineage, access, and policy enforced in a single place you can actually show an auditor." },
+  { title: "Grounded AI", body: "Agents inherit trusted, certified business context instead of guessing from copies." },
+  { title: "Open by design", body: "Apache Iceberg keeps the same governed copy portable and queryable by any engine." },
+];
+
 export default function PlatformPage() {
   return (
     <>
@@ -94,44 +107,44 @@ export default function PlatformPage() {
         </div>
       </div>
 
-      {/* Why native */}
+      {/* The stack, drawn as a stack: the page's centerpiece */}
+      <Section>
+        <SectionHeading
+          eyebrow="The stack"
+          title="Watch your data move through it"
+          intro="Sources land at the top, decisions leave at the bottom, and governance wraps every layer in between. These are the Snowflake-native products we build on; dbt is the one external framework we run, natively against Snowflake."
+        />
+        <StackDiagram flow={FLOW} rail={GOVERNANCE} />
+      </Section>
+
+      {/* Why native: the argument, typographic (no stock imagery) */}
       <Section className="section-warm relative overflow-hidden">
         <SectionDecor variant="flow" />
         <div className="relative">
-          <FeatureSplit
+          <SectionHeading
             eyebrow="Why native"
-            title={
-              <>
-                One platform beats a <span className="text-gradient">stitched-together stack</span>
-              </>
-            }
-            body="Every third-party tool you bolt on is another copy of your data, another system to secure, and another place lineage breaks. Building natively on Snowflake keeps governance, security, and AI context intact, and lets value compound instead of leaking at the seams."
-            bullets={[
-              "One governed copy of the data: no exports, no shadow stacks",
-              "Lineage, access, and policy enforced in one place you can audit",
-              "AI agents grounded in trusted, certified business context",
-              "Open formats (Apache Iceberg) keep your data portable and queryable by any tool",
-            ]}
-            image="/assets/images/photos/analytics.jpg"
-            imageAlt="Governed analytics running on a single Snowflake platform"
-            cta={{ label: "Talk to our team", href: "/contact" }}
+            title="One platform beats a stitched-together stack"
+            intro="Every third-party tool you bolt on is another copy of your data, another system to secure, and another place lineage breaks. Building natively keeps value compounding instead of leaking at the seams."
           />
+          <RevealGroup className="mt-12 grid gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-4" variant="fade-up">
+            {WHY_NATIVE.map((w) => (
+              <div key={w.title} className="border-t-2 border-primaryDeep/30 pt-4">
+                <h3 className="font-display text-base font-bold text-foreground">{w.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{w.body}</p>
+              </div>
+            ))}
+          </RevealGroup>
         </div>
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
 
-      {/* The stack, by layer */}
+      {/* The fine print: every product's one-liner, as type, not cards */}
       <Section>
         <SectionHeading
-          eyebrow="The stack"
-          title="Native end to end"
-          intro="The Snowflake-native products we build on, by layer. We lead with these over third-party tools; dbt is the one external framework we run, natively against Snowflake."
+          eyebrow="Layer by layer"
+          title="What each piece does"
         />
-        <PlatformStack layers={LAYERS} />
-        <p className="mt-8 text-sm text-muted">
-          Status reflects Snowflake&apos;s product maturity (GA / Preview). We pair generally
-          available capabilities with early access to what&apos;s next.
-        </p>
+        <ProductIndex layers={LAYERS} />
       </Section>
 
       <FeaturedCaseStudies tint title="Built on Snowflake, in production" />

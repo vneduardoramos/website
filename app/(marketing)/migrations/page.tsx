@@ -7,6 +7,7 @@ import { MetricBand } from "@/components/marketing/Blocks";
 import { PartnerBadges } from "@/components/marketing/PartnerBadges";
 import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
+import { LegacyContrast, CutoverTimeline } from "@/components/marketing/migrations/Crossing";
 
 export const metadata = pageMeta({
   title: "Migrations to Snowflake: Teradata, Oracle, Redshift, Hadoop & more",
@@ -72,35 +73,8 @@ const SOURCE_GROUPS = [
   },
 ];
 
-// Cross-cutting reasons teams move (qualitative, no invented stats).
-const DRIVERS = [
-  {
-    title: "Cost that flexes with use",
-    body: "Pay for compute by the second and scale it independently from storage. No idle clusters, no capacity bought a year ahead.",
-  },
-  {
-    title: "Zero infrastructure to run",
-    body: "No appliances to patch, no Hadoop cluster to babysit, no capacity planning. Snowflake runs the platform so your team runs the data.",
-  },
-  {
-    title: "End-of-life and licensing relief",
-    body: "Teradata, Netezza, Exadata, and SAP BW carry rising license and support costs. Migration turns that into elastic, usage-based spend.",
-  },
-  {
-    title: "Performance at scale",
-    body: "Analytics that crawled on a row-based database or an overloaded Hadoop cluster run on right-sized warehouses, with no manual tuning.",
-  },
-  {
-    title: "One governed foundation",
-    body: "Replace scattered copies and brittle exports with one governed source of truth: access, lineage, and policy built in through Horizon.",
-  },
-  {
-    title: "AI and Cortex ready",
-    body: "Land on a foundation where Cortex and the leading models run next to governed data, so AI is the next step, not another project.",
-  },
-];
-
-// The phased, de-risked method.
+// The phased, de-risked method. (The "why teams move" drivers live inside
+// LegacyContrast as before/after annotations.)
 const PHASES = [
   {
     title: "Assess & plan",
@@ -179,20 +153,29 @@ export default function MigrationsPage() {
             title="We migrate from all of them"
             intro="Legacy appliances, cloud warehouses, Hadoop, or the database quietly doing warehouse duty. If your data lives there today, we have a path to Snowflake."
           />
-          <RevealGroup className="mt-12 grid items-start gap-6 md:grid-cols-2 lg:grid-cols-3" variant="pop">
-            {SOURCE_GROUPS.map((g) => (
-              <div key={g.label} className="card flex h-full flex-col">
-                <h3 className="font-display text-base font-bold text-foreground">{g.label}</h3>
-                <ul className="mt-5 space-y-3">
+          {/* One continuous board instead of five card boxes */}
+          <div className="mt-12 rounded-3xl border border-border bg-surface">
+            {SOURCE_GROUPS.map((g, gi) => (
+              <div
+                key={g.label}
+                className={`grid gap-3 p-5 md:grid-cols-[230px_1fr] md:items-baseline md:gap-6 md:px-7 ${gi > 0 ? "border-t border-border" : ""}`}
+              >
+                <h3 className="font-mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-primaryDeep">
+                  {g.label}
+                </h3>
+                <ul className="flex flex-wrap gap-x-2 gap-y-2">
                   {g.items.map((p) => (
-                    <li key={p.name} className="flex items-center gap-3">
-                      {p.slug ? (
+                    <li
+                      key={p.name}
+                      className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-3 py-1.5 text-sm text-foreground/80"
+                    >
+                      {p.slug && (
                         <span
                           aria-hidden="true"
-                          className="h-6 w-6 flex-none"
+                          className="h-4 w-4 flex-none"
                           style={{
                             backgroundColor: "rgb(var(--color-foreground))",
-                            opacity: 0.8,
+                            opacity: 0.75,
                             WebkitMaskImage: `url(/assets/images/sources/${p.slug}.svg)`,
                             maskImage: `url(/assets/images/sources/${p.slug}.svg)`,
                             WebkitMaskRepeat: "no-repeat",
@@ -203,21 +186,14 @@ export default function MigrationsPage() {
                             maskSize: "contain",
                           }}
                         />
-                      ) : (
-                        <span
-                          aria-hidden="true"
-                          className="flex h-6 w-6 flex-none items-center justify-center rounded-md bg-foreground/10 font-mono text-[0.6rem] font-bold text-foreground/70"
-                        >
-                          {p.name.slice(0, 2)}
-                        </span>
                       )}
-                      <span className="text-sm text-foreground/80">{p.name}</span>
+                      {p.name}
                     </li>
                   ))}
                 </ul>
               </div>
             ))}
-          </RevealGroup>
+          </div>
           <p className="mx-auto mt-10 max-w-2xl text-center text-xs leading-relaxed text-muted">
             Platform names and logos are trademarks of their respective owners, shown to indicate
             migration sources we support. On something not listed here? We have almost certainly seen
@@ -234,14 +210,7 @@ export default function MigrationsPage() {
           title="The case for leaving legacy behind"
           intro="The platform changes, but the reasons rhyme: cost, operational burden, and a foundation that is finally ready for AI."
         />
-        <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3" variant="pop">
-          {DRIVERS.map((d) => (
-            <div key={d.title} className="card flex h-full flex-col">
-              <h3 className="font-display text-lg font-bold text-foreground">{d.title}</h3>
-              <p className="mt-2 text-muted">{d.body}</p>
-            </div>
-          ))}
-        </RevealGroup>
+        <LegacyContrast />
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
 
@@ -253,19 +222,7 @@ export default function MigrationsPage() {
           title="Automated, validated, and phased"
           intro="A repeatable arc that de-risks the move. Most of the conversion is automated; the cutover never is."
         />
-        <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3" variant="pop">
-          {PHASES.map((p, i) => (
-            <div key={p.title} className="card card-pop card-editorial flex h-full flex-col">
-              <span className="card-index font-display" aria-hidden="true">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <div className="relative">
-                <h3 className="font-display text-lg font-bold text-foreground">{p.title}</h3>
-                <p className="mt-3 text-muted">{p.body}</p>
-              </div>
-            </div>
-          ))}
-        </RevealGroup>
+        <CutoverTimeline phases={PHASES} />
       </Section>
 
       {/* Automated where it counts, validated everywhere */}
