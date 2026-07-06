@@ -5,6 +5,7 @@ import { PageHero } from "@/components/marketing/PageHero";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import type { Layer } from "@/components/marketing/platform/PlatformStack";
 import { ProductIndex } from "@/components/marketing/platform/StackDiagram";
+import { ProductShots } from "@/components/marketing/platform/ProductShots";
 import { StackStory } from "@/components/marketing/platform/StackStory";
 import { RevealGroup } from "@/components/marketing/Motion";
 import { theme } from "@/config/theme";
@@ -99,7 +100,7 @@ export default function PlatformPage() {
                 Built <span className="text-gradient">native on Snowflake</span>, not bolted on.
               </>
             }
-            description={`${theme.brand.name} builds the whole stack inside Snowflake (ingestion, transformation, governance, and AI) so your data has one governed home. Fewer vendors to secure, one lineage to audit, and trusted context every AI agent can rely on.`}
+            description={`One opinionated decision runs through everything ${theme.brand.name} delivers: the whole build lives inside Snowflake (ingestion, transformation, governance, AI). One governed home for your data, one lineage to audit, one context every team and agent shares.`}
           />
         </div>
       </div>
@@ -114,14 +115,27 @@ export default function PlatformPage() {
         <StackStory />
       </Section>
 
-      {/* Why native: the argument, typographic (no stock imagery) */}
+      {/* The work, on screen: real build environments, not mockups */}
+      <Section className="section-tint relative overflow-hidden">
+        <div className="relative">
+          <SectionHeading
+            eyebrow="On screen"
+            title="What a governed build looks like"
+            intro="Screens from our build environments, not mockups: the surface your business sees, the engineering behind it, and the governance that makes both trustworthy."
+          />
+          <ProductShots />
+        </div>
+        <WaveDivider position="bottom" fill="fill-background" />
+      </Section>
+
+      {/* The conviction: our practice, not a platform pitch */}
       <Section className="section-warm relative overflow-hidden">
         <SectionDecor variant="flow" />
         <div className="relative">
           <SectionHeading
-            eyebrow="Why native"
-            title="One platform beats a stitched-together stack"
-            intro="Every third-party tool you bolt on is another copy of your data, another system to secure, and another place lineage breaks. Building natively keeps value compounding instead of leaking at the seams."
+            eyebrow="Our conviction"
+            title="We could stitch five tools together. We won't."
+            intro="Snowflake sells the platform; we answer for what gets built on it. Every extra tool is another copy of your data, another system to secure, and another place lineage breaks, so building native is how we keep that promise:"
           />
           <RevealGroup className="mt-12 grid gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-4" variant="fade-up">
             {WHY_NATIVE.map((w) => (
@@ -135,11 +149,12 @@ export default function PlatformPage() {
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
 
-      {/* The fine print: every product's one-liner, as type, not cards */}
+      {/* The parts list: reference, not pitch */}
       <Section>
         <SectionHeading
-          eyebrow="Layer by layer"
-          title="What each piece does"
+          eyebrow="For your architects"
+          title="The parts list"
+          intro="Every product we reach for, and the one-line reason. dbt is the lone external framework; everything else stays native."
         />
         <ProductIndex layers={LAYERS} />
       </Section>
