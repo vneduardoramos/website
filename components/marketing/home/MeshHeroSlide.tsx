@@ -27,9 +27,11 @@ export function MeshHeroSlide({ subhead }: { subhead?: string }) {
       <HeroBackground />
       <HeroAurora />
 
-      {/* Soft vertical scrim so the centered headline stays legible over the aurora. */}
+      {/* Soft vertical scrim so the centered headline stays legible over the
+          aurora. The bottom stop is fully opaque so the hero lands exactly on
+          the page background: no tonal seam against the logo band below. */}
       <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/70 via-background/35 to-background/75"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/70 via-background/35 via-60% to-background"
         aria-hidden
       />
 
