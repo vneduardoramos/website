@@ -5,19 +5,62 @@ import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { PartnerBadges } from "@/components/marketing/PartnerBadges";
-import { ModelWall } from "@/components/marketing/ModelWall";
+import { LedgerCard } from "@/components/marketing/Cards";
 import { OneLineSwap } from "@/components/marketing/data-ai/OneLineSwap";
-import { ScrollHighlight } from "@/components/marketing/Motion";
+import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 
 export const metadata = pageMeta({
-  title: "Data + AI: every major model, on your governed data",
+  title: "Data + AI: the use cases we ship on your governed data",
   description:
-    "Snowflake Cortex runs leading LLMs next to your governed data with no data movement. Viewnear helps you pick the right model per use case and ship it.",
+    "Document intelligence, cited answers, early-warning models, and agents that act: what Viewnear ships with Snowflake Cortex on governed data, in production.",
   path: "/data-ai",
 });
 
-const HERO_CHIPS = ["14+ models", "6 leading labs", "Runs in your Snowflake", "Governed by default"];
+const HERO_CHIPS = ["In production, not a lab", "Runs in your Snowflake", "Governed by default", "8–16 weeks to first value"];
+
+// What we actually ship: concrete use cases, each with its Snowflake mechanism
+// and, where one exists, the real (anonymized) engagement that proves it.
+const USE_CASES = [
+  {
+    eyebrow: "Documents",
+    title: "Paperwork that reads itself",
+    body: "Claims, invoices, and contracts classified, extracted, and routed in seconds instead of hand-sorted piles. The document backlog becomes a table you can query.",
+    mech: "AI_CLASSIFY · AI_EXTRACT · PARSE_DOCUMENT",
+    proof: { label: "95% claims accuracy, in seconds →", href: "/case-studies/insurance-claims-cortex-ai" },
+  },
+  {
+    eyebrow: "Answers",
+    title: "Executives who ask the data directly",
+    body: "Plain-language questions answered with citations against your governed definitions, so the Monday meeting starts from the same number, not three versions of it.",
+    mech: "Cortex Analyst · Semantic Views · CoWork",
+    proof: { label: "A catalog your teams can ask →", href: "/case-studies/sku-catalog-governance" },
+  },
+  {
+    eyebrow: "Foresight",
+    title: "Churn and failures, flagged early",
+    body: "Models on your usage, billing, and sensor data that surface at-risk customers and equipment before the quarter ends, with the reasons attached.",
+    mech: "Cortex ML · Snowpark",
+  },
+  {
+    eyebrow: "Search",
+    title: "Your documents, searched by meaning",
+    body: "Policies, contracts, and wikis answered from directly, with sources cited. Retrieval grounded in your content, so answers stay accurate and current.",
+    mech: "Cortex Search · RAG",
+  },
+  {
+    eyebrow: "Agents",
+    title: "Agents that act, inside policy",
+    body: "AI that does the next step, not just describes it: drafting the response, filing the update, kicking off the workflow, each action inside per-agent permissions with a full audit trail.",
+    mech: "Cortex Agents · AI Agent Identity",
+  },
+  {
+    eyebrow: "In your tools",
+    title: "AI where your teams already work",
+    body: "Answers and actions flowing back into the ERP, CRM, and apps your business runs on, so nobody has to visit another dashboard to benefit.",
+    mech: "Streamlit · APIs · Zero-Copy Integrations",
+  },
+];
 
 export default function DataAiPage() {
   return (
@@ -30,11 +73,11 @@ export default function DataAiPage() {
             eyebrow="Data + AI"
             title={
               <>
-                New models ship every week.{" "}
-                <ScrollHighlight>Your data foundation shouldn&rsquo;t.</ScrollHighlight>
+                Six jobs your data could be doing{" "}
+                <ScrollHighlight>by next quarter.</ScrollHighlight>
               </>
             }
-            description="Snowflake Cortex runs the leading models from every major lab right next to your governed data, with no data movement. We help you pick the right one for each use case, ground it in your data, and put it in production."
+            description="Reading the paperwork, answering your executives, flagging churn before it lands, acting inside policy. This is what we ship with Snowflake Cortex on governed data: in production, in weeks, in the tools your teams already use."
           >
             <div className="flex flex-wrap justify-center gap-2">
               {HERO_CHIPS.map((c) => (
@@ -47,33 +90,37 @@ export default function DataAiPage() {
         </div>
       </div>
 
-      {/* THE PUNCH: the thesis as running code, model literal cycling live */}
-      <Section>
-        <OneLineSwap />
-      </Section>
-
-      {/* The model wall */}
+      {/* THE DELIVERABLES: what data + AI actually does, with proof attached */}
       <Section className="relative overflow-hidden">
         <SectionDecor variant="dots" />
         <div className="relative">
           <SectionHeading
             align="center"
-            eyebrow="Model-agnostic"
-            title="One foundation. Every major model."
-            intro="Anthropic, OpenAI, Meta, Mistral, Google, and DeepSeek, all callable on your governed data. Move between them with a single line of SQL as better models arrive."
+            eyebrow="What we deliver"
+            title="The use cases we ship"
+            intro="Every one runs next to your governed data inside Snowflake, and every one is built to land in production, not a lab. Where a real engagement proves it, the link is right there."
           />
-          <div className="mt-14">
-            <ModelWall />
-          </div>
-          <p className="mx-auto mt-10 max-w-2xl text-center text-xs leading-relaxed text-muted">
-            Model and provider names and logos are trademarks of their respective owners,
-            shown to indicate availability in Snowflake Cortex. Model lineup varies by region;
-            catalog as of mid-2026, and it grows monthly.
-          </p>
-          <p className="mt-6 text-center text-sm text-muted">
-            Want the full Cortex stack (Analyst, Search, Agents, AISQL)?{" "}
-            <Link href="/solutions" className="font-semibold text-primaryDeep underline-offset-4 hover:underline">
-              See our solutions &rarr;
+          <RevealGroup className="mt-12 grid gap-5 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3" variant="pop">
+            {USE_CASES.map((u) => (
+              <LedgerCard key={u.title} eyebrow={u.eyebrow} title={u.title} foot={["Runs on", u.mech]}>
+                <p>{u.body}</p>
+                {u.proof && (
+                  <p className="mt-3">
+                    <Link
+                      href={u.proof.href}
+                      className="font-semibold text-primaryDeep underline-offset-4 hover:underline"
+                    >
+                      {u.proof.label}
+                    </Link>
+                  </p>
+                )}
+              </LedgerCard>
+            ))}
+          </RevealGroup>
+          <p className="mt-8 text-center text-sm text-muted">
+            A use case we haven&rsquo;t listed? If the data can carry it, we can ship it.{" "}
+            <Link href="/contact" className="font-semibold text-primaryDeep underline-offset-4 hover:underline">
+              Tell us the job &rarr;
             </Link>
           </p>
         </div>
@@ -118,22 +165,14 @@ export default function DataAiPage() {
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
 
-      {/* The right model for each job */}
+      {/* The model question, answered once: never locked, benchmarked per job */}
       <Section>
-        <FeatureSplit
-          eyebrow="The right model for each job"
-          title="We match the model to the work"
-          body="There is no single best model, only the best model for a task, a budget, and a latency target. We benchmark the options against your real use cases, fine-tune on your data where it earns its keep, and ground answers in your content with Cortex Search. As stronger models ship, we re-evaluate and switch."
-          bullets={[
-            "Model selection benchmarked per use case: quality, cost, latency",
-            "Fine-tuning and retrieval grounding on your own data",
-            "Evaluate and swap as the frontier moves",
-          ]}
-          image="/assets/images/photos/ai-teams.jpg"
-          imageAlt="The Viewnear team delivering AI use cases"
-          reverse
-          cta={{ label: "How we deliver", href: "/approach" }}
-        />
+        <OneLineSwap />
+        <p className="mx-auto mt-6 max-w-2xl text-center text-xs leading-relaxed text-muted">
+          Anthropic, OpenAI, Meta, Mistral, Google, and DeepSeek are all callable in Snowflake
+          Cortex; we benchmark per use case on quality, cost, and latency, and switch when the
+          frontier moves. Names are trademarks of their respective owners; lineup varies by region.
+        </p>
       </Section>
 
       {/* Proof */}
