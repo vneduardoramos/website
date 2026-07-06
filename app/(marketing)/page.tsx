@@ -243,7 +243,7 @@ export default async function HomePage() {
         />
         <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-4" variant="pop">
           {DERISK.map((d) => (
-            <div key={d.title} className="card card-pop card-ledger flex h-full gap-3">
+            <div key={d.title} className="card card-pop flex h-full gap-3">
               <span className="mt-0.5 shrink-0 text-primaryDeep" aria-hidden="true">
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12l4 4 10-11" />

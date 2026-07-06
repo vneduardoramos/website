@@ -128,7 +128,7 @@ export default function PlatformPage() {
           />
           <RevealGroup className="mt-12 grid gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-4" variant="fade-up">
             {WHY_NATIVE.map((w) => (
-              <div key={w.title} className="border-t-2 border-primaryDeep/30 pt-4">
+              <div key={w.title} className="border-t border-border pt-4">
                 <h3 className="font-display text-base font-bold text-foreground">{w.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{w.body}</p>
               </div>

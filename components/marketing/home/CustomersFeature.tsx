@@ -88,7 +88,7 @@ export function CustomersFeature({ bottomLogos }: { bottomLogos: BandLogo[] }) {
                 </Link>
                 <div className="mt-8 grid max-w-md grid-cols-2 gap-6">
                   {FEATURED.metrics.map((m) => (
-                    <div key={m.label} className="border-l-2 border-secondary pl-4">
+                    <div key={m.label} className="border-l border-border pl-4">
                       <div className="text-gradient-bold font-display text-2xl font-bold sm:text-3xl md:text-4xl">{m.value}</div>
                       <div className="mt-1 text-xs leading-snug text-muted">{m.label}</div>
                     </div>

@@ -12,9 +12,6 @@ import { RevealGroup } from "@/components/marketing/Motion";
 const ENTRY = ["ERP", "CRM", "SaaS", "Files", "Streams"];
 const EXIT = ["Dashboards", "Answers", "Agents", "Apps"];
 
-// One Glacier hue per layer band (full static classes for the JIT).
-const BAR = ["bg-primary", "bg-secondary", "bg-royal", "bg-gold", "bg-accent"];
-
 function StatusDot({ status }: { status: string }) {
   const ga = status === "GA";
   return (
@@ -52,11 +49,10 @@ function ChipRow({ items, label }: { items: string[]; label: string }) {
   );
 }
 
-function LayerBand({ layer, bar }: { layer: Layer; bar: string }) {
+function LayerBand({ layer }: { layer: Layer }) {
   return (
     <div className="relative overflow-hidden rounded-2xl border border-border bg-background shadow-soft">
-      <span aria-hidden className={`absolute inset-y-0 left-0 w-1 ${bar}`} />
-      <div className="grid gap-3 p-5 pl-6 md:grid-cols-[240px_1fr] md:items-center md:gap-6">
+      <div className="grid gap-3 p-5 md:grid-cols-[240px_1fr] md:items-center md:gap-6">
         <div>
           <h3 className="font-display text-base font-bold text-foreground">{layer.layer}</h3>
           <p className="mt-1 text-xs leading-relaxed text-muted">{layer.blurb}</p>
@@ -114,7 +110,7 @@ export function StackDiagram({ flow, rail }: { flow: Layer[]; rail: Layer }) {
           {flow.map((layer, i) => (
             <div key={layer.layer}>
               {i > 0 && <Connector />}
-              <LayerBand layer={layer} bar={BAR[i % BAR.length]} />
+              <LayerBand layer={layer} />
             </div>
           ))}
         </RevealGroup>

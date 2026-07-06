@@ -878,26 +878,6 @@ select:focus-visible,
   user-select: none;
 }
 
-/* Ledger card, a slim left rule that firms to primary on hover; gives the
-   guarantee list a distinct "ledger" rhythm vs the editorial stalls. */
-.card-ledger {
-  position: relative;
-}
-.card-ledger::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.9rem;
-  bottom: 0.9rem;
-  width: 3px;
-  border-radius: 3px;
-  background: rgb(var(--color-secondary) / 0.5);
-  transition: background 0.3s ease;
-}
-.card-ledger:hover::before {
-  background: rgb(var(--color-primary));
-}
-
 /* Editorial panel atmosphere, a soft inner top highlight + a very slow ambient
    drift on the panel's dotted grid. Per-panel mood comes from each panel's own
    blur-blob tints in markup (secondary / primary / balanced). */
