@@ -1,4 +1,3 @@
-import type { SVGProps } from "react";
 import { Img as Image } from "@/components/marketing/Img";
 import { pageMeta } from "@/lib/seo";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
@@ -15,9 +14,8 @@ import {
   CpuIcon,
   ShieldIcon,
   DataStackIcon,
-  SnowflakeIcon,
-  RocketIcon,
 } from "@/components/marketing/home/Icons";
+import { LedgerCard } from "@/components/marketing/Cards";
 import { theme } from "@/config/theme";
 
 export const metadata = pageMeta({
@@ -34,67 +32,31 @@ const HERO_CHIPS = [
   "CoCo Preferred Partner",
 ];
 
-// ── Local line icons (24x24, stroke-2, matching the home icon family) ────────
-const ibase = {
-  viewBox: "0 0 24 24",
-  fill: "none",
-  stroke: "currentColor",
-  strokeWidth: 2,
-  strokeLinecap: "round" as const,
-  strokeLinejoin: "round" as const,
-};
-function ChatIcon(p: SVGProps<SVGSVGElement>) {
-  return (
-    <svg {...ibase} {...p} aria-hidden="true">
-      <path d="M4 5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H9l-4 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z" />
-      <path d="M8 10h8M8 13.5h5" />
-    </svg>
-  );
-}
-function UsersIcon(p: SVGProps<SVGSVGElement>) {
-  return (
-    <svg {...ibase} {...p} aria-hidden="true">
-      <circle cx="9" cy="8" r="3.2" />
-      <path d="M3.5 19a5.5 5.5 0 0 1 11 0" />
-      <path d="M16 5.3a3.2 3.2 0 0 1 0 5.4" />
-      <path d="M17.2 14.4A5.5 5.5 0 0 1 20.5 19" />
-    </svg>
-  );
-}
-function CalendarIcon(p: SVGProps<SVGSVGElement>) {
-  return (
-    <svg {...ibase} {...p} aria-hidden="true">
-      <rect x="3.5" y="5" width="17" height="16" rx="2" />
-      <path d="M3.5 9.5h17M8 3v4M16 3v4" />
-      <path d="M7.5 13h3M7.5 17h3M13.5 13h3" />
-    </svg>
-  );
-}
 
 // Why nearshore with Viewnear: the real differentiators, reframed for data + AI.
 const reasons = [
   {
-    Icon: SnowflakeIcon,
+    label: "Depth",
     title: "Snowflake depth at every level",
     body: "Strategists, architects, and engineers all fluent in Snowflake and SnowPro-certified. The depth that scopes your work is the depth that delivers it.",
   },
   {
-    Icon: ChatIcon,
+    label: "Language",
     title: "Clear, bilingual communication",
     body: "A fully English- and Spanish-proficient team and direct access to the people doing the work. Fewer translation layers, fewer misread requirements.",
   },
   {
-    Icon: UsersIcon,
+    label: "Continuity",
     title: "The same team from scope to run",
     body: "You get a committed team that learns your data and your goals and stays on: no re-staffing mid-engagement, no delivery pyramid billed by the hour.",
   },
   {
-    Icon: CalendarIcon,
+    label: "Cadence",
     title: "A communication cadence you can count on",
     body: "Regular working sessions and full visibility into progress. You are never in the dark on where a build stands or what comes next.",
   },
   {
-    Icon: RocketIcon,
+    label: "Delivery",
     title: "Agile delivery, value early",
     body: "An iterative, use-case-driven model that puts working data products in front of your team in weeks, then builds on what proves out.",
   },
@@ -207,14 +169,10 @@ export default async function NearshorePage() {
                 </p>
               </div>
             </div>
-            {reasons.map(({ Icon, title, body }) => (
-              <div key={title} className="card card-hover flex h-full flex-col">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primaryDeep">
-                  <Icon className="h-5 w-5" />
-                </span>
-                <h3 className="mt-4 font-display text-lg font-bold text-foreground">{title}</h3>
-                <p className="mt-2 text-muted">{body}</p>
-              </div>
+            {reasons.map(({ label, title, body }) => (
+              <LedgerCard key={title} eyebrow={label} title={title}>
+                {body}
+              </LedgerCard>
             ))}
           </RevealGroup>
         </div>

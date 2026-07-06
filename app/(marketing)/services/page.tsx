@@ -7,6 +7,7 @@ import {
   CtaBand,
 } from "@/components/marketing/ui";
 import { LeadershipStrip } from "@/components/marketing/LeadershipStrip";
+import { PlateCard, LedgerCard } from "@/components/marketing/Cards";
 import { MetricBand, InlineCta } from "@/components/marketing/Blocks";
 import { PageHero } from "@/components/marketing/PageHero";
 import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
@@ -137,7 +138,7 @@ const costFactors =
 // What a CXO gets, framed by horizon rather than feature.
 const impactByPhase = [
   {
-    phase: "First 90 days",
+    phase: "First 8–16 weeks",
     title: "Foundations & first value",
     body: "A governed Snowflake foundation stood up, priority data flowing, and the first production dashboards live: value from sprint one, not after a year-long build.",
   },
@@ -156,18 +157,22 @@ const impactByPhase = [
 // How we de-risk the engagement itself (the buying objection executives raise).
 const runPhases = [
   {
+    label: "Timeline",
     title: "A fixed 8–16 week arc",
     body: "Most initial builds reach production in 8–16 weeks, scoped to your data and use cases, with value delivered from the first sprint.",
   },
   {
+    label: "Steering",
     title: "Steering & transparency",
     body: "Regular steering reviews, a shared backlog, and clear decision gates keep sponsors in control of scope, budget, and priorities throughout.",
   },
   {
+    label: "Proof",
     title: "De-risked by design",
     body: "We prove the approach with a focused proof of concept before the full build, so you commit to scale on evidence, not a slide deck.",
   },
   {
+    label: "Handover",
     title: "Built to hand over",
     body: "Documentation, enablement, and a transition plan in every engagement, so your team runs and extends the work confidently.",
   },
@@ -347,17 +352,11 @@ export default async function ServicesPage() {
             ]}
           />
         </div>
-        <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-3" variant="pop">
-          {impactByPhase.map((p) => (
-            <div key={p.phase} className="card card-hover flex h-full flex-col">
-              <span className="font-mono text-xs uppercase tracking-[0.18em] text-primaryDeep">
-                {p.phase}
-              </span>
-              <h3 className="mt-3 font-display text-xl font-bold text-foreground">
-                {p.title}
-              </h3>
-              <p className="mt-3 text-muted">{p.body}</p>
-            </div>
+        <RevealGroup className="mt-12 grid gap-5 md:auto-rows-fr md:grid-cols-3" variant="pop">
+          {impactByPhase.map((p, i) => (
+            <PlateCard key={p.phase} label={p.phase} refCode={`H${i + 1}`} title={p.title}>
+              {p.body}
+            </PlateCard>
           ))}
         </RevealGroup>
       </Section>
@@ -370,14 +369,11 @@ export default async function ServicesPage() {
             title="Delivery you can govern"
             intro="We de-risk the engagement itself (clear timelines, steering, and a clean handover) so the buy is as low-risk as the outcome is valuable."
           />
-          <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-4" variant="pop">
+          <RevealGroup className="mt-12 grid gap-5 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-4" variant="pop">
             {runPhases.map((r) => (
-              <div key={r.title} className="card card-pop flex h-full flex-col bg-background">
-                <h3 className="font-display text-lg font-bold text-foreground">
-                  {r.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted">{r.body}</p>
-              </div>
+              <LedgerCard key={r.title} eyebrow={r.label} title={r.title}>
+                {r.body}
+              </LedgerCard>
             ))}
           </RevealGroup>
           <p className="mt-8 text-sm text-muted">
@@ -413,34 +409,22 @@ export default async function ServicesPage() {
           title="Engagement models"
           intro="Flexible ways to partner with us, matched to the shape of your problem, from a fixed-scope build to an embedded team or an ongoing managed service. Whichever you choose, the way we deliver doesn't change."
         />
-        <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2" variant="pop">
-          {engagementModels.map((m) => (
-            <div key={m.title} className="card card-hover flex h-full flex-col">
-              <h3 className="font-display text-xl font-bold text-foreground">{m.title}</h3>
-              <p className="mt-3 text-muted">{m.body}</p>
-
-              <p className="mt-5 text-sm leading-relaxed text-foreground/90">
+        <RevealGroup className="mt-12 grid gap-5 md:auto-rows-fr md:grid-cols-2" variant="pop">
+          {engagementModels.map((m, i) => (
+            <LedgerCard key={m.title} eyebrow={m.title} index={`0${i + 1}`} foot={["Best for", m.bestFor]}>
+              <p className="text-muted">{m.body}</p>
+              <p className="mt-4 leading-relaxed text-foreground/90">
                 <span className="font-semibold">How it works:</span> {m.how}
               </p>
-
-              <ul className="mt-4 space-y-2">
+              <ul className="mt-3 space-y-1.5">
                 {m.includes.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm text-muted">
-                    <span className="mt-0.5 shrink-0 text-primaryDeep" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M5 12l4 4 10-11" />
-                      </svg>
-                    </span>
+                  <li key={item} className="flex items-start gap-2 text-muted">
+                    <span aria-hidden="true" className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-primaryDeep/60" />
                     {item}
                   </li>
                 ))}
               </ul>
-
-              <div className="mt-auto pt-6">
-                <p className="font-mono text-[0.7rem] uppercase tracking-wider text-muted">Best for</p>
-                <p className="mt-1 font-semibold text-primaryDeep">{m.bestFor}</p>
-              </div>
-            </div>
+            </LedgerCard>
           ))}
         </RevealGroup>
 

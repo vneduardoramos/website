@@ -15,6 +15,7 @@ import { CustomersFeature } from "@/components/marketing/home/CustomersFeature";
 import { LogoRow } from "@/components/marketing/home/ClientLogos";
 import { getClientBands } from "@/lib/client-bands";
 import { SectionDecor } from "@/components/marketing/Decor";
+import { PlateCard } from "@/components/marketing/Cards";
 import { LeadershipStrip, FaceStack } from "@/components/marketing/LeadershipStrip";
 import { JsonLd } from "@/components/JsonLd";
 
@@ -43,10 +44,10 @@ const WHY_VIEWNEAR = [
 
 // The plan, de-risked: what quiets the "this is a big bet" fear.
 const DERISK = [
-  { title: "Prove it first", body: "A focused proof of concept before the full build. You commit to scale on evidence, not a slide deck." },
-  { title: "You stay in control", body: "Regular steering, a shared backlog, and clear decision gates keep scope, budget, and priorities yours." },
-  { title: "Value from sprint one", body: "Most engagements reach production in 8–16 weeks, with something useful shipped from the very first sprint." },
-  { title: "Built to hand over", body: "Documentation, enablement, and a transition plan in every engagement, so your team runs and extends the work confidently." },
+  { label: "Proof", title: "Prove it first", body: "A focused proof of concept before the full build. You commit to scale on evidence, not a slide deck." },
+  { label: "Control", title: "You stay in control", body: "Regular steering, a shared backlog, and clear decision gates keep scope, budget, and priorities yours." },
+  { label: "Pace", title: "Value from sprint one", body: "Most engagements reach production in 8–16 weeks, with something useful shipped from the very first sprint." },
+  { label: "Handover", title: "Built to hand over", body: "Documentation, enablement, and a transition plan in every engagement, so your team runs and extends the work confidently." },
 ];
 
 // Official Snowflake credibility badges (real artwork; shown on white chips so
@@ -241,19 +242,11 @@ export default async function HomePage() {
           title="A big bet that doesn't feel like one"
           intro="The way we engage is built to de-risk the decision itself, so committing to data &amp; AI never means committing blind."
         />
-        <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-4" variant="pop">
-          {DERISK.map((d) => (
-            <div key={d.title} className="card card-pop flex h-full gap-3">
-              <span className="mt-0.5 shrink-0 text-primaryDeep" aria-hidden="true">
-                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12l4 4 10-11" />
-                </svg>
-              </span>
-              <div>
-                <h3 className="font-display font-bold text-foreground">{d.title}</h3>
-                <p className="mt-1 text-sm leading-relaxed text-muted">{d.body}</p>
-              </div>
-            </div>
+        <RevealGroup className="mt-12 grid gap-5 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-4" variant="pop">
+          {DERISK.map((d, i) => (
+            <PlateCard key={d.title} label={d.label} refCode={`0${i + 1}`} title={d.title}>
+              {d.body}
+            </PlateCard>
           ))}
         </RevealGroup>
 
