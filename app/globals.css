@@ -984,6 +984,37 @@ select:focus-visible,
   }
 }
 
+/* ---- OneLineSwap model cycle (data-ai page) ----
+   The model literal in the code panel steps through the stacked names; the
+   sixth entry repeats the first so the reset never shows. Under reduced
+   motion the stack stays put and only the first name is visible. */
+.model-cycle {
+  display: inline-flex;
+  flex-direction: column;
+  height: 1.5rem;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.model-cycle > span {
+  display: block;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  animation: model-cycle 12.5s ease-in-out infinite;
+}
+@keyframes model-cycle {
+  0%, 18% { transform: translateY(0); }
+  20%, 38% { transform: translateY(-1.5rem); }
+  40%, 58% { transform: translateY(-3rem); }
+  60%, 78% { transform: translateY(-4.5rem); }
+  80%, 98% { transform: translateY(-6rem); }
+  100% { transform: translateY(-7.5rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .model-cycle > span {
+    animation: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

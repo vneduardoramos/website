@@ -4,9 +4,9 @@ import { pageMeta } from "@/lib/seo";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
-import { MetricBand } from "@/components/marketing/Blocks";
 import { PartnerBadges } from "@/components/marketing/PartnerBadges";
 import { ModelWall } from "@/components/marketing/ModelWall";
+import { OneLineSwap } from "@/components/marketing/data-ai/OneLineSwap";
 import { ScrollHighlight } from "@/components/marketing/Motion";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 
@@ -18,13 +18,6 @@ export const metadata = pageMeta({
 });
 
 const HERO_CHIPS = ["14+ models", "6 leading labs", "Runs in your Snowflake", "Governed by default"];
-
-const METRICS = [
-  { value: "14+", label: "Models in Cortex" },
-  { value: "6", label: "Leading labs, one interface" },
-  { value: "0", label: "Data movement" },
-  { value: "1 line", label: "To swap models" },
-];
 
 export default function DataAiPage() {
   return (
@@ -54,7 +47,12 @@ export default function DataAiPage() {
         </div>
       </div>
 
-      {/* Showpiece: the model wall + swap-models SQL */}
+      {/* THE PUNCH: the thesis as running code, model literal cycling live */}
+      <Section>
+        <OneLineSwap />
+      </Section>
+
+      {/* The model wall */}
       <Section className="relative overflow-hidden">
         <SectionDecor variant="dots" />
         <div className="relative">
@@ -69,7 +67,14 @@ export default function DataAiPage() {
           </div>
           <p className="mx-auto mt-10 max-w-2xl text-center text-xs leading-relaxed text-muted">
             Model and provider names and logos are trademarks of their respective owners,
-            shown to indicate availability in Snowflake Cortex. Model lineup varies by region.
+            shown to indicate availability in Snowflake Cortex. Model lineup varies by region;
+            catalog as of mid-2026, and it grows monthly.
+          </p>
+          <p className="mt-6 text-center text-sm text-muted">
+            Want the full Cortex stack (Analyst, Search, Agents, AISQL)?{" "}
+            <Link href="/solutions" className="font-semibold text-primaryDeep underline-offset-4 hover:underline">
+              See our solutions &rarr;
+            </Link>
           </p>
         </div>
       </Section>
@@ -129,20 +134,6 @@ export default function DataAiPage() {
           reverse
           cta={{ label: "How we deliver", href: "/approach" }}
         />
-      </Section>
-
-      {/* By the numbers + link out to Cortex depth */}
-      <Section className="section-warm">
-        <MetricBand metrics={METRICS} />
-        <p className="mt-6 text-center font-mono text-xs text-muted">
-          Catalog as of mid-2026; it grows monthly.
-        </p>
-        <p className="mt-10 text-center text-sm text-muted">
-          Want the full Cortex stack (Analyst, Search, Agents, AISQL)?{" "}
-          <Link href="/solutions" className="font-semibold text-primaryDeep underline-offset-4 hover:underline">
-            See our solutions &rarr;
-          </Link>
-        </p>
       </Section>
 
       {/* Proof */}
