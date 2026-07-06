@@ -134,28 +134,46 @@ export function StackDiagram({ flow, rail }: { flow: Layer[]; rail: Layer }) {
   );
 }
 
-/** Typographic product index: every product's one-liner, no cards. */
+/** The parts list as one continuous board: a fixed label column and uniform
+ *  hairline rows, so every group shares the same rhythm (no masonry, no
+ *  uneven columns). Mirrors the migrations sources board. */
 export function ProductIndex({ layers }: { layers: Layer[] }) {
   return (
-    <dl className="mt-14 columns-1 gap-10 md:columns-2">
-      {layers.map((layer) => (
-        <div key={layer.layer} className="mb-8 break-inside-avoid">
-          <dt className="border-b border-border pb-2 font-mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-primaryDeep">
-            {layer.layer}
-          </dt>
-          {layer.products.map((p) => (
-            <dd key={p.name} className="mt-3 text-sm leading-relaxed text-muted">
-              <span className="font-semibold text-foreground">{p.name}</span>
-              {p.status !== "GA" && (
-                <span className="ml-2 align-middle font-mono text-[0.6rem] uppercase tracking-wider text-warning">
-                  {p.status}
+    <div className="mt-12 rounded-3xl border border-border bg-surface">
+      {layers.map((layer, i) => (
+        <div
+          key={layer.layer}
+          className={`grid gap-4 p-6 md:grid-cols-[230px_1fr] md:gap-8 md:px-8 ${i > 0 ? "border-t border-border" : ""}`}
+        >
+          <div>
+            <h3 className="font-mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-primaryDeep">
+              {layer.layer}
+            </h3>
+            <p className="mt-2 text-xs leading-relaxed text-muted">{layer.blurb}</p>
+          </div>
+          <ul className="divide-y divide-border">
+            {layer.products.map((p) => (
+              <li
+                key={p.name}
+                className="grid gap-1 py-3 first:pt-0 last:pb-0 md:grid-cols-[220px_1fr] md:items-baseline md:gap-6"
+              >
+                <span className="flex items-baseline gap-2 font-mono text-sm text-foreground">
+                  <StatusDot status={p.status} />
+                  {p.name}
                 </span>
-              )}{" "}
-              &middot; {p.desc}
-            </dd>
-          ))}
+                <span className="text-sm leading-relaxed text-muted">
+                  {p.desc}
+                  {p.status !== "GA" && (
+                    <span className="ml-2 whitespace-nowrap font-mono text-[0.6rem] uppercase tracking-wider text-warning">
+                      {p.status}
+                    </span>
+                  )}
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
       ))}
-    </dl>
+    </div>
   );
 }
