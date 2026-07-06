@@ -5,7 +5,7 @@ import { PageHero } from "@/components/marketing/PageHero";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { MetricBand } from "@/components/marketing/Blocks";
 import { PartnerBadges } from "@/components/marketing/PartnerBadges";
-import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
+import { ScrollHighlight } from "@/components/marketing/Motion";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { LegacyContrast, CutoverTimeline } from "@/components/marketing/migrations/Crossing";
 
@@ -21,6 +21,8 @@ const HERO_CHIPS = ["20+ source platforms", "Automated conversion", "Validated p
 // The full set of source platforms, grouped. `slug` maps to an official brand
 // mark in /assets/images/sources (rendered monochrome via CSS mask); platforms
 // without a mark fall back to a clean wordmark.
+// Only platforms with an official brand mark in /assets/images/sources are
+// listed; everything else rides on the "not listed? we've seen it" line.
 const SOURCE_GROUPS = [
   {
     label: "Legacy MPP & data warehouses",
@@ -28,10 +30,7 @@ const SOURCE_GROUPS = [
       { name: "Teradata", slug: "teradata" },
       { name: "IBM Netezza", slug: "ibm" },
       { name: "Oracle Exadata", slug: "oracle" },
-      { name: "Vertica" },
-      { name: "Greenplum" },
       { name: "SAP BW / BW4HANA", slug: "sap" },
-      { name: "Microsoft APS / PDW" },
     ],
   },
   {
@@ -66,9 +65,7 @@ const SOURCE_GROUPS = [
     label: "Legacy ETL & analytics",
     items: [
       { name: "Informatica", slug: "informatica" },
-      { name: "SSIS" },
       { name: "Talend", slug: "talend" },
-      { name: "SAS" },
     ],
   },
 ];
@@ -130,7 +127,7 @@ export default function MigrationsPage() {
                 <ScrollHighlight>Onto one governed Snowflake.</ScrollHighlight>
               </>
             }
-            description="We move legacy warehouses, cloud data warehouses, and Hadoop onto a single governed Snowflake foundation: code converted automatically, data validated for parity, and a phased cutover that keeps the business running the whole way."
+            description="A migration is won in the planning, the parity checks, and the cutover you never notice, not in the license swap. We run that whole arc as one accountable team: code converted automatically, every number validated against the source, and the business running the entire way."
           >
             <div className="flex flex-wrap justify-center gap-2">
               {HERO_CHIPS.map((c) => (
@@ -169,24 +166,22 @@ export default function MigrationsPage() {
                       key={p.name}
                       className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-3 py-1.5 text-sm text-foreground/80"
                     >
-                      {p.slug && (
-                        <span
-                          aria-hidden="true"
-                          className="h-4 w-4 flex-none"
-                          style={{
-                            backgroundColor: "rgb(var(--color-foreground))",
-                            opacity: 0.75,
-                            WebkitMaskImage: `url(/assets/images/sources/${p.slug}.svg)`,
-                            maskImage: `url(/assets/images/sources/${p.slug}.svg)`,
-                            WebkitMaskRepeat: "no-repeat",
-                            maskRepeat: "no-repeat",
-                            WebkitMaskPosition: "center",
-                            maskPosition: "center",
-                            WebkitMaskSize: "contain",
-                            maskSize: "contain",
-                          }}
-                        />
-                      )}
+                      <span
+                        aria-hidden="true"
+                        className="h-4 w-4 flex-none"
+                        style={{
+                          backgroundColor: "rgb(var(--color-foreground))",
+                          opacity: 0.75,
+                          WebkitMaskImage: `url(/assets/images/sources/${p.slug}.svg)`,
+                          maskImage: `url(/assets/images/sources/${p.slug}.svg)`,
+                          WebkitMaskRepeat: "no-repeat",
+                          maskRepeat: "no-repeat",
+                          WebkitMaskPosition: "center",
+                          maskPosition: "center",
+                          WebkitMaskSize: "contain",
+                          maskSize: "contain",
+                        }}
+                      />
                       {p.name}
                     </li>
                   ))}
@@ -225,19 +220,19 @@ export default function MigrationsPage() {
         <CutoverTimeline phases={PHASES} />
       </Section>
 
-      {/* Automated where it counts, validated everywhere */}
+      {/* The conviction: tools convert code; the consulting answers for it */}
       <Section className="section-tint relative overflow-hidden">
         <FeatureSplit
-          eyebrow="Automated, then proven"
-          title="Automated where it counts, validated everywhere"
-          body="SnowConvert translates the SQL, stored procedures, and scripts that took years to write, with the Snowpark Migration Accelerator covering Spark, so the rebuild is measured in weeks, not a from-scratch rewrite. Then automated row, aggregate, and hash reconciliation proves the new system matches the old one, table by table, before anyone cuts over."
+          eyebrow="Our conviction"
+          title="The tools convert the code. They don't answer for your month-end close."
+          body="SnowConvert and the Snowpark Migration Accelerator do the typing: the SQL, stored procedures, and Spark jobs that took years to write convert in weeks. What you actually hire us for is everything the tools can't sign off on: the edge cases remediated by hand, every object reviewed before it moves on, and row, aggregate, and hash reconciliation proving the new numbers match the old ones before anyone cuts over."
           bullets={[
-            "Code conversion for Teradata, Oracle, SQL Server, Redshift, Hive and more",
+            "Conversion output reviewed object by object, in Snowflake Workspaces",
             "Row, aggregate, and hash checks prove parity against the source",
             "A parallel run with nightly reconciliation before any cutover",
           ]}
-          image="/assets/images/photos/data-foundation.jpg"
-          imageAlt="A governed Snowflake foundation after migration"
+          image="/assets/images/product/workspaces-build.png"
+          imageAlt="Converted objects being reviewed change by change in Snowflake Workspaces"
           ratio="wide-text"
         />
         <WaveDivider position="bottom" fill="fill-background" />
@@ -251,16 +246,21 @@ export default function MigrationsPage() {
           title="The legacy logic comes too"
           intro="Migrations stall on the procedural code and pipelines, not the tables. Here is what we carry over for the platforms we see most."
         />
-        <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2" variant="pop">
-          {HARD_PARTS.map((h) => (
-            <div key={h.source} className="card flex h-full gap-4">
-              <span className="mt-0.5 shrink-0 font-mono text-xs font-semibold uppercase tracking-wider text-accentDeep">
+        {/* Same continuous-board rhythm as the sources wall and the platform
+            parts list: fixed label column, uniform hairline rows. */}
+        <div className="mt-12 rounded-3xl border border-border bg-surface">
+          {HARD_PARTS.map((h, i) => (
+            <div
+              key={h.source}
+              className={`grid gap-2 p-5 md:grid-cols-[230px_1fr] md:items-baseline md:gap-8 md:px-8 ${i > 0 ? "border-t border-border" : ""}`}
+            >
+              <h3 className="font-mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-primaryDeep">
                 {h.source}
-              </span>
+              </h3>
               <p className="text-sm leading-relaxed text-muted">{h.detail}</p>
             </div>
           ))}
-        </RevealGroup>
+        </div>
       </Section>
 
       {/* Proof */}
