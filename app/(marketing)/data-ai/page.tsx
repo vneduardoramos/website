@@ -27,14 +27,16 @@ const USE_CASES = [
     title: "Paperwork that reads itself",
     body: "Claims, invoices, and contracts classified, extracted, and routed in seconds instead of hand-sorted piles. The document backlog becomes a table you can query.",
     mech: "AI_CLASSIFY · AI_EXTRACT · PARSE_DOCUMENT",
-    proof: { label: "95% claims accuracy, in seconds →", href: "/case-studies/insurance-claims-cortex-ai" },
+    stat: "60→95% accuracy · 4 sec per document",
+    proof: { label: "Read the engagement →", href: "/case-studies/insurance-claims-cortex-ai" },
   },
   {
     eyebrow: "Answers",
     title: "Executives who ask the data directly",
     body: "Plain-language questions answered with citations against your governed definitions, so the Monday meeting starts from the same number, not three versions of it.",
     mech: "Cortex Analyst · Semantic Views · CoWork",
-    proof: { label: "A catalog your teams can ask →", href: "/case-studies/sku-catalog-governance" },
+    stat: "Thousands of runaway SKUs, one catalog agent",
+    proof: { label: "Read the engagement →", href: "/case-studies/sku-catalog-governance" },
   },
   {
     eyebrow: "Foresight",
@@ -90,39 +92,50 @@ export default function DataAiPage() {
         </div>
       </div>
 
-      {/* THE DELIVERABLES: what data + AI actually does, with proof attached */}
-      <Section className="relative overflow-hidden">
-        <SectionDecor variant="dots" />
-        <div className="relative">
-          <SectionHeading
-            align="center"
-            eyebrow="What we deliver"
-            title="The use cases we ship"
-            intro="Every one runs next to your governed data inside Snowflake, and every one is built to land in production, not a lab. Where a real engagement proves it, the link is right there."
-          />
-          <RevealGroup className="mt-12 grid gap-5 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3" variant="pop">
-            {USE_CASES.map((u) => (
-              <LedgerCard key={u.title} eyebrow={u.eyebrow} title={u.title} foot={["Runs on", u.mech]}>
-                <p>{u.body}</p>
-                {u.proof && (
-                  <p className="mt-3">
-                    <Link
-                      href={u.proof.href}
-                      className="font-semibold text-primaryDeep underline-offset-4 hover:underline"
-                    >
-                      {u.proof.label}
-                    </Link>
-                  </p>
-                )}
-              </LedgerCard>
-            ))}
-          </RevealGroup>
-          <p className="mt-8 text-center text-sm text-muted">
-            A use case we haven&rsquo;t listed? If the data can carry it, we can ship it.{" "}
-            <Link href="/contact" className="font-semibold text-primaryDeep underline-offset-4 hover:underline">
-              Tell us the job &rarr;
-            </Link>
-          </p>
+      {/* THE DELIVERABLES: the dark kick right after the light hero. White
+          cards on deep indigo, real engagement numbers on the proven ones. */}
+      <Section>
+        <div className="panel-indigo relative overflow-hidden rounded-3xl p-7 shadow-xl md:p-12">
+          <div className="relative">
+            <div className="max-w-2xl">
+              <p className="eyebrow eyebrow--invert mb-4">What we deliver</p>
+              <h2 className="font-display text-3xl font-bold tracking-tight text-white md:text-[2.6rem] md:leading-[1.08]">
+                Six jobs. In production, not in a lab.
+              </h2>
+              <p className="mt-4 max-w-xl text-lg leading-relaxed text-white/75">
+                Each one runs next to your governed data inside Snowflake. Where a real
+                engagement proves it, the numbers are on the card.
+              </p>
+            </div>
+            <RevealGroup className="mt-10 grid gap-5 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3" variant="pop">
+              {USE_CASES.map((u) => (
+                <LedgerCard key={u.title} eyebrow={u.eyebrow} title={u.title} foot={["Runs on", u.mech]}>
+                  <p>{u.body}</p>
+                  {u.stat && (
+                    <p className="mt-3 font-mono text-[0.78rem] font-semibold text-primaryDeep">
+                      {u.stat}
+                    </p>
+                  )}
+                  {u.proof && (
+                    <p className="mt-1.5">
+                      <Link
+                        href={u.proof.href}
+                        className="text-sm font-semibold text-primaryDeep underline-offset-4 hover:underline"
+                      >
+                        {u.proof.label}
+                      </Link>
+                    </p>
+                  )}
+                </LedgerCard>
+              ))}
+            </RevealGroup>
+            <p className="mt-8 text-center text-sm text-white/70">
+              A use case we haven&rsquo;t listed? If the data can carry it, we can ship it.{" "}
+              <Link href="/contact" className="font-semibold text-white underline-offset-4 hover:underline">
+                Tell us the job &rarr;
+              </Link>
+            </p>
+          </div>
         </div>
       </Section>
 

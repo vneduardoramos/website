@@ -62,8 +62,8 @@ export function LedgerCard({
       </div>
       {foot && (
         <div className="mt-4 flex items-baseline justify-between gap-3 border-t border-dotted border-primary/40 pt-2.5 font-mono text-[0.62rem] uppercase tracking-[0.12em] text-muted transition-colors duration-300 group-hover:text-primaryDeep">
-          <span>{foot[0]}</span>
-          <span>{foot[1]}</span>
+          <span className="whitespace-nowrap">{foot[0]}</span>
+          <span className="text-right">{foot[1]}</span>
         </div>
       )}
     </div>
