@@ -31,7 +31,7 @@ export default function PrivacyPage() {
 
       <Section>
         <div className="prose-vn max-w-3xl">
-          <p className="text-muted">Last updated: 6 June 2026</p>
+          <p className="text-muted">Last updated: June 6, 2026</p>
 
           <p>
           {theme.brand.name} (&ldquo;{theme.brand.name}&rdquo;, &ldquo;we&rdquo;,
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
         <h2>How we use your information</h2>
         <p>We use the information we collect to:</p>
         <ul>
-          <li>Respond to your enquiries and provide the services you request;</li>
+          <li>Respond to your inquiries and provide the services you request;</li>
           <li>Operate, maintain, and improve our website and services;</li>
           <li>Send you updates, content, or marketing where you have opted in;</li>
           <li>Evaluate job applications;</li>

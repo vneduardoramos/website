@@ -18,7 +18,7 @@ const engagementModels = [
   {
     title: "Fixed cost",
     body: "A defined scope, timeline, and price agreed up front. Best when the outcome is clear and you want budget certainty from day one.",
-    bestFor: "Best for: defined platform builds and migrations",
+    bestFor: "Best for: defined foundation builds and migrations",
   },
   {
     title: "Time & materials",
@@ -59,9 +59,9 @@ const costFactors = [
 ];
 
 const impactByPhase = [
-  { phase: "First 90 days", title: "Foundations & first value", body: "Governance in place, priority data flowing, first production dashboards." },
-  { phase: "6–12 months", title: "Scale & self-service", body: "Use cases across teams; self-service adopted; manual reporting retired." },
-  { phase: "18+ months", title: "Compounding advantage", body: "New use cases in weeks, run cost tuned, with a team fluent enough to extend it themselves." },
+  { phase: "First 8–16 weeks", title: "Foundations & first value", body: "Governance in place, priority data flowing, and the first governed data products in production." },
+  { phase: "6–12 months", title: "Scale & self-service", body: "Use cases spread across teams and each new one reaches first insight 60% faster. Self-service takes hold; manual reporting retires." },
+  { phase: "18+ months", title: "Compounding advantage", body: "New use cases ship in weeks at 40% lower run cost, and the handover is real: your team runs and extends the foundation without us." },
 ];
 
 export default function PricingPage() {
@@ -106,7 +106,7 @@ export default function PricingPage() {
               Priced to the work, not a sticker
             </h2>
             <p className="mt-4 text-muted">
-              We don&apos;t publish one-size pricing because no two platforms are the same. Cost is shaped by:
+              We don&apos;t publish one-size pricing because no two engagements are the same. Cost is shaped by:
             </p>
             <ul className="mt-6 space-y-3">
               {costFactors.map((c) => (

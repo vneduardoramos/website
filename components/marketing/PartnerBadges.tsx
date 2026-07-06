@@ -1,5 +1,5 @@
 /**
- * Snowflake certification badges: the single source for ViewNear's partner
+ * Snowflake certification badges: the single source for Viewnear's partner
  * status. Used on home, About, the Partnership page, and the footer.
  */
 import Image from "next/image";

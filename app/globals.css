@@ -27,8 +27,6 @@
   --color-cyan: 34 211 238;
   --color-amber: 255 160 0;
   --color-orange: 255 160 0; /*    #FFA000 logo orange (legacy token) */
-  --color-pastel: 196 228 247; /*  #C4E4F7 pastel sky, primary button fill */
-  --color-pastel-deep: 173 216 242; /* #ADD8F2 pastel hover */
   --color-purple: 124 58 237; /*       #7C3AED violet, mesh third hue only */
   --color-deep: 15 37 48; /*           legacy token (dark slabs retired) */
 }
@@ -157,9 +155,6 @@ select:focus-visible,
   .btn-sm {
     @apply gap-1.5 rounded-lg px-4 py-2 text-sm;
   }
-  /* Primary: FLAT solid orange sampled from the logo (#FFA000). Navy-ink text
-     (--color-foreground) stays legible on the warm fill, no gradient, no glow,
-     just a subtle layered shadow for tactile elevation. */
   /* Primary: a confident SOLID royal-blue fill with white label, a bold,
      decisive enterprise CTA (white-on-royal ≈ 6.6:1, AA). A faint inset top
      highlight + a royal-tinted drop shadow keep it tactile. */
@@ -212,7 +207,8 @@ select:focus-visible,
     @apply rounded-md bg-surface2 px-1.5 py-0.5 font-mono text-sm text-primaryDeep;
   }
   .prose-vn pre {
-    @apply mb-4 overflow-x-auto rounded-xl border border-border bg-surface p-4 text-sm;
+    @apply mb-5 overflow-x-auto rounded-xl border border-border bg-surface2 p-5 text-sm;
+    border-top: 3px solid rgb(var(--color-royal) / 0.5);
   }
   .prose-vn pre code {
     @apply bg-transparent p-0 text-foreground;
@@ -410,15 +406,16 @@ select:focus-visible,
   background-clip: text;
   color: transparent;
 }
-/* Vibrant display gradient (the home "do more" headline). Bold blue -> violet
-   -> magenta, with all stops deep enough to meet WCAG large-text contrast on
-   white (>=3:1). Reserved for large headings, not small/body text. */
+/* Display gradient for emphasis headline words (home "do more", partnership
+   "top partners"). On-brand teal -> royal -> deep indigo sweep; all stops are
+   deep enough for WCAG large-text contrast on white (>=3:1). No off-palette
+   purple/magenta. Reserved for large headings, not small/body text. */
 .text-gradient-accent {
   background: linear-gradient(
     95deg,
-    rgb(var(--color-royal)),
-    rgb(var(--color-purple)) 50%,
-    #db2777
+    rgb(var(--color-primary-deep)),
+    rgb(var(--color-royal)) 55%,
+    rgb(var(--color-royal-deep))
   );
   -webkit-background-clip: text;
   background-clip: text;

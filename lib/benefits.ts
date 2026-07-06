@@ -30,7 +30,7 @@ export type Benefit = {
 export const BENEFITS: Benefit[] = [
   {
     icon: "heart",
-    accent: "red",
+    accent: "blue",
     title: "Health insurance",
     body: "Comprehensive medical coverage for you and your whole family.",
   },
@@ -42,9 +42,9 @@ export const BENEFITS: Benefit[] = [
   },
   {
     icon: "smile",
-    accent: "purple",
+    accent: "blue",
     title: "Emotional wellness",
-    body: "Optional mental-health and emotional-wellbeing support, because sustained excellence needs real balance.",
+    body: "Optional mental-health and emotional-wellbeing support, because demanding work needs real balance.",
   },
   {
     icon: "sun",
@@ -54,20 +54,20 @@ export const BENEFITS: Benefit[] = [
   },
   {
     icon: "cap",
-    accent: "cyan",
+    accent: "blue",
     title: "Learning & certifications",
     body: "Training, SnowPro certifications, conference travel, and event sponsorships: we reinvest in your growth.",
   },
   {
     icon: "mountain",
-    accent: "green",
+    accent: "blue",
     title: "Team retreats",
     body: "Company retreats and in-person gatherings that build the relationships behind great delivery.",
   },
   {
     icon: "sparkles",
-    accent: "indigo",
-    title: "Best-in-class tools",
-    body: "Premium tooling and licensing (including the AI-native stack) so you always do your best work.",
+    accent: "blue",
+    title: "The tools to do the work",
+    body: "Modern hardware, paid AI tooling, and the licenses your projects need, from day one.",
   },
 ];

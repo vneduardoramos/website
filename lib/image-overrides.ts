@@ -14,7 +14,7 @@ export type OverrideMap = Record<string, ImageOverrideData>;
 /**
  * Is this override doing anything visible? An override is "active" when it
  * pans (focal off-center), zooms in, or replaces the source. Only then do we
- * apply the cropper CSS / wrap the live image — when inactive the render path
+ * apply the cropper CSS / wrap the live image; when inactive the render path
  * must stay byte-identical to the unedited default.
  */
 export function isOverrideActive(ov: ImageOverrideData | null): boolean {

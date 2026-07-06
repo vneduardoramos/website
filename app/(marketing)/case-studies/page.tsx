@@ -8,7 +8,7 @@ import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { PartnerBadges } from "@/components/marketing/PartnerBadges";
 
 export const metadata = pageMeta({
-  title: "Case Studies",
+  title: "Case studies",
   description:
     "Data and AI engagements across the Americas: real, anonymized results from the Snowflake-powered analytics and intelligent automation we deliver.",
   path: "/case-studies",
@@ -17,9 +17,9 @@ export const metadata = pageMeta({
 export default async function CaseStudiesPage() {
   const caseStudies = await getCaseStudies({});
 
-  // Feature the first 1–2 as large cards, the rest in a grid.
-  const featured = caseStudies.slice(0, 2);
-  const rest = caseStudies.slice(2);
+  // Feature the strongest as one full-width card, the rest in a uniform grid.
+  const featured = caseStudies[0];
+  const rest = caseStudies.slice(1);
 
   // Unique sector chips for a lightweight filter row (visual scan aid).
   const sectors = Array.from(new Set(caseStudies.map((cs) => cs.sector))).filter(
@@ -35,7 +35,7 @@ export default async function CaseStudiesPage() {
             Case <span className="text-gradient">studies</span>.
           </>
         }
-        description="Real data and AI work we deliver across the Americas. Explore how we turn complex data into a competitive advantage."
+        description="Real data & AI work we deliver across the Americas. See how teams went from scattered sources to governed data and decisions in weeks, not quarters."
       />
 
       {caseStudies.length > 0 ? (
@@ -60,20 +60,17 @@ export default async function CaseStudiesPage() {
                 </div>
               )}
 
-              <div className="grid gap-6 md:grid-cols-2">
-                {featured.map((cs, i) => (
-                  <CoverCard
-                    key={cs.slug}
-                    href={`/case-studies/${cs.slug}`}
-                    image={cs.heroImage ?? coverForSector(cs.sector, cs.slug)}
-                    imageAlt={`${cs.title}: ${cs.sector}`}
-                    kicker={`${cs.sector} · ${cs.region}`}
-                    title={cs.title}
-                    excerpt={cs.summary}
-                    featured={i === 0}
-                  />
-                ))}
-              </div>
+              {featured && (
+                <CoverCard
+                  href={`/case-studies/${featured.slug}`}
+                  image={featured.heroImage ?? coverForSector(featured.sector, featured.slug)}
+                  imageAlt={`${featured.title}: ${featured.sector}`}
+                  kicker={`${featured.sector} · ${featured.region}`}
+                  title={featured.title}
+                  excerpt={featured.summary}
+                  featured
+                />
+              )}
             </div>
           </Section>
 
@@ -113,17 +110,19 @@ export default async function CaseStudiesPage() {
       {/* ── Real, verifiable proof (credibility rests here) ──────── */}
       <Section className="relative overflow-hidden">
         <SectionDecor variant="dots" />
-        <div className="panel-warm relative rounded-3xl p-8 md:p-10">
-          <p className="eyebrow mb-3">Verified proof</p>
-          <h2 className="max-w-2xl text-balance font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
-            Proof you can verify today.
-          </h2>
-          <p className="mt-3 max-w-2xl text-muted">
-            Viewnear is a Snowflake Premier Partner and a CoCo Preferred Partner,
-            with a SnowPro-certified team. That status is verifiable today,
-            independent of any single engagement.
-          </p>
-          <div className="mt-8">
+        <div className="panel-warm relative grid gap-8 rounded-3xl p-8 md:grid-cols-2 md:items-center md:p-10">
+          <div>
+            <p className="eyebrow mb-3">Verified proof</p>
+            <h2 className="text-balance font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+              Proof you can verify today.
+            </h2>
+            <p className="mt-3 text-muted">
+              Viewnear is a Snowflake Premier Partner and a Snowflake CoCo
+              Preferred Partner, with a SnowPro-certified team. That status is
+              verifiable today, independent of any single engagement.
+            </p>
+          </div>
+          <div className="md:justify-self-end">
             <PartnerBadges variant="logos" />
           </div>
         </div>

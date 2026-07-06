@@ -44,13 +44,13 @@ export function MetricBand({
   metrics: { value: string; label: string }[];
 }) {
   return (
-    <RevealGroup className="grid grid-cols-2 gap-8 md:grid-cols-4" variant="pop">
+    <RevealGroup className="grid grid-cols-2 gap-8 lg:grid-cols-4" variant="pop">
       {metrics.map((m) => (
         <StatCounter
           key={m.label}
           value={m.value}
           label={m.label}
-          valueClassName="text-gradient-bold font-display text-4xl font-bold md:text-5xl"
+          valueClassName="text-gradient-bold font-display text-4xl font-bold lg:text-5xl"
         />
       ))}
     </RevealGroup>

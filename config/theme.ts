@@ -20,7 +20,7 @@ export const theme = {
     email: "contact@viewnear.com",
     tagline: "Everything your data needs, under one roof.",
     description:
-      "Viewnear is a data & AI consultancy and Snowflake partner helping organizations across the Americas turn data into a competitive advantage.",
+      "Viewnear is a Snowflake, data & AI consultancy for the enterprise: governed data products, integrated with the systems your business runs on, across the Americas.",
     // Region positioning for the Americas.
     region: "the Americas",
     regions: ["Canada", "USA", "Mexico", "LATAM", "Caribbean"],
@@ -90,12 +90,12 @@ export const theme = {
     {
       label: "Industries",
       children: [
-        { label: "Construction and Real Estate", href: "/industries/construction-real-estate" },
+        { label: "Construction & Real Estate", href: "/industries/construction-real-estate" },
         { label: "Education", href: "/industries/education" },
         { label: "Financial Services", href: "/industries/financial-services" },
         { label: "Manufacturing", href: "/industries/manufacturing" },
         { label: "Retail & CPG", href: "/industries/retail-cpg" },
-        { label: "Technology and Telco", href: "/industries/technology-telco" },
+        { label: "Technology & Telco", href: "/industries/technology-telco" },
         { label: "Media, Entertainment & Advertising", href: "/industries/media-entertainment-advertising" },
       ],
     },

@@ -2,7 +2,7 @@
 
 > Living reference. Update when tokens/components/conventions change. Source of truth for tokens is `config/theme.ts` + `app/globals.css`. ([0005](decisions/0005-glacier-theming.md))
 
-Bright, airy, white-canvas system with a Snowflake-sky-blue primary and a tightly reserved coral accent.
+Bright, airy, white-canvas system with a Snowflake-sky-blue primary, a royal-blue authority anchor, and a tightly reserved logo-orange accent.
 
 ## Color tokens
 
@@ -18,15 +18,17 @@ Defined as `"R G B"` triplets in `config/theme.ts`, emitted as CSS vars in `app/
 | `muted` | `#5C7385` | secondary text |
 | `primary` | `#29B5E8` | signature sky-blue, CTAs, links, accents |
 | `primaryDeep` | `#0B6E99` | legible blue for small text/links |
-| `accent` | `#FF8A4C` | **warm coral, reserved ~5%** (stat pops, single highlights) |
+| `accent` | `#FFA000` | **logo-orange warm accent, reserved ~5%** (stat pops, eyebrows, single highlights) |
+| `accentDeep` | `#B45309` | legible burnt-orange for warm small text / eyebrows on light |
+| `royal` / `royalDeep` | `#2C53C8` / `#142358` | logo royal-blue authority anchor (primary button fill); deep indigo for the one dark band |
+| `gold` | `#FBBF24` | amber-gold, fills / glows only (not small text) |
 | `secondary` / `cyan` | `#22D3EE` | gradients, data-flow lines, status dots |
-| `amber` | `#FFA000` | flavor hue |
+| `amber` | `#FFA000` | flavor hue (alias of accent) |
 | `orange` | `#FFA000` | legacy (earlier button iteration; alias of amber) |
-| `pastel` / `pastel-deep` | `#C4E4F7` / `#ADD8F2` | primary button fill + hover (globals-only vars) |
 | `purple` | `#7C3AED` | mesh third hue / flavor hue |
 | `success` `warning` `danger` | n/a | states / flavor hues |
 
-**Coral discipline:** the accent is reserved for ~5% of the UI. Don't use it for large fills or routine elements.
+**Accent discipline:** the logo-orange accent is reserved for ~5% of the UI. Don't use it for large fills or routine elements.
 
 ## Typography
 
@@ -84,13 +86,13 @@ Defined once in `app/globals.css`; used everywhere via class.
 
 | Class | Use |
 |-------|-----|
-| `btn-primary` | primary action, **soft pastel-sky** fill (`#C4E4F7`) with **deep-blue text** (`primaryDeep`, not black) + faint primary hairline; rounded rectangle; deepens + lifts on hover, presses on active ([0024](decisions/0024-flat-orange-buttons-mega-menu.md)) |
+| `btn-primary` | primary action, **solid royal-blue** fill (`royal` `#2C53C8`) with **white text** (≈6.6:1 AA) + royal hairline; rounded rectangle; inset top highlight + royal-tinted shadow, brightens + lifts on hover, presses on active ([0024](decisions/0024-flat-orange-buttons-mega-menu.md)) |
 | `btn-ghost` | secondary, `surface` fill + hairline border that firms to `foreground/35` on hover (neutral, not blue) |
 | `btn-light` | on-dark variant, white pill, ink text; for CTAs over dark imagery (`ShowcaseBand`) |
 | `btn-lg` | size modifier for hero / `CtaBand` CTAs (`px-8 py-4`, `text-base`) |
 | `btn-sm` | compact size modifier (`px-4 py-2`, `text-sm`) |
 
-All buttons are **rounded rectangles**, base `rounded-xl`, `btn-lg` `rounded-2xl`, `btn-sm` `rounded-lg` (default `px-6 py-3`, `text-[0.95rem]`). The **primary CTA is a soft pastel-sky fill (`#C4E4F7`) with deep-blue (`primaryDeep`) text** + a faint primary hairline ([0024](decisions/0024-flat-orange-buttons-mega-menu.md)); sky-blue remains the link/accent color.
+All buttons are **rounded rectangles**, base `rounded-xl`, `btn-lg` `rounded-2xl`, `btn-sm` `rounded-lg` (default `px-6 py-3`, `text-[0.95rem]`). The **primary CTA is a solid royal-blue fill (`royal` `#2C53C8`) with white text** (≈6.6:1 AA) + a royal hairline and royal-tinted shadow ([0024](decisions/0024-flat-orange-buttons-mega-menu.md)); sky-blue remains the link/accent color.
 
 ## Navigation: mega-menu ([0024](decisions/0024-flat-orange-buttons-mega-menu.md))
 

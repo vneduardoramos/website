@@ -6,10 +6,7 @@ import {
   Pill,
   CtaBand,
 } from "@/components/marketing/ui";
-import { FeatureSplit } from "@/components/marketing/FeatureSplit";
-import { SnowflakeLockup } from "@/components/marketing/SnowflakeLockup";
 import { LeadershipStrip } from "@/components/marketing/LeadershipStrip";
-import { ShowcaseBand } from "@/components/marketing/ShowcaseBand";
 import { MetricBand, InlineCta } from "@/components/marketing/Blocks";
 import { PageHero } from "@/components/marketing/PageHero";
 import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
@@ -23,8 +20,6 @@ import {
   CpuIcon,
   RocketIcon,
   SnowflakeIcon,
-  ShieldIcon,
-  PenIcon,
 } from "@/components/marketing/home/Icons";
 import { ControlPlane } from "@/components/marketing/services/ControlPlane";
 import { getServicesByTier, getSetting } from "@/lib/queries";
@@ -64,7 +59,7 @@ const tierMeta: Record<string, TierMeta> = {
     eyebrow: "Strategy",
     num: "01",
     intro:
-      "Set the direction. We pinpoint where data and AI create real value and sequence a roadmap toward the agentic enterprise, grounded in what your data can support today.",
+      "Set the direction. We pinpoint where data and AI create real value and sequence a roadmap you can execute, grounded in what your data can support today.",
     tile: "bg-primary",
     num_cls: "text-primary/15",
     bar: "bg-primary",
@@ -75,7 +70,7 @@ const tierMeta: Record<string, TierMeta> = {
     eyebrow: "Engineering",
     num: "02",
     intro:
-      "Make it real. We build the governed Snowflake foundation that AI actually needs, then the pipelines, models, and agents that run on it.",
+      "Make it real. We build the governed Snowflake foundation that AI actually needs, then the pipelines, models, and agents that run on it, integrated with the systems your business runs on.",
     tile: "bg-secondary",
     num_cls: "text-secondary/15",
     bar: "bg-secondary",
@@ -101,7 +96,7 @@ const engagementModels = [
     body: "A defined scope, timeline, and price agreed up front. Best when the outcome is clear and you want budget certainty from day one.",
     how: "We scope the work in a short, paid discovery, then commit to a price and a date.",
     includes: ["Scoped statement of work", "Milestones with decision gates", "Change control if scope moves"],
-    bestFor: "Defined platform builds & migrations",
+    bestFor: "Defined foundation builds & migrations",
   },
   {
     title: "Time & materials",
@@ -114,26 +109,26 @@ const engagementModels = [
     title: "Team augmentation",
     body: "Embed our certified practitioners alongside yours. We accelerate delivery while leveling up your in-house capability.",
     how: "SnowPro-certified engineers join your team, tools, and ways of working.",
-    includes: ["Certified, versed at every level", "Knowledge transfer built in", "Scale up or down monthly"],
+    includes: ["Snowflake depth at every level", "Knowledge transfer built in", "Scale up or down monthly"],
     bestFor: "Scaling an existing team fast",
   },
   {
-    title: "Managed & support",
+    title: "Managed services & support",
     body: "Ongoing run, optimization, and enhancement once you're live, so your data and AI keep paying off without a permanent in-house team.",
     how: "A retained team monitors, tunes cost and performance, and ships enhancements.",
     includes: ["Monitoring & cost optimization", "SLAs and a named contact", "A roadmap of enhancements"],
-    bestFor: "Running & growing a live platform",
+    bestFor: "Running & growing a live Snowflake estate",
   },
 ];
 
 // What every client gets regardless of which model they choose: the UVP.
 const engagementValue = [
-  { title: "One certified team, versed at every level", body: "One accountable team: the people who scope your work are the ones who deliver it." },
-  { title: "Premier & CoCo Preferred Partner", body: "A SnowPro-certified team and a verified, end-to-end Snowflake delivery track record." },
-  { title: "Priced to outcomes", body: "Scope and price agreed up front, whatever the model, so there are no surprises." },
+  { title: "One certified team, with depth at every level", body: "One accountable team: the people who scope your work are the ones who deliver it." },
+  { title: "Premier & CoCo Preferred Partner", body: "A SnowPro-certified team and a verified Snowflake delivery track record, from strategy through production." },
+  { title: "Priced to outcomes", body: "Scope and price agreed up front, whichever model you choose." },
   { title: "Governance built in", body: "Security, lineage, and access control designed in from the first table, not bolted on." },
   { title: "Handover and enablement", body: "Full handover, documentation, and enablement so your team runs it confidently." },
-  { title: "Delivered across the Americas", body: "Aligned to your region, data residency, and time zone, under one accountable partner." },
+  { title: "Integrated with your enterprise", body: "Data products that connect to and from the systems you run on: ERP, CRM, and your customer-facing apps." },
 ];
 
 const costFactors =
@@ -162,7 +157,7 @@ const impactByPhase = [
 const runPhases = [
   {
     title: "A fixed 8–16 week arc",
-    body: "Most initial platforms reach production in 8–16 weeks, scoped to your data and use cases, with value delivered from the first sprint.",
+    body: "Most initial builds reach production in 8–16 weeks, scoped to your data and use cases, with value delivered from the first sprint.",
   },
   {
     title: "Steering & transparency",
@@ -175,84 +170,6 @@ const runPhases = [
   {
     title: "Built to hand over",
     body: "Documentation, enablement, and a transition plan in every engagement, so your team runs and extends the work confidently.",
-  },
-];
-
-const stack = [
-  {
-    layer: "Foundation",
-    name: "Snowflake",
-    body: "The single governed platform every layer runs on: one copy of your data, one place to secure, and one lineage to audit.",
-  },
-  {
-    layer: "Ingestion",
-    name: "Openflow",
-    body: "Managed integration on Apache NiFi for batch and streaming, so every source lands governed without bolting on a separate ETL vendor.",
-  },
-  {
-    layer: "Transformation",
-    name: "dbt",
-    body: "Our transformation framework of choice, run natively against Snowflake for tested, documented, version-controlled models.",
-  },
-  {
-    layer: "Engineering",
-    name: "Snowpark",
-    body: "Python, Java, and Scala pipelines and UDFs that execute next to the data: no movement, no separate compute to secure.",
-  },
-  {
-    layer: "Open storage",
-    name: "Apache Iceberg",
-    body: "An open, governed copy of your data that stays portable and queryable by any engine, so you are never locked in.",
-  },
-  {
-    layer: "Governance",
-    name: "Horizon Catalog",
-    body: "Lineage, access history, classification, and policy across your estate: the audit trail and trusted context AI depends on.",
-  },
-  {
-    layer: "AI & agents",
-    name: "Cortex",
-    body: "LLM and ML functions that run securely beside governed data, from SQL-level calls to natural-language analytics.",
-  },
-  {
-    layer: "Apps & consumption",
-    name: "Streamlit",
-    body: "Interactive data apps shipped right next to the data, so insight lands where people already work.",
-  },
-];
-
-// Production AI we deliver on the control plane. Each pairs a capability with
-// the governance that makes it safe.
-const aiUseCases = [
-  {
-    icon: CpuIcon,
-    title: "Cortex AI & analytics",
-    body: "Cortex AISQL and Cortex Analyst answer questions over your governed Semantic Views: cited, not hallucinated.",
-  },
-  {
-    icon: ChartIcon,
-    title: "Snowflake CoWork",
-    body: "A personal AI agent that gives knowledge workers cited, governed answers and dashboards.",
-  },
-  {
-    icon: PenIcon,
-    title: "Snowflake CoCo",
-    body: "A coding agent for enterprise AI development, validated before it reaches production.",
-  },
-  {
-    icon: CompassIcon,
-    title: "RAG & semantic search",
-    body: "Retrieval and semantic search grounded in your governed data, so answers stay accurate and current.",
-  },
-  {
-    icon: ShieldIcon,
-    title: "Governed agents",
-    body: "AI Agent Identity and access controls, so every agent works within your policies, with full audit trails.",
-  },
-  {
-    icon: SnowflakeIcon,
-    title: "AI-ready data foundation",
-    body: "The prerequisite: a governed Snowflake foundation and trusted business context every model and agent relies on.",
   },
 ];
 
@@ -297,7 +214,7 @@ export default async function ServicesPage() {
             .
           </>
         }
-        description="Snowflake is becoming the control plane for the agentic enterprise. We take you there end to end: a governed data foundation first, then the AI and agents that run on it, across THINK, BUILD, and GROW."
+        description="Strategy, engineering, and enablement under one accountable team: a governed data foundation first, then the AI and agents that run on it, across THINK, BUILD, and GROW."
       />
 
       {tiers.map(({ tier, services }) => {
@@ -373,14 +290,14 @@ export default async function ServicesPage() {
             eyebrow="Where this is heading"
             title={
               <>
-                Built for the{" "}
+                Ready for{" "}
                 <ScrollHighlight color="cyan">
-                  <span className="text-gradient">agentic enterprise</span>
+                  <span className="text-gradient">agents that act</span>
                 </ScrollHighlight>
                 .
               </>
             }
-            intro="Snowflake is becoming the control plane for the agentic enterprise: the governed layer where data, business context, models, agents, and workflows come together. Agentic AI does not start with agents. It starts with governed data and trusted context, and that is exactly what we build."
+            intro="Agentic AI does not start with agents. It starts with governed data and trusted context: one layer where data, business context, models, and workflows come together, and exactly what we build."
           />
           <div className="mt-12 grid items-start gap-10 lg:grid-cols-[1fr_1.1fr]">
             <div>
@@ -398,9 +315,13 @@ export default async function ServicesPage() {
                 />
               </div>
               <p className="mt-6 text-sm text-muted">
-                See the full Snowflake-native stack on the{" "}
-                <Link href="/platform" className="font-semibold text-primaryDeep link-underline">
-                  platform
+                See the AI we put into production on the{" "}
+                <Link href="/solutions" className="font-semibold text-primaryDeep link-underline">
+                  solutions page
+                </Link>
+                , and how we pick the model for each job on{" "}
+                <Link href="/data-ai" className="font-semibold text-primaryDeep link-underline">
+                  data &amp; AI
                 </Link>
                 .
               </p>
@@ -413,92 +334,19 @@ export default async function ServicesPage() {
 
       <Section>
         <SectionHeading
-          eyebrow="Applied AI"
-          title="The AI we put into production"
-          intro="Production AI that runs securely next to your governed data, grounded in Horizon Context and Semantic Views: cited, not hallucinated."
-        />
-        <RevealGroup
-          className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3"
-          variant="pop"
-        >
-          {aiUseCases.map((u) => {
-            const Icon = u.icon;
-            return (
-              <div key={u.title} className="card card-hover flex h-full flex-col bg-background">
-                <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primaryDeep">
-                  <Icon className="h-5 w-5" />
-                </span>
-                <h3 className="font-display text-lg font-bold text-foreground">{u.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{u.body}</p>
-              </div>
-            );
-          })}
-        </RevealGroup>
-      </Section>
-
-      <Section className="section-warm">
-        <SnowflakeLockup variant="default" height={32} className="mb-10" />
-        <FeatureSplit
-          eyebrow="The Snowflake stack"
-          title={
-            <>
-              Built on Snowflake,{" "}
-              <ScrollHighlight color="cyan">
-                <span className="text-gradient">delivered end-to-end</span>
-              </ScrollHighlight>
-              .
-            </>
-          }
-          body="We own the full journey, from architecture and ingestion to governed analytics and AI, on a single, scalable Snowflake foundation. No hand-offs, no fragmented stack."
-          bullets={[
-            "Cloud-native architecture designed around your data, not a template",
-            "Automated, observable pipelines with built-in data quality checks",
-            "Governed, role-based access and cost controls from day one",
-            "Production-ready models and dashboards your teams actually use",
-          ]}
-          image="/assets/images/photos/datacenter.jpg"
-          imageAlt="Modern data center powering the Snowflake platform"
-          cta={{ label: "Talk to our team", href: "/contact" }}
-        />
-      </Section>
-
-      <ShowcaseBand
-        image="/assets/images/photos/network.jpg"
-        imageAlt="Connected, governed data spanning the Americas"
-        eyebrow="Why now"
-        title={
-          <>
-            The data leaders of the Americas are{" "}
-            <span className="text-secondary">already moving</span>.
-          </>
-        }
-        body="AI advantage compounds. The teams putting a governed data foundation in place now are the ones shipping Cortex-powered products, while everyone else is still arguing about tooling."
-        cta={{ label: "Start a conversation", href: "/contact" }}
-      />
-
-      <Section>
-        <SectionHeading
-          eyebrow="Outcomes we target"
-          title="What engagements aim to deliver"
-          intro="Outcomes we target, shaped by the engagement and the goals we agree up front."
+          eyebrow="Business impact"
+          title="What changes, and when"
+          intro="A practical view of the value an engagement returns: by horizon, not by feature list, with the targets we agree up front."
         />
         <div className="mt-12">
           <MetricBand
             metrics={[
               { value: "60%", label: "Faster time to first insight" },
-              { value: "3x", label: "More reliable pipelines" },
+              { value: "3×", label: "More reliable pipelines" },
               { value: "40%", label: "Lower platform run cost" },
             ]}
           />
         </div>
-      </Section>
-
-      <Section>
-        <SectionHeading
-          eyebrow="Business impact"
-          title="What changes, and when"
-          intro="A practical view of the value an engagement returns: by horizon, not by feature list."
-        />
         <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-3" variant="pop">
           {impactByPhase.map((p) => (
             <div key={p.phase} className="card card-hover flex h-full flex-col">
@@ -520,7 +368,7 @@ export default async function ServicesPage() {
           <SectionHeading
             eyebrow="How engagements run"
             title="Delivery you can govern"
-            intro="We de-risk the engagement itself (clear timelines, steering, and a clean hand-over) so the buy is as low-risk as the outcome is high."
+            intro="We de-risk the engagement itself (clear timelines, steering, and a clean handover) so the buy is as low-risk as the outcome is valuable."
           />
           <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-4" variant="pop">
             {runPhases.map((r) => (
@@ -542,32 +390,17 @@ export default async function ServicesPage() {
         </div>
       </Section>
 
+      {/* The stack itself lives on /platform (single source of truth); this is
+          just the scent trail. */}
       <Section className="section-warm">
         <SectionHeading
           eyebrow="What we build on"
-          title="The Snowflake-native stack we build on"
-          intro="We build natively on Snowflake end to end, leading with these products over third-party tools. One governed copy of your data, one lineage to audit, and trusted context every AI agent can rely on."
+          title="The Snowflake-native stack"
+          intro="Openflow to Horizon Catalog to Cortex: we lead with Snowflake-native products over third-party tools, so there is one governed copy of your data, one lineage to audit, and one trusted context every AI agent relies on. dbt is the one external framework we run, natively against Snowflake."
         />
-        <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-4" variant="pop">
-          {stack.map((s) => (
-            <div key={s.name} className="card card-hover flex h-full flex-col bg-background">
-              <span className="font-mono text-xs uppercase tracking-[0.18em] text-primaryDeep">
-                {s.layer}
-              </span>
-              <h3 className="mt-3 font-display text-lg font-bold text-foreground">
-                {s.name}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted">{s.body}</p>
-            </div>
-          ))}
-        </RevealGroup>
-        <p className="mt-8 text-sm text-muted">
-          dbt is the one external framework we run, natively against Snowflake. Everything
-          else is Snowflake-native, so governance and AI context stay in one place.
-        </p>
         <div className="mx-auto mt-12 max-w-3xl">
           <InlineCta
-            title="See the full Snowflake-native stack we build on"
+            title="See the full stack, layer by layer, with what's GA and what's ahead"
             href="/platform"
             label="Explore the platform"
           />
@@ -619,7 +452,7 @@ export default async function ServicesPage() {
               The model flexes. The standard doesn&rsquo;t.
             </h3>
             <p className="mt-3 text-muted">
-              However you choose to engage, every Viewnear engagement is delivered to the same standard, the things that make the difference between a build that ships and one that stalls.
+              However you choose to engage, every Viewnear engagement is delivered to the same standard: the things that make the difference between a build that ships and one that stalls.
             </p>
           </div>
           <RevealGroup className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3" variant="fade-up">

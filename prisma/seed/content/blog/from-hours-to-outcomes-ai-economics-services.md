@@ -6,7 +6,7 @@ Software was built by hand. Engineers wrote code line by line, integrations were
 
 That expertise mattered deeply then, and it matters even more now. Working exclusively as a pure-play Snowflake partner has made this shift impossible to ignore. Snowflake sits at the intersection of data, AI, and consumption-based economics, which means changes in how value is created show up earlier and more clearly. What we see is not the erosion of expertise, but a fundamental change in how it is applied.
 
-What has changed is not the importance of architects and engineers, but where their value is expressed. We no longer need to spend months writing code by hand to demonstrate skill. AI can generate much of the mechanical execution. Code is still essential, but it is now the mechanism, not the value itself.
+We no longer need to spend months writing code by hand to demonstrate skill. AI can generate much of the mechanical execution. Code is still essential, but it is now the mechanism, not the value itself.
 
 Today, the highest leverage comes from steering the solution: understanding what the code is doing, ensuring it reflects business intent, orchestrating and governing AI agents, and taking responsibility for how systems behave in the real world. Expertise has moved upstream, from manual execution to design, oversight, and orchestration.
 
@@ -14,7 +14,7 @@ In the past, value was created by building software over time. Today, value is c
 
 Services are still critical. They are just no longer delivered or priced around hours.
 
-## Why Hourly Pricing Worked for So Long
+## Why hourly pricing worked for so long
 
 Hourly pricing was not an accident or a failure of imagination. It emerged because it aligned reasonably well with how value was created.
 
@@ -24,7 +24,7 @@ In that environment, paying for hours meant paying for risk reduction. Customers
 
 This model supported decades of innovation. It rewarded craftsmanship, experience, and depth. It worked because effort and outcome were closely linked.
 
-## The Structural Break: From Craftsmanship to Leverage
+## The structural break: from craftsmanship to leverage
 
 AI did not simply make teams faster. It changed where leverage exists.
 
@@ -36,7 +36,7 @@ The hardest problems were never about typing code. They were about understanding
 
 Hourly pricing was designed to measure effort. AI maximizes leverage. That mismatch is the core tension shaping modern services.
 
-## Why the Hourly Model Breaks Down Today
+## Why the hourly model breaks down today
 
 As delivery timelines compress, time-based pricing loses its ability to represent value accurately.
 
@@ -51,7 +51,7 @@ Even when everyone acts in good faith, friction emerges. Customers struggle to r
 
 The issue is not trust. It is misalignment.
 
-## Data, AI, and the Snowflake Effect
+## Data, AI, and the Snowflake effect
 
 This misalignment is most visible in data and AI work, particularly within the Snowflake ecosystem.
 
@@ -67,7 +67,7 @@ In this context, hours become irrelevant. What matters is impact:
 
 Snowflake makes outcomes measurable, which is precisely why time-based pricing breaks down so quickly on the platform.
 
-## The Rise of the AI Solution Engineer
+## The rise of the AI solution engineer
 
 As execution becomes automated, the role of the engineer evolves.
 
@@ -84,7 +84,7 @@ This role demands deep experience. AI removes low-leverage work, but it raises t
 
 Outcome-based models make this role visible. Customers are no longer paying for keystrokes. They are paying for expertise applied where it matters most.
 
-## Why We Built Viewnear Around Outcomes
+## Why we built Viewnear around outcomes
 
 Building exclusively on Snowflake influenced this decision directly. Snowflake's architecture rewards clarity over effort. When data models, security, and AI capabilities are centralized, value comes from making the right design decisions, not from repeating work across tools.
 
@@ -108,7 +108,7 @@ We deliberately move away from selling named, fully allocated engineers. That mo
 
 Few services firms are willing to state this plainly, because it places responsibility for outcomes squarely on the provider. That responsibility is exactly where we choose to operate.
 
-## What Outcome-Based Services Really Require
+## What outcome-based services really require
 
 Outcome-based services are not cheaper services. In many cases, they require more senior expertise and tighter collaboration.
 
@@ -123,7 +123,7 @@ Work is delivered in focused phases: a data foundation, an analytics layer, an A
 
 This approach removes ambiguity. Customers know what they are paying for. Service providers know what they are accountable for.
 
-## Risk, Responsibility, and Trust
+## Risk, responsibility, and trust
 
 Outcome-based models shift responsibility toward the service provider.
 
@@ -133,7 +133,7 @@ We believe this is appropriate. If expertise is the product, accountability shou
 
 > Hourly pricing spreads risk quietly over time. Outcome-based pricing makes it explicit.
 
-## The Future of Services
+## The future of services
 
 AI will continue to compress execution time. Agentic systems will mature. Automation will remove even more friction.
 

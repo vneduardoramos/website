@@ -21,7 +21,7 @@ import { theme } from "@/config/theme";
 export const metadata = pageMeta({
   title: "About: Snowflake data & AI partner for the Americas",
   description:
-    "Viewnear is a Snowflake Premier and CoCo Preferred Partner. A team versed in Snowflake and enterprise solutions at every level takes enterprises from data strategy to governed AI in production across the Americas.",
+    "Viewnear is a Snowflake Premier and CoCo Preferred Partner taking enterprises from data strategy to governed AI in production across the Americas.",
   path: "/about",
 });
 
@@ -34,10 +34,10 @@ const HERO_CHIPS = [
 
 // What every engagement gets: the operating model, end to end.
 const operating = [
-  "Versed in Snowflake & enterprise solutions, at every level",
+  "Fixed scopes, steering reviews, and a clear path to production",
   "Governed by design, from the first table",
-  "End-to-end delivery under one accountable team",
-  "Open formats keep your data portable, not locked in",
+  "The people who scope the work stay through production",
+  "Open formats (Apache Iceberg) for interoperable architectures",
 ];
 
 // Verifiable credential snapshot (no vanity metrics).
@@ -52,8 +52,8 @@ const trackRecord = [
 const principles = [
   {
     Icon: CheckIcon,
-    title: "Versed in Snowflake, at every level",
-    body: "Strategists, architects, and engineers who are all deeply fluent in Snowflake and enterprise solutions, SnowPro-certified and proven in production. The depth that scopes your work is the depth that delivers it.",
+    title: "Depth you can feel",
+    body: "Ask a hard architecture, governance, or cost question in any session and the answer comes from a SnowPro-certified specialist who has shipped it on Snowflake.",
   },
   {
     Icon: ShieldIcon,
@@ -62,7 +62,7 @@ const principles = [
   },
   {
     Icon: PipelineIcon,
-    title: "End-to-end, one accountable team",
+    title: "One accountable team, start to finish",
     body: "Strategy through production under a single team, so context never breaks across vendors or phases.",
   },
   {
@@ -85,28 +85,6 @@ const governance = [
   "Built on Snowflake's audited platform: SOC 2 Type II, ISO 27001, HIPAA",
 ];
 
-// What the team brings: versed in Snowflake & enterprise solutions at every level.
-const staffing = [
-  {
-    title: "Versed in Snowflake, end to end",
-    body: "Across strategy, architecture, engineering, and analytics, the team goes deep on the Snowflake platform: the Data Cloud, Cortex and CoCo, and Horizon governance. Snowflake is what we do.",
-  },
-  {
-    title: "Enterprise solutions at every level",
-    body: "Not just the leads. The whole team brings enterprise-grade depth: security, scale, compliance, and integration with the systems your business already runs on.",
-  },
-  {
-    title: "One combined team",
-    body: "A group of professionals who scope, build, and hand over together, combined experience across data and enterprise AI, so context never breaks across phases or vendors.",
-  },
-];
-
-const credentials = [
-  "Snowflake Premier Partner",
-  "Snowflake CoCo Preferred Partner",
-  "SnowPro-certified engineers",
-];
-
 export default async function AboutPage() {
   const team = await getTeam();
 
@@ -123,7 +101,7 @@ export default async function AboutPage() {
             .
           </>
         }
-        description="Viewnear is a Snowflake Premier and CoCo Preferred Partner. A team versed in Snowflake and enterprise solutions at every level takes enterprises from data strategy to governed AI in production, across Canada, the USA, Mexico, LATAM, and the Caribbean."
+        description="We take enterprises from data strategy to governed AI in production, integrating data products with the systems the business runs on. As a Snowflake Premier and CoCo Preferred Partner, we deliver across Canada, the USA, Mexico, LATAM, and the Caribbean."
       >
         <div className="mt-7 flex flex-wrap justify-center gap-2.5">
           {HERO_CHIPS.map((c) => (
@@ -143,8 +121,8 @@ export default async function AboutPage() {
           as="h2"
           ratio="wide-text"
           eyebrow="Who we are"
-          title="One accountable team, the whole Snowflake stack"
-          body="Viewnear is a data & AI consultancy and Snowflake partner. We take enterprises end to end (strategy, architecture, engineering, analytics, and governed AI) with one team that owns the outcome from first workshop to production, deeply versed in Snowflake and enterprise solutions at every level. We grew from a specialist practice into a Snowflake Premier partner in four years by going deep on one platform and proving it in production."
+          title="From specialist practice to Snowflake Premier Partner"
+          body="Viewnear is a Snowflake, data & AI consultancy for the enterprise. One team owns the outcome from first workshop to production, across strategy, architecture, engineering, analytics, and governed AI, and we integrate what we build both ways: operational data flows in, and decisions, answers, and AI agents flow back into the systems where work happens. We grew from a specialist practice into a Snowflake Premier Partner by going deep on one platform, and that focus shapes how we hire, train, and deliver."
           bullets={operating}
           cta={{ label: "How we deliver", href: "/services" }}
           visual={
@@ -203,7 +181,7 @@ export default async function AboutPage() {
             <div>
               <p className="eyebrow eyebrow--invert mb-4">Governance &amp; trust</p>
               <h2 className="max-w-xl font-display text-3xl font-bold tracking-tight text-white md:text-[2.6rem] md:leading-[1.08]">
-                Enterprise-grade by default.
+                Snowflake&rsquo;s audited controls, plus our delivery discipline.
               </h2>
               <p className="mt-4 max-w-lg text-lg leading-relaxed text-white/75">
                 Everything we build is governed and auditable from day one, and
@@ -241,21 +219,6 @@ export default async function AboutPage() {
           title="Versed in Snowflake and enterprise, at every level"
           intro="We're a group of professionals, strategy through engineering, who all go deep on the same thing: Snowflake and enterprise solutions. Not a few senior names over a rotating bench, but combined depth you feel at every level of the engagement."
         />
-        <RevealGroup className="mt-10 grid gap-6 md:auto-rows-fr md:grid-cols-3" variant="pop">
-          {staffing.map((s) => (
-            <div key={s.title} className="card card-pop flex h-full flex-col">
-              <h3 className="font-display text-lg font-bold text-foreground">{s.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted">{s.body}</p>
-            </div>
-          ))}
-        </RevealGroup>
-        <div className="mt-8 flex flex-wrap gap-3">
-          {credentials.map((c) => (
-            <span key={c} className="pill-chip">
-              {c}
-            </span>
-          ))}
-        </div>
         {team.length > 0 && (
           <div className="mt-16">
             <div className="flex items-center gap-4">
@@ -266,7 +229,7 @@ export default async function AboutPage() {
               The leadership team
             </h3>
             <p className="mt-2 max-w-2xl text-muted">
-              The people accountable for your outcome, combined experience across
+              The people leading the practice, with combined experience across
               data, analytics, and enterprise AI.
             </p>
             <RevealGroup className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 md:auto-rows-fr" variant="fade-up">

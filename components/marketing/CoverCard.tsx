@@ -41,11 +41,6 @@ function Placeholder({ kicker, seed }: { kicker?: string; seed: string }) {
   );
 }
 
-/** Remote URLs can't go through next/image (no configured remotePatterns). */
-function isRemote(src: string) {
-  return /^https?:\/\//i.test(src);
-}
-
 export function CoverCard({
   href,
   image,
@@ -67,26 +62,22 @@ export function CoverCard({
   author?: { name: string; photo?: string | null };
   featured?: boolean;
 }) {
+  // Fall back to the title when no explicit alt is given, so covers are never
+  // announced with an empty alt. The Img wrapper renders remote URLs via
+  // next/image `unoptimized` (which bypasses remotePatterns), so both local and
+  // remote covers get lazy-loading, a blur placeholder, and a reserved box.
+  const alt = imageAlt || title;
   const media = (
     <div className={`relative overflow-hidden ${featured ? "h-full min-h-[260px]" : "aspect-[16/10]"}`}>
       <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-deep/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       {image ? (
-        isRemote(image) ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={image}
-            alt={imageAlt}
-            className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        ) : (
-          <Image
-            src={image}
-            alt={imageAlt}
-            fill
-            sizes={featured ? "(max-width:768px) 100vw, 50vw" : "(max-width:768px) 100vw, 33vw"}
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        )
+        <Image
+          src={image}
+          alt={alt}
+          fill
+          sizes={featured ? "(max-width:768px) 100vw, 50vw" : "(max-width:768px) 100vw, 33vw"}
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
       ) : (
         <Placeholder kicker={kicker} seed={title} />
       )}
@@ -102,7 +93,7 @@ export function CoverCard({
       )}
       <h3
         className={`font-display font-bold tracking-tight text-foreground ${
-          featured ? "text-2xl md:text-3xl" : "text-lg"
+          featured ? "text-2xl md:text-3xl" : "text-lg line-clamp-2"
         }`}
       >
         {title}
@@ -119,6 +110,8 @@ export function CoverCard({
             <img
               src={author.photo}
               alt={author.name}
+              loading="lazy"
+              decoding="async"
               className="h-6 w-6 shrink-0 rounded-full object-cover"
             />
           ) : (
@@ -137,7 +130,7 @@ export function CoverCard({
       ) : (
         meta && <p className="mt-4 text-xs text-muted">{meta}</p>
       )}
-      <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep">
+      <span className="mt-auto pt-4 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep">
         Read more
         <svg className="h-4 w-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
           <path d="M5 12h14M13 6l6 6-6 6" />

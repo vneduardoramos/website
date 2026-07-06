@@ -4,13 +4,20 @@
 Source originals live in assets-src/team-originals/<slug>.png (kept intact).
 Output -> public/assets/images/team/<slug>.png, wired via the seed `photo` field.
 
-The originals are a matched studio shoot (same blue-grey backdrop + lighting), so
-they read cohesively in colour. Treatment:
+The originals share one blue-grey studio backdrop, so they read cohesively in
+colour. Treatment:
   - face-aligned square crop from measured geometry: eye-line ~0.40 from top,
     head (hairline->chin) ~0.66 of frame. Per-person boxes in JOBS.
   - gentle exposure match: sample the top ~62% (head + background, excludes the
     torso/shirt that skews dark), measure luminance, and apply a clamped per-image
     brightness gain toward the GROUP MEDIAN. Preserves hue; just evens brightness.
+
+Note: contrast/saturation are intentionally NOT normalized. They vary naturally
+per person (skin tone, hair, what's in frame), so matching them to a median
+flattens legitimate variation and regresses the on-target majority. Where a
+source was shot under harder light (jc-rodriguez), brightness-matching narrows
+the gap; full parity would need a re-shot frame, not post-processing.
+
 Re-run after replacing an original to refresh, then `rm -rf .next/cache/images`.
 """
 from PIL import Image, ImageStat, ImageEnhance

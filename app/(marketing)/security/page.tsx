@@ -83,7 +83,7 @@ export default function SecurityPage() {
                 Your data, <span className="text-gradient">governed and secure</span>.
               </>
             }
-            description={`Security isn't a phase at ${theme.brand.name}; it's how we build. Every platform we deliver runs on Snowflake's certified foundation, with governance, access control, and audit lineage designed in from the first table.`}
+            description={`Security isn't a phase at ${theme.brand.name}; it's how we build. Everything we deliver runs on Snowflake's certified foundation, with governance, access control, and audit lineage designed in from the first table.`}
           />
         </div>
       </div>
@@ -118,7 +118,7 @@ export default function SecurityPage() {
         <SectionHeading
           eyebrow="Our practices"
           title="How we keep your data safe"
-          intro="The controls we apply on every engagement, not optional add-ons, but the default way we deliver."
+          intro="The controls we apply on every engagement by default, never as optional add-ons."
         />
         <div className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3">
           {practices.map((p) => (
@@ -153,7 +153,7 @@ export default function SecurityPage() {
               "A single governed source of truth, not data spread across tools",
               "Access, masking, and retention policy enforced centrally",
               "Full access history and lineage for audit and incident response",
-              "Open formats (Apache Iceberg) so you keep control of your data",
+              "Open table formats (Apache Iceberg), queryable by any engine, no re-platforming",
             ]}
             image="/assets/images/photos/datacenter.jpg"
             imageAlt="Governed, secure data infrastructure"

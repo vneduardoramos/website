@@ -11,7 +11,7 @@ import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 export const metadata = pageMeta({
   title: "Migrations to Snowflake: Teradata, Oracle, Redshift, Hadoop & more",
   description:
-    "Viewnear migrates legacy warehouses, cloud data warehouses, and Hadoop onto one governed Snowflake foundation: automated code conversion, validated data parity, and a phased cutover that de-risks the move.",
+    "Viewnear migrates legacy warehouses and Hadoop onto one governed Snowflake foundation: automated code conversion, validated parity, and a phased cutover.",
   path: "/migrations",
 });
 
@@ -108,7 +108,7 @@ const PHASES = [
   },
   {
     title: "Convert",
-    body: "SnowConvert translates your SQL, stored procedures, and scripts automatically (BTEQ, PL/SQL, T-SQL), with the Snowpark Migration Accelerator for Spark. We remediate the edge cases by hand.",
+    body: "The bulk of your SQL, stored procedures, and scripts convert automatically; our engineers remediate the edge cases by hand and review every object before it moves on.",
   },
   {
     title: "Migrate & validate",
@@ -179,7 +179,7 @@ export default function MigrationsPage() {
             title="We migrate from all of them"
             intro="Legacy appliances, cloud warehouses, Hadoop, or the database quietly doing warehouse duty. If your data lives there today, we have a path to Snowflake."
           />
-          <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3" variant="pop">
+          <RevealGroup className="mt-12 grid items-start gap-6 md:grid-cols-2 lg:grid-cols-3" variant="pop">
             {SOURCE_GROUPS.map((g) => (
               <div key={g.label} className="card flex h-full flex-col">
                 <h3 className="font-display text-base font-bold text-foreground">{g.label}</h3>
@@ -206,7 +206,7 @@ export default function MigrationsPage() {
                       ) : (
                         <span
                           aria-hidden="true"
-                          className="flex h-6 w-6 flex-none items-center justify-center rounded-md bg-foreground/10 font-mono text-[0.6rem] font-bold text-foreground/50"
+                          className="flex h-6 w-6 flex-none items-center justify-center rounded-md bg-foreground/10 font-mono text-[0.6rem] font-bold text-foreground/70"
                         >
                           {p.name.slice(0, 2)}
                         </span>
@@ -273,7 +273,7 @@ export default function MigrationsPage() {
         <FeatureSplit
           eyebrow="Automated, then proven"
           title="Automated where it counts, validated everywhere"
-          body="SnowConvert translates the SQL, stored procedures, and scripts that took years to write, so the rebuild is measured in weeks, not a from-scratch rewrite. Then automated row, aggregate, and hash reconciliation proves the new system matches the old one, table by table, before anyone cuts over."
+          body="SnowConvert translates the SQL, stored procedures, and scripts that took years to write, with the Snowpark Migration Accelerator covering Spark, so the rebuild is measured in weeks, not a from-scratch rewrite. Then automated row, aggregate, and hash reconciliation proves the new system matches the old one, table by table, before anyone cuts over."
           bullets={[
             "Code conversion for Teradata, Oracle, SQL Server, Redshift, Hive and more",
             "Row, aggregate, and hash checks prove parity against the source",

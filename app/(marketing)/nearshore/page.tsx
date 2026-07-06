@@ -83,7 +83,7 @@ const reasons = [
   {
     Icon: ClockIcon,
     title: "Your time zone, not a handoff",
-    body: "We work from Monterrey in US Central hours. Questions get answered the same afternoon, not the next morning, so reviews and decisions keep pace with your team.",
+    body: "We work from Monterrey on your clock. Questions get answered the same afternoon, not the next morning, so reviews and decisions keep pace with your team.",
   },
   {
     Icon: SnowflakeIcon,
@@ -97,8 +97,8 @@ const reasons = [
   },
   {
     Icon: UsersIcon,
-    title: "A dedicated, boutique team",
-    body: "You get a committed team that knows your data and your goals, not a rotating bench billed by the hour from a delivery pyramid.",
+    title: "The same team from scope to run",
+    body: "You get a committed team that learns your data and your goals and stays on: no re-staffing mid-engagement, no delivery pyramid billed by the hour.",
   },
   {
     Icon: CalendarIcon,
@@ -116,7 +116,7 @@ const reasons = [
 const numbers = [
   { value: "Premier", label: "Snowflake Premier + CoCo Preferred Partner" },
   { value: "SnowPro", label: "SnowPro-certified across the team" },
-  { value: "15+", label: "Years building data and enterprise AI" },
+  { value: "15+", label: "Years building data & enterprise AI" },
   { value: "5", label: "Countries across the Americas" },
 ];
 
@@ -166,7 +166,7 @@ export default async function NearshorePage() {
                 .
               </>
             }
-            description="SnowPro-certified Snowflake experts who work your business hours in the US Central time zone. Delivery moves at the pace of a team down the hall, not a handoff you wait overnight for."
+            description="SnowPro-certified Snowflake experts who work your business hours. Delivery moves at the pace of a team down the hall, not a handoff you wait overnight for."
           >
             <div className="flex flex-wrap justify-center gap-2">
               {HERO_CHIPS.map((c) => (
@@ -192,7 +192,7 @@ export default async function NearshorePage() {
           <SectionHeading
             align="center"
             eyebrow="Why nearshore with Viewnear"
-            title="Senior Snowflake delivery, without the offshore tradeoffs"
+            title="Deep Snowflake delivery, without the offshore tradeoffs"
             intro="Nearshore gives you the cost and capacity advantages of a distributed team while keeping the proximity, hours, and communication of one in the building."
           />
           <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3" variant="pop">
@@ -254,56 +254,24 @@ export default async function NearshorePage() {
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
 
-      {/* Deep-dive benefits */}
-      <Section className="space-y-20 md:space-y-28">
+      {/* The team behind it */}
+      <Section>
         <FeatureSplit
-          eyebrow="Same-time-zone collaboration"
+          eyebrow="Certified nearshore talent"
           title={
             <>
-              Shared hours, <span className="text-gradient">real momentum</span>
+              Nearshore should not mean <span className="text-gradient">junior</span>
             </>
           }
-          body="Working in US Central hours means live design sessions, same-day answers, and reviews that happen while everyone is at their desk. There is no overnight queue between a question and an answer, so projects move at the speed of a team in the next room."
+          body="Our Monterrey team is SnowPro-certified and proven in production. The people who scope your work are the people who build it, and they specialize in exactly one platform: Snowflake, every project, every day."
           bullets={[
-            "Overlapping business hours with US ET, CT, MT, and PT",
-            "Live working sessions, not asynchronous handoffs",
-            "Same-day turnaround on questions and reviews",
-          ]}
-          image="/assets/images/life/monterrey.jpg"
-          imageAlt="Monterrey, Mexico, home of the Viewnear nearshore delivery team"
-        />
-        <FeatureSplit
-          eyebrow="Senior nearshore talent"
-          title={
-            <>
-              Depth at <span className="text-gradient">every level</span>
-            </>
-          }
-          body="Nearshore should not mean junior. Our Monterrey team is SnowPro-certified and proven in production, paired with industry context so the people who scope your work are the people who build it. Snowflake is what we do, not one of ten stacks we dabble in."
-          bullets={[
-            "SnowPro-certified architects and engineers",
+            "SnowPro-certified architects and engineers, proven in production",
             "A rigorous hiring bar for every team member",
-            "Snowflake specialists, end to end",
+            "Direct access to the engineers doing the work",
           ]}
           image="/assets/images/life/team-group.jpg"
           imageAlt="The Viewnear delivery team"
           reverse
-        />
-        <FeatureSplit
-          eyebrow="Clear communication"
-          title={
-            <>
-              Full visibility, <span className="text-gradient">no surprises</span>
-            </>
-          }
-          body="A lack of communication is what derails distributed projects. We keep it transparent with a steady working cadence, direct access to the engineers doing the work, and a fully bilingual team, so requirements land the first time and you always know where a build stands."
-          bullets={[
-            "A regular cadence of working sessions",
-            "Direct access to the people building, at every level",
-            "An English- and Spanish-proficient team",
-          ]}
-          image="/assets/images/life/team-breakfast.jpg"
-          imageAlt="The Viewnear team collaborating"
           cta={{ label: "See how we work", href: "/approach" }}
         />
       </Section>

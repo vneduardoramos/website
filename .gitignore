@@ -31,3 +31,10 @@ prisma/data-export.json
 /playwright-report/
 /e2e/results.json
 /e2e/reposition-evidence/
+/e2e/visual-audit/
+/e2e/visual-audit-before/
+# one-off debug/verify scripts (session scratch, not the test suite)
+/e2e/verify*.mjs
+/e2e/bbox.mjs
+/e2e/shot-proto.mjs
+/e2e/visual-audit.capture.mjs

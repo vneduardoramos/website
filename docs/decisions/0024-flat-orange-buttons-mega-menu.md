@@ -1,7 +1,9 @@
 # 0024: Pastel buttons + mega-menu navigation
 
-- **Status:** Active
-- **Date:** 2026-06-07   **Last updated:** 2026-06-07 (orange → pastel)
+- **Status:** Superseded in part (button fill); see Update below
+- **Date:** 2026-06-07   **Last updated:** 2026-07-05 (button fill: pastel → solid royal-blue)
+
+> **Update (2026-07-05):** the pastel-sky button fill described below was superseded by a **solid royal-blue `#2C53C8` fill with white text** (≈6.6:1 AA); see `docs/CHANGELOG.md` and `docs/design-system.md`. The `--color-pastel*` tokens were removed. The mega-menu decision still stands; this record is kept for history.
 
 ## Context
 

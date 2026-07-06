@@ -19,12 +19,12 @@ type NavItem = {
 // Concise per-link descriptions for the mega-menu, keyed by href (≤6 words).
 const NAV_DESCRIPTIONS: Record<string, string> = {
   "/about": "Who we are",
-  "/partnership": "Premier & CoCo, and why partner",
+  "/partnership": "Premier & CoCo Preferred, verified",
   "/nearshore": "Snowflake delivery in your time zone",
   "/security": "Governance & compliance",
   "/life-at-viewnear": "Culture, roles & benefits",
   "/services": "How we engage: THINK · BUILD · GROW",
-  "/solutions": "What we solve: migrate, AI, govern, apps",
+  "/solutions": "What we solve: migrate, AI, govern, integrate",
   "/migrations": "Off Teradata, Oracle, Hadoop & more",
   "/data-ai": "Every major model, on your data",
   "/platform": "The Snowflake-native stack",
@@ -32,7 +32,7 @@ const NAV_DESCRIPTIONS: Record<string, string> = {
   "/pricing": "Engagement models & cost",
   "/industries/construction-real-estate": "Projects, property & assets",
   "/industries/education": "Schools, universities & training",
-  "/industries/financial-services": "Banking, insurance, asset mgmt",
+  "/industries/financial-services": "Banking, insurance & asset management",
   "/industries/manufacturing": "Production, supply & OEE",
   "/industries/media-entertainment-advertising": "Audience, content & campaigns",
   "/industries/retail-cpg": "Retail, CPG & loyalty",
@@ -49,7 +49,7 @@ const NAV_FEATURED: Record<string, Featured> = {
   Company: {
     eyebrow: "Partnership",
     title: "Snowflake Premier Partner",
-    pitch: "Premier & CoCo Preferred Partner: proven delivery at scale.",
+    pitch: "Premier & CoCo Preferred: direct product-team access and early roadmap visibility.",
     href: "/partnership",
   },
   Services: {
@@ -66,8 +66,8 @@ const NAV_FEATURED: Record<string, Featured> = {
   },
   Resources: {
     eyebrow: "Case Studies",
-    title: "How we deliver",
-    pitch: "Engagements that show our approach and proven delivery.",
+    title: "Proof from the field",
+    pitch: "Real, anonymized engagements with measured outcomes.",
     href: "/case-studies",
   },
 };
@@ -311,19 +311,25 @@ function MenuLink({
   Icon,
   tile,
   onNav,
+  active,
 }: {
   href: string;
   label: string;
   Icon?: ComponentType<SVGProps<SVGSVGElement>>;
   tile?: string;
   onNav: () => void;
+  active?: boolean;
 }) {
   return (
     <li>
       <Link
         href={href}
         onClick={onNav}
-        className="group/card flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-surface2"
+        aria-current={active ? "page" : undefined}
+        className={cn(
+          "group/card flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-surface2",
+          active && "bg-surface2"
+        )}
       >
         {Icon && (
           <span className={cn("mt-0.5 flex h-8 w-8 flex-none items-center justify-center rounded-lg", tile)}>
@@ -331,7 +337,7 @@ function MenuLink({
           </span>
         )}
         <span className="min-w-0">
-          <span className="block text-base font-medium text-foreground">{label}</span>
+          <span className={cn("block text-base font-medium text-foreground", active && "font-semibold text-primaryDeep")}>{label}</span>
           {NAV_DESCRIPTIONS[href] && (
             <span className="mt-0.5 block text-sm text-muted">{NAV_DESCRIPTIONS[href]}</span>
           )}
@@ -436,6 +442,12 @@ export function Nav({ navData }: { navData?: NavData }) {
   const items = theme.nav as unknown as NavItem[];
   const pathname = usePathname();
 
+  // A nav target is "current" when the path matches exactly, or (for section
+  // roots) when the path is nested under it. Home only matches exactly so it
+  // isn't flagged active on every route.
+  const isActiveHref = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
@@ -486,11 +498,18 @@ export function Nav({ navData }: { navData?: NavData }) {
         <ul className="hidden items-center gap-1 lg:flex">
           {items.map((item) => {
             if (!item.children) {
+              const active = isActiveHref(item.href!);
               return (
                 <li key={item.label} className="relative">
                   <Link
                     href={item.href!}
-                    className="rounded-lg px-3 py-2 text-base font-medium text-foreground/80 transition hover:bg-surface2 hover:text-primaryDeep"
+                    aria-current={active ? "page" : undefined}
+                    className={cn(
+                      "rounded-lg px-3 py-2 text-base transition",
+                      active
+                        ? "font-semibold text-primaryDeep"
+                        : "font-medium text-foreground/80 hover:bg-surface2 hover:text-primaryDeep"
+                    )}
                   >
                     {item.label}
                   </Link>
@@ -501,6 +520,7 @@ export function Nav({ navData }: { navData?: NavData }) {
             const isOpen = openMenu === item.label;
             const isIndustries = item.label === "Industries";
             const accent = PANEL_ACCENT[item.label] ?? PANEL_ACCENT.Company;
+            const sectionActive = item.children.some((c) => (c.href ? isActiveHref(c.href) : false));
 
             return (
               // `static` lets the absolute mega-panel anchor to the nav
@@ -520,13 +540,16 @@ export function Nav({ navData }: { navData?: NavData }) {
                   aria-haspopup="true"
                   aria-expanded={isOpen}
                   aria-controls={`mega-${item.label}`}
+                  aria-current={sectionActive ? "true" : undefined}
                   onClick={() => setOpenMenu(isOpen ? null : item.label)}
                   onFocus={() => openMega(item.label)}
                   className={cn(
-                    "flex items-center gap-1 rounded-lg px-3 py-2 text-base font-medium transition",
+                    "flex items-center gap-1 rounded-lg px-3 py-2 text-base transition",
                     isOpen
-                      ? "bg-surface2 text-primaryDeep"
-                      : "text-foreground/80 hover:bg-surface2 hover:text-primaryDeep"
+                      ? "bg-surface2 font-medium text-primaryDeep"
+                      : sectionActive
+                        ? "font-semibold text-primaryDeep"
+                        : "font-medium text-foreground/80 hover:bg-surface2 hover:text-primaryDeep"
                   )}
                 >
                   {item.label}
@@ -591,6 +614,7 @@ export function Nav({ navData }: { navData?: NavData }) {
                                   Icon={flavor ? flavor.icon : undefined}
                                   tile={flavor ? flavor.tile : undefined}
                                   onNav={() => setOpenMenu(null)}
+                                  active={isActiveHref(c.href)}
                                 />
                               );
                             };
@@ -647,7 +671,7 @@ export function Nav({ navData }: { navData?: NavData }) {
 
         <div className="hidden items-center gap-3 lg:flex">
           <Link href="/contact" className="btn-primary group">
-            Contact
+            Let&apos;s talk
             <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
           </Link>
         </div>
@@ -684,45 +708,67 @@ export function Nav({ navData }: { navData?: NavData }) {
       {open && (
         <div id="mobile-menu" className="border-t border-border bg-surface lg:hidden">
           <div className="container-page space-y-1 py-4">
-            {items.map((item) => (
-              <div key={item.label}>
-                {item.children ? (
-                  <details className="group">
-                    <summary className="flex cursor-pointer list-none items-center justify-between py-2 text-lg font-medium text-foreground">
+            {items.map((item) => {
+              const sectionActive = item.children
+                ? item.children.some((c) => (c.href ? isActiveHref(c.href) : false))
+                : false;
+              const active = !item.children && item.href ? isActiveHref(item.href) : false;
+              return (
+                <div key={item.label}>
+                  {item.children ? (
+                    <details className="group" open={sectionActive}>
+                      <summary
+                        className={cn(
+                          "flex cursor-pointer list-none items-center justify-between py-2 text-lg text-foreground",
+                          sectionActive ? "font-semibold text-primaryDeep" : "font-medium"
+                        )}
+                      >
+                        {item.label}
+                        <Chevron className="transition-transform group-open:rotate-180" />
+                      </summary>
+                      <div className="pl-4">
+                        {item.children.map((c) => {
+                          const childActive = c.href ? isActiveHref(c.href) : false;
+                          return (
+                            <Link
+                              key={c.href}
+                              href={c.href}
+                              onClick={() => setOpen(false)}
+                              aria-current={childActive ? "page" : undefined}
+                              className={cn(
+                                "block py-2 text-base hover:text-primaryDeep",
+                                childActive ? "font-semibold text-primaryDeep" : "text-muted"
+                              )}
+                            >
+                              {c.label}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </details>
+                  ) : (
+                    <Link
+                      href={item.href!}
+                      onClick={() => setOpen(false)}
+                      aria-current={active ? "page" : undefined}
+                      className={cn(
+                        "block py-2 text-lg hover:text-primaryDeep",
+                        active ? "font-semibold text-primaryDeep" : "text-foreground"
+                      )}
+                    >
                       {item.label}
-                      <Chevron className="transition-transform group-open:rotate-180" />
-                    </summary>
-                    <div className="pl-4">
-                      {item.children.map((c) => (
-                        <Link
-                          key={c.href}
-                          href={c.href}
-                          onClick={() => setOpen(false)}
-                          className="block py-2 text-base text-muted hover:text-primaryDeep"
-                        >
-                          {c.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </details>
-                ) : (
-                  <Link
-                    href={item.href!}
-                    onClick={() => setOpen(false)}
-                    className="block py-2 text-lg text-foreground hover:text-primaryDeep"
-                  >
-                    {item.label}
-                  </Link>
-                )}
-              </div>
-            ))}
+                    </Link>
+                  )}
+                </div>
+              );
+            })}
             <div className="mt-3 border-t border-border pt-3">
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
                 className={cn("btn-primary", "w-full")}
               >
-                Contact
+                Let&apos;s talk
               </Link>
             </div>
           </div>

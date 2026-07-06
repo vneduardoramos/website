@@ -32,7 +32,7 @@ const WHY_VIEWNEAR = [
   },
   {
     title: "The expertise moved upstream",
-    body: "The scarce skill is no longer typing the code or moving the data. It is framing the right problem, shaping the solution, directing the agents that execute, and judging whether the output can be trusted. That work is more senior, not less, and it is where we concentrate.",
+    body: "The scarce skill is no longer typing the code or moving the data. It is framing the right problem, shaping the solution, directing the agents that execute, and judging whether the output can be trusted. That judgment runs through every engagement, from the architects who scope it to the engineers who ship it.",
   },
   {
     title: "We design the outcome, then the delivery",
@@ -44,7 +44,7 @@ const WHY_VIEWNEAR = [
 const DERISK = [
   { title: "Prove it first", body: "A focused proof of concept before the full build. You commit to scale on evidence, not a slide deck." },
   { title: "You stay in control", body: "Regular steering, a shared backlog, and clear decision gates keep scope, budget, and priorities yours." },
-  { title: "Value from sprint one", body: "Most platforms reach production in 8–16 weeks, with something useful shipped from the very first sprint." },
+  { title: "Value from sprint one", body: "Most engagements reach production in 8–16 weeks, with something useful shipped from the very first sprint." },
   { title: "Built to hand over", body: "Documentation, enablement, and a transition plan in every engagement, so your team runs and extends the work confidently." },
 ];
 
@@ -89,11 +89,65 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* 1) HERO */}
+      {/* 1) HERO (the hero's mono line carries the credential; the badges get
+          their full moment once, in the Proof & Trust band below) */}
       <Hero subhead={hero?.subhead} />
 
-      {/* 2) BUILT FOR OUTCOMES: thesis header, the argument, and the source article
-          as a featured read in its own column. */}
+      {/* PROOF EARLY: who already trusts us, right after the hero */}
+      <section className="pt-2 pb-2 md:pt-4 md:pb-3">
+        <div className="container-page">
+          <LogoRow logos={bands.top} />
+        </div>
+      </section>
+      <CustomersFeature bottomLogos={bands.bottom} />
+
+      {/* 3) THE PATH: customer-first foundation + AI */}
+      <Section className="section-tint">
+        <FeatureSplit
+          eyebrow="Your foundation"
+          title="Data your whole company can trust"
+          body="We stand up the governed Snowflake foundation everything else depends on, so every team works from one current, reliable source instead of five conflicting spreadsheets."
+          bullets={[
+            "One governed source of truth, fed by the ERP, CRM, and SaaS systems you run",
+            "Pipelines that keep it fresh, tested, and trustworthy",
+            "Horizon Catalog governance and lineage, plus Horizon Context: one trusted business context every team and AI agent shares",
+          ]}
+          visual={<FoundationPhoto />}
+          ratio="wide-visual"
+          cta={{ label: "Explore services", href: "/services" }}
+        />
+      </Section>
+
+      {/* A flowing "current" behind the AI row distinguishes it from the
+          foundation split and echoes its data → answer story. */}
+      <section className="section relative overflow-hidden">
+        <SectionDecor variant="flow" />
+        <div className="container-page relative">
+          <FeatureSplit
+            eyebrow="Applied AI"
+            title="AI your teams actually use"
+            body="With the data governed, AI stops being a science project. Cortex runs securely next to your data and grounds every answer in Horizon Context, so it reflects your real business, not a generic model's guesswork."
+            bullets={[
+              "Cortex LLMs and ML running next to your governed data",
+              "Snowflake CoWork and Cortex Agents that act on decisions, not just chart them",
+              "Answers and actions that flow back into the tools your teams already work in",
+            ]}
+            visual={<AiPhoto />}
+            reverse
+            ratio="wide-text"
+            cta={{ label: "Explore services", href: "/services" }}
+          />
+        </div>
+      </section>
+
+      {/* 3) WHAT WE DO */}
+      <ServicesGrid services={services} />
+
+      {/* 3b) WHO WE SERVE: industries */}
+      <IndustriesStrip />
+
+      {/* 4) BUILT FOR OUTCOMES: now that the reader knows what we deliver, the
+          thesis explains how we charge for it (and why that's safer for them). */}
       <Section>
         <div className="max-w-3xl">
           <h2 className="text-balance font-display text-4xl font-bold tracking-tight text-foreground md:text-5xl md:leading-[1.08]">
@@ -149,7 +203,7 @@ export default async function HomePage() {
               <div className="relative aspect-[16/10] w-full overflow-hidden">
                 <Image
                   src="/assets/images/blog/from-hours-to-outcomes-ai-economics-services.jpg"
-                  alt="From Hours to Outcomes article"
+                  alt="From Hours to Outcomes: the economics of AI-era data services"
                   width={720}
                   height={450}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -163,9 +217,9 @@ export default async function HomePage() {
                   From Hours to Outcomes: How AI Changed the Economics of Services
                 </h3>
                 <p className="mt-2 text-base leading-relaxed text-muted">
-                  We don&rsquo;t sell hours or headcount, we design outcomes. AI has shifted
-                  where value is created, moving the expertise upstream into steering
-                  solutions, orchestrating agents, and owning the result.
+                  The full argument: what AI did to the billable hour, where the
+                  expertise actually went, and how outcome-based delivery changes
+                  what you pay for.
                 </p>
                 <span className="mt-5 inline-flex items-center gap-1.5 font-semibold text-primaryDeep">
                   Read the article
@@ -177,65 +231,12 @@ export default async function HomePage() {
         </div>
       </Section>
 
-      {/* PROOF EARLY: who already trusts us, right after the thesis */}
-      <section className="pt-2 pb-2 md:pt-4 md:pb-3">
-        <div className="container-page">
-          <LogoRow logos={bands.top} />
-        </div>
-      </section>
-      <CustomersFeature bottomLogos={bands.bottom} />
-
-      {/* 3) THE PATH: customer-first foundation + AI */}
-      <Section className="section-tint">
-        <FeatureSplit
-          eyebrow="Your foundation"
-          title="Data your whole company can trust"
-          body="We stand up the governed Snowflake foundation everything else depends on, so every team works from one current, reliable source instead of five conflicting spreadsheets."
-          bullets={[
-            "One governed source of truth, not data scattered across tools",
-            "Pipelines that keep it fresh, tested, and trustworthy",
-            "Horizon Catalog governance and lineage, plus Horizon Context: one trusted business context every team and AI agent shares",
-          ]}
-          visual={<FoundationPhoto />}
-          ratio="wide-visual"
-          cta={{ label: "Explore services", href: "/services" }}
-        />
-      </Section>
-
-      {/* A flowing "current" behind the AI row distinguishes it from the
-          foundation split and echoes its data → answer story. */}
-      <section className="section relative overflow-hidden">
-        <SectionDecor variant="flow" />
-        <div className="container-page relative">
-          <FeatureSplit
-            eyebrow="Applied AI"
-            title="AI your teams actually use"
-            body="With the data governed, AI stops being a science project. Cortex runs securely next to your data and grounds every answer in Horizon Context, so it reflects your real business, not a generic model's guesswork."
-            bullets={[
-              "Cortex LLMs and ML running next to your governed data",
-              "Snowflake CoWork and Cortex Agents that act on decisions, not just chart them",
-              "Insight embedded where your teams already work",
-            ]}
-            visual={<AiPhoto />}
-            reverse
-            ratio="wide-text"
-            cta={{ label: "Explore services", href: "/services" }}
-          />
-        </div>
-      </section>
-
-      {/* 3) WHAT WE DO */}
-      <ServicesGrid services={services} />
-
-      {/* 3b) WHO WE SERVE: industries */}
-      <IndustriesStrip />
-
       {/* 4a) DE-RISKED BY DESIGN: quiet the "big bet" fear */}
       <Section className="section-tint">
         <SectionHeading
           eyebrow="Low-risk by design"
           title="A big bet that doesn't feel like one"
-          intro="The way we engage is built to de-risk the decision itself, so committing to data and AI never means committing blind."
+          intro="The way we engage is built to de-risk the decision itself, so committing to data &amp; AI never means committing blind."
         />
         <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-4" variant="pop">
           {DERISK.map((d) => (
@@ -263,8 +264,8 @@ export default async function HomePage() {
               <span className="text-red">6–12 months</span> building the team in-house.
             </p>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
-              A Snowflake-certified team, versed at every level: no hiring runway, no ramp,
-              no key-person risk.
+              A SnowPro-certified team with enterprise depth at every level: no hiring
+              runway, no ramp, no key-person risk.
             </p>
           </div>
           <div className="flex shrink-0 flex-wrap gap-3">
@@ -333,7 +334,7 @@ export default async function HomePage() {
       {/* CTA: restate the stakes, confident close */}
       <CtaBand
         title="Make this the quarter your data starts paying off."
-        subtitle="Every quarter on ungoverned data is decisions made half-blind. Tell us where you are, and we'll map the fastest path to data and AI you can trust."
+        subtitle="Every quarter on ungoverned data means decisions made half-blind. Tell us where you are, and we'll map the fastest path to data &amp; AI you can trust."
       />
     </>
   );

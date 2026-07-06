@@ -8,15 +8,15 @@ Now, the boundary is clearer, and closer.
 
 With Snowflake Postgres, teams can run PostgreSQL workloads directly inside the Snowflake platform, while still preserving a clear separation of purpose between transactional and analytical work.
 
-## That Distinction Is Critical
+## That distinction is critical
 
 Problems start when a single system is expected to handle live application traffic and heavy analytical workloads at the same time. Performance becomes unpredictable, teams become cautious, and every new dashboard feels like a risk.
 
 Separation with purpose is the idea that fixes this. It means being intentional about responsibilities. PostgreSQL exists to serve applications with fast, reliable transactions. Snowflake exists to help teams understand behavior, trends, and outcomes at scale. Snowflake Postgres brings those two together in one managed environment, without forcing them to do each other's jobs.
 
-Modern teams adopt this model not because it is theoretical, but because it aligns with how systems are designed.
+Modern teams adopt this model not out of theory, but because it matches how their systems actually behave.
 
-## Workloads Have Different Shapes
+## Workloads have different shapes
 
 PostgreSQL is optimized for transactional workloads. It excels at frequent inserts, updates, and precise lookups with consistent latency. This is what applications depend on to feel responsive.
 
@@ -26,7 +26,7 @@ Early in a product's life, teams often mix these workloads out of convenience. A
 
 This is not a PostgreSQL problem. It is a workload mismatch.
 
-## A Healthier Model Is Separation With Purpose
+## A healthier model is separation with purpose
 
 With Snowflake Postgres, operational data lives close to the analytical layer, but transactional workloads remain isolated from analytical compute. Data can be shared securely and efficiently, without introducing contention or complex pipelines.
 
@@ -41,7 +41,7 @@ Snowflake's architecture makes this possible. By separating compute from storage
 
 Importantly, this does not require rewriting applications or abandoning PostgreSQL. Developers continue to use familiar Postgres semantics. Analysts continue to work in Snowflake. The difference is that the distance between operations and analytics shrinks, while responsibilities remain clear.
 
-## The Biggest Benefit Is Organizational
+## The biggest benefit is organizational
 
 At Viewnear, we see teams move faster once this model is in place. Fewer moving parts. Less friction between teams. More confidence in both performance and insight.
 

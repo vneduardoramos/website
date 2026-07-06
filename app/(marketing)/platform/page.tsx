@@ -10,7 +10,7 @@ import { theme } from "@/config/theme";
 export const metadata = pageMeta({
   title: "Platform: the Snowflake-native stack",
   description:
-    "We build native on Snowflake end to end (Openflow, dbt, Snowpark, Horizon Catalog, Cortex, Snowflake CoWork, Iceberg) so governance, lineage, and AI context stay in one place. No third-party sprawl.",
+    "We build native on Snowflake end to end (Openflow, dbt, Snowpark, Horizon, Cortex, Iceberg) so governance, lineage, and AI context stay in one place.",
   path: "/platform",
 });
 
@@ -112,8 +112,8 @@ export default function PlatformPage() {
               "AI agents grounded in trusted, certified business context",
               "Open formats (Apache Iceberg) keep your data portable and queryable by any tool",
             ]}
-            image="/assets/images/photos/datacenter.jpg"
-            imageAlt="A single governed Snowflake platform"
+            image="/assets/images/photos/analytics.jpg"
+            imageAlt="Governed analytics running on a single Snowflake platform"
             cta={{ label: "Talk to our team", href: "/contact" }}
           />
         </div>

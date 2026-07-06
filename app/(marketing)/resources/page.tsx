@@ -10,7 +10,7 @@ import { getBlogPosts, getCaseStudies, safe } from "@/lib/queries";
 export const metadata = pageMeta({
   title: "Resources: case studies & blog",
   description:
-    "Case studies and blog from Viewnear, everything in one place.",
+    "Case studies and blog from Viewnear: proof from real Snowflake engagements and field notes on data & AI, all in one place.",
   path: "/resources",
 });
 
@@ -40,7 +40,7 @@ export default async function ResourcesPage() {
             Everything in <span className="text-gradient">one place</span>.
           </>
         }
-        description="Proof and ideas: case studies and field notes from the Viewnear team."
+        description="Case studies from real Snowflake engagements and field notes from the consultants who ran them. If you are planning a data & AI move, this is what it looks like in practice."
       />
 
       {/* Case studies */}
@@ -60,7 +60,7 @@ export default async function ResourcesPage() {
                 kicker={`${cs.sector} · ${cs.region}`}
                 title={cs.title}
                 excerpt={cs.summary}
-                meta={cs.client?.name ? `Client: ${cs.client.name}` : undefined}
+                meta={cs.client?.name ?? undefined}
               />
             ))}
           </div>
@@ -71,7 +71,7 @@ export default async function ResourcesPage() {
       {posts.length > 0 && (
         <Section className="section-warm">
           <div className="flex items-end justify-between gap-4">
-            <SectionHeading eyebrow="From the lab" title="Blog" />
+            <SectionHeading eyebrow="Field notes" title="Blog" />
             <SeeAll href="/blog" label="All posts" />
           </div>
           <div className="mt-10 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3">

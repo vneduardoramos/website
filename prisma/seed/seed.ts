@@ -29,7 +29,7 @@ function readBody(type: string, slug: string): string | null {
 }
 
 async function main() {
-  console.log("Seeding ViewNear content...");
+  console.log("Seeding Viewnear content...");
 
   // --- Admin user ---
   const email = (process.env.SEED_ADMIN_EMAIL || "admin@viewnear.com").toLowerCase();

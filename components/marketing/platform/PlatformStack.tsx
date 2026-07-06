@@ -76,7 +76,7 @@ function LayerCard({ layer }: { layer: Layer }) {
  */
 export function PlatformStack({ layers }: { layers: Layer[] }) {
   return (
-    <div className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2">
+    <div className="mt-12 grid items-start gap-6 md:grid-cols-2">
       {layers.map((l) => (
         <LayerCard key={l.layer} layer={l} />
       ))}

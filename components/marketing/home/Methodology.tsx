@@ -28,7 +28,7 @@ const WHY = [
   },
   {
     title: "Governed and open by design",
-    body: "Built on Apache Iceberg and Open Catalog (Polaris) so your data stays interoperable across engines and clouds: no vendor lock-in.",
+    body: "Built on Apache Iceberg and Open Catalog (Polaris) so your data stays interoperable across engines and clouds.",
   },
   {
     title: "Get it right the first time",

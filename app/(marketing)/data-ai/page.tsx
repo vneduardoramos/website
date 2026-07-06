@@ -12,7 +12,7 @@ import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 export const metadata = pageMeta({
   title: "Data + AI: every major model, on your governed data",
   description:
-    "Snowflake Cortex runs the leading LLMs from every major lab next to your governed data, with no data movement. Viewnear helps you pick the right model for each use case and ship it on Snowflake.",
+    "Snowflake Cortex runs leading LLMs next to your governed data with no data movement. Viewnear helps you pick the right model per use case and ship it.",
   path: "/data-ai",
 });
 
@@ -113,7 +113,7 @@ export default function DataAiPage() {
       <Section className="section-warm">
         <MetricBand metrics={METRICS} />
         <p className="mt-10 text-center text-sm text-muted">
-          Want the full Cortex stack (Analyst, Search, Agents, Document AI)?{" "}
+          Want the full Cortex stack (Analyst, Search, Agents, AISQL)?{" "}
           <Link href="/solutions" className="font-semibold text-primaryDeep underline-offset-4 hover:underline">
             See our solutions &rarr;
           </Link>

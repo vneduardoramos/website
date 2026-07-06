@@ -28,13 +28,13 @@ const groups = [
   {
     title: "Industries",
     links: [
-      { label: "Construction and Real Estate", href: "/industries/construction-real-estate" },
+      { label: "Construction & Real Estate", href: "/industries/construction-real-estate" },
       { label: "Education", href: "/industries/education" },
       { label: "Financial Services", href: "/industries/financial-services" },
       { label: "Manufacturing", href: "/industries/manufacturing" },
       { label: "Media, Entertainment & Advertising", href: "/industries/media-entertainment-advertising" },
       { label: "Retail & CPG", href: "/industries/retail-cpg" },
-      { label: "Technology and Telco", href: "/industries/technology-telco" },
+      { label: "Technology & Telco", href: "/industries/technology-telco" },
     ],
   },
   {
@@ -85,7 +85,7 @@ export function Footer() {
         </div>
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-sm text-muted md:flex-row">
           <p>
-            © {theme.brand.name}, Snowflake Premier Partner serving {theme.brand.region}.
+            © {new Date().getFullYear()} {theme.brand.name}, Snowflake Premier Partner serving {theme.brand.region}.
           </p>
           <div className="flex gap-5">
             <Link href="/privacy" className="transition-colors hover:text-primaryDeep">Privacy</Link>

@@ -45,7 +45,7 @@ See [`decisions/`](decisions/). Current records:
 | [0021](decisions/0021-hero-visual.md) | Hero visual: product screenshot + team card | Superseded by 0029 |
 | [0022](decisions/0022-single-logo-lockup.md) | Single official logo lockup | Active |
 | [0023](decisions/0023-partnerships-and-ia-expansion.md) | Partnerships, certifications & IA expansion (8 pages) | Active |
-| [0024](decisions/0024-flat-orange-buttons-mega-menu.md) | Pastel buttons + mega-menu nav | Active |
+| [0024](decisions/0024-flat-orange-buttons-mega-menu.md) | Buttons (now solid royal-blue) + mega-menu nav | Active |
 | [0025](decisions/0025-company-ia-consolidation.md) | Company menu consolidation (8 to 4) | Active |
 | [0026](decisions/0026-final-industries-and-case-study-spotlight.md) | Final 7 industries, one case study each, prominent spotlight | Active |
 | [0027](decisions/0027-eyebrow-tag.md) | Cut-corner "tag" shape language: eyebrows, pills & chips (themeable via `--eyebrow-accent`) | Active |

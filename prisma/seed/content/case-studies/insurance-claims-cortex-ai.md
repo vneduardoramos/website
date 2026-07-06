@@ -49,7 +49,7 @@ Automation turned a manual workflow into a measurable, auditable, scalable proce
 - Classification accuracy rose from **60% to 95%**, a 35-point gain.
 - Average per-document classification dropped to **4 seconds**.
 - Over **40%** of previously discarded documents were recovered and reintegrated.
-- Classification errors fell by **95%**.
+- Classification errors fell by **nearly 90%**, from a 40% error rate to 5%.
 
 ## Business impact
 

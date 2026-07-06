@@ -23,7 +23,7 @@ export default async function IndustriesPage() {
       <PageHero
         eyebrow="Industries"
         title={<>Solutions tailored to your{" "}<ScrollHighlight color="cyan"><span className="text-gradient">sector</span></ScrollHighlight>.</>}
-        description="From regulated enterprises to high-growth challengers, we bring deep domain expertise and a modern Snowflake-first data stack to the industries we serve across the Americas."
+        description="From regulated enterprises to high-growth challengers: governed, AI-ready data shaped by your sector's rules, KPIs, and systems, across the Americas."
       />
 
       <Section className="section-warm relative overflow-hidden">
@@ -33,8 +33,8 @@ export default async function IndustriesPage() {
           eyebrow="Domain-led delivery"
           title={
             <>
-              Deep expertise,{" "}
-              <span className="text-gradient">tailored to your world</span>.
+              Your sector&rsquo;s data,{" "}
+              <span className="text-gradient">regulations, and KPIs</span>.
             </>
           }
           body="Every sector has its own data, regulations, and pressures. We pair consultants who know your industry with our SnowPro-certified Snowflake engineers to map the problem, shape the roadmap, and build the solution, so what we deliver speaks your language and moves your metrics."
@@ -55,10 +55,10 @@ export default async function IndustriesPage() {
         <SectionHeading
           eyebrow="Sectors we serve"
           title="Find your industry"
-          intro="Each practice pairs sector specialists with our Snowflake-first platform; explore the one closest to your world."
+          intro="Seven practices, each with its own accelerators and compliance patterns; explore the one closest to your world."
         />
         <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3" variant="pop">
-          {industries.map((industry, i) => (
+          {industries.map((industry) => (
             <CoverCard
               key={industry.slug}
               href={`/industries/${industry.slug}`}
@@ -67,23 +67,31 @@ export default async function IndustriesPage() {
               kicker="Industry"
               title={industry.name}
               excerpt={industry.headline}
-              featured={i === 0}
             />
           ))}
+          {/* CTA end-cap: fills the grid's trailing row and turns dead space
+              into a route for sectors not listed. */}
+          <CoverCard
+            href="/contact"
+            kicker="Get in touch"
+            title="Don't see your sector?"
+            excerpt="We work across the Americas. Tell us your data challenge and we'll map the fastest path to value."
+          />
         </RevealGroup>
       </Section>
 
       <ShowcaseBand
         image="/assets/images/photos/analytics.jpg"
-        imageAlt="Industry analytics on a governed Snowflake platform"
+        imageAlt="Industry analytics on a governed Snowflake foundation"
+        veil
         eyebrow="Across the Americas"
         title={
           <>
             Sector depth, on{" "}
-            <span className="text-secondary">one governed platform</span>.
+            <span className="text-secondary">one governed foundation</span>.
           </>
         }
-        body="Whatever your industry, the foundation is the same: trusted, governed data on Snowflake, with sector specialists who speak your language on top of it."
+        body="Whatever your industry, the foundation is the same: trusted, governed data on Snowflake. What changes is everything on top: the sources, the compliance obligations, and the decisions it has to carry."
         cta={{ label: "Discuss your sector", href: "/contact" }}
       />
 

@@ -9,6 +9,21 @@ Confident, precise, and human: a partner who knows the work, not a vendor readin
 - **Do:** be precise and technical; speak to outcomes; stay warm and human.
 - **Don't:** bury value in jargon; overpromise ("revolutionary", "magic"); sound corporate/cold.
 
+## Positioning
+
+**Statement (internal north star):** Viewnear is the consultancy enterprises bring in to make Snowflake, data & AI actually deliver: we build governed, AI-ready **data products** on Snowflake and **integrate them both ways** with the systems the business runs on. Operational data flows in (ERP, CRM, core systems via Openflow and Zero-Copy Integrations); decisions, answers, and AI agents flow back out to the apps and workflows where work happens.
+
+**Three pillars, named consistently:**
+1. **Snowflake, at depth** (Premier + CoCo Preferred, SnowPro, native stack).
+2. **Data & AI that reaches production** (governed foundation, then Cortex analytics and agents).
+3. **Enterprise solutions, integrated both ways** (data products wired into the enterprise landscape, to and from).
+
+Rules:
+- **"Consultancy" is the category word.** Lead with it in identity copy ("a Snowflake, data & AI consultancy for the enterprise"), not just "partner".
+- **"Data products"** is an approved first-class deliverable noun alongside "governed foundation". (Snowflake remains the platform; we never call the deliverable "the/your platform".)
+- **Integration is claimed concretely, both directions.** Name the real mechanisms (Openflow, Zero-Copy Integrations in; Snowsight, Streamlit, APIs, agents out) and real systems (ERP, CRM; SAP, Salesforce, Workday are fine, they are integration endpoints, not the banned BI-competitor list).
+- **Never self-label caliber.** "High-caliber", "world-class", "premium" are hype; caliber is demonstrated through the consultancy claim, outcome pricing, the proof band, and enterprise-grade governance.
+
 ## Punctuation: no em dashes
 
 **Never use an em dash (`—`, U+2014) anywhere** in the codebase: copy, JSX text, string literals, code comments, docs, and content files. Replace each with the punctuation that reads best in context:
@@ -88,15 +103,17 @@ Use these everywhere; never present two as the same metric. Firm-level and deliv
 
 **Firm-level**
 
+Note: the site's stat bands currently lead with credentials (Premier, SnowPro, 15+, 5 countries) rather than volume metrics. The values below stay canonical; if a volume metric returns to a page, use exactly these figures.
+
 | Metric | Value | Shown on |
 |--------|-------|----------|
-| Clients served | **50+** | home stats, about stats |
-| Engagements delivered | **120+** | about (labeled "engagements", never "clients") |
-| Years | **15** / **15+** | home; about (senior experience) |
-| Specialists | **25+** | home, about |
-| Countries (Americas) | **5** | everywhere |
-| Time to first value | **8–16 weeks** | home, services, FAQ |
-| NPS | **90+** | services, about, why-viewnear |
+| Clients served | **50+** | not currently shown (reserved for stat bands) |
+| Engagements delivered | **120+** | not currently shown (always labeled "engagements", never "clients") |
+| Years | **15** / **15+** | home facts band, nearshore, about (senior experience) |
+| Specialists | **25+** | not currently shown |
+| Countries (Americas) | **5** | home, nearshore credential bands |
+| Time to first value | **8–16 weeks** | home, services, approach, FAQ |
+| NPS | **90+** | not currently shown |
 
 **Delivery-level (Services "what engagements deliver")**
 

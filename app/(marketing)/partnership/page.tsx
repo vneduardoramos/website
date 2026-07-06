@@ -11,13 +11,13 @@ import { theme } from "@/config/theme";
 export const metadata = pageMeta({
   title: "Snowflake Partnership",
   description:
-    "Viewnear is a Snowflake Premier Partner and a CoCo Preferred Partner: SnowPro-certified, co-selling with Snowflake, and delivering the full native stack across the Americas.",
+    "Viewnear is a Snowflake Premier Partner and a CoCo Preferred Partner: SnowPro-certified, partnering directly with Snowflake, and delivering the full native stack across the Americas.",
   path: "/partnership",
 });
 
 const unlocks = [
   {
-    title: "Co-sell & joint go-to-market",
+    title: "One plan with your Snowflake team",
     body: "We work alongside your Snowflake account team on architecture, funding, and delivery: aligned incentives and one plan, not a vendor bolted on after the fact.",
   },
   {
@@ -86,7 +86,7 @@ export default function PartnershipPage() {
                 , and CoCo Preferred Partner.
               </>
             }
-            description={`${theme.brand.name} holds two of Snowflake's highest partner recognitions. It means certified depth, co-sell alignment, and early access to what's next, all delivered by one accountable team across the Americas.`}
+            description={`${theme.brand.name} holds two of Snowflake's highest partner recognitions. Together they mean certified depth, a direct line to Snowflake's own team, and early access to what's next, all delivered by one accountable team across the Americas.`}
           />
         </div>
       </div>
@@ -98,7 +98,7 @@ export default function PartnershipPage() {
       <Section>
         <SectionHeading
           eyebrow="What it unlocks for you"
-          title="Why the partnership matters to your business"
+          title="Faster to value, with less risk and lower cost"
           intro="Certification isn't a logo on a slide; it changes how fast, how safely, and how affordably you get to value."
         />
         <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2" variant="pop">
@@ -118,7 +118,7 @@ export default function PartnershipPage() {
           <SectionHeading
             eyebrow="Build vs. partner"
             title="The honest comparison"
-            intro="Every leader weighs building in-house, hiring a global consultancy, or partnering with a specialist. Here's how the options actually stack up."
+            intro="Every leader weighs building in-house, hiring a global systems integrator, or partnering with a specialist. Here's how the options actually stack up."
           />
 
           {/* Desktop table */}
@@ -128,7 +128,7 @@ export default function PartnershipPage() {
                 <tr className="border-b border-border bg-surface text-left">
                   <th className="px-5 py-4 font-medium text-muted">&nbsp;</th>
                   <th className="px-5 py-4 font-display font-bold text-foreground">In-house build</th>
-                  <th className="px-5 py-4 font-display font-bold text-foreground">Global consultancy</th>
+                  <th className="px-5 py-4 font-display font-bold text-foreground">Global systems integrator</th>
                   <th className="px-5 py-4 font-display font-bold text-primaryDeep">Viewnear</th>
                 </tr>
               </thead>
@@ -156,7 +156,7 @@ export default function PartnershipPage() {
                     <dd className="text-right text-muted">{r.inhouse}</dd>
                   </div>
                   <div className="flex justify-between gap-4">
-                    <dt className="text-muted">Consultancy</dt>
+                    <dt className="text-muted">Global SI</dt>
                     <dd className="text-right text-muted">{r.big3}</dd>
                   </div>
                   <div className="flex justify-between gap-4 border-t border-border pt-2">
@@ -182,26 +182,26 @@ export default function PartnershipPage() {
                 Depth that a <span className="text-gradient">generalist can&rsquo;t match</span>
               </>
             }
-            body="A Premier Partner is measured on certified people and verified outcomes, not breadth of logos. We bring Snowflake's newest capabilities, co-sell support, and certified delivery to every engagement, so you move faster with less risk than a generalist or an in-house ramp."
+            body="A Premier Partner is measured on certified people and verified outcomes, not breadth of logos. We know the full Snowflake stack and work hand in hand with Snowflake's own team on every engagement, so you move faster with less risk than a generalist or an in-house ramp."
             bullets={[
-              "SnowPro-certified architects and engineers, end to end",
-              "Co-sell alignment with your Snowflake account team",
+              "SnowPro-certified architects and engineers, from design to production",
+              "Working directly with your Snowflake account team",
               "Early access to Cortex, Openflow, Horizon, and CoCo",
-              "One accountable team: no hand-offs across a rotating bench",
+              "One accountable team: the same named people from kickoff to handover",
             ]}
             image="/assets/images/life/team-booth.jpg"
             imageAlt="The Viewnear team demoing to attendees at a Snowflake event"
             reverse
-            cta={{ label: "Explore our services", href: "/services" }}
+            cta={{ label: "Explore services", href: "/services" }}
           />
-          <LeadershipStrip label="Your team, not a rotating bench." className="mt-10" />
+          <LeadershipStrip label="The people you meet are the people who deliver." className="mt-10" />
         </div>
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
 
       <CtaBand
         title="Put a certified partner on it."
-        subtitle="Tell us where you are with Snowflake (procurement, migration, or AI) and we'll bring the certified team and co-sell support to get you there."
+        subtitle="Tell us where you are with Snowflake (procurement, migration, or AI) and we'll bring the certified team, with Snowflake at the table, to get you there."
       />
     </>
   );

@@ -12,7 +12,7 @@ import { useEffect, useRef, useState } from "react";
 export function StatCounter({
   value,
   label,
-  valueClassName = "font-display text-4xl font-bold text-foreground md:text-5xl",
+  valueClassName = "font-display text-4xl font-bold text-foreground lg:text-5xl",
 }: {
   value: string;
   label: string;

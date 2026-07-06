@@ -140,6 +140,8 @@ export default async function BlogPostPage({
                   <img
                     src={authorPhoto}
                     alt={author.name}
+                    loading="lazy"
+                    decoding="async"
                     className="h-12 w-12 shrink-0 rounded-full object-cover"
                   />
                 ) : (
@@ -186,23 +188,14 @@ export default async function BlogPostPage({
         <div className="container-page mt-10">
           <div className="relative aspect-[2/1] w-full overflow-hidden rounded-3xl bg-surface2 shadow-lg md:aspect-[21/9]">
             <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-deep/20 to-transparent" />
-            {coverIsRemote ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={cover}
-                alt={post.title}
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-            ) : (
-              <Image
-                src={cover}
-                alt={post.title}
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 1024px"
-                className="object-cover"
-              />
-            )}
+            <Image
+              src={cover}
+              alt={post.title}
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="object-cover"
+            />
           </div>
         </div>
       ) : null}

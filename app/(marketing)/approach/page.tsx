@@ -6,28 +6,28 @@ import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { Methodology } from "@/components/marketing/home/Methodology";
 
 export const metadata = pageMeta({
-  title: "Our Approach",
+  title: "Our approach",
   description:
-    "How Viewnear delivers: a proven Snowflake methodology plus engagement governance that de-risks the buy with fixed timelines, steering reviews, POC-before-build gates, and a clean hand-over.",
+    "How Viewnear delivers: a proven Snowflake methodology plus engagement governance, with fixed timelines, steering reviews, POC gates, and a clean handover.",
   path: "/approach",
 });
 
 const runPhases = [
   {
     title: "A fixed 8–16 week arc",
-    body: "Most initial platforms reach production in 8–16 weeks, scoped to your data and use cases, with value delivered from the first sprint.",
+    body: "Most initial builds reach production in 8–16 weeks, scoped to your data and use cases, with value delivered from the first sprint.",
   },
   {
     title: "Steering & transparency",
     body: "Regular steering reviews, a shared backlog, and clear decision gates keep sponsors in control of scope, budget, and priorities throughout.",
   },
   {
-    title: "De-risked by design",
+    title: "Proof before scale",
     body: "We prove the approach with a focused proof of concept before the full build, so you commit to scale on evidence, not a slide deck.",
   },
   {
     title: "Built to hand over",
-    body: "Documentation, enablement, and a transition plan in every engagement, so your team runs and extends the work confidently.",
+    body: "Runbooks, documentation, and enablement sessions ship with the build, plus a transition plan that names who runs what when we step back.",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function ApproachPage() {
                 Delivery you can <span className="text-gradient">govern</span>.
               </>
             }
-            description="A proven Snowflake methodology, plus the governance that de-risks the engagement itself, so the buy is as low-risk as the outcome is high."
+            description="A proven Snowflake methodology, plus the governance that de-risks the engagement itself, so you always know where the work stands."
           />
         </div>
       </div>
@@ -76,8 +76,8 @@ export default function ApproachPage() {
         <div className="relative">
           <SectionHeading
             eyebrow="How engagements run"
-            title="De-risked, start to finish"
-            intro="Clear timelines, steering, and a clean hand-over: the questions every sponsor asks, answered up front."
+            title="Checkpoints you control"
+            intro="Clear timelines, steering, and a clean handover: the questions every sponsor asks, answered up front."
           />
           <div className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-4">
             {runPhases.map((r) => (

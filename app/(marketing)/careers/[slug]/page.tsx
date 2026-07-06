@@ -152,7 +152,7 @@ export default async function CareerDetailPage({
           <SectionHeading
             eyebrow="Life at Viewnear"
             title="More than the role"
-            intro="You'd join a young, high-performance team that is outcome-led, AI-native, and remote-augmented. Here is some of what comes with it."
+            intro="You'd join a team that is judged on outcomes, works AI-native, and pairs two hubs with remote depth. Here is some of what comes with it."
           />
           <BenefitsGrid items={BENEFITS} className="mt-10" />
           <div className="mt-8">

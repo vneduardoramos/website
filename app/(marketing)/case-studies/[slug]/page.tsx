@@ -19,11 +19,14 @@ import { pageMeta } from "@/lib/seo";
 
 export const revalidate = 60;
 
+// Qualitative, study-agnostic placeholders for CMS-created studies without their
+// own metrics. Deliberately NOT the firm-wide delivery band (0014 keeps
+// per-case-study outcomes study-specific; the band is not one client's result).
 const FALLBACK_METRICS = [
-  { value: "40%", label: "Faster reporting cycles" },
-  { value: "1", label: "Governed source of truth" },
-  { value: "8 wks", label: "From kickoff to value" },
-  { value: "99.9%", label: "Pipeline uptime" },
+  { value: "One", label: "Governed source of truth" },
+  { value: "Medallion", label: "Bronze to Gold foundation" },
+  { value: "Built in", label: "Security and lineage" },
+  { value: "8–16 wks", label: "From kickoff to first value" },
 ];
 
 export async function generateStaticParams() {
@@ -37,7 +40,7 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   const cs = await getCaseStudyBySlug(params.slug);
-  if (!cs) return { title: "Case Study" };
+  if (!cs) return { title: "Case study" };
   return pageMeta({
     title: cs.title,
     description: cs.summary,
@@ -106,7 +109,7 @@ export default async function CaseStudyDetailPage({
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Case Studies", href: "/case-studies" },
+              { label: "Case studies", href: "/case-studies" },
               { label: cs.title },
             ]}
           />
@@ -148,7 +151,7 @@ export default async function CaseStudyDetailPage({
           <div className="bg-grid pointer-events-none absolute inset-0 opacity-30" />
           <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-accent/20 blur-3xl" />
           <div className="relative">
-            <p className="eyebrow mb-8 text-center">Outcomes that moved the needle</p>
+            <p className="eyebrow mb-8 text-center">What changed</p>
             <MetricBand metrics={metrics} />
           </div>
         </div>
@@ -224,7 +227,7 @@ export default async function CaseStudyDetailPage({
           image={heroImage}
           imageAlt={`${cs.title} results`}
           reverse
-          cta={{ label: "Start your project", href: "/contact" }}
+          cta={{ label: "Start a conversation", href: "/contact" }}
         />
       </Section>
 
@@ -277,9 +280,7 @@ export default async function CaseStudyDetailPage({
                   kicker={`${other.sector} · ${other.region}`}
                   title={other.title}
                   excerpt={other.summary}
-                  meta={
-                    other.client?.name ? `Client: ${other.client.name}` : undefined
-                  }
+                  meta={other.client?.name ?? undefined}
                 />
               ))}
             </div>

@@ -26,12 +26,13 @@ const SERVICE_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
 };
 const iconFor = (slug: string) => SERVICE_ICONS[slug] ?? SnowflakeIcon;
 
-// Subtle, persuasive company facts for the no-card filler (left column, row 2).
-const FILLER_POINTS = [
-  "Snowflake Premier + CoCo Preferred Partner",
-  "SnowPro-certified, end to end",
-  "15+ years in data & enterprise AI",
-  "Most platforms live in 8–16 weeks",
+// No-card tile (left column, row 2): the engagement models, the one commercial
+// fact the home page doesn't state anywhere else. Mirrors /pricing.
+const ENGAGE_POINTS = [
+  "Fixed cost: a defined outcome at a set price",
+  "Time & materials: discovery and evolving scope",
+  "Team augmentation: certified depth inside your team",
+  "Most foundations go live in 8–16 weeks",
 ];
 
 export function ServicesGrid({ services }: { services: Service[] }) {
@@ -64,7 +65,7 @@ export function ServicesGrid({ services }: { services: Service[] }) {
         <div className="mx-auto max-w-2xl text-center">
           <span className="chip">What we offer</span>
           <h2 className="mt-5 font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            One accountable team, the whole data stack
+            A single accountable team, the whole data stack
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted">
             From governed foundations and trusted pipelines to Cortex-powered
@@ -96,25 +97,25 @@ export function ServicesGrid({ services }: { services: Service[] }) {
           {/* Top-right tile (Data Engineering) */}
           {rest[0] && renderCard(rest[0])}
 
-          {/* No-card filler: subtle, persuasive company facts (left column, row 2) */}
+          {/* No-card tile: how to engage (left column, row 2) */}
           <div className="flex flex-col justify-center py-2 lg:col-span-2 lg:pr-6">
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted/60">The short version</p>
-            <h3 className="mt-3 max-w-xl text-balance font-display text-lg font-semibold leading-snug text-foreground/50 md:text-xl">
-              A certified Snowflake team that takes you from strategy to production.
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">How we engage</p>
+            <h3 className="mt-3 max-w-xl text-balance font-display text-lg font-semibold leading-snug text-foreground/70 md:text-xl">
+              Three ways to buy the same accountable delivery.
             </h3>
             <ul className="mt-5 grid max-w-xl gap-x-8 gap-y-3 sm:grid-cols-2">
-              {FILLER_POINTS.map((p) => (
-                <li key={p} className="flex items-start gap-2.5 text-sm leading-snug text-muted/70">
+              {ENGAGE_POINTS.map((p) => (
+                <li key={p} className="flex items-start gap-2.5 text-sm leading-snug text-muted">
                   <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary/40" />
                   <span>{p}</span>
                 </li>
               ))}
             </ul>
             <Link
-              href="/partnership"
-              className="group mt-6 inline-flex items-center gap-1 text-sm font-medium text-muted/70 transition-colors hover:text-primaryDeep"
+              href="/pricing"
+              className="group mt-6 inline-flex items-center gap-1 text-sm font-medium text-muted transition-colors hover:text-primaryDeep"
             >
-              <span className="link-underline">What sets us apart</span>
+              <span className="link-underline">How pricing works</span>
               <span className="transition-transform group-hover:translate-x-0.5">→</span>
             </Link>
           </div>

@@ -1,8 +1,7 @@
 "use client";
 
-import type { ComponentType, SVGProps } from "react";
 import { Img as Image } from "@/components/marketing/Img";
-import { SnowflakeIcon, CheckIcon, CpuIcon, ShieldIcon } from "@/components/marketing/home/Icons";
+import { SnowflakeIcon, CheckIcon, CpuIcon } from "@/components/marketing/home/Icons";
 import { useParallax } from "@/components/marketing/Motion";
 
 /**
@@ -33,42 +32,17 @@ export function ParallaxVisual({
 }
 
 /**
- * Leveled-up real-photo visual for a FeatureSplit: the photo sits in a framed
- * card with a soft royal glow, a depth scrim + subtle brand tint, and a single
- * floating glass "proof chip" that ties the image to the data claim: premium
- * and on-brand, not a bare stock photo.
+ * Real-photo visual for a FeatureSplit: the photo sits in a framed card with a
+ * soft royal glow and a subtle brand tint. Clean image, no overlays baked in.
  */
-function PhotoFrame({
-  src,
-  alt,
-  Icon,
-  label,
-  sub,
-}: {
-  src: string;
-  alt: string;
-  Icon: ComponentType<SVGProps<SVGSVGElement>>;
-  label: string;
-  sub: string;
-}) {
+function PhotoFrame({ src, alt }: { src: string; alt: string }) {
   return (
     <div className="relative">
       <div className="pointer-events-none absolute -inset-6 -z-10 rounded-[2.5rem] bg-royal/15 blur-3xl" />
       <div className="relative overflow-hidden rounded-3xl border border-border/70 shadow-soft-lg">
         <div className="relative aspect-[4/3] w-full">
           <Image src={src} alt={alt} fill sizes="(min-width: 768px) 45vw, 100vw" className="object-cover" />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/45 via-transparent to-transparent" />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-royal/15 via-transparent to-secondary/10" />
-          {/* subtle label, imprinted on the photo (no solid card) */}
-          <div className="pointer-events-none absolute bottom-3 left-3 flex items-center gap-2 sm:bottom-4 sm:left-4">
-            <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white/15 text-white ring-1 ring-white/30 backdrop-blur-md">
-              <Icon className="h-3.5 w-3.5" />
-            </span>
-            <span className="[text-shadow:0_1px_8px_rgb(0_0_0/0.55)]">
-              <span className="block font-display text-xs font-semibold leading-tight text-white">{label}</span>
-              <span className="block font-mono text-[0.55rem] uppercase tracking-[0.12em] text-white/75">{sub}</span>
-            </span>
-          </div>
         </div>
       </div>
     </div>
@@ -81,9 +55,6 @@ export function FoundationPhoto() {
     <PhotoFrame
       src="/assets/images/photos/data-foundation.jpg"
       alt="A team reviewing dashboards, reports, and charts together around one shared, governed set of data."
-      Icon={ShieldIcon}
-      label="One governed source of truth"
-      sub="Trusted by every team"
     />
   );
 }
@@ -94,9 +65,6 @@ export function AiPhoto() {
     <PhotoFrame
       src="/assets/images/photos/ai-teams.jpg"
       alt="A team collaborating with analytics and AI tools on their screens in a bright modern office."
-      Icon={CpuIcon}
-      label="Grounded in your data"
-      sub="Cortex AI in the workflow"
     />
   );
 }

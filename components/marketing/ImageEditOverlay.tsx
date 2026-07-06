@@ -210,7 +210,7 @@ export function ImageEditOverlay({ request, onClose }: { request: EditRequest; o
         <div className="flex-1 overflow-y-auto px-6 py-5">
           <div className="grid gap-6 md:grid-cols-[1.15fr_1fr]">
 
-            {/* LEFT — true-shape preview + framing controls */}
+            {/* LEFT: true-shape preview + framing controls */}
             <div className="flex flex-col gap-4">
               <div className="flex items-center justify-center rounded-xl bg-surface2 p-3">
                 <div
@@ -256,7 +256,7 @@ export function ImageEditOverlay({ request, onClose }: { request: EditRequest; o
               </label>
             </div>
 
-            {/* RIGHT — replace the image (optional) */}
+            {/* RIGHT: replace the image (optional) */}
             <div className="flex flex-col gap-4">
               <p className="text-sm font-semibold text-foreground">Replace image <span className="font-normal text-muted">(optional)</span></p>
 

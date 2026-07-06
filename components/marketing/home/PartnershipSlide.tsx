@@ -19,10 +19,10 @@ export function PartnershipSlide() {
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-muted md:text-xl">
             Viewnear is a Snowflake Premier Partner, recognized in Snowflake&apos;s{" "}
-            <span className="text-foreground">CoCo Preferred Partner</span> program. At Snowflake Summit
-            2026 we were featured among the partners driving the most momentum on Snowflake CoCo,
-            the data-native coding agent, out of 1,300+ worldwide, alongside firms like Accenture,
-            Deloitte, IBM, and Capgemini.
+            <span className="text-foreground">CoCo Preferred Partner</span> program. At Snowflake
+            Summit 2026, out of 1,300+ partners worldwide, we were featured among those driving
+            the most momentum on Snowflake CoCo, the data-native coding agent, alongside
+            Accenture, Deloitte, IBM, and Capgemini.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">

@@ -30,7 +30,7 @@ export default function TermsPage() {
 
       <Section>
         <div className="prose-vn max-w-3xl">
-          <p className="text-muted">Last updated: 7 June 2026</p>
+          <p className="text-muted">Last updated: June 7, 2026</p>
 
           <p>
             These Terms of Service (&ldquo;Terms&rdquo;) govern your access to and use of the{" "}

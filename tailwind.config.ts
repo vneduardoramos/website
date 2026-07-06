@@ -4,7 +4,8 @@ import type { Config } from "tailwindcss";
 const withVar = (name: string) => `rgb(var(${name}) / <alpha-value>)`;
 
 const config: Config = {
-  darkMode: "class",
+  // Single bright "Glacier" theme by design: no `dark:` variants are used
+  // anywhere, so no darkMode strategy is configured (see docs/design-system.md).
   content: [
     "./app/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",

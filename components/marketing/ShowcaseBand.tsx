@@ -20,6 +20,7 @@ export function ShowcaseBand({
   align = "left",
   tintClass,
   scrim = "default",
+  veil = false,
 }: {
   image: string;
   imageAlt: string;
@@ -32,6 +33,9 @@ export function ShowcaseBand({
   tintClass?: string;
   /** "light" lets more of the photo show through (still legible for white text). */
   scrim?: "default" | "light";
+  /** Add a uniform veil on top of the directional scrim so a busy/sharp photo
+   *  recedes evenly across the full width (not just the text side). */
+  veil?: boolean;
 }) {
   const centered = align === "center";
   const light = scrim === "light";
@@ -48,6 +52,9 @@ export function ShowcaseBand({
 
       {/* Brand scrim: directional navy gradient for legible white text over any photo. */}
       <div aria-hidden className="absolute inset-0" style={{ background: scrimBg }} />
+      {veil && (
+        <div aria-hidden className="absolute inset-0" style={{ background: "rgb(var(--color-foreground) / 0.34)" }} />
+      )}
       {tintClass && (
         <div
           aria-hidden

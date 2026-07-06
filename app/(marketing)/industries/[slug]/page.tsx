@@ -141,7 +141,7 @@ export default async function IndustryDetailPage({
                 <span className="text-gradient">{industry.name}</span>.
               </>
             }
-            body={`We pair consultants with deep ${industry.name.toLowerCase()} expertise with our SnowPro-certified Snowflake engineers (we're a Snowflake Premier Partner). Together they map your challenges, shape the roadmap, and build the data models, governance, and dashboards, so the solution speaks your language and moves the metrics your teams already report on.`}
+            body={`You won't spend the first month explaining ${industry.name.toLowerCase()} to us. The team arrives knowing the sector's systems, regulations, and reporting rhythms, then builds the data models, governance, and dashboards against the metrics your teams already answer for.`}
             bullets={flavor.bullets}
             image={`/assets/images/industries/${industry.slug}-2.jpg`}
             imageAlt={`${industry.name} data and AI solutions built on Snowflake`}
@@ -151,12 +151,13 @@ export default async function IndustryDetailPage({
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
 
-      {/* Sector metrics - specific to this industry */}
+      {/* Sector metrics: target ranges typical for the sector, not claimed
+          engagement results (the real proof is the featured case study below). */}
       <Section>
         <SectionHeading
           eyebrow="By the numbers"
-          title="Impact you can expect"
-          intro={`Outcomes from our ${industry.name.toLowerCase()} engagements across the Americas.`}
+          title="What we build toward"
+          intro={`The targets a ${industry.name.toLowerCase()} engagement is scoped against, agreed with you up front.`}
         />
         <div className="mt-12">
           <MetricBand metrics={flavor.metrics} />

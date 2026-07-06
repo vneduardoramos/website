@@ -43,7 +43,6 @@ export default async function ContactPage() {
         <SectionDecor variant="blobs" />
         <div className="relative">
           <PageHero
-            align="left"
             eyebrow={`Contact ${theme.brand.name}`}
             title={
               <>
@@ -53,7 +52,7 @@ export default async function ContactPage() {
             }
             description={
               contact?.blurb ??
-              "Tell us about your data and AI ambitions. Whether you are modernizing on Snowflake or starting from scratch, we are here to help."
+              "Tell us about your data & AI ambitions. Whether you are modernizing on Snowflake or starting from scratch, we'll map the fastest path to governed, AI-ready data."
             }
           />
         </div>
@@ -61,7 +60,7 @@ export default async function ContactPage() {
 
       <Section className="section-warm">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
-          <div>
+          <div className="order-2 lg:order-1">
             <div>
               <p className="text-sm text-muted">Prefer email?</p>
               <a
@@ -107,7 +106,7 @@ export default async function ContactPage() {
             </div>
           </div>
 
-          <div>
+          <div className="order-1 lg:order-2">
             <div className="mb-5">
               <p className="eyebrow">Verified credentials</p>
               <div className="mt-3 flex flex-wrap gap-2">

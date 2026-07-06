@@ -150,7 +150,7 @@ export const INDUSTRY_FLAVOR: Record<string, IndustryFlavor> = {
     metrics: [
       { value: "2×", label: "Faster institutional reporting" },
       { value: "1", label: "Source for student success" },
-      { value: "100%", label: "Statutory reporting automated" },
+      { value: "Automated", label: "Statutory & funder reporting" },
       { value: "SnowPro", label: "Certified delivery team" },
     ],
     bullets: [
@@ -174,7 +174,7 @@ export const INDUSTRY_FLAVOR: Record<string, IndustryFlavor> = {
     metrics: [
       { value: "70%", label: "Less time on regulatory reporting" },
       { value: "1", label: "Governed source of truth" },
-      { value: "100%", label: "Auditable data lineage" },
+      { value: "Full", label: "Lineage on every reported number" },
       { value: "Premier", label: "Snowflake Premier Partner" },
     ],
     bullets: [
@@ -189,7 +189,7 @@ export const INDUSTRY_FLAVOR: Record<string, IndustryFlavor> = {
     pattern: "Discrete · Process · Supply Chain",
     accentVar: "--color-success",
     compliance:
-      "Traceability from supplier to shipment, governed end to end for quality and audit.",
+      "Traceability from supplier to shipment, governed at every step for quality and audit.",
     decor: "flow", // assembly-line flow
     tile: "bg-success/15 text-success",
     bar: "bg-success",
@@ -198,13 +198,13 @@ export const INDUSTRY_FLAVOR: Record<string, IndustryFlavor> = {
     metrics: [
       { value: "12 pts", label: "OEE improvement" },
       { value: "360°", label: "Shop-floor & supply view" },
-      { value: "99.9%", label: "Pipeline uptime" },
+      { value: "3×", label: "More reliable pipelines" },
       { value: "SnowPro", label: "Certified delivery team" },
     ],
     bullets: [
       "Shop-floor, sensor, and ERP data unified into one governed, trusted source",
       "OEE and quality analytics that expose the real cost drivers",
-      "End-to-end supply-chain visibility from supplier to shipment",
+      "Supply-chain visibility from raw material to delivered order",
       "Data foundations for predicting failures before they happen",
     ],
   },
@@ -222,7 +222,7 @@ export const INDUSTRY_FLAVOR: Record<string, IndustryFlavor> = {
     metrics: [
       { value: "Real-time", label: "Campaign attribution" },
       { value: "1", label: "Unified audience view" },
-      { value: "100%", label: "Channels connected" },
+      { value: "Minutes", label: "From airing to attribution" },
       { value: "SnowPro", label: "Certified delivery team" },
     ],
     bullets: [
@@ -246,11 +246,11 @@ export const INDUSTRY_FLAVOR: Record<string, IndustryFlavor> = {
     metrics: [
       { value: "2.5×", label: "Faster inventory decisions" },
       { value: "−15%", label: "Perishable shrink" },
-      { value: "100%", label: "Online + in-store unified" },
+      { value: "One", label: "View of online + in-store demand" },
       { value: "SnowPro", label: "Certified delivery team" },
     ],
     bullets: [
-      "Online and in-store data unified into one near-real-time platform",
+      "Online and in-store data unified into one near-real-time, governed foundation",
       "Inventory and perishables analytics that cut shrink",
       "Production, food cost, and logistics in a single view",
       "Customer and loyalty performance tracked alongside margin",
@@ -270,7 +270,7 @@ export const INDUSTRY_FLAVOR: Record<string, IndustryFlavor> = {
     metrics: [
       { value: "Early", label: "Churn-risk warning" },
       { value: "1", label: "Governed source of truth" },
-      { value: "100%", label: "Usage events tracked" },
+      { value: "Full-volume", label: "Telemetry, governed & query-ready" },
       { value: "Premier", label: "Snowflake Premier Partner" },
     ],
     bullets: [
@@ -294,16 +294,16 @@ export const DEFAULT_FLAVOR: IndustryFlavor = {
   glow: "bg-primary/15",
   text: "text-primaryDeep",
   metrics: [
-    { value: "50%", label: "Less time on manual reporting" },
-    { value: "2.5×", label: "Faster decision cycles" },
-    { value: "99.9%", label: "Pipeline uptime" },
-    { value: "30%", label: "Fewer data incidents" },
+    { value: "8–16 wks", label: "To first value in production" },
+    { value: "60%", label: "Faster time to first insight" },
+    { value: "3×", label: "More reliable pipelines" },
+    { value: "40%", label: "Lower platform run cost" },
   ],
   bullets: [
     "Sector-specific data models and governance built in from the start",
     "Industry consultants paired with SnowPro-certified Snowflake engineers",
     "Measurable outcomes tied to the metrics your teams report on",
-    "A roadmap that scales from first win to platform-wide adoption",
+    "A roadmap that scales from first win to company-wide adoption",
   ],
 };
 

@@ -25,20 +25,20 @@ export default async function AdminDashboard() {
           <Link key={model.key} href={`/admin/${model.key}`} className="card card-hover">
             <div className="flex items-center justify-between">
               <span className="font-display text-lg font-bold">{model.plural}</span>
-              <span className="font-mono text-2xl text-primary">{count}</span>
+              <span className="font-mono text-2xl text-primaryDeep">{count}</span>
             </div>
           </Link>
         ))}
         <Link href="/admin/leads" className="card card-hover">
           <div className="flex items-center justify-between">
             <span className="font-display text-lg font-bold">Leads</span>
-            <span className="font-mono text-2xl text-accent">{leadCount}</span>
+            <span className="font-mono text-2xl text-accentDeep">{leadCount}</span>
           </div>
         </Link>
         <Link href="/admin/media" className="card card-hover">
           <div className="flex items-center justify-between">
             <span className="font-display text-lg font-bold">Media</span>
-            <span className="font-mono text-2xl text-accent">{mediaCount}</span>
+            <span className="font-mono text-2xl text-accentDeep">{mediaCount}</span>
           </div>
         </Link>
       </div>

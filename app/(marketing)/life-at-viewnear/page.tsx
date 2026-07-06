@@ -19,7 +19,7 @@ export const revalidate = 60;
 export const metadata = pageMeta({
   title: "Life at Viewnear",
   description:
-    "Life at Viewnear, a young company headed to greatness. Outcome-led, AI-native, team-powered: how we work, what we stand for, and the benefits behind it (healthcare, dental, emotional wellness, and more).",
+    "Outcome-led, AI-native, team-powered: how we work at Viewnear, what we stand for, and the benefits behind it, from healthcare to emotional wellness.",
   path: "/life-at-viewnear",
 });
 
@@ -263,7 +263,7 @@ const model = [
   {
     icon: "sparkles" as const,
     title: "AI-native delivery",
-    body: "AI is embedded in how we work: our operating model, our tooling, our delivery rhythm. AI-native execution plus human judgment lets us deliver parallel premium work at full-time capacity, without ever lowering the bar.",
+    body: "AI is embedded in how we work: our operating model, our tooling, our delivery rhythm. AI-native execution plus human judgment means one team ships more work in parallel, with the same people owning it throughout.",
   },
   {
     icon: "users" as const,
@@ -288,8 +288,8 @@ const meaning = [
   {
     icon: "scale" as const,
     title: "Balance",
-    body: "Sustained excellence requires recovery. Time off is flexible (no fixed cap) provided outcomes stay strong and teams stay covered.",
-    tint: "bg-secondary/15 text-primaryDeep",
+    body: "Great work over the long run requires recovery. Time off is flexible (no fixed cap) provided outcomes stay strong and teams stay covered.",
+    tint: "bg-primary/15 text-primaryDeep",
   },
   {
     icon: "award" as const,
@@ -300,14 +300,12 @@ const meaning = [
   {
     icon: "heart" as const,
     title: "Pride",
-    body: "Be part of a firm known for excellence, not for discounting.",
-    tint: "bg-accent/15 text-accent",
+    body: "Hard problems, real ownership, and work you can put your name on.",
+    tint: "bg-primary/15 text-primaryDeep",
   },
 ];
 
 const standApart = [
-  { icon: "target" as const, text: "We measure outcomes, not activity." },
-  { icon: "shield" as const, text: "We earn trust by delivering value, not by tracking time." },
   {
     icon: "users" as const,
     text: "Collaboration is real: teams work together in person and remotely, with shared accountability for outcomes.",
@@ -316,7 +314,7 @@ const standApart = [
 
 const flywheel = [
   { icon: "target" as const, label: "Outcomes" },
-  { icon: "sparkles" as const, label: "Premium value" },
+  { icon: "sparkles" as const, label: "Higher-value work" },
   { icon: "refresh" as const, label: "Reinvestment" },
   { icon: "users" as const, label: "Stronger team" },
   { icon: "trendingUp" as const, label: "Better outcomes" },
@@ -333,10 +331,11 @@ export default async function LifeAtViewnearPage() {
         eyebrow="Careers · Culture"
         title={
           <>
-            A young company <span className="text-gradient">headed to greatness.</span>
+            A young company building the{" "}
+            <span className="text-gradient">Snowflake home team</span> for the Americas.
           </>
         }
-        description={`${theme.brand.name} is early in its story and building something exceptional: outcome-led, AI-native, and powered by one high-performance team. Here's how we work, what we stand for, and the benefits behind it.`}
+        description={`${theme.brand.name} is early in its story: outcome-led, AI-native, and built around one team that shares in every win. Here's how we work, what we stand for, and the benefits behind it.`}
       >
         <div className="flex flex-wrap justify-center gap-4">
           <Link href="#open-roles" className="btn-primary btn-lg">
@@ -431,7 +430,7 @@ export default async function LifeAtViewnearPage() {
           <div>
             <p className="eyebrow mb-3">Where we work</p>
             <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-              Built for the way great work actually happens.
+              Two hubs for coming together, flexibility for everything else.
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-muted">
               Inside, our offices are made for focus and for coming together: quiet corners for deep
@@ -443,7 +442,7 @@ export default async function LifeAtViewnearPage() {
               {[
                 "Flexible, modern offices designed for focus and collaboration",
                 "In-person collaboration, extended by remote flexibility",
-                "One certified team, versed at every level and accountable end to end",
+                "Regular time together: retreats, Snowflake events, and team dinners",
               ].map((t) => (
                 <li key={t} className="flex gap-3 text-foreground/85">
                   <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primaryDeep">
@@ -474,7 +473,7 @@ export default async function LifeAtViewnearPage() {
           <SectionHeading
             eyebrow="The Viewnear model"
             title="Outcome-led. AI-native. Team-powered."
-            intro="We deliver outcomes, expand leverage through AI-native execution, and operate as one high-performance team."
+            intro="We deliver outcomes, expand leverage through AI-native execution, and operate as one team with shared accountability."
             center
           />
           <div className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-3">
@@ -550,8 +549,8 @@ export default async function LifeAtViewnearPage() {
             <div>
               <p className="eyebrow mb-2">The Viewnear standard</p>
               <p className="font-display text-2xl font-bold leading-snug text-foreground md:text-3xl">
-                High standards are mutual. We ask for excellence from our team, and our team should
-                expect excellence from Viewnear.
+                High standards are mutual. We ask a lot of our team, and our team should expect
+                just as much from Viewnear.
               </p>
             </div>
           </div>
@@ -598,7 +597,7 @@ export default async function LifeAtViewnearPage() {
             intro="Stronger economics build a stronger team, and a stronger team delivers better outcomes. It's a flywheel, and everyone shares in it."
           />
 
-          <div className="mt-10 grid gap-6 md:auto-rows-fr md:grid-cols-3">
+          <div className="mt-10 grid gap-6">
             {standApart.map((s) => (
               <div key={s.text} className="card flex h-full items-start gap-4">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primaryDeep">
@@ -643,10 +642,6 @@ export default async function LifeAtViewnearPage() {
                 </Fragment>
               ))}
             </ol>
-            <p className="mx-auto mt-8 max-w-2xl text-center text-muted">
-              Better outcomes create stronger economics. Stronger economics build a stronger team. A
-              stronger team delivers better outcomes.
-            </p>
           </div>
         </div>
         <WaveDivider position="bottom" fill="fill-background" />
@@ -734,10 +729,10 @@ export default async function LifeAtViewnearPage() {
           <div className="pointer-events-none absolute -bottom-20 -left-16 h-56 w-56 rounded-full bg-primary/15 blur-3xl" />
           <div className="relative">
             <h2 className="font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-              Start with outcomes. Build a high-performance team.
+              Start with outcomes. Build the team that delivers them.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-muted">
-              If you want meaningful work, senior peers, and a firm headed somewhere, let&apos;s talk.
+              If you want meaningful work, peers who push your craft, and a young firm you can help shape, let&apos;s talk.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link href="#open-roles" className="btn-primary btn-lg">

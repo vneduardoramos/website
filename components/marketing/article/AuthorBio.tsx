@@ -21,6 +21,8 @@ export function AuthorBio({ author }: { author?: ArticleAuthor | null }) {
           <img
             src={photo}
             alt={author.name}
+            loading="lazy"
+            decoding="async"
             className="h-16 w-16 shrink-0 rounded-full object-cover"
           />
         ) : (
