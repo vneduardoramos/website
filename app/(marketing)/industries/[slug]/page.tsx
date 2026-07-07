@@ -154,33 +154,22 @@ export default async function IndustryDetailPage({
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
 
-      {/* Sector metrics: when this industry has a real case study with metrics,
-          show those measured results; otherwise fall back to the sector's
-          target ranges (not claimed engagement results). */}
+      {/* What we stand up in this sector: always-true capability facts, not
+          outcome numbers. Measured client results live only in the attributed
+          Featured-engagement spotlight below, never dressed as sector-wide. */}
       <Section>
-        {storyMetrics.length > 0 ? (
-          <>
-            <SectionHeading
-              eyebrow="By the numbers"
-              title="What changed"
-              intro={`Measured on a real ${industry.name.toLowerCase()} engagement; client name withheld.`}
-            />
-            <div className="mt-12">
-              <MetricBand metrics={storyMetrics} />
-            </div>
-          </>
-        ) : (
-          <>
-            <SectionHeading
-              eyebrow="By the numbers"
-              title="What we build toward"
-              intro={`The targets a ${industry.name.toLowerCase()} engagement is scoped against, agreed with you up front.`}
-            />
-            <div className="mt-12">
-              <MetricBand metrics={flavor.metrics} />
-            </div>
-          </>
-        )}
+        <SectionHeading
+          eyebrow="What we stand up"
+          title={`The foundation your ${industry.name.toLowerCase()} practice runs on`}
+          intro={
+            story
+              ? `The capabilities we put in place, and how fast. Measured results from a real ${industry.name.toLowerCase()} engagement are in the featured story below.`
+              : "The capabilities we put in place, and how fast we get you to first value."
+          }
+        />
+        <div className="mt-12">
+          <MetricBand metrics={flavor.capabilities} />
+        </div>
       </Section>
 
       {/* Challenges */}

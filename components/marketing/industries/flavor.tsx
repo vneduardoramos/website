@@ -107,7 +107,10 @@ export interface IndustryFlavor {
   text: string;
   /** CSS color-token variable for the sector hue (e.g. "--color-amber"), used to tint eyebrows */
   accentVar: string;
-  metrics: { value: string; label: string }[];
+  /** Always-true capability facts for the sector-level strip. NOT outcome
+   *  numbers: measured client results live only in the attributed case-study
+   *  spotlight. Never put an invented percentage here. */
+  capabilities: { value: string; label: string }[];
   bullets: string[];
 }
 
@@ -123,10 +126,10 @@ export const INDUSTRY_FLAVOR: Record<string, IndustryFlavor> = {
     bar: "bg-amber",
     glow: "bg-amber/15",
     text: "text-amber",
-    metrics: [
-      { value: "15%", label: "Lower cost overruns" },
-      { value: "1", label: "Unified portfolio view" },
-      { value: "Daily", label: "Project cost visibility" },
+    capabilities: [
+      { value: "Cost + schedule", label: "One governed project view" },
+      { value: "Portfolio", label: "Analytics across every asset" },
+      { value: "8–16 wks", label: "To first value in production" },
       { value: "SnowPro", label: "Certified delivery team" },
     ],
     bullets: [
@@ -147,10 +150,10 @@ export const INDUSTRY_FLAVOR: Record<string, IndustryFlavor> = {
     bar: "bg-secondary",
     glow: "bg-secondary/20",
     text: "text-primaryDeep",
-    metrics: [
-      { value: "2×", label: "Faster institutional reporting" },
-      { value: "1", label: "Source for student success" },
-      { value: "Automated", label: "Statutory & funder reporting" },
+    capabilities: [
+      { value: "SIS + LMS", label: "Unified under one model" },
+      { value: "FERPA", label: "Aware handling of student data" },
+      { value: "8–16 wks", label: "To first value in production" },
       { value: "SnowPro", label: "Certified delivery team" },
     ],
     bullets: [
@@ -171,10 +174,10 @@ export const INDUSTRY_FLAVOR: Record<string, IndustryFlavor> = {
     bar: "bg-primaryDeep",
     glow: "bg-primaryDeep/15",
     text: "text-primaryDeep",
-    metrics: [
-      { value: "70%", label: "Less time on regulatory reporting" },
-      { value: "1", label: "Governed source of truth" },
-      { value: "Full", label: "Lineage on every reported number" },
+    capabilities: [
+      { value: "FINRA · SEC · SOX", label: "Aligned reporting" },
+      { value: "Full lineage", label: "On every reported number" },
+      { value: "8–16 wks", label: "To first value in production" },
       { value: "Premier", label: "Snowflake Premier Partner" },
     ],
     bullets: [
@@ -195,10 +198,10 @@ export const INDUSTRY_FLAVOR: Record<string, IndustryFlavor> = {
     bar: "bg-success",
     glow: "bg-success/15",
     text: "text-success",
-    metrics: [
-      { value: "12 pts", label: "OEE improvement" },
-      { value: "360°", label: "Shop-floor & supply view" },
-      { value: "3×", label: "More reliable pipelines" },
+    capabilities: [
+      { value: "Shop-floor + ERP", label: "One governed source" },
+      { value: "Supplier → shipment", label: "Traceable, governed" },
+      { value: "8–16 wks", label: "To first value in production" },
       { value: "SnowPro", label: "Certified delivery team" },
     ],
     bullets: [
@@ -219,10 +222,10 @@ export const INDUSTRY_FLAVOR: Record<string, IndustryFlavor> = {
     bar: "bg-accent",
     glow: "bg-accent/15",
     text: "text-accent",
-    metrics: [
-      { value: "Real-time", label: "Campaign attribution" },
-      { value: "1", label: "Unified audience view" },
-      { value: "Minutes", label: "From airing to attribution" },
+    capabilities: [
+      { value: "Audience", label: "One unified, consent-aware view" },
+      { value: "Every channel", label: "Attribution in one place" },
+      { value: "8–16 wks", label: "To first value in production" },
       { value: "SnowPro", label: "Certified delivery team" },
     ],
     bullets: [
@@ -243,10 +246,10 @@ export const INDUSTRY_FLAVOR: Record<string, IndustryFlavor> = {
     bar: "bg-purple",
     glow: "bg-purple/15",
     text: "text-purple",
-    metrics: [
-      { value: "2.5×", label: "Faster inventory decisions" },
-      { value: "−15%", label: "Perishable shrink" },
-      { value: "One", label: "View of online + in-store demand" },
+    capabilities: [
+      { value: "Online + in-store", label: "One demand view" },
+      { value: "PCI-aware", label: "Payment + customer data governed" },
+      { value: "8–16 wks", label: "To first value in production" },
       { value: "SnowPro", label: "Certified delivery team" },
     ],
     bullets: [
@@ -267,10 +270,10 @@ export const INDUSTRY_FLAVOR: Record<string, IndustryFlavor> = {
     bar: "bg-primary",
     glow: "bg-primary/15",
     text: "text-primaryDeep",
-    metrics: [
-      { value: "Early", label: "Churn-risk warning" },
-      { value: "1", label: "Governed source of truth" },
-      { value: "Full-volume", label: "Telemetry, governed & query-ready" },
+    capabilities: [
+      { value: "Usage + network", label: "One governed source" },
+      { value: "Full-volume", label: "Telemetry, query-ready" },
+      { value: "8–16 wks", label: "To first value in production" },
       { value: "Premier", label: "Snowflake Premier Partner" },
     ],
     bullets: [
@@ -293,11 +296,11 @@ export const DEFAULT_FLAVOR: IndustryFlavor = {
   bar: "bg-primary",
   glow: "bg-primary/15",
   text: "text-primaryDeep",
-  metrics: [
+  capabilities: [
+    { value: "Governed", label: "One source of truth" },
+    { value: "Built in", label: "Security and lineage" },
     { value: "8–16 wks", label: "To first value in production" },
-    { value: "60%", label: "Faster time to first insight" },
-    { value: "3×", label: "More reliable pipelines" },
-    { value: "40%", label: "Lower platform run cost" },
+    { value: "SnowPro", label: "Certified delivery team" },
   ],
   bullets: [
     "Sector-specific data models and governance built in from the start",
