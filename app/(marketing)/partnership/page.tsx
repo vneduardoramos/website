@@ -12,7 +12,7 @@ import { theme } from "@/config/theme";
 export const metadata = pageMeta({
   title: "Snowflake Partnership",
   description:
-    "Viewnear is a Snowflake Premier Partner and a CoCo Preferred Partner: SnowPro-certified, partnering directly with Snowflake, and delivering the full native stack across the Americas.",
+    "Viewnear is a Snowflake Premier Partner and a CoCo Preferred Partner: certified depth, a direct line to Snowflake's own team, and early access to what's next, all put behind your data & AI practice.",
   path: "/partnership",
 });
 
@@ -23,11 +23,11 @@ const unlocks = [
   },
   {
     title: "Snowflake procurement, simplified",
-    body: "Snowflake is consumption-based: you pay for the compute and storage you use. Procure your capacity through Viewnear for simpler commercial terms and account management under one accountable partner.",
+    body: "You pay Snowflake for the compute and storage you actually use. Procure that capacity through Viewnear and you get simpler commercial terms, with licensing and delivery under one accountable partner.",
   },
   {
     title: "Priority roadmap & preview access",
-    body: "Early access to what's next on Snowflake (Cortex, Openflow, Horizon, CoCo) so you get emerging capabilities before they're mainstream.",
+    body: "Early access to what's next on Snowflake (Cortex, Openflow, Horizon, CoCo), so your use cases can build on emerging capabilities before they're mainstream.",
   },
   {
     title: "SnowPro-certified delivery",
@@ -42,7 +42,7 @@ const comparison: Row[] = [
     dimension: "Time to production",
     inhouse: "6–12 months to hire & ramp a team",
     big3: "Slow mobilization, heavy process",
-    viewnear: "8–16 weeks, value from sprint one",
+    viewnear: "8–16 weeks to first value, demos every sprint",
   },
   {
     dimension: "Who does the work",
@@ -87,7 +87,7 @@ export default function PartnershipPage() {
                 , and CoCo Preferred Partner.
               </>
             }
-            description={`${theme.brand.name} holds two of Snowflake's highest partner recognitions. Together they mean certified depth, a direct line to Snowflake's own team, and early access to what's next, all delivered by one accountable team across the Americas.`}
+            description={`${theme.brand.name} holds two of Snowflake's highest partner recognitions. Together they mean certified depth, a direct line to Snowflake's own team, and early access to what's next, all put to work on your data & AI practice by one accountable team across the Americas.`}
           />
         </div>
       </div>

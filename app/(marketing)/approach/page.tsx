@@ -11,14 +11,14 @@ import { RevealGroup } from "@/components/marketing/Motion";
 export const metadata = pageMeta({
   title: "Our approach",
   description:
-    "How Viewnear delivers: a proven Snowflake methodology plus engagement governance, with fixed timelines, steering reviews, POC gates, and a clean handover.",
+    "How Viewnear delivers on Snowflake: use-case-driven sprints, proof before scale, and engagement governance, with fixed timelines, steering reviews, POC gates, and a clean handover.",
   path: "/approach",
 });
 
 const runPhases = [
   {
     title: "A fixed 8–16 week arc",
-    body: "Most initial builds reach production in 8–16 weeks, scoped to your data and use cases, with value delivered from the first sprint.",
+    body: "Most initial builds reach production in 8–16 weeks: a paid discovery fixes scope and price up front, and every sprint closes with working software, so value lands from sprint one.",
   },
   {
     title: "Steering & transparency",
@@ -36,9 +36,9 @@ const runPhases = [
 
 const impactByPhase = [
   {
-    phase: "First 90 days",
+    phase: "First 8–16 weeks",
     title: "Foundations & first value",
-    body: "A governed Snowflake foundation stood up, priority data flowing, and the first production dashboards live.",
+    body: "A governed foundation on Snowflake stood up, priority data flowing, and the first production dashboards live: your data practice takes root.",
   },
   {
     phase: "6–12 months",
@@ -65,7 +65,7 @@ export default function ApproachPage() {
                 Delivery you can <span className="text-gradient">govern</span>.
               </>
             }
-            description="A proven Snowflake methodology, plus the governance that de-risks the engagement itself, so you always know where the work stands."
+            description="Use-case-driven sprints with working software at every demo, plus the governance that de-risks the engagement itself, so you always know where the work stands."
           />
         </div>
       </div>

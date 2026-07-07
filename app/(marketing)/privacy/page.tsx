@@ -46,7 +46,7 @@ export default function PrivacyPage() {
         <ul>
           <li>
             <strong>Information you give us.</strong> When you contact us, request a
-            consultation, subscribe to updates, apply for a role, or fill in a form, we
+            conversation with our team, subscribe to updates, apply for a role, or fill in a form, we
             collect details such as your name, email address, company, and the contents
             of your message.
           </li>

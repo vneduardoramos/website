@@ -27,7 +27,7 @@ const FALLBACK_METRICS = [
   { value: "One", label: "Governed source of truth" },
   { value: "Medallion", label: "Bronze to Gold foundation" },
   { value: "Built in", label: "Security and lineage" },
-  { value: "8–16 wks", label: "From kickoff to first value" },
+  { value: "8–16 wks", label: "Kickoff to first value, sprint by sprint" },
 ];
 
 export async function generateStaticParams() {

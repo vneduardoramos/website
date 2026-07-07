@@ -333,7 +333,7 @@ export default async function LifeAtViewnearPage() {
         title={
           <>
             A young company building the{" "}
-            <span className="text-gradient">Snowflake home team</span> for the Americas.
+            <span className="text-gradient">data &amp; AI home team</span> for the Americas.
           </>
         }
         description={`${theme.brand.name} is early in its story: outcome-led, AI-native, and built around one team that shares in every win. Here's how we work, what we stand for, and the benefits behind it.`}

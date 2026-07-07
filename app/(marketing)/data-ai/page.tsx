@@ -13,11 +13,11 @@ import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 export const metadata = pageMeta({
   title: "Data + AI: the use cases we ship on your governed data",
   description:
-    "Document intelligence, cited answers, early-warning models, and agents that act: what Viewnear ships with Snowflake Cortex on governed data, in production.",
+    "Document intelligence, cited answers, early-warning models, and agents that act: the use cases we ship into production with your team, using Snowflake Cortex on governed data.",
   path: "/data-ai",
 });
 
-const HERO_CHIPS = ["In production, not a lab", "Runs in your Snowflake", "Governed by default", "8–16 weeks to first value"];
+const HERO_CHIPS = ["In production, not a lab", "Runs in your Snowflake", "Governed by default", "Value from sprint one"];
 
 // What we actually ship: concrete use cases, each with its Snowflake mechanism
 // and, where one exists, the real (anonymized) engagement that proves it.
@@ -47,7 +47,7 @@ const USE_CASES = [
   {
     eyebrow: "Search",
     title: "Your documents, searched by meaning",
-    body: "Policies, contracts, and wikis answered from directly, with sources cited. Retrieval grounded in your content, so answers stay accurate and current.",
+    body: "Policies, contracts, and wikis answered directly, with sources cited. Retrieval grounded in your content, so answers stay accurate and current.",
     mech: "Cortex Search · RAG",
   },
   {
@@ -79,7 +79,7 @@ export default function DataAiPage() {
                 <ScrollHighlight>by next quarter.</ScrollHighlight>
               </>
             }
-            description="Reading the paperwork, answering your executives, flagging churn before it lands, acting inside policy. This is what we ship with Snowflake Cortex on governed data: in production, in weeks, in the tools your teams already use."
+            description="Reading the paperwork, answering your executives, flagging churn before it lands, acting inside policy. These are the use cases we ship with your team, using Snowflake Cortex on governed data: proven small first, demoed every sprint, in production in 8–16 weeks."
           >
             <div className="flex flex-wrap justify-center gap-2">
               {HERO_CHIPS.map((c) => (
@@ -192,9 +192,9 @@ export default function DataAiPage() {
       <Section className="text-center">
         <SectionHeading
           align="center"
-          eyebrow="Backed by Snowflake"
+          eyebrow="Credentials"
           title="Certified to run AI on enterprise data"
-          intro="Model inference inherits Snowflake's independently audited controls, delivered by a SnowPro-certified team that does this every day."
+          intro="Your AI runs under Snowflake's independently audited controls, delivered by a SnowPro-certified team that does this every day."
         />
         <div className="mt-12 flex justify-center">
           <PartnerBadges variant="logos" />
@@ -203,7 +203,7 @@ export default function DataAiPage() {
 
       <CtaBand
         title="Put the right model on your data."
-        subtitle="Tell us the use case. We'll bring the model, the governance, and the team to ship it on Snowflake."
+        subtitle="Tell us the use case. We'll bring the model, the governance, and the people to ship it into production with your team, on Snowflake."
       />
     </>
   );

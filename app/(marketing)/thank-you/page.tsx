@@ -6,7 +6,7 @@ import { PageHero } from "@/components/marketing/PageHero";
 export const metadata: Metadata = {
   title: "Thank you, we'll be in touch",
   description:
-    "Thanks for reaching out to Viewnear. A Snowflake consultant will reply within one business day.",
+    "Thanks for reaching out to Viewnear. Someone from our team will reply within one business day.",
   robots: { index: false },
   alternates: { canonical: "/thank-you" },
 };
@@ -21,7 +21,7 @@ export default function ThankYouPage() {
             Thank you. <span className="text-gradient">We&apos;ll be in touch</span>.
           </>
         }
-        description="A Snowflake consultant will reply within one business day. In the meantime, explore how we help teams turn data into a competitive advantage."
+        description="Someone from our team will reply within one business day. In the meantime, explore how we help enterprises turn data into a competitive advantage."
       >
         <div className="flex flex-wrap justify-center gap-4">
           <Link href="/" className="btn-primary btn-lg">

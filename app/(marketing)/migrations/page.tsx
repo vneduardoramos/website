@@ -12,7 +12,7 @@ import { LegacyContrast, CutoverTimeline } from "@/components/marketing/migratio
 export const metadata = pageMeta({
   title: "Migrations to Snowflake: Teradata, Oracle, Redshift, Hadoop & more",
   description:
-    "Viewnear migrates legacy warehouses and Hadoop onto one governed Snowflake foundation: automated code conversion, validated parity, and a phased cutover.",
+    "Viewnear moves legacy warehouses and Hadoop onto one governed foundation on Snowflake: automated code conversion, validated parity, a phased cutover your business never feels, and a handover that leaves your team running it.",
   path: "/migrations",
 });
 
@@ -91,7 +91,7 @@ const PHASES = [
   },
   {
     title: "Optimize & decommission",
-    body: "We tune warehouses and pipelines on real usage, retire the legacy system, and hand over documentation so your team owns it.",
+    body: "We tune warehouses and pipelines on real usage, retire the legacy system, and hand over documentation and runbooks so your team runs it without us.",
   },
 ];
 
@@ -124,7 +124,7 @@ export default function MigrationsPage() {
             title={
               <>
                 Off Teradata, Oracle, or Hadoop.{" "}
-                <ScrollHighlight>Onto one governed Snowflake.</ScrollHighlight>
+                <ScrollHighlight>Onto a data practice you keep.</ScrollHighlight>
               </>
             }
             description="A migration is won in the planning, the parity checks, and the cutover you never notice, not in the license swap. We run that whole arc as one accountable team: code converted automatically, every number validated against the source, and the business running the entire way."
@@ -148,7 +148,7 @@ export default function MigrationsPage() {
             align="center"
             eyebrow="Every source platform"
             title="We migrate from all of them"
-            intro="Legacy appliances, cloud warehouses, Hadoop, or the database quietly doing warehouse duty. If your data lives there today, we have a path to Snowflake."
+            intro="Legacy appliances, cloud warehouses, Hadoop, or the database quietly doing warehouse duty. If your data lives there today, we have a path to land it on Snowflake, governed and in your team's hands."
           />
           {/* One continuous board instead of five card boxes */}
           <div className="mt-12 rounded-3xl border border-border bg-surface">
@@ -220,7 +220,7 @@ export default function MigrationsPage() {
         <CutoverTimeline phases={PHASES} />
       </Section>
 
-      {/* The conviction: tools convert code; the consulting answers for it */}
+      {/* The conviction: tools convert code; the team answers for it */}
       <Section className="section-tint relative overflow-hidden">
         <FeatureSplit
           eyebrow="Our conviction"
@@ -297,7 +297,7 @@ export default function MigrationsPage() {
 
       <CtaBand
         title="Plan your migration."
-        subtitle="Tell us what you're running today (Teradata, Oracle, Redshift, Hadoop, or anything else) and we'll map the path to Snowflake."
+        subtitle="Tell us what you're running today (Teradata, Oracle, Redshift, Hadoop, or anything else) and we'll map the crossing: what converts automatically, what needs hands, and when your team takes the keys."
       />
     </>
   );

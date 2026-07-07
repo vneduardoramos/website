@@ -79,7 +79,7 @@ export default async function FaqPage() {
 
       <CtaBand
         title="Still have a question?"
-        subtitle="Ask us anything about Snowflake, your migration, or a specific use case: a consultant on our team will reply."
+        subtitle="Ask us anything about standing up your data practice, a migration, or a specific AI use case: an architect on our team will reply."
       />
     </>
   );

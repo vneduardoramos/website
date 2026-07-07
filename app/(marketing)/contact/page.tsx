@@ -10,9 +10,9 @@ import { getSetting, getTeam } from "@/lib/queries";
 import { theme } from "@/config/theme";
 
 export const metadata = pageMeta({
-  title: "Contact: start a data & AI project",
+  title: "Contact: start your data & AI practice",
   description:
-    "Get in touch with Viewnear, a Snowflake data & AI consultancy serving the Americas.",
+    "Get in touch with Viewnear. We help enterprises stand up data & AI practices on Snowflake, run by their own teams, across the Americas.",
   path: "/contact",
 });
 
@@ -21,7 +21,7 @@ type ContactSetting = { email: string; blurb: string };
 const steps = [
   {
     title: "We review your note",
-    body: "A consultant on our team reads your message and routes it to the right person.",
+    body: "An architect on our team reads your message and routes it to the right person.",
   },
   {
     title: "Intro conversation",
@@ -29,7 +29,7 @@ const steps = [
   },
   {
     title: "A tailored plan",
-    body: "You receive a clear, no-pressure proposal outlining how we would approach the work.",
+    body: "You receive a clear, no-pressure proposal: the first use cases, a sprint-by-sprint plan, and the enablement your team gets from day one.",
   },
 ];
 
@@ -55,8 +55,8 @@ export default async function ContactPage() {
             eyebrow={`Contact ${theme.brand.name}`}
             title={
               <>
-                Start your Snowflake{" "}
-                <span className="text-gradient">data &amp; AI</span> project
+                Start your <span className="text-gradient">data &amp; AI</span>{" "}
+                practice
               </>
             }
             description={
@@ -96,7 +96,7 @@ export default async function ContactPage() {
                 What happens next
               </h2>
               <p className="mt-2 text-sm text-muted">
-                A Snowflake consultant replies within one business day.
+                An architect replies within one business day.
               </p>
               <ol className="relative mt-6 space-y-6 before:absolute before:left-[15px] before:top-3 before:bottom-3 before:w-px before:bg-border">
                 {steps.map((step, i) => (

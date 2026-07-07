@@ -6,8 +6,8 @@ import { HeroAurora } from "@/components/marketing/home/HeroAurora";
 
 const PILLS = [
   "Migrate & modernize",
-  "Govern with Horizon Catalog",
-  "Build with Cortex AI",
+  "Govern data people trust",
+  "Ship AI into production",
 ];
 
 /**
@@ -20,7 +20,7 @@ const PILLS = [
 export function MeshHeroSlide({ subhead }: { subhead?: string }) {
   const sub =
     subhead ||
-    "Whether you're migrating off a legacy warehouse, scaling a governed lakehouse, or grounding AI agents in real business context, our certified team helps you move faster and get it right the first time, across the Americas.";
+    "We help you stand up two capabilities you keep: a data practice your whole company trusts and an AI practice that ships use cases into production. Built with your team, run by your team, guided and accelerated by ours, across the Americas.";
 
   return (
     <div className="relative flex min-h-[36rem] items-center overflow-hidden lg:min-h-[42rem]">

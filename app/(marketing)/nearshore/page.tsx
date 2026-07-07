@@ -19,9 +19,9 @@ import { LedgerCard } from "@/components/marketing/Cards";
 import { theme } from "@/config/theme";
 
 export const metadata = pageMeta({
-  title: "Nearshore Snowflake delivery in the US Central time zone",
+  title: "Nearshore data & AI delivery on Snowflake, in the US Central time zone",
   description:
-    "Viewnear delivers Snowflake data and AI from Monterrey, Mexico, in the US Central time zone. SnowPro-certified experts who work your business hours, with depth at every level.",
+    "Viewnear delivers data & AI on Snowflake from Monterrey, Mexico, in the US Central time zone. SnowPro-certified experts who work your business hours, with depth at every level.",
   path: "/nearshore",
 });
 
@@ -200,7 +200,7 @@ export default async function NearshorePage() {
           <SectionHeading
             align="center"
             eyebrow="What we deliver"
-            title="The full Snowflake build, delivered nearshore"
+            title="The full data & AI build, delivered nearshore"
             intro={`Our delivery team works from Monterrey, Mexico, in the US Central time zone, covering the same scope ${theme.brand.name} delivers anywhere: from migration to governed AI in production.`}
           />
           <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-4" variant="pop">

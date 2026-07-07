@@ -10,7 +10,7 @@ import { getBlogPosts, getCaseStudies, safe } from "@/lib/queries";
 export const metadata = pageMeta({
   title: "Resources: case studies & blog",
   description:
-    "Case studies and blog from Viewnear: proof from real Snowflake engagements and field notes on data & AI, all in one place.",
+    "Case studies and blog from Viewnear: proof from real engagements and field notes on data & AI, all in one place.",
   path: "/resources",
 });
 
@@ -47,7 +47,7 @@ export default async function ResourcesPage() {
             Everything in <span className="text-gradient">one place</span>.
           </>
         }
-        description="Case studies from real Snowflake engagements and field notes from the consultants who ran them. If you are planning a data & AI move, this is what it looks like in practice."
+        description="Case studies from real engagements and field notes from the people who ran them. If you are building a data & AI practice, this is what it looks like in the field."
       />
 
       {/* Start here: one engagement + one field note, large and side by side */}

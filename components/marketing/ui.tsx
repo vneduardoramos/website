@@ -137,8 +137,8 @@ export function IndustryCard({
 }
 
 export function CtaBand({
-  title = "Let's make Snowflake do more.",
-  subtitle = "Tell us where you are (migrating, scaling, or building AI) and we'll map the fastest path to value.",
+  title = "Let's stand up your data & AI practice.",
+  subtitle = "Tell us where you are (migrating, scaling, or shipping AI) and we'll map the fastest path to use cases in production, run by your own team.",
 }: {
   title?: string;
   subtitle?: string;

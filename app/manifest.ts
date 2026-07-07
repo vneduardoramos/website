@@ -3,7 +3,7 @@ import { theme } from "@/config/theme";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${theme.brand.name}: Data & AI Consulting`,
+    name: `${theme.brand.name}: Data & AI Practices`,
     short_name: theme.brand.name,
     description: theme.brand.description,
     start_url: "/",

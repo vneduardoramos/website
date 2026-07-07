@@ -10,7 +10,7 @@ const ENGAGE_POINTS = [
   "Fixed cost: a defined outcome at a set price",
   "Time & materials: discovery and evolving scope",
   "Team augmentation: certified depth inside your team",
-  "Most foundations go live in 8–16 weeks",
+  "Paid discovery fixes scope; foundations go live in 8–16 weeks",
 ];
 
 export function ServicesGrid({ services }: { services: Service[] }) {
@@ -49,8 +49,9 @@ export function ServicesGrid({ services }: { services: Service[] }) {
             A single accountable team, the whole data stack
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted">
-            From governed foundations and trusted pipelines to Cortex-powered
-            analytics and AI agents: strategy through production, on Snowflake.
+            From governed foundations and trusted pipelines to analytics and AI
+            agents in production: advisory through delivery through enablement,
+            on Snowflake.
           </p>
         </div>
 

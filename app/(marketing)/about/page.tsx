@@ -21,9 +21,9 @@ import { getTeam } from "@/lib/queries";
 import { theme } from "@/config/theme";
 
 export const metadata = pageMeta({
-  title: "About: Snowflake data & AI partner for the Americas",
+  title: "About: building data & AI practices across the Americas",
   description:
-    "Viewnear is a Snowflake Premier and CoCo Preferred Partner taking enterprises from data strategy to governed AI in production across the Americas.",
+    "Viewnear helps enterprises stand up data & AI practices they keep: governed data feeding real decisions and AI use cases in production, built on Snowflake and run by your own team.",
   path: "/about",
 });
 
@@ -36,7 +36,7 @@ const HERO_CHIPS = [
 
 // What every engagement gets: the operating model, end to end.
 const operating = [
-  "Fixed scopes, steering reviews, and a clear path to production",
+  "Fixed scopes, use-case-driven sprints, and working software at every demo",
   "Governed by design, from the first table",
   "The people who scope the work stay through production",
   "Open formats (Apache Iceberg) for interoperable architectures",
@@ -125,14 +125,14 @@ export default async function AboutPage() {
         eyebrow={`About ${theme.brand.name}`}
         title={
           <>
-            The Snowflake data &amp; AI partner for the{" "}
+            We build data &amp; AI practices with enterprises across the{" "}
             <ScrollHighlight color="cyan">
               <span className="text-gradient">Americas</span>
             </ScrollHighlight>
             .
           </>
         }
-        description="We take enterprises from data strategy to governed AI in production, integrating data products with the systems the business runs on. As a Snowflake Premier and CoCo Preferred Partner, we deliver across Canada, the USA, Mexico, LATAM, and the Caribbean."
+        description="Two capabilities you keep: a data practice that feeds real decisions and an AI practice that ships use cases into production, built on Snowflake, run by your team, guided and accelerated by ours. As a Snowflake Premier and CoCo Preferred Partner, we deliver across Canada, the USA, Mexico, LATAM, and the Caribbean."
       >
         <div className="mt-7 flex flex-wrap justify-center gap-2.5">
           {HERO_CHIPS.map((c) => (
@@ -152,8 +152,8 @@ export default async function AboutPage() {
           as="h2"
           ratio="wide-text"
           eyebrow="Who we are"
-          title="From specialist practice to Snowflake Premier Partner"
-          body="Viewnear is a Snowflake, data & AI consultancy for the enterprise. One team owns the outcome from first workshop to production, across strategy, architecture, engineering, analytics, and governed AI, and we integrate what we build both ways: operational data flows in, and decisions, answers, and AI agents flow back into the systems where work happens. We grew from a specialist practice into a Snowflake Premier Partner by going deep on one platform, and that focus shapes how we hire, train, and deliver."
+          title="We build it with you, then hand you the keys"
+          body="Viewnear helps enterprises stand up two capabilities they keep: a data practice and an AI practice, built on Snowflake and run by your own team. We work inside that team from first workshop to production, across strategy, architecture, engineering, analytics, and governed AI, and we integrate what we build both ways: operational data flows in, and decisions, answers, and AI agents flow back into the systems where work happens. We grew from a specialist practice into a Snowflake Premier Partner by going deep on one platform, and that focus shapes how we hire, train, and deliver."
           bullets={operating}
           cta={{ label: "How we deliver", href: "/services" }}
           visual={

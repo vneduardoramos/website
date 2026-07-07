@@ -11,18 +11,20 @@ Confident, precise, and human: a partner who knows the work, not a vendor readin
 
 ## Positioning
 
-**Statement (internal north star):** Viewnear is the consultancy enterprises bring in to make Snowflake, data & AI actually deliver: we build governed, AI-ready **data products** on Snowflake and **integrate them both ways** with the systems the business runs on. Operational data flows in (ERP, CRM, core systems via Openflow and Zero-Copy Integrations); decisions, answers, and AI agents flow back out to the apps and workflows where work happens.
+**Statement (internal north star, revised 2026-07-06):** Viewnear helps enterprises stand up two capabilities they keep: a **data practice** (governed, trusted data feeding real decisions) and an **AI practice** (use cases shipping into production), built on Snowflake, run by the client's own team, guided and accelerated by ours. Operational data flows in (ERP, CRM, core systems via Openflow and Zero-Copy Integrations); decisions, answers, and AI agents flow back out to the apps and workflows where work happens.
 
 **Three pillars, named consistently:**
-1. **Snowflake, at depth** (Premier + CoCo Preferred, SnowPro, native stack).
+1. **A practice you keep** (built with your team, handed over documented, extended without us).
 2. **Data & AI that reaches production** (governed foundation, then Cortex analytics and agents).
-3. **Enterprise solutions, integrated both ways** (data products wired into the enterprise landscape, to and from).
+3. **Time-to-value made real** (use-case sprints, proof before scale, 8–16 weeks with the how attached).
 
 Rules:
-- **"Consultancy" is the category word.** Lead with it in identity copy ("a Snowflake, data & AI consultancy for the enterprise"), not just "partner".
+- **The words "consultancy", "consulting", "consultant(s)", "consultative" are BANNED in visible copy**, including metadata, SEO strings, and the PWA manifest. Express the idea through what happens instead: "we work inside your team", "senior people on your hardest decisions", "we build it with you, then hand you the keys", "a partner measured on outcomes, not hours". (Replaced the pre-2026-07 rule that made "consultancy" the category word.)
+- **Snowflake is the substrate, not the subject.** Never sell Snowflake itself; headlines belong to the client's practice, and "on Snowflake" is the location, not the pitch. Name products only where they explain HOW a result happens.
+- **Time-to-value never stands bare.** When 8–16 weeks appears, attach the mechanism (paid discovery that fixes scope, use-case sprints, proof before scale, sprint-one shipping).
 - **"Data products"** is an approved first-class deliverable noun alongside "governed foundation". (Snowflake remains the platform; we never call the deliverable "the/your platform".)
 - **Integration is claimed concretely, both directions.** Name the real mechanisms (Openflow, Zero-Copy Integrations in; Snowsight, Streamlit, APIs, agents out) and real systems (ERP, CRM; SAP, Salesforce, Workday are fine, they are integration endpoints, not the banned BI-competitor list).
-- **Never self-label caliber.** "High-caliber", "world-class", "premium" are hype; caliber is demonstrated through the consultancy claim, outcome pricing, the proof band, and enterprise-grade governance.
+- **Never self-label caliber.** "High-caliber", "world-class", "premium" are hype; caliber is demonstrated through the work shown, outcome pricing, the proof band, and enterprise-grade governance.
 
 ## Punctuation: no em dashes
 

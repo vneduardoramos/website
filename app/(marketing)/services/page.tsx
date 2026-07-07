@@ -20,7 +20,7 @@ import { theme } from "@/config/theme";
 export const metadata = pageMeta({
   title: "Services: THINK · BUILD · GROW",
   description:
-    "THINK, BUILD, GROW: strategy, engineering, and enablement for modern data and AI on Snowflake.",
+    "THINK, BUILD, GROW: strategy, engineering, and enablement to stand up a data practice and an AI practice on Snowflake, run by your team.",
   path: "/services",
 });
 
@@ -38,7 +38,7 @@ const tierMeta: Record<string, TierMeta> = {
     eyebrow: "Strategy",
     num: "01",
     intro:
-      "Set the direction. We pinpoint where data and AI create real value and sequence a roadmap you can execute, grounded in what your data can support today.",
+      "Set the direction. We work inside your team to pinpoint where data and AI create real value, then sequence a roadmap you can execute, grounded in what your data can support today.",
     num_cls: "text-primary/15",
     bar: "bg-primary",
     decor: "dots",
@@ -48,7 +48,7 @@ const tierMeta: Record<string, TierMeta> = {
     eyebrow: "Engineering",
     num: "02",
     intro:
-      "Make it real. We build the governed Snowflake foundation that AI actually needs, then the pipelines, models, and agents that run on it, integrated with the systems your business runs on.",
+      "Make it real. We build it with you: the governed foundation on Snowflake that AI actually needs, then the pipelines, models, and agents that run on it, integrated with the systems your business runs on.",
     num_cls: "text-secondary/15",
     bar: "bg-secondary",
     decor: "grid",
@@ -58,7 +58,7 @@ const tierMeta: Record<string, TierMeta> = {
     eyebrow: "Enablement",
     num: "03",
     intro:
-      "Compound the value. We help your teams scale AI use cases and agents into production, and keep improving them long after launch.",
+      "Compound the value. Your team scales AI use cases and agents into production with our people alongside, and keeps improving them long after we step back.",
     num_cls: "text-accent/15",
     bar: "bg-accent",
     decor: "swoosh",
@@ -90,7 +90,7 @@ const engagementModels = [
   },
   {
     title: "Managed services & support",
-    body: "Ongoing run, optimization, and enhancement once you're live, so your data and AI keep paying off without a permanent in-house team.",
+    body: "Ongoing run, optimization, and enhancement once you're live, so the practice keeps compounding while your own team grows into it.",
     how: "A retained team monitors, tunes cost and performance, and ships enhancements.",
     includes: ["Monitoring & cost optimization", "SLAs and a named contact", "A roadmap of enhancements"],
     bestFor: "Running & growing a live Snowflake estate",
@@ -100,7 +100,7 @@ const engagementModels = [
 // What every client gets regardless of which model they choose: the UVP.
 const engagementValue = [
   { title: "One certified team, with depth at every level", body: "One accountable team: the people who scope your work are the ones who deliver it." },
-  { title: "Premier & CoCo Preferred Partner", body: "A SnowPro-certified team and a verified Snowflake delivery track record, from strategy through production." },
+  { title: "Verified Snowflake depth", body: "A SnowPro-certified team with a verified Snowflake delivery record behind every decision, from strategy through production." },
   { title: "Priced to outcomes", body: "Scope and price agreed up front, whichever model you choose." },
   { title: "Governance built in", body: "Security, lineage, and access control designed in from the first table, not bolted on." },
   { title: "Handover and enablement", body: "Full handover, documentation, and enablement so your team runs it confidently." },
@@ -134,7 +134,7 @@ const runPhases = [
   {
     label: "Timeline",
     title: "A fixed 8–16 week arc",
-    body: "Most initial builds reach production in 8–16 weeks, scoped to your data and use cases, with value delivered from the first sprint.",
+    body: "Most initial builds reach production in 8–16 weeks: a paid discovery fixes scope and price up front, and every sprint closes with working software, so value lands from sprint one.",
   },
   {
     label: "Steering",
@@ -194,7 +194,7 @@ export default async function ServicesPage() {
             .
           </>
         }
-        description="Strategy, engineering, and enablement under one accountable team: a governed data foundation first, then the AI and agents that run on it, across THINK, BUILD, and GROW."
+        description="Strategy, engineering, and enablement under one accountable team, building two capabilities you keep: a data practice your decisions can trust and an AI practice that ships to production, across THINK, BUILD, and GROW."
       />
 
       {tiers.map(({ tier, services }, tierIdx) => {
@@ -275,7 +275,7 @@ export default async function ServicesPage() {
                 .
               </>
             }
-            intro="Agentic AI does not start with agents. It starts with governed data and trusted context: one layer where data, business context, models, and workflows come together, and exactly what we build."
+            intro="An AI practice ready for agents does not start with agents. It starts with governed data and trusted context: one layer where data, business context, models, and workflows come together. We build that layer with your team, so when your agents act, they act on numbers you trust."
           />
           <p className="mt-6 max-w-2xl text-sm text-muted">
             See the AI we put into production on the{" "}
@@ -290,7 +290,7 @@ export default async function ServicesPage() {
           </p>
           <div className="mt-10 max-w-3xl">
             <InlineCta
-              title="Snowflake is becoming the control plane for the agentic enterprise"
+              title="Our thesis: the agentic enterprise runs on one governed layer of data and context"
               href="/blog/snowflake-control-plane-agentic-enterprise"
               label="Read the thesis"
             />
@@ -310,7 +310,7 @@ export default async function ServicesPage() {
             metrics={[
               { value: "60%", label: "Faster time to first insight" },
               { value: "3×", label: "More reliable pipelines" },
-              { value: "40%", label: "Lower platform run cost" },
+              { value: "40%", label: "Lower run cost" },
             ]}
           />
         </div>
@@ -353,7 +353,7 @@ export default async function ServicesPage() {
       <Section className="section-warm">
         <SectionHeading
           eyebrow="What we build on"
-          title="The Snowflake-native stack"
+          title="Why we build Snowflake-native"
           intro="Openflow to Horizon Catalog to Cortex: we lead with Snowflake-native products over third-party tools, so there is one governed copy of your data, one lineage to audit, and one trusted context every AI agent relies on. dbt is the one external framework we run, natively against Snowflake."
         />
         <div className="mx-auto mt-12 max-w-3xl">

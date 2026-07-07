@@ -28,12 +28,12 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(theme.brand.url),
   title: {
-    default: `${theme.brand.name} | Data & AI Consulting | Snowflake Partner`,
+    default: `${theme.brand.name} | Data & AI Practices | Snowflake Partner`,
     template: `%s | ${theme.brand.name}`,
   },
   description: theme.brand.description,
   openGraph: {
-    title: `${theme.brand.name} | Data & AI Consulting`,
+    title: `${theme.brand.name} | Data & AI Practices`,
     description: theme.brand.description,
     url: theme.brand.url,
     siteName: theme.brand.name,
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${theme.brand.name} | Data & AI Consulting`,
+    title: `${theme.brand.name} | Data & AI Practices`,
     description: theme.brand.description,
     images: ["/assets/og-default.jpg"],
   },

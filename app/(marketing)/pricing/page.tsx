@@ -37,8 +37,8 @@ const engagementModels = [
 const pricingLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Snowflake data & AI consulting",
-  serviceType: "Data and AI consulting",
+  name: "Data & AI services on Snowflake",
+  serviceType: "Data and AI professional services",
   provider: { "@type": "Organization", name: theme.brand.name, url: theme.brand.url },
   areaServed: "Americas",
   hasOfferCatalog: {
@@ -60,9 +60,9 @@ const costFactors = [
 ];
 
 const impactByPhase = [
-  { phase: "First 8–16 weeks", title: "Foundations & first value", body: "Governance in place, priority data flowing, and the first governed data products in production." },
-  { phase: "6–12 months", title: "Scale & self-service", body: "Use cases spread across teams and each new one reaches first insight 60% faster. Self-service takes hold; manual reporting retires." },
-  { phase: "18+ months", title: "Compounding advantage", body: "New use cases ship in weeks at 40% lower run cost, and the handover is real: your team runs and extends the foundation without us." },
+  { phase: "First 8–16 weeks", title: "Foundations & first value", body: "Your data practice stands up: scope fixed in a paid discovery, governance designed in from the first table, priority data flowing, and the first governed data products in production." },
+  { phase: "6–12 months", title: "Scale & self-service", body: "The AI practice ships: use cases spread across teams and each new one reaches first insight 60% faster. Self-service takes hold; manual reporting retires." },
+  { phase: "18+ months", title: "Compounding advantage", body: "Both practices are yours: new use cases ship in weeks at 40% lower run cost, and the handover is real. Your team runs and extends the work without us." },
 ];
 
 export default function PricingPage() {
@@ -102,8 +102,10 @@ export default function PricingPage() {
         <div className="panel-warm mt-10 rounded-3xl p-8">
           <p className="eyebrow mb-2">A worked example</p>
           <p className="max-w-3xl text-muted">
-            The shape of a typical first engagement: a governed foundation reaching production in
-            8–16 weeks, a fixed price agreed at scoping, and a named team you meet before you sign.
+            The shape of a typical first engagement: a paid discovery fixes scope and price, sprint
+            demos show working software from the first weeks, and a governed foundation reaches
+            production in 8–16 weeks, with a named team you meet before you sign and your own
+            people in the work from sprint one.
           </p>
         </div>
       </Section>
@@ -135,7 +137,7 @@ export default function PricingPage() {
             </Link>
           </div>
           <div className="panel-warm rounded-2xl p-8">
-            <p className="eyebrow mb-2">Value by horizon</p>
+            <p className="eyebrow mb-2">Practice adoption, by horizon</p>
             <ul className="mt-4 space-y-6">
               {impactByPhase.map((p) => (
                 <li key={p.phase}>

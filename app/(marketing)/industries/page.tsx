@@ -11,7 +11,7 @@ import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 export const metadata = pageMeta({
   title: "Industries we serve",
   description:
-    "Industry-specific data and AI solutions across the Americas, built on Snowflake by Viewnear.",
+    "Data & AI practices shaped to your sector's rules, KPIs, and systems: governed data and use cases in production, on Snowflake, across the Americas.",
   path: "/industries",
 });
 
@@ -37,7 +37,7 @@ export default async function IndustriesPage() {
               <span className="text-gradient">regulations, and KPIs</span>.
             </>
           }
-          body="Every sector has its own data, regulations, and pressures. We pair consultants who know your industry with our SnowPro-certified Snowflake engineers to map the problem, shape the roadmap, and build the solution, so what we deliver speaks your language and moves your metrics."
+          body="Every sector has its own data, regulations, and pressures. We pair specialists who know your industry with SnowPro-certified engineers to map the problem, shape the roadmap, and build the solution alongside your team, so what we deliver speaks your language and moves your metrics."
           bullets={[
             "Pre-built accelerators tuned to each sector's data patterns",
             "Compliance and governance baked into the architecture",

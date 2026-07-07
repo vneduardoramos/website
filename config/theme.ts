@@ -18,9 +18,9 @@ export const theme = {
     domain: "viewnear.com",
     url: "https://www.viewnear.com",
     email: "contact@viewnear.com",
-    tagline: "Everything your data needs, under one roof.",
+    tagline: "Your data & AI practice, up and running.",
     description:
-      "Viewnear is a Snowflake, data & AI consultancy for the enterprise: governed data products, integrated with the systems your business runs on, across the Americas.",
+      "Viewnear helps enterprises stand up two capabilities they keep: a data practice that feeds real decisions with governed, trusted data, and an AI practice that ships use cases into production. Built on Snowflake, run by your team, across the Americas.",
     // Region positioning for the Americas.
     region: "the Americas",
     regions: ["Canada", "USA", "Mexico", "LATAM", "Caribbean"],

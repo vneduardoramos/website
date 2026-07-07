@@ -127,7 +127,7 @@ export function StackDiagram({ flow, rail }: { flow: Layer[]; rail: Layer }) {
           <span className="h-1.5 w-1.5 rounded-full bg-success" /> Generally available
         </span>
         <span className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-muted">
-          <span className="h-1.5 w-1.5 rounded-full bg-warning" /> Preview: early access through the partnership
+          <span className="h-1.5 w-1.5 rounded-full bg-warning" /> Preview: early access our partner tier brings to your build
         </span>
       </div>
     </div>

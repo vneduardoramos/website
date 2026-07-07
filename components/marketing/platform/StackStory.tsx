@@ -2,8 +2,8 @@ import { RevealGroup } from "@/components/marketing/Motion";
 
 /**
  * The stack narrated as an engagement instead of drawn as an infographic:
- * six story beats walk one build from first sprint to handover, with the
- * consulting role and the Snowflake product names woven into the prose.
+ * six story beats walk one build from first sprint to handover, with our
+ * role and the Snowflake product names woven into the prose.
  * A quiet spine (neutral hairline + dots, per the no-colored-rails rule)
  * carries the sequence; typography does the rest.
  */
@@ -54,8 +54,8 @@ const BEATS: { title: string; body: React.ReactNode }[] = [
       <>
         The whole way, <P>Horizon Catalog</P> is recording lineage and enforcing policy, and{" "}
         <P>Semantic Views</P> pin down what &ldquo;revenue&rdquo; actually means. It is the
-        unglamorous work that makes the AI trustworthy later, and it is where our consultants
-        spend real time with your team.
+        unglamorous work that makes the AI trustworthy later, and it is where our senior
+        people spend real time working inside your team.
       </>
     ),
   },
@@ -75,9 +75,10 @@ const BEATS: { title: string; body: React.ReactNode }[] = [
     title: "One team answers for the whole arc",
     body: (
       <>
-        Snowflake runs the platform. We design, build, and tune what runs on it, then hand it
-        over documented, with your team enabled to extend it. Most foundations reach production
-        in 8&ndash;16 weeks.
+        Snowflake runs the platform. We design, build, and tune what runs on it with your
+        team in the room, then hand over the keys: documented, and yours to extend. Most
+        foundations reach production in 8&ndash;16 weeks, because discovery fixes the scope
+        up front and every sprint ends with working software in a demo.
       </>
     ),
   },

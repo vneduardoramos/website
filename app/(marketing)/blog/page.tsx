@@ -10,9 +10,9 @@ import { CtaBand } from "@/components/marketing/ui";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 
 export const metadata = pageMeta({
-  title: "Blog: field notes on Snowflake, data & AI",
+  title: "Blog: field notes on data & AI",
   description:
-    "Field notes, ideas, and practical guides on Snowflake, data engineering, and AI from the Viewnear team, straight from real engagements.",
+    "Field notes, ideas, and practical guides on data engineering, AI, and building on Snowflake from the Viewnear team, straight from real engagements.",
   path: "/blog",
 });
 
@@ -38,7 +38,7 @@ export default async function BlogPage() {
           <PageHero
             eyebrow="Blog"
             title={<>Straight from the <span className="text-gradient">lab</span>.</>}
-            description="Notes, ideas, and field reports on data, AI, and the modern Snowflake stack."
+            description="Notes, ideas, and field reports on data & AI, straight from the engagements we run on Snowflake."
           >
             {uniqueTags.length ? (
               <div className="flex flex-wrap justify-center gap-2">

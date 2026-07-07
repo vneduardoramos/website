@@ -10,7 +10,7 @@ import { PartnerBadges } from "@/components/marketing/PartnerBadges";
 export const metadata = pageMeta({
   title: "Case studies",
   description:
-    "Data and AI engagements across the Americas: real, anonymized results from the Snowflake-powered analytics and intelligent automation we deliver.",
+    "Data & AI engagements across the Americas: real, anonymized results from governed data and AI use cases delivered on Snowflake.",
   path: "/case-studies",
 });
 
@@ -35,7 +35,7 @@ export default async function CaseStudiesPage() {
             Case <span className="text-gradient">studies</span>.
           </>
         }
-        description="Real data & AI work we deliver across the Americas. See how teams went from scattered sources to governed data and decisions in weeks, not quarters."
+        description="Real data & AI work we deliver across the Americas. See how teams went from scattered sources to governed data, decisions people trust, and use cases in production."
       />
 
       {caseStudies.length > 0 ? (

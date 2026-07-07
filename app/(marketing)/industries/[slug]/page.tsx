@@ -144,7 +144,7 @@ export default async function IndustryDetailPage({
                 <span className="text-gradient">{industry.name}</span>.
               </>
             }
-            body={`You won't spend the first month explaining ${industry.name.toLowerCase()} to us. The team arrives knowing the sector's systems, regulations, and reporting rhythms, then builds the data models, governance, and dashboards against the metrics your teams already answer for.`}
+            body={`You won't spend the first month explaining ${industry.name.toLowerCase()} to us. The team arrives knowing the sector's systems, regulations, and reporting rhythms, then builds the data models, governance, and dashboards with your team, against the metrics you already answer for.`}
             bullets={flavor.bullets}
             image={`/assets/images/industries/${industry.slug}-2.jpg`}
             imageAlt={`${industry.name} data and AI solutions built on Snowflake`}

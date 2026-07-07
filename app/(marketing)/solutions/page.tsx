@@ -12,7 +12,7 @@ import { theme } from "@/config/theme";
 export const metadata = pageMeta({
   title: "Solutions: migrate, govern & build with AI",
   description:
-    "Outcome-led Snowflake solutions: migrate to Snowflake, Cortex AI & agents, data governance & trust, and data products & embedded analytics, delivered native.",
+    "Migrate to Snowflake, AI use cases in production, data governance & trust, and data products & embedded analytics: four ways we build your data & AI practice, end to end with your team.",
   path: "/solutions",
 });
 
@@ -41,10 +41,10 @@ const SOLUTIONS = [
   },
   {
     eyebrow: "Applied AI",
-    name: "Cortex AI & agents",
+    name: "AI use cases in production",
     title: (
       <>
-        Cortex <span className="text-gradient">AI & agents</span>
+        AI use cases <span className="text-gradient">in production</span>
       </>
     ),
     body: "Production AI that runs securely next to governed data. We ground Cortex and Snowflake CoWork in your Semantic Views so business users get cited, trustworthy answers, and we build it all with Snowflake CoCo.",
@@ -138,7 +138,7 @@ export default function SolutionsPage() {
             Outcomes, <span className="text-gradient">delivered native</span>.
           </>
         }
-        description="Common ways teams put Snowflake to work, each delivered end to end on the native stack, governed from the first table. Not sure where you fit? We'll help you sequence it."
+        description="Four ways a data & AI practice takes shape: each delivered end to end on the native stack, governed from the first table, and built for your team to run. Not sure where to start? We'll help you sequence it."
       />
 
       {SOLUTIONS.map((s, i) => (

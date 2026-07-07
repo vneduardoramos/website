@@ -57,7 +57,7 @@ export default function TermsPage() {
           <h2>Services & engagements</h2>
           <p>
             Information on this site is for general guidance and does not constitute a binding
-            offer. Any consulting or delivery engagement is governed by a separate written
+            offer. Any services or delivery engagement is governed by a separate written
             agreement between you and {theme.brand.name}, which sets out scope, fees, timelines,
             and obligations. Where those terms conflict with these, the engagement agreement
             prevails.

@@ -27,7 +27,7 @@ const NAV_DESCRIPTIONS: Record<string, string> = {
   "/solutions": "What we solve: migrate, AI, govern, integrate",
   "/migrations": "Off Teradata, Oracle, Hadoop & more",
   "/data-ai": "Every major model, on your data",
-  "/platform": "The Snowflake-native stack",
+  "/platform": "How we build on Snowflake",
   "/approach": "Methodology & de-risking",
   "/pricing": "Engagement models & cost",
   "/industries/construction-real-estate": "Projects, property & assets",
@@ -49,7 +49,7 @@ const NAV_FEATURED: Record<string, Featured> = {
   Company: {
     eyebrow: "Partnership",
     title: "Snowflake Premier Partner",
-    pitch: "Premier & CoCo Preferred: direct product-team access and early roadmap visibility.",
+    pitch: "Premier & CoCo Preferred: direct product-team access and early roadmap visibility, put to work on your build.",
     href: "/partnership",
   },
   Services: {

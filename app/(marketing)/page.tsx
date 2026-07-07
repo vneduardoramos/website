@@ -46,7 +46,7 @@ const WHY_VIEWNEAR = [
 const DERISK = [
   { label: "Proof", title: "Prove it first", body: "A focused proof of concept before the full build. You commit to scale on evidence, not a slide deck." },
   { label: "Control", title: "You stay in control", body: "Regular steering, a shared backlog, and clear decision gates keep scope, budget, and priorities yours." },
-  { label: "Pace", title: "Value from sprint one", body: "Most engagements reach production in 8–16 weeks, with something useful shipped from the very first sprint." },
+  { label: "Pace", title: "Value from sprint one", body: "Use-case-driven sprints reach production in 8–16 weeks, with working software demoed from the very first sprint." },
   { label: "Handover", title: "Built to hand over", body: "Documentation, enablement, and a transition plan in every engagement, so your team runs and extends the work confidently." },
 ];
 
@@ -263,8 +263,9 @@ export default async function HomePage() {
               <span className="text-red">6–12 months</span> building the team in-house.
             </p>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
-              A SnowPro-certified team with enterprise depth at every level: no hiring
-              runway, no ramp, no key-person risk.
+              A SnowPro-certified team with enterprise depth at every level, working in
+              use-case sprints scoped by paid discovery: no hiring runway, no ramp,
+              no key-person risk.
             </p>
           </div>
           <div className="flex shrink-0 flex-wrap items-center gap-4">
@@ -290,7 +291,9 @@ export default async function HomePage() {
                 </h2>
                 <p className="mt-4 max-w-lg text-lg leading-relaxed text-white/75">
                   Recognized in Snowflake&rsquo;s CoCo Preferred Partner program at Summit 2026,
-                  alongside Accenture, Deloitte, IBM, and Capgemini.
+                  alongside Accenture, Deloitte, IBM, and Capgemini. For you, that means
+                  Snowflake&rsquo;s product teams are a call away when your build hits a hard
+                  question.
                 </p>
                 <div className="mt-7 flex flex-wrap items-center gap-6">
                   {BADGES.map((b) => (

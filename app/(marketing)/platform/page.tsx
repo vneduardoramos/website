@@ -11,9 +11,9 @@ import { RevealGroup } from "@/components/marketing/Motion";
 import { theme } from "@/config/theme";
 
 export const metadata = pageMeta({
-  title: "Platform: the Snowflake-native stack",
+  title: "Platform: the stack your data & AI practice runs on",
   description:
-    "We build native on Snowflake end to end (Openflow, dbt, Snowpark, Horizon, Cortex, Iceberg) so governance, lineage, and AI context stay in one place.",
+    "Why we build your data & AI practice native on Snowflake (Openflow, dbt, Snowpark, Horizon, Cortex, Iceberg): governance, lineage, and AI context in one place your team can run.",
   path: "/platform",
 });
 
@@ -100,7 +100,7 @@ export default function PlatformPage() {
                 Built <span className="text-gradient">native on Snowflake</span>, not bolted on.
               </>
             }
-            description={`One opinionated decision runs through everything ${theme.brand.name} delivers: the whole build lives inside Snowflake (ingestion, transformation, governance, AI). One governed home for your data, one lineage to audit, one context every team and agent shares.`}
+            description={`Your data & AI practice needs one home, not five vendors to reconcile. So everything ${theme.brand.name} builds for it lives inside Snowflake (ingestion, transformation, governance, AI): one governed home for your data, one lineage to audit, one context every team and agent shares.`}
           />
         </div>
       </div>
@@ -110,7 +110,7 @@ export default function PlatformPage() {
         <SectionHeading
           eyebrow="How it comes together"
           title="One build, start to finish"
-          intro="What actually happens when we build on Snowflake: who does what, and where each product earns its place in the story. dbt is the one external framework we run, natively against Snowflake."
+          intro="What actually happens when we stand up your data foundation: who does what, where each product earns its place, and where your team takes over. dbt is the one external framework we run, natively against Snowflake."
         />
         <StackStory />
       </Section>
@@ -159,11 +159,11 @@ export default function PlatformPage() {
         <ProductIndex layers={LAYERS} />
       </Section>
 
-      <FeaturedCaseStudies tint title="Built on Snowflake, in production" />
+      <FeaturedCaseStudies tint title="This stack, in production" />
 
       <CtaBand
-        title="Go native on Snowflake."
-        subtitle="Tell us your current stack and we'll map the fastest path to a single, governed Snowflake foundation, and what to retire along the way."
+        title="Put your practice on one governed stack."
+        subtitle="Tell us what you run today. We'll map the fastest path to a single, governed foundation on Snowflake, what to retire along the way, and where your team takes over."
       />
     </>
   );

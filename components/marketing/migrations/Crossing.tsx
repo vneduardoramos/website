@@ -7,9 +7,9 @@ import { RevealGroup } from "@/components/marketing/Motion";
  *   marts, exports crossing each other) against one calm governed foundation.
  *   Carries the "why teams move" drivers as annotations on each side.
  * - CutoverTimeline: the phased method as two parallel tracks. The legacy
- *   line runs through the phases and *ends* at cutover; the Snowflake line
- *   starts at Convert and keeps going. Parity validation annotates the
- *   parallel-run stretch.
+ *   line runs through the phases and *ends* at cutover; the client's practice
+ *   (on Snowflake) starts at Convert and keeps going. Parity validation
+ *   annotates the parallel-run stretch.
  *
  * Pure JSX/SVG on Glacier tokens; no images.
  */
@@ -22,8 +22,8 @@ const PAINS = [
 
 const GAINS = [
   { title: "Cost that flexes with use", body: "Compute by the second, scaled independently from storage. No idle clusters." },
-  { title: "One governed foundation", body: "One source of truth with access, lineage, and policy built in through Horizon." },
-  { title: "AI is the next step", body: "Cortex and the leading models run next to the governed data, so AI is not another project." },
+  { title: "One governed foundation", body: "One source of truth with access, lineage, and policy built in through Horizon, so decisions run on numbers people trust." },
+  { title: "AI is the next step", body: "Cortex and the leading models run next to the governed data, so your first AI use cases ship from the same foundation, not another project." },
 ];
 
 // The tangled "today": labeled boxes with crossing, broken-looking links.
@@ -156,7 +156,7 @@ export function CutoverTimeline({ phases }: { phases: Phase[] }) {
           </div>
           <span aria-hidden />
 
-          <span className="font-mono text-[0.64rem] uppercase tracking-[0.14em] text-primaryDeep">Snowflake</span>
+          <span className="font-mono text-[0.64rem] uppercase tracking-[0.14em] text-primaryDeep">Your practice</span>
           <span aria-hidden />
           <div className="col-span-4 flex items-center">
             <div className="h-2.5 flex-1 rounded-l-full bg-gradient-to-r from-primary/70 to-primary" />
