@@ -61,6 +61,9 @@ export function TeamCard({
         {member.name}
       </h3>
       <p className="relative mt-1 text-sm font-medium text-primaryDeep">{member.title}</p>
+      {member.bio && (
+        <p className="relative mt-3 text-sm leading-relaxed text-muted">{member.bio}</p>
+      )}
       {member.linkedinUrl && (
         <a
           href={member.linkedinUrl}

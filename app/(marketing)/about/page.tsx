@@ -1,5 +1,6 @@
 import { Img as Image } from "@/components/marketing/Img";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbLd } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 import Link from "next/link";
 import { Section, SectionHeading } from "@/components/marketing/ui";
 import { MetricBand } from "@/components/marketing/Blocks";
@@ -7,6 +8,7 @@ import { TeamCard } from "@/components/marketing/TeamCard";
 import { PageHero } from "@/components/marketing/PageHero";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { FieldStrip } from "@/components/marketing/FieldStrip";
+import { TrustBar } from "@/components/marketing/TrustBar";
 import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 import { PartnershipHighlight } from "@/components/marketing/PartnershipHighlight";
 import {
@@ -121,6 +123,7 @@ export default async function AboutPage() {
 
   return (
     <>
+      <JsonLd data={breadcrumbLd([{ name: "Home", url: "/" }, { name: "About" }])} />
       <PageHero
         eyebrow={`About ${theme.brand.name}`}
         title={
@@ -142,6 +145,9 @@ export default async function AboutPage() {
           ))}
         </div>
       </PageHero>
+
+      {/* Client proof up front: the named teams already working with us. */}
+      <TrustBar />
 
       {/* Snowflake partnership: Premier + CoCo Preferred Partner + Summit 2026 (lead section) */}
       <PartnershipHighlight showCta />

@@ -24,6 +24,31 @@ const nextConfig = {
     // Lint is clean; enforce it in production builds.
     ignoreDuringBuilds: false,
   },
+  // Baseline security headers on every response. Enterprise security reviews
+  // check for these. A strict, nonce-based CSP is deliberately deferred (it
+  // would break next/script + GA without careful work); everything below is
+  // safe to apply globally today.
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
+          },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=()",
+          },
+        ],
+      },
+    ];
+  },
+
   // IA consolidation: pages merged into richer ones. Preserve old links/SEO.
   async redirects() {
     return [

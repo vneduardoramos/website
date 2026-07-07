@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbLd } from "@/lib/seo";
+import { TrustBar } from "@/components/marketing/TrustBar";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { FeaturedCaseStudies } from "@/components/marketing/FeaturedCaseStudies";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
@@ -130,7 +131,7 @@ const solutionsLd = {
 export default function SolutionsPage() {
   return (
     <>
-      <JsonLd data={solutionsLd} />
+      <JsonLd data={[solutionsLd, breadcrumbLd([{ name: "Home", url: "/" }, { name: "Solutions" }])]} />
       <PageHero
         eyebrow="Solutions"
         title={
@@ -140,6 +141,8 @@ export default function SolutionsPage() {
         }
         description="Four ways a data & AI practice takes shape: each delivered end to end on the native stack, governed from the first table, and built for your team to run. Not sure where to start? We'll help you sequence it."
       />
+
+      <TrustBar />
 
       {SOLUTIONS.map((s, i) => (
         <Section

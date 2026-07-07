@@ -18,6 +18,10 @@ export const theme = {
     domain: "viewnear.com",
     url: "https://www.viewnear.com",
     email: "contact@viewnear.com",
+    // Set to surface a callable number on /contact, the footer, and the
+    // Organization contactPoint JSON-LD. Empty = dormant (nothing renders).
+    // Format for display, e.g. "+1 (512) 555-0100".
+    phone: "" as string,
     tagline: "Your data & AI practice, up and running.",
     description:
       "Viewnear helps enterprises stand up two capabilities they keep: a data practice that feeds real decisions with governed, trusted data, and an AI practice that ships use cases into production. Built on Snowflake, run by your team, across the Americas.",

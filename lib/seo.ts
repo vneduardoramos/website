@@ -21,7 +21,12 @@ export function pageMeta(opts: {
   const { title, description, path, image, type = "website", noindex } = opts;
   const url = `${theme.brand.url}${path}`;
   const abs = (src: string) => (/^https?:\/\//i.test(src) ? src : `${theme.brand.url}${src}`);
-  const ogImage = abs(image || DEFAULT_OG);
+  // Only pin an OG image when the caller passes one. Otherwise leave it unset
+  // so the cascade resolves correctly: a route's own opengraph-image.tsx file
+  // wins, and pages with neither fall back to the site-wide default declared
+  // in app/layout.tsx. (Previously this always injected og-default, which
+  // silently overrode the branded per-route opengraph-image files.)
+  const ogImage = image ? abs(image) : null;
   return {
     ...(title ? { title } : {}),
     ...(description ? { description } : {}),
@@ -32,13 +37,13 @@ export function pageMeta(opts: {
       ...(description ? { description } : {}),
       url,
       type,
-      images: [{ url: ogImage, width: 1200, height: 630 }],
+      ...(ogImage ? { images: [{ url: ogImage, width: 1200, height: 630 }] } : {}),
     },
     twitter: {
       card: "summary_large_image",
       ...(title ? { title } : {}),
       ...(description ? { description } : {}),
-      images: [ogImage],
+      ...(ogImage ? { images: [ogImage] } : {}),
     },
   };
 }

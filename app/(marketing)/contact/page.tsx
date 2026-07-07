@@ -98,6 +98,17 @@ export default async function ContactPage() {
               <p className="mt-2 text-sm text-muted">
                 An architect replies within one business day.
               </p>
+              {theme.brand.phone && (
+                <p className="mt-2 text-sm text-muted">
+                  Prefer to call?{" "}
+                  <a
+                    href={`tel:${theme.brand.phone.replace(/[^+\d]/g, "")}`}
+                    className="font-semibold text-primaryDeep underline-offset-4 hover:underline"
+                  >
+                    {theme.brand.phone}
+                  </a>
+                </p>
+              )}
               <ol className="relative mt-6 space-y-6 before:absolute before:left-[15px] before:top-3 before:bottom-3 before:w-px before:bg-border">
                 {steps.map((step, i) => (
                   <li key={step.title} className="relative flex gap-4">

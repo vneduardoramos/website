@@ -1,5 +1,6 @@
 import { getIndustries } from "@/lib/queries";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbLd } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { CoverCard } from "@/components/marketing/CoverCard";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
@@ -20,6 +21,7 @@ export default async function IndustriesPage() {
 
   return (
     <>
+      <JsonLd data={breadcrumbLd([{ name: "Home", url: "/" }, { name: "Industries" }])} />
       <PageHero
         eyebrow="Industries"
         title={<>Solutions tailored to your{" "}<ScrollHighlight color="cyan"><span className="text-gradient">sector</span></ScrollHighlight>.</>}

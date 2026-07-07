@@ -1,4 +1,4 @@
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbLd } from "@/lib/seo";
 import Link from "next/link";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { LedgerCard } from "@/components/marketing/Cards";
@@ -68,7 +68,7 @@ const impactByPhase = [
 export default function PricingPage() {
   return (
     <>
-      <JsonLd data={pricingLd} />
+      <JsonLd data={[pricingLd, breadcrumbLd([{ name: "Home", url: "/" }, { name: "Pricing" }])]} />
       <PageHero
         eyebrow="Pricing & engagement"
         title={

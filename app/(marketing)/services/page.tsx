@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbLd } from "@/lib/seo";
 import {
   Section,
   SectionHeading,
@@ -7,6 +7,7 @@ import {
 } from "@/components/marketing/ui";
 import { LeadershipStrip } from "@/components/marketing/LeadershipStrip";
 import { PlateCard, LedgerCard } from "@/components/marketing/Cards";
+import { TrustBar } from "@/components/marketing/TrustBar";
 import { MetricBand, InlineCta } from "@/components/marketing/Blocks";
 import { PageHero } from "@/components/marketing/PageHero";
 import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
@@ -182,7 +183,7 @@ export default async function ServicesPage() {
 
   return (
     <>
-      <JsonLd data={serviceLd} />
+      <JsonLd data={[serviceLd, breadcrumbLd([{ name: "Home", url: "/" }, { name: "Services" }])]} />
       <PageHero
         eyebrow="Services"
         title={
@@ -196,6 +197,8 @@ export default async function ServicesPage() {
         }
         description="Strategy, engineering, and enablement under one accountable team, building two capabilities you keep: a data practice your decisions can trust and an AI practice that ships to production, across THINK, BUILD, and GROW."
       />
+
+      <TrustBar />
 
       {tiers.map(({ tier, services }, tierIdx) => {
         const meta = tierMeta[tier];

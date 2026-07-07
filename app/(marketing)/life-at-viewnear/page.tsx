@@ -332,11 +332,11 @@ export default async function LifeAtViewnearPage() {
         eyebrow="Careers · Culture"
         title={
           <>
-            A young company building the{" "}
+            Building the{" "}
             <span className="text-gradient">data &amp; AI home team</span> for the Americas.
           </>
         }
-        description={`${theme.brand.name} is early in its story: outcome-led, AI-native, and built around one team that shares in every win. Here's how we work, what we stand for, and the benefits behind it.`}
+        description={`${theme.brand.name} is outcome-led, AI-native, and built around one team that shares in every win. Here's how we work, what we stand for, and the benefits behind it.`}
       >
         <div className="flex flex-wrap justify-center gap-4">
           <Link href="#open-roles" className="btn-primary btn-lg">

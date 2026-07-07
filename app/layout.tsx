@@ -46,6 +46,16 @@ export const metadata: Metadata = {
     description: theme.brand.description,
     images: ["/assets/og-default.jpg"],
   },
+  // Search-console ownership. Real once the tokens are set in the env; omitted
+  // (no empty tags) until then.
+  verification: {
+    ...(process.env.GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+      : {}),
+    ...(process.env.BING_SITE_VERIFICATION
+      ? { other: { "msvalidate.01": process.env.BING_SITE_VERIFICATION } }
+      : {}),
+  },
 };
 
 export const viewport: Viewport = {
@@ -64,8 +74,11 @@ const ORG_JSONLD = {
     "@type": "ContactPoint",
     contactType: "sales",
     email: theme.brand.email,
+    ...(theme.brand.phone ? { telephone: theme.brand.phone } : {}),
     areaServed: "Americas",
-    availableLanguage: ["en", "es"],
+    // English only until real Spanish content ships (do not claim "es" we
+    // cannot serve). Restore when i18n lands.
+    availableLanguage: ["en"],
   },
 };
 

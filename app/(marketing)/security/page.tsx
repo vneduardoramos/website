@@ -1,4 +1,5 @@
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbLd } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 import Link from "next/link";
 import {
   Section,
@@ -90,6 +91,7 @@ const verticals = [
 export default function SecurityPage() {
   return (
     <>
+      <JsonLd data={breadcrumbLd([{ name: "Home", url: "/" }, { name: "Security & Trust" }])} />
       <div className="relative overflow-hidden">
         <SectionDecor variant="grid" />
         <div className="relative">

@@ -62,6 +62,17 @@ export function Footer() {
               <a href={`mailto:${theme.brand.email}`} className="font-medium text-primaryDeep hover:underline">
                 {theme.brand.email}
               </a>
+              {theme.brand.phone && (
+                <>
+                  {" · "}
+                  <a
+                    href={`tel:${theme.brand.phone.replace(/[^+\d]/g, "")}`}
+                    className="font-medium text-primaryDeep hover:underline"
+                  >
+                    {theme.brand.phone}
+                  </a>
+                </>
+              )}
             </p>
             <PartnerBadges variant="logos" size="sm" className="mt-6" />
             <SnowflakeLockup variant="default" height={24} className="mt-6" />
