@@ -35,6 +35,7 @@
     "react-markdown": "9.0.1",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "4.0.0",
+    "tsx": "4.19.2",
     "zod": "3.23.8"
   },
   "devDependencies": {
@@ -52,7 +53,6 @@
     "prisma": "5.22.0",
     "sharp": "^0.35.1",
     "tailwindcss": "3.4.15",
-    "tsx": "4.19.2",
     "typescript": "5.5.3",
     "vitest": "^2.1.9"
   }

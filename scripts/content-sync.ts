@@ -22,7 +22,16 @@ import { readFileSync, writeFileSync, existsSync } from "fs";
 import path from "path";
 
 const SNAPSHOT = path.join(process.cwd(), "prisma", "content-snapshot.json");
-const prisma = new PrismaClient();
+// Prefer the direct (non-pooler) connection for the bulk upsert/delete loop.
+// Runtime queries use the pooled DATABASE_URL, but a tight write loop over
+// Neon's pooler (PgBouncer transaction mode) trips prepared-statement errors,
+// which is why schema ops already use directUrl. Fall back to the default
+// datasource when no direct URL is set (e.g. local dev without it).
+const prisma = new PrismaClient(
+  process.env.DIRECT_DATABASE_URL
+    ? { datasourceUrl: process.env.DIRECT_DATABASE_URL }
+    : undefined,
+);
 
 // Parent-first order; deletions run in reverse. `strip` drops relation arrays
 // and columns we intentionally do not carry (BlogPost.authorId points at the
@@ -126,12 +135,23 @@ async function importContent(force: boolean) {
 async function main() {
   const cmd = process.argv[2];
   const force = process.argv.includes("--force");
-  if (cmd === "export") await exportContent();
-  else if (cmd === "import") await importContent(force);
-  else {
-    console.error("Usage: tsx scripts/content-sync.ts <export|import> [--force]");
-    process.exit(1);
+  if (cmd === "export") {
+    await exportContent();
+    return;
   }
+  if (cmd === "import") {
+    // Non-fatal: a content-sync hiccup must never block the production build.
+    // The code deploy has to ship regardless; on failure prod keeps its
+    // last-good content and this logs loudly for follow-up.
+    try {
+      await importContent(force);
+    } catch (e) {
+      console.error("content-sync import failed (non-fatal, build continues):", e);
+    }
+    return;
+  }
+  console.error("Usage: tsx scripts/content-sync.ts <export|import> [--force]");
+  process.exit(1);
 }
 
 main()
