@@ -25,7 +25,7 @@ const NAV_DESCRIPTIONS: Record<string, string> = {
   "/life-at-viewnear": "Culture, roles & benefits",
   "/services": "How we engage: THINK · BUILD · GROW",
   "/migrations": "Off Teradata, Oracle, Hadoop & more",
-  "/data-ai": "Every major model, on governed data",
+  "/data-ai": "Agents on governed data, built with Claude",
   "/platform": "How we build on Snowflake",
   "/approach": "Methodology & de-risking",
   "/pricing": "Engagement models & cost",
@@ -372,7 +372,7 @@ function MegaFeatured({
   } else if (label === "Services") {
     href = "/data-ai";
     eyebrow = "Data + AI";
-    title = "Every major model, governed";
+    title = "Agents inside Snowflake and in the flow of work";
     cta = "Explore Data + AI";
     extra = (
       <div className="mt-3 flex flex-wrap gap-1.5">

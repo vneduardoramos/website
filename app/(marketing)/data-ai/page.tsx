@@ -5,19 +5,21 @@ import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { PartnerBadges } from "@/components/marketing/PartnerBadges";
+import { AnthropicMark } from "@/components/marketing/ProviderMark";
 import { LedgerCard } from "@/components/marketing/Cards";
-import { OneLineSwap } from "@/components/marketing/data-ai/OneLineSwap";
+import { Interplay } from "@/components/marketing/data-ai/Interplay";
+import { BuiltWithAnthropic } from "@/components/marketing/data-ai/BuiltWithAnthropic";
 import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 
 export const metadata = pageMeta({
-  title: "Data + AI: the use cases we ship on governed data",
+  title: "Data + AI: agents inside Snowflake and in the flow of work",
   description:
-    "Document intelligence, cited answers, early-warning models, and agents that act: the use cases we ship into production with the team, using Snowflake Cortex on governed data.",
+    "Agents that reason over governed data inside Snowflake and act in the tools teams already use, and the interplay between them. Built with Claude as an Anthropic partner, in production in 8–16 weeks.",
   path: "/data-ai",
 });
 
-const HERO_CHIPS = ["In production, not a lab", "Runs in Snowflake", "Governed by default", "Value from sprint one"];
+const HERO_CHIPS = ["Inside Snowflake + in the field", "Grounded in governed data", "Built with Claude", "In production, not a lab"];
 
 // What we actually ship: concrete use cases, each with its Snowflake mechanism
 // and, where one exists, the real (anonymized) engagement that proves it.
@@ -75,11 +77,11 @@ export default function DataAiPage() {
             eyebrow="Data + AI"
             title={
               <>
-                Six jobs enterprise data could be doing{" "}
-                <ScrollHighlight>by next quarter.</ScrollHighlight>
+                Agents that act where work happens,{" "}
+                <ScrollHighlight>on data teams can trust.</ScrollHighlight>
               </>
             }
-            description="Reading the paperwork, answering executives, flagging churn before it lands, acting inside policy. These are the use cases we ship with the team, using Snowflake Cortex on governed data: proven small first, demoed every sprint, in production in 8–16 weeks."
+            description="The value of AI shows up when agents reason over governed data inside Snowflake and take the next action in the tools teams already use. We build both, and the interplay between them, with Claude as an Anthropic partner. Proven small first, in production in 8–16 weeks."
           >
             <div className="flex flex-wrap justify-center gap-2">
               {HERO_CHIPS.map((c) => (
@@ -92,19 +94,36 @@ export default function DataAiPage() {
         </div>
       </div>
 
-      {/* THE DELIVERABLES: the dark kick right after the light hero. White
-          cards on deep indigo, real engagement numbers on the proven ones. */}
+      {/* THE THESIS, SHOWN: two planes that interplay. The contrasting kick
+          right after the light hero. */}
+      <Section className="section-tint relative overflow-hidden">
+        <div className="relative">
+          <SectionHeading
+            align="center"
+            eyebrow="How it works"
+            title="Two planes, one governed loop"
+            intro="Agents run in two places. Inside Snowflake, they reason over governed data without moving it. In the flow of work, Claude takes the next action where teams already are. The point is the interplay: a request crosses both and comes back cited, in policy, and logged."
+          />
+          <div className="mt-12">
+            <Interplay />
+          </div>
+        </div>
+        <WaveDivider position="bottom" fill="fill-background" />
+      </Section>
+
+      {/* WHAT WE SHIP: the dark kick. White cards on deep indigo, real
+          engagement numbers on the proven ones. */}
       <Section>
         <div className="panel-indigo relative overflow-hidden rounded-3xl p-7 shadow-xl md:p-12">
           <div className="relative">
             <div className="max-w-2xl">
-              <p className="eyebrow eyebrow--invert mb-4">What we deliver</p>
+              <p className="eyebrow eyebrow--invert mb-4">What we ship</p>
               <h2 className="font-display text-3xl font-bold tracking-tight text-white md:text-[2.6rem] md:leading-[1.08]">
-                Six jobs. In production, not in a lab.
+                Six jobs, running across both planes.
               </h2>
               <p className="mt-4 max-w-xl text-lg leading-relaxed text-white/75">
-                Each one runs next to governed data inside Snowflake. Where a real
-                engagement proves it, the numbers are on the card.
+                Each one reasons over governed data inside Snowflake and shows up where teams
+                work. Where a real engagement proves it, the numbers are on the card.
               </p>
             </div>
             <RevealGroup className="mt-10 grid gap-5 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3" variant="pop">
@@ -139,14 +158,15 @@ export default function DataAiPage() {
         </div>
       </Section>
 
-      {/* Governed by default */}
+      {/* Governed by default: the governance that spans both planes */}
       <Section className="section-warm relative overflow-hidden">
         <FeatureSplit
           eyebrow="Governed by default"
-          title="AI without shipping the data out"
-          body="Inference runs inside the business's Snowflake account, so prompts and results stay within the same perimeter as the data. Every call inherits the access controls, lineage, and Horizon governance already in place, with Cortex guardrails screening for prompt injection and unsafe output."
+          title="One perimeter, one identity, both planes"
+          body="Inference runs inside the business's Snowflake account, so prompts and results stay within the same perimeter as the data. Agents in the field reach it through governed endpoints, never raw copies, acting as verifiable identities with per-agent permissions. Access, masking, and lineage carry across both planes, and Cortex guardrails screen every call."
           bullets={[
             "Models run next to governed data: no copies, no export",
+            "Every agent acts as one governed identity, inside or out",
             "Access, masking, and lineage inherited from Snowflake Horizon",
             "Cortex Guard and AI guardrails on every call",
           ]}
@@ -178,14 +198,9 @@ export default function DataAiPage() {
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
 
-      {/* The model question, answered once: never locked, benchmarked per job */}
+      {/* The Anthropic moment: partner + Claude as default, on both planes */}
       <Section>
-        <OneLineSwap />
-        <p className="mx-auto mt-6 max-w-2xl text-center text-xs leading-relaxed text-muted">
-          Anthropic, OpenAI, Meta, Mistral, Google, and DeepSeek are all callable in Snowflake
-          Cortex; we benchmark per use case on quality, cost, and latency, and switch when the
-          frontier moves. Names are trademarks of their respective owners; lineup varies by region.
-        </p>
+        <BuiltWithAnthropic />
       </Section>
 
       {/* Proof */}
@@ -194,16 +209,20 @@ export default function DataAiPage() {
           align="center"
           eyebrow="Credentials"
           title="Certified to run AI on enterprise data"
-          intro="Every model runs under Snowflake's independently audited controls, delivered by a SnowPro-certified team that does this every day."
+          intro="Every model runs under Snowflake's independently audited controls, delivered by a SnowPro-certified team that does this every day, and, as an Anthropic partner, builds with Claude."
         />
         <div className="mt-12 flex justify-center">
           <PartnerBadges variant="logos" />
         </div>
+        <p className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-muted">
+          <AnthropicMark size={16} />
+          Anthropic partner, building with Claude
+        </p>
       </Section>
 
       <CtaBand
-        title="Put the right model on the data."
-        subtitle="Tell us the use case. We'll bring the model, the governance, and the people to ship it into production with the team, on Snowflake."
+        title="Put the right agent on the work."
+        subtitle="Tell us the use case. We'll bring Claude, the governance, and the people to ship it into production with the team, inside Snowflake and in the flow of work."
       />
     </>
   );
