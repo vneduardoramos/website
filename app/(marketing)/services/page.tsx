@@ -7,7 +7,7 @@ import {
 } from "@/components/marketing/ui";
 import { LeadershipStrip } from "@/components/marketing/LeadershipStrip";
 import { PlateCard, LedgerCard } from "@/components/marketing/Cards";
-import { TrustBar } from "@/components/marketing/TrustBar";
+import { TrustLogos } from "@/components/marketing/TrustBar";
 import { SnowMark } from "@/components/marketing/SnowMark";
 import { MetricBand, InlineCta } from "@/components/marketing/Blocks";
 import { PageHero } from "@/components/marketing/PageHero";
@@ -197,9 +197,8 @@ export default async function ServicesPage() {
           </>
         }
         description="Strategy, engineering, and enablement under one accountable team, building two capabilities that stay in-house: a data practice decisions can trust and an AI practice that ships to production, across THINK, BUILD, and GROW."
+        footer={<TrustLogos />}
       />
-
-      <TrustBar />
 
       {tiers.map(({ tier, services }, tierIdx) => {
         const meta = tierMeta[tier];

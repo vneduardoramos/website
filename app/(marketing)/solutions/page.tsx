@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { pageMeta, breadcrumbLd } from "@/lib/seo";
-import { TrustBar } from "@/components/marketing/TrustBar";
+import { TrustLogos } from "@/components/marketing/TrustBar";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { FeaturedCaseStudies } from "@/components/marketing/FeaturedCaseStudies";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
@@ -140,9 +140,8 @@ export default function SolutionsPage() {
           </>
         }
         description="Four ways a data & AI practice takes shape: each delivered end to end on the native stack, governed from the first table, and built for the team to run. Not sure where to start? We'll help sequence it."
+        footer={<TrustLogos />}
       />
-
-      <TrustBar />
 
       {SOLUTIONS.map((s, i) => (
         <Section

@@ -3,6 +3,10 @@ import { HeroBackground } from "@/components/marketing/HeroBackground";
 /**
  * Standard inner-page hero with the brand wave background. Title may include
  * JSX (e.g. a `.text-gradient` emphasis span). `align` defaults to center.
+ *
+ * `footer` renders inside the same section, over the shared HeroBackground, so
+ * a client-logo strip (or similar) sits on the hero atmosphere instead of a
+ * bare white band below it. The hero's data-flow lines run behind it.
  */
 export function PageHero({
   eyebrow,
@@ -10,18 +14,22 @@ export function PageHero({
   description,
   align = "center",
   children,
+  footer,
 }: {
   eyebrow?: string;
   title: React.ReactNode;
   description?: string;
   align?: "center" | "left";
   children?: React.ReactNode;
+  footer?: React.ReactNode;
 }) {
   const centered = align === "center";
   return (
     <section className="relative overflow-hidden">
       <HeroBackground compact />
-      <div className="container-page relative py-20 md:py-28">
+      <div
+        className={`container-page relative ${footer ? "pb-12 pt-20 md:pb-16 md:pt-28" : "py-20 md:py-28"}`}
+      >
         <div className={centered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
           {eyebrow && (
             <p className="chip mb-5 inline-flex">{eyebrow}</p>
@@ -37,6 +45,11 @@ export function PageHero({
           {children && <div className="mt-8">{children}</div>}
         </div>
       </div>
+      {footer && (
+        <div className="container-page relative pb-16 md:pb-20">
+          <div className="border-t border-border/60 pt-10 md:pt-12">{footer}</div>
+        </div>
+      )}
     </section>
   );
 }

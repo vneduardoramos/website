@@ -8,7 +8,7 @@ import { TeamCard } from "@/components/marketing/TeamCard";
 import { PageHero } from "@/components/marketing/PageHero";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { FieldStrip } from "@/components/marketing/FieldStrip";
-import { TrustBar } from "@/components/marketing/TrustBar";
+import { TrustLogos } from "@/components/marketing/TrustBar";
 import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 import { PartnershipHighlight } from "@/components/marketing/PartnershipHighlight";
 import {
@@ -136,6 +136,7 @@ export default async function AboutPage() {
           </>
         }
         description="Two lasting capabilities: a data practice that feeds real decisions and an AI practice that ships use cases into production, built on Snowflake and run by in-house teams, guided and accelerated by ours. As a Snowflake Premier and CoCo Preferred Partner, we deliver across Canada, the USA, Mexico, LATAM, and the Caribbean."
+        footer={<TrustLogos />}
       >
         <div className="mt-7 flex flex-wrap justify-center gap-2.5">
           {HERO_CHIPS.map((c) => (
@@ -145,9 +146,6 @@ export default async function AboutPage() {
           ))}
         </div>
       </PageHero>
-
-      {/* Client proof up front: the named teams already working with us. */}
-      <TrustBar />
 
       {/* Snowflake partnership: Premier + CoCo Preferred Partner + Summit 2026 (lead section) */}
       <PartnershipHighlight showCta />
