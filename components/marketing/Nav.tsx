@@ -24,7 +24,6 @@ const NAV_DESCRIPTIONS: Record<string, string> = {
   "/security": "Governance & compliance",
   "/life-at-viewnear": "Culture, roles & benefits",
   "/services": "How we engage: THINK · BUILD · GROW",
-  "/solutions": "What we solve: migrate, AI, govern, integrate",
   "/migrations": "Off Teradata, Oracle, Hadoop & more",
   "/data-ai": "Every major model, on governed data",
   "/platform": "How we build on Snowflake",
@@ -134,16 +133,6 @@ function SparkIcon(p: SVGProps<SVGSVGElement>) {
     <svg {...ic} {...p}>
       <path d="M12 3c.6 3.6 1.8 4.8 5.4 5.4-3.6.6-4.8 1.8-5.4 5.4-.6-3.6-1.8-4.8-5.4-5.4 3.6-.6 4.8-1.8 5.4-5.4z" />
       <path d="M18.5 14.5c.3 1.6.8 2.1 2.4 2.4-1.6.3-2.1.8-2.4 2.4-.3-1.6-.8-2.1-2.4-2.4 1.6-.3 2.1-.8 2.4-2.4z" />
-    </svg>
-  );
-}
-function BulbIcon(p: SVGProps<SVGSVGElement>) {
-  // lightbulb → ideas applied as solutions
-  return (
-    <svg {...ic} {...p}>
-      <path d="M9 18h6" />
-      <path d="M10 21h4" />
-      <path d="M12 3a6 6 0 0 0-3.8 10.6c.5.4.8 1 .8 1.6v.3h6v-.3c0-.6.3-1.2.8-1.6A6 6 0 0 0 12 3z" />
     </svg>
   );
 }
@@ -259,7 +248,6 @@ function ChatQuestionIcon(p: SVGProps<SVGSVGElement>) {
 
 const NAV_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   "/services": LayersIcon,
-  "/solutions": BulbIcon,
   "/migrations": MigrateIcon,
   "/data-ai": SparkIcon,
   "/platform": DatabaseIcon,

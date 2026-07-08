@@ -53,6 +53,7 @@ const nextConfig = {
   async redirects() {
     return [
       { source: "/careers", destination: "/life-at-viewnear", permanent: true },
+      { source: "/solutions", destination: "/services", permanent: true },
       { source: "/team", destination: "/about", permanent: true },
       { source: "/why-viewnear", destination: "/partnership", permanent: true },
       { source: "/videos", destination: "/resources", permanent: true },

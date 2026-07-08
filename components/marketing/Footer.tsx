@@ -19,7 +19,6 @@ const groups = [
     title: "Services",
     links: [
       { label: "Services", href: "/services" },
-      { label: "Solutions", href: "/solutions" },
       { label: "Approach", href: "/approach" },
       { label: "Pricing", href: "/pricing" },
       { label: "Platform", href: "/platform" },

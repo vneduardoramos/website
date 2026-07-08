@@ -281,9 +281,9 @@ export default async function ServicesPage() {
             intro="An AI practice ready for agents does not start with agents. It starts with governed data and trusted context: one layer where data, business context, models, and workflows come together. We build that layer with the team, so when the agents act, they act on numbers the business trusts."
           />
           <p className="mt-6 max-w-2xl text-sm text-muted">
-            See the AI we put into production on the{" "}
-            <Link href="/solutions" className="font-semibold text-primaryDeep link-underline">
-              solutions page
+            See the AI we put into production in our{" "}
+            <Link href="/case-studies" className="font-semibold text-primaryDeep link-underline">
+              case studies
             </Link>
             , and how we pick the model for each job on{" "}
             <Link href="/data-ai" className="font-semibold text-primaryDeep link-underline">

@@ -20,9 +20,8 @@ export const INDUSTRIES: { slug: string; name: string }[] = [
 ];
 
 /**
- * The multi-hue industry tiles (icon + per-sector accent), shared by the home
- * IndustriesStrip and the matching Solutions industry section so both
- * read the same.
+ * The multi-hue industry tiles (icon + per-sector accent), used by the home
+ * IndustriesStrip.
  */
 export function IndustryTiles({ className }: { className?: string }) {
   return (
