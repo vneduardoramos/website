@@ -5,5 +5,5 @@ export const contentType = OG_CONTENT_TYPE;
 export const alt = "Viewnear, Snowflake partnership";
 
 export default function Image() {
-  return renderOg({ eyebrow: "Partnership", title: "Your Snowflake Premier Partner" });
+  return renderOg({ eyebrow: "Partnership", title: "A Snowflake Premier Partner" });
 }

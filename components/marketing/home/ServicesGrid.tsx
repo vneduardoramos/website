@@ -9,7 +9,7 @@ type Service = { slug: string; title: string; summary: string };
 const ENGAGE_POINTS = [
   "Fixed cost: a defined outcome at a set price",
   "Time & materials: discovery and evolving scope",
-  "Team augmentation: certified depth inside your team",
+  "Team augmentation: certified depth alongside in-house teams",
   "Paid discovery fixes scope; foundations go live in 8–16 weeks",
 ];
 
@@ -27,9 +27,10 @@ export function ServicesGrid({ services }: { services: Service[] }) {
       href="/services"
       className="group flex h-full flex-col rounded-[10px] border border-border bg-background px-5 pb-5 pt-4 transition-colors hover:border-primary/50"
     >
-      <div className="flex items-baseline justify-between gap-3 border-b border-dotted border-primary/40 pb-3">
-        <span className="eyebrow">Service</span>
-        <span className="font-mono text-xs text-muted">№ {String(index).padStart(2, "0")}</span>
+      <div className="border-b border-dotted border-primary/40 pb-3">
+        <span className="font-mono text-xs tracking-wider text-muted">
+          № {String(index).padStart(2, "0")}
+        </span>
       </div>
       <h3 className="mt-3.5 font-display text-lg font-bold text-foreground">{svc.title}</h3>
       <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-muted">{svc.summary}</p>
@@ -65,9 +66,8 @@ export function ServicesGrid({ services }: { services: Service[] }) {
             href="/services"
             className="group flex h-full flex-col rounded-[10px] border border-border bg-background px-6 pb-6 pt-5 transition-colors hover:border-primary/50 lg:col-span-2"
           >
-            <div className="flex items-baseline justify-between gap-3 border-b border-dotted border-primary/40 pb-3">
-              <span className="eyebrow">Service</span>
-              <span className="font-mono text-xs text-muted">№ 01</span>
+            <div className="border-b border-dotted border-primary/40 pb-3">
+              <span className="font-mono text-xs tracking-wider text-muted">№ 01</span>
             </div>
             <h3 className="mt-4 font-display text-2xl font-bold text-foreground">{lead.title}</h3>
             <p className="mt-3 max-w-lg flex-1 text-base leading-relaxed text-muted">{lead.summary}</p>

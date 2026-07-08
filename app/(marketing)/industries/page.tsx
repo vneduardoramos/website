@@ -12,7 +12,7 @@ import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 export const metadata = pageMeta({
   title: "Industries we serve",
   description:
-    "Data & AI practices shaped to your sector's rules, KPIs, and systems: governed data and use cases in production, on Snowflake, across the Americas.",
+    "Data & AI practices shaped to each sector's rules, KPIs, and systems: governed data and use cases in production, on Snowflake, across the Americas.",
   path: "/industries",
 });
 
@@ -24,8 +24,8 @@ export default async function IndustriesPage() {
       <JsonLd data={breadcrumbLd([{ name: "Home", url: "/" }, { name: "Industries" }])} />
       <PageHero
         eyebrow="Industries"
-        title={<>Solutions tailored to your{" "}<ScrollHighlight color="cyan"><span className="text-gradient">sector</span></ScrollHighlight>.</>}
-        description="From regulated enterprises to high-growth challengers: governed, AI-ready data shaped by your sector's rules, KPIs, and systems, across the Americas."
+        title={<>Solutions tailored to each{" "}<ScrollHighlight color="cyan"><span className="text-gradient">sector</span></ScrollHighlight>.</>}
+        description="From regulated enterprises to high-growth challengers: governed, AI-ready data shaped by each sector's rules, KPIs, and systems, across the Americas."
       />
 
       <Section className="section-warm relative overflow-hidden">
@@ -35,19 +35,19 @@ export default async function IndustriesPage() {
           eyebrow="Domain-led delivery"
           title={
             <>
-              Your sector&rsquo;s data,{" "}
+              Every sector&rsquo;s data,{" "}
               <span className="text-gradient">regulations, and KPIs</span>.
             </>
           }
-          body="Every sector has its own data, regulations, and pressures. We pair specialists who know your industry with SnowPro-certified engineers to map the problem, shape the roadmap, and build the solution alongside your team, so what we deliver speaks your language and moves your metrics."
+          body="Every sector has its own data, regulations, and pressures. We pair specialists who know the industry with SnowPro-certified engineers to map the problem, shape the roadmap, and build the solution alongside in-house teams, so what we deliver speaks the sector's language and moves the metrics that matter."
           bullets={[
             "Pre-built accelerators tuned to each sector's data patterns",
             "Compliance and governance baked into the architecture",
-            "Outcomes mapped to the KPIs your leadership tracks",
+            "Outcomes mapped to the KPIs leadership tracks",
           ]}
           image="/assets/images/photos/analytics.jpg"
           imageAlt="Industry analytics dashboards built on Snowflake"
-          cta={{ label: "Discuss your sector", href: "/contact" }}
+          cta={{ label: "Discuss a sector", href: "/contact" }}
         />
         </div>
         <WaveDivider position="bottom" fill="fill-background" />
@@ -56,8 +56,8 @@ export default async function IndustriesPage() {
       <Section>
         <SectionHeading
           eyebrow="Sectors we serve"
-          title="Find your industry"
-          intro="Seven practices, each with its own accelerators and compliance patterns; explore the one closest to your world."
+          title="Find the right industry"
+          intro="Seven practices, each with its own accelerators and compliance patterns; explore the one closest to the work at hand."
         />
         <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3" variant="pop">
           {industries.map((industry) => (
@@ -76,8 +76,8 @@ export default async function IndustriesPage() {
           <CoverCard
             href="/contact"
             kicker="Get in touch"
-            title="Don't see your sector?"
-            excerpt="We work across the Americas. Tell us your data challenge and we'll map the fastest path to value."
+            title="Don't see a sector here?"
+            excerpt="We work across the Americas. Share the data challenge and we'll map the fastest path to value."
           />
         </RevealGroup>
       </Section>
@@ -93,8 +93,8 @@ export default async function IndustriesPage() {
             <span className="text-secondary">one governed foundation</span>.
           </>
         }
-        body="Whatever your industry, the foundation is the same: trusted, governed data on Snowflake. What changes is everything on top: the sources, the compliance obligations, and the decisions it has to carry."
-        cta={{ label: "Discuss your sector", href: "/contact" }}
+        body="Whatever the industry, the foundation is the same: trusted, governed data on Snowflake. What changes is everything on top: the sources, the compliance obligations, and the decisions it has to carry."
+        cta={{ label: "Discuss a sector", href: "/contact" }}
       />
 
       <CtaBand />

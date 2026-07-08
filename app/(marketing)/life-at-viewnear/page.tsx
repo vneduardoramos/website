@@ -277,7 +277,7 @@ const meaning = [
   {
     icon: "trendingUp" as const,
     title: "Growth",
-    body: "Meaningful work that expands your learning, business context, and technical range.",
+    body: "Meaningful work that expands learning, business context, and technical range.",
     tint: "bg-primary/15 text-primaryDeep",
   },
   {
@@ -301,7 +301,7 @@ const meaning = [
   {
     icon: "heart" as const,
     title: "Pride",
-    body: "Hard problems, real ownership, and work you can put your name on.",
+    body: "Hard problems, real ownership, and work worth putting a name on.",
     tint: "bg-primary/15 text-primaryDeep",
   },
 ];
@@ -558,10 +558,10 @@ export default async function LifeAtViewnearPage() {
         </div>
       </Section>
 
-      {/* WHAT THIS MEANS FOR YOU */}
+      {/* WHAT IT MEANS FOR THE TEAM */}
       <Section className="section-tint">
         <SectionHeading
-          eyebrow="What this means for you"
+          eyebrow="What it means for the team"
           title="A better model is a better place to work"
           center
         />
@@ -653,7 +653,7 @@ export default async function LifeAtViewnearPage() {
         <SectionHeading
           eyebrow="Open roles"
           title="Current openings"
-          intro="If you do not see a perfect fit, we still want to hear from you."
+          intro="No perfect fit on the list? We still want to meet great people."
         />
         {openings.length === 0 ? (
           <p className="mt-8 text-muted">
@@ -694,7 +694,7 @@ export default async function LifeAtViewnearPage() {
         )}
         <div className="mt-12">
           <InlineCta
-            title="Not sure which role fits? Tell us how you can help."
+            title="Not sure which role fits? Reach out anyway."
             href="#apply"
             label="Apply now"
           />
@@ -705,8 +705,8 @@ export default async function LifeAtViewnearPage() {
       <Section id="apply" className="section-tint">
         <SectionHeading
           eyebrow="Apply"
-          title="Tell us about you"
-          intro="Send your details and the role you are interested in. We read every application."
+          title="Say hello"
+          intro="Share a few details and the role of interest. We read every application."
         />
         <div className="mx-auto mt-12 max-w-2xl">
           <ApplicationForm />
@@ -724,7 +724,7 @@ export default async function LifeAtViewnearPage() {
               Start with outcomes. Build the team that delivers them.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-muted">
-              If you want meaningful work, peers who push your craft, and a young firm you can help shape, let&apos;s talk.
+              Meaningful work, peers who sharpen the craft, and a young firm to help shape: let&apos;s talk.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link href="#open-roles" className="btn-primary btn-lg">

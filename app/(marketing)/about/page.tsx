@@ -25,7 +25,7 @@ import { theme } from "@/config/theme";
 export const metadata = pageMeta({
   title: "About: building data & AI practices across the Americas",
   description:
-    "Viewnear helps enterprises stand up data & AI practices they keep: governed data feeding real decisions and AI use cases in production, built on Snowflake and run by your own team.",
+    "Viewnear helps enterprises stand up data & AI practices they keep: governed data feeding real decisions and AI use cases in production, built on Snowflake and run by their own teams.",
   path: "/about",
 });
 
@@ -56,8 +56,8 @@ const trackRecord = [
 const principles = [
   {
     Icon: CheckIcon,
-    title: "Depth you can feel",
-    body: "Ask a hard architecture, governance, or cost question in any session and the answer comes from a SnowPro-certified specialist who has shipped it on Snowflake.",
+    title: "Depth in every answer",
+    body: "Any hard architecture, governance, or cost question gets a straight answer from a SnowPro-certified specialist who has shipped it on Snowflake.",
   },
   {
     Icon: ShieldIcon,
@@ -71,8 +71,8 @@ const principles = [
   },
   {
     Icon: DocIcon,
-    title: "We leave you stronger",
-    body: "Documentation, enablement, and a transition plan in every engagement, so your team runs and extends the work confidently.",
+    title: "We leave teams stronger",
+    body: "Documentation, enablement, and a transition plan in every engagement, so the team runs and extends the work confidently.",
   },
   {
     Icon: CompassIcon,
@@ -135,7 +135,7 @@ export default async function AboutPage() {
             .
           </>
         }
-        description="Two capabilities you keep: a data practice that feeds real decisions and an AI practice that ships use cases into production, built on Snowflake, run by your team, guided and accelerated by ours. As a Snowflake Premier and CoCo Preferred Partner, we deliver across Canada, the USA, Mexico, LATAM, and the Caribbean."
+        description="Two lasting capabilities: a data practice that feeds real decisions and an AI practice that ships use cases into production, built on Snowflake and run by in-house teams, guided and accelerated by ours. As a Snowflake Premier and CoCo Preferred Partner, we deliver across Canada, the USA, Mexico, LATAM, and the Caribbean."
       >
         <div className="mt-7 flex flex-wrap justify-center gap-2.5">
           {HERO_CHIPS.map((c) => (
@@ -158,8 +158,8 @@ export default async function AboutPage() {
           as="h2"
           ratio="wide-text"
           eyebrow="Who we are"
-          title="We build it with you, then hand you the keys"
-          body="Viewnear helps enterprises stand up two capabilities they keep: a data practice and an AI practice, built on Snowflake and run by your own team. We work inside that team from first workshop to production, across strategy, architecture, engineering, analytics, and governed AI, and we integrate what we build both ways: operational data flows in, and decisions, answers, and AI agents flow back into the systems where work happens. We grew from a specialist practice into a Snowflake Premier Partner by going deep on one platform, and that focus shapes how we hire, train, and deliver."
+          title="We build it alongside the team, then hand over the keys"
+          body="Viewnear helps enterprises stand up two capabilities they keep: a data practice and an AI practice, built on Snowflake and run by in-house teams. We work alongside those teams from first workshop to production, across strategy, architecture, engineering, analytics, and governed AI, and we integrate what we build both ways: operational data flows in, and decisions, answers, and AI agents flow back into the systems where work happens. We grew from a specialist practice into a Snowflake Premier Partner by going deep on one platform, and that focus shapes how we hire, train, and deliver."
           bullets={operating}
           cta={{ label: "How we deliver", href: "/services" }}
           visual={
@@ -195,8 +195,8 @@ export default async function AboutPage() {
       <Section className="section-tint">
         <SectionHeading
           eyebrow="Track record"
-          title="Credentials you can verify"
-          intro="No vanity numbers: the partner tier, certification, and regional reach you can check."
+          title="Credentials anyone can verify"
+          intro="No vanity numbers: the partner tier, certification, and regional reach anyone can check."
           center
         />
         <div className="mt-12">
@@ -242,7 +242,7 @@ export default async function AboutPage() {
                 href="/security"
                 className="group mt-6 inline-flex items-center gap-1 text-sm font-semibold text-white"
               >
-                <span className="link-underline">How we secure your data</span>
+                <span className="link-underline">How we secure client data</span>
                 <span className="transition-transform group-hover:translate-x-0.5">→</span>
               </Link>
             </div>
@@ -267,7 +267,7 @@ export default async function AboutPage() {
         <SectionHeading
           eyebrow="Our team"
           title="Versed in Snowflake and enterprise, at every level"
-          intro="We're a group of professionals, strategy through engineering, who all go deep on the same thing: Snowflake and enterprise solutions. Not a few senior names over a rotating bench, but combined depth you feel at every level of the engagement."
+          intro="We're a group of professionals, strategy through engineering, who all go deep on the same thing: Snowflake and enterprise solutions. Not a few senior names over a rotating bench, but combined depth felt at every level of the engagement."
         />
         {team.length > 0 && (
           <div className="mt-16">
@@ -314,11 +314,11 @@ export default async function AboutPage() {
             <div className="pointer-events-none absolute -bottom-20 -left-16 h-56 w-56 rounded-full bg-primary/15 blur-3xl" />
             <div className="relative">
               <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-                Bring us your hardest data problem.
+                Bring us the hardest data problem.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-muted">
-                Tell us where you are, migrating, scaling, or grounding AI, and a
-                Snowflake architect will map the fastest path to value.
+                Wherever the work stands today, migrating, scaling, or grounding
+                AI, a Snowflake architect will map the fastest path to value.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Link href="/contact" className="btn-primary btn-lg hover-sheen">

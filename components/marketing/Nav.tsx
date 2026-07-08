@@ -20,13 +20,13 @@ type NavItem = {
 const NAV_DESCRIPTIONS: Record<string, string> = {
   "/about": "Who we are",
   "/partnership": "Premier & CoCo Preferred, verified",
-  "/nearshore": "Snowflake delivery in your time zone",
+  "/nearshore": "In-time-zone Snowflake delivery",
   "/security": "Governance & compliance",
   "/life-at-viewnear": "Culture, roles & benefits",
   "/services": "How we engage: THINK · BUILD · GROW",
   "/solutions": "What we solve: migrate, AI, govern, integrate",
   "/migrations": "Off Teradata, Oracle, Hadoop & more",
-  "/data-ai": "Every major model, on your data",
+  "/data-ai": "Every major model, on governed data",
   "/platform": "How we build on Snowflake",
   "/approach": "Methodology & de-risking",
   "/pricing": "Engagement models & cost",
@@ -49,13 +49,13 @@ const NAV_FEATURED: Record<string, Featured> = {
   Company: {
     eyebrow: "Partnership",
     title: "Snowflake Premier Partner",
-    pitch: "Premier & CoCo Preferred: direct product-team access and early roadmap visibility, put to work on your build.",
+    pitch: "Premier & CoCo Preferred: direct product-team access and early roadmap visibility, put to work on every engagement.",
     href: "/partnership",
   },
   Services: {
     eyebrow: "Data + AI",
     title: "Every major model, governed",
-    pitch: "Run the leading LLMs next to your data, swap them with one line of SQL.",
+    pitch: "Run the leading LLMs next to governed data, swap them with one line of SQL.",
     href: "/data-ai",
   },
   Industries: {

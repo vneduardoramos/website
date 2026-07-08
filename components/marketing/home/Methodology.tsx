@@ -18,25 +18,25 @@ const STEPS = [
   { title: "Migrate & Ingest", desc: "Move and connect data with automated translation, validation, and Openflow pipelines.", Icon: PipelineIcon },
   { title: "Build", desc: "Engineer data products, analytics, and Cortex AI / agentic workloads on governed data.", Icon: RocketIcon },
   { title: "Govern & Validate", desc: "Apply Horizon Catalog lineage, access controls, and PII classification, plus Horizon Context so every team and AI agent shares one trusted business context; test for trust.", Icon: ShieldIcon },
-  { title: "Run & Optimize", desc: "Operate, monitor, and tune consumption and performance, with enablement for your team.", Icon: GaugeIcon },
+  { title: "Run & Optimize", desc: "Operate, monitor, and tune consumption and performance, with enablement for the in-house team.", Icon: GaugeIcon },
 ];
 
 const WHY = [
   {
     title: "The whole modern data stack, not one tool",
-    body: "Ingestion (Openflow, Snowpipe Streaming), transformation (dbt, Snowpark, Dynamic Tables), governance (Horizon Catalog and Horizon Context), analytics (Snowsight, Streamlit), and AI agents (Cortex, Snowflake CoWork), all centered on your governed Snowflake core.",
+    body: "Ingestion (Openflow, Snowpipe Streaming), transformation (dbt, Snowpark, Dynamic Tables), governance (Horizon Catalog and Horizon Context), analytics (Snowsight, Streamlit), and AI agents (Cortex, Snowflake CoWork), all centered on one governed Snowflake core.",
   },
   {
     title: "Governed and open by design",
-    body: "Built on Apache Iceberg and Open Catalog (Polaris) so your data stays interoperable across engines and clouds.",
+    body: "Built on Apache Iceberg and Open Catalog (Polaris) so data stays interoperable across engines and clouds.",
   },
   {
     title: "Get it right the first time",
-    body: "Proven migration frameworks and certified architects reduce risk and rework when you move off Teradata, Oracle, Hadoop, or SQL Server.",
+    body: "Proven migration frameworks and certified architects reduce risk and rework when moving off Teradata, Oracle, Hadoop, or SQL Server.",
   },
   {
     title: "Beyond dashboards to data agents",
-    body: "We ground Snowflake CoWork (the personal AI agent) and Cortex Agents in your governed Semantic Views and Horizon Context, so business users get cited, trustworthy answers from the same definitions every team uses.",
+    body: "We ground Snowflake CoWork (the personal AI agent) and Cortex Agents in governed Semantic Views and Horizon Context, so business users get cited, trustworthy answers from the same definitions every team uses.",
   },
 ];
 
@@ -57,8 +57,8 @@ export function Methodology() {
           <p className="mt-4 text-lg leading-relaxed text-muted">
             A six-step loop, not a one-way project. We work one priority use case at a
             time, taking each from discovery to governed, Cortex-powered data in
-            production on Snowflake, then start the next. Your governed, AI-ready data
-            grows with your business as we keep delivering.
+            production on Snowflake, then start the next. The governed, AI-ready
+            foundation grows with the business as we keep delivering.
           </p>
         </div>
 

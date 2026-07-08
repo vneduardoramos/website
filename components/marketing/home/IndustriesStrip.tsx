@@ -21,7 +21,7 @@ export const INDUSTRIES: { slug: string; name: string }[] = [
 
 /**
  * The multi-hue industry tiles (icon + per-sector accent), shared by the home
- * IndustriesStrip and the Solutions "Tuned to your industry" section so both
+ * IndustriesStrip and the matching Solutions industry section so both
  * read the same.
  */
 export function IndustryTiles({ className }: { className?: string }) {
@@ -61,7 +61,7 @@ export function IndustriesStrip() {
           <div className="max-w-2xl">
             <p className="eyebrow mb-3">Industries</p>
             <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-[2.6rem] md:leading-[1.1]">
-              Depth in the sectors you operate in
+              Depth in the sectors enterprises operate in
             </h2>
             <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
               Sector-specific data models, governance, and compliance, built in

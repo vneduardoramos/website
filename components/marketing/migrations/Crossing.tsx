@@ -23,7 +23,7 @@ const PAINS = [
 const GAINS = [
   { title: "Cost that flexes with use", body: "Compute by the second, scaled independently from storage. No idle clusters." },
   { title: "One governed foundation", body: "One source of truth with access, lineage, and policy built in through Horizon, so decisions run on numbers people trust." },
-  { title: "AI is the next step", body: "Cortex and the leading models run next to the governed data, so your first AI use cases ship from the same foundation, not another project." },
+  { title: "AI is the next step", body: "Cortex and the leading models run next to the governed data, so the first AI use cases ship from the same foundation, not another project." },
 ];
 
 // The tangled "today": labeled boxes with crossing, broken-looking links.
@@ -156,7 +156,7 @@ export function CutoverTimeline({ phases }: { phases: Phase[] }) {
           </div>
           <span aria-hidden />
 
-          <span className="font-mono text-[0.64rem] uppercase tracking-[0.14em] text-primaryDeep">Your practice</span>
+          <span className="font-mono text-[0.64rem] uppercase tracking-[0.14em] text-primaryDeep">The practice</span>
           <span aria-hidden />
           <div className="col-span-4 flex items-center">
             <div className="h-2.5 flex-1 rounded-l-full bg-gradient-to-r from-primary/70 to-primary" />

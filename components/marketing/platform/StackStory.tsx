@@ -19,11 +19,11 @@ function P({ children }: { children: React.ReactNode }) {
 
 const BEATS: { title: string; body: React.ReactNode }[] = [
   {
-    title: "Your data starts arriving",
+    title: "The data starts arriving",
     body: (
       <>
-        In the first sprints we wire <P>Openflow</P> into the ERP, CRM, and SaaS systems you
-        already run, and <P>Snowpipe Streaming</P> carries the live feeds. Nothing detours
+        In the first sprints we wire <P>Openflow</P> into the ERP, CRM, and SaaS systems the
+        business already runs, and <P>Snowpipe Streaming</P> carries the live feeds. Nothing detours
         through a middleman: every source lands inside Snowflake, governed from the first table.
       </>
     ),
@@ -33,7 +33,7 @@ const BEATS: { title: string; body: React.ReactNode }[] = [
     body: (
       <>
         Our engineers model it with <P>dbt</P> and <P>Snowpark</P>, next to the data, in code
-        your team can read and one day own. <P>Dynamic Tables</P> keep the derived views fresh
+        the team can read and one day own. <P>Dynamic Tables</P> keep the derived views fresh
         with no scheduler to babysit.
       </>
     ),
@@ -42,8 +42,8 @@ const BEATS: { title: string; body: React.ReactNode }[] = [
     title: "It lives once, in an open format",
     body: (
       <>
-        The result is one governed copy on <P>Apache Iceberg</P>, readable by any engine you
-        ever choose through <P>Open Catalog</P>. The foundation outlives any tool decision,
+        The result is one governed copy on <P>Apache Iceberg</P>, readable by any engine the
+        business ever chooses through <P>Open Catalog</P>. The foundation outlives any tool decision,
         ours included.
       </>
     ),
@@ -55,7 +55,7 @@ const BEATS: { title: string; body: React.ReactNode }[] = [
         The whole way, <P>Horizon Catalog</P> is recording lineage and enforcing policy, and{" "}
         <P>Semantic Views</P> pin down what &ldquo;revenue&rdquo; actually means. It is the
         unglamorous work that makes the AI trustworthy later, and it is where our senior
-        people spend real time working inside your team.
+        people spend real time working inside the team.
       </>
     ),
   },
@@ -64,10 +64,10 @@ const BEATS: { title: string; body: React.ReactNode }[] = [
     body: (
       <>
         <P>Cortex Analyst</P> answers questions against those shared definitions,{" "}
-        <P>Snowflake CoWork</P> gives your teams cited answers, and agents act inside{" "}
+        <P>Snowflake CoWork</P> gives teams cited answers, and agents act inside{" "}
         <P>AI Agent Identity</P> policies. The results land where people already work:
         dashboards in <P>Snowsight</P>, apps in <P>Streamlit</P>, answers flowing back into
-        your tools.
+        the tools teams already use.
       </>
     ),
   },
@@ -75,8 +75,8 @@ const BEATS: { title: string; body: React.ReactNode }[] = [
     title: "One team answers for the whole arc",
     body: (
       <>
-        Snowflake runs the platform. We design, build, and tune what runs on it with your
-        team in the room, then hand over the keys: documented, and yours to extend. Most
+        Snowflake runs the platform. We design, build, and tune what runs on it with the
+        team in the room, then hand over the keys: documented, and theirs to extend. Most
         foundations reach production in 8&ndash;16 weeks, because discovery fixes the scope
         up front and every sprint ends with working software in a demo.
       </>

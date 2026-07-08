@@ -13,7 +13,7 @@ import { theme } from "@/config/theme";
 export const metadata = pageMeta({
   title: "Solutions: migrate, govern & build with AI",
   description:
-    "Migrate to Snowflake, AI use cases in production, data governance & trust, and data products & embedded analytics: four ways we build your data & AI practice, end to end with your team.",
+    "Migrate to Snowflake, AI use cases in production, data governance & trust, and data products & embedded analytics: four ways we build a data & AI practice, end to end with the in-house team.",
   path: "/solutions",
 });
 
@@ -26,12 +26,12 @@ const SOLUTIONS = [
         Migrate to <span className="text-gradient">Snowflake</span>
       </>
     ),
-    body: "Move off Teradata, Oracle, Hadoop, or SQL Server onto one governed Snowflake foundation, with automated translation, validation, and Openflow pipelines plus Zero-Copy Integrations that keep data flowing in from the ERP, CRM, and SaaS systems you run.",
+    body: "Move off Teradata, Oracle, Hadoop, or SQL Server onto one governed Snowflake foundation, with automated translation, validation, and Openflow pipelines plus Zero-Copy Integrations that keep data flowing in from the ERP, CRM, and SaaS systems the business runs.",
     bullets: [
       "Proven migration frameworks; certified architects reduce risk and rework",
       "Automated schema/SQL translation with validation at each step",
       "Openflow + Snowpipe ingestion; dbt and Snowpark transformation",
-      "Governed, documented, and handed over to your team",
+      "Governed, documented, and handed over to the in-house team",
     ],
     image: "/assets/images/photos/network.jpg",
     cta: { label: "Every source platform we migrate", href: "/migrations" },
@@ -48,7 +48,7 @@ const SOLUTIONS = [
         AI use cases <span className="text-gradient">in production</span>
       </>
     ),
-    body: "Production AI that runs securely next to governed data. We ground Cortex and Snowflake CoWork in your Semantic Views so business users get cited, trustworthy answers, and we build it all with Snowflake CoCo.",
+    body: "Production AI that runs securely next to governed data. We ground Cortex and Snowflake CoWork in governed Semantic Views so business users get cited, trustworthy answers, and we build it all with Snowflake CoCo.",
     bullets: [
       "Cortex AISQL and Cortex Analyst over governed semantic models",
       "Agents grounded in Semantic Views: cited, not hallucinated",
@@ -71,11 +71,11 @@ const SOLUTIONS = [
         Data <span className="text-gradient">governance & trust</span>
       </>
     ),
-    body: "One governed copy of your data, with lineage, access, and policy enforced in one place you can audit: the foundation AI actually needs. Trusted context, not sprawl.",
+    body: "One governed copy of the data, with lineage, access, and policy enforced in one auditable place: the foundation AI actually needs. Trusted context, not sprawl.",
     bullets: [
       "Horizon Catalog lineage, access history, and classification",
       "PII masking, row/column policies, and data residency by region",
-      "Audit-ready for FINRA, HIPAA, PCI, configured to your sector",
+      "Audit-ready for FINRA, HIPAA, PCI, configured to the sector",
       "AI Agent Identity for verifiable, governed agents",
     ],
     image: "/assets/images/photos/datacenter.jpg",
@@ -93,11 +93,11 @@ const SOLUTIONS = [
         Data products & <span className="text-gradient">embedded analytics</span>
       </>
     ),
-    body: "Put insight where people work: on your governed data, not a separate BI stack to secure. Snowsight dashboards, Streamlit apps, and ask-in-plain-language analytics, with answers that flow back into the tools your teams already use.",
+    body: "Put insight where people work: on governed data, not a separate BI stack to secure. Snowsight dashboards, Streamlit apps, and ask-in-plain-language analytics, with answers that flow back into the tools teams already use.",
     bullets: [
       "Snowsight dashboards and Streamlit in Snowflake data apps",
       "Snowflake CoWork for natural-language, self-service analytics",
-      "Embed analytics directly into your product and client portals",
+      "Embed analytics directly into the product and client portals",
       "No exports, no shadow stacks; governed at every step",
     ],
     image: "/assets/images/photos/dashboard.jpg",
@@ -139,7 +139,7 @@ export default function SolutionsPage() {
             Outcomes, <span className="text-gradient">delivered native</span>.
           </>
         }
-        description="Four ways a data & AI practice takes shape: each delivered end to end on the native stack, governed from the first table, and built for your team to run. Not sure where to start? We'll help you sequence it."
+        description="Four ways a data & AI practice takes shape: each delivered end to end on the native stack, governed from the first table, and built for the team to run. Not sure where to start? We'll help sequence it."
       />
 
       <TrustBar />
@@ -178,8 +178,8 @@ export default function SolutionsPage() {
       <Section>
         <SectionHeading
           eyebrow="By sector"
-          title="Tuned to your industry"
-          intro="Every solution is shaped by sector context; see how we apply it in your industry."
+          title="Tuned to the industry"
+          intro="Every solution is shaped by sector context; see how we apply it in each industry."
           center
         />
         <IndustryTiles className="mt-10" />

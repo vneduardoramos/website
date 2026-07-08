@@ -49,7 +49,7 @@ function PhotoFrame({ src, alt }: { src: string; alt: string }) {
   );
 }
 
-/** "Data your whole company can trust": a team working from one shared, trusted set of data. */
+/** "Data the whole business can trust": a team working from one shared, trusted set of data. */
 export function FoundationPhoto() {
   return (
     <PhotoFrame
@@ -59,7 +59,7 @@ export function FoundationPhoto() {
   );
 }
 
-/** "AI your teams actually use": a team working with analytics and AI on their screens. */
+/** "AI teams actually use": a team working with analytics and AI on their screens. */
 export function AiPhoto() {
   return (
     <PhotoFrame
@@ -154,10 +154,10 @@ export function FoundationVisual() {
   );
 }
 
-/** "Governed data → Cortex → an answer grounded in your data." */
+/** "Governed data → Cortex → an answer grounded in that data." */
 export function AiVisual() {
   return (
-    <Frame label="Cortex AI runs on your governed data and returns an answer grounded in it.">
+    <Frame label="Cortex AI runs on governed data and returns an answer grounded in it.">
       {/* governed data layer (bottom) */}
       <rect x={70} y={214} width={280} height={78} rx={14} className="fill-surface stroke-border" strokeWidth={1.5} />
       <rect x={70} y={214} width={280} height={26} rx={14} className="fill-primaryDeep/10" />

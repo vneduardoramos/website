@@ -21,7 +21,7 @@ import { theme } from "@/config/theme";
 export const metadata = pageMeta({
   title: "Nearshore data & AI delivery on Snowflake, in the US Central time zone",
   description:
-    "Viewnear delivers data & AI on Snowflake from Monterrey, Mexico, in the US Central time zone. SnowPro-certified experts who work your business hours, with depth at every level.",
+    "Viewnear delivers data & AI on Snowflake from Monterrey, Mexico, in the US Central time zone. SnowPro-certified experts who work the same business hours, with depth at every level.",
   path: "/nearshore",
 });
 
@@ -38,7 +38,7 @@ const reasons = [
   {
     label: "Depth",
     title: "Snowflake depth at every level",
-    body: "Strategists, architects, and engineers all fluent in Snowflake and SnowPro-certified. The depth that scopes your work is the depth that delivers it.",
+    body: "Strategists, architects, and engineers all fluent in Snowflake and SnowPro-certified. The depth that scopes the work is the depth that delivers it.",
   },
   {
     label: "Language",
@@ -48,17 +48,17 @@ const reasons = [
   {
     label: "Continuity",
     title: "The same team from scope to run",
-    body: "You get a committed team that learns your data and your goals and stays on: no re-staffing mid-engagement, no delivery pyramid billed by the hour.",
+    body: "A committed team learns the data and the goals and stays on: no re-staffing mid-engagement, no delivery pyramid billed by the hour.",
   },
   {
     label: "Cadence",
-    title: "A communication cadence you can count on",
-    body: "Regular working sessions and full visibility into progress. You are never in the dark on where a build stands or what comes next.",
+    title: "A communication cadence to count on",
+    body: "Regular working sessions and full visibility into progress. No one is ever in the dark on where a build stands or what comes next.",
   },
   {
     label: "Delivery",
     title: "Agile delivery, value early",
-    body: "An iterative, use-case-driven model that puts working data products in front of your team in weeks, then builds on what proves out.",
+    body: "An iterative, use-case-driven model that puts working data products in front of the team in weeks, then builds on what proves out.",
   },
 ];
 
@@ -90,7 +90,7 @@ const delivers = [
   {
     Icon: DataStackIcon,
     title: "Data apps and Snowpark",
-    body: "Native data applications and Snowpark workloads that run where your data already lives.",
+    body: "Native data applications and Snowpark workloads that run where the data already lives.",
   },
 ];
 
@@ -111,12 +111,12 @@ export default async function NearshorePage() {
               <>
                 Nearshore data and AI delivery,{" "}
                 <ScrollHighlight color="cyan">
-                  <span className="text-gradient">in sync with your team</span>
+                  <span className="text-gradient">in sync with the team</span>
                 </ScrollHighlight>
                 .
               </>
             }
-            description="SnowPro-certified Snowflake experts who work your business hours. Delivery moves at the pace of a team down the hall, not a handoff you wait overnight for."
+            description="SnowPro-certified Snowflake experts who work the same business hours. Delivery moves at the pace of a team down the hall, not a handoff that waits overnight."
           >
             <div className="flex flex-wrap justify-center gap-2">
               {HERO_CHIPS.map((c) => (
@@ -145,7 +145,7 @@ export default async function NearshorePage() {
             align="center"
             eyebrow="Why nearshore with Viewnear"
             title="Deep Snowflake delivery, without the offshore tradeoffs"
-            intro="Nearshore gives you the cost and capacity advantages of a distributed team while keeping the proximity, hours, and communication of one in the building."
+            intro="Nearshore brings the cost and capacity advantages of a distributed team while keeping the proximity, hours, and communication of one in the building."
           />
           <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3" variant="pop">
             {/* The time-zone card, carried by the actual office: a real address
@@ -164,10 +164,10 @@ export default async function NearshorePage() {
               />
               <div className="absolute inset-x-0 bottom-0 p-5">
                 <h3 className="font-display text-lg font-bold text-white">
-                  Your time zone, not a handoff
+                  The same time zone, not a handoff
                 </h3>
                 <p className="mt-1 font-mono text-[0.66rem] uppercase tracking-[0.14em] text-white/75">
-                  Our Monterrey hub &middot; on your clock
+                  Our Monterrey hub &middot; on the same clock
                 </p>
               </div>
             </div>
@@ -234,7 +234,7 @@ export default async function NearshorePage() {
               Nearshore should not mean <span className="text-gradient">junior</span>
             </>
           }
-          body="Our Monterrey team is SnowPro-certified and proven in production. The people who scope your work are the people who build it, and they specialize in exactly one platform: Snowflake, every project, every day."
+          body="Our Monterrey team is SnowPro-certified and proven in production. The people who scope the work are the people who build it, and they specialize in exactly one platform: Snowflake, every project, every day."
           bullets={[
             "SnowPro-certified architects and engineers, proven in production",
             "A rigorous hiring bar for every team member",
@@ -253,7 +253,7 @@ export default async function NearshorePage() {
 
       <CtaBand
         title="Put a nearshore Snowflake team on it."
-        subtitle="Tell us where you are with Snowflake (migrating, scaling, or building AI) and we'll bring a certified team in your time zone to get you there."
+        subtitle="Tell us where the organization stands with Snowflake (migrating, scaling, or building AI) and we'll bring a certified team in the same time zone to move it forward."
       />
     </>
   );

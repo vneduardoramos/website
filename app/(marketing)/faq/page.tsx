@@ -51,7 +51,7 @@ export default async function FaqPage() {
             Questions, <span className="text-gradient">answered</span>.
           </>
         }
-        description="The things teams ask us first: about our Snowflake partnership, how we deliver, what it costs, and how we keep your data safe."
+        description="The things teams ask us first: about our Snowflake partnership, how we deliver, what it costs, and how we keep client data safe."
       />
 
       <Section>
@@ -79,7 +79,7 @@ export default async function FaqPage() {
 
       <CtaBand
         title="Still have a question?"
-        subtitle="Ask us anything about standing up your data practice, a migration, or a specific AI use case: an architect on our team will reply."
+        subtitle="Ask us anything about standing up a data practice, a migration, or a specific AI use case: an architect on our team will reply."
       />
     </>
   );

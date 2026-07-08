@@ -21,7 +21,7 @@ import { theme } from "@/config/theme";
 export const metadata = pageMeta({
   title: "Services: THINK · BUILD · GROW",
   description:
-    "THINK, BUILD, GROW: strategy, engineering, and enablement to stand up a data practice and an AI practice on Snowflake, run by your team.",
+    "THINK, BUILD, GROW: strategy, engineering, and enablement to stand up a data practice and an AI practice on Snowflake, built for in-house teams to run.",
   path: "/services",
 });
 
@@ -39,7 +39,7 @@ const tierMeta: Record<string, TierMeta> = {
     eyebrow: "Strategy",
     num: "01",
     intro:
-      "Set the direction. We work inside your team to pinpoint where data and AI create real value, then sequence a roadmap you can execute, grounded in what your data can support today.",
+      "Set the direction. We work inside the team to pinpoint where data and AI create real value, then sequence a roadmap the business can execute, grounded in what the data can support today.",
     num_cls: "text-primary/15",
     bar: "bg-primary",
     decor: "dots",
@@ -49,7 +49,7 @@ const tierMeta: Record<string, TierMeta> = {
     eyebrow: "Engineering",
     num: "02",
     intro:
-      "Make it real. We build it with you: the governed foundation on Snowflake that AI actually needs, then the pipelines, models, and agents that run on it, integrated with the systems your business runs on.",
+      "Make it real. We build it alongside the team: the governed foundation on Snowflake that AI actually needs, then the pipelines, models, and agents that run on it, integrated with the systems the business runs on.",
     num_cls: "text-secondary/15",
     bar: "bg-secondary",
     decor: "grid",
@@ -59,7 +59,7 @@ const tierMeta: Record<string, TierMeta> = {
     eyebrow: "Enablement",
     num: "03",
     intro:
-      "Compound the value. Your team scales AI use cases and agents into production with our people alongside, and keeps improving them long after we step back.",
+      "Compound the value. The team scales AI use cases and agents into production with our people alongside, and keeps improving them long after we step back.",
     num_cls: "text-accent/15",
     bar: "bg-accent",
     decor: "swoosh",
@@ -70,7 +70,7 @@ const tierMeta: Record<string, TierMeta> = {
 const engagementModels = [
   {
     title: "Fixed cost",
-    body: "A defined scope, timeline, and price agreed up front. Best when the outcome is clear and you want budget certainty from day one.",
+    body: "A defined scope, timeline, and price agreed up front. Best when the outcome is clear and budget certainty matters from day one.",
     how: "We scope the work in a short, paid discovery, then commit to a price and a date.",
     includes: ["Scoped statement of work", "Milestones with decision gates", "Change control if scope moves"],
     bestFor: "Defined foundation builds & migrations",
@@ -78,20 +78,20 @@ const engagementModels = [
   {
     title: "Time & materials",
     body: "Flexible, iterative delivery billed by effort against a shared backlog. Ideal for evolving requirements and discovery-led work.",
-    how: "We deliver sprint to sprint against a prioritized backlog you control.",
+    how: "We deliver sprint to sprint against a prioritized backlog the business controls.",
     includes: ["Prioritized, shared backlog", "Sprint demos & burn reporting", "Stop or pivot any sprint"],
     bestFor: "Discovery, POCs & evolving scope",
   },
   {
     title: "Team augmentation",
-    body: "Embed our certified practitioners alongside yours. We accelerate delivery while leveling up your in-house capability.",
-    how: "SnowPro-certified engineers join your team, tools, and ways of working.",
+    body: "Embed our certified practitioners alongside the in-house team. We accelerate delivery while leveling up their capability.",
+    how: "SnowPro-certified engineers join the team, its tools, and its ways of working.",
     includes: ["Snowflake depth at every level", "Knowledge transfer built in", "Scale up or down monthly"],
     bestFor: "Scaling an existing team fast",
   },
   {
     title: "Managed services & support",
-    body: "Ongoing run, optimization, and enhancement once you're live, so the practice keeps compounding while your own team grows into it.",
+    body: "Ongoing run, optimization, and enhancement once the practice is live, so it keeps compounding while the in-house team grows into it.",
     how: "A retained team monitors, tunes cost and performance, and ships enhancements.",
     includes: ["Monitoring & cost optimization", "SLAs and a named contact", "A roadmap of enhancements"],
     bestFor: "Running & growing a live Snowflake estate",
@@ -100,16 +100,16 @@ const engagementModels = [
 
 // What every client gets regardless of which model they choose: the UVP.
 const engagementValue = [
-  { title: "One certified team, with depth at every level", body: "One accountable team: the people who scope your work are the ones who deliver it." },
+  { title: "One certified team, with depth at every level", body: "One accountable team: the people who scope the work are the ones who deliver it." },
   { title: "Verified Snowflake depth", body: "A SnowPro-certified team with a verified Snowflake delivery record behind every decision, from strategy through production." },
-  { title: "Priced to outcomes", body: "Scope and price agreed up front, whichever model you choose." },
+  { title: "Priced to outcomes", body: "Scope and price agreed up front, whichever model fits." },
   { title: "Governance built in", body: "Security, lineage, and access control designed in from the first table, not bolted on." },
-  { title: "Handover and enablement", body: "Full handover, documentation, and enablement so your team runs it confidently." },
-  { title: "Integrated with your enterprise", body: "Data products that connect to and from the systems you run on: ERP, CRM, and your customer-facing apps." },
+  { title: "Handover and enablement", body: "Full handover, documentation, and enablement so the team runs it confidently." },
+  { title: "Integrated with the enterprise", body: "Data products that connect to and from the systems the business runs on: ERP, CRM, and customer-facing apps." },
 ];
 
 const costFactors =
-  "Engagements are scoped on data volume and source complexity, the number of analytics and AI use cases, team size, and timeline. We agree scope and price up front (whichever model you choose) so there are no surprises.";
+  "Engagements are scoped on data volume and source complexity, the number of analytics and AI use cases, team size, and timeline. We agree scope and price up front (whichever model fits) so there are no surprises.";
 
 // What a CXO gets, framed by horizon rather than feature.
 const impactByPhase = [
@@ -145,12 +145,12 @@ const runPhases = [
   {
     label: "Proof",
     title: "De-risked by design",
-    body: "We prove the approach with a focused proof of concept before the full build, so you commit to scale on evidence, not a slide deck.",
+    body: "We prove the approach with a focused proof of concept before the full build, so the commitment to scale rests on evidence, not a slide deck.",
   },
   {
     label: "Handover",
     title: "Built to hand over",
-    body: "Documentation, enablement, and a transition plan in every engagement, so your team runs and extends the work confidently.",
+    body: "Documentation, enablement, and a transition plan in every engagement, so the team runs and extends the work confidently.",
   },
 ];
 
@@ -195,7 +195,7 @@ export default async function ServicesPage() {
             .
           </>
         }
-        description="Strategy, engineering, and enablement under one accountable team, building two capabilities you keep: a data practice your decisions can trust and an AI practice that ships to production, across THINK, BUILD, and GROW."
+        description="Strategy, engineering, and enablement under one accountable team, building two capabilities that stay in-house: a data practice decisions can trust and an AI practice that ships to production, across THINK, BUILD, and GROW."
       />
 
       <TrustBar />
@@ -278,7 +278,7 @@ export default async function ServicesPage() {
                 .
               </>
             }
-            intro="An AI practice ready for agents does not start with agents. It starts with governed data and trusted context: one layer where data, business context, models, and workflows come together. We build that layer with your team, so when your agents act, they act on numbers you trust."
+            intro="An AI practice ready for agents does not start with agents. It starts with governed data and trusted context: one layer where data, business context, models, and workflows come together. We build that layer with the team, so when the agents act, they act on numbers the business trusts."
           />
           <p className="mt-6 max-w-2xl text-sm text-muted">
             See the AI we put into production on the{" "}
@@ -331,7 +331,7 @@ export default async function ServicesPage() {
         <div className="relative">
           <SectionHeading
             eyebrow="How engagements run"
-            title="Delivery you can govern"
+            title="Delivery leaders can govern"
             intro="We de-risk the engagement itself (clear timelines, steering, and a clean handover) so the buy is as low-risk as the outcome is valuable."
           />
           <RevealGroup className="mt-12 grid gap-5 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-4" variant="pop">
@@ -344,7 +344,7 @@ export default async function ServicesPage() {
           <p className="mt-8 text-sm text-muted">
             Security and governance are built into every phase:{" "}
             <Link href="/security" className="font-semibold text-primaryDeep hover:underline">
-              see how we keep your data safe
+              see how we keep enterprise data safe
             </Link>
             .
           </p>
@@ -357,7 +357,7 @@ export default async function ServicesPage() {
         <SectionHeading
           eyebrow="What we build on"
           title="Why we build Snowflake-native"
-          intro="Openflow to Horizon Catalog to Cortex: we lead with Snowflake-native products over third-party tools, so there is one governed copy of your data, one lineage to audit, and one trusted context every AI agent relies on. dbt is the one external framework we run, natively against Snowflake."
+          intro="Openflow to Horizon Catalog to Cortex: we lead with Snowflake-native products over third-party tools, so there is one governed copy of the data, one lineage to audit, and one trusted context every AI agent relies on. dbt is the one external framework we run, natively against Snowflake."
         />
         <div className="mx-auto mt-12 max-w-3xl">
           <InlineCta
@@ -372,7 +372,7 @@ export default async function ServicesPage() {
         <SectionHeading
           eyebrow="How we work"
           title="Engagement models"
-          intro="Flexible ways to partner with us, matched to the shape of your problem, from a fixed-scope build to an embedded team or an ongoing managed service. Whichever you choose, the way we deliver doesn't change."
+          intro="Flexible ways to partner with us, matched to the shape of the problem, from a fixed-scope build to an embedded team or an ongoing managed service. Whichever model fits, the way we deliver doesn't change."
         />
         <RevealGroup className="mt-12 grid gap-5 md:auto-rows-fr md:grid-cols-2" variant="pop">
           {engagementModels.map((m, i) => (
@@ -401,7 +401,7 @@ export default async function ServicesPage() {
               The model flexes. The standard doesn&rsquo;t.
             </h3>
             <p className="mt-3 text-muted">
-              However you choose to engage, every Viewnear engagement is delivered to the same standard: the things that make the difference between a build that ships and one that stalls.
+              However an organization chooses to engage, every Viewnear engagement is delivered to the same standard: the things that make the difference between a build that ships and one that stalls.
             </p>
           </div>
           <RevealGroup className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3" variant="fade-up">
@@ -432,7 +432,7 @@ export default async function ServicesPage() {
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/contact" className="btn-primary btn-sm">
-              Discuss your engagement
+              Discuss an engagement
             </Link>
             <Link href="/partnership#comparison" className="btn-ghost btn-sm">
               Build vs. partner →

@@ -30,7 +30,7 @@ type FaqItem = { q: string; a: string };
 const WHY_VIEWNEAR = [
   {
     title: "Automation broke the billable hour",
-    body: "Hourly rates made sense when value came from people doing the work by hand. AI now absorbs most of that work, so paying by the hour quietly rewards slowness and taxes the very efficiency you came for. We attach our fee to the result, which means finishing sooner is a win on both sides of the table.",
+    body: "Hourly rates made sense when value came from people doing the work by hand. AI now absorbs most of that work, so paying by the hour quietly rewards slowness and taxes the very efficiency that was the whole point. We attach our fee to the result, which means finishing sooner is a win on both sides of the table.",
   },
   {
     title: "The expertise moved upstream",
@@ -38,16 +38,16 @@ const WHY_VIEWNEAR = [
   },
   {
     title: "We design the outcome, then the delivery",
-    body: "We begin from the result you need and build the delivery backward: experienced people on the decisions, AI agents on the execution, the balance retuned as the work shifts. You are not renting a fixed team or a block of hours. You are buying the outcome, and answering for it stays our job.",
+    body: "We begin from the result the business needs and build the delivery backward: experienced people on the decisions, AI agents on the execution, the balance retuned as the work shifts. It isn't a rented team or a block of hours. It's the outcome itself, and answering for it stays our job.",
   },
 ];
 
 // The plan, de-risked: what quiets the "this is a big bet" fear.
 const DERISK = [
-  { label: "Proof", title: "Prove it first", body: "A focused proof of concept before the full build. You commit to scale on evidence, not a slide deck." },
-  { label: "Control", title: "You stay in control", body: "Regular steering, a shared backlog, and clear decision gates keep scope, budget, and priorities yours." },
+  { label: "Proof", title: "Prove it first", body: "A focused proof of concept before the full build. The decision to scale rests on evidence, not a slide deck." },
+  { label: "Control", title: "The sponsor stays in control", body: "Regular steering, a shared backlog, and clear decision gates keep scope, budget, and priorities in-house." },
   { label: "Pace", title: "Value from sprint one", body: "Use-case-driven sprints reach production in 8–16 weeks, with working software demoed from the very first sprint." },
-  { label: "Handover", title: "Built to hand over", body: "Documentation, enablement, and a transition plan in every engagement, so your team runs and extends the work confidently." },
+  { label: "Handover", title: "Built to hand over", body: "Documentation, enablement, and a transition plan in every engagement, so in-house teams run and extend the work confidently." },
 ];
 
 // Official Snowflake credibility badges (real artwork; shown on white chips so
@@ -109,11 +109,11 @@ export default async function HomePage() {
       {/* 3) THE PATH: customer-first foundation + AI */}
       <Section className="section-tint">
         <FeatureSplit
-          eyebrow="Your foundation"
-          title="Data your whole company can trust"
+          eyebrow="The foundation"
+          title="Data the whole business can trust"
           body="We stand up the governed Snowflake foundation everything else depends on, so every team works from one current, reliable source instead of five conflicting spreadsheets."
           bullets={[
-            "One governed source of truth, fed by the ERP, CRM, and SaaS systems you run",
+            "One governed source of truth, fed by the ERP, CRM, and SaaS systems already in place",
             "Pipelines that keep it fresh, tested, and trustworthy",
             "Horizon Catalog governance and lineage, plus Horizon Context: one trusted business context every team and AI agent shares",
           ]}
@@ -130,12 +130,12 @@ export default async function HomePage() {
         <div className="container-page relative">
           <FeatureSplit
             eyebrow="Applied AI"
-            title="AI your teams actually use"
-            body="With the data governed, AI stops being a science project. Cortex runs securely next to your data and grounds every answer in Horizon Context, so it reflects your real business, not a generic model's guesswork."
+            title="AI teams actually use"
+            body="With the data governed, AI stops being a science project. Cortex runs securely next to that data and grounds every answer in Horizon Context, so it reflects the real business, not a generic model's guesswork."
             bullets={[
-              "Cortex LLMs and ML running next to your governed data",
+              "Cortex LLMs and ML running next to governed data",
               "Snowflake CoWork and Cortex Agents that act on decisions, not just chart them",
-              "Answers and actions that flow back into the tools your teams already work in",
+              "Answers and actions that flow back into the tools teams already work in",
             ]}
             visual={<AiPhoto />}
             reverse
@@ -226,7 +226,7 @@ export default async function HomePage() {
                 <p className="mt-2 text-base leading-relaxed text-muted">
                   The full argument: what AI did to the billable hour, where the
                   expertise actually went, and how outcome-based delivery changes
-                  what you pay for.
+                  what a services invoice actually buys.
                 </p>
                 <span className="mt-5 inline-flex items-center gap-1.5 font-semibold text-primaryDeep">
                   Read the article
@@ -291,8 +291,8 @@ export default async function HomePage() {
                 </h2>
                 <p className="mt-4 max-w-lg text-lg leading-relaxed text-white/75">
                   Recognized in Snowflake&rsquo;s CoCo Preferred Partner program at Summit 2026,
-                  alongside Accenture, Deloitte, IBM, and Capgemini. For you, that means
-                  Snowflake&rsquo;s product teams are a call away when your build hits a hard
+                  alongside Accenture, Deloitte, IBM, and Capgemini. In practice, that means
+                  Snowflake&rsquo;s product teams are a call away when a build hits a hard
                   question.
                 </p>
                 <div className="mt-7 flex flex-wrap items-center gap-6">
@@ -315,7 +315,7 @@ export default async function HomePage() {
                     href="/security"
                     className="font-semibold text-white underline-offset-4 hover:underline"
                   >
-                    How we secure your data &rarr;
+                    How we secure client data &rarr;
                   </Link>
                 </p>
               </div>
@@ -368,8 +368,8 @@ export default async function HomePage() {
 
       {/* CTA: restate the stakes, confident close */}
       <CtaBand
-        title="Make this the quarter your data starts paying off."
-        subtitle="Every quarter on ungoverned data means decisions made half-blind. Tell us where you are, and we'll map the fastest path to data &amp; AI you can trust."
+        title="The quarter data starts paying off for the business."
+        subtitle="Every quarter on ungoverned data is decisions made half-blind. Tell us where the organization stands today, and we'll map the fastest path to data &amp; AI its teams can trust."
       />
     </>
   );

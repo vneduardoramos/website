@@ -12,7 +12,7 @@ import { LegacyContrast, CutoverTimeline } from "@/components/marketing/migratio
 export const metadata = pageMeta({
   title: "Migrations to Snowflake: Teradata, Oracle, Redshift, Hadoop & more",
   description:
-    "Viewnear moves legacy warehouses and Hadoop onto one governed foundation on Snowflake: automated code conversion, validated parity, a phased cutover your business never feels, and a handover that leaves your team running it.",
+    "Viewnear moves legacy warehouses and Hadoop onto one governed foundation on Snowflake: automated code conversion, validated parity, a phased cutover the business never feels, and a handover that leaves the team running it.",
   path: "/migrations",
 });
 
@@ -79,7 +79,7 @@ const PHASES = [
   },
   {
     title: "Convert",
-    body: "The bulk of your SQL, stored procedures, and scripts convert automatically; our engineers remediate the edge cases by hand and review every object before it moves on.",
+    body: "The bulk of the SQL, stored procedures, and scripts convert automatically; our engineers remediate the edge cases by hand and review every object before it moves on.",
   },
   {
     title: "Migrate & validate",
@@ -91,7 +91,7 @@ const PHASES = [
   },
   {
     title: "Optimize & decommission",
-    body: "We tune warehouses and pipelines on real usage, retire the legacy system, and hand over documentation and runbooks so your team runs it without us.",
+    body: "We tune warehouses and pipelines on real usage, retire the legacy system, and hand over documentation and runbooks so the team runs it without us.",
   },
 ];
 
@@ -124,10 +124,10 @@ export default function MigrationsPage() {
             title={
               <>
                 Off Teradata, Oracle, or Hadoop.{" "}
-                <ScrollHighlight>Onto a data practice you keep.</ScrollHighlight>
+                <ScrollHighlight>Onto a data practice the team keeps.</ScrollHighlight>
               </>
             }
-            description="A migration is won in the planning, the parity checks, and the cutover you never notice, not in the license swap. We run that whole arc as one accountable team: code converted automatically, every number validated against the source, and the business running the entire way."
+            description="A migration is won in the planning, the parity checks, and the cutover no one notices, not in the license swap. We run that whole arc as one accountable team: code converted automatically, every number validated against the source, and the business running the entire way."
           >
             <div className="flex flex-wrap justify-center gap-2">
               {HERO_CHIPS.map((c) => (
@@ -148,7 +148,7 @@ export default function MigrationsPage() {
             align="center"
             eyebrow="Every source platform"
             title="We migrate from all of them"
-            intro="Legacy appliances, cloud warehouses, Hadoop, or the database quietly doing warehouse duty. If your data lives there today, we have a path to land it on Snowflake, governed and in your team's hands."
+            intro="Legacy appliances, cloud warehouses, Hadoop, or the database quietly doing warehouse duty. If the data lives there today, we have a path to land it on Snowflake, governed and in the team's hands."
           />
           {/* One continuous board instead of five card boxes */}
           <div className="mt-12 rounded-3xl border border-border bg-surface">
@@ -192,7 +192,7 @@ export default function MigrationsPage() {
           <p className="mx-auto mt-10 max-w-2xl text-center text-xs leading-relaxed text-muted">
             Platform names and logos are trademarks of their respective owners, shown to indicate
             migration sources we support. On something not listed here? We have almost certainly seen
-            it. Tell us your stack and we&rsquo;ll map the path.
+            it. Tell us what&rsquo;s running and we&rsquo;ll map the path.
           </p>
         </div>
       </Section>
@@ -224,8 +224,8 @@ export default function MigrationsPage() {
       <Section className="section-tint relative overflow-hidden">
         <FeatureSplit
           eyebrow="Our conviction"
-          title="The tools convert the code. They don't answer for your month-end close."
-          body="SnowConvert and the Snowpark Migration Accelerator do the typing: the SQL, stored procedures, and Spark jobs that took years to write convert in weeks. What you actually hire us for is everything the tools can't sign off on: the edge cases remediated by hand, every object reviewed before it moves on, and row, aggregate, and hash reconciliation proving the new numbers match the old ones before anyone cuts over."
+          title="The tools convert the code. They don't answer for the month-end close."
+          body="SnowConvert and the Snowpark Migration Accelerator do the typing: the SQL, stored procedures, and Spark jobs that took years to write convert in weeks. What we're actually hired for is everything the tools can't sign off on: the edge cases remediated by hand, every object reviewed before it moves on, and row, aggregate, and hash reconciliation proving the new numbers match the old ones before anyone cuts over."
           bullets={[
             "Conversion output reviewed object by object, in Snowflake Workspaces",
             "Row, aggregate, and hash checks prove parity against the source",
@@ -296,8 +296,8 @@ export default function MigrationsPage() {
       </Section>
 
       <CtaBand
-        title="Plan your migration."
-        subtitle="Tell us what you're running today (Teradata, Oracle, Redshift, Hadoop, or anything else) and we'll map the crossing: what converts automatically, what needs hands, and when your team takes the keys."
+        title="Plan the migration."
+        subtitle="Tell us what's running today (Teradata, Oracle, Redshift, Hadoop, or anything else) and we'll map the crossing: what converts automatically, what needs hands, and when the team takes the keys."
       />
     </>
   );

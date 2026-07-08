@@ -135,7 +135,7 @@ export function ApplicationForm({ openingTitle }: { openingTitle?: string }) {
             name="linkedinUrl"
             type="url"
             inputMode="url"
-            placeholder="https://www.linkedin.com/in/your-profile"
+            placeholder="https://www.linkedin.com/in/name"
             onInput={() => clearField("linkedinUrl")}
             aria-invalid={fieldErrors.linkedinUrl ? true : undefined}
             aria-describedby={fieldErrors.linkedinUrl ? "app-linkedin-error" : undefined}
@@ -149,7 +149,7 @@ export function ApplicationForm({ openingTitle }: { openingTitle?: string }) {
         </div>
         <div>
           <label htmlFor="app-message" className="mb-2 block text-sm text-muted">
-            Tell us about yourself <span className="text-danger" aria-hidden="true">*</span>
+            About the candidate <span className="text-danger" aria-hidden="true">*</span>
           </label>
           <textarea
             id="app-message"

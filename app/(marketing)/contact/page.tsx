@@ -10,7 +10,7 @@ import { getSetting, getTeam } from "@/lib/queries";
 import { theme } from "@/config/theme";
 
 export const metadata = pageMeta({
-  title: "Contact: start your data & AI practice",
+  title: "Contact: start a data & AI practice",
   description:
     "Get in touch with Viewnear. We help enterprises stand up data & AI practices on Snowflake, run by their own teams, across the Americas.",
   path: "/contact",
@@ -20,16 +20,16 @@ type ContactSetting = { email: string; blurb: string };
 
 const steps = [
   {
-    title: "We review your note",
-    body: "An architect on our team reads your message and routes it to the right person.",
+    title: "We review the message",
+    body: "An architect on our team reads the message and routes it to the right person.",
   },
   {
     title: "Intro conversation",
-    body: "We schedule a short call to understand your goals, data landscape, and timeline.",
+    body: "We schedule a short call to understand the goals, data landscape, and timeline.",
   },
   {
     title: "A tailored plan",
-    body: "You receive a clear, no-pressure proposal: the first use cases, a sprint-by-sprint plan, and the enablement your team gets from day one.",
+    body: "A clear, no-pressure proposal follows: the first use cases, a sprint-by-sprint plan, and the enablement the team gets from day one.",
   },
 ];
 
@@ -55,13 +55,13 @@ export default async function ContactPage() {
             eyebrow={`Contact ${theme.brand.name}`}
             title={
               <>
-                Start your <span className="text-gradient">data &amp; AI</span>{" "}
+                Start a <span className="text-gradient">data &amp; AI</span>{" "}
                 practice
               </>
             }
             description={
               contact?.blurb ??
-              "Tell us about your data & AI ambitions. Whether you are modernizing on Snowflake or starting from scratch, we'll map the fastest path to governed, AI-ready data."
+              "Tell us about the organization's data & AI goals. Whether it means modernizing on Snowflake or starting from scratch, we'll map the fastest path to governed, AI-ready data."
             }
           />
         </div>
@@ -122,7 +122,7 @@ export default async function ContactPage() {
                   </li>
                 ))}
               </ol>
-              <LeadershipStrip label="The team that picks up your project." className="mt-8" />
+              <LeadershipStrip label="The team that picks up the project." className="mt-8" />
             </div>
           </div>
 

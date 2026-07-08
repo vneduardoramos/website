@@ -18,7 +18,9 @@ export async function TrustBar({
   if (!bands.top || bands.top.length === 0) return null;
   return (
     <Section className={tint ? "section-tint" : undefined}>
-      <p className="eyebrow mb-8 text-center">{label}</p>
+      <div className="mb-12 flex justify-center">
+        <span className="eyebrow">{label}</span>
+      </div>
       <LogoRow logos={bands.top} />
     </Section>
   );

@@ -51,7 +51,7 @@ export function ConsentBanner() {
     >
       <div className="container-page flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-muted">
-          We use cookies to understand site usage and improve your experience. See our{" "}
+          We use cookies to understand site usage and improve the experience. See our{" "}
           <Link href="/privacy" className="font-semibold text-primaryDeep underline">
             Privacy Policy
           </Link>

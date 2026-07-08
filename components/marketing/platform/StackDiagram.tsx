@@ -101,7 +101,7 @@ function GovernanceRail({ rail }: { rail: Layer }) {
 export function StackDiagram({ flow, rail }: { flow: Layer[]; rail: Layer }) {
   return (
     <div className="mt-12 rounded-3xl border border-border bg-surface p-4 md:p-6">
-      <ChipRow items={ENTRY} label="Your systems in" />
+      <ChipRow items={ENTRY} label="Source systems in" />
       <Connector />
 
       <div className="grid gap-4 lg:grid-cols-[1fr_230px]">
@@ -127,7 +127,7 @@ export function StackDiagram({ flow, rail }: { flow: Layer[]; rail: Layer }) {
           <span className="h-1.5 w-1.5 rounded-full bg-success" /> Generally available
         </span>
         <span className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-muted">
-          <span className="h-1.5 w-1.5 rounded-full bg-warning" /> Preview: early access our partner tier brings to your build
+          <span className="h-1.5 w-1.5 rounded-full bg-warning" /> Preview: early access our partner tier brings to the build
         </span>
       </div>
     </div>

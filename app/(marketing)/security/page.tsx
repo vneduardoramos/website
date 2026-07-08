@@ -15,7 +15,7 @@ import { theme } from "@/config/theme";
 export const metadata = pageMeta({
   title: "Security & Trust",
   description:
-    "How Viewnear keeps your data secure and governed: built on Snowflake's certified foundation, with governance, access control, and audit lineage in every engagement.",
+    "How Viewnear keeps enterprise data secure and governed: built on Snowflake's certified foundation, with governance, access control, and audit lineage in every engagement.",
   path: "/security",
 });
 
@@ -34,7 +34,7 @@ const practices = [
   {
     label: "Access",
     title: "Least-privilege access",
-    body: "Role-based access control modeled to your org, so people see only the data they need, enforced in Snowflake, not bolted on after.",
+    body: "Role-based access control modeled to the organization, so people see only the data they need, enforced in Snowflake, not bolted on after.",
   },
   {
     label: "Lineage",
@@ -49,12 +49,12 @@ const practices = [
   {
     label: "Residency",
     title: "Data residency by region",
-    body: "We deploy in the Snowflake region you require across the Americas, so data stays where your policy and regulators need it.",
+    body: "We deploy in the Snowflake region required across the Americas, so data stays where policy and regulators need it.",
   },
   {
     label: "Secrets",
     title: "Secrets & key management",
-    body: "Credentials and keys are managed through your cloud's secrets and KMS services: never hard-coded, never shared in the clear.",
+    body: "Credentials and keys are managed through the cloud's secrets and KMS services: never hard-coded, never shared in the clear.",
   },
   {
     label: "Delivery",
@@ -99,7 +99,7 @@ export default function SecurityPage() {
             eyebrow="Security & Trust"
             title={
               <>
-                Your data, <span className="text-gradient">governed and secure</span>.
+                Enterprise data, <span className="text-gradient">governed and secure</span>.
               </>
             }
             description={`Security isn't a phase at ${theme.brand.name}; it's how we build. Everything we deliver runs on Snowflake's certified foundation, with governance, access control, and audit lineage designed in from the first table.`}
@@ -114,7 +114,7 @@ export default function SecurityPage() {
           <SectionHeading
             eyebrow="Compliance posture"
             title="Built on a certified foundation"
-            intro="We build on Snowflake's independently audited platform and extend it with our own governed delivery practices. The certifications below are Snowflake's; your data inherits them, and we configure your environment to meet them."
+            intro="We build on Snowflake's independently audited platform and extend it with our own governed delivery practices. The certifications below are Snowflake's; the data inherits them, and we configure the environment to meet them."
           />
           <div className="mt-12 grid grid-cols-2 gap-4 md:auto-rows-fr md:grid-cols-3">
             {platformCompliance.map((c) => (
@@ -166,7 +166,7 @@ export default function SecurityPage() {
       <Section>
         <SectionHeading
           eyebrow="Our practices"
-          title="How we keep your data safe"
+          title="How we keep data safe"
           intro="The controls we apply on every engagement by default, never as optional add-ons."
         />
         <div className="mt-12 grid gap-5 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3">
@@ -195,7 +195,7 @@ export default function SecurityPage() {
                 <span className="text-gradient">not scattered copies</span>
               </>
             }
-            body="Most data risk comes from sprawl: exports, shadow copies, and ungoverned spreadsheets. We consolidate onto a single governed Snowflake platform so access, lineage, and policy live in one place you can actually audit."
+            body="Most data risk comes from sprawl: exports, shadow copies, and ungoverned spreadsheets. We consolidate onto a single governed Snowflake platform so access, lineage, and policy live in one place that can actually be audited."
             bullets={[
               "A single governed source of truth, not data spread across tools",
               "Access, masking, and retention policy enforced centrally",
@@ -215,7 +215,7 @@ export default function SecurityPage() {
         <SectionHeading
           eyebrow="By industry"
           title="Compliance where it counts"
-          intro="Regulated sectors carry specific obligations. We configure governance to the rules your industry answers to."
+          intro="Regulated sectors carry specific obligations. We configure governance to the rules each industry answers to."
         />
         <div className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-3">
           {verticals.map((v) => (
@@ -230,13 +230,13 @@ export default function SecurityPage() {
           <Link href="/contact" className="font-semibold text-primaryDeep hover:underline">
             Talk to our team
           </Link>{" "}
-          and we&apos;ll walk you through how we&apos;d meet it.
+          and we&apos;ll walk through how we&apos;d meet it.
         </p>
       </Section>
 
       <CtaBand
-        title="Security questions before you start?"
-        subtitle="Tell us your requirements (data residency, certifications, audit, or vendor review) and we'll show you exactly how we deliver against them."
+        title="Security questions before a build starts?"
+        subtitle="Tell us the requirements (data residency, certifications, audit, or vendor review) and we'll show exactly how we deliver against them."
       />
     </>
   );

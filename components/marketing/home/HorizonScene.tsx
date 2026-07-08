@@ -3,7 +3,7 @@ import { RevealGroup } from "@/components/marketing/Motion";
 type Horizon = { phase: string; title: string; body: string };
 
 /**
- * "Where this takes you": the transformation horizons as a compact, static 3-up
+ * "Where this leads": the transformation horizons as a compact, static 3-up
  * grid with a thin connector rail. (Previously a sticky pinned scroll scene; it
  * was de-pinned because the pin reserved a tall track + centered the content in a
  * full viewport, leaving a large empty band above and below.)

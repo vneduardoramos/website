@@ -128,7 +128,7 @@ export default async function CareerDetailPage({
           ) : (
             // Fallback for roles without a detailed body yet.
             <>
-              <SectionHeading eyebrow="About the role" title="What you'll do" />
+              <SectionHeading eyebrow="About the role" title="The work" />
               <p className="mt-6 text-lg leading-relaxed text-muted">{job.description}</p>
             </>
           )}
@@ -152,7 +152,7 @@ export default async function CareerDetailPage({
           <SectionHeading
             eyebrow="Life at Viewnear"
             title="More than the role"
-            intro="You'd join a team that is judged on outcomes, works AI-native, and pairs two hubs with remote depth. Here is some of what comes with it."
+            intro="This is a team judged on outcomes, working AI-native, pairing two hubs with remote depth. Here is some of what comes with the role."
           />
           <BenefitsGrid items={BENEFITS} className="mt-10" />
           <div className="mt-8">
@@ -173,7 +173,7 @@ export default async function CareerDetailPage({
         <SectionHeading
           eyebrow="Apply"
           title="Apply for this role"
-          intro="Send your details and we will review your application. We read every one."
+          intro="Share a few details and we will review the application. We read every one."
           center
         />
         <div className="mx-auto mt-12 max-w-2xl">

@@ -20,7 +20,7 @@ const PILLS = [
 export function MeshHeroSlide({ subhead }: { subhead?: string }) {
   const sub =
     subhead ||
-    "We help you stand up two capabilities you keep: a data practice your whole company trusts and an AI practice that ships use cases into production. Built with your team, run by your team, guided and accelerated by ours, across the Americas.";
+    "We help enterprises stand up two lasting capabilities: a data practice the whole company trusts and an AI practice that ships use cases into production. Built alongside in-house teams and run by them, guided and accelerated by ours, across the Americas.";
 
   return (
     <div className="relative flex min-h-[36rem] items-center overflow-hidden lg:min-h-[42rem]">

@@ -2,9 +2,9 @@ import { RevealGroup } from "@/components/marketing/Motion";
 
 /**
  * The engagement narrated from the sponsor's seat: six story beats walk
- * one engagement from the first scoping session to handover, in second
- * person, with the governance artifacts woven into the prose as mono
- * mentions. Same quiet spine as the platform StackStory (neutral hairline
+ * one engagement from the first scoping session to handover, in the third
+ * person (the sponsor, the team), with the governance artifacts woven into
+ * the prose as mono mentions. Same quiet spine as the platform StackStory (neutral hairline
  * + dots, per the no-colored-rails rule); typography does the rest.
  */
 
@@ -19,13 +19,13 @@ function P({ children }: { children: React.ReactNode }) {
 
 const BEATS: { title: string; body: React.ReactNode }[] = [
   {
-    title: "Week 1–2: scoping you can sign",
+    title: "Week 1–2: a scope worth signing",
     body: (
       <>
-        It starts with a <P>paid discovery</P>: our architects sit with your stakeholders,
-        walk the sources, and rank the use cases by what they return. You come out holding
-        a <P>fixed scope</P> at a fixed price, so what you take upstairs is a commitment,
-        not an estimate.
+        It starts with a <P>paid discovery</P>: our architects sit with the stakeholders,
+        walk the sources, and rank the use cases by what they return. The sponsor comes out
+        holding a <P>fixed scope</P> at a fixed price, so what goes upstairs to the board is a
+        commitment, not an estimate.
       </>
     ),
   },
@@ -34,8 +34,8 @@ const BEATS: { title: string; body: React.ReactNode }[] = [
     body: (
       <>
         Then the cadence sets in: every sprint closes with a <P>sprint demo</P> of something
-        that works against your data, not a status deck. Something usable ships each time,
-        so progress is a thing you click, not a percentage you are asked to believe.
+        that works against real data, not a status deck. Something usable ships each time,
+        so progress is a thing the team can click, not a percentage anyone is asked to believe.
       </>
     ),
   },
@@ -43,9 +43,9 @@ const BEATS: { title: string; body: React.ReactNode }[] = [
     title: "Week 3 feels like this",
     body: (
       <>
-        You are in your first <P>steering review</P>, reordering a <P>shared backlog</P>{" "}
-        that is actually yours to reorder, with a <P>decision gate</P> ahead that waits on
-        you, not on us. Scope, budget, and priorities stay in your hands the whole way
+        The sponsor sits in the first <P>steering review</P>, reordering a <P>shared backlog</P>{" "}
+        that is genuinely theirs to reorder, with a <P>decision gate</P> ahead that waits on
+        the business, not on us. Scope, budget, and priorities stay in-house the whole way
         through.
       </>
     ),
@@ -55,8 +55,8 @@ const BEATS: { title: string; body: React.ReactNode }[] = [
     body: (
       <>
         Before the full build, a focused <P>proof of concept</P> has to earn the go-ahead
-        on your data and your hardest use case. You commit to scale on evidence you watched
-        happen, never on a slide.
+        on real data and the hardest use case. The decision to scale rests on evidence the
+        team watched happen, never on a slide.
       </>
     ),
   },
@@ -65,7 +65,7 @@ const BEATS: { title: string; body: React.ReactNode }[] = [
     body: (
       <>
         When the first dashboards go live, a <P>parallel run</P> checks them against the
-        numbers your teams trust today, and every mismatch gets chased down and explained.
+        numbers teams trust today, and every mismatch gets chased down and explained.
         The new figures earn their standing by reconciling, not because we vouched for them.
       </>
     ),
@@ -76,7 +76,7 @@ const BEATS: { title: string; body: React.ReactNode }[] = [
       <>
         The build ships with <P>runbooks</P>, documentation, and <P>enablement</P> sessions,
         plus a transition plan that names who runs what when we step back. Most engagements
-        reach first value in 8–16 weeks, and from there your team extends the work on its
+        reach first value in 8–16 weeks, and from there the team extends the work on its
         own terms.
       </>
     ),

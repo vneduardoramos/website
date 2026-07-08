@@ -32,7 +32,7 @@ const SHOTS = [
     w: 1210,
     h: 766,
     alt: "Horizon Catalog dataset page showing certification status, domain, and steward",
-    caption: "Governance you can see",
+    caption: "Governance made visible",
     detail: "Certification status, domain, and a named steward on every dataset in Horizon Catalog.",
     wide: false,
   },

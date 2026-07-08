@@ -88,7 +88,7 @@ export default async function NewsPage() {
 
       <CtaBand
         title="Want to be the first to know?"
-        subtitle="Talk to our team about upcoming Snowflake & AI events near you."
+        subtitle="Talk to our team about upcoming Snowflake & AI events across the Americas."
       />
     </>
   );

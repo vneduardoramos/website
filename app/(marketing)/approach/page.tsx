@@ -26,7 +26,7 @@ const runPhases = [
   },
   {
     title: "Proof before scale",
-    body: "We prove the approach with a focused proof of concept before the full build, so you commit to scale on evidence, not a slide deck.",
+    body: "We prove the approach with a focused proof of concept before the full build, so the commitment to scale rests on evidence, not a slide deck.",
   },
   {
     title: "Built to hand over",
@@ -38,7 +38,7 @@ const impactByPhase = [
   {
     phase: "First 8–16 weeks",
     title: "Foundations & first value",
-    body: "A governed foundation on Snowflake stood up, priority data flowing, and the first production dashboards live: your data practice takes root.",
+    body: "A governed foundation on Snowflake stood up, priority data flowing, and the first production dashboards live: the data practice takes root.",
   },
   {
     phase: "6–12 months",
@@ -62,10 +62,10 @@ export default function ApproachPage() {
             eyebrow="Our approach"
             title={
               <>
-                Delivery you can <span className="text-gradient">govern</span>.
+                Delivery leaders can <span className="text-gradient">govern</span>.
               </>
             }
-            description="Use-case-driven sprints with working software at every demo, plus the governance that de-risks the engagement itself, so you always know where the work stands."
+            description="Use-case-driven sprints with working software at every demo, plus the governance that de-risks the engagement itself, so sponsors always know where the work stands."
           />
         </div>
       </div>
@@ -74,8 +74,8 @@ export default function ApproachPage() {
       <Section>
         <SectionHeading
           eyebrow="The experience"
-          title="What an engagement feels like from your seat"
-          intro="The reviews you run, the demos you watch, and the decisions that stay yours: one engagement, from the first scoping session to handover."
+          title="What an engagement feels like from the sponsor's seat"
+          intro="The reviews the sponsor runs, the demos the team watches, and the decisions that stay in-house: one engagement, from the first scoping session to handover."
         />
         <ApproachStory />
       </Section>
@@ -89,7 +89,7 @@ export default function ApproachPage() {
         <div className="relative">
           <SectionHeading
             eyebrow="How engagements run"
-            title="Checkpoints you control"
+            title="Checkpoints sponsors control"
             intro="Clear timelines, steering, and a clean handover: the questions every sponsor asks, answered up front."
           />
           <div className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-4">

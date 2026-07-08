@@ -12,26 +12,26 @@ import { theme } from "@/config/theme";
 export const metadata = pageMeta({
   title: "Snowflake Partnership",
   description:
-    "Viewnear is a Snowflake Premier Partner and a CoCo Preferred Partner: certified depth, a direct line to Snowflake's own team, and early access to what's next, all put behind your data & AI practice.",
+    "Viewnear is a Snowflake Premier Partner and a CoCo Preferred Partner: certified depth, a direct line to Snowflake's own team, and early access to what's next, all behind the data & AI practice we build.",
   path: "/partnership",
 });
 
 const unlocks = [
   {
-    title: "One plan with your Snowflake team",
-    body: "We work alongside your Snowflake account team on architecture, funding, and delivery: aligned incentives and one plan, not a vendor bolted on after the fact.",
+    title: "One plan with the Snowflake team",
+    body: "We work alongside the Snowflake account team on architecture, funding, and delivery: aligned incentives and one plan, not a vendor bolted on after the fact.",
   },
   {
     title: "Snowflake procurement, simplified",
-    body: "You pay Snowflake for the compute and storage you actually use. Procure that capacity through Viewnear and you get simpler commercial terms, with licensing and delivery under one accountable partner.",
+    body: "Snowflake charges for the compute and storage actually consumed. Procuring that capacity through Viewnear means simpler commercial terms, with licensing and delivery under one accountable partner.",
   },
   {
     title: "Priority roadmap & preview access",
-    body: "Early access to what's next on Snowflake (Cortex, Openflow, Horizon, CoCo), so your use cases can build on emerging capabilities before they're mainstream.",
+    body: "Early access to what's next on Snowflake (Cortex, Openflow, Horizon, CoCo), so new use cases can build on emerging capabilities before they're mainstream.",
   },
   {
     title: "SnowPro-certified delivery",
-    body: "Certified architects and engineers on every engagement. Snowflake is what we do, not one of ten stacks we dabble in, so you get depth, not guesswork.",
+    body: "Certified architects and engineers on every engagement. Snowflake is what we do, not one of ten stacks we dabble in, so every engagement gets depth, not guesswork.",
   },
 ];
 
@@ -46,13 +46,13 @@ const comparison: Row[] = [
   },
   {
     dimension: "Who does the work",
-    inhouse: "Whoever you can hire and retain",
+    inhouse: "Whoever can be hired and retained",
     big3: "Rotating bench, layered delivery pyramids",
     viewnear: "Certified, versed at every level",
   },
   {
     dimension: "Snowflake expertise",
-    inhouse: "Learned on the job, on your budget",
+    inhouse: "Learned on the job, funded in-house",
     big3: "One of many platforms they cover",
     viewnear: "Premier Partner specialists, end to end",
   },
@@ -66,7 +66,7 @@ const comparison: Row[] = [
     dimension: "After go-live",
     inhouse: "Knowledge walks out with attrition",
     big3: "Day-rate dependency continues",
-    viewnear: "Enablement & hand-over, your team runs it",
+    viewnear: "Enablement & hand-over, the team runs it",
   },
 ];
 
@@ -87,7 +87,7 @@ export default function PartnershipPage() {
                 , and CoCo Preferred Partner.
               </>
             }
-            description={`${theme.brand.name} holds two of Snowflake's highest partner recognitions. Together they mean certified depth, a direct line to Snowflake's own team, and early access to what's next, all put to work on your data & AI practice by one accountable team across the Americas.`}
+            description={`${theme.brand.name} holds two of Snowflake's highest partner recognitions. Together they mean certified depth, a direct line to Snowflake's own team, and early access to what's next, all put to work on enterprise data & AI by one accountable team across the Americas.`}
           />
         </div>
       </div>
@@ -98,9 +98,9 @@ export default function PartnershipPage() {
       {/* What it unlocks */}
       <Section>
         <SectionHeading
-          eyebrow="What it unlocks for you"
+          eyebrow="What it unlocks"
           title="Faster to value, with less risk and lower cost"
-          intro="Certification isn't a logo on a slide; it changes how fast, how safely, and how affordably you get to value."
+          intro="Certification isn't a logo on a slide; it changes how fast, how safely, and how affordably the business gets to value."
         />
         <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2" variant="pop">
           {unlocks.map((u) => (
@@ -183,10 +183,10 @@ export default function PartnershipPage() {
                 Depth that a <span className="text-gradient">generalist can&rsquo;t match</span>
               </>
             }
-            body="A Premier Partner is measured on certified people and verified outcomes, not breadth of logos. We know the full Snowflake stack and work hand in hand with Snowflake's own team on every engagement, so you move faster with less risk than a generalist or an in-house ramp."
+            body="A Premier Partner is measured on certified people and verified outcomes, not breadth of logos. We know the full Snowflake stack and work hand in hand with Snowflake's own team on every engagement, so the build moves faster with less risk than a generalist or an in-house ramp."
             bullets={[
               "SnowPro-certified architects and engineers, from design to production",
-              "Working directly with your Snowflake account team",
+              "Working directly with the Snowflake account team",
               "Early access to Cortex, Openflow, Horizon, and CoCo",
               "One accountable team: the same named people from kickoff to handover",
             ]}
@@ -195,19 +195,19 @@ export default function PartnershipPage() {
             reverse
             cta={{ label: "Explore services", href: "/services" }}
           />
-          <LeadershipStrip label="The people you meet are the people who deliver." className="mt-10" />
+          <LeadershipStrip label="The people at the table are the people who deliver." className="mt-10" />
         </div>
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
 
-      {/* Real event photography: partner-ecosystem presence you can see.
+      {/* Real event photography: partner-ecosystem presence, made visible.
           team-booth is excluded here since the FeatureSplit above already uses
           it, and partner-momentum since it now anchors the inset up top. */}
       <FieldStrip items={["team-group", "team-stage", "team-dinner"]} />
 
       <CtaBand
         title="Put a certified partner on it."
-        subtitle="Tell us where you are with Snowflake (procurement, migration, or AI) and we'll bring the certified team, with Snowflake at the table, to get you there."
+        subtitle="Tell us where the organization stands with Snowflake (procurement, migration, or AI) and we'll bring the certified team, with Snowflake at the table, to move it forward."
       />
     </>
   );

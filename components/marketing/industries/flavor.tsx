@@ -232,7 +232,7 @@ export const INDUSTRY_FLAVOR: Record<string, IndustryFlavor> = {
       "Viewing, subscription, and engagement data unified into one source",
       "Near-real-time campaign and ad attribution across channels",
       "Content performance analytics that guide what to commission",
-      "Audience signal your teams act on, not gut feel",
+      "Audience signal teams act on, not gut feel",
     ],
   },
   "retail-cpg": {
@@ -304,8 +304,8 @@ export const DEFAULT_FLAVOR: IndustryFlavor = {
   ],
   bullets: [
     "Sector-specific data models and governance built in from the start",
-    "Industry specialists paired with SnowPro-certified engineers, inside your team",
-    "Measurable outcomes tied to the metrics your teams report on",
+    "Industry specialists paired with SnowPro-certified engineers, embedded in the team",
+    "Measurable outcomes tied to the metrics teams report on",
     "A roadmap that scales from first win to company-wide adoption",
   ],
 };

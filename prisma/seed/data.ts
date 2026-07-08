@@ -10,7 +10,7 @@ export const siteSettings: Record<string, unknown> = {
     // headline mirrors the hero H1 rendered in MeshHeroSlide (kept in sync for reference).
     headline: "From data strategy to AI in production, on Snowflake.",
     subhead:
-      "You've chosen Snowflake. The harder part is what you stand up on it: a data practice that feeds real decisions with numbers people trust, and an AI practice that ships use cases into production. We build both inside your team, then hand you the keys.",
+      "Choosing Snowflake is the easy part. The harder part is what an organization stands up on it: a data practice that feeds real decisions with numbers people trust, and an AI practice that ships use cases into production. We build both inside the team, then hand over the keys.",
   },
   stats: [
     { label: "Snowflake partner tier", value: "Premier" },
@@ -19,23 +19,23 @@ export const siteSettings: Record<string, unknown> = {
     { label: "Countries across the Americas", value: "5" },
   ],
   partnership: {
-    title: "Your Snowflake Premier Partner across the Americas.",
+    title: "The Snowflake Premier Partner across the Americas.",
     points: [
       {
         title: "Snowflake Premier Partner",
-        body: "Premier status puts SnowPro-certified engineers on your work, with a verified, end-to-end delivery track record across the Americas: from architecture and migration through analytics and AI in production.",
+        body: "Premier status puts SnowPro-certified engineers on the work, backed by a verified, end-to-end delivery track record across the Americas: from architecture and migration through analytics and AI in production.",
       },
       {
         title: "Snowflake CoCo Preferred Partner",
-        body: "As a Snowflake CoCo Preferred Partner, we build with Snowflake CoCo, the coding agent, so your data products and AI use cases ship faster: governed and validated before they reach production.",
+        body: "As a Snowflake CoCo Preferred Partner, we build with Snowflake CoCo, the coding agent, so data products and AI use cases ship faster: governed and validated before they reach production.",
       },
       {
         title: "Snowflake procurement, simplified",
-        body: "Procure Snowflake directly through Viewnear. It's consumption-based (you pay for the compute and storage you use) and we simplify the capacity commitment, commercial terms, and account management under one trusted partner.",
+        body: "Procure Snowflake directly through Viewnear. It's consumption-based (the business pays for the compute and storage it uses) and we simplify the capacity commitment, commercial terms, and account management under one trusted partner.",
       },
       {
         title: "End-to-end delivery",
-        body: "From architecture and migration to data engineering, analytics, and AI in production, one accountable team carries the work end to end, and your people learn it as we build.",
+        body: "From architecture and migration to data engineering, analytics, and AI in production, one accountable team carries the work end to end, and in-house teams learn it as we build.",
       },
       {
         title: "The Americas' home team",
@@ -46,7 +46,7 @@ export const siteSettings: Record<string, unknown> = {
   contact: {
     email: "contact@viewnear.com",
     blurb:
-      "Tell us where you are. We will tell you what is possible. The answer might be a strategy session, a proof of concept, or an honest conversation about where your competition already is.",
+      "Tell us where the organization stands. We will lay out what is possible. The answer might be a strategy session, a proof of concept, or an honest conversation about how far competitors have already moved.",
   },
 };
 
@@ -56,10 +56,10 @@ export const services = [
     tier: "THINK",
     title: "Data & AI Strategy",
     summary:
-      "Turn AI ambition into a board-ready roadmap: where data and AI create measurable ROI, sequenced by value and grounded in what your data can actually support, on a clear path to the agentic enterprise.",
+      "Turn AI ambition into a board-ready roadmap: where data and AI create measurable ROI, sequenced by value and grounded in what the data can actually support, on a clear path to the agentic enterprise.",
     tools: [],
     order: 1,
-    body: "Invest with confidence and know exactly what to build next. We work with CEOs and CTOs to turn 'we need an AI strategy' into a costed, sequenced roadmap grounded in your current data readiness and focused on the use cases with the clearest return.",
+    body: "Invest with confidence and know exactly what to build next. We work with CEOs and CTOs to turn 'we need an AI strategy' into a costed, sequenced roadmap, grounded in current data readiness and focused on the use cases with the clearest return.",
   },
   {
     slug: "cloud-architecture",
@@ -69,47 +69,47 @@ export const services = [
       "The AI-ready foundation: governed, built on Snowflake, and ready to scale, the single source of truth every model and agent depends on.",
     tools: ["Snowflake", "Openflow", "Iceberg"],
     order: 3,
-    body: "Give every team one fast, scalable foundation to build on. We design and deliver it cloud-native on Snowflake, sized for the AI workloads you are planning rather than just the reporting you run today, with security and governance built in from the start.",
+    body: "Every team gets one fast, scalable foundation to build on. We design and deliver it cloud-native on Snowflake, sized for the AI workloads on the horizon rather than just the reporting teams run today, with security and governance built in from the start.",
   },
   {
     slug: "data-engineering",
     tier: "BUILD",
     title: "Data Engineering & Pipelines",
     summary:
-      "Always-current, trusted data: governed pipelines that unify every source (ERP, CRM, SaaS, and files) so your analytics and AI run on inputs you can stake decisions on.",
+      "Always-current, trusted data: governed pipelines that unify every source (ERP, CRM, SaaS, and files) so analytics and AI run on inputs worth staking decisions on.",
     tools: ["Snowflake", "Openflow", "dbt"],
     order: 4,
-    body: "Stop chasing numbers across systems. We build automated, secure pipelines that pull every source (APIs, databases, flat files) into your warehouse reliably and on schedule, so your teams work from data they can trust and your AI workloads have clean, current inputs.",
+    body: "No more chasing numbers across systems. We build automated, secure pipelines that pull every source (APIs, databases, flat files) into the warehouse reliably and on schedule, so teams work from data they can trust and AI workloads have clean, current inputs.",
   },
   {
     slug: "data-visualisation",
     tier: "BUILD",
     title: "AI Analytics & Agents",
     summary:
-      "Put governed AI to work: Cortex Analyst and Snowflake CoWork agents that turn your governed data into cited, decision-ready answers, embedded where leaders already work.",
+      "Put governed AI to work: Cortex Analyst and Snowflake CoWork agents that turn governed data into cited, decision-ready answers, embedded where leaders already work.",
     tools: ["Cortex Analyst", "Snowflake CoWork", "Snowsight", "Streamlit"],
     order: 2,
-    body: "Put answers in the hands of the people making decisions. We build the reporting and self-service layer natively in Snowflake: Snowsight dashboards and Streamlit apps for the views teams live in, with Cortex Analyst answering questions over your governed Semantic Views and Snowflake CoWork (the personal AI agent) letting business users explore and act in plain language. Anyone who needs insight can find it themselves: no waiting on the data team, no exporting to spreadsheets.",
+    body: "Put answers in the hands of the people making decisions. We build the reporting and self-service layer natively in Snowflake: Snowsight dashboards and Streamlit apps for the views teams live in, with Cortex Analyst answering questions over governed Semantic Views and Snowflake CoWork (the personal AI agent) letting business users explore and act in plain language. Anyone who needs insight can find it themselves: no waiting on the data team, no exporting to spreadsheets.",
   },
   {
     slug: "embedded-analytics",
     tier: "BUILD",
     title: "Embedded Analytics",
     summary:
-      "Differentiate your product: Cortex-powered data products embedded into your apps and client workflows, turning insight into a competitive edge.",
+      "Differentiate the product: Cortex-powered data products embedded into apps and client workflows, turning insight into a competitive edge.",
     tools: ["Streamlit", "Cortex"],
     order: 5,
-    body: "Make analytics a feature your customers pay for. We embed dashboards and reporting directly into your applications, client portals, and partner interfaces, so the insight lives where users already work and your product stands apart from competitors.",
+    body: "Make analytics a feature customers pay for. We embed dashboards and reporting directly into applications, client portals, and partner interfaces, so the insight lives where users already work and the product stands apart from competitors.",
   },
   {
     slug: "capability-development",
     tier: "GROW",
     title: "Capability Development",
     summary:
-      "Compound the advantage: we embed with your team and build the in-house fluency to scale your AI use cases long after launch.",
+      "Compound the advantage: we embed with the team and build the in-house fluency to scale AI use cases long after launch.",
     tools: [],
     order: 6,
-    body: "Capability that outlasts the engagement. Our certified practitioners embed alongside your people, coaching through real delivery and building fluency at every level (from executive data literacy to hands-on tool training for analysts and engineers) so your team keeps improving on its own.",
+    body: "Capability that outlasts the engagement. Our certified practitioners embed alongside in-house teams, coaching through real delivery and building fluency at every level (from executive data literacy to hands-on tool training for analysts and engineers) so the team keeps improving on its own.",
   },
 ];
 
@@ -159,7 +159,7 @@ export const industries = [
   {
     slug: "financial-services",
     name: "Financial Services",
-    headline: "Your data is more valuable than your products. Treat it that way.",
+    headline: "In financial services, data is worth more than the products. It should be treated that way.",
     intro:
       "Across banking, insurance, and asset management, the organizations that win are the ones that turn fragmented financial data into a single, governed, trusted source for reporting, compliance, and AI.",
     challenges: [
@@ -186,7 +186,7 @@ export const industries = [
     challenges: [
       { problem: "Machine and ERP data don't connect", response: "We unify shop-floor, sensor, and ERP data into one governed, trusted source." },
       { problem: "Hidden downtime and quality loss", response: "We deliver OEE and quality analytics that expose the real cost drivers." },
-      { problem: "Supply-chain blind spots", response: "We give you the whole chain in one view, from supplier to shipment." },
+      { problem: "Supply-chain blind spots", response: "We bring the whole chain into one view, from supplier to shipment." },
     ],
     deliverables: [
       { title: "OEE & production analytics", description: "Availability, performance, and quality in a single live view." },
@@ -201,7 +201,7 @@ export const industries = [
   {
     slug: "media-entertainment-advertising",
     name: "Media, Entertainment & Advertising",
-    headline: "Audiences move fast. Your data should move faster.",
+    headline: "Audiences move fast. The data that tracks them should move faster.",
     intro:
       "We unify audience, content, and campaign data into one governed source so media, entertainment, and advertising teams can measure performance, attribute spend, and act on engagement in near real time.",
     challenges: [
@@ -243,7 +243,7 @@ export const industries = [
   {
     slug: "technology-telco",
     name: "Technology & Telco",
-    headline: "You sit on usage data most companies would envy. Make it work harder.",
+    headline: "Software and telco firms sit on usage data most companies would envy. The opportunity is making it work harder.",
     intro:
       "For software, platform, and telecommunications businesses, we turn product usage and network telemetry into a governed source for churn, growth, and reliability, so teams act on signal instead of anecdote.",
     challenges: [
@@ -353,17 +353,17 @@ We're looking for a Senior Data & AI Engineer who brings strong technical depth,
 
 This role is for someone who knows that great data and AI work is not built through big talk. It is built through clean architecture, reliable pipelines, thoughtful modeling, strong engineering habits, and the willingness to solve complex problems when the path is not perfectly clear.
 
-You will help design, build, and scale modern data and AI solutions on Snowflake, turning complex business operations into trusted, usable, production-ready systems.
+The role helps design, build, and scale modern data and AI solutions on Snowflake, turning complex business operations into trusted, usable, production-ready systems.
 
-## What you'll do
+## What the role involves
 
-You will lead the design and implementation of governed data foundations, pipelines, data models, and AI-ready architectures using Snowflake as the core cloud data platform.
+This engineer leads the design and implementation of governed data foundations, pipelines, data models, and AI-ready architectures using Snowflake as the core cloud data platform.
 
-You will work closely with business, analytics, engineering, and leadership teams to understand operational challenges, translate them into technical requirements, and deliver solutions that create measurable business value.
+The work runs close to business, analytics, engineering, and leadership teams: understanding operational challenges, translating them into technical requirements, and delivering solutions that create measurable business value.
 
-You will help bring AI use cases from concept to production by preparing trusted data, building scalable integration patterns, and supporting solutions such as LLM applications, RAG architectures, semantic search, automation workflows, and AI-powered analytics.
+It also means bringing AI use cases from concept to production: preparing trusted data, building scalable integration patterns, and supporting solutions such as LLM applications, RAG architectures, semantic search, automation workflows, and AI-powered analytics.
 
-This is a hands-on role. You will write SQL and Python, design data models, build ELT pipelines, review technical designs, troubleshoot performance issues, document decisions, and mentor others on the team.
+This is a hands-on role: writing SQL and Python, designing data models, building ELT pipelines, reviewing technical designs, troubleshooting performance issues, documenting decisions, and mentoring others on the team.
 
 ## What we're looking for
 
@@ -382,35 +382,35 @@ Experience with dbt, Airflow, Coalesce, Azure, AWS, or GCP is a plus.
 
 ## The kind of person who succeeds here
 
-You are the person who keeps showing up.
+The people who thrive here are the ones who keep showing up.
 
-You take ownership of messy source systems, unclear requirements, broken pipelines, performance bottlenecks, and ambitious goals, then work through them with patience and precision.
+They take ownership of messy source systems, unclear requirements, broken pipelines, performance bottlenecks, and ambitious goals, then work through them with patience and precision.
 
-You do not need everything to be perfect before you start. You know how to ask the right questions, make smart tradeoffs, and move the work forward.
+They do not need everything to be perfect before starting. They know how to ask the right questions, make smart tradeoffs, and move the work forward.
 
-You care about clean architecture, but you also care about getting useful solutions into people's hands. You understand that trust in data is earned one correct number, one reliable pipeline, and one well-built solution at a time.
+They care about clean architecture, but they care just as much about getting useful solutions into people's hands. They understand that trust in data is earned one correct number, one reliable pipeline, and one well-built solution at a time.
 
-You bring technical depth, but also humility. You help others get better. You make the team stronger.
+They bring technical depth, and just as much humility. They help others get better. They make the team stronger.
 
 ## What success looks like
 
 Success means our clients trust their data, AI use cases move beyond demos, pipelines run reliably, and business teams make faster, better decisions.
 
-You will help build the governed foundation on Snowflake that allows ambitious ideas to become real systems. We're looking for someone ready to do the work, carry responsibility, and help the team win.`,
+This role helps build the governed foundation on Snowflake that turns ambitious ideas into real systems. We're looking for someone ready to do the work, carry responsibility, and help the team win.`,
   },
 ];
 
 // Flat list with a `category` for grouping on /faq; home & services read q/a only.
 export const faqs = [
   { category: "Partnership & certifications", q: "What Snowflake partner status does Viewnear hold?", a: "Viewnear is a Snowflake Premier Partner and a Snowflake CoCo Preferred Partner, with SnowPro-certified engineers and a verified delivery track record across the Americas." },
-  { category: "Partnership & certifications", q: "What does a Premier Partner unlock for us?", a: "Depth and a direct line to Snowflake. Premier status reflects certified delivery across the full Snowflake stack, and it means we work hand in hand with Snowflake itself: aligned with your Snowflake account team on architecture and delivery, with early visibility into new capabilities (Cortex, Openflow, Horizon Catalog, CoCo, and CoWork). We partner with Snowflake to bring your project to a successful outcome." },
-  { category: "Partnership & certifications", q: "How does Snowflake pricing work, and can we buy it through Viewnear?", a: "Snowflake is consumption-based: you pay for the compute (credits) and storage you actually use, so run cost flexes with the work. You can procure your Snowflake capacity through Viewnear for simpler commercial terms and account management under one accountable partner." },
-  { category: "Delivery & engagements", q: "How long does a Snowflake implementation take?", a: "A typical first production build runs 8–16 weeks, depending on data volume, source complexity, and the use cases in scope. What keeps that real: paid discovery that fixes scope up front, use-case-driven sprints with working software at every demo, and proof running in parallel with the build, so you see value from sprint one." },
-  { category: "Delivery & engagements", q: "How do you de-risk a large engagement?", a: "We prove the approach with a focused proof of concept before we scale, run regular steering reviews with clear decision gates, and build enablement in from day one, so your team can run and extend the work without us." },
-  { category: "Delivery & engagements", q: "Can you migrate our existing data warehouse to Snowflake?", a: "Yes. Migration is one of our most common engagements (Teradata, Oracle, Hadoop, SQL Server). We manage the full technical delivery and program governance." },
-  { category: "Delivery & engagements", q: "Can you integrate Snowflake with our ERP, CRM, and operational systems?", a: "Yes, in both directions. Openflow and Zero-Copy Integrations bring data in from systems like SAP, Salesforce, and Workday, and we deliver insight back out through Snowsight, Streamlit apps, APIs, and agents embedded where your teams work." },
+  { category: "Partnership & certifications", q: "What does Premier status actually unlock?", a: "Depth and a direct line to Snowflake. Premier status reflects certified delivery across the full Snowflake stack, and it means we work hand in hand with Snowflake itself: aligned with the client's Snowflake account team on architecture and delivery, with early visibility into new capabilities (Cortex, Openflow, Horizon Catalog, CoCo, and CoWork). We partner with Snowflake to carry each project to a successful outcome." },
+  { category: "Partnership & certifications", q: "How does Snowflake pricing work, and can it be bought through Viewnear?", a: "Snowflake is consumption-based: the business pays for the compute (credits) and storage it actually uses, so run cost flexes with the work. Snowflake capacity can be procured through Viewnear for simpler commercial terms and account management under one accountable partner." },
+  { category: "Delivery & engagements", q: "How long does a Snowflake implementation take?", a: "A typical first production build runs 8–16 weeks, depending on data volume, source complexity, and the use cases in scope. What keeps that real: paid discovery that fixes scope up front, use-case-driven sprints with working software at every demo, and proof running in parallel with the build, so value shows from sprint one." },
+  { category: "Delivery & engagements", q: "How does Viewnear de-risk a large engagement?", a: "We prove the approach with a focused proof of concept before we scale, run regular steering reviews with clear decision gates, and build enablement in from day one, so in-house teams can run and extend the work without us." },
+  { category: "Delivery & engagements", q: "Can Viewnear migrate an existing data warehouse to Snowflake?", a: "Yes. Migration is one of our most common engagements (Teradata, Oracle, Hadoop, SQL Server). We manage the full technical delivery and program governance." },
+  { category: "Delivery & engagements", q: "Can Viewnear integrate Snowflake with ERP, CRM, and operational systems?", a: "Yes, in both directions. Openflow and Zero-Copy Integrations bring data in from systems like SAP, Salesforce, and Workday, and we deliver insight back out through Snowsight, Streamlit apps, APIs, and agents embedded where teams work." },
   { category: "Commercials", q: "How is an engagement priced?", a: "Engagements are scoped on data volume and complexity, the number of analytics/AI use cases, team size, and timeline. We agree scope and price up front and offer fixed-outcome, flex-capacity, and embedded-team models: a partner measured on outcomes, not hours." },
-  { category: "Commercials", q: "Do you publish standard pricing?", a: "No. No two data estates are the same, so we price to the work. Tell us your goals and constraints and we'll come back with a model, a plan, and a price." },
-  { category: "Security & platform", q: "How do you keep our data secure?", a: "We build on Snowflake's certified platform and extend it with least-privilege access, Horizon Catalog lineage and PII classification, Horizon Context so every person and AI agent works from the same trusted business context, data residency by region, and audit-ready controls, all configured to your sector." },
-  { category: "Security & platform", q: "Do you use third-party tools or stay native to Snowflake?", a: "We lead with the Snowflake-native stack (Openflow, Snowpark, Horizon Catalog, Cortex, Snowsight, Streamlit, plus the Snowflake CoCo coding agent and CoWork AI agent) so governance and AI context (Horizon Context) stay in one place. dbt is the one external framework we run, natively against Snowflake." },
+  { category: "Commercials", q: "Does Viewnear publish standard pricing?", a: "No. No two data estates are the same, so we price to the work. Share the goals and constraints, and we'll come back with a model, a plan, and a price." },
+  { category: "Security & platform", q: "How does Viewnear keep data secure?", a: "We build on Snowflake's certified platform and extend it with least-privilege access, Horizon Catalog lineage and PII classification, Horizon Context so every person and AI agent works from the same trusted business context, data residency by region, and audit-ready controls, all configured to the client's sector." },
+  { category: "Security & platform", q: "Does Viewnear use third-party tools or stay native to Snowflake?", a: "We lead with the Snowflake-native stack (Openflow, Snowpark, Horizon Catalog, Cortex, Snowsight, Streamlit, plus the Snowflake CoCo coding agent and CoWork AI agent) so governance and AI context (Horizon Context) stay in one place. dbt is the one external framework we run, natively against Snowflake." },
 ];

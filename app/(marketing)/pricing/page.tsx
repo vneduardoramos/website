@@ -18,7 +18,7 @@ export const metadata = pageMeta({
 const engagementModels = [
   {
     title: "Fixed cost",
-    body: "A defined scope, timeline, and price agreed up front. Best when the outcome is clear and you want budget certainty from day one.",
+    body: "A defined scope, timeline, and price agreed up front. Best when the outcome is clear and budget certainty matters from day one.",
     bestFor: "Defined foundation builds & migrations",
   },
   {
@@ -28,7 +28,7 @@ const engagementModels = [
   },
   {
     title: "Team augmentation",
-    body: "Embed our certified practitioners alongside yours. We accelerate delivery while leveling up your in-house capability.",
+    body: "Embed our certified practitioners alongside the in-house team. We accelerate delivery while leveling up their capability.",
     bestFor: "Scaling an existing team fast",
   },
 ];
@@ -60,9 +60,9 @@ const costFactors = [
 ];
 
 const impactByPhase = [
-  { phase: "First 8–16 weeks", title: "Foundations & first value", body: "Your data practice stands up: scope fixed in a paid discovery, governance designed in from the first table, priority data flowing, and the first governed data products in production." },
+  { phase: "First 8–16 weeks", title: "Foundations & first value", body: "The data practice stands up: scope fixed in a paid discovery, governance designed in from the first table, priority data flowing, and the first governed data products in production." },
   { phase: "6–12 months", title: "Scale & self-service", body: "The AI practice ships: use cases spread across teams and each new one reaches first insight 60% faster. Self-service takes hold; manual reporting retires." },
-  { phase: "18+ months", title: "Compounding advantage", body: "Both practices are yours: new use cases ship in weeks at 40% lower run cost, and the handover is real. Your team runs and extends the work without us." },
+  { phase: "18+ months", title: "Compounding advantage", body: "Both practices are in-house: new use cases ship in weeks at 40% lower run cost, and the handover is real. The team runs and extends the work without us." },
 ];
 
 export default function PricingPage() {
@@ -76,14 +76,14 @@ export default function PricingPage() {
             Clear scope. <span className="text-gradient">No surprises.</span>
           </>
         }
-        description="Engagements are scoped to your data and goals, and priced up front, whichever model fits. Here's how we structure the work and what shapes the investment."
+        description="Engagements are scoped to the data and goals at hand, and priced up front, whichever model fits. Here's how we structure the work and what shapes the investment."
       />
 
       <Section>
         <SectionHeading
           eyebrow="How we work"
           title="Engagement models"
-          intro="Flexible ways to partner, matched to the shape of your problem."
+          intro="Flexible ways to partner, matched to the shape of the problem."
         />
         <div className="mt-12 grid gap-5 md:auto-rows-fr md:grid-cols-3">
           {engagementModels.map((m, i) => (
@@ -104,8 +104,8 @@ export default function PricingPage() {
           <p className="max-w-3xl text-muted">
             The shape of a typical first engagement: a paid discovery fixes scope and price, sprint
             demos show working software from the first weeks, and a governed foundation reaches
-            production in 8–16 weeks, with a named team you meet before you sign and your own
-            people in the work from sprint one.
+            production in 8–16 weeks, with a named team the sponsor meets before signing and
+            in-house people in the work from sprint one.
           </p>
         </div>
       </Section>
@@ -156,7 +156,7 @@ export default function PricingPage() {
 
       <CtaBand
         title="Let's scope it together."
-        subtitle="Tell us your goals and constraints, and we'll come back with a model, a plan, and a price you can take to the board."
+        subtitle="Tell us the goals and constraints, and we'll come back with a model, a plan, and a price ready for the board."
       />
     </>
   );

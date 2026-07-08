@@ -1,5 +1,5 @@
 {
- "exportedAt": "2026-07-07T03:07:08.080Z",
+ "exportedAt": "2026-07-08T01:40:42.629Z",
  "tables": {
   "tag": [],
   "client": [
@@ -11,7 +11,7 @@
     "region": "Mexico",
     "logoColor": null,
     "createdAt": "2026-06-14T16:42:43.035Z",
-    "updatedAt": "2026-07-07T03:07:07.758Z"
+    "updatedAt": "2026-07-08T01:40:42.322Z"
    },
    {
     "id": "cmqe0izff000kec77yj0fj6x4",
@@ -21,7 +21,7 @@
     "region": "USA",
     "logoColor": null,
     "createdAt": "2026-06-14T16:42:43.035Z",
-    "updatedAt": "2026-07-07T03:07:07.759Z"
+    "updatedAt": "2026-07-08T01:40:42.322Z"
    },
    {
     "id": "cmqe0izff000lec77g61jy8h7",
@@ -31,7 +31,7 @@
     "region": "Miami & LATAM",
     "logoColor": null,
     "createdAt": "2026-06-14T16:42:43.036Z",
-    "updatedAt": "2026-07-07T03:07:07.759Z"
+    "updatedAt": "2026-07-08T01:40:42.323Z"
    },
    {
     "id": "cmqe0izfg000mec77r154ddor",
@@ -41,7 +41,7 @@
     "region": "USA",
     "logoColor": null,
     "createdAt": "2026-06-14T16:42:43.036Z",
-    "updatedAt": "2026-07-07T03:07:07.759Z"
+    "updatedAt": "2026-07-08T01:40:42.323Z"
    },
    {
     "id": "cmqe0izfg000nec77fshier0f",
@@ -51,7 +51,7 @@
     "region": "Americas",
     "logoColor": null,
     "createdAt": "2026-06-14T16:42:43.037Z",
-    "updatedAt": "2026-07-07T03:07:07.760Z"
+    "updatedAt": "2026-07-08T01:40:42.323Z"
    },
    {
     "id": "cmqe0izfh000oec776gtdq82f",
@@ -61,7 +61,7 @@
     "region": "Mexico",
     "logoColor": null,
     "createdAt": "2026-06-14T16:42:43.037Z",
-    "updatedAt": "2026-07-07T03:07:07.760Z"
+    "updatedAt": "2026-07-08T01:40:42.324Z"
    },
    {
     "id": "cmqe0izfh000pec77x04oahjd",
@@ -71,7 +71,7 @@
     "region": "Mexico",
     "logoColor": null,
     "createdAt": "2026-06-14T16:42:43.038Z",
-    "updatedAt": "2026-07-07T03:07:07.761Z"
+    "updatedAt": "2026-07-08T01:40:42.324Z"
    }
   ],
   "industry": [
@@ -81,19 +81,19 @@
     "name": "Manufacturing",
     "headline": "The factory floor produces data faster than most teams can use it.",
     "intro": "We connect production, supply-chain, and sensor data into one governed, trusted source so manufacturers can lift OEE, see the whole supply chain, and act on issues before they reach the customer.",
-    "challenges": "[{\"problem\":\"Machine and ERP data don't connect\",\"response\":\"We unify shop-floor, sensor, and ERP data into one governed, trusted source.\"},{\"problem\":\"Hidden downtime and quality loss\",\"response\":\"We deliver OEE and quality analytics that expose the real cost drivers.\"},{\"problem\":\"Supply-chain blind spots\",\"response\":\"We give you the whole chain in one view, from supplier to shipment.\"}]",
+    "challenges": "[{\"problem\":\"Machine and ERP data don't connect\",\"response\":\"We unify shop-floor, sensor, and ERP data into one governed, trusted source.\"},{\"problem\":\"Hidden downtime and quality loss\",\"response\":\"We deliver OEE and quality analytics that expose the real cost drivers.\"},{\"problem\":\"Supply-chain blind spots\",\"response\":\"We bring the whole chain into one view, from supplier to shipment.\"}]",
     "deliverables": "[{\"title\":\"OEE & production analytics\",\"description\":\"Availability, performance, and quality in a single live view.\"},{\"title\":\"Supply-chain visibility\",\"description\":\"Tracking from supplier through to delivery, governed at every step.\"},{\"title\":\"IoT & sensor data pipelines\",\"description\":\"High-volume machine and sensor data, ingested and governed.\"},{\"title\":\"Predictive maintenance models\",\"description\":\"Data foundations for forecasting failures before they happen.\"}]",
     "tools": "[\"Snowflake\",\"Openflow\",\"Cortex\",\"Streamlit\"]",
     "stats": "[{\"label\":\"Clients in this industry\",\"value\":\"7+\"}]",
     "body": null,
     "ogImage": null,
     "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
     "order": 4,
     "seoTitle": null,
     "seoDescription": null,
     "createdAt": "2026-06-14T16:42:43.033Z",
-    "updatedAt": "2026-07-07T03:07:07.755Z"
+    "updatedAt": "2026-07-08T01:40:42.319Z"
    },
    {
     "id": "cmqe0izfa000cec77oibxe6rf",
@@ -108,12 +108,12 @@
     "body": null,
     "ogImage": null,
     "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
     "order": 1,
     "seoTitle": null,
     "seoDescription": null,
     "createdAt": "2026-06-14T16:42:43.030Z",
-    "updatedAt": "2026-07-07T03:07:07.752Z"
+    "updatedAt": "2026-07-08T01:40:42.317Z"
    },
    {
     "id": "cmqe0izfb000dec77piq8uyhg",
@@ -128,18 +128,18 @@
     "body": null,
     "ogImage": null,
     "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
     "order": 2,
     "seoTitle": null,
     "seoDescription": null,
     "createdAt": "2026-06-14T16:42:43.031Z",
-    "updatedAt": "2026-07-07T03:07:07.753Z"
+    "updatedAt": "2026-07-08T01:40:42.318Z"
    },
    {
     "id": "cmqe0izfd000gec77i217jks4",
     "slug": "media-entertainment-advertising",
     "name": "Media, Entertainment & Advertising",
-    "headline": "Audiences move fast. Your data should move faster.",
+    "headline": "Audiences move fast. The data that tracks them should move faster.",
     "intro": "We unify audience, content, and campaign data into one governed source so media, entertainment, and advertising teams can measure performance, attribute spend, and act on engagement in near real time.",
     "challenges": "[{\"problem\":\"Audience data scattered across platforms\",\"response\":\"We unify viewing, subscription, and engagement data into one source.\"},{\"problem\":\"Campaign attribution that arrives too late\",\"response\":\"We deliver near-real-time attribution across channels and spend.\"},{\"problem\":\"Content decisions made on gut feel\",\"response\":\"We surface content performance analytics that guide what to commission.\"}]",
     "deliverables": "[{\"title\":\"Audience & engagement analytics\",\"description\":\"A unified view of who is watching, reading, and subscribing.\"},{\"title\":\"Campaign & ad attribution\",\"description\":\"Cross-channel attribution that connects spend to outcomes.\"},{\"title\":\"Content performance analytics\",\"description\":\"What resonates, by title, format, and platform.\"},{\"title\":\"Unified media data foundation\",\"description\":\"A governed foundation across ad, subscription, and content systems.\"}]",
@@ -148,38 +148,18 @@
     "body": null,
     "ogImage": null,
     "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
     "order": 5,
     "seoTitle": null,
     "seoDescription": null,
     "createdAt": "2026-06-14T16:42:43.033Z",
-    "updatedAt": "2026-07-07T03:07:07.756Z"
-   },
-   {
-    "id": "cmqe0izfe000iec77s0x9mgij",
-    "slug": "technology-telco",
-    "name": "Technology & Telco",
-    "headline": "You sit on usage data most companies would envy. Make it work harder.",
-    "intro": "For software, platform, and telecommunications businesses, we turn product usage and network telemetry into a governed source for churn, growth, and reliability, so teams act on signal instead of anecdote.",
-    "challenges": "[{\"problem\":\"Product and network data in silos\",\"response\":\"We unify usage, billing, and network telemetry into one governed, trusted source.\"},{\"problem\":\"Churn surfaces only after customers leave\",\"response\":\"We deliver churn and retention analytics that flag risk early.\"},{\"problem\":\"Growth levers buried in raw events\",\"response\":\"We build product analytics that connect usage to revenue.\"}]",
-    "deliverables": "[{\"title\":\"Product & usage analytics\",\"description\":\"Event-level usage connected to activation, growth, and revenue.\"},{\"title\":\"Churn & retention models\",\"description\":\"Early-warning analytics on the customers most at risk.\"},{\"title\":\"Network & telemetry pipelines\",\"description\":\"High-volume telemetry ingested, governed, and query-ready.\"},{\"title\":\"Self-service analytics\",\"description\":\"Reliable, governed metrics every team reports from.\"}]",
-    "tools": "[\"Snowflake\",\"Openflow\",\"Cortex\",\"Streamlit\"]",
-    "stats": "[{\"label\":\"Clients in this industry\",\"value\":\"8+\"}]",
-    "body": null,
-    "ogImage": null,
-    "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
-    "order": 7,
-    "seoTitle": null,
-    "seoDescription": null,
-    "createdAt": "2026-06-14T16:42:43.035Z",
-    "updatedAt": "2026-07-07T03:07:07.757Z"
+    "updatedAt": "2026-07-08T01:40:42.320Z"
    },
    {
     "id": "cmqe0izfc000eec77gqtn6hq5",
     "slug": "financial-services",
     "name": "Financial Services",
-    "headline": "Your data is more valuable than your products. Treat it that way.",
+    "headline": "In financial services, data is worth more than the products. It should be treated that way.",
     "intro": "Across banking, insurance, and asset management, the organizations that win are the ones that turn fragmented financial data into a single, governed, trusted source for reporting, compliance, and AI.",
     "challenges": "[{\"problem\":\"Fragmented data sources\",\"response\":\"We consolidate complex financial data into a single, governed enterprise warehouse.\"},{\"problem\":\"Manual compliance reporting\",\"response\":\"We automate regulatory and structured external reporting from one governed source.\"},{\"problem\":\"Decisions on stale data\",\"response\":\"We deliver self-service analytics so teams act on current, reliable numbers.\"}]",
     "deliverables": "[{\"title\":\"Enterprise data warehouses\",\"description\":\"Scalable, governed foundations for analytics across the business.\"},{\"title\":\"Self-service analytics\",\"description\":\"Internal analytics and structured external reporting from one source.\"},{\"title\":\"Regulatory reporting\",\"description\":\"Automated, auditable compliance reporting.\"},{\"title\":\"Analytics & AI use cases\",\"description\":\"From product evaluation through to AI use cases across departments.\"}]",
@@ -188,12 +168,12 @@
     "body": null,
     "ogImage": null,
     "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
     "order": 3,
     "seoTitle": null,
     "seoDescription": null,
     "createdAt": "2026-06-14T16:42:43.032Z",
-    "updatedAt": "2026-07-07T03:07:07.753Z"
+    "updatedAt": "2026-07-08T01:40:42.319Z"
    },
    {
     "id": "cmqe0izfd000hec774xeri30n",
@@ -208,12 +188,32 @@
     "body": null,
     "ogImage": null,
     "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
     "order": 6,
     "seoTitle": null,
     "seoDescription": null,
     "createdAt": "2026-06-14T16:42:43.034Z",
-    "updatedAt": "2026-07-07T03:07:07.756Z"
+    "updatedAt": "2026-07-08T01:40:42.320Z"
+   },
+   {
+    "id": "cmqe0izfe000iec77s0x9mgij",
+    "slug": "technology-telco",
+    "name": "Technology & Telco",
+    "headline": "Software and telco firms sit on usage data most companies would envy. The opportunity is making it work harder.",
+    "intro": "For software, platform, and telecommunications businesses, we turn product usage and network telemetry into a governed source for churn, growth, and reliability, so teams act on signal instead of anecdote.",
+    "challenges": "[{\"problem\":\"Product and network data in silos\",\"response\":\"We unify usage, billing, and network telemetry into one governed, trusted source.\"},{\"problem\":\"Churn surfaces only after customers leave\",\"response\":\"We deliver churn and retention analytics that flag risk early.\"},{\"problem\":\"Growth levers buried in raw events\",\"response\":\"We build product analytics that connect usage to revenue.\"}]",
+    "deliverables": "[{\"title\":\"Product & usage analytics\",\"description\":\"Event-level usage connected to activation, growth, and revenue.\"},{\"title\":\"Churn & retention models\",\"description\":\"Early-warning analytics on the customers most at risk.\"},{\"title\":\"Network & telemetry pipelines\",\"description\":\"High-volume telemetry ingested, governed, and query-ready.\"},{\"title\":\"Self-service analytics\",\"description\":\"Reliable, governed metrics every team reports from.\"}]",
+    "tools": "[\"Snowflake\",\"Openflow\",\"Cortex\",\"Streamlit\"]",
+    "stats": "[{\"label\":\"Clients in this industry\",\"value\":\"8+\"}]",
+    "body": null,
+    "ogImage": null,
+    "status": "PUBLISHED",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
+    "order": 7,
+    "seoTitle": null,
+    "seoDescription": null,
+    "createdAt": "2026-06-14T16:42:43.035Z",
+    "updatedAt": "2026-07-08T01:40:42.321Z"
    }
   ],
   "media": [
@@ -705,7 +705,7 @@
     "order": 1,
     "published": true,
     "createdAt": "2026-06-14T16:42:43.046Z",
-    "updatedAt": "2026-07-07T03:07:07.781Z"
+    "updatedAt": "2026-07-08T01:40:42.339Z"
    },
    {
     "id": "cmqe0izfq0011ec77rn27t4ci",
@@ -720,7 +720,7 @@
     "order": 2,
     "published": true,
     "createdAt": "2026-06-14T16:42:43.047Z",
-    "updatedAt": "2026-07-07T03:07:07.782Z"
+    "updatedAt": "2026-07-08T01:40:42.339Z"
    },
    {
     "id": "cmqe0izfr0012ec77rui445ok",
@@ -735,7 +735,7 @@
     "order": 3,
     "published": true,
     "createdAt": "2026-06-14T16:42:43.047Z",
-    "updatedAt": "2026-07-07T03:07:07.783Z"
+    "updatedAt": "2026-07-08T01:40:42.339Z"
    },
    {
     "id": "cmqe0izfr0013ec77gk6pspep",
@@ -750,7 +750,7 @@
     "order": 4,
     "published": true,
     "createdAt": "2026-06-14T16:42:43.048Z",
-    "updatedAt": "2026-07-07T03:07:07.783Z"
+    "updatedAt": "2026-07-08T01:40:42.340Z"
    },
    {
     "id": "cmqe0izfs0014ec77p7gd4oca",
@@ -765,7 +765,7 @@
     "order": 5,
     "published": true,
     "createdAt": "2026-06-14T16:42:43.048Z",
-    "updatedAt": "2026-07-07T03:07:07.784Z"
+    "updatedAt": "2026-07-08T01:40:42.340Z"
    },
    {
     "id": "cmqe0izfs0015ec7786f5mh8p",
@@ -780,27 +780,10 @@
     "order": 6,
     "published": true,
     "createdAt": "2026-06-14T16:42:43.049Z",
-    "updatedAt": "2026-07-07T03:07:07.784Z"
+    "updatedAt": "2026-07-08T01:40:42.340Z"
    }
   ],
   "service": [
-   {
-    "id": "cmqe0izf9000aec77cpjqnpp0",
-    "slug": "embedded-analytics",
-    "tier": "BUILD",
-    "title": "Embedded Analytics",
-    "summary": "Differentiate your product: Cortex-powered data products embedded into your apps and client workflows, turning insight into a competitive edge.",
-    "body": "Make analytics a feature your customers pay for. We embed dashboards and reporting directly into your applications, client portals, and partner interfaces, so the insight lives where users already work and your product stands apart from competitors.",
-    "tools": "[\"Streamlit\",\"Cortex\"]",
-    "icon": null,
-    "order": 5,
-    "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
-    "seoTitle": null,
-    "seoDescription": null,
-    "createdAt": "2026-06-14T16:42:43.029Z",
-    "updatedAt": "2026-07-07T03:07:07.751Z"
-   },
    {
     "id": "cmqfw7oaq0008c48jwlja0dk2",
     "slug": "data-modernization",
@@ -819,38 +802,72 @@
     "updatedAt": "2026-06-16T00:17:29.282Z"
    },
    {
+    "id": "cmqe0izf80009ec77pzhx9e1d",
+    "slug": "data-visualisation",
+    "tier": "BUILD",
+    "title": "AI Analytics & Agents",
+    "summary": "Put governed AI to work: Cortex Analyst and Snowflake CoWork agents that turn governed data into cited, decision-ready answers, embedded where leaders already work.",
+    "body": "Put answers in the hands of the people making decisions. We build the reporting and self-service layer natively in Snowflake: Snowsight dashboards and Streamlit apps for the views teams live in, with Cortex Analyst answering questions over governed Semantic Views and Snowflake CoWork (the personal AI agent) letting business users explore and act in plain language. Anyone who needs insight can find it themselves: no waiting on the data team, no exporting to spreadsheets.",
+    "tools": "[\"Cortex Analyst\",\"Snowflake CoWork\",\"Snowsight\",\"Streamlit\"]",
+    "icon": null,
+    "order": 2,
+    "status": "PUBLISHED",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
+    "seoTitle": null,
+    "seoDescription": null,
+    "createdAt": "2026-06-14T16:42:43.028Z",
+    "updatedAt": "2026-07-08T01:40:42.316Z"
+   },
+   {
+    "id": "cmqe0izf9000aec77cpjqnpp0",
+    "slug": "embedded-analytics",
+    "tier": "BUILD",
+    "title": "Embedded Analytics",
+    "summary": "Differentiate the product: Cortex-powered data products embedded into apps and client workflows, turning insight into a competitive edge.",
+    "body": "Make analytics a feature customers pay for. We embed dashboards and reporting directly into applications, client portals, and partner interfaces, so the insight lives where users already work and the product stands apart from competitors.",
+    "tools": "[\"Streamlit\",\"Cortex\"]",
+    "icon": null,
+    "order": 5,
+    "status": "PUBLISHED",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
+    "seoTitle": null,
+    "seoDescription": null,
+    "createdAt": "2026-06-14T16:42:43.029Z",
+    "updatedAt": "2026-07-08T01:40:42.316Z"
+   },
+   {
     "id": "cmqe0izf9000bec77crc8rc2e",
     "slug": "capability-development",
     "tier": "GROW",
     "title": "Capability Development",
-    "summary": "Compound the advantage: we embed with your team and build the in-house fluency to scale your AI use cases long after launch.",
-    "body": "Capability that outlasts the engagement. Our certified practitioners embed alongside your people, coaching through real delivery and building fluency at every level (from executive data literacy to hands-on tool training for analysts and engineers) so your team keeps improving on its own.",
+    "summary": "Compound the advantage: we embed with the team and build the in-house fluency to scale AI use cases long after launch.",
+    "body": "Capability that outlasts the engagement. Our certified practitioners embed alongside in-house teams, coaching through real delivery and building fluency at every level (from executive data literacy to hands-on tool training for analysts and engineers) so the team keeps improving on its own.",
     "tools": "[]",
     "icon": null,
     "order": 6,
     "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
     "seoTitle": null,
     "seoDescription": null,
     "createdAt": "2026-06-14T16:42:43.030Z",
-    "updatedAt": "2026-07-07T03:07:07.751Z"
+    "updatedAt": "2026-07-08T01:40:42.317Z"
    },
    {
     "id": "cmqe0izf50006ec77toojxzv7",
     "slug": "ai-data-strategy",
     "tier": "THINK",
     "title": "Data & AI Strategy",
-    "summary": "Turn AI ambition into a board-ready roadmap: where data and AI create measurable ROI, sequenced by value and grounded in what your data can actually support, on a clear path to the agentic enterprise.",
-    "body": "Invest with confidence and know exactly what to build next. We work with CEOs and CTOs to turn 'we need an AI strategy' into a costed, sequenced roadmap grounded in your current data readiness and focused on the use cases with the clearest return.",
+    "summary": "Turn AI ambition into a board-ready roadmap: where data and AI create measurable ROI, sequenced by value and grounded in what the data can actually support, on a clear path to the agentic enterprise.",
+    "body": "Invest with confidence and know exactly what to build next. We work with CEOs and CTOs to turn 'we need an AI strategy' into a costed, sequenced roadmap, grounded in current data readiness and focused on the use cases with the clearest return.",
     "tools": "[]",
     "icon": null,
     "order": 1,
     "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
     "seoTitle": null,
     "seoDescription": null,
     "createdAt": "2026-06-14T16:42:43.025Z",
-    "updatedAt": "2026-07-07T03:07:07.748Z"
+    "updatedAt": "2026-07-08T01:40:42.314Z"
    },
    {
     "id": "cmqe0izf60007ec77h4phrw11",
@@ -858,58 +875,53 @@
     "tier": "BUILD",
     "title": "Cloud Architecture & Data Foundation",
     "summary": "The AI-ready foundation: governed, built on Snowflake, and ready to scale, the single source of truth every model and agent depends on.",
-    "body": "Give every team one fast, scalable foundation to build on. We design and deliver it cloud-native on Snowflake, sized for the AI workloads you are planning rather than just the reporting you run today, with security and governance built in from the start.",
+    "body": "Every team gets one fast, scalable foundation to build on. We design and deliver it cloud-native on Snowflake, sized for the AI workloads on the horizon rather than just the reporting teams run today, with security and governance built in from the start.",
     "tools": "[\"Snowflake\",\"Openflow\",\"Iceberg\"]",
     "icon": null,
     "order": 3,
     "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
     "seoTitle": null,
     "seoDescription": null,
     "createdAt": "2026-06-14T16:42:43.026Z",
-    "updatedAt": "2026-07-07T03:07:07.749Z"
+    "updatedAt": "2026-07-08T01:40:42.315Z"
    },
    {
     "id": "cmqe0izf70008ec77nwitfklq",
     "slug": "data-engineering",
     "tier": "BUILD",
     "title": "Data Engineering & Pipelines",
-    "summary": "Always-current, trusted data: governed pipelines that unify every source (ERP, CRM, SaaS, and files) so your analytics and AI run on inputs you can stake decisions on.",
-    "body": "Stop chasing numbers across systems. We build automated, secure pipelines that pull every source (APIs, databases, flat files) into your warehouse reliably and on schedule, so your teams work from data they can trust and your AI workloads have clean, current inputs.",
+    "summary": "Always-current, trusted data: governed pipelines that unify every source (ERP, CRM, SaaS, and files) so analytics and AI run on inputs worth staking decisions on.",
+    "body": "No more chasing numbers across systems. We build automated, secure pipelines that pull every source (APIs, databases, flat files) into the warehouse reliably and on schedule, so teams work from data they can trust and AI workloads have clean, current inputs.",
     "tools": "[\"Snowflake\",\"Openflow\",\"dbt\"]",
     "icon": null,
     "order": 4,
     "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
     "seoTitle": null,
     "seoDescription": null,
     "createdAt": "2026-06-14T16:42:43.027Z",
-    "updatedAt": "2026-07-07T03:07:07.749Z"
-   },
-   {
-    "id": "cmqe0izf80009ec77pzhx9e1d",
-    "slug": "data-visualisation",
-    "tier": "BUILD",
-    "title": "AI Analytics & Agents",
-    "summary": "Put governed AI to work: Cortex Analyst and Snowflake CoWork agents that turn your governed data into cited, decision-ready answers, embedded where leaders already work.",
-    "body": "Put answers in the hands of the people making decisions. We build the reporting and self-service layer natively in Snowflake: Snowsight dashboards and Streamlit apps for the views teams live in, with Cortex Analyst answering questions over your governed Semantic Views and Snowflake CoWork (the personal AI agent) letting business users explore and act in plain language. Anyone who needs insight can find it themselves: no waiting on the data team, no exporting to spreadsheets.",
-    "tools": "[\"Cortex Analyst\",\"Snowflake CoWork\",\"Snowsight\",\"Streamlit\"]",
-    "icon": null,
-    "order": 2,
-    "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
-    "seoTitle": null,
-    "seoDescription": null,
-    "createdAt": "2026-06-14T16:42:43.028Z",
-    "updatedAt": "2026-07-07T03:07:07.750Z"
+    "updatedAt": "2026-07-08T01:40:42.315Z"
    }
   ],
   "siteSetting": [
    {
+    "id": "cmqe0izf10001ec7742czisis",
+    "key": "hero",
+    "value": "{\"headline\":\"From data strategy to AI in production, on Snowflake.\",\"subhead\":\"Choosing Snowflake is the easy part. The harder part is what an organization stands up on it: a data practice that feeds real decisions with numbers people trust, and an AI practice that ships use cases into production. We build both inside the team, then hand over the keys.\"}",
+    "updatedAt": "2026-07-08T01:40:42.309Z"
+   },
+   {
+    "id": "cmqe0izf10002ec77cppzzlv3",
+    "key": "stats",
+    "value": "[{\"label\":\"Snowflake partner tier\",\"value\":\"Premier\"},{\"label\":\"Years building data & enterprise AI\",\"value\":\"15+\"},{\"label\":\"Certified engineers across the team\",\"value\":\"SnowPro\"},{\"label\":\"Countries across the Americas\",\"value\":\"5\"}]",
+    "updatedAt": "2026-07-08T01:40:42.309Z"
+   },
+   {
     "id": "cmqe0izf20004ec77rh702im4",
     "key": "contact",
-    "value": "{\"email\":\"contact@viewnear.com\",\"blurb\":\"Tell us where you are. We will tell you what is possible. The answer might be a strategy session, a proof of concept, or an honest conversation about where your competition already is.\"}",
-    "updatedAt": "2026-07-07T03:07:07.744Z"
+    "value": "{\"email\":\"contact@viewnear.com\",\"blurb\":\"Tell us where the organization stands. We will lay out what is possible. The answer might be a strategy session, a proof of concept, or an honest conversation about how far competitors have already moved.\"}",
+    "updatedAt": "2026-07-08T01:40:42.310Z"
    },
    {
     "id": "cmqe6rq9l00033s0bfvo73hrf",
@@ -918,52 +930,19 @@
     "updatedAt": "2026-06-14T21:50:42.239Z"
    },
    {
-    "id": "cmqe0izf10001ec7742czisis",
-    "key": "hero",
-    "value": "{\"headline\":\"From data strategy to AI in production, on Snowflake.\",\"subhead\":\"You've chosen Snowflake. The harder part is what you stand up on it: a data practice that feeds real decisions with numbers people trust, and an AI practice that ships use cases into production. We build both inside your team, then hand you the keys.\"}",
-    "updatedAt": "2026-07-07T03:07:07.741Z"
-   },
-   {
-    "id": "cmqe0izf10002ec77cppzzlv3",
-    "key": "stats",
-    "value": "[{\"label\":\"Snowflake partner tier\",\"value\":\"Premier\"},{\"label\":\"Years building data & enterprise AI\",\"value\":\"15+\"},{\"label\":\"Certified engineers across the team\",\"value\":\"SnowPro\"},{\"label\":\"Countries across the Americas\",\"value\":\"5\"}]",
-    "updatedAt": "2026-07-07T03:07:07.743Z"
-   },
-   {
     "id": "cmqe0izf20003ec771fu78z6y",
     "key": "partnership",
-    "value": "{\"title\":\"Your Snowflake Premier Partner across the Americas.\",\"points\":[{\"title\":\"Snowflake Premier Partner\",\"body\":\"Premier status puts SnowPro-certified engineers on your work, with a verified, end-to-end delivery track record across the Americas: from architecture and migration through analytics and AI in production.\"},{\"title\":\"Snowflake CoCo Preferred Partner\",\"body\":\"As a Snowflake CoCo Preferred Partner, we build with Snowflake CoCo, the coding agent, so your data products and AI use cases ship faster: governed and validated before they reach production.\"},{\"title\":\"Snowflake procurement, simplified\",\"body\":\"Procure Snowflake directly through Viewnear. It's consumption-based (you pay for the compute and storage you use) and we simplify the capacity commitment, commercial terms, and account management under one trusted partner.\"},{\"title\":\"End-to-end delivery\",\"body\":\"From architecture and migration to data engineering, analytics, and AI in production, one accountable team carries the work end to end, and your people learn it as we build.\"},{\"title\":\"The Americas' home team\",\"body\":\"Local expertise across Canada, the USA, Mexico, LATAM, and the Caribbean. We understand the regional data landscape and we're here for the long term, not just the first deployment.\"}]}",
-    "updatedAt": "2026-07-07T03:07:07.743Z"
+    "value": "{\"title\":\"The Snowflake Premier Partner across the Americas.\",\"points\":[{\"title\":\"Snowflake Premier Partner\",\"body\":\"Premier status puts SnowPro-certified engineers on the work, backed by a verified, end-to-end delivery track record across the Americas: from architecture and migration through analytics and AI in production.\"},{\"title\":\"Snowflake CoCo Preferred Partner\",\"body\":\"As a Snowflake CoCo Preferred Partner, we build with Snowflake CoCo, the coding agent, so data products and AI use cases ship faster: governed and validated before they reach production.\"},{\"title\":\"Snowflake procurement, simplified\",\"body\":\"Procure Snowflake directly through Viewnear. It's consumption-based (the business pays for the compute and storage it uses) and we simplify the capacity commitment, commercial terms, and account management under one trusted partner.\"},{\"title\":\"End-to-end delivery\",\"body\":\"From architecture and migration to data engineering, analytics, and AI in production, one accountable team carries the work end to end, and in-house teams learn it as we build.\"},{\"title\":\"The Americas' home team\",\"body\":\"Local expertise across Canada, the USA, Mexico, LATAM, and the Caribbean. We understand the regional data landscape and we're here for the long term, not just the first deployment.\"}]}",
+    "updatedAt": "2026-07-08T01:40:42.310Z"
    },
    {
     "id": "cmqe0izf30005ec77g1h7q53c",
     "key": "faqs",
-    "value": "[{\"category\":\"Partnership & certifications\",\"q\":\"What Snowflake partner status does Viewnear hold?\",\"a\":\"Viewnear is a Snowflake Premier Partner and a Snowflake CoCo Preferred Partner, with SnowPro-certified engineers and a verified delivery track record across the Americas.\"},{\"category\":\"Partnership & certifications\",\"q\":\"What does a Premier Partner unlock for us?\",\"a\":\"Depth and a direct line to Snowflake. Premier status reflects certified delivery across the full Snowflake stack, and it means we work hand in hand with Snowflake itself: aligned with your Snowflake account team on architecture and delivery, with early visibility into new capabilities (Cortex, Openflow, Horizon Catalog, CoCo, and CoWork). We partner with Snowflake to bring your project to a successful outcome.\"},{\"category\":\"Partnership & certifications\",\"q\":\"How does Snowflake pricing work, and can we buy it through Viewnear?\",\"a\":\"Snowflake is consumption-based: you pay for the compute (credits) and storage you actually use, so run cost flexes with the work. You can procure your Snowflake capacity through Viewnear for simpler commercial terms and account management under one accountable partner.\"},{\"category\":\"Delivery & engagements\",\"q\":\"How long does a Snowflake implementation take?\",\"a\":\"A typical first production build runs 8–16 weeks, depending on data volume, source complexity, and the use cases in scope. What keeps that real: paid discovery that fixes scope up front, use-case-driven sprints with working software at every demo, and proof running in parallel with the build, so you see value from sprint one.\"},{\"category\":\"Delivery & engagements\",\"q\":\"How do you de-risk a large engagement?\",\"a\":\"We prove the approach with a focused proof of concept before we scale, run regular steering reviews with clear decision gates, and build enablement in from day one, so your team can run and extend the work without us.\"},{\"category\":\"Delivery & engagements\",\"q\":\"Can you migrate our existing data warehouse to Snowflake?\",\"a\":\"Yes. Migration is one of our most common engagements (Teradata, Oracle, Hadoop, SQL Server). We manage the full technical delivery and program governance.\"},{\"category\":\"Delivery & engagements\",\"q\":\"Can you integrate Snowflake with our ERP, CRM, and operational systems?\",\"a\":\"Yes, in both directions. Openflow and Zero-Copy Integrations bring data in from systems like SAP, Salesforce, and Workday, and we deliver insight back out through Snowsight, Streamlit apps, APIs, and agents embedded where your teams work.\"},{\"category\":\"Commercials\",\"q\":\"How is an engagement priced?\",\"a\":\"Engagements are scoped on data volume and complexity, the number of analytics/AI use cases, team size, and timeline. We agree scope and price up front and offer fixed-outcome, flex-capacity, and embedded-team models: a partner measured on outcomes, not hours.\"},{\"category\":\"Commercials\",\"q\":\"Do you publish standard pricing?\",\"a\":\"No. No two data estates are the same, so we price to the work. Tell us your goals and constraints and we'll come back with a model, a plan, and a price.\"},{\"category\":\"Security & platform\",\"q\":\"How do you keep our data secure?\",\"a\":\"We build on Snowflake's certified platform and extend it with least-privilege access, Horizon Catalog lineage and PII classification, Horizon Context so every person and AI agent works from the same trusted business context, data residency by region, and audit-ready controls, all configured to your sector.\"},{\"category\":\"Security & platform\",\"q\":\"Do you use third-party tools or stay native to Snowflake?\",\"a\":\"We lead with the Snowflake-native stack (Openflow, Snowpark, Horizon Catalog, Cortex, Snowsight, Streamlit, plus the Snowflake CoCo coding agent and CoWork AI agent) so governance and AI context (Horizon Context) stay in one place. dbt is the one external framework we run, natively against Snowflake.\"}]",
-    "updatedAt": "2026-07-07T03:07:07.745Z"
+    "value": "[{\"category\":\"Partnership & certifications\",\"q\":\"What Snowflake partner status does Viewnear hold?\",\"a\":\"Viewnear is a Snowflake Premier Partner and a Snowflake CoCo Preferred Partner, with SnowPro-certified engineers and a verified delivery track record across the Americas.\"},{\"category\":\"Partnership & certifications\",\"q\":\"What does Premier status actually unlock?\",\"a\":\"Depth and a direct line to Snowflake. Premier status reflects certified delivery across the full Snowflake stack, and it means we work hand in hand with Snowflake itself: aligned with the client's Snowflake account team on architecture and delivery, with early visibility into new capabilities (Cortex, Openflow, Horizon Catalog, CoCo, and CoWork). We partner with Snowflake to carry each project to a successful outcome.\"},{\"category\":\"Partnership & certifications\",\"q\":\"How does Snowflake pricing work, and can it be bought through Viewnear?\",\"a\":\"Snowflake is consumption-based: the business pays for the compute (credits) and storage it actually uses, so run cost flexes with the work. Snowflake capacity can be procured through Viewnear for simpler commercial terms and account management under one accountable partner.\"},{\"category\":\"Delivery & engagements\",\"q\":\"How long does a Snowflake implementation take?\",\"a\":\"A typical first production build runs 8–16 weeks, depending on data volume, source complexity, and the use cases in scope. What keeps that real: paid discovery that fixes scope up front, use-case-driven sprints with working software at every demo, and proof running in parallel with the build, so value shows from sprint one.\"},{\"category\":\"Delivery & engagements\",\"q\":\"How does Viewnear de-risk a large engagement?\",\"a\":\"We prove the approach with a focused proof of concept before we scale, run regular steering reviews with clear decision gates, and build enablement in from day one, so in-house teams can run and extend the work without us.\"},{\"category\":\"Delivery & engagements\",\"q\":\"Can Viewnear migrate an existing data warehouse to Snowflake?\",\"a\":\"Yes. Migration is one of our most common engagements (Teradata, Oracle, Hadoop, SQL Server). We manage the full technical delivery and program governance.\"},{\"category\":\"Delivery & engagements\",\"q\":\"Can Viewnear integrate Snowflake with ERP, CRM, and operational systems?\",\"a\":\"Yes, in both directions. Openflow and Zero-Copy Integrations bring data in from systems like SAP, Salesforce, and Workday, and we deliver insight back out through Snowsight, Streamlit apps, APIs, and agents embedded where teams work.\"},{\"category\":\"Commercials\",\"q\":\"How is an engagement priced?\",\"a\":\"Engagements are scoped on data volume and complexity, the number of analytics/AI use cases, team size, and timeline. We agree scope and price up front and offer fixed-outcome, flex-capacity, and embedded-team models: a partner measured on outcomes, not hours.\"},{\"category\":\"Commercials\",\"q\":\"Does Viewnear publish standard pricing?\",\"a\":\"No. No two data estates are the same, so we price to the work. Share the goals and constraints, and we'll come back with a model, a plan, and a price.\"},{\"category\":\"Security & platform\",\"q\":\"How does Viewnear keep data secure?\",\"a\":\"We build on Snowflake's certified platform and extend it with least-privilege access, Horizon Catalog lineage and PII classification, Horizon Context so every person and AI agent works from the same trusted business context, data residency by region, and audit-ready controls, all configured to the client's sector.\"},{\"category\":\"Security & platform\",\"q\":\"Does Viewnear use third-party tools or stay native to Snowflake?\",\"a\":\"We lead with the Snowflake-native stack (Openflow, Snowpark, Horizon Catalog, Cortex, Snowsight, Streamlit, plus the Snowflake CoCo coding agent and CoWork AI agent) so governance and AI context (Horizon Context) stay in one place. dbt is the one external framework we run, natively against Snowflake.\"}]",
+    "updatedAt": "2026-07-08T01:40:42.311Z"
    }
   ],
   "newsEvent": [
-   {
-    "id": "cmqe0izfx001fec77os1347cc",
-    "slug": "viewnear-summit-user-group",
-    "title": "Viewnear hosts Snowflake user group at Summit",
-    "kind": "event",
-    "excerpt": "Bringing the regional Snowflake community together.",
-    "body": "Viewnear hosted a regional Snowflake user group session, bringing together data leaders to share patterns and lessons from production deployments.",
-    "keyTakeaways": null,
-    "eventDate": null,
-    "venue": null,
-    "agenda": null,
-    "readMinutes": null,
-    "coverImage": null,
-    "externalUrl": null,
-    "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
-    "seoTitle": null,
-    "seoDescription": null,
-    "createdAt": "2026-06-14T16:42:43.053Z",
-    "updatedAt": "2026-07-07T03:07:07.789Z"
-   },
    {
     "id": "cmqe0izfu0019ec77f9rbp6yk",
     "slug": "viewnear-snowflake-elite-partner",
@@ -979,11 +958,11 @@
     "coverImage": null,
     "externalUrl": null,
     "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
     "seoTitle": null,
     "seoDescription": null,
     "createdAt": "2026-06-14T16:42:43.051Z",
-    "updatedAt": "2026-07-07T03:07:07.785Z"
+    "updatedAt": "2026-07-08T01:40:42.341Z"
    },
    {
     "id": "cmqe0izfv001aec77p8b1cmgn",
@@ -1000,11 +979,11 @@
     "coverImage": null,
     "externalUrl": null,
     "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
     "seoTitle": null,
     "seoDescription": null,
     "createdAt": "2026-06-14T16:42:43.051Z",
-    "updatedAt": "2026-07-07T03:07:07.786Z"
+    "updatedAt": "2026-07-08T01:40:42.342Z"
    },
    {
     "id": "cmqe0izfw001cec77xl1l18mw",
@@ -1021,11 +1000,11 @@
     "coverImage": null,
     "externalUrl": null,
     "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
     "seoTitle": null,
     "seoDescription": null,
     "createdAt": "2026-06-14T16:42:43.052Z",
-    "updatedAt": "2026-07-07T03:07:07.787Z"
+    "updatedAt": "2026-07-08T01:40:42.342Z"
    },
    {
     "id": "cmqe0izfw001dec77etdeub2f",
@@ -1042,11 +1021,11 @@
     "coverImage": null,
     "externalUrl": null,
     "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
     "seoTitle": null,
     "seoDescription": null,
     "createdAt": "2026-06-14T16:42:43.053Z",
-    "updatedAt": "2026-07-07T03:07:07.788Z"
+    "updatedAt": "2026-07-08T01:40:42.343Z"
    },
    {
     "id": "cmqe0izfx001eec773wo6gsgv",
@@ -1063,11 +1042,32 @@
     "coverImage": null,
     "externalUrl": null,
     "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
     "seoTitle": null,
     "seoDescription": null,
     "createdAt": "2026-06-14T16:42:43.053Z",
-    "updatedAt": "2026-07-07T03:07:07.789Z"
+    "updatedAt": "2026-07-08T01:40:42.343Z"
+   },
+   {
+    "id": "cmqe0izfx001fec77os1347cc",
+    "slug": "viewnear-summit-user-group",
+    "title": "Viewnear hosts Snowflake user group at Summit",
+    "kind": "event",
+    "excerpt": "Bringing the regional Snowflake community together.",
+    "body": "Viewnear hosted a regional Snowflake user group session, bringing together data leaders to share patterns and lessons from production deployments.",
+    "keyTakeaways": null,
+    "eventDate": null,
+    "venue": null,
+    "agenda": null,
+    "readMinutes": null,
+    "coverImage": null,
+    "externalUrl": null,
+    "status": "PUBLISHED",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
+    "seoTitle": null,
+    "seoDescription": null,
+    "createdAt": "2026-06-14T16:42:43.053Z",
+    "updatedAt": "2026-07-08T01:40:42.343Z"
    }
   ],
   "jobOpening": [
@@ -1078,41 +1078,16 @@
     "employment": "Full-time",
     "location": "Remote (Americas)",
     "description": "Design, build, and scale modern data and AI solutions on Snowflake, turning complex business operations into trusted, production-ready systems.",
-    "body": "## About the role\n\nAt Viewnear, we help enterprises stand up two capabilities they keep: a data practice their teams trust and an AI practice that ships use cases into production, built on Snowflake, run by the client's own team, and guided and accelerated by ours.\n\nWe're looking for a Senior Data & AI Engineer who brings strong technical depth, ownership, and execution discipline to the data and AI practices we build with clients.\n\nThis role is for someone who knows that great data and AI work is not built through big talk. It is built through clean architecture, reliable pipelines, thoughtful modeling, strong engineering habits, and the willingness to solve complex problems when the path is not perfectly clear.\n\nYou will help design, build, and scale modern data and AI solutions on Snowflake, turning complex business operations into trusted, usable, production-ready systems.\n\n## What you'll do\n\nYou will lead the design and implementation of governed data foundations, pipelines, data models, and AI-ready architectures using Snowflake as the core cloud data platform.\n\nYou will work closely with business, analytics, engineering, and leadership teams to understand operational challenges, translate them into technical requirements, and deliver solutions that create measurable business value.\n\nYou will help bring AI use cases from concept to production by preparing trusted data, building scalable integration patterns, and supporting solutions such as LLM applications, RAG architectures, semantic search, automation workflows, and AI-powered analytics.\n\nThis is a hands-on role. You will write SQL and Python, design data models, build ELT pipelines, review technical designs, troubleshoot performance issues, document decisions, and mentor others on the team.\n\n## What we're looking for\n\nStrong experience across:\n\n- Snowflake architecture, development, performance tuning, cost optimization, and security\n- Data engineering with SQL, Python, Snowpark, Snowflake Cortex, Tasks, Streams, Dynamic Tables, and Stored Procedures\n- ELT pipeline design, data modeling, dimensional modeling, semantic layers, and analytics engineering\n- Data integration patterns using APIs, files, external stages, cloud storage, and orchestration tools\n- AI and ML enablement: trusted data pipelines, vector search, RAG patterns, LLM integrations, and production AI workflows\n- Building production-grade systems with testing, monitoring, governance, access control, documentation, and cost awareness\n- Working directly with business stakeholders to clarify needs and turn them into practical technical solutions\n- Leading technical conversations without ego and raising the quality bar for the team\n\nExperience with dbt, Airflow, Coalesce, Azure, AWS, or GCP is a plus.\n\n## The kind of person who succeeds here\n\nYou are the person who keeps showing up.\n\nYou take ownership of messy source systems, unclear requirements, broken pipelines, performance bottlenecks, and ambitious goals, then work through them with patience and precision.\n\nYou do not need everything to be perfect before you start. You know how to ask the right questions, make smart tradeoffs, and move the work forward.\n\nYou care about clean architecture, but you also care about getting useful solutions into people's hands. You understand that trust in data is earned one correct number, one reliable pipeline, and one well-built solution at a time.\n\nYou bring technical depth, but also humility. You help others get better. You make the team stronger.\n\n## What success looks like\n\nSuccess means our clients trust their data, AI use cases move beyond demos, pipelines run reliably, and business teams make faster, better decisions.\n\nYou will help build the governed foundation on Snowflake that allows ambitious ideas to become real systems. We're looking for someone ready to do the work, carry responsibility, and help the team win.",
+    "body": "## About the role\n\nAt Viewnear, we help enterprises stand up two capabilities they keep: a data practice their teams trust and an AI practice that ships use cases into production, built on Snowflake, run by the client's own team, and guided and accelerated by ours.\n\nWe're looking for a Senior Data & AI Engineer who brings strong technical depth, ownership, and execution discipline to the data and AI practices we build with clients.\n\nThis role is for someone who knows that great data and AI work is not built through big talk. It is built through clean architecture, reliable pipelines, thoughtful modeling, strong engineering habits, and the willingness to solve complex problems when the path is not perfectly clear.\n\nThe role helps design, build, and scale modern data and AI solutions on Snowflake, turning complex business operations into trusted, usable, production-ready systems.\n\n## What the role involves\n\nThis engineer leads the design and implementation of governed data foundations, pipelines, data models, and AI-ready architectures using Snowflake as the core cloud data platform.\n\nThe work runs close to business, analytics, engineering, and leadership teams: understanding operational challenges, translating them into technical requirements, and delivering solutions that create measurable business value.\n\nIt also means bringing AI use cases from concept to production: preparing trusted data, building scalable integration patterns, and supporting solutions such as LLM applications, RAG architectures, semantic search, automation workflows, and AI-powered analytics.\n\nThis is a hands-on role: writing SQL and Python, designing data models, building ELT pipelines, reviewing technical designs, troubleshooting performance issues, documenting decisions, and mentoring others on the team.\n\n## What we're looking for\n\nStrong experience across:\n\n- Snowflake architecture, development, performance tuning, cost optimization, and security\n- Data engineering with SQL, Python, Snowpark, Snowflake Cortex, Tasks, Streams, Dynamic Tables, and Stored Procedures\n- ELT pipeline design, data modeling, dimensional modeling, semantic layers, and analytics engineering\n- Data integration patterns using APIs, files, external stages, cloud storage, and orchestration tools\n- AI and ML enablement: trusted data pipelines, vector search, RAG patterns, LLM integrations, and production AI workflows\n- Building production-grade systems with testing, monitoring, governance, access control, documentation, and cost awareness\n- Working directly with business stakeholders to clarify needs and turn them into practical technical solutions\n- Leading technical conversations without ego and raising the quality bar for the team\n\nExperience with dbt, Airflow, Coalesce, Azure, AWS, or GCP is a plus.\n\n## The kind of person who succeeds here\n\nThe people who thrive here are the ones who keep showing up.\n\nThey take ownership of messy source systems, unclear requirements, broken pipelines, performance bottlenecks, and ambitious goals, then work through them with patience and precision.\n\nThey do not need everything to be perfect before starting. They know how to ask the right questions, make smart tradeoffs, and move the work forward.\n\nThey care about clean architecture, but they care just as much about getting useful solutions into people's hands. They understand that trust in data is earned one correct number, one reliable pipeline, and one well-built solution at a time.\n\nThey bring technical depth, and just as much humility. They help others get better. They make the team stronger.\n\n## What success looks like\n\nSuccess means our clients trust their data, AI use cases move beyond demos, pipelines run reliably, and business teams make faster, better decisions.\n\nThis role helps build the governed foundation on Snowflake that turns ambitious ideas into real systems. We're looking for someone ready to do the work, carry responsibility, and help the team win.",
     "skills": "[\"Snowflake\",\"SQL\",\"Python\",\"Snowpark\",\"Cortex\",\"RAG & LLMs\",\"dbt\",\"Data modeling\"]",
     "status": "PUBLISHED",
     "publishedAt": "2026-06-15T04:47:48.410Z",
     "order": 1,
     "createdAt": "2026-06-15T04:44:13.790Z",
-    "updatedAt": "2026-07-07T03:07:07.823Z"
+    "updatedAt": "2026-07-08T01:40:42.374Z"
    }
   ],
   "caseStudy": [
-   {
-    "id": "cmqe0izfp000zec778qhuwa3w",
-    "slug": "corporate-mdm-golden-record",
-    "title": "One trusted golden record across eight business domains",
-    "summary": "A commercial-vehicle dealer group ran sales, service, parts, and the back office on separate systems, with no single version of a customer, vehicle, part, or supplier. Viewnear built a corporate master data foundation on Snowflake: a progressive multi-source golden record across eight business domains, using a Medallion architecture, Openflow ingestion, dbt transformations, and per-domain Snowflake CoWork agents.",
-    "body": "## Challenge\n\nA commercial-vehicle dealer group runs a large network: dealerships that sell heavy trucks, service bays that keep fleets on the road, and parts operations that supply both. Across that network, the same customer, vehicle, part, supplier, and employee existed differently in every system. The ERP, the dealer management system, and the payroll and HR system each kept their own version, with their own codes and their own rules.\n\n- **No trusted single version.** A customer, vehicle, part, supplier, or employee looked different depending on which system you asked.\n- **Reporting meant reconciling by hand.** Before anyone could trust a number, the same entity had to be matched and merged across systems manually.\n- **Governance was tribal knowledge.** Matching, survivorship, and ownership lived in people's heads, not in designed-in rules.\n\nOperational efficiency across sales, service, and parts depended on data the group could not yet trust as one.\n\n## Solution: a corporate master data golden record on Snowflake\n\nViewnear designed and built a corporate Master Data Management (MDM) foundation on Snowflake, in the group's own account, producing a progressive multi-source golden record across the business:\n\n- **Medallion architecture.** Source data lands in Bronze, is cleaned and conformed in Silver, and resolves into governed Gold golden records, with master keys, matching and merge, survivorship rules, lineage, and audit designed in from the first table.\n- **Eight business domains.** Aftersales and service, vehicle and parts catalogs, sales, purchasing, inventory, finance, accounting, and HR, each mastered into one trusted definition.\n- **Automated ingestion.** Openflow lands data from the ERP, dealer management system, and payroll and HR system on a nightly incremental schedule.\n- **Versioned transformations.** All modeling runs in dbt under Git, so every rule that builds a golden record is reviewed, tested, and traceable.\n- **Per-domain AI agents.** Snowflake CoWork agents, grounded in each domain's governed golden record, let business users ask questions of master data in plain language.\n\nDelivery runs as three releases across a twelve-month roadmap, so each domain reaches a trusted golden record in sequence rather than all at once.\n\n## Governed by design\n\nMaster data is the backbone the whole group reports from, so governance was built in, not bolted on:\n\n- **Catalog and ownership.** Horizon Catalog documents every domain, with a named owner accountable for each golden record.\n- **Least-privilege access.** RBAC is structured by environment, layer, and domain, with SSO and SCIM so access maps to the group's own identity.\n- **Data quality, designed in.** dbt tests validate matching, survivorship, and conformance on every run, so a bad record is caught before it reaches Gold.\n- **Predictable cost.** Resource monitors keep compute and spend in check across environments.\n- **Data stays in place.** Everything runs in the group's own Snowflake account, so no copies leave their perimeter.\n\n## What the group gets\n\n- One governed golden record for every core entity: customer, vehicle, part, supplier, and employee, each traceable back to its source.\n- Eight business domains mastered on a single Snowflake foundation, from aftersales and parts to finance and HR.\n- Reporting that starts from trusted master data, instead of reconciling the same entity by hand across systems.\n- A documented, governed foundation the group's own team can run and extend, with master data ready for analytics and AI on top.",
-    "sector": "Automotive",
-    "region": "Mexico",
-    "clientId": "cmqe0izfh000oec776gtdq82f",
-    "industryId": "cmqe0izfd000hec774xeri30n",
-    "heroImage": "/assets/images/cases/corporate-mdm-golden-record-hero.jpg",
-    "metrics": "[{\"value\":\"3\",\"label\":\"Source systems unified\"},{\"value\":\"8\",\"label\":\"Business domains mastered\"},{\"value\":\"Medallion\",\"label\":\"Bronze, Silver, Gold\"},{\"value\":\"12 mo\",\"label\":\"Phased, three releases\"}]",
-    "quote": null,
-    "challenge": null,
-    "solution": null,
-    "results": null,
-    "featured": true,
-    "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
-    "order": 2,
-    "seoTitle": null,
-    "seoDescription": null,
-    "createdAt": "2026-06-14T16:42:43.046Z",
-    "updatedAt": "2026-07-07T03:07:07.778Z"
-   },
    {
     "id": "cmqe0izfj000rec77id9akg11",
     "slug": "sku-catalog-governance",
@@ -1131,37 +1106,12 @@
     "results": null,
     "featured": true,
     "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
     "order": 3,
     "seoTitle": null,
     "seoDescription": null,
     "createdAt": "2026-06-14T16:42:43.039Z",
-    "updatedAt": "2026-07-07T03:07:07.766Z"
-   },
-   {
-    "id": "cmqe0izfk000tec77g15jaju4",
-    "slug": "construction-cad-data-foundation",
-    "title": "Turning architectural CAD drawings into measurable, decision-ready data",
-    "summary": "We unified four disconnected sources, including architectural CAD drawings, into one governed source of truth on Snowflake. Design data locked in the drawings became structured, measurable data alongside construction, finance, and land data, and we delivered Snowflake CoWork agents and Slack bots on top.",
-    "body": "## Challenge\n\nA construction and real-estate developer buys land, runs construction programs, and delivers building projects. Its design information and its business data lived in different worlds: drawings in one place, numbers in another, and no way to read them together. Measuring a program, checking a project, or evaluating a land purchase meant stitching figures across systems and pulling quantities off drawings by hand.\n\n- **Four disconnected sources.** Construction program and scheduling data, project cost and finance data, land and acquisition records, and architectural CAD drawings each lived on their own, with no shared definitions and no common model to join them.\n- **CAD drawings trapped in files no report could read.** The quantities, areas, and materials that define every building sat inside design and engineering drawings, locked in files that no report or query could reach, so design never showed up next to the business numbers.\n- **Programs, projects, and land decisions stitched together by hand.** Every roll-up across construction programs, individual projects, and land acquisition was assembled manually, so the picture was always late and never quite reconciled.\n- **No single trusted source.** With four sources and no governed model joining them, leadership had no one place they could trust to measure and run the business.\n\n## Solution: one governed source of truth on Snowflake, with design data made measurable\n\nViewnear unified the four sources into a governed Snowflake foundation in the developer's own account, and turned the CAD drawings from inert files into structured, governed data that sits alongside the business.\n\n- **Four sources into a governed Medallion foundation.** Openflow ingested the construction program, cost and finance, and land and acquisition data into Snowflake, landing raw data in Bronze, conforming it in Silver, and resolving governed Gold models, so the business systems finally shared one model.\n- **CAD drawings read into structured, governed data.** We extracted the design data locked in the architectural and engineering drawings into governed, queryable tables, so design finally became measurable alongside the business numbers.\n- **One trusted model for programs, projects, and land-buying.** Construction programs, individual projects, and land acquisition decisions all measured against the same governed Gold models, so the developer could run the business from one source instead of reconciling numbers by hand.\n- **Snowflake CoWork agents for questions and actions in Snowflake.** We delivered Snowflake CoWork agents over governed Semantic Views, with Cortex Analyst answering questions in plain language, so teams could ask and act on the governed data directly inside Snowflake.\n- **Slack bots in the flow of work.** We delivered Slack bots on top of the same governed data, so teams got answers and acted without leaving the tools they already work in.\n- **Versioned, tested transformations in dbt.** Every transformation that built Silver, the governed Gold models, and the structured CAD data ran in dbt under version control and natively against Snowflake, so each rule was reviewed, tested, and traceable.\n\n## Governed by design\n\nThe governed foundation became what programs, projects, and land decisions all depend on, so governance was designed in from the start.\n\n- **Horizon Catalog for catalog, lineage, and ownership.** Horizon Catalog documented the data with lineage and object dependencies, so the developer can see where every figure, including the values read out of the drawings, comes from and who owns it.\n- **RBAC with least privilege.** Access was separated across administration, operation, and analytics consumption, so the people who run the foundation, use it, and govern it hold distinct roles.\n- **Data quality enforced with dbt tests.** dbt tests validated the models on every run, so the governed source stayed trustworthy as new data and use cases arrived.\n- **Resource Monitors for predictable cost.** Resource Monitors kept compute and credit consumption in check, with Snowsight monitoring activity and consumption.\n- **Data stays in the developer's own Snowflake account.** Everything ran in the developer's own account, so sensitive cost, land, and design data never left their perimeter.\n\n## What we delivered\n\n- **One governed source for programs, projects, and land.** Construction programs, individual projects, and land-buying decisions now measure against a single governed source of truth instead of hand-stitched spreadsheets.\n- **CAD made measurable.** The design data read out of the drawings now lives as governed data the business can query alongside construction, finance, and land records.\n- **AI agents in Snowflake and Slack.** Snowflake CoWork agents over governed Semantic Views, plus Slack bots, let teams ask questions and act on the governed data both inside Snowflake and in the flow of work.\n- **A documented foundation the team runs and extends.** A governed, cataloged, and tested Snowflake foundation, with dbt transformations under version control, that the developer's team operates and extends to new use cases.",
-    "sector": "Construction & Real Estate",
-    "region": "Mexico",
-    "clientId": "cmqe0izff000jec77izg9q622",
-    "industryId": "cmqe0izfa000cec77oibxe6rf",
-    "heroImage": "/assets/images/cases/construction-cad-data-foundation-hero.jpg",
-    "metrics": "[{\"value\":\"4\",\"label\":\"Sources unified, including CAD\"},{\"value\":\"CAD\",\"label\":\"Drawings made measurable as governed data\"},{\"value\":\"Agents\",\"label\":\"Snowflake CoWork + Slack bots\"},{\"value\":\"1\",\"label\":\"Source for programs, projects, and land\"}]",
-    "quote": null,
-    "challenge": null,
-    "solution": null,
-    "results": null,
-    "featured": true,
-    "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
-    "order": 4,
-    "seoTitle": null,
-    "seoDescription": null,
-    "createdAt": "2026-06-14T16:42:43.041Z",
-    "updatedAt": "2026-07-07T03:07:07.770Z"
+    "updatedAt": "2026-07-08T01:40:42.326Z"
    },
    {
     "id": "cmqe0izfm000vec771itlon32",
@@ -1181,12 +1131,12 @@
     "results": null,
     "featured": true,
     "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
     "order": 1,
     "seoTitle": null,
     "seoDescription": null,
     "createdAt": "2026-06-14T16:42:43.042Z",
-    "updatedAt": "2026-07-07T03:07:07.774Z"
+    "updatedAt": "2026-07-08T01:40:42.331Z"
    },
    {
     "id": "cmqe0izfo000xec771399qyye",
@@ -1206,35 +1156,65 @@
     "results": null,
     "featured": true,
     "status": "PUBLISHED",
-    "publishedAt": "2026-07-07T03:07:07.638Z",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
     "order": 0,
     "seoTitle": null,
     "seoDescription": null,
     "createdAt": "2026-06-14T16:42:43.044Z",
-    "updatedAt": "2026-07-07T03:07:07.776Z"
+    "updatedAt": "2026-07-08T01:40:42.332Z"
+   },
+   {
+    "id": "cmqe0izfp000zec778qhuwa3w",
+    "slug": "corporate-mdm-golden-record",
+    "title": "One trusted golden record across eight business domains",
+    "summary": "A commercial-vehicle dealer group ran sales, service, parts, and the back office on separate systems, with no single version of a customer, vehicle, part, or supplier. Viewnear built a corporate master data foundation on Snowflake: a progressive multi-source golden record across eight business domains, using a Medallion architecture, Openflow ingestion, dbt transformations, and per-domain Snowflake CoWork agents.",
+    "body": "## Challenge\n\nA commercial-vehicle dealer group runs a large network: dealerships that sell heavy trucks, service bays that keep fleets on the road, and parts operations that supply both. Across that network, the same customer, vehicle, part, supplier, and employee existed differently in every system. The ERP, the dealer management system, and the payroll and HR system each kept their own version, with their own codes and their own rules.\n\n- **No trusted single version.** A customer, vehicle, part, supplier, or employee looked different depending on which system you asked.\n- **Reporting meant reconciling by hand.** Before anyone could trust a number, the same entity had to be matched and merged across systems manually.\n- **Governance was tribal knowledge.** Matching, survivorship, and ownership lived in people's heads, not in designed-in rules.\n\nOperational efficiency across sales, service, and parts depended on data the group could not yet trust as one.\n\n## Solution: a corporate master data golden record on Snowflake\n\nViewnear designed and built a corporate Master Data Management (MDM) foundation on Snowflake, in the group's own account, producing a progressive multi-source golden record across the business:\n\n- **Medallion architecture.** Source data lands in Bronze, is cleaned and conformed in Silver, and resolves into governed Gold golden records, with master keys, matching and merge, survivorship rules, lineage, and audit designed in from the first table.\n- **Eight business domains.** Aftersales and service, vehicle and parts catalogs, sales, purchasing, inventory, finance, accounting, and HR, each mastered into one trusted definition.\n- **Automated ingestion.** Openflow lands data from the ERP, dealer management system, and payroll and HR system on a nightly incremental schedule.\n- **Versioned transformations.** All modeling runs in dbt under Git, so every rule that builds a golden record is reviewed, tested, and traceable.\n- **Per-domain AI agents.** Snowflake CoWork agents, grounded in each domain's governed golden record, let business users ask questions of master data in plain language.\n\nDelivery runs as three releases across a twelve-month roadmap, so each domain reaches a trusted golden record in sequence rather than all at once.\n\n## Governed by design\n\nMaster data is the backbone the whole group reports from, so governance was built in, not bolted on:\n\n- **Catalog and ownership.** Horizon Catalog documents every domain, with a named owner accountable for each golden record.\n- **Least-privilege access.** RBAC is structured by environment, layer, and domain, with SSO and SCIM so access maps to the group's own identity.\n- **Data quality, designed in.** dbt tests validate matching, survivorship, and conformance on every run, so a bad record is caught before it reaches Gold.\n- **Predictable cost.** Resource monitors keep compute and spend in check across environments.\n- **Data stays in place.** Everything runs in the group's own Snowflake account, so no copies leave their perimeter.\n\n## What the group gets\n\n- One governed golden record for every core entity: customer, vehicle, part, supplier, and employee, each traceable back to its source.\n- Eight business domains mastered on a single Snowflake foundation, from aftersales and parts to finance and HR.\n- Reporting that starts from trusted master data, instead of reconciling the same entity by hand across systems.\n- A documented, governed foundation the group's own team can run and extend, with master data ready for analytics and AI on top.",
+    "sector": "Automotive",
+    "region": "Mexico",
+    "clientId": "cmqe0izfh000oec776gtdq82f",
+    "industryId": "cmqe0izfd000hec774xeri30n",
+    "heroImage": "/assets/images/cases/corporate-mdm-golden-record-hero.jpg",
+    "metrics": "[{\"value\":\"3\",\"label\":\"Source systems unified\"},{\"value\":\"8\",\"label\":\"Business domains mastered\"},{\"value\":\"Medallion\",\"label\":\"Bronze, Silver, Gold\"},{\"value\":\"12 mo\",\"label\":\"Phased, three releases\"}]",
+    "quote": null,
+    "challenge": null,
+    "solution": null,
+    "results": null,
+    "featured": true,
+    "status": "PUBLISHED",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
+    "order": 2,
+    "seoTitle": null,
+    "seoDescription": null,
+    "createdAt": "2026-06-14T16:42:43.046Z",
+    "updatedAt": "2026-07-08T01:40:42.334Z"
+   },
+   {
+    "id": "cmqe0izfk000tec77g15jaju4",
+    "slug": "construction-cad-data-foundation",
+    "title": "Turning architectural CAD drawings into measurable, decision-ready data",
+    "summary": "We unified four disconnected sources, including architectural CAD drawings, into one governed source of truth on Snowflake. Design data locked in the drawings became structured, measurable data alongside construction, finance, and land data, and we delivered Snowflake CoWork agents and Slack bots on top.",
+    "body": "## Challenge\n\nA construction and real-estate developer buys land, runs construction programs, and delivers building projects. Its design information and its business data lived in different worlds: drawings in one place, numbers in another, and no way to read them together. Measuring a program, checking a project, or evaluating a land purchase meant stitching figures across systems and pulling quantities off drawings by hand.\n\n- **Four disconnected sources.** Construction program and scheduling data, project cost and finance data, land and acquisition records, and architectural CAD drawings each lived on their own, with no shared definitions and no common model to join them.\n- **CAD drawings trapped in files no report could read.** The quantities, areas, and materials that define every building sat inside design and engineering drawings, locked in files that no report or query could reach, so design never showed up next to the business numbers.\n- **Programs, projects, and land decisions stitched together by hand.** Every roll-up across construction programs, individual projects, and land acquisition was assembled manually, so the picture was always late and never quite reconciled.\n- **No single trusted source.** With four sources and no governed model joining them, leadership had no one place they could trust to measure and run the business.\n\n## Solution: one governed source of truth on Snowflake, with design data made measurable\n\nViewnear unified the four sources into a governed Snowflake foundation in the developer's own account, and turned the CAD drawings from inert files into structured, governed data that sits alongside the business.\n\n- **Four sources into a governed Medallion foundation.** Openflow ingested the construction program, cost and finance, and land and acquisition data into Snowflake, landing raw data in Bronze, conforming it in Silver, and resolving governed Gold models, so the business systems finally shared one model.\n- **CAD drawings read into structured, governed data.** We extracted the design data locked in the architectural and engineering drawings into governed, queryable tables, so design finally became measurable alongside the business numbers.\n- **One trusted model for programs, projects, and land-buying.** Construction programs, individual projects, and land acquisition decisions all measured against the same governed Gold models, so the developer could run the business from one source instead of reconciling numbers by hand.\n- **Snowflake CoWork agents for questions and actions in Snowflake.** We delivered Snowflake CoWork agents over governed Semantic Views, with Cortex Analyst answering questions in plain language, so teams could ask and act on the governed data directly inside Snowflake.\n- **Slack bots in the flow of work.** We delivered Slack bots on top of the same governed data, so teams got answers and acted without leaving the tools they already work in.\n- **Versioned, tested transformations in dbt.** Every transformation that built Silver, the governed Gold models, and the structured CAD data ran in dbt under version control and natively against Snowflake, so each rule was reviewed, tested, and traceable.\n\n## Governed by design\n\nThe governed foundation became what programs, projects, and land decisions all depend on, so governance was designed in from the start.\n\n- **Horizon Catalog for catalog, lineage, and ownership.** Horizon Catalog documented the data with lineage and object dependencies, so the developer can see where every figure, including the values read out of the drawings, comes from and who owns it.\n- **RBAC with least privilege.** Access was separated across administration, operation, and analytics consumption, so the people who run the foundation, use it, and govern it hold distinct roles.\n- **Data quality enforced with dbt tests.** dbt tests validated the models on every run, so the governed source stayed trustworthy as new data and use cases arrived.\n- **Resource Monitors for predictable cost.** Resource Monitors kept compute and credit consumption in check, with Snowsight monitoring activity and consumption.\n- **Data stays in the developer's own Snowflake account.** Everything ran in the developer's own account, so sensitive cost, land, and design data never left their perimeter.\n\n## What we delivered\n\n- **One governed source for programs, projects, and land.** Construction programs, individual projects, and land-buying decisions now measure against a single governed source of truth instead of hand-stitched spreadsheets.\n- **CAD made measurable.** The design data read out of the drawings now lives as governed data the business can query alongside construction, finance, and land records.\n- **AI agents in Snowflake and Slack.** Snowflake CoWork agents over governed Semantic Views, plus Slack bots, let teams ask questions and act on the governed data both inside Snowflake and in the flow of work.\n- **A documented foundation the team runs and extends.** A governed, cataloged, and tested Snowflake foundation, with dbt transformations under version control, that the developer's team operates and extends to new use cases.",
+    "sector": "Construction & Real Estate",
+    "region": "Mexico",
+    "clientId": "cmqe0izff000jec77izg9q622",
+    "industryId": "cmqe0izfa000cec77oibxe6rf",
+    "heroImage": "/assets/images/cases/construction-cad-data-foundation-hero.jpg",
+    "metrics": "[{\"value\":\"4\",\"label\":\"Sources unified, including CAD\"},{\"value\":\"CAD\",\"label\":\"Drawings made measurable as governed data\"},{\"value\":\"Agents\",\"label\":\"Snowflake CoWork + Slack bots\"},{\"value\":\"1\",\"label\":\"Source for programs, projects, and land\"}]",
+    "quote": null,
+    "challenge": null,
+    "solution": null,
+    "results": null,
+    "featured": true,
+    "status": "PUBLISHED",
+    "publishedAt": "2026-07-08T01:40:42.237Z",
+    "order": 4,
+    "seoTitle": null,
+    "seoDescription": null,
+    "createdAt": "2026-06-14T16:42:43.041Z",
+    "updatedAt": "2026-07-08T01:40:42.329Z"
    }
   ],
   "blogPost": [
-   {
-    "id": "cmqe0izg0001lec771vk7vu7h",
-    "slug": "data-warehouse-revolution-five-years",
-    "title": "The Data Warehouse Transformation I've Been Watching Unfold for Five Years",
-    "excerpt": "When I started recommending Snowflake to clients, many were skeptical about cloud data warehousing. Today, those same organizations cannot imagine going back to traditional systems, and here is why this transformation matters.",
-    "body": "## Understanding modern data warehousing\n\nI've been working with data warehouses for over a decade, and the changes I've seen remind me of the shift from film to digital photography. At first, the traditional approach worked well. Everyone knew the processes, and change seemed risky. But once you experience the new capabilities, going back feels limiting.\n\nTraditional data warehouses were well-designed for their era. When data was measured in gigabytes and workloads were predictable, these systems handled requirements effectively. But applying them to modern data challenges can feel restrictive.\n\n## What's actually changing\n\nThis isn't just about moving to the cloud. I've seen plenty of cloud migrations that recreate the same problems in a more expensive location. Platforms like Snowflake represent a fundamental rethinking of data infrastructure design.\n\nTraditional systems were built around constraints: limited storage, fixed compute capacity, predictable workloads. Every decision involved managing these limitations. Need more processing power? You had to plan months ahead. Want to keep more historical data? Storage costs became a major consideration.\n\nCloud-native platforms work differently. Storage is essentially unlimited and cost-effective. Compute power appears when needed and scales down when not in use. The constraints that shaped traditional design simply don't apply anymore.\n\nThis changes how you approach data problems. Instead of asking \"can we afford to keep this data?\" you ask \"why wouldn't we?\" Instead of rationing compute resources, you use what the task requires. The mindset shift is significant.\n\n## Technical architecture changes\n\nSeparating compute and storage is the key insight that enables everything else. In traditional systems, these components are tightly coupled. Scaling one means scaling both, even when you only need additional capacity in one area.\n\nSnowflake allows these components to scale independently. You can add compute power for complex queries without paying for storage you don't need, or increase storage for archival data without unused processing capacity.\n\nThe multi-cluster architecture means different workloads don't interfere with each other. ETL jobs run on dedicated clusters while user queries use separate resources. During peak usage, the system automatically adds capacity and removes it when demand decreases.\n\n## Practical benefits\n\nOperations become close to maintenance-free. No indexes to tune, no partitions to manage, no storage optimization needed. The platform handles performance optimization automatically while you focus on business problems.\n\nInstant scaling means you can handle unexpected workloads without planning. Marketing wants to analyze five years of customer data for a campaign? No problem. Finance needs to process end-of-quarter reports? The system scales to handle the load.\n\nData sharing capabilities let you securely share datasets with partners or between departments without copying data. Changes appear in real time for all authorized users. This eliminates the complexity of managing multiple data copies.\n\n## Cost model advantages\n\nThe consumption-based pricing model aligns costs with actual usage. You pay for storage based on what you use and compute based on processing time. During quiet periods, costs drop to near-storage-only levels.\n\nFor many organizations, this provides significant cost savings compared to maintaining fixed infrastructure. You're not paying for peak capacity during off-hours or maintaining hardware for occasional high-demand periods.\n\n## Data loading and integration\n\nModern data platforms handle diverse data sources much more effectively. JSON, XML, Parquet, CSV: the system processes different formats without complex ETL transformations. Semi-structured data works alongside traditional tables.\n\nContinuous data loading means near real-time data availability. Instead of waiting for overnight batch jobs, new data becomes available for analysis within minutes of arrival.\n\n```sql\n-- Load JSON data directly\nCREATE TABLE events (\n    event_data VARIANT,\n    load_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP()\n);\n\nCOPY INTO events\nFROM @my_stage/events.json\nFILE_FORMAT = (TYPE = 'JSON');\n```\n\n## Security and governance\n\nSecurity features are built into the platform rather than added on. Encryption at rest and in transit happens automatically. Role-based access control integrates with existing identity management systems.\n\nData governance tools provide visibility into data lineage, usage patterns, and access history. You can see exactly who accessed what data and when, which helps with compliance and auditing requirements.\n\n## Performance considerations\n\nQuery performance relies on different optimization strategies than traditional systems. Instead of managing indexes and partitions, you focus on data organization and query patterns.\n\nClustering keys help organize large tables for better performance. Materialized views cache complex calculations. Query optimization happens automatically based on usage patterns.\n\nThe platform adapts to query patterns automatically: frequently accessed data is served from warehouse and result caches, so common queries stay fast without manual tuning.\n\n## Migration strategies\n\nMoving from traditional systems requires planning but doesn't have to be disruptive. Many organizations start with specific use cases or data sets rather than attempting complete migrations immediately.\n\nData pipeline migration can happen incrementally. New data sources go to the modern platform while existing processes continue running. Over time, more workloads move as confidence builds.\n\nUser training focuses on taking advantage of new capabilities rather than just replicating old processes. The goal is leveraging improved functionality, not just changing platforms.\n\n## Common implementation challenges\n\nThe biggest challenge is often organizational rather than technical. Teams familiar with traditional approaches may resist new methods or try to apply old optimization techniques that are no longer necessary.\n\nCost management requires learning new patterns. The consumption model provides flexibility but needs monitoring to avoid unexpected charges during development or testing.\n\nData modeling approaches change when storage constraints disappear. You can keep more raw data and create multiple views for different purposes rather than designing single normalized structures.\n\n## Getting started\n\nBegin with a specific use case that demonstrates clear value. Choose something important enough to get attention but contained enough to manage risk. Proof-of-concept projects work better than comprehensive migrations for initial success.\n\nFocus on showcasing capabilities that weren't possible before rather than just replicating existing functionality. Real-time analytics, large-scale data processing, or simplified data sharing often provide compelling demonstrations.\n\nPlan for success by considering how capabilities will expand once initial projects prove valuable. The platform's flexibility means you can grow usage significantly without major architectural changes.\n\n## Why this matters\n\nModern data platforms remove traditional barriers to data analysis and insight generation. When infrastructure constraints disappear, teams can focus on business problems rather than technical limitations.\n\nOrganizations that adopt these capabilities effectively gain advantages in agility, cost efficiency, and analytical capability. These advantages compound over time as data volumes and complexity continue growing.\n\nThe shift represents more than just better technology. It's about enabling data-driven decision making at scale without the traditional overhead and complexity.",
-    "keyTakeaways": "[\"Cloud-native platforms remove the storage and compute constraints that shaped traditional data warehouse design, changing the questions teams ask about their data.\",\"Separating compute and storage is the key insight: each scales independently, and multi-cluster architecture keeps workloads from interfering with one another.\",\"Near-maintenance-free operations, instant scaling, and live data sharing let teams focus on business problems instead of administrative overhead.\",\"Consumption-based pricing aligns cost with actual usage, but it requires new monitoring habits to avoid surprises during development and testing.\",\"Start with a focused, high-value proof of concept that showcases new capabilities rather than attempting a complete migration up front.\"]",
-    "coverImageId": null,
-    "coverImageUrl": "/assets/images/blog/data-warehouse-revolution-five-years.jpg",
-    "authorId": "cmqe0izey0000ec77bdmefaex",
-    "authorTeamId": "cmqe0izfq0011ec77rn27t4ci",
-    "status": "PUBLISHED",
-    "publishedAt": "2025-04-26T00:00:00.000Z",
-    "seoTitle": null,
-    "seoDescription": null,
-    "ogImage": null,
-    "createdAt": "2026-06-14T16:42:43.057Z",
-    "updatedAt": "2026-07-07T03:07:07.798Z",
-    "tags": []
-   },
    {
     "id": "cmqe0izg1001nec77imtvc76t",
     "slug": "bi-integration-challenge-power-bi-tableau-snowflake",
@@ -1252,7 +1232,7 @@
     "seoDescription": null,
     "ogImage": null,
     "createdAt": "2026-06-14T16:42:43.058Z",
-    "updatedAt": "2026-07-07T03:07:07.801Z",
+    "updatedAt": "2026-07-08T01:40:42.352Z",
     "tags": []
    },
    {
@@ -1272,7 +1252,7 @@
     "seoDescription": null,
     "ogImage": null,
     "createdAt": "2026-06-14T16:42:43.059Z",
-    "updatedAt": "2026-07-07T03:07:07.803Z",
+    "updatedAt": "2026-07-08T01:40:42.355Z",
     "tags": []
    },
    {
@@ -1292,7 +1272,7 @@
     "seoDescription": null,
     "ogImage": null,
     "createdAt": "2026-06-14T16:42:43.060Z",
-    "updatedAt": "2026-07-07T03:07:07.805Z",
+    "updatedAt": "2026-07-08T01:40:42.356Z",
     "tags": []
    },
    {
@@ -1312,27 +1292,27 @@
     "seoDescription": null,
     "ogImage": null,
     "createdAt": "2026-06-14T16:42:43.056Z",
-    "updatedAt": "2026-07-07T03:07:07.794Z",
+    "updatedAt": "2026-07-08T01:40:42.348Z",
     "tags": []
    },
    {
-    "id": "cmqe0izg6001xec77rfvk1tcz",
-    "slug": "snowflake-cortex-aisql-first-look",
-    "title": "From SQL to Gen-AI: A First Look at Snowflake Cortex AISQL",
-    "excerpt": "Snowflake's new Cortex AISQL functions let you run large language model tasks such as classification, extraction, translation, and even image Q&A directly in SQL. Here is what it means for data teams, how it works in practice, and where we at Viewnear see the biggest opportunities.",
-    "body": "## Why this matters\n\nAt Snowflake Summit 2025, the company unveiled Cortex AISQL, a family of built-in functions that embed state-of-the-art LLMs directly inside the Snowflake engine. For teams that already store governed data in Snowflake, this brings three immediate benefits:\n\n- **No extra infrastructure:** Everything executes inside the platform, so you avoid spinning up a separate AI service.\n- **Unified security:** Data never leaves Snowflake, and existing roles, masking policies, and row access controls still apply.\n- **Rapid iteration:** Analysts can prototype LLM workflows using nothing more than a SELECT statement.\n\n## What's in the toolbox?\n\n### Core text and document functions\n\n- **AI_COMPLETE:** free-form completions, summarization, Q&A\n- **AI_CLASSIFY:** zero-shot and few-shot text classification\n- **AI_FILTER:** policy or sentiment filtering\n- **AI_SIMILARITY:** vector similarity search over text\n- **PARSE_DOCUMENT:** OCR and structural parsing for PDFs, images, and Word docs\n\n### Image-aware features\n\nThe same AI_COMPLETE interface can caption images, extract entities, and answer questions about visuals such as charts or diagrams.\n\n## A quick, practical demo\n\nImagine you store product-review screenshots in a stage named `@reviews_stage`. You want to classify each review as positive, neutral, or negative and pull out the star rating shown in the image.\n\n```sql\n-- Extract review text, classify sentiment, and pull the star rating\nWITH IMGS AS (\n  SELECT\n    RELATIVE_PATH                              AS FILE_NAME,\n    TO_FILE('@REVIEWS_STAGE', RELATIVE_PATH)   AS IMG_FILE\n  FROM DIRECTORY(@REVIEWS_STAGE)\n),\nTEXT AS (\n  SELECT\n    FILE_NAME,\n    -- 1) Extract the visible text from each screenshot\n    AI_COMPLETE(\n      'claude-3-5-sonnet',\n      'Extract the visible product-review text. Respond with raw text only.',\n      IMG_FILE\n    )::STRING AS REVIEW_TEXT\n  FROM IMGS\n)\nSELECT\n  FILE_NAME,\n  REVIEW_TEXT,\n  -- 2) Classify overall sentiment\n  AI_CLASSIFY(\n    REVIEW_TEXT,\n    ARRAY_CONSTRUCT('positive','neutral','negative')\n  )['LABEL']::STRING AS SENTIMENT,\n  -- 3) Parse the star rating (1-5) mentioned in the text\n  AI_COMPLETE(\n    'claude-3-5-sonnet',\n    'Return only the star rating (1-5) mentioned in this review.',\n    REVIEW_TEXT\n  )::STRING AS RATING\nFROM TEXT;\n```\n\nAll three steps run inside Snowflake with no batch exports or external endpoints.\n\n## Governance and cost notes\n\n- **Privileges:** Grant the `CORTEX_USER` role plus warehouse usage. Fine-grained masking and row-level security continue to apply.\n- **Credits:** Each function consumes credits based on input tokens and the chosen model. Prototype with limited data first, then track usage through credit-consumption views to avoid surprises.\n\n## Early lessons from the Viewnear team\n\n1. **Barrier to entry is low.** Analysts with some coding experience built sentiment dashboards in a morning.\n2. **Prompt clarity matters.** A clear system prompt plus a handful of few-shot examples cut wrong answers by roughly 40%.\n3. **Hybrid workflows shine.** Pairing PARSE_DOCUMENT with AI_COMPLETE lets us handle PDF contracts and mobile photos in the same pipeline, ideal for mortgage and insurance clients.\n4. **Warehouse sizing affects latency.** LLM calls run in a single thread, so moving from a small to a medium warehouse often halves response time.\n\n## Where it's heading next\n\n- **Real-time agents:** Combine AISQL with Snowpark Container Services to create always-on AI copilots that can invoke external APIs when needed.\n- **Safer packaging and sharing:** The Native App Framework now supports restricted-caller rights, making it safer to package and share custom AI models.\n- **Industry blueprints:** Expect pre-built templates such as invoice extraction, support-ticket triage, and clinical note summarization to arrive via partners, including Viewnear.\n\n## Closing thoughts\n\nCortex AISQL blurs the line between data warehousing and generative AI. The question is no longer \"Where do we host the model?\" but \"Which business problem do we tackle first?\" If you are ready to experiment, the barrier is now a single SQL query.\n\nThe Viewnear team is already weaving AISQL into upcoming client sprints. If you would like to see a live demo tailored to your data, get in touch. Happy querying!",
-    "keyTakeaways": "[\"Cortex AISQL embeds state-of-the-art LLMs directly inside the Snowflake engine, so there is no extra AI infrastructure to stand up and your data never leaves the platform.\",\"Analysts can prototype LLM workflows with nothing more than a SELECT statement, classifying sentiment, extracting fields, and answering questions about images in a single query.\",\"Pairing PARSE_DOCUMENT with AI_COMPLETE handles PDFs and mobile photos in one pipeline, which is ideal for mortgage and insurance use cases.\",\"Existing roles, masking policies, and row-level security still apply, and credits scale with input tokens and the chosen model, so prototype small and track usage.\",\"The hosting question is largely solved; the real decision is now which business problem to tackle first.\"]",
+    "id": "cmqe0izg0001lec771vk7vu7h",
+    "slug": "data-warehouse-revolution-five-years",
+    "title": "The Data Warehouse Transformation I've Been Watching Unfold for Five Years",
+    "excerpt": "When I started recommending Snowflake to clients, many were skeptical about cloud data warehousing. Today, those same organizations cannot imagine going back to traditional systems, and here is why this transformation matters.",
+    "body": "## Understanding modern data warehousing\n\nI've been working with data warehouses for over a decade, and the changes I've seen remind me of the shift from film to digital photography. At first, the traditional approach worked well. Everyone knew the processes, and change seemed risky. But once you experience the new capabilities, going back feels limiting.\n\nTraditional data warehouses were well-designed for their era. When data was measured in gigabytes and workloads were predictable, these systems handled requirements effectively. But applying them to modern data challenges can feel restrictive.\n\n## What's actually changing\n\nThis isn't just about moving to the cloud. I've seen plenty of cloud migrations that recreate the same problems in a more expensive location. Platforms like Snowflake represent a fundamental rethinking of data infrastructure design.\n\nTraditional systems were built around constraints: limited storage, fixed compute capacity, predictable workloads. Every decision involved managing these limitations. Need more processing power? You had to plan months ahead. Want to keep more historical data? Storage costs became a major consideration.\n\nCloud-native platforms work differently. Storage is essentially unlimited and cost-effective. Compute power appears when needed and scales down when not in use. The constraints that shaped traditional design simply don't apply anymore.\n\nThis changes how you approach data problems. Instead of asking \"can we afford to keep this data?\" you ask \"why wouldn't we?\" Instead of rationing compute resources, you use what the task requires. The mindset shift is significant.\n\n## Technical architecture changes\n\nSeparating compute and storage is the key insight that enables everything else. In traditional systems, these components are tightly coupled. Scaling one means scaling both, even when you only need additional capacity in one area.\n\nSnowflake allows these components to scale independently. You can add compute power for complex queries without paying for storage you don't need, or increase storage for archival data without unused processing capacity.\n\nThe multi-cluster architecture means different workloads don't interfere with each other. ETL jobs run on dedicated clusters while user queries use separate resources. During peak usage, the system automatically adds capacity and removes it when demand decreases.\n\n## Practical benefits\n\nOperations become close to maintenance-free. No indexes to tune, no partitions to manage, no storage optimization needed. The platform handles performance optimization automatically while you focus on business problems.\n\nInstant scaling means you can handle unexpected workloads without planning. Marketing wants to analyze five years of customer data for a campaign? No problem. Finance needs to process end-of-quarter reports? The system scales to handle the load.\n\nData sharing capabilities let you securely share datasets with partners or between departments without copying data. Changes appear in real time for all authorized users. This eliminates the complexity of managing multiple data copies.\n\n## Cost model advantages\n\nThe consumption-based pricing model aligns costs with actual usage. You pay for storage based on what you use and compute based on processing time. During quiet periods, costs drop to near-storage-only levels.\n\nFor many organizations, this provides significant cost savings compared to maintaining fixed infrastructure. You're not paying for peak capacity during off-hours or maintaining hardware for occasional high-demand periods.\n\n## Data loading and integration\n\nModern data platforms handle diverse data sources much more effectively. JSON, XML, Parquet, CSV: the system processes different formats without complex ETL transformations. Semi-structured data works alongside traditional tables.\n\nContinuous data loading means near real-time data availability. Instead of waiting for overnight batch jobs, new data becomes available for analysis within minutes of arrival.\n\n```sql\n-- Load JSON data directly\nCREATE TABLE events (\n    event_data VARIANT,\n    load_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP()\n);\n\nCOPY INTO events\nFROM @my_stage/events.json\nFILE_FORMAT = (TYPE = 'JSON');\n```\n\n## Security and governance\n\nSecurity features are built into the platform rather than added on. Encryption at rest and in transit happens automatically. Role-based access control integrates with existing identity management systems.\n\nData governance tools provide visibility into data lineage, usage patterns, and access history. You can see exactly who accessed what data and when, which helps with compliance and auditing requirements.\n\n## Performance considerations\n\nQuery performance relies on different optimization strategies than traditional systems. Instead of managing indexes and partitions, you focus on data organization and query patterns.\n\nClustering keys help organize large tables for better performance. Materialized views cache complex calculations. Query optimization happens automatically based on usage patterns.\n\nThe platform adapts to query patterns automatically: frequently accessed data is served from warehouse and result caches, so common queries stay fast without manual tuning.\n\n## Migration strategies\n\nMoving from traditional systems requires planning but doesn't have to be disruptive. Many organizations start with specific use cases or data sets rather than attempting complete migrations immediately.\n\nData pipeline migration can happen incrementally. New data sources go to the modern platform while existing processes continue running. Over time, more workloads move as confidence builds.\n\nUser training focuses on taking advantage of new capabilities rather than just replicating old processes. The goal is leveraging improved functionality, not just changing platforms.\n\n## Common implementation challenges\n\nThe biggest challenge is often organizational rather than technical. Teams familiar with traditional approaches may resist new methods or try to apply old optimization techniques that are no longer necessary.\n\nCost management requires learning new patterns. The consumption model provides flexibility but needs monitoring to avoid unexpected charges during development or testing.\n\nData modeling approaches change when storage constraints disappear. You can keep more raw data and create multiple views for different purposes rather than designing single normalized structures.\n\n## Getting started\n\nBegin with a specific use case that demonstrates clear value. Choose something important enough to get attention but contained enough to manage risk. Proof-of-concept projects work better than comprehensive migrations for initial success.\n\nFocus on showcasing capabilities that weren't possible before rather than just replicating existing functionality. Real-time analytics, large-scale data processing, or simplified data sharing often provide compelling demonstrations.\n\nPlan for success by considering how capabilities will expand once initial projects prove valuable. The platform's flexibility means you can grow usage significantly without major architectural changes.\n\n## Why this matters\n\nModern data platforms remove traditional barriers to data analysis and insight generation. When infrastructure constraints disappear, teams can focus on business problems rather than technical limitations.\n\nOrganizations that adopt these capabilities effectively gain advantages in agility, cost efficiency, and analytical capability. These advantages compound over time as data volumes and complexity continue growing.\n\nThe shift represents more than just better technology. It's about enabling data-driven decision making at scale without the traditional overhead and complexity.",
+    "keyTakeaways": "[\"Cloud-native platforms remove the storage and compute constraints that shaped traditional data warehouse design, changing the questions teams ask about their data.\",\"Separating compute and storage is the key insight: each scales independently, and multi-cluster architecture keeps workloads from interfering with one another.\",\"Near-maintenance-free operations, instant scaling, and live data sharing let teams focus on business problems instead of administrative overhead.\",\"Consumption-based pricing aligns cost with actual usage, but it requires new monitoring habits to avoid surprises during development and testing.\",\"Start with a focused, high-value proof of concept that showcases new capabilities rather than attempting a complete migration up front.\"]",
     "coverImageId": null,
-    "coverImageUrl": "/assets/images/blog/snowflake-cortex-aisql-first-look.jpg",
+    "coverImageUrl": "/assets/images/blog/data-warehouse-revolution-five-years.jpg",
     "authorId": "cmqe0izey0000ec77bdmefaex",
-    "authorTeamId": "cmqe0izfs0015ec7786f5mh8p",
+    "authorTeamId": "cmqe0izfq0011ec77rn27t4ci",
     "status": "PUBLISHED",
-    "publishedAt": "2025-06-21T00:00:00.000Z",
+    "publishedAt": "2025-04-26T00:00:00.000Z",
     "seoTitle": null,
     "seoDescription": null,
     "ogImage": null,
-    "createdAt": "2026-06-14T16:42:43.063Z",
-    "updatedAt": "2026-07-07T03:07:07.812Z",
+    "createdAt": "2026-06-14T16:42:43.057Z",
+    "updatedAt": "2026-07-08T01:40:42.350Z",
     "tags": []
    },
    {
@@ -1352,7 +1332,7 @@
     "seoDescription": null,
     "ogImage": null,
     "createdAt": "2026-06-14T16:42:43.064Z",
-    "updatedAt": "2026-07-07T03:07:07.814Z",
+    "updatedAt": "2026-07-08T01:40:42.366Z",
     "tags": []
    },
    {
@@ -1372,7 +1352,27 @@
     "seoDescription": null,
     "ogImage": null,
     "createdAt": "2026-06-14T16:42:43.061Z",
-    "updatedAt": "2026-07-07T03:07:07.807Z",
+    "updatedAt": "2026-07-08T01:40:42.358Z",
+    "tags": []
+   },
+   {
+    "id": "cmqe0izg6001xec77rfvk1tcz",
+    "slug": "snowflake-cortex-aisql-first-look",
+    "title": "From SQL to Gen-AI: A First Look at Snowflake Cortex AISQL",
+    "excerpt": "Snowflake's new Cortex AISQL functions let you run large language model tasks such as classification, extraction, translation, and even image Q&A directly in SQL. Here is what it means for data teams, how it works in practice, and where we at Viewnear see the biggest opportunities.",
+    "body": "## Why this matters\n\nAt Snowflake Summit 2025, the company unveiled Cortex AISQL, a family of built-in functions that embed state-of-the-art LLMs directly inside the Snowflake engine. For teams that already store governed data in Snowflake, this brings three immediate benefits:\n\n- **No extra infrastructure:** Everything executes inside the platform, so you avoid spinning up a separate AI service.\n- **Unified security:** Data never leaves Snowflake, and existing roles, masking policies, and row access controls still apply.\n- **Rapid iteration:** Analysts can prototype LLM workflows using nothing more than a SELECT statement.\n\n## What's in the toolbox?\n\n### Core text and document functions\n\n- **AI_COMPLETE:** free-form completions, summarization, Q&A\n- **AI_CLASSIFY:** zero-shot and few-shot text classification\n- **AI_FILTER:** policy or sentiment filtering\n- **AI_SIMILARITY:** vector similarity search over text\n- **PARSE_DOCUMENT:** OCR and structural parsing for PDFs, images, and Word docs\n\n### Image-aware features\n\nThe same AI_COMPLETE interface can caption images, extract entities, and answer questions about visuals such as charts or diagrams.\n\n## A quick, practical demo\n\nImagine you store product-review screenshots in a stage named `@reviews_stage`. You want to classify each review as positive, neutral, or negative and pull out the star rating shown in the image.\n\n```sql\n-- Extract review text, classify sentiment, and pull the star rating\nWITH IMGS AS (\n  SELECT\n    RELATIVE_PATH                              AS FILE_NAME,\n    TO_FILE('@REVIEWS_STAGE', RELATIVE_PATH)   AS IMG_FILE\n  FROM DIRECTORY(@REVIEWS_STAGE)\n),\nTEXT AS (\n  SELECT\n    FILE_NAME,\n    -- 1) Extract the visible text from each screenshot\n    AI_COMPLETE(\n      'claude-3-5-sonnet',\n      'Extract the visible product-review text. Respond with raw text only.',\n      IMG_FILE\n    )::STRING AS REVIEW_TEXT\n  FROM IMGS\n)\nSELECT\n  FILE_NAME,\n  REVIEW_TEXT,\n  -- 2) Classify overall sentiment\n  AI_CLASSIFY(\n    REVIEW_TEXT,\n    ARRAY_CONSTRUCT('positive','neutral','negative')\n  )['LABEL']::STRING AS SENTIMENT,\n  -- 3) Parse the star rating (1-5) mentioned in the text\n  AI_COMPLETE(\n    'claude-3-5-sonnet',\n    'Return only the star rating (1-5) mentioned in this review.',\n    REVIEW_TEXT\n  )::STRING AS RATING\nFROM TEXT;\n```\n\nAll three steps run inside Snowflake with no batch exports or external endpoints.\n\n## Governance and cost notes\n\n- **Privileges:** Grant the `CORTEX_USER` role plus warehouse usage. Fine-grained masking and row-level security continue to apply.\n- **Credits:** Each function consumes credits based on input tokens and the chosen model. Prototype with limited data first, then track usage through credit-consumption views to avoid surprises.\n\n## Early lessons from the Viewnear team\n\n1. **Barrier to entry is low.** Analysts with some coding experience built sentiment dashboards in a morning.\n2. **Prompt clarity matters.** A clear system prompt plus a handful of few-shot examples cut wrong answers by roughly 40%.\n3. **Hybrid workflows shine.** Pairing PARSE_DOCUMENT with AI_COMPLETE lets us handle PDF contracts and mobile photos in the same pipeline, ideal for mortgage and insurance clients.\n4. **Warehouse sizing affects latency.** LLM calls run in a single thread, so moving from a small to a medium warehouse often halves response time.\n\n## Where it's heading next\n\n- **Real-time agents:** Combine AISQL with Snowpark Container Services to create always-on AI copilots that can invoke external APIs when needed.\n- **Safer packaging and sharing:** The Native App Framework now supports restricted-caller rights, making it safer to package and share custom AI models.\n- **Industry blueprints:** Expect pre-built templates such as invoice extraction, support-ticket triage, and clinical note summarization to arrive via partners, including Viewnear.\n\n## Closing thoughts\n\nCortex AISQL blurs the line between data warehousing and generative AI. The question is no longer \"Where do we host the model?\" but \"Which business problem do we tackle first?\" If you are ready to experiment, the barrier is now a single SQL query.\n\nThe Viewnear team is already weaving AISQL into upcoming client sprints. If you would like to see a live demo tailored to your data, get in touch. Happy querying!",
+    "keyTakeaways": "[\"Cortex AISQL embeds state-of-the-art LLMs directly inside the Snowflake engine, so there is no extra AI infrastructure to stand up and your data never leaves the platform.\",\"Analysts can prototype LLM workflows with nothing more than a SELECT statement, classifying sentiment, extracting fields, and answering questions about images in a single query.\",\"Pairing PARSE_DOCUMENT with AI_COMPLETE handles PDFs and mobile photos in one pipeline, which is ideal for mortgage and insurance use cases.\",\"Existing roles, masking policies, and row-level security still apply, and credits scale with input tokens and the chosen model, so prototype small and track usage.\",\"The hosting question is largely solved; the real decision is now which business problem to tackle first.\"]",
+    "coverImageId": null,
+    "coverImageUrl": "/assets/images/blog/snowflake-cortex-aisql-first-look.jpg",
+    "authorId": "cmqe0izey0000ec77bdmefaex",
+    "authorTeamId": "cmqe0izfs0015ec7786f5mh8p",
+    "status": "PUBLISHED",
+    "publishedAt": "2025-06-21T00:00:00.000Z",
+    "seoTitle": null,
+    "seoDescription": null,
+    "ogImage": null,
+    "createdAt": "2026-06-14T16:42:43.063Z",
+    "updatedAt": "2026-07-08T01:40:42.362Z",
     "tags": []
    },
    {
@@ -1392,27 +1392,7 @@
     "seoDescription": null,
     "ogImage": null,
     "createdAt": "2026-06-14T16:42:43.063Z",
-    "updatedAt": "2026-07-07T03:07:07.813Z",
-    "tags": []
-   },
-   {
-    "id": "cmqe0izgb0027ec77vtjwsrmq",
-    "slug": "separation-with-purpose-apps-analytics",
-    "title": "Separation With Purpose: How Modern Teams Keep Apps Fast and Analytics Scalable",
-    "excerpt": "PostgreSQL and Snowflake were built for different kinds of work. With Snowflake Postgres, teams can now run transactional and analytical workloads in the same data cloud, without blurring responsibilities or sacrificing performance.",
-    "body": "Most data problems are not caused by bad technology. They come from unclear boundaries.\n\nPostgreSQL has long been one of the most trusted databases for running applications. It powers user interactions, transactions, and operational workflows where reliability and consistency matter most. Snowflake, by contrast, was built to analyze large volumes of data across time, teams, and use cases.\n\nFor years, teams connected these two worlds with pipelines and replicas. Postgres ran the application. Snowflake handled analytics. The separation worked, but it came with operational overhead.\n\nNow, the boundary is clearer, and closer.\n\nWith Snowflake Postgres, teams can run PostgreSQL workloads directly inside the Snowflake platform, while still preserving a clear separation of purpose between transactional and analytical work.\n\n## That distinction is critical\n\nProblems start when a single system is expected to handle live application traffic and heavy analytical workloads at the same time. Performance becomes unpredictable, teams become cautious, and every new dashboard feels like a risk.\n\nSeparation with purpose is the idea that fixes this. It means being intentional about responsibilities. PostgreSQL exists to serve applications with fast, reliable transactions. Snowflake exists to help teams understand behavior, trends, and outcomes at scale. Snowflake Postgres brings those two together in one managed environment, without forcing them to do each other's jobs.\n\nModern teams adopt this model not out of theory, but because it matches how their systems actually behave.\n\n## Workloads have different shapes\n\nPostgreSQL is optimized for transactional workloads. It excels at frequent inserts, updates, and precise lookups with consistent latency. This is what applications depend on to feel responsive.\n\nSnowflake is optimized for analytical workloads. It is designed to scan large datasets, aggregate history, and support many concurrent users asking complex questions. This is the work that naturally grows as organizations mature.\n\nEarly in a product's life, teams often mix these workloads out of convenience. As data grows, analytical questions become more frequent and more demanding. Even if nothing breaks, systems begin to feel fragile.\n\nThis is not a PostgreSQL problem. It is a workload mismatch.\n\n## A healthier model is separation with purpose\n\nWith Snowflake Postgres, operational data lives close to the analytical layer, but transactional workloads remain isolated from analytical compute. Data can be shared securely and efficiently, without introducing contention or complex pipelines.\n\nThis changes how teams work:\n\n- Engineers stop worrying about analytics impacting application performance.\n- Analysts get timely access to fresh operational data.\n- Dashboards scale without constant tuning.\n- Data governance improves because everything lives in one platform.\n\nSnowflake's architecture makes this possible. By separating compute from storage and managing both transactional and analytical workloads under the same security and governance model, teams gain flexibility without chaos.\n\nImportantly, this does not require rewriting applications or abandoning PostgreSQL. Developers continue to use familiar Postgres semantics. Analysts continue to work in Snowflake. The difference is that the distance between operations and analytics shrinks, while responsibilities remain clear.\n\n## The biggest benefit is organizational\n\nAt Viewnear, we see teams move faster once this model is in place. Fewer moving parts. Less friction between teams. More confidence in both performance and insight.\n\nThe biggest benefit is not technical. It is organizational.\n\nWhen systems have clear responsibilities, teams stop negotiating around risk and start focusing on outcomes. Growth becomes intentional instead of reactive.\n\nThat is what separation with purpose looks like when PostgreSQL and Snowflake truly work together.",
-    "keyTakeaways": "[\"Most data problems come from unclear boundaries between systems, not from bad technology.\",\"PostgreSQL is optimized for fast, reliable transactions, while Snowflake is built to analyze large volumes of data at scale.\",\"Snowflake Postgres lets teams run PostgreSQL workloads inside Snowflake while keeping transactional and analytical work separate.\",\"Operational data lives close to the analytical layer, yet transactional workloads stay isolated from analytical compute.\",\"The biggest benefit is organizational: with clear responsibilities, teams focus on outcomes instead of negotiating around risk.\"]",
-    "coverImageId": null,
-    "coverImageUrl": "/assets/images/blog/separation-with-purpose-apps-analytics.jpg",
-    "authorId": "cmqe0izey0000ec77bdmefaex",
-    "authorTeamId": "cmqe0izfs0015ec7786f5mh8p",
-    "status": "PUBLISHED",
-    "publishedAt": "2026-01-22T00:00:00.000Z",
-    "seoTitle": null,
-    "seoDescription": null,
-    "ogImage": null,
-    "createdAt": "2026-06-14T16:42:43.067Z",
-    "updatedAt": "2026-07-07T03:07:07.819Z",
+    "updatedAt": "2026-07-08T01:40:42.364Z",
     "tags": []
    },
    {
@@ -1432,7 +1412,7 @@
     "seoDescription": null,
     "ogImage": null,
     "createdAt": "2026-06-14T16:42:43.068Z",
-    "updatedAt": "2026-07-07T03:07:07.820Z",
+    "updatedAt": "2026-07-08T01:40:42.372Z",
     "tags": []
    },
    {
@@ -1452,7 +1432,7 @@
     "seoDescription": null,
     "ogImage": null,
     "createdAt": "2026-06-14T16:42:43.069Z",
-    "updatedAt": "2026-07-07T03:07:07.822Z",
+    "updatedAt": "2026-07-08T01:40:42.373Z",
     "tags": []
    },
    {
@@ -1472,7 +1452,7 @@
     "seoDescription": null,
     "ogImage": null,
     "createdAt": "2026-06-14T16:42:43.054Z",
-    "updatedAt": "2026-07-07T03:07:07.791Z",
+    "updatedAt": "2026-07-08T01:40:42.345Z",
     "tags": []
    },
    {
@@ -1492,27 +1472,27 @@
     "seoDescription": null,
     "ogImage": null,
     "createdAt": "2026-06-14T16:42:43.066Z",
-    "updatedAt": "2026-07-07T03:07:07.818Z",
+    "updatedAt": "2026-07-08T01:40:42.368Z",
     "tags": []
    },
    {
-    "id": "cmqe0izg5001vec7769yd5azv",
-    "slug": "snowflake-summit-2025-takeaways",
-    "title": "Just Back from Snowflake Summit 2025: What Stood Out, What Got Us Thinking, and What's Next",
-    "excerpt": "We just returned from Snowflake Summit 2025 in San Francisco, and beyond a roadmap full of exciting updates, what stood out were the thoughtful conversations, the clear direction the platform is heading, and how those shifts align with the way we help clients build smarter, faster, and more future-ready data solutions.",
-    "body": "Summit week always packs a lot into a few days, but this year the signal cut through the noise. The product roadmap was full of exciting updates, yet what stayed with us were the conversations on the floor, the clear direction the platform is heading, and the ways these shifts line up with how we at Viewnear help our clients build smarter, faster, and more future-ready data solutions.\n\n## Snowflake CoWork: natural language with structure behind it\n\nA big announcement was Snowflake CoWork, a natural language interface that lets users ask questions of their data in plain English.\n\nIt's not the first time we've seen this idea, but this version felt solid. It's built on governed, secure data. It respects roles, models, and access levels. That alone gives it a much stronger foundation than most.\n\nWe can see how this will streamline how teams interact with data. It has real potential to speed up insight and reduce reliance on dashboards. But, as always, the real impact will come from thoughtful implementation. Matching it with the right data models and use cases will be key.\n\n## Cortex AISQL: AI where your data already lives\n\nCortex AISQL also made a strong impression. It gives teams the ability to apply generative AI directly within SQL. You can summarize documents, analyze feedback, and classify unstructured data, all without moving anything out of Snowflake.\n\nIt's powerful, and it's clean. But like most tools, the real value depends on how it's applied: the choice of use case, how you prepare the data, how you define prompts. These are the details that decide whether AI is helpful or just interesting.\n\nThis is already opening up conversations with our clients about practical ways to experiment. Not just proof of concept for the sake of it, but solutions that tie directly to business goals.\n\n## Adaptive Compute and Gen 2 Warehouses\n\nOn the performance side, Snowflake announced Adaptive Compute and Gen 2 Warehouses. These upgrades make warehouses smarter. They scale more intelligently and manage resources with less manual effort.\n\nIt's a quieter change, but a meaningful one. For us, it means more efficient designs, simpler tuning, and better cost control across the board. These are the kinds of things that do not need a spotlight, but have real downstream impact in everything from architecture to day-to-day operations.\n\n## Better defaults for security\n\nSecurity improvements also came through clearly. Snowflake is introducing passkeys to replace passwords, stronger multi-factor authentication, and monitoring for leaked credentials.\n\nThis is the kind of platform-level shift that makes our work more effective. When the tools we build on already bake in strong security and identity controls, we can spend more time on strategic data access design and less time compensating for weak foundations.\n\n## dbt Projects now native in Snowflake\n\nThis was one of those announcements that might sound small at first but has a big impact on how teams work. Snowflake is introducing native support for dbt Projects directly in the Snowsight UI. It will be in public preview soon, and it brings a much tighter development loop to analytics engineering.\n\nThis is great news for teams trying to streamline development workflows, reduce tool switching, and make version control more natural. And it gives Viewnear another layer of optimization we can offer when building or modernizing client pipelines.\n\n## A quick note on Openflow and Datavolo\n\nOne thing we're keeping an eye on is Openflow, which is tied to Snowflake's recent acquisition of Datavolo. It signals a move toward handling more complex data movement and orchestration directly within the Snowflake ecosystem.\n\nThe full picture is still developing, but this could add new options for how teams manage data pipelines, especially at scale. As more details come out, we'll be looking for ways to bring this into client architectures (we are actively working on bringing it into a current project) where it makes sense.\n\n## A sense of direction\n\nWhat really struck us, beyond the announcements, was the tone of the Summit itself. The focus was not just on what's possible, but on what's usable. The room felt full of people who are doing the work. Not just talking about the future, but actively shaping it.\n\nAs a firm that spends every day inside Snowflake with clients, that energy hit close to home. There was a shared sense that the platform is maturing fast, and that this next phase of data and AI integration is going to need teams who can translate potential into progress.\n\n## What's next\n\nBack at Viewnear, we're already acting on what we saw. We're planning Cortex AISQL pilots, updating our architecture baselines to reflect the Gen 2 warehouse changes, and helping a few clients scope out how Snowflake CoWork could work inside their orgs.\n\nAs always, the goal is not to implement everything at once. It's to make smart, forward-looking moves that set our clients up for what's coming next.\n\nIf you're thinking about where to start or how to make sure the new tools actually drive impact, let's talk.\n\nWe just got back. We're inspired. And we're ready to build.",
-    "keyTakeaways": "[\"Snowflake CoWork brings natural language querying built on governed, secure, role-aware data, but real impact depends on pairing it with the right data models and use cases.\",\"Cortex AISQL applies generative AI directly inside SQL, summarizing, analyzing, and classifying unstructured data without moving anything out of Snowflake.\",\"Adaptive Compute, Gen 2 Warehouses, and stronger security defaults (passkeys, MFA, leaked-credential monitoring) free up time for strategic design over manual tuning.\",\"Native dbt Projects in Snowsight tighten the analytics engineering loop, and Openflow (via the Datavolo acquisition) points toward richer in-platform data movement.\",\"Viewnear is already acting: Cortex AISQL pilots, updated architecture baselines for Gen 2, and scoping Snowflake CoWork inside client orgs.\"]",
+    "id": "cmqe0izgb0027ec77vtjwsrmq",
+    "slug": "separation-with-purpose-apps-analytics",
+    "title": "Separation With Purpose: How Modern Teams Keep Apps Fast and Analytics Scalable",
+    "excerpt": "PostgreSQL and Snowflake were built for different kinds of work. With Snowflake Postgres, teams can now run transactional and analytical workloads in the same data cloud, without blurring responsibilities or sacrificing performance.",
+    "body": "Most data problems are not caused by bad technology. They come from unclear boundaries.\n\nPostgreSQL has long been one of the most trusted databases for running applications. It powers user interactions, transactions, and operational workflows where reliability and consistency matter most. Snowflake, by contrast, was built to analyze large volumes of data across time, teams, and use cases.\n\nFor years, teams connected these two worlds with pipelines and replicas. Postgres ran the application. Snowflake handled analytics. The separation worked, but it came with operational overhead.\n\nNow, the boundary is clearer, and closer.\n\nWith Snowflake Postgres, teams can run PostgreSQL workloads directly inside the Snowflake platform, while still preserving a clear separation of purpose between transactional and analytical work.\n\n## That distinction is critical\n\nProblems start when a single system is expected to handle live application traffic and heavy analytical workloads at the same time. Performance becomes unpredictable, teams become cautious, and every new dashboard feels like a risk.\n\nSeparation with purpose is the idea that fixes this. It means being intentional about responsibilities. PostgreSQL exists to serve applications with fast, reliable transactions. Snowflake exists to help teams understand behavior, trends, and outcomes at scale. Snowflake Postgres brings those two together in one managed environment, without forcing them to do each other's jobs.\n\nModern teams adopt this model not out of theory, but because it matches how their systems actually behave.\n\n## Workloads have different shapes\n\nPostgreSQL is optimized for transactional workloads. It excels at frequent inserts, updates, and precise lookups with consistent latency. This is what applications depend on to feel responsive.\n\nSnowflake is optimized for analytical workloads. It is designed to scan large datasets, aggregate history, and support many concurrent users asking complex questions. This is the work that naturally grows as organizations mature.\n\nEarly in a product's life, teams often mix these workloads out of convenience. As data grows, analytical questions become more frequent and more demanding. Even if nothing breaks, systems begin to feel fragile.\n\nThis is not a PostgreSQL problem. It is a workload mismatch.\n\n## A healthier model is separation with purpose\n\nWith Snowflake Postgres, operational data lives close to the analytical layer, but transactional workloads remain isolated from analytical compute. Data can be shared securely and efficiently, without introducing contention or complex pipelines.\n\nThis changes how teams work:\n\n- Engineers stop worrying about analytics impacting application performance.\n- Analysts get timely access to fresh operational data.\n- Dashboards scale without constant tuning.\n- Data governance improves because everything lives in one platform.\n\nSnowflake's architecture makes this possible. By separating compute from storage and managing both transactional and analytical workloads under the same security and governance model, teams gain flexibility without chaos.\n\nImportantly, this does not require rewriting applications or abandoning PostgreSQL. Developers continue to use familiar Postgres semantics. Analysts continue to work in Snowflake. The difference is that the distance between operations and analytics shrinks, while responsibilities remain clear.\n\n## The biggest benefit is organizational\n\nAt Viewnear, we see teams move faster once this model is in place. Fewer moving parts. Less friction between teams. More confidence in both performance and insight.\n\nThe biggest benefit is not technical. It is organizational.\n\nWhen systems have clear responsibilities, teams stop negotiating around risk and start focusing on outcomes. Growth becomes intentional instead of reactive.\n\nThat is what separation with purpose looks like when PostgreSQL and Snowflake truly work together.",
+    "keyTakeaways": "[\"Most data problems come from unclear boundaries between systems, not from bad technology.\",\"PostgreSQL is optimized for fast, reliable transactions, while Snowflake is built to analyze large volumes of data at scale.\",\"Snowflake Postgres lets teams run PostgreSQL workloads inside Snowflake while keeping transactional and analytical work separate.\",\"Operational data lives close to the analytical layer, yet transactional workloads stay isolated from analytical compute.\",\"The biggest benefit is organizational: with clear responsibilities, teams focus on outcomes instead of negotiating around risk.\"]",
     "coverImageId": null,
-    "coverImageUrl": "/assets/images/blog/snowflake-summit-2025-takeaways.jpg",
+    "coverImageUrl": "/assets/images/blog/separation-with-purpose-apps-analytics.jpg",
     "authorId": "cmqe0izey0000ec77bdmefaex",
     "authorTeamId": "cmqe0izfs0015ec7786f5mh8p",
     "status": "PUBLISHED",
-    "publishedAt": "2025-06-06T00:00:00.000Z",
+    "publishedAt": "2026-01-22T00:00:00.000Z",
     "seoTitle": null,
     "seoDescription": null,
     "ogImage": null,
-    "createdAt": "2026-06-14T16:42:43.062Z",
-    "updatedAt": "2026-07-07T03:07:07.809Z",
+    "createdAt": "2026-06-14T16:42:43.067Z",
+    "updatedAt": "2026-07-08T01:40:42.370Z",
     "tags": []
    },
    {
@@ -1532,7 +1512,27 @@
     "seoDescription": null,
     "ogImage": null,
     "createdAt": "2026-06-14T16:42:43.065Z",
-    "updatedAt": "2026-07-07T03:07:07.815Z",
+    "updatedAt": "2026-07-08T01:40:42.367Z",
+    "tags": []
+   },
+   {
+    "id": "cmqe0izg5001vec7769yd5azv",
+    "slug": "snowflake-summit-2025-takeaways",
+    "title": "Just Back from Snowflake Summit 2025: What Stood Out, What Got Us Thinking, and What's Next",
+    "excerpt": "We just returned from Snowflake Summit 2025 in San Francisco, and beyond a roadmap full of exciting updates, what stood out were the thoughtful conversations, the clear direction the platform is heading, and how those shifts align with the way we help clients build smarter, faster, and more future-ready data solutions.",
+    "body": "Summit week always packs a lot into a few days, but this year the signal cut through the noise. The product roadmap was full of exciting updates, yet what stayed with us were the conversations on the floor, the clear direction the platform is heading, and the ways these shifts line up with how we at Viewnear help our clients build smarter, faster, and more future-ready data solutions.\n\n## Snowflake CoWork: natural language with structure behind it\n\nA big announcement was Snowflake CoWork, a natural language interface that lets users ask questions of their data in plain English.\n\nIt's not the first time we've seen this idea, but this version felt solid. It's built on governed, secure data. It respects roles, models, and access levels. That alone gives it a much stronger foundation than most.\n\nWe can see how this will streamline how teams interact with data. It has real potential to speed up insight and reduce reliance on dashboards. But, as always, the real impact will come from thoughtful implementation. Matching it with the right data models and use cases will be key.\n\n## Cortex AISQL: AI where your data already lives\n\nCortex AISQL also made a strong impression. It gives teams the ability to apply generative AI directly within SQL. You can summarize documents, analyze feedback, and classify unstructured data, all without moving anything out of Snowflake.\n\nIt's powerful, and it's clean. But like most tools, the real value depends on how it's applied: the choice of use case, how you prepare the data, how you define prompts. These are the details that decide whether AI is helpful or just interesting.\n\nThis is already opening up conversations with our clients about practical ways to experiment. Not just proof of concept for the sake of it, but solutions that tie directly to business goals.\n\n## Adaptive Compute and Gen 2 Warehouses\n\nOn the performance side, Snowflake announced Adaptive Compute and Gen 2 Warehouses. These upgrades make warehouses smarter. They scale more intelligently and manage resources with less manual effort.\n\nIt's a quieter change, but a meaningful one. For us, it means more efficient designs, simpler tuning, and better cost control across the board. These are the kinds of things that do not need a spotlight, but have real downstream impact in everything from architecture to day-to-day operations.\n\n## Better defaults for security\n\nSecurity improvements also came through clearly. Snowflake is introducing passkeys to replace passwords, stronger multi-factor authentication, and monitoring for leaked credentials.\n\nThis is the kind of platform-level shift that makes our work more effective. When the tools we build on already bake in strong security and identity controls, we can spend more time on strategic data access design and less time compensating for weak foundations.\n\n## dbt Projects now native in Snowflake\n\nThis was one of those announcements that might sound small at first but has a big impact on how teams work. Snowflake is introducing native support for dbt Projects directly in the Snowsight UI. It will be in public preview soon, and it brings a much tighter development loop to analytics engineering.\n\nThis is great news for teams trying to streamline development workflows, reduce tool switching, and make version control more natural. And it gives Viewnear another layer of optimization we can offer when building or modernizing client pipelines.\n\n## A quick note on Openflow and Datavolo\n\nOne thing we're keeping an eye on is Openflow, which is tied to Snowflake's recent acquisition of Datavolo. It signals a move toward handling more complex data movement and orchestration directly within the Snowflake ecosystem.\n\nThe full picture is still developing, but this could add new options for how teams manage data pipelines, especially at scale. As more details come out, we'll be looking for ways to bring this into client architectures (we are actively working on bringing it into a current project) where it makes sense.\n\n## A sense of direction\n\nWhat really struck us, beyond the announcements, was the tone of the Summit itself. The focus was not just on what's possible, but on what's usable. The room felt full of people who are doing the work. Not just talking about the future, but actively shaping it.\n\nAs a firm that spends every day inside Snowflake with clients, that energy hit close to home. There was a shared sense that the platform is maturing fast, and that this next phase of data and AI integration is going to need teams who can translate potential into progress.\n\n## What's next\n\nBack at Viewnear, we're already acting on what we saw. We're planning Cortex AISQL pilots, updating our architecture baselines to reflect the Gen 2 warehouse changes, and helping a few clients scope out how Snowflake CoWork could work inside their orgs.\n\nAs always, the goal is not to implement everything at once. It's to make smart, forward-looking moves that set our clients up for what's coming next.\n\nIf you're thinking about where to start or how to make sure the new tools actually drive impact, let's talk.\n\nWe just got back. We're inspired. And we're ready to build.",
+    "keyTakeaways": "[\"Snowflake CoWork brings natural language querying built on governed, secure, role-aware data, but real impact depends on pairing it with the right data models and use cases.\",\"Cortex AISQL applies generative AI directly inside SQL, summarizing, analyzing, and classifying unstructured data without moving anything out of Snowflake.\",\"Adaptive Compute, Gen 2 Warehouses, and stronger security defaults (passkeys, MFA, leaked-credential monitoring) free up time for strategic design over manual tuning.\",\"Native dbt Projects in Snowsight tighten the analytics engineering loop, and Openflow (via the Datavolo acquisition) points toward richer in-platform data movement.\",\"Viewnear is already acting: Cortex AISQL pilots, updated architecture baselines for Gen 2, and scoping Snowflake CoWork inside client orgs.\"]",
+    "coverImageId": null,
+    "coverImageUrl": "/assets/images/blog/snowflake-summit-2025-takeaways.jpg",
+    "authorId": "cmqe0izey0000ec77bdmefaex",
+    "authorTeamId": "cmqe0izfs0015ec7786f5mh8p",
+    "status": "PUBLISHED",
+    "publishedAt": "2025-06-06T00:00:00.000Z",
+    "seoTitle": null,
+    "seoDescription": null,
+    "ogImage": null,
+    "createdAt": "2026-06-14T16:42:43.062Z",
+    "updatedAt": "2026-07-08T01:40:42.360Z",
     "tags": []
    }
   ],
@@ -1617,21 +1617,21 @@
   ]
  },
  "blogPostTags": {
-  "cmqe0izg0001lec771vk7vu7h": [],
   "cmqe0izg1001nec77imtvc76t": [],
   "cmqe0izg2001pec77lrd9pcuq": [],
   "cmqe0izg3001rec77fqxdeonl": [],
   "cmqe0izfz001jec77x49eejy3": [],
-  "cmqe0izg6001xec77rfvk1tcz": [],
+  "cmqe0izg0001lec771vk7vu7h": [],
   "cmqe0izg80021ec77a3vvxw39": [],
   "cmqe0izg4001tec77tkwxmdp8": [],
+  "cmqe0izg6001xec77rfvk1tcz": [],
   "cmqe0izg7001zec77rpr8me4g": [],
-  "cmqe0izgb0027ec77vtjwsrmq": [],
   "cmqe0izgb0029ec77rmg6yl37": [],
   "cmqe0izgc002bec774izctco3": [],
   "cmqe0izfy001hec77ms0xgnia": [],
   "cmqe0izga0025ec773e005768": [],
-  "cmqe0izg5001vec7769yd5azv": [],
-  "cmqe0izg90023ec770lm0cnf5": []
+  "cmqe0izgb0027ec77vtjwsrmq": [],
+  "cmqe0izg90023ec770lm0cnf5": [],
+  "cmqe0izg5001vec7769yd5azv": []
  }
 }

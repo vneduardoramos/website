@@ -27,11 +27,11 @@ export function OneLineSwap() {
         <div>
           <p className="eyebrow eyebrow--invert mb-4">The one-line difference</p>
           <h2 className="max-w-md font-display text-3xl font-bold tracking-tight text-white md:text-4xl md:leading-[1.1]">
-            Changing your mind about a model is a one-line diff.
+            Changing models is a one-line diff.
           </h2>
           <p className="mt-4 max-w-md text-base leading-relaxed text-white/75">
             The query, the governance, and the data never move. When a stronger model
-            ships, we benchmark it on your use case and change one string.
+            ships, we benchmark it on the use case and change one string.
           </p>
           <dl className="mt-8 grid max-w-md grid-cols-2 gap-x-8 gap-y-6">
             {STATS.map((s) => (
@@ -75,7 +75,7 @@ export function OneLineSwap() {
             </pre>
           </div>
           <figcaption className="mt-3 font-mono text-[0.66rem] uppercase tracking-[0.14em] text-white/50">
-            Cortex AISQL &middot; runs inside your Snowflake account
+            Cortex AISQL &middot; runs inside the Snowflake account
           </figcaption>
         </figure>
       </div>

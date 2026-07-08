@@ -11,13 +11,13 @@ import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 
 export const metadata = pageMeta({
-  title: "Data + AI: the use cases we ship on your governed data",
+  title: "Data + AI: the use cases we ship on governed data",
   description:
-    "Document intelligence, cited answers, early-warning models, and agents that act: the use cases we ship into production with your team, using Snowflake Cortex on governed data.",
+    "Document intelligence, cited answers, early-warning models, and agents that act: the use cases we ship into production with the team, using Snowflake Cortex on governed data.",
   path: "/data-ai",
 });
 
-const HERO_CHIPS = ["In production, not a lab", "Runs in your Snowflake", "Governed by default", "Value from sprint one"];
+const HERO_CHIPS = ["In production, not a lab", "Runs in Snowflake", "Governed by default", "Value from sprint one"];
 
 // What we actually ship: concrete use cases, each with its Snowflake mechanism
 // and, where one exists, the real (anonymized) engagement that proves it.
@@ -25,7 +25,7 @@ const USE_CASES = [
   {
     eyebrow: "Documents",
     title: "Paperwork that reads itself",
-    body: "Claims, invoices, and contracts classified, extracted, and routed in seconds instead of hand-sorted piles. The document backlog becomes a table you can query.",
+    body: "Claims, invoices, and contracts classified, extracted, and routed in seconds instead of hand-sorted piles. The document backlog becomes a table teams can query.",
     mech: "AI_CLASSIFY · AI_EXTRACT · PARSE_DOCUMENT",
     stat: "60→95% accuracy · 4 sec per document",
     proof: { label: "Read the engagement →", href: "/case-studies/insurance-claims-cortex-ai" },
@@ -33,7 +33,7 @@ const USE_CASES = [
   {
     eyebrow: "Answers",
     title: "Executives who ask the data directly",
-    body: "Plain-language questions answered with citations against your governed definitions, so the Monday meeting starts from the same number, not three versions of it.",
+    body: "Plain-language questions answered with citations against governed definitions, so the Monday meeting starts from the same number, not three versions of it.",
     mech: "Cortex Analyst · Semantic Views · CoWork",
     stat: "Thousands of runaway SKUs, one catalog agent",
     proof: { label: "Read the engagement →", href: "/case-studies/sku-catalog-governance" },
@@ -41,13 +41,13 @@ const USE_CASES = [
   {
     eyebrow: "Foresight",
     title: "Churn and failures, flagged early",
-    body: "Models on your usage, billing, and sensor data that surface at-risk customers and equipment before the quarter ends, with the reasons attached.",
+    body: "Models on usage, billing, and sensor data that surface at-risk customers and equipment before the quarter ends, with the reasons attached.",
     mech: "Cortex ML · Snowpark",
   },
   {
     eyebrow: "Search",
-    title: "Your documents, searched by meaning",
-    body: "Policies, contracts, and wikis answered directly, with sources cited. Retrieval grounded in your content, so answers stay accurate and current.",
+    title: "Documents, searched by meaning",
+    body: "Policies, contracts, and wikis answered directly, with sources cited. Retrieval grounded in the organization's own content, so answers stay accurate and current.",
     mech: "Cortex Search · RAG",
   },
   {
@@ -57,9 +57,9 @@ const USE_CASES = [
     mech: "Cortex Agents · AI Agent Identity",
   },
   {
-    eyebrow: "In your tools",
-    title: "AI where your teams already work",
-    body: "Answers and actions flowing back into the ERP, CRM, and apps your business runs on, so nobody has to visit another dashboard to benefit.",
+    eyebrow: "Embedded",
+    title: "AI where teams already work",
+    body: "Answers and actions flowing back into the ERP, CRM, and apps the business runs on, so nobody has to visit another dashboard to benefit.",
     mech: "Streamlit · APIs · Zero-Copy Integrations",
   },
 ];
@@ -75,11 +75,11 @@ export default function DataAiPage() {
             eyebrow="Data + AI"
             title={
               <>
-                Six jobs your data could be doing{" "}
+                Six jobs enterprise data could be doing{" "}
                 <ScrollHighlight>by next quarter.</ScrollHighlight>
               </>
             }
-            description="Reading the paperwork, answering your executives, flagging churn before it lands, acting inside policy. These are the use cases we ship with your team, using Snowflake Cortex on governed data: proven small first, demoed every sprint, in production in 8–16 weeks."
+            description="Reading the paperwork, answering executives, flagging churn before it lands, acting inside policy. These are the use cases we ship with the team, using Snowflake Cortex on governed data: proven small first, demoed every sprint, in production in 8–16 weeks."
           >
             <div className="flex flex-wrap justify-center gap-2">
               {HERO_CHIPS.map((c) => (
@@ -103,7 +103,7 @@ export default function DataAiPage() {
                 Six jobs. In production, not in a lab.
               </h2>
               <p className="mt-4 max-w-xl text-lg leading-relaxed text-white/75">
-                Each one runs next to your governed data inside Snowflake. Where a real
+                Each one runs next to governed data inside Snowflake. Where a real
                 engagement proves it, the numbers are on the card.
               </p>
             </div>
@@ -143,8 +143,8 @@ export default function DataAiPage() {
       <Section className="section-warm relative overflow-hidden">
         <FeatureSplit
           eyebrow="Governed by default"
-          title="AI without shipping your data out"
-          body="Inference runs inside your Snowflake account, so prompts and results stay within the same perimeter as your data. Every call inherits the access controls, lineage, and Horizon governance you already trust, with Cortex guardrails screening for prompt injection and unsafe output."
+          title="AI without shipping the data out"
+          body="Inference runs inside the business's Snowflake account, so prompts and results stay within the same perimeter as the data. Every call inherits the access controls, lineage, and Horizon governance already in place, with Cortex guardrails screening for prompt injection and unsafe output."
           bullets={[
             "Models run next to governed data: no copies, no export",
             "Access, masking, and lineage inherited from Snowflake Horizon",
@@ -194,7 +194,7 @@ export default function DataAiPage() {
           align="center"
           eyebrow="Credentials"
           title="Certified to run AI on enterprise data"
-          intro="Your AI runs under Snowflake's independently audited controls, delivered by a SnowPro-certified team that does this every day."
+          intro="Every model runs under Snowflake's independently audited controls, delivered by a SnowPro-certified team that does this every day."
         />
         <div className="mt-12 flex justify-center">
           <PartnerBadges variant="logos" />
@@ -202,8 +202,8 @@ export default function DataAiPage() {
       </Section>
 
       <CtaBand
-        title="Put the right model on your data."
-        subtitle="Tell us the use case. We'll bring the model, the governance, and the people to ship it into production with your team, on Snowflake."
+        title="Put the right model on the data."
+        subtitle="Tell us the use case. We'll bring the model, the governance, and the people to ship it into production with the team, on Snowflake."
       />
     </>
   );

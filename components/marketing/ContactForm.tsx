@@ -174,7 +174,7 @@ export function ContactForm() {
         </div>
         <div>
           <label htmlFor="contact-role" className="mb-2 block text-sm text-muted">
-            What do you need help with?
+            What can we help with?
           </label>
           <select id="contact-role" name="role" defaultValue="" className={inputCls}>
             <option value="">Select an option</option>

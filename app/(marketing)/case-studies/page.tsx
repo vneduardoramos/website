@@ -114,7 +114,7 @@ export default async function CaseStudiesPage() {
           <div>
             <p className="eyebrow mb-3">Verified proof</p>
             <h2 className="text-balance font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
-              Proof you can verify today.
+              Proof anyone can verify today.
             </h2>
             <p className="mt-3 text-muted">
               Viewnear is a Snowflake Premier Partner and a Snowflake CoCo

@@ -12,7 +12,7 @@ export const BENEFITS: Benefit[] = [
   {
     label: "Health",
     title: "Health insurance",
-    body: "Comprehensive medical coverage for you and your whole family.",
+    body: "Comprehensive medical coverage for the whole family.",
   },
   {
     label: "Health",
@@ -32,7 +32,7 @@ export const BENEFITS: Benefit[] = [
   {
     label: "Growth",
     title: "Learning & certifications",
-    body: "Training, SnowPro certifications, conference travel, and event sponsorships: we reinvest in your growth.",
+    body: "Training, SnowPro certifications, conference travel, and event sponsorships: we reinvest in the team's growth.",
   },
   {
     label: "Together",
@@ -42,6 +42,6 @@ export const BENEFITS: Benefit[] = [
   {
     label: "Tooling",
     title: "The tools to do the work",
-    body: "Modern hardware, paid AI tooling, and the licenses your projects need, from day one.",
+    body: "Modern hardware, paid AI tooling, and the licenses each project needs, from day one.",
   },
 ];

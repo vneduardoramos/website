@@ -137,8 +137,8 @@ export function IndustryCard({
 }
 
 export function CtaBand({
-  title = "Let's stand up your data & AI practice.",
-  subtitle = "Tell us where you are (migrating, scaling, or shipping AI) and we'll map the fastest path to use cases in production, run by your own team.",
+  title = "Let's stand up a lasting data & AI practice.",
+  subtitle = "Tell us where the organization stands (migrating, scaling, or shipping AI) and we'll map the fastest path to use cases in production, run by in-house teams.",
 }: {
   title?: string;
   subtitle?: string;

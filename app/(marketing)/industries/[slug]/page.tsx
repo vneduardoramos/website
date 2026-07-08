@@ -120,7 +120,7 @@ export default async function IndustryDetailPage({
             )}
             <div className="mt-8 flex flex-wrap gap-4">
               <Link href="/contact" className="btn-primary">
-                Discuss your {industry.name.toLowerCase()} data
+                Discuss {industry.name.toLowerCase()} data
               </Link>
               {industry.caseStudies?.length > 0 && (
                 <Link href="/case-studies" className="btn-ghost">
@@ -144,7 +144,7 @@ export default async function IndustryDetailPage({
                 <span className="text-gradient">{industry.name}</span>.
               </>
             }
-            body={`You won't spend the first month explaining ${industry.name.toLowerCase()} to us. The team arrives knowing the sector's systems, regulations, and reporting rhythms, then builds the data models, governance, and dashboards with your team, against the metrics you already answer for.`}
+            body={`No one spends the first month explaining ${industry.name.toLowerCase()} to us. The team arrives knowing the sector's systems, regulations, and reporting rhythms, then builds the data models, governance, and dashboards alongside in-house teams, against the metrics they already answer for.`}
             bullets={flavor.bullets}
             image={`/assets/images/industries/${industry.slug}-2.jpg`}
             imageAlt={`${industry.name} data and AI solutions built on Snowflake`}
@@ -160,11 +160,11 @@ export default async function IndustryDetailPage({
       <Section>
         <SectionHeading
           eyebrow="What we stand up"
-          title={`The foundation your ${industry.name.toLowerCase()} practice runs on`}
+          title={`The foundation a ${industry.name.toLowerCase()} practice runs on`}
           intro={
             story
               ? `The capabilities we put in place, and how fast. Measured results from a real ${industry.name.toLowerCase()} engagement are in the featured story below.`
-              : "The capabilities we put in place, and how fast we get you to first value."
+              : "The capabilities we put in place, and how fast they reach first value."
           }
         />
         <div className="mt-12">
@@ -198,7 +198,7 @@ export default async function IndustryDetailPage({
       {deliverables.length > 0 ? (
         <Section>
           <SectionHeading
-            eyebrow="What you get"
+            eyebrow="What gets delivered"
             title="Deliverables"
             intro="Tangible outcomes engineered to move the metrics that matter."
           />
@@ -249,7 +249,7 @@ export default async function IndustryDetailPage({
           </>
         }
         cta={{
-          label: `Discuss your ${industry.name.toLowerCase()} data`,
+          label: `Discuss ${industry.name.toLowerCase()} data`,
           href: "/contact",
         }}
         tintClass={flavor.glow}
@@ -261,7 +261,7 @@ export default async function IndustryDetailPage({
           <PlateCard
             label="Compliance"
             refCode={sectorCode}
-            title="Built for your regulators"
+            title="Built for the regulators"
           >
             {flavor.compliance}{" "}
             <Link
