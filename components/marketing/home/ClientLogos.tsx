@@ -14,9 +14,14 @@ import type { BandLogo } from "@/lib/client-bands";
 export function LogoRow({
   logos,
   className,
+  scaleOrigin = "bottom center",
 }: {
   logos: BandLogo[];
   className?: string;
+  /** Transform origin for per-logo nudges. Home bands align on a shared
+   *  baseline ("bottom center"); a plain uniform strip (TrustBar) wants
+   *  "center" so a scaled logo stays vertically centered with the rest. */
+  scaleOrigin?: string;
 }) {
   return (
     <div
@@ -43,7 +48,7 @@ export function LogoRow({
               moved
                 ? {
                     transform: `translate(${c.dx}px, ${c.dy}px) scale(${c.scale})`,
-                    transformOrigin: "bottom center",
+                    transformOrigin: scaleOrigin,
                   }
                 : undefined
             }

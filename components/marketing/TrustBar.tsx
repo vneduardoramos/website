@@ -17,16 +17,16 @@ export async function TrustBar({
   const bands = await getClientBands();
   if (!bands.top || bands.top.length === 0) return null;
   // Keep the per-logo scale/horizontal nudges (they equalize visual weight,
-  // e.g. the compact H-E-B badge), but zero the vertical nudge: one logo's
-  // ~46px upward translate was tuned for the home band and collides with the
-  // eyebrow when this strip is reused elsewhere.
+  // e.g. the compact H-E-B badge), but zero the vertical nudge tuned for the
+  // home band, and scale from center (not the home baseline) so every logo
+  // stays vertically centered in this uniform strip.
   const logos = bands.top.map((l) => ({ ...l, dy: 0 }));
   return (
     <Section className={tint ? "section-tint" : undefined}>
       <div className="flex flex-col items-center gap-12">
         <span className="eyebrow">{label}</span>
         <div className="w-full">
-          <LogoRow logos={logos} />
+          <LogoRow logos={logos} scaleOrigin="center" />
         </div>
       </div>
     </Section>
