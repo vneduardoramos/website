@@ -176,6 +176,7 @@ export default function SecurityPage() {
               label={p.label}
               refCode={`CTRL-0${i + 1}`}
               title={p.title}
+              stamp
             >
               {p.body}
             </PlateCard>

@@ -4,33 +4,38 @@
  * LedgerCard for offers and lists. Both carry an eyebrow; neither uses
  * icon tiles, colored rails, or lift-on-hover.
  */
+import { SnowMark } from "@/components/marketing/SnowMark";
 
 /** 03 · Plate: flat, square, blueprint registration ticks in the corners,
- *  eyebrow set as a spec line (label left, reference code right). */
+ *  eyebrow set as a spec line (label left, reference code right). Set `stamp`
+ *  on platform-native plates for a faint corner Snowflake cue. */
 export function PlateCard({
   label,
   refCode,
   title,
+  stamp = false,
   children,
 }: {
   label: string;
   refCode?: string;
   title: string;
+  stamp?: boolean;
   children: React.ReactNode;
 }) {
   const tick = "pointer-events-none absolute h-2 w-2 border-primaryDeep opacity-50 transition-opacity duration-300 group-hover:opacity-100";
   return (
-    <div className="group relative h-full border border-border bg-surface p-6">
+    <div className="group relative h-full overflow-hidden border border-border bg-surface p-6">
       <span aria-hidden className={`${tick} left-1.5 top-1.5 border-l-[1.5px] border-t-[1.5px]`} />
       <span aria-hidden className={`${tick} right-1.5 top-1.5 border-r-[1.5px] border-t-[1.5px]`} />
       <span aria-hidden className={`${tick} bottom-1.5 left-1.5 border-b-[1.5px] border-l-[1.5px]`} />
       <span aria-hidden className={`${tick} bottom-1.5 right-1.5 border-b-[1.5px] border-r-[1.5px]`} />
+      {stamp && <SnowMark size={44} className="pointer-events-none absolute -bottom-2 -right-2 opacity-[0.07]" />}
       <div className="flex items-baseline justify-between gap-3 font-mono text-[0.64rem] font-semibold uppercase tracking-[0.16em]">
         <span className="text-primaryDeep">{label}</span>
         {refCode && <span className="font-normal text-muted">{refCode}</span>}
       </div>
       <h3 className="mt-3 font-display text-lg font-bold text-foreground">{title}</h3>
-      <div className="mt-2 text-sm leading-relaxed text-muted">{children}</div>
+      <div className="relative mt-2 text-sm leading-relaxed text-muted">{children}</div>
     </div>
   );
 }

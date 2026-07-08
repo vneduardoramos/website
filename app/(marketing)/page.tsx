@@ -16,6 +16,7 @@ import { LogoRow } from "@/components/marketing/home/ClientLogos";
 import { getClientBands } from "@/lib/client-bands";
 import { SectionDecor } from "@/components/marketing/Decor";
 import { PlateCard } from "@/components/marketing/Cards";
+import { SnowMark, SnowflakeDivider } from "@/components/marketing/SnowMark";
 import { LeadershipStrip, FaceStack } from "@/components/marketing/LeadershipStrip";
 import { JsonLd } from "@/components/JsonLd";
 
@@ -151,6 +152,9 @@ export default async function HomePage() {
       {/* 3b) WHO WE SERVE: industries */}
       <IndustriesStrip />
 
+      {/* Ambient cue: a snowflake dinkus marks the shift from what we do to how we charge. */}
+      <SnowflakeDivider className="my-4" />
+
       {/* 4) BUILT FOR OUTCOMES: now that the reader knows what we deliver, the
           thesis explains how we charge for it (and why that's safer for them). */}
       <Section>
@@ -283,6 +287,8 @@ export default async function HomePage() {
       <Section>
         <SectionFold angle={12}>
           <div className="panel-indigo relative overflow-hidden rounded-3xl p-8 shadow-xl md:p-14">
+            {/* Ambient cue: the platform is literally the backdrop. */}
+            <SnowMark variant="white" size={200} className="pointer-events-none absolute -bottom-12 -left-10 opacity-[0.05]" />
             <div className="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               <div>
                 <p className="eyebrow eyebrow--invert mb-4">Proof, not promises</p>

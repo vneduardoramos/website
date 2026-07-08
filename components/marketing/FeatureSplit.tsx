@@ -2,6 +2,7 @@ import { Img as Image } from "@/components/marketing/Img";
 import Link from "next/link";
 import { Reveal } from "@/components/marketing/Motion";
 import { ParallaxVisual } from "@/components/marketing/home/SplitVisuals";
+import { SnowMark } from "@/components/marketing/SnowMark";
 import { cn } from "@/lib/utils";
 
 /** Browser-framed image, floated with a soft shadow + faint brand tint. */
@@ -83,11 +84,8 @@ export function FeatureSplit({
           <ul className="mt-6 space-y-3">
             {bullets.map((b) => (
               <li key={b} className="flex items-start gap-3">
-                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primaryDeep">
-                  <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg>
-                </span>
+                {/* Ambient Snowflake cue: the mark stands in for the bullet. */}
+                <SnowMark size={16} className="mt-1 opacity-55" />
                 <span className="text-foreground/90">{b}</span>
               </li>
             ))}

@@ -262,6 +262,7 @@ export default async function IndustryDetailPage({
             label="Compliance"
             refCode={sectorCode}
             title="Built for the regulators"
+            stamp
           >
             {flavor.compliance}{" "}
             <Link

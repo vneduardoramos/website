@@ -25,7 +25,7 @@ export function SectionHeading({
   size = "section",
   align,
 }: {
-  eyebrow?: string;
+  eyebrow?: React.ReactNode;
   title: React.ReactNode;
   intro?: string;
   /** Legacy alias for align="center". */

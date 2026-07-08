@@ -8,6 +8,7 @@ import {
 import { LeadershipStrip } from "@/components/marketing/LeadershipStrip";
 import { PlateCard, LedgerCard } from "@/components/marketing/Cards";
 import { TrustBar } from "@/components/marketing/TrustBar";
+import { SnowMark } from "@/components/marketing/SnowMark";
 import { MetricBand, InlineCta } from "@/components/marketing/Blocks";
 import { PageHero } from "@/components/marketing/PageHero";
 import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
@@ -355,7 +356,7 @@ export default async function ServicesPage() {
           just the scent trail. */}
       <Section className="section-warm">
         <SectionHeading
-          eyebrow="What we build on"
+          eyebrow={<><SnowMark size={11} />What we build on</>}
           title="Why we build Snowflake-native"
           intro="Openflow to Horizon Catalog to Cortex: we lead with Snowflake-native products over third-party tools, so there is one governed copy of the data, one lineage to audit, and one trusted context every AI agent relies on. dbt is the one external framework we run, natively against Snowflake."
         />
