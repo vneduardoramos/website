@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import type { EditRequest } from "@/components/marketing/EditModeProvider";
+import { MIN_ZOOM, MAX_ZOOM } from "@/lib/image-overrides";
 
 interface PexelsPhoto {
   id: number;
@@ -232,7 +233,7 @@ export function ImageEditOverlay({ request, onClose }: { request: EditRequest; o
                     className="pointer-events-none h-full w-full object-cover"
                     style={{
                       objectPosition: `${focalX}% ${focalY}%`,
-                      transform: zoom > 1 ? `scale(${zoom})` : undefined,
+                      transform: zoom !== 1 ? `scale(${zoom})` : undefined,
                       transformOrigin: `${focalX}% ${focalY}%`,
                     }}
                   />
@@ -244,7 +245,11 @@ export function ImageEditOverlay({ request, onClose }: { request: EditRequest; o
 
               <label className="block text-sm font-medium text-foreground">
                 Zoom <span className="font-normal text-muted">{zoom.toFixed(2)}×</span>
-                <input type="range" min={1} max={3} step={0.05} value={zoom} onChange={(e) => setZoom(Number(e.target.value))} className="mt-1 w-full" />
+                <input type="range" min={MIN_ZOOM} max={MAX_ZOOM} step={0.05} value={zoom} onChange={(e) => setZoom(Number(e.target.value))} className="mt-1 w-full" />
+                <span className="mt-1 flex justify-between text-[0.7rem] text-muted">
+                  <span>Zoom out to fit</span>
+                  <span>Zoom in to crop</span>
+                </span>
               </label>
 
               <button type="button" onClick={recenter} className="self-start text-xs font-semibold text-primaryDeep underline-offset-4 hover:underline">

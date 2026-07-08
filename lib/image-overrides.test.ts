@@ -16,10 +16,11 @@ describe("isOverrideActive", () => {
     expect(isOverrideActive(null)).toBe(false);
     expect(isOverrideActive(ov())).toBe(false);
   });
-  it("is true when focal is off-center, zoomed, or src replaced", () => {
+  it("is true when focal is off-center, zoomed in OR out, or src replaced", () => {
     expect(isOverrideActive(ov({ focalX: 30 }))).toBe(true);
     expect(isOverrideActive(ov({ focalY: 70 }))).toBe(true);
     expect(isOverrideActive(ov({ zoom: 1.5 }))).toBe(true);
+    expect(isOverrideActive(ov({ zoom: 0.6 }))).toBe(true);
     expect(isOverrideActive(ov({ mediaUrl: "/uploads/b.jpg" }))).toBe(true);
   });
 });
@@ -47,6 +48,13 @@ describe("applyOverride", () => {
     expect(r.style?.objectFit).toBe("cover");
     expect(r.style?.objectPosition).toBe("50% 50%");
     expect(r.style?.transform).toBe("scale(1.5)");
+    expect(r.style?.transformOrigin).toBe("50% 50%");
+  });
+
+  it("applies a shrink transform when zoomed out below 1 (fit inside the slot)", () => {
+    const r = applyOverride("/a.jpg", ov({ zoom: 0.6 }));
+    expect(r.style?.objectFit).toBe("cover");
+    expect(r.style?.transform).toBe("scale(0.6)");
     expect(r.style?.transformOrigin).toBe("50% 50%");
   });
 
@@ -83,12 +91,13 @@ describe("parseOverrideInput", () => {
     expect(parseOverrideInput({})).toBeNull();
     expect(parseOverrideInput({ key: "" })).toBeNull();
   });
-  it("accepts a key and clamps numeric fields", () => {
+  it("accepts a key and clamps numeric fields (zoom clamps to [0.3, 3])", () => {
     const r = parseOverrideInput({ key: "/a.jpg", focalX: 200, focalY: -5, zoom: 9 });
     expect(r?.key).toBe("/a.jpg");
     expect(r?.data.focalX).toBe(100);
     expect(r?.data.focalY).toBe(0);
     expect(r?.data.zoom).toBe(3);
+    expect(parseOverrideInput({ key: "/a.jpg", zoom: 0.05 })?.data.zoom).toBe(0.3);
   });
   it("keeps mediaUrl null and trims alt", () => {
     const r = parseOverrideInput({ key: "/a.jpg", mediaUrl: null, alt: "  hi  " });

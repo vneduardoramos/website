@@ -1,5 +1,12 @@
 import type { CSSProperties } from "react";
 
+/** Zoom bounds shared by the editor slider, the live render, and the API
+ *  clamp. Below 1 the image shrinks under its cover baseline so a smaller /
+ *  differently-shaped image fits inside its slot (with margins) instead of
+ *  being cropped; above 1 it magnifies. */
+export const MIN_ZOOM = 0.3;
+export const MAX_ZOOM = 3;
+
 export type ImageOverrideData = {
   key: string;
   mediaUrl: string | null;
@@ -13,13 +20,14 @@ export type OverrideMap = Record<string, ImageOverrideData>;
 
 /**
  * Is this override doing anything visible? An override is "active" when it
- * pans (focal off-center), zooms in, or replaces the source. Only then do we
- * apply the cropper CSS / wrap the live image; when inactive the render path
- * must stay byte-identical to the unedited default.
+ * pans (focal off-center), zooms (in OR out, i.e. any zoom != 1), or replaces
+ * the source. Only then do we apply the cropper CSS / wrap the live image;
+ * when inactive the render path must stay byte-identical to the unedited
+ * default.
  */
 export function isOverrideActive(ov: ImageOverrideData | null): boolean {
   if (!ov) return false;
-  return ov.focalX !== 50 || ov.focalY !== 50 || ov.zoom > 1 || Boolean(ov.mediaUrl);
+  return ov.focalX !== 50 || ov.focalY !== 50 || ov.zoom !== 1 || Boolean(ov.mediaUrl);
 }
 
 /**
@@ -29,8 +37,9 @@ export function isOverrideActive(ov: ImageOverrideData | null): boolean {
  *   - the image fills its slot via `object-fit: cover`
  *   - `object-position: focalX% focalY%` pans the natural cover overflow
  *   - `transform: scale(zoom)` with `transform-origin` at the focal point
- *     magnifies the image, anchored on the focal point, which GUARANTEES a
- *     large pannable region once zoomed
+ *     scales the image, anchored on the focal point: zoom > 1 magnifies (which
+ *     GUARANTEES a large pannable region), zoom < 1 shrinks it below the cover
+ *     baseline so the whole image fits inside the slot with margins
  * The caller (Img / the editor frame) supplies the `overflow: hidden` slot
  * that clips the magnified image. `focalX/focalY` are reinterpreted as the
  * focal/pan point; `zoom` as magnification. No schema change.
@@ -52,7 +61,7 @@ export function applyOverride(
     objectFit: "cover",
     objectPosition: `${o.focalX}% ${o.focalY}%`,
   };
-  if (o.zoom > 1) {
+  if (o.zoom !== 1) {
     style.transform = `scale(${o.zoom})`;
     style.transformOrigin = `${o.focalX}% ${o.focalY}%`;
   }
@@ -76,7 +85,7 @@ export function parseOverrideInput(
   if ("mediaUrl" in b) data.mediaUrl = typeof b.mediaUrl === "string" ? b.mediaUrl : null;
   if (typeof b.focalX === "number") data.focalX = clamp(b.focalX, 0, 100);
   if (typeof b.focalY === "number") data.focalY = clamp(b.focalY, 0, 100);
-  if (typeof b.zoom === "number") data.zoom = clamp(b.zoom, 1, 3);
+  if (typeof b.zoom === "number") data.zoom = clamp(b.zoom, MIN_ZOOM, MAX_ZOOM);
   if ("alt" in b) data.alt = typeof b.alt === "string" ? b.alt.trim() : null;
   return { key: b.key, data };
 }
