@@ -295,12 +295,12 @@ select:focus-visible,
       linear-gradient(180deg, rgb(255 243 226), rgb(255 249 242));
   }
   /* Light warm callout box: for framed info boxes that should read as a warm
-     highlight (e.g. build-vs-buy). Warm tint + warm hairline + accent top rule. */
+     highlight (e.g. build-vs-buy). Warm tint + a uniform warm hairline (no
+     colored top rail: card rails are banned site-wide). */
   .panel-warm {
     position: relative;
     overflow: hidden;
     border: 1px solid rgb(var(--color-accent) / 0.22);
-    border-top: 3px solid rgb(var(--color-accent));
     background: linear-gradient(180deg, rgb(var(--color-accent) / 0.07), rgb(var(--color-gold) / 0.04));
   }
   /* Deep royal-indigo authority band, the single dark anchor. Light text;
