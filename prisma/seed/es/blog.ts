@@ -162,7 +162,7 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
       "El precio por hora se alineaba con un mundo donde el valor se creaba mediante la ejecución manual; la IA ha roto ese vínculo al automatizar gran parte del trabajo mecánico.",
       "La experiencia no se ha erosionado, se ha movido hacia arriba: de la ejecución manual al diseño, la supervisión y la orquestación.",
       "Snowflake hace que los resultados sean medibles casi en tiempo real, que es exactamente por qué el precio basado en tiempo se desmorona tan rápido en la plataforma.",
-      "Viewnear opera un modelo de capacidad flexible: primero define el resultado, luego diseña la entrega en retrospectiva con la combinación adecuada de roles humanos y agentes de IA.",
+      "Viewnear opera un modelo de capacidad flexible: primero define el resultado, luego diseña la entrega en reversa, partiendo de ese resultado, con la combinación adecuada de roles humanos y agentes de IA.",
       "Los servicios basados en resultados no son más baratos; exigen más experiencia sénior, criterios de éxito claros y una responsabilidad que recae en el proveedor.",
     ],
   },

@@ -13,7 +13,7 @@ export const industriesEs: Record<string, { name?: string; headline?: string; in
     deliverables: [
       { title: "Analítica de costo y cronograma de proyecto", description: "Presupuesto frente al real, valor ganado y riesgo de cronograma en una sola vista." },
       { title: "Tableros de portafolio y activos", description: "Ocupación, rendimiento y desempeño en todo el portafolio." },
-      { title: "Base de datos de proyecto unificada", description: "Una fuente gobernada que consolida los sistemas ERP, de proyecto y de campo." },
+      { title: "Cimiento de datos de proyecto unificado", description: "Una fuente gobernada que consolida los sistemas ERP, de proyecto y de campo." },
       { title: "Modelos de pronóstico y valuación", description: "Insumos basados en datos para valuación, planeación de capital y licitaciones." },
     ],
     stats: [{ label: "Clientes en esta industria", value: "6+" }],
@@ -32,7 +32,7 @@ export const industriesEs: Record<string, { name?: string; headline?: string; in
       { title: "Analítica de éxito estudiantil", description: "Información de participación, logro y retención en un solo lugar." },
       { title: "Reportes institucionales", description: "Reportes normativos, de acreditación y para financiadores, automatizados." },
       { title: "Tableros de inscripción y operación", description: "Admisiones, capacidad y desempeño operativo de un vistazo." },
-      { title: "Base de datos educativa unificada", description: "Una base gobernada que abarca los sistemas académicos y administrativos." },
+      { title: "Cimiento de datos educativo unificado", description: "Una base gobernada que abarca los sistemas académicos y administrativos." },
     ],
     stats: [{ label: "Clientes en esta industria", value: "5+" }],
   },
@@ -68,7 +68,7 @@ export const industriesEs: Record<string, { name?: string; headline?: string; in
       { title: "Analítica de OEE y producción", description: "Disponibilidad, desempeño y calidad en una sola vista en vivo." },
       { title: "Visibilidad de la cadena de suministro", description: "Seguimiento del proveedor a la entrega, gobernado en cada paso." },
       { title: "Pipelines de datos de IoT y sensores", description: "Datos de máquina y sensores de alto volumen, ingeridos y gobernados." },
-      { title: "Modelos de mantenimiento predictivo", description: "Bases de datos para pronosticar fallas antes de que ocurran." },
+      { title: "Modelos de mantenimiento predictivo", description: "Cimientos de datos para pronosticar fallas antes de que ocurran." },
     ],
     stats: [{ label: "Clientes en esta industria", value: "7+" }],
   },
@@ -86,13 +86,13 @@ export const industriesEs: Record<string, { name?: string; headline?: string; in
       { title: "Analítica de audiencia y participación", description: "Una vista unificada de quién ve, lee y se suscribe." },
       { title: "Atribución de campañas y anuncios", description: "Atribución multicanal que conecta la inversión con los resultados." },
       { title: "Analítica de desempeño de contenido", description: "Qué resuena, por título, formato y plataforma." },
-      { title: "Base de datos de medios unificada", description: "Una base gobernada que abarca los sistemas de anuncios, suscripción y contenido." },
+      { title: "Cimiento de datos de medios unificado", description: "Una base gobernada que abarca los sistemas de anuncios, suscripción y contenido." },
     ],
     stats: [{ label: "Clientes en esta industria", value: "5+" }],
   },
   "retail-cpg": {
     name: "Retail y CPG",
-    headline: "El margen en retail es delgado. Las decisiones basadas en datos son donde se recupera.",
+    headline: "El margen en retail es estrecho. Las decisiones basadas en datos son donde se recupera.",
     intro:
       "Desde los bienes perecederos y la producción de alimentos hasta el retail omnicanal y la lealtad, unificamos los datos de ventas, inventario, producción y clientes en analítica casi en tiempo real que afina las decisiones de inventario, margen y merchandising.",
     challenges: [

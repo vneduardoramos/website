@@ -203,7 +203,7 @@ En conjunto, CoWork y CoCo muestran la ambición más amplia de Snowflake: dar s
 
 Los agentes de IA se vuelven mucho más valiosos cuando pueden conectarse a los sistemas donde el trabajo realmente ocurre.
 
-El trabajo empresarial no vive solo en las bases de datos. Vive en sistemas CRM, sistemas ERP, sistemas de HR, herramientas de productividad, plataformas de tickets, herramientas de colaboración, APIs, documentos y aplicaciones internas.
+El trabajo empresarial no vive solo en las bases de datos. Vive en sistemas CRM, sistemas ERP, sistemas de RR. HH., herramientas de productividad, plataformas de tickets, herramientas de colaboración, APIs, documentos y aplicaciones internas.
 
 Eso significa que el plano de control agéntico debe conectarse más allá de la capa de datos.
 
