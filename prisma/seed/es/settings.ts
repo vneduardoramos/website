@@ -3,7 +3,7 @@ export const siteSettingsEs: Record<string, unknown> = {
   hero: {
     headline: "De la estrategia de datos a la IA en producción, sobre Snowflake.",
     subhead:
-      "Elegir Snowflake es la parte fácil. Lo difícil es lo que se construye encima. Ahí entramos: montamos una práctica de datos que da cifras confiables para decidir y una práctica de IA que de verdad llega a producción. Las armamos junto con su equipo y se las dejamos funcionando, en toda América.",
+      "Escoger Snowflake es lo fácil. Lo difícil es lo que se construye encima. Ahí entramos: montamos una práctica de datos que da números confiables para decidir y una práctica de IA que sí llega a producción. Las armamos con su equipo y se las dejamos operando, en toda América.",
   },
   stats: [
     { label: "Nivel de partner de Snowflake", value: "Premier" },
