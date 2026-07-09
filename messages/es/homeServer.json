@@ -4,20 +4,20 @@
     "title": "Un solo equipo responsable, todo el stack de datos",
     "body": "De bases gobernadas y pipelines confiables a analítica y agentes de IA en producción: estrategia, entrega y capacitación, sobre Snowflake.",
     "learnMore": "Más información",
-    "engageEyebrow": "Cómo trabajamos juntos",
+    "engageEyebrow": "Cómo le entramos",
     "engageTitle": "Tres formas de contratar la misma entrega responsable.",
     "engagePoints": [
       "Costo fijo: un resultado definido a un precio cerrado",
-      "Tiempo y materiales: descubrimiento y alcance que se van ajustando",
-      "Ampliación de equipo: gente certificada trabajando junto a los suyos",
-      "El discovery pagado fija el alcance; las bases entran en producción en 8 a 16 semanas"
+      "Time & materials: discovery y scope que se van ajustando",
+      "Staff augmentation: gente certificada trabajando junto a la suya",
+      "El discovery pagado fija el scope; las bases entran a producción en 8 a 16 semanas"
     ],
     "pricingLink": "Cómo funcionan los precios"
   },
   "industriesStrip": {
     "eyebrow": "Industrias",
     "title": "Conocemos a fondo los sectores donde operan las empresas",
-    "body": "Modelos de datos, gobierno y cumplimiento propios de cada sector, integrados desde el primer día en siete industrias.",
+    "body": "Modelos de datos, gobierno y compliance propios de cada sector, integrados desde el día uno en siete industrias.",
     "allIndustries": "Todas las industrias",
     "names": [
       "Servicios financieros",

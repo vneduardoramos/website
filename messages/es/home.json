@@ -1,37 +1,37 @@
 {
   "meta": {
     "title": "Viewnear: datos e IA en producción, sobre Snowflake.",
-    "description": "Viewnear ayuda a las empresas a montar dos capacidades que se quedan en casa: una práctica de datos que da cifras confiables para decidir y una práctica de IA que de verdad llega a producción. Sobre Snowflake, operada por su propio equipo, en toda América."
+    "description": "Viewnear ayuda a las empresas a montar dos capacidades que se quedan en casa: una práctica de datos que da números confiables para decidir y una práctica de IA que sí llega a producción. Sobre Snowflake, operada por su propio equipo, en toda América."
   },
   "foundation": {
     "eyebrow": "La base",
     "title": "Datos en los que todo el equipo confía",
-    "body": "Montamos la base gobernada en Snowflake sobre la que se apoya todo lo demás. Así cada área trabaja con la misma información, al día y confiable, en lugar de cinco hojas de cálculo que nunca cuadran.",
+    "body": "Montamos la base gobernada en Snowflake sobre la que se apoya todo lo demás. Así cada área trabaja con los mismos números, al día y confiables, en lugar de cinco Excels que nunca cuadran.",
     "bullets": [
       "Una sola fuente de verdad gobernada, alimentada por los sistemas ERP, CRM y SaaS que ya usan",
       "Pipelines que la mantienen al día, probada y confiable",
-      "Gobierno y linaje con Horizon Catalog, más Horizon Context: un mismo contexto de negocio que comparten todos los equipos y agentes de IA"
+      "Gobierno y linaje con Horizon Catalog, más Horizon Context: un mismo contexto de negocio para todos los equipos y agentes de IA"
     ],
-    "cta": "Ver los servicios"
+    "cta": "Ver servicios"
   },
   "ai": {
     "eyebrow": "IA aplicada",
     "title": "IA que los equipos sí usan",
-    "body": "Con los datos en orden, la IA deja de ser un experimento. Cortex corre seguro junto a esos datos y apoya cada respuesta en Horizon Context, para que refleje su negocio y no lo que adivina un modelo genérico.",
+    "body": "Con los datos en orden, la IA deja de ser un experimento. Cortex corre seguro junto a esos datos y arma cada respuesta desde Horizon Context, para que refleje su negocio y no lo que adivina un modelo genérico.",
     "bullets": [
       "LLMs y ML de Cortex corriendo junto a datos gobernados",
-      "Snowflake CoWork y Cortex Agents que actúan, no solo grafican",
+      "Snowflake CoWork y Cortex Agents que actúan, no solo arman un dashboard",
       "Respuestas y acciones que llegan a las herramientas donde su equipo ya trabaja"
     ],
-    "cta": "Ver los servicios"
+    "cta": "Ver servicios"
   },
   "outcomes": {
     "heading": "La hora nunca fue lo importante. <hl>El resultado siempre lo fue.</hl>",
-    "lede": "Durante años, una factura de servicios era gente por una tarifa, porque el valor estaba en el trabajo a mano. La IA rompió esa cuenta: hoy la parte mecánica se automatiza, y lo que de verdad pesa se movió a otro lado, a decidir qué construir, dirigir a los agentes que lo construyen y responder por lo que entregan.",
+    "lede": "Durante años, una factura de servicios era gente por una tarifa, porque el valor estaba en el trabajo a mano. La IA rompió esa cuenta: hoy la parte mecánica se automatiza y lo que de verdad pesa se movió a otro lado, a decidir qué construir, dirigir a los agentes que lo construyen y responder por lo que entregan.",
     "beats": [
       {
         "title": "La automatización rompió la hora facturable",
-        "body": "Cobrar por hora tenía sentido cuando el valor venía de personas trabajando a mano. Hoy la IA hace buena parte de ese trabajo, así que pagar por hora termina premiando la lentitud y castigando justo la eficiencia que buscábamos. Por eso amarramos nuestra tarifa al resultado: terminar antes nos conviene a los dos."
+        "body": "Cobrar por hora tenía sentido cuando el valor venía de gente trabajando a mano. Hoy la IA hace buena parte de ese trabajo, así que cobrar por hora acaba premiando la lentitud y castigando justo la eficiencia que buscábamos. Por eso amarramos nuestra tarifa al resultado: acabar antes nos conviene a los dos."
       },
       {
         "title": "La experiencia cambió de lugar",
@@ -56,33 +56,33 @@
     "heading": {
       "eyebrow": "Bajo riesgo por diseño",
       "title": "Una apuesta grande que no se siente como apuesta",
-      "intro": "Nuestra forma de trabajar está pensada para bajarle el riesgo a la decisión misma, para que apostarle a los datos y la IA nunca sea hacerlo a ciegas."
+      "intro": "Nuestra forma de trabajar está pensada para bajarle el riesgo a la decisión misma, para que meterle a datos e IA nunca sea aventarse a ciegas."
     },
     "cards": [
       {
-        "label": "Prueba",
-        "title": "Pruébelo primero",
-        "body": "Una prueba de concepto acotada antes de la construcción completa. La decisión de escalar se apoya en evidencia, no en una presentación."
+        "label": "POC",
+        "title": "Compruébelo con un POC",
+        "body": "Un POC acotado antes del build completo. La decisión de escalar se apoya en evidencia, no en un PowerPoint."
       },
       {
         "label": "Control",
-        "title": "El patrocinador manda",
-        "body": "Reuniones de seguimiento periódicas, un backlog compartido y puntos de decisión claros dejan el alcance, el presupuesto y las prioridades en manos de su empresa."
+        "title": "El sponsor tiene el control",
+        "body": "Juntas de seguimiento, un backlog compartido y puntos de decisión claros dejan el scope, el presupuesto y las prioridades del lado del cliente."
       },
       {
         "label": "Ritmo",
         "title": "Valor desde el primer sprint",
-        "body": "Los sprints guiados por casos de uso llegan a producción en 8 a 16 semanas, con software funcionando desde el primer sprint."
+        "body": "Los sprints por caso de uso llegan a producción en 8 a 16 semanas, con software funcionando desde el primer sprint."
       },
       {
         "label": "Traspaso",
         "title": "Hecho para entregarse",
-        "body": "Documentación, capacitación y un plan de transición en cada proyecto, para que su equipo opere y amplíe el trabajo con confianza."
+        "body": "Documentación, capacitación y un plan de transición en cada proyecto, para que su equipo opere y crezca el trabajo sin depender de nosotros."
       }
     ],
     "panel": {
       "headline": "<weeks>8 a 16 semanas</weeks> hasta producción, frente a <months>6 a 12 meses</months> armando el equipo por dentro.",
-      "body": "Un equipo con certificación SnowPro y profundidad empresarial en cada nivel, trabajando en sprints por caso de uso que se acuerdan en un discovery pagado: sin tiempos de contratación, sin curva de arranque, sin riesgo de persona clave.",
+      "body": "Un equipo con certificación SnowPro y profundidad empresarial en cada nivel, en sprints por caso de uso que se acuerdan en un discovery pagado: sin tiempos de contratación, sin curva de arranque, sin riesgo de persona clave.",
       "ctaPrimary": "Hable con un arquitecto",
       "ctaGhost": "Vea la comparación"
     }
@@ -90,7 +90,7 @@
   "proof": {
     "eyebrow": "Pruebas, no promesas",
     "title": "Un partner de Snowflake en el que las empresas confían.",
-    "body": "Reconocidos en el programa CoCo Preferred Partner de Snowflake en Summit 2026, junto a Accenture, Deloitte, IBM y Capgemini. En la práctica, eso significa que los equipos de producto de Snowflake están a una llamada cuando una construcción se topa con una pregunta difícil.",
+    "body": "Reconocidos en el programa CoCo Preferred Partner de Snowflake en Summit 2026, junto a Accenture, Deloitte, IBM y Capgemini. En corto: los equipos de producto de Snowflake están a una llamada cuando un build se topa con una pregunta difícil.",
     "badgeAlts": [
       "Insignia de Snowflake Premier Partner",
       "Insignia de Snowflake CoCo Preferred Partner",
@@ -106,7 +106,7 @@
     "all": "Ver todas las preguntas"
   },
   "cta": {
-    "title": "El trimestre en que los datos por fin rinden.",
+    "title": "El trimestre en que los datos por fin dan resultados.",
     "subtitle": "Cada trimestre con datos sin gobierno son decisiones tomadas medio a ciegas. Cuéntenos en qué punto está hoy y le trazamos el camino más corto hacia datos e IA en los que su equipo pueda confiar."
   }
 }
