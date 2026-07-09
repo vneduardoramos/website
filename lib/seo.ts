@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { theme } from "@/config/theme";
-import { type Locale, DEFAULT_LOCALE } from "@/lib/i18n-content";
+import { DEFAULT_LOCALE } from "@/lib/i18n-content";
 
 const DEFAULT_OG = "/assets/og-default.jpg";
 
@@ -22,7 +22,9 @@ export function pageMeta(opts: {
   image?: string | null;
   type?: "website" | "article";
   noindex?: boolean;
-  locale?: Locale;
+  // Accepts a plain string (page `params.locale`) so callers don't need to cast;
+  // only the "es" value changes behavior, everything else resolves to the en default.
+  locale?: string;
 }): Metadata {
   const { title, description, path, image, type = "website", noindex, locale = DEFAULT_LOCALE } = opts;
   const base = theme.brand.url;
