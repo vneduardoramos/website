@@ -1,74 +1,32 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { Fragment, useEffect, useRef, useState } from "react";
 import type { ComponentType, SVGProps } from "react";
 import { theme } from "@/config/theme";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/marketing/Logo";
+import { LocaleSwitcher } from "@/components/marketing/LocaleSwitcher";
 import { getFlavor } from "@/components/marketing/industries/flavor";
 import { MODEL_PROVIDERS } from "@/lib/model-providers";
 
+type NavChild = { key: string; label: string; href: string; group?: string };
 type NavItem = {
+  key: string;
   label: string;
   href?: string;
-  children?: { label: string; href: string }[];
+  children?: NavChild[];
 };
 
-// Concise per-link descriptions for the mega-menu, keyed by href (≤6 words).
-const NAV_DESCRIPTIONS: Record<string, string> = {
-  "/about": "Who we are",
-  "/partnership": "Premier & CoCo Preferred, verified",
-  "/nearshore": "In-time-zone Snowflake delivery",
-  "/security": "Governance & compliance",
-  "/life-at-viewnear": "Culture, roles & benefits",
-  "/services": "How we engage: THINK · BUILD · GROW",
-  "/migrations": "Off Teradata, Oracle, Hadoop & more",
-  "/data-ai": "Agents on governed data, built with Claude",
-  "/platform": "How we build on Snowflake",
-  "/approach": "Methodology & de-risking",
-  "/pricing": "Engagement models & cost",
-  "/industries/construction-real-estate": "Projects, property & assets",
-  "/industries/education": "Schools, universities & training",
-  "/industries/financial-services": "Banking, insurance & asset management",
-  "/industries/manufacturing": "Production, supply & OEE",
-  "/industries/media-entertainment-advertising": "Audience, content & campaigns",
-  "/industries/retail-cpg": "Retail, CPG & loyalty",
-  "/industries/technology-telco": "Software, platforms & networks",
-  "/resources": "Everything in one place",
-  "/case-studies": "Proof & outcomes",
-  "/blog": "Field notes",
-  "/faq": "Common questions",
-};
-
-// Static featured tile per section (fallback when no live content applies).
-type Featured = { eyebrow: string; title: string; pitch: string; href: string };
-const NAV_FEATURED: Record<string, Featured> = {
-  Company: {
-    eyebrow: "Partnership",
-    title: "Snowflake Premier Partner",
-    pitch: "Premier & CoCo Preferred: direct product-team access and early roadmap visibility, put to work on every engagement.",
-    href: "/partnership",
-  },
-  Services: {
-    eyebrow: "Data + AI",
-    title: "Every major model, governed",
-    pitch: "Run the leading LLMs next to governed data, swap them with one line of SQL.",
-    href: "/data-ai",
-  },
-  Industries: {
-    eyebrow: "Financial Services",
-    title: "Data for regulated industries",
-    pitch: "Banking, insurance & asset management outcomes.",
-    href: "/industries/financial-services",
-  },
-  Resources: {
-    eyebrow: "Case Studies",
-    title: "Proof from the field",
-    pitch: "Real, anonymized engagements with measured outcomes.",
-    href: "/case-studies",
-  },
+// The featured tile href per section (fallback when no live content applies).
+// Copy for these tiles lives in the `nav.featured.*` message namespace; only the
+// structural href→section association stays in code.
+const NAV_FEATURED_HREF: Record<string, string> = {
+  Company: "/partnership",
+  Services: "/data-ai",
+  Industries: "/industries/financial-services",
+  Resources: "/case-studies",
 };
 
 // One restrained accent per panel: a thin top rule, the featured eyebrow + CTA
@@ -296,6 +254,7 @@ function Chevron({ className }: { className?: string }) {
 function MenuLink({
   href,
   label,
+  description,
   Icon,
   tile,
   onNav,
@@ -303,6 +262,7 @@ function MenuLink({
 }: {
   href: string;
   label: string;
+  description?: string;
   Icon?: ComponentType<SVGProps<SVGSVGElement>>;
   tile?: string;
   onNav: () => void;
@@ -326,8 +286,8 @@ function MenuLink({
         )}
         <span className="min-w-0">
           <span className={cn("block text-base font-medium text-foreground", active && "font-semibold text-primaryDeep")}>{label}</span>
-          {NAV_DESCRIPTIONS[href] && (
-            <span className="mt-0.5 block text-sm text-muted">{NAV_DESCRIPTIONS[href]}</span>
+          {description && (
+            <span className="mt-0.5 block text-sm text-muted">{description}</span>
           )}
         </span>
       </Link>
@@ -336,7 +296,7 @@ function MenuLink({
 }
 
 // Per-section featured tile: a premium gradient card, content-aware where live
-// data exists, otherwise the static NAV_FEATURED tile.
+// data exists, otherwise the static `nav.featured.*` copy for the section.
 function MegaFeatured({
   label,
   navData,
@@ -348,11 +308,12 @@ function MegaFeatured({
   accent: Accent;
   onNav: () => void;
 }) {
+  const t = useTranslations("nav");
   let href: string;
   let eyebrow: string;
   let title: string;
   let sub: string | null = null;
-  let cta = "Learn more";
+  let cta = t("featured.learnMore");
   let extra: React.ReactNode = null;
 
   if (label === "Industries" && navData?.featuredCase) {
@@ -360,20 +321,20 @@ function MegaFeatured({
     href = `/case-studies/${c.slug}`;
     eyebrow = c.sector;
     title = c.title;
-    sub = "A recent outcome we delivered.";
-    cta = "Read the case study";
+    sub = t("featured.caseSub");
+    cta = t("featured.caseCta");
   } else if (label === "Resources" && navData?.latestPost) {
     const p = navData.latestPost;
     href = `/blog/${p.slug}`;
-    eyebrow = "Latest from the blog";
+    eyebrow = t("featured.blogEyebrow");
     title = p.title;
     sub = p.date || null;
-    cta = "Read post";
+    cta = t("featured.blogCta");
   } else if (label === "Services") {
     href = "/data-ai";
-    eyebrow = "Data + AI";
-    title = "Agents inside Snowflake and in the flow of work";
-    cta = "Explore Data + AI";
+    eyebrow = t("featured.servicesLive.eyebrow");
+    title = t("featured.servicesLive.title");
+    cta = t("featured.servicesLive.cta");
     extra = (
       <div className="mt-3 flex flex-wrap gap-1.5">
         {MODEL_PROVIDERS.map((p) => (
@@ -384,12 +345,12 @@ function MegaFeatured({
       </div>
     );
   } else {
-    const f = NAV_FEATURED[label];
-    if (!f) return null;
-    href = f.href;
-    eyebrow = f.eyebrow;
-    title = f.title;
-    sub = f.pitch;
+    href = NAV_FEATURED_HREF[label];
+    if (!href) return null;
+    const key = label.toLowerCase();
+    eyebrow = t(`featured.${key}.eyebrow`);
+    title = t(`featured.${key}.title`);
+    sub = t(`featured.${key}.pitch`);
   }
 
   return (
@@ -429,6 +390,7 @@ export function Nav({ navData }: { navData?: NavData }) {
   const [scrolled, setScrolled] = useState(false);
   const items = theme.nav as unknown as NavItem[];
   const pathname = usePathname();
+  const t = useTranslations("nav");
 
   // A nav target is "current" when the path matches exactly, or (for section
   // roots) when the path is nested under it. Home only matches exactly so it
@@ -499,7 +461,7 @@ export function Nav({ navData }: { navData?: NavData }) {
                         : "font-medium text-foreground/80 hover:bg-surface2 hover:text-primaryDeep"
                     )}
                   >
-                    {item.label}
+                    {t(item.key)}
                   </Link>
                 </li>
               );
@@ -540,7 +502,7 @@ export function Nav({ navData }: { navData?: NavData }) {
                         : "font-medium text-foreground/80 hover:bg-surface2 hover:text-primaryDeep"
                   )}
                 >
-                  {item.label}
+                  {t(item.key)}
                   <Chevron className={cn("transition-transform", isOpen && "rotate-180")} />
                 </button>
 
@@ -586,7 +548,7 @@ export function Nav({ navData }: { navData?: NavData }) {
                           )}
                         >
                           {(() => {
-                            type Kid = { href: string; label: string; group?: string };
+                            type Kid = NavChild;
                             // Only Industries shows per-link icons (the distinctive
                             // sector marks). Other panels are icon-free: just label
                             // + description, with group color carried by the header.
@@ -598,7 +560,8 @@ export function Nav({ navData }: { navData?: NavData }) {
                                 <MenuLink
                                   key={c.href}
                                   href={c.href}
-                                  label={c.label}
+                                  label={t(c.key)}
+                                  description={t(`descriptions.${c.key}`)}
                                   Icon={flavor ? flavor.icon : undefined}
                                   tile={flavor ? flavor.tile : undefined}
                                   onNav={() => setOpenMenu(null)}
@@ -609,9 +572,12 @@ export function Nav({ navData }: { navData?: NavData }) {
 
                             // Two-tone the grouped panel via the headers: "what we
                             // do" cool, "how we work" warm, so the groups read
-                            // distinct without per-link icons.
+                            // distinct without per-link icons. Color keys off the
+                            // English `group` value; the label itself is translated.
                             const groupHeader = (name: string) =>
                               /how we work/i.test(name) ? "text-accentDeep/80" : "text-royal/75";
+                            const groupLabel = (name: string) =>
+                              /how we work/i.test(name) ? t("groups.howWeWork") : t("groups.whatWeDo");
 
                             // When children declare a `group`, render a small
                             // header per group (spanning both columns); otherwise
@@ -633,7 +599,7 @@ export function Nav({ navData }: { navData?: NavData }) {
                               <Fragment key={g.name}>
                                 <li className="mt-3 px-3 first:mt-0 sm:col-span-2">
                                   <span className={cn("font-mono text-xs uppercase tracking-wider", groupHeader(g.name))}>
-                                    {g.name}
+                                    {groupLabel(g.name)}
                                   </span>
                                 </li>
                                 {g.items.map((c) => renderChild(c))}
@@ -658,14 +624,15 @@ export function Nav({ navData }: { navData?: NavData }) {
         </ul>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <LocaleSwitcher />
           <Link href="/contact" className="btn-primary group">
-            Let&apos;s talk
+            {t("cta")}
             <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
           </Link>
         </div>
 
         <button
-          aria-label="Toggle menu"
+          aria-label={t("toggleMenu")}
           aria-expanded={open}
           aria-controls="mobile-menu"
           className="rounded-lg border border-border p-2 lg:hidden"
@@ -711,7 +678,7 @@ export function Nav({ navData }: { navData?: NavData }) {
                           sectionActive ? "font-semibold text-primaryDeep" : "font-medium"
                         )}
                       >
-                        {item.label}
+                        {t(item.key)}
                         <Chevron className="transition-transform group-open:rotate-180" />
                       </summary>
                       <div className="pl-4">
@@ -728,7 +695,7 @@ export function Nav({ navData }: { navData?: NavData }) {
                                 childActive ? "font-semibold text-primaryDeep" : "text-muted"
                               )}
                             >
-                              {c.label}
+                              {t(c.key)}
                             </Link>
                           );
                         })}
@@ -744,20 +711,21 @@ export function Nav({ navData }: { navData?: NavData }) {
                         active ? "font-semibold text-primaryDeep" : "text-foreground"
                       )}
                     >
-                      {item.label}
+                      {t(item.key)}
                     </Link>
                   )}
                 </div>
               );
             })}
-            <div className="mt-3 border-t border-border pt-3">
+            <div className="mt-3 flex items-center gap-3 border-t border-border pt-3">
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className={cn("btn-primary", "w-full")}
+                className={cn("btn-primary", "flex-1")}
               >
-                Let&apos;s talk
+                {t("cta")}
               </Link>
+              <LocaleSwitcher className="rounded-lg border border-border px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-primaryDeep" />
             </div>
           </div>
         </div>

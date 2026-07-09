@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
 
 // Shared input styling; `aria-[invalid=true]` firms the border to danger red
 // when a field has a validation error (JIT emits this arbitrary aria variant).

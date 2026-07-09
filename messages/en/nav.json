@@ -1,0 +1,87 @@
+{
+  "home": "Home",
+  "services": "Services",
+  "industries": "Industries",
+  "company": "Company",
+  "resources": "Resources",
+  "migrations": "Migrations",
+  "dataAi": "Data + AI",
+  "platform": "Platform",
+  "servicesOverview": "Services overview",
+  "approach": "Approach",
+  "pricing": "Pricing",
+  "constructionRealEstate": "Construction & Real Estate",
+  "education": "Education",
+  "financialServices": "Financial Services",
+  "manufacturing": "Manufacturing",
+  "retailCpg": "Retail & CPG",
+  "technologyTelco": "Technology & Telco",
+  "mediaEntertainmentAdvertising": "Media, Entertainment & Advertising",
+  "about": "About",
+  "partnership": "Partnership",
+  "nearshore": "Nearshore Advantage",
+  "lifeAtViewnear": "Life at Viewnear",
+  "security": "Security & Trust",
+  "allResources": "All resources",
+  "caseStudies": "Case Studies",
+  "blog": "Blog",
+  "faq": "FAQ",
+  "cta": "Let's talk",
+  "toggleMenu": "Toggle menu",
+  "switchLanguage": "Switch language",
+  "groups": {
+    "whatWeDo": "What we do",
+    "howWeWork": "How we work"
+  },
+  "descriptions": {
+    "about": "Who we are",
+    "partnership": "Premier & CoCo Preferred, verified",
+    "nearshore": "In-time-zone Snowflake delivery",
+    "security": "Governance & compliance",
+    "lifeAtViewnear": "Culture, roles & benefits",
+    "servicesOverview": "How we engage: THINK · BUILD · GROW",
+    "migrations": "Off Teradata, Oracle, Hadoop & more",
+    "dataAi": "Agents on governed data, built with Claude",
+    "platform": "How we build on Snowflake",
+    "approach": "Methodology & de-risking",
+    "pricing": "Engagement models & cost",
+    "constructionRealEstate": "Projects, property & assets",
+    "education": "Schools, universities & training",
+    "financialServices": "Banking, insurance & asset management",
+    "manufacturing": "Production, supply & OEE",
+    "mediaEntertainmentAdvertising": "Audience, content & campaigns",
+    "retailCpg": "Retail, CPG & loyalty",
+    "technologyTelco": "Software, platforms & networks",
+    "allResources": "Everything in one place",
+    "caseStudies": "Proof & outcomes",
+    "blog": "Field notes",
+    "faq": "Common questions"
+  },
+  "featured": {
+    "company": {
+      "eyebrow": "Partnership",
+      "title": "Snowflake Premier Partner",
+      "pitch": "Premier & CoCo Preferred: direct product-team access and early roadmap visibility, put to work on every engagement."
+    },
+    "industries": {
+      "eyebrow": "Financial Services",
+      "title": "Data for regulated industries",
+      "pitch": "Banking, insurance & asset management outcomes."
+    },
+    "resources": {
+      "eyebrow": "Case Studies",
+      "title": "Proof from the field",
+      "pitch": "Real, anonymized engagements with measured outcomes."
+    },
+    "servicesLive": {
+      "eyebrow": "Data + AI",
+      "title": "Agents inside Snowflake and in the flow of work",
+      "cta": "Explore Data + AI"
+    },
+    "learnMore": "Learn more",
+    "caseSub": "A recent outcome we delivered.",
+    "caseCta": "Read the case study",
+    "blogEyebrow": "Latest from the blog",
+    "blogCta": "Read post"
+  }
+}

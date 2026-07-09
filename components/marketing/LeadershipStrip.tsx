@@ -1,5 +1,5 @@
 import { Img as Image } from "@/components/marketing/Img";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { getTeam } from "@/lib/queries";
 
 function initials(name: string) {

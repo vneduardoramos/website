@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Section, SectionHeading } from "@/components/marketing/ui";
 import { CoverCard } from "@/components/marketing/CoverCard";
 import { coverFor } from "@/lib/covers";

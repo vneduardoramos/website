@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { HeroBackground } from "@/components/marketing/HeroBackground";
 import { HeroAurora } from "@/components/marketing/home/HeroAurora";
 

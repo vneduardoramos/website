@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { theme } from "@/config/theme";
+import { type Locale, DEFAULT_LOCALE } from "@/lib/i18n-content";
 
 const DEFAULT_OG = "/assets/og-default.jpg";
 
@@ -9,6 +10,10 @@ const DEFAULT_OG = "/assets/og-default.jpg";
  * adds it). `image` is the page's content image (site-relative or absolute);
  * it falls back to the sitewide default OG image. Set `noindex` for dormant or
  * utility pages that should not be indexed.
+ *
+ * `locale` selects which URL is canonical and drives the hreflang alternates.
+ * It defaults to the site default (en) so existing callers stay valid until
+ * they opt into a locale.
  */
 export function pageMeta(opts: {
   title?: string;
@@ -17,9 +22,14 @@ export function pageMeta(opts: {
   image?: string | null;
   type?: "website" | "article";
   noindex?: boolean;
+  locale?: Locale;
 }): Metadata {
-  const { title, description, path, image, type = "website", noindex } = opts;
-  const url = `${theme.brand.url}${path}`;
+  const { title, description, path, image, type = "website", noindex, locale = DEFAULT_LOCALE } = opts;
+  const base = theme.brand.url;
+  const isHome = path === "/" || path === "";
+  const enUrl = isHome ? base : `${base}${path}`;
+  const esUrl = isHome ? `${base}/es` : `${base}/es${path}`;
+  const url = locale === "es" ? esUrl : enUrl;
   const abs = (src: string) => (/^https?:\/\//i.test(src) ? src : `${theme.brand.url}${src}`);
   // Only pin an OG image when the caller passes one. Otherwise leave it unset
   // so the cascade resolves correctly: a route's own opengraph-image.tsx file
@@ -30,13 +40,17 @@ export function pageMeta(opts: {
   return {
     ...(title ? { title } : {}),
     ...(description ? { description } : {}),
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+      languages: { en: enUrl, es: esUrl, "x-default": enUrl },
+    },
     ...(noindex ? { robots: { index: false, follow: false } } : {}),
     openGraph: {
       ...(title ? { title } : {}),
       ...(description ? { description } : {}),
       url,
       type,
+      locale: locale === "es" ? "es_MX" : "en_US",
       ...(ogImage ? { images: [{ url: ogImage, width: 1200, height: 630 }] } : {}),
     },
     twitter: {

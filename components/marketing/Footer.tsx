@@ -1,53 +1,61 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { theme } from "@/config/theme";
 import { Logo } from "@/components/marketing/Logo";
 import { PartnerBadges } from "@/components/marketing/PartnerBadges";
 import { SnowflakeLockup } from "@/components/marketing/SnowflakeLockup";
 
+// `titleKey` / `linkKey` resolve against the `footer` message namespace; `label`
+// stays as the English source of truth and fallback. `href` unchanged.
 const groups = [
   {
+    titleKey: "company",
     title: "Company",
     links: [
-      { label: "About", href: "/about" },
-      { label: "Partnership", href: "/partnership" },
-      { label: "Life at Viewnear", href: "/life-at-viewnear" },
-      { label: "Security & Trust", href: "/security" },
-      { label: "Contact", href: "/contact" },
+      { linkKey: "about", label: "About", href: "/about" },
+      { linkKey: "partnership", label: "Partnership", href: "/partnership" },
+      { linkKey: "lifeAtViewnear", label: "Life at Viewnear", href: "/life-at-viewnear" },
+      { linkKey: "security", label: "Security & Trust", href: "/security" },
+      { linkKey: "contact", label: "Contact", href: "/contact" },
     ],
   },
   {
+    titleKey: "services",
     title: "Services",
     links: [
-      { label: "Services", href: "/services" },
-      { label: "Approach", href: "/approach" },
-      { label: "Pricing", href: "/pricing" },
-      { label: "Platform", href: "/platform" },
+      { linkKey: "servicesOverview", label: "Services", href: "/services" },
+      { linkKey: "approach", label: "Approach", href: "/approach" },
+      { linkKey: "pricing", label: "Pricing", href: "/pricing" },
+      { linkKey: "platform", label: "Platform", href: "/platform" },
     ],
   },
   {
+    titleKey: "industries",
     title: "Industries",
     links: [
-      { label: "Construction & Real Estate", href: "/industries/construction-real-estate" },
-      { label: "Education", href: "/industries/education" },
-      { label: "Financial Services", href: "/industries/financial-services" },
-      { label: "Manufacturing", href: "/industries/manufacturing" },
-      { label: "Media, Entertainment & Advertising", href: "/industries/media-entertainment-advertising" },
-      { label: "Retail & CPG", href: "/industries/retail-cpg" },
-      { label: "Technology & Telco", href: "/industries/technology-telco" },
+      { linkKey: "constructionRealEstate", label: "Construction & Real Estate", href: "/industries/construction-real-estate" },
+      { linkKey: "education", label: "Education", href: "/industries/education" },
+      { linkKey: "financialServices", label: "Financial Services", href: "/industries/financial-services" },
+      { linkKey: "manufacturing", label: "Manufacturing", href: "/industries/manufacturing" },
+      { linkKey: "mediaEntertainmentAdvertising", label: "Media, Entertainment & Advertising", href: "/industries/media-entertainment-advertising" },
+      { linkKey: "retailCpg", label: "Retail & CPG", href: "/industries/retail-cpg" },
+      { linkKey: "technologyTelco", label: "Technology & Telco", href: "/industries/technology-telco" },
     ],
   },
   {
+    titleKey: "resources",
     title: "Resources",
     links: [
-      { label: "All resources", href: "/resources" },
-      { label: "Case Studies", href: "/case-studies" },
-      { label: "Blog", href: "/blog" },
-      { label: "FAQ", href: "/faq" },
+      { linkKey: "allResources", label: "All resources", href: "/resources" },
+      { linkKey: "caseStudies", label: "Case Studies", href: "/case-studies" },
+      { linkKey: "blog", label: "Blog", href: "/blog" },
+      { linkKey: "faq", label: "FAQ", href: "/faq" },
     ],
   },
 ];
 
-export function Footer() {
+export async function Footer() {
+  const t = await getTranslations("footer");
   return (
     <footer className="border-t border-border bg-surface">
       <div className="container-page py-16">
@@ -77,15 +85,15 @@ export function Footer() {
             <SnowflakeLockup variant="default" height={24} className="mt-6" />
           </div>
           {groups.map((g) => (
-            <div key={g.title}>
+            <div key={g.titleKey}>
               <h4 className="font-mono text-xs uppercase tracking-widest text-muted">
-                {g.title}
+                {t(`groups.${g.titleKey}`)}
               </h4>
               <ul className="mt-4 space-y-2.5">
                 {g.links.map((l) => (
                   <li key={l.href}>
                     <Link href={l.href} className="text-sm text-foreground/75 transition-colors hover:text-primaryDeep">
-                      {l.label}
+                      {t(`links.${l.linkKey}`)}
                     </Link>
                   </li>
                 ))}
@@ -95,12 +103,16 @@ export function Footer() {
         </div>
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-sm text-muted md:flex-row">
           <p>
-            © {new Date().getFullYear()} {theme.brand.name}, Snowflake Premier Partner serving {theme.brand.region}.
+            {t("copyright", {
+              year: new Date().getFullYear(),
+              name: theme.brand.name,
+              region: theme.brand.region,
+            })}
           </p>
           <div className="flex gap-5">
-            <Link href="/privacy" className="transition-colors hover:text-primaryDeep">Privacy</Link>
-            <Link href="/terms" className="transition-colors hover:text-primaryDeep">Terms</Link>
-            <a href={theme.socials.linkedin} className="transition-colors hover:text-primaryDeep">LinkedIn</a>
+            <Link href="/privacy" className="transition-colors hover:text-primaryDeep">{t("privacy")}</Link>
+            <Link href="/terms" className="transition-colors hover:text-primaryDeep">{t("terms")}</Link>
+            <a href={theme.socials.linkedin} className="transition-colors hover:text-primaryDeep">{t("linkedin")}</a>
           </div>
         </div>
       </div>

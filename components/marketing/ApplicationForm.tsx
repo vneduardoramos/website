@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
 
 const inputCls =
   "w-full rounded border border-border bg-surface2 px-4 py-3 text-foreground aria-[invalid=true]:border-danger";

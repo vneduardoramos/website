@@ -1,5 +1,5 @@
 import { Img as Image } from "@/components/marketing/Img";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 /**
  * Cover-image card for blog posts, news, case studies, industries. When `image`

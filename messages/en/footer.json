@@ -1,0 +1,34 @@
+{
+  "groups": {
+    "company": "Company",
+    "services": "Services",
+    "industries": "Industries",
+    "resources": "Resources"
+  },
+  "links": {
+    "about": "About",
+    "partnership": "Partnership",
+    "lifeAtViewnear": "Life at Viewnear",
+    "security": "Security & Trust",
+    "contact": "Contact",
+    "servicesOverview": "Services",
+    "approach": "Approach",
+    "pricing": "Pricing",
+    "platform": "Platform",
+    "constructionRealEstate": "Construction & Real Estate",
+    "education": "Education",
+    "financialServices": "Financial Services",
+    "manufacturing": "Manufacturing",
+    "mediaEntertainmentAdvertising": "Media, Entertainment & Advertising",
+    "retailCpg": "Retail & CPG",
+    "technologyTelco": "Technology & Telco",
+    "allResources": "All resources",
+    "caseStudies": "Case Studies",
+    "blog": "Blog",
+    "faq": "FAQ"
+  },
+  "copyright": "© {year} {name}, Snowflake Premier Partner serving {region}.",
+  "privacy": "Privacy",
+  "terms": "Terms",
+  "linkedin": "LinkedIn"
+}
