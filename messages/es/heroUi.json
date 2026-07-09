@@ -5,7 +5,7 @@
       "Datos en los que confiar",
       "IA en producción"
     ],
-    "subhead": "Escoger Snowflake es lo fácil. Lo difícil es lo que se construye encima. Ahí entramos: montamos una práctica de datos que da números confiables para decidir y una práctica de IA que sí llega a producción. Las armamos con su equipo y se las dejamos operando, en toda América.",
+    "subhead": "Escoger Snowflake es lo fácil. Lo difícil es lo que se construye encima: una práctica de datos que entrega números confiables para decidir y una práctica de IA que llega a producción. Nuestro equipo arma ambas prácticas, junto con el suyo, y las deja funcionando en un nivel productivo, en toda América.",
     "title": "De la estrategia de datos a la <hl>IA en producción</hl>, sobre Snowflake.",
     "ctaPrimary": "Hable con un arquitecto",
     "ctaSecondary": "Ver servicios",
@@ -21,9 +21,9 @@
   "split": {
     "foundationPhotoAlt": "Un equipo revisando en conjunto dashboards, reportes y gráficas en torno a un mismo conjunto de datos compartido y gobernado.",
     "aiPhotoAlt": "Un equipo trabajando con herramientas de analítica e IA en sus pantallas, en una oficina moderna y luminosa.",
-    "foundationLabel": "Muchas fuentes de datos dispersas y contradictorias, juntas en una sola fuente de verdad gobernada.",
+    "foundationLabel": "Múltiples fuentes de datos dispersas y contradictorias, consolidadas en una sola fuente de verdad gobernada.",
     "foundationText": "Una sola fuente de verdad gobernada",
-    "aiLabel": "Cortex AI corre sobre datos gobernados y devuelve una respuesta apoyada en ellos.",
+    "aiLabel": "Cortex AI se ejecuta sobre datos gobernados y devuelve una respuesta fundamentada en ellos.",
     "governedData": "DATOS GOBERNADOS",
     "grounded": "FUNDAMENTADO"
   }

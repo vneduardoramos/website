@@ -9,6 +9,16 @@ Confident, precise, and human: a partner who knows the work, not a vendor readin
 - **Do:** be precise and technical; speak to outcomes; stay warm and human.
 - **Don't:** bury value in jargon; overpromise ("revolutionary", "magic"); sound corporate/cold.
 
+### Spanish (es) voice — Mexican professional register (approved 2026-07-09)
+
+The `/es` site is **Mexican business Spanish**: formal `usted`, professional and human, NOT a literal translation of the English and NOT casual/slangy. The exemplar is the home page (`messages/es/home.json`, `heroUi.json`, `homeServer.json`, and the `hero` blob in `prisma/seed/es/settings.ts`). Match its register when translating any other page.
+
+- **Register:** formal `usted`, third-person where it reads more corporate ("Nuestro equipo arma ambas prácticas y las deja funcionando en un nivel productivo"). Keep the formality; use the *right* words, not the literal ones.
+- **Use the English terms Mexican tech/enterprise teams actually use** (do NOT translate these): `sponsor` (not "patrocinador"), `POC`, `build`, `scope`, `backlog`, `discovery`, `stack`, `dashboard`, `pipeline`, `Time & materials`, `Staff augmentation`, `compliance`, plus all brand/product nouns (Snowflake, Cortex, Horizon, Data + AI, ...).
+- **Right words:** `números` (never "cifras"); `juntas` (not "reuniones"); `en producción` / `en un nivel productivo`. Translate for real *intent*, not dictionary meaning (e.g. "prove it first" → "Compruébelo con un POC", not "pruébelo primero").
+- **Do NOT get casual/slangy.** Banned as too informal: "Ahí entramos", "se las dejamos operando", "le entramos", "cinco Excels", "no en un PowerPoint", "en corto", "nos conviene a los dos", "meterle a", "aventarse a ciegas". These over-corrected a prior draft and were rejected.
+- **Carry over the English rules:** generic "AI" → **"IA"** but keep the brand pairing **"Data + AI"** in English; no em dashes; all the Positioning/banned-word rules below apply in Spanish too (no "consultoría/consultor"; Snowflake is the platform, never call the deliverable "la plataforma").
+
 ## Positioning
 
 **Statement (internal north star, revised 2026-07-06):** Viewnear helps enterprises stand up two capabilities they keep: a **data practice** (governed, trusted data feeding real decisions) and an **AI practice** (use cases shipping into production), built on Snowflake, run by the client's own team, guided and accelerated by ours. Operational data flows in (ERP, CRM, core systems via Openflow and Zero-Copy Integrations); decisions, answers, and AI agents flow back out to the apps and workflows where work happens.

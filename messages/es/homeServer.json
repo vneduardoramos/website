@@ -4,12 +4,12 @@
     "title": "Un solo equipo responsable, todo el stack de datos",
     "body": "De bases gobernadas y pipelines confiables a analítica y agentes de IA en producción: estrategia, entrega y capacitación, sobre Snowflake.",
     "learnMore": "Más información",
-    "engageEyebrow": "Cómo le entramos",
+    "engageEyebrow": "Cómo colaboramos",
     "engageTitle": "Tres formas de contratar la misma entrega responsable.",
     "engagePoints": [
       "Costo fijo: un resultado definido a un precio cerrado",
-      "Time & materials: discovery y scope que se van ajustando",
-      "Staff augmentation: gente certificada trabajando junto a la suya",
+      "Time & materials: discovery y scope que se ajustan sobre la marcha",
+      "Staff augmentation: profesionales certificados trabajando junto a su equipo",
       "El discovery pagado fija el scope; las bases entran a producción en 8 a 16 semanas"
     ],
     "pricingLink": "Cómo funcionan los precios"
@@ -17,7 +17,7 @@
   "industriesStrip": {
     "eyebrow": "Industrias",
     "title": "Conocemos a fondo los sectores donde operan las empresas",
-    "body": "Modelos de datos, gobierno y compliance propios de cada sector, integrados desde el día uno en siete industrias.",
+    "body": "Modelos de datos, gobierno y compliance propios de cada sector, integrados desde el primer día en siete industrias.",
     "allIndustries": "Todas las industrias",
     "names": [
       "Servicios financieros",
@@ -31,7 +31,7 @@
   },
   "customersFeature": {
     "eyebrow": "Clientes",
-    "title": "Los equipos que van adelante<br></br><hl>construyen sobre datos gobernados y listos para IA</hl>",
+    "title": "Los equipos líderes<br></br><hl>construyen sobre datos gobernados y listos para IA</hl>",
     "viewCaseStudies": "Ver casos de éxito",
     "readCaseStudy": "Leer el caso de éxito",
     "badge": "Snowflake Cortex AI",
@@ -40,7 +40,7 @@
       "sector": "Seguros",
       "region": "América",
       "title": "De clasificar documentos a mano a clasificar reclamos con 95% de precisión en segundos",
-      "summary": "Clasificar a mano los documentos de muchas aseguradoras causaba demoras, errores y archivos perdidos. Con funciones de Snowflake Cortex AI como AI_EXTRACT, Viewnear automatizó la clasificación y la extracción: la precisión pasó de 60% a 95% y cada documento se procesa en cuatro segundos.",
+      "summary": "Clasificar a mano los documentos de numerosas aseguradoras generaba demoras, errores y archivos perdidos. Con funciones de Snowflake Cortex AI como AI_EXTRACT, Viewnear automatizó la clasificación y la extracción: la precisión pasó de 60% a 95% y cada documento se procesa en cuatro segundos.",
       "metricLabel1": "Precisión de clasificación",
       "metricLabel2": "Clasificación por documento"
     }
