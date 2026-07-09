@@ -49,7 +49,7 @@
   },
   "costFactors": [
     "El volumen de datos y la cantidad y complejidad de los sistemas de origen",
-    "Cuántos casos de uso de analítica y AI están dentro del alcance",
+    "Cuántos casos de uso de analítica e IA están dentro del alcance",
     "El tamaño del equipo y el cronograma objetivo",
     "Los requisitos de gobierno, cumplimiento y seguridad"
   ],
@@ -65,7 +65,7 @@
     {
       "phase": "6 a 12 meses",
       "title": "Escala y autoservicio",
-      "body": "La práctica de AI comienza a entregar: los casos de uso se extienden por los equipos y cada nuevo caso llega al primer insight un 60% más rápido. El autoservicio se afianza; los informes manuales quedan atrás."
+      "body": "La práctica de IA comienza a entregar: los casos de uso se extienden por los equipos y cada nuevo caso llega al primer insight un 60% más rápido. El autoservicio se afianza; los informes manuales quedan atrás."
     },
     {
       "phase": "Más de 18 meses",

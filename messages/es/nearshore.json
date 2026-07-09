@@ -61,13 +61,13 @@
   "numbers": [
     { "value": "Premier", "label": "Snowflake Premier + CoCo Preferred Partner" },
     { "value": "SnowPro", "label": "Certificados en SnowPro en todo el equipo" },
-    { "value": "15+", "label": "Años construyendo datos y AI empresarial" },
+    { "value": "15+", "label": "Años construyendo datos e IA empresarial" },
     { "value": "5", "label": "Países en toda América" }
   ],
   "deliverHeading": {
     "eyebrow": "Lo que entregamos",
     "title": "La construcción completa de Data + AI, entregada en nearshore",
-    "intro": "Nuestro equipo de entrega trabaja desde Monterrey, México, en la zona horaria del centro de EE. UU., cubriendo el mismo alcance que Viewnear entrega en cualquier lugar: desde la migración hasta AI gobernada en producción."
+    "intro": "Nuestro equipo de entrega trabaja desde Monterrey, México, en la zona horaria del centro de EE. UU., cubriendo el mismo alcance que Viewnear entrega en cualquier lugar: desde la migración hasta IA gobernada en producción."
   },
   "delivers": [
     {
@@ -75,8 +75,8 @@
       "body": "Almacenes y pipelines heredados consolidados en Snowflake, gobernados desde la primera tabla."
     },
     {
-      "title": "AI y Cortex",
-      "body": "Datos gobernados y listos para AI, y casos de uso de Cortex priorizados según el retorno real para el negocio."
+      "title": "IA y Cortex",
+      "body": "Datos gobernados y listos para IA, y casos de uso de Cortex priorizados según el retorno real para el negocio."
     },
     {
       "title": "Gobierno y Horizon",
@@ -102,6 +102,6 @@
   },
   "cta": {
     "title": "Ponga un equipo nearshore de Snowflake a trabajar en ello.",
-    "subtitle": "Cuéntenos en qué punto está la organización con Snowflake (migrando, escalando o construyendo AI) y llevaremos un equipo certificado en la misma zona horaria para hacerlo avanzar."
+    "subtitle": "Cuéntenos en qué punto está la organización con Snowflake (migrando, escalando o construyendo IA) y llevaremos un equipo certificado en la misma zona horaria para hacerlo avanzar."
   }
 }

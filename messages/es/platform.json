@@ -1,12 +1,12 @@
 {
   "meta": {
     "title": "Plataforma: el stack sobre el que se ejecuta una práctica de data & AI",
-    "description": "Por qué construimos una práctica de data & AI de forma nativa en Snowflake (Openflow, dbt, Snowpark, Horizon, Cortex, Iceberg): gobierno, linaje y contexto de AI en un solo lugar que el equipo puede operar."
+    "description": "Por qué construimos una práctica de data & AI de forma nativa en Snowflake (Openflow, dbt, Snowpark, Horizon, Cortex, Iceberg): gobierno, linaje y contexto de IA en un solo lugar que el equipo puede operar."
   },
   "hero": {
     "eyebrow": "Plataforma",
     "title": "Construido <hl>de forma nativa en Snowflake</hl>, no añadido después.",
-    "description": "Una práctica de data & AI necesita un solo hogar, no cinco proveedores que reconciliar. Por eso todo lo que Viewnear construye para ella vive dentro de Snowflake (ingesta, transformación, gobierno, AI): un solo hogar gobernado para los datos, un solo linaje que auditar, un solo contexto que comparten cada equipo y cada agente."
+    "description": "Una práctica de data & AI necesita un solo hogar, no cinco proveedores que reconciliar. Por eso todo lo que Viewnear construye para ella vive dentro de Snowflake (ingesta, transformación, gobierno, IA): un solo hogar gobernado para los datos, un solo linaje que auditar, un solo contexto que comparten cada equipo y cada agente."
   },
   "stackStory": {
     "eyebrow": "Cómo se integra todo",
@@ -26,7 +26,7 @@
   "whyNative": [
     { "title": "Una única copia gobernada", "body": "Sin exportaciones, sin stacks paralelos: los datos permanecen en un solo lugar con el gobierno incorporado." },
     { "title": "Un solo linaje que auditar", "body": "Linaje, acceso y políticas aplicados en un solo lugar que resiste una auditoría." },
-    { "title": "AI anclada", "body": "Los agentes heredan un contexto de negocio confiable y certificado en lugar de adivinar a partir de copias." },
+    { "title": "IA anclada", "body": "Los agentes heredan un contexto de negocio confiable y certificado en lugar de adivinar a partir de copias." },
     { "title": "Abierto por diseño", "body": "Apache Iceberg mantiene la misma copia gobernada portable y consultable por cualquier motor." }
   ],
   "partsList": {
@@ -65,23 +65,23 @@
     },
     {
       "layer": "Gobierno, seguridad y contexto",
-      "blurb": "Gobierno, linaje y contexto de negocio confiable incorporados: la base que la AI realmente necesita.",
+      "blurb": "Gobierno, linaje y contexto de negocio confiable incorporados: la base que la IA realmente necesita.",
       "products": [
         { "name": "Horizon Catalog", "status": "GA", "desc": "Linaje, historial de acceso, clasificación y políticas en todo el entorno." },
         { "name": "Horizon Context", "status": "Private Preview", "desc": "Recopile, enriquezca y active metadatos con búsqueda semántica + por palabra clave." },
-        { "name": "Cortex Sense", "status": "GA", "desc": "Capa de ejecución que reúne datos + definiciones de negocio para los agentes de AI." },
+        { "name": "Cortex Sense", "status": "GA", "desc": "Capa de ejecución que reúne datos + definiciones de negocio para los agentes de IA." },
         { "name": "Semantic Views", "status": "GA", "desc": "Definiciones de negocio compartidas para que cada consulta y cada agente hablen el mismo idioma." },
-        { "name": "AI Agent Identity", "status": "GA", "desc": "Identidad verificable y RBAC por agente para cada agente de AI, con registros de auditoría completos." }
+        { "name": "AI Agent Identity", "status": "GA", "desc": "Identidad verificable y RBAC por agente para cada agente de IA, con registros de auditoría completos." }
       ]
     },
     {
-      "layer": "AI y agentes",
-      "blurb": "AI en producción que se ejecuta de forma segura junto a los datos gobernados; los modelos nunca ven copias sin gobierno.",
+      "layer": "IA y agentes",
+      "blurb": "IA en producción que se ejecuta de forma segura junto a los datos gobernados; los modelos nunca ven copias sin gobierno.",
       "products": [
         { "name": "Cortex AISQL", "status": "GA", "desc": "Invoque LLMs y funciones de ML directamente desde SQL: COMPLETE, SENTIMENT, SUMMARIZE." },
         { "name": "Cortex Analyst", "status": "GA", "desc": "Preguntas en lenguaje natural respondidas frente a modelos semánticos gobernados." },
         { "name": "Snowflake CoWork", "status": "GA", "desc": "Respuestas agénticas y citadas y tableros gobernados para trabajadores del conocimiento." },
-        { "name": "Snowflake CoCo", "status": "GA", "desc": "Agente de programación para el desarrollo de AI empresarial, validado antes de producción." },
+        { "name": "Snowflake CoCo", "status": "GA", "desc": "Agente de programación para el desarrollo de IA empresarial, validado antes de producción." },
         { "name": "Cortex Training", "status": "Preview", "desc": "Ajuste modelos de pesos abiertos en GPUs gestionadas; los datos nunca se mueven." }
       ]
     },

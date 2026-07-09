@@ -14,7 +14,7 @@
     "eyebrow": "El proyecto",
     "title": "Un socio que entiende <hl>{name}</hl>.",
     "body": "Nadie dedica el primer mes a explicarnos {industry}. El equipo llega conociendo los sistemas, las regulaciones y los ritmos de reporte del sector, y luego construye los modelos de datos, el gobierno y los dashboards junto con los equipos internos, frente a las métricas de las que ya rinden cuentas.",
-    "imageAlt": "Soluciones de datos y AI para {industry} construidas sobre Snowflake",
+    "imageAlt": "Soluciones de datos e IA para {industry} construidas sobre Snowflake",
     "cta": "Inicie una conversación"
   },
   "foundation": {
@@ -39,7 +39,7 @@
     "intro": "El stack Snowflake-first al que recurrimos en este sector."
   },
   "showcase": {
-    "imageAlt": "Datos y AI de {industry} en Snowflake",
+    "imageAlt": "Datos e IA de {industry} en Snowflake",
     "title": "Diseñado para <hl>{name}</hl>, en Snowflake.",
     "cta": "Converse sobre datos de {industry}"
   },
@@ -53,7 +53,7 @@
     "title": "Cómo entregamos para {industry}",
     "intro": "Un proyecto real, de principio a fin: el reto, la construcción y el resultado. Se omiten los nombres de los clientes para proteger su confidencialidad.",
     "orgLabel": "Una organización de {industry}",
-    "storyTitle": "Datos gobernados y listos para AI para {industry} en Snowflake",
+    "storyTitle": "Datos gobernados y listos para IA para {industry} en Snowflake",
     "quoteCaption": "Cita del patrocinador · proyecto de {industry}",
     "readCase": "Lea el caso completo →"
   },

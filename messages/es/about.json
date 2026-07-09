@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Acerca de: prácticas de data & AI en toda América",
-    "description": "Viewnear ayuda a las empresas a establecer prácticas de data & AI que conservan: datos gobernados que alimentan decisiones reales y casos de uso de AI en producción, construidos sobre Snowflake y operados por sus propios equipos."
+    "description": "Viewnear ayuda a las empresas a establecer prácticas de data & AI que conservan: datos gobernados que alimentan decisiones reales y casos de uso de IA en producción, construidos sobre Snowflake y operados por sus propios equipos."
   },
   "breadcrumb": {
     "home": "Inicio",
@@ -10,7 +10,7 @@
   "hero": {
     "eyebrow": "Acerca de Viewnear",
     "title": "Construimos prácticas de data & AI con empresas en toda <hl>América</hl>.",
-    "description": "Dos capacidades duraderas: una práctica de datos que alimenta decisiones reales y una práctica de AI que lleva casos de uso a producción, construidas sobre Snowflake y operadas por equipos internos, guiadas y aceleradas por el nuestro. Como Snowflake Premier y CoCo Preferred Partner, entregamos en Canadá, Estados Unidos, México, LATAM y el Caribe."
+    "description": "Dos capacidades duraderas: una práctica de datos que alimenta decisiones reales y una práctica de IA que lleva casos de uso a producción, construidas sobre Snowflake y operadas por equipos internos, guiadas y aceleradas por el nuestro. Como Snowflake Premier y CoCo Preferred Partner, entregamos en Canadá, Estados Unidos, México, LATAM y el Caribe."
   },
   "heroChips": [
     "Snowflake Premier Partner",
@@ -21,7 +21,7 @@
   "whoWeAre": {
     "eyebrow": "Quiénes somos",
     "title": "Lo construimos junto al equipo y luego le entregamos las llaves",
-    "body": "Viewnear ayuda a las empresas a establecer dos capacidades que conservan: una práctica de datos y una práctica de AI, construidas sobre Snowflake y operadas por equipos internos. Trabajamos junto a esos equipos desde el primer taller hasta la producción, en estrategia, arquitectura, ingeniería, analítica y AI gobernada, e integramos lo que construimos en ambos sentidos: los datos operativos entran, y las decisiones, respuestas y agentes de AI regresan a los sistemas donde ocurre el trabajo. Pasamos de ser una práctica especializada a un Snowflake Premier Partner al profundizar en una sola plataforma, y ese enfoque define cómo contratamos, capacitamos y entregamos.",
+    "body": "Viewnear ayuda a las empresas a establecer dos capacidades que conservan: una práctica de datos y una práctica de IA, construidas sobre Snowflake y operadas por equipos internos. Trabajamos junto a esos equipos desde el primer taller hasta la producción, en estrategia, arquitectura, ingeniería, analítica e IA gobernada, e integramos lo que construimos en ambos sentidos: los datos operativos entran, y las decisiones, respuestas y agentes de IA regresan a los sistemas donde ocurre el trabajo. Pasamos de ser una práctica especializada a un Snowflake Premier Partner al profundizar en una sola plataforma, y ese enfoque define cómo contratamos, capacitamos y entregamos.",
     "cta": "Cómo entregamos",
     "imageAlt": "Un collage del equipo de Viewnear en eventos de Snowflake: el stand de data + ai, Data for Breakfast, Snowflake Summit y comidas del equipo"
   },
@@ -62,7 +62,7 @@
   "trackRecord": [
     { "value": "Premier", "label": "Snowflake Premier + CoCo Preferred Partner" },
     { "value": "SnowPro", "label": "Certificación SnowPro en todo el equipo" },
-    { "value": "15+", "label": "Años construyendo data y AI empresarial" },
+    { "value": "15+", "label": "Años construyendo datos e IA empresarial" },
     { "value": "5", "label": "Países en toda América" }
   ],
   "operateHeading": {
@@ -77,7 +77,7 @@
     },
     {
       "title": "Gobernado por diseño",
-      "body": "El linaje de Horizon Catalog y Horizon Context dan a cada equipo y agente de AI un único contexto de negocio confiable, desde la primera tabla."
+      "body": "El linaje de Horizon Catalog y Horizon Context dan a cada equipo y agente de IA un único contexto de negocio confiable, desde la primera tabla."
     },
     {
       "title": "Un solo equipo responsable, de principio a fin",
@@ -110,11 +110,11 @@
     "intro": "Somos un grupo de profesionales, desde la estrategia hasta la ingeniería, que profundizan en lo mismo: Snowflake y soluciones empresariales. No unos pocos nombres senior sobre un banco rotativo, sino profundidad combinada que se nota en cada nivel del proyecto.",
     "leadershipLabel": "Liderazgo",
     "leadershipTitle": "El equipo de liderazgo",
-    "leadershipBody": "Las personas que lideran la práctica, con experiencia combinada en datos, analítica y AI empresarial."
+    "leadershipBody": "Las personas que lideran la práctica, con experiencia combinada en datos, analítica e IA empresarial."
   },
   "close": {
     "title": "Tráiganos el problema de datos más difícil.",
-    "body": "Sin importar en qué punto esté el trabajo hoy, migrando, escalando o fundamentando la AI, un arquitecto de Snowflake trazará la ruta más rápida hacia el valor.",
+    "body": "Sin importar en qué punto esté el trabajo hoy, migrando, escalando o fundamentando la IA, un arquitecto de Snowflake trazará la ruta más rápida hacia el valor.",
     "primaryCta": "Hable con un arquitecto",
     "secondaryCta": "Conozca nuestra alianza"
   }

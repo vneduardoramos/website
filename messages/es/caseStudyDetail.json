@@ -29,7 +29,7 @@
   "result": {
     "eyebrow": "El resultado",
     "title": "De datos crudos a <hl>decisiones con confianza</hl>",
-    "body": "Con datos gobernados y listos para AI, {clientName} logró informes más rápidos, pipelines confiables y una base preparada para escalar en el mercado de {region}.",
+    "body": "Con datos gobernados y listos para IA, {clientName} logró informes más rápidos, pipelines confiables y una base preparada para escalar en el mercado de {region}.",
     "imageAlt": "{title}: resultados",
     "cta": "Iniciar una conversación"
   },
