@@ -39,15 +39,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     prisma.jobOpening.findMany(sel),
   ]);
 
-  const dynamic: MetadataRoute.Sitemap = [
+  const dynamic = [
     ...industries.map((r) => ({ path: `/industries/${r.slug}`, lastModified: r.updatedAt })),
     ...caseStudies.map((r) => ({ path: `/case-studies/${r.slug}`, lastModified: r.updatedAt })),
     ...blog.map((r) => ({ path: `/blog/${r.slug}`, lastModified: r.updatedAt })),
     ...jobs.map((r) => ({ path: `/careers/${r.slug}`, lastModified: r.updatedAt })),
-  ].map((e) => ({ url: `${base}${e.path}`, lastModified: e.lastModified }));
+  ];
+
+  // Every path emits two URLs (en + es), each carrying reciprocal hreflang
+  // alternates. Home ("") maps to `${base}` / `${base}/es` (no trailing slash).
+  const langs = (p: string) => ({ en: p ? `${base}${p}` : base, es: `${base}/es${p}` });
+  function entry(p: string, lastModified: Date): MetadataRoute.Sitemap {
+    return [
+      { url: p ? `${base}${p}` : base, lastModified, alternates: { languages: langs(p) } },
+      { url: `${base}/es${p}`, lastModified, alternates: { languages: langs(p) } },
+    ];
+  }
 
   return [
-    ...staticPaths.map((path) => ({ url: `${base}${path}`, lastModified: now })),
-    ...dynamic,
+    ...staticPaths.flatMap((path) => entry(path, now)),
+    ...dynamic.flatMap((e) => entry(e.path, e.lastModified)),
   ];
 }

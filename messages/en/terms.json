@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "title": "Terms of Service",
+    "description": "The terms that govern your use of the Viewnear website and services."
+  },
+  "hero": {
+    "eyebrow": "Legal",
+    "title": "Terms of <hl>Service</hl>",
+    "description": "The terms that govern your use of our website and services."
+  },
+  "lastUpdated": "Last updated: June 7, 2026",
+  "intro": "These Terms of Service (“Terms”) govern your access to and use of the Viewnear website and any services we provide through it. By using our website you agree to these Terms. If you do not agree, please do not use the site.",
+  "sections": {
+    "use": {
+      "title": "Use of the site",
+      "body": "You may use this website for lawful purposes only. You agree not to misuse the site, interfere with its operation, attempt to access it in an unauthorized way, or use it to infringe the rights of others."
+    },
+    "ip": {
+      "title": "Intellectual property",
+      "body": "The content on this site (including text, graphics, logos, and the Viewnear brand) is owned by Viewnear or its licensors and is protected by applicable intellectual-property laws. You may not reproduce, distribute, or create derivative works without our prior written permission, except as permitted for personal, non-commercial reference."
+    },
+    "services": {
+      "title": "Services & engagements",
+      "body": "Information on this site is for general guidance and does not constitute a binding offer. Any services or delivery engagement is governed by a separate written agreement between you and Viewnear, which sets out scope, fees, timelines, and obligations. Where those terms conflict with these, the engagement agreement prevails."
+    },
+    "thirdParty": {
+      "title": "Third-party references",
+      "body": "We reference third-party products and platforms (including Snowflake) for descriptive purposes. Those names and marks belong to their respective owners, and their use does not imply endorsement beyond any partnership we expressly describe."
+    },
+    "noWarranties": {
+      "title": "No warranties",
+      "body": "The site and its content are provided “as is” without warranties of any kind, express or implied, including fitness for a particular purpose. We do not guarantee that the site will be uninterrupted, error-free, or secure."
+    },
+    "liability": {
+      "title": "Limitation of liability",
+      "body": "To the fullest extent permitted by law, Viewnear will not be liable for any indirect, incidental, or consequential damages arising from your use of the site."
+    },
+    "links": {
+      "title": "Links to other sites",
+      "body": "Our site may link to third-party websites we do not control. We are not responsible for their content or practices, and these Terms do not apply to them."
+    },
+    "changes": {
+      "title": "Changes to these Terms",
+      "body": "We may update these Terms from time to time. When we do, we will revise the “Last updated” date above. Continued use of the site after changes take effect constitutes acceptance of the revised Terms."
+    },
+    "contact": {
+      "title": "Contact us",
+      "body": "Questions about these Terms? Contact us at <link>contact@viewnear.com</link>."
+    }
+  }
+}

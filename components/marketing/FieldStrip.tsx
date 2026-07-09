@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { Img as Image } from "@/components/marketing/Img";
 import { Section } from "@/components/marketing/ui";
 
@@ -16,63 +17,48 @@ type MomentKey =
   | "team-dinner"
   | "partner-momentum";
 
-const MOMENTS: Record<MomentKey, { src: string; caption: string; alt: string }> = {
-  "team-group": {
-    src: "/assets/images/life/team-group.jpg",
-    caption: "Customer conversations at the booth",
-    alt: "The Viewnear team behind their data + ai booth at a Snowflake event",
-  },
-  "team-booth": {
-    src: "/assets/images/life/team-booth.jpg",
-    caption: "A full house at the live demo",
-    alt: "A crowd gathered around the Viewnear booth watching a live product demo",
-  },
-  "team-stage": {
-    src: "/assets/images/life/team-stage.jpg",
-    caption: "Snowflake Data for Breakfast",
-    alt: "A Viewnear team member at the Snowflake Data for Breakfast welcome signage",
-  },
-  "team-dinner": {
-    src: "/assets/images/life/team-dinner.jpg",
-    caption: "Dinner with the team",
-    alt: "The Viewnear team and partners gathered for a team dinner",
-  },
-  "partner-momentum": {
-    src: "/assets/images/life/partner-momentum.jpg",
-    caption: "Among Snowflake's CoCo partners",
-    alt: "Snowflake CoCo Global Partner Momentum wall listing Viewnear among Snowflake partners",
-  },
+const MOMENT_SRC: Record<MomentKey, string> = {
+  "team-group": "/assets/images/life/team-group.jpg",
+  "team-booth": "/assets/images/life/team-booth.jpg",
+  "team-stage": "/assets/images/life/team-stage.jpg",
+  "team-dinner": "/assets/images/life/team-dinner.jpg",
+  "partner-momentum": "/assets/images/life/partner-momentum.jpg",
 };
 
-export function FieldStrip({
+export async function FieldStrip({
   items = ["team-group", "team-booth", "partner-momentum", "team-dinner"],
-  eyebrow = "Out in the field",
+  eyebrow,
   className,
 }: {
   items?: MomentKey[];
   eyebrow?: string;
   className?: string;
 }) {
+  const t = await getTranslations("strips");
+  const moments = t.raw("fieldStrip.moments") as Record<
+    MomentKey,
+    { caption: string; alt: string }
+  >;
   return (
     <Section className={className}>
       <div className="flex items-end justify-between gap-4">
-        <span className="eyebrow">{eyebrow}</span>
+        <span className="eyebrow">{eyebrow ?? t("fieldStrip.eyebrow")}</span>
         <Link
           href="/life-at-viewnear"
           className="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-primaryDeep"
         >
-          More from the team
+          {t("fieldStrip.more")}
           <span aria-hidden="true">→</span>
         </Link>
       </div>
       <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
         {items.map((key) => {
-          const m = MOMENTS[key];
+          const m = moments[key];
           return (
             <figure key={key}>
               <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border">
                 <Image
-                  src={m.src}
+                  src={MOMENT_SRC[key]}
                   alt={m.alt}
                   fill
                   sizes="(max-width:768px) 50vw, 25vw"

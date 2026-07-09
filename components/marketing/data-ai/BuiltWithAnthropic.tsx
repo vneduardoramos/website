@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { AnthropicMark, ProviderMark } from "@/components/marketing/ProviderMark";
 import { MODEL_PROVIDERS } from "@/lib/model-providers";
 
@@ -8,22 +9,10 @@ import { MODEL_PROVIDERS } from "@/lib/model-providers";
  * open, so the small model row keeps the honesty without burying the lead.
  */
 
-const POINTS = [
-  {
-    term: "Inside Snowflake",
-    desc: "Claude runs as a Cortex model, so inference happens next to governed data and nothing is copied out.",
-  },
-  {
-    term: "In the flow of work",
-    desc: "Claude and Claude Code work in the tools teams already use, from the inbox to the IDE.",
-  },
-  {
-    term: "Connected by MCP",
-    desc: "Anthropic's open protocol links agents to governed endpoints and tools, with no bespoke glue.",
-  },
-];
+export async function BuiltWithAnthropic() {
+  const t = await getTranslations("dataAiUi");
+  const points = t.raw("builtWithAnthropic.points") as { term: string; desc: string }[];
 
-export function BuiltWithAnthropic() {
   return (
     <div className="panel-indigo relative overflow-hidden rounded-3xl p-8 shadow-xl md:p-12">
       <div className="relative grid items-center gap-10 lg:grid-cols-[1fr_1.05fr]">
@@ -31,18 +20,16 @@ export function BuiltWithAnthropic() {
         <div>
           <p className="eyebrow eyebrow--invert mb-4 inline-flex items-center gap-2">
             <AnthropicMark size={14} />
-            Anthropic partner
+            {t("builtWithAnthropic.eyebrow")}
           </p>
           <h2 className="max-w-md font-display text-3xl font-bold tracking-tight text-white md:text-4xl md:leading-[1.1]">
-            Claude, by default.
+            {t("builtWithAnthropic.h2")}
           </h2>
           <p className="mt-4 max-w-md text-base leading-relaxed text-white/75">
-            As an Anthropic partner, Claude is the reasoning model we reach for first, inside
-            Snowflake and in the flow of work. It is the same model on both planes, so the
-            behavior a team trusts in a demo is the behavior that ships.
+            {t("builtWithAnthropic.body")}
           </p>
           <dl className="mt-8 space-y-4">
-            {POINTS.map((p) => (
+            {points.map((p) => (
               <div key={p.term} className="border-t border-white/10 pt-3">
                 <dt className="font-display text-sm font-bold text-white">{p.term}</dt>
                 <dd className="mt-1 text-sm leading-relaxed text-white/70">{p.desc}</dd>
@@ -68,13 +55,13 @@ export function BuiltWithAnthropic() {
                   {"SELECT AI_COMPLETE(\n  '"}
                   <span className="font-semibold text-secondary">claude-opus-4-8</span>
                   {"',"}
-                  <span className="text-white/40">{"   -- our default reasoning model"}</span>
+                  <span className="text-white/40">{t("builtWithAnthropic.sqlComment")}</span>
                   {"\n  CONCAT('Classify this claim: ', claim_text)\n)\nFROM governed.claims;"}
                 </code>
               </pre>
             </div>
             <figcaption className="mt-3 font-mono text-[0.66rem] uppercase tracking-[0.14em] text-white/50">
-              Cortex AISQL &middot; runs inside the Snowflake account
+              {t("builtWithAnthropic.figcaption")}
             </figcaption>
           </figure>
 
@@ -94,7 +81,7 @@ export function BuiltWithAnthropic() {
                     />
                     {isAnthropic && (
                       <span className="font-mono text-[0.66rem] uppercase tracking-[0.14em] text-white/70">
-                        default
+                        {t("builtWithAnthropic.default")}
                       </span>
                     )}
                   </span>
@@ -102,9 +89,7 @@ export function BuiltWithAnthropic() {
               })}
             </div>
             <p className="mt-4 text-xs leading-relaxed text-white/55">
-              The estate stays open. Every major model is callable in Cortex, and swapping one
-              is a one-line change. We benchmark per use case on quality, cost, and latency, and
-              Claude is where we start for enterprise reasoning.
+              {t("builtWithAnthropic.closing")}
             </p>
           </div>
         </div>

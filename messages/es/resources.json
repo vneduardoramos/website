@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "title": "Recursos: casos de éxito y blog",
+    "description": "Casos de éxito y blog de Viewnear: pruebas de proyectos reales y apuntes de campo sobre datos e IA, todo en un solo lugar."
+  },
+  "hero": {
+    "eyebrow": "Recursos",
+    "title": "Todo en <hl>un solo lugar</hl>.",
+    "description": "Casos de éxito de proyectos reales y apuntes de campo de quienes los ejecutaron. Para cualquiera que esté construyendo una práctica de datos e IA, así es como se ve en el terreno."
+  },
+  "startHere": {
+    "eyebrow": "Empiece aquí",
+    "title": "Un proyecto, un apunte de campo",
+    "intro": "Un caso de éxito real y una publicación reciente del equipo: la forma más rápida de ver cómo trabajamos.",
+    "caseKicker": "Caso de éxito · {sector}",
+    "blogKicker": "Blog · {tag}",
+    "fieldNotesFallback": "Apuntes de campo"
+  },
+  "caseStudies": {
+    "eyebrow": "Pruebas",
+    "title": "Casos de éxito",
+    "seeAll": "Todos los casos de éxito"
+  },
+  "blog": {
+    "eyebrow": "Apuntes de campo",
+    "title": "Blog",
+    "seeAll": "Todas las publicaciones"
+  },
+  "cta": {
+    "title": "Pongamos en marcha una práctica de datos e IA duradera.",
+    "subtitle": "Cuéntenos en qué punto está la organización (migrando, escalando o llevando IA a producción) y trazaremos la vía más rápida hacia casos de uso en producción, operados por equipos internos."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "title": "Contact: start a data & AI practice",
+    "description": "Get in touch with Viewnear. We help enterprises stand up data & AI practices on Snowflake, run by their own teams, across the Americas."
+  },
+  "hero": {
+    "eyebrow": "Contact Viewnear",
+    "title": "Start a <hl>data & AI</hl> practice",
+    "description": "Tell us about the organization's data & AI goals. Whether it means modernizing on Snowflake or starting from scratch, we'll map the fastest path to governed, AI-ready data."
+  },
+  "preferEmail": "Prefer email?",
+  "imageAlt": "A warm handshake welcoming a new Viewnear client",
+  "next": {
+    "title": "What happens next",
+    "reply": "An architect replies within one business day.",
+    "call": "Prefer to call?"
+  },
+  "steps": [
+    {
+      "title": "We review the message",
+      "body": "An architect on our team reads the message and routes it to the right person."
+    },
+    {
+      "title": "Intro conversation",
+      "body": "We schedule a short call to understand the goals, data landscape, and timeline."
+    },
+    {
+      "title": "A tailored plan",
+      "body": "A clear, no-pressure proposal follows: the first use cases, a sprint-by-sprint plan, and the enablement the team gets from day one."
+    }
+  ],
+  "leadershipLabel": "The team that picks up the project.",
+  "credentials": {
+    "eyebrow": "Verified credentials",
+    "pills": ["Snowflake Premier Partner", "CoCo Preferred Partner", "SnowPro-certified"]
+  },
+  "offices": ["Austin, TX · 10900 Stonelake Blvd", "Monterrey, MX · Valle Alto"],
+  "booking": {
+    "prefer": "Prefer to skip the form?",
+    "cta": "Book 30 minutes with an architect →"
+  }
+}

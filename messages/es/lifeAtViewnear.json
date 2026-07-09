@@ -1,0 +1,163 @@
+{
+  "meta": {
+    "title": "La vida en Viewnear",
+    "description": "Orientados a resultados, nativos de IA y potenciados por el equipo: cómo trabajamos en Viewnear, en qué creemos y los beneficios que lo respaldan, desde la salud hasta el bienestar emocional."
+  },
+  "hero": {
+    "eyebrow": "Carreras · Cultura",
+    "title": "Construimos el <hl>equipo local de data & AI</hl> para las Américas.",
+    "description": "Viewnear está orientada a resultados, es nativa de IA y se construye en torno a un solo equipo que comparte cada logro. Así trabajamos, esto defendemos y estos son los beneficios que lo respaldan.",
+    "seeRoles": "Ver vacantes",
+    "meetTeam": "Conozca al equipo"
+  },
+  "offices": {
+    "eyebrow": "Nuestras oficinas",
+    "title": "Dos sedes. Un solo equipo.",
+    "intro": "Tenemos sede en Austin y Monterrey: dos espacios insignia que dan base a un equipo que trabaja en toda América, de forma presencial y con refuerzo remoto.",
+    "items": [
+      {
+        "city": "Austin",
+        "region": "Texas, EE. UU.",
+        "place": "Quarry Oaks II · Stonelake Office Park",
+        "alt": "La sede de Viewnear en Austin: una torre de oficinas de cristal en Stonelake Office Park, frente al horizonte del centro de Austin",
+        "street": "10900 Stonelake Blvd, Bldg 2, Suite 100",
+        "cityZip": "Austin, TX 78759"
+      },
+      {
+        "city": "Monterrey",
+        "region": "Nuevo León, México",
+        "place": "Pueblo Serena",
+        "alt": "La sede de Viewnear en Monterrey: un edificio de oficinas moderno en Pueblo Serena, a los pies de la Sierra Madre",
+        "street": "Carr. Nacional 500, Valle Alto",
+        "cityZip": "Monterrey, MX 64983"
+      }
+    ]
+  },
+  "whereWeWork": {
+    "eyebrow": "Dónde trabajamos",
+    "title": "Dos centros para reunirnos, flexibilidad para todo lo demás.",
+    "body": "Por dentro, nuestras oficinas están hechas para concentrarse y para reunirse: rincones tranquilos para el trabajo profundo y salas abiertas para las conversaciones que hacen avanzar los proyectos. Nos reunimos en persona porque el tiempo compartido construye la confianza y la alineación detrás de cada resultado, y mantenemos la flexibilidad para que la vida y el buen trabajo puedan coexistir.",
+    "bullets": [
+      "Oficinas modernas y flexibles diseñadas para la concentración y la colaboración",
+      "Colaboración presencial, ampliada con flexibilidad remota",
+      "Tiempo juntos con regularidad: retiros, eventos de Snowflake y cenas de equipo"
+    ],
+    "imageAlt": "Interior de una oficina de Viewnear: una sala abierta y zona de trabajo con sofás, plantas, una barra de café y salas de reuniones revestidas de madera"
+  },
+  "model": {
+    "eyebrow": "El modelo Viewnear",
+    "title": "Orientados a resultados. Nativos de IA. Impulsados por el equipo.",
+    "intro": "Entregamos resultados, ampliamos el impacto mediante una ejecución nativa de IA y operamos como un solo equipo con responsabilidad compartida.",
+    "stepLabel": "Paso",
+    "items": [
+      {
+        "title": "Los resultados primero",
+        "body": "Organizamos nuestro trabajo en torno a resultados de negocio medibles, no a la actividad. El éxito se define por el impacto en el cliente, la calidad y la confianza, no por las horas registradas."
+      },
+      {
+        "title": "Entrega AI-native",
+        "body": "La IA está integrada en cómo trabajamos: nuestro modelo operativo, nuestras herramientas, nuestro ritmo de entrega. La ejecución nativa de IA más el criterio humano hace que un solo equipo entregue más trabajo en paralelo, con las mismas personas a cargo de principio a fin."
+      },
+      {
+        "title": "Un solo equipo, capacidad flexible",
+        "body": "Colaboramos en persona con frecuencia, porque el tiempo compartido fortalece la alineación, la confianza y la ejecución. Creemos en el trabajo remoto, pero no en el remote-first. Nuestro modelo es remote-augmented: anclado en la colaboración presencial y ampliado con flexibilidad."
+      }
+    ]
+  },
+  "field": {
+    "eyebrow": "En el terreno",
+    "title": "Donde estamos presentes",
+    "intro": "Snowflake Summit, Data for Breakfast, escenarios de partners y las cenas entre medias. Algunos momentos del equipo.",
+    "moments": [
+      {
+        "caption": "Conversaciones con clientes en el stand",
+        "alt": "El equipo de Viewnear detrás de su stand de data + ai en un evento de Snowflake"
+      },
+      {
+        "caption": "Lleno total en la demo en vivo",
+        "alt": "Un grupo de personas reunidas alrededor del stand de Viewnear viendo una demo de producto en vivo"
+      },
+      {
+        "caption": "Desayuno de equipo en la ruta",
+        "alt": "Integrantes del equipo de Viewnear compartiendo el desayuno en un evento de Snowflake"
+      },
+      {
+        "caption": "Snowflake Data for Breakfast",
+        "alt": "Un integrante del equipo de Viewnear junto a la señalización de bienvenida de Snowflake Data for Breakfast"
+      },
+      {
+        "caption": "Cena con el equipo",
+        "alt": "El equipo de Viewnear y sus partners reunidos en una cena de equipo"
+      },
+      {
+        "caption": "Entre los partners CoCo de Snowflake",
+        "alt": "El muro Snowflake CoCo Global Partner Momentum que incluye a Viewnear entre los partners de Snowflake"
+      }
+    ]
+  },
+  "standard": {
+    "eyebrow": "El estándar Viewnear",
+    "body": "Los altos estándares son mutuos. Le pedimos mucho a nuestro equipo, y nuestro equipo debe esperar lo mismo de Viewnear."
+  },
+  "meaning": {
+    "eyebrow": "Qué significa para el equipo",
+    "title": "Un mejor modelo es un mejor lugar para trabajar",
+    "items": [
+      {
+        "title": "Crecimiento",
+        "body": "Trabajo con sentido que amplía el aprendizaje, el contexto de negocio y el alcance técnico."
+      },
+      {
+        "title": "Enfoque",
+        "body": "Menos trabajo repetitivo, más tiempo para el criterio, la entrega y el liderazgo."
+      },
+      {
+        "title": "Equilibrio",
+        "body": "El buen trabajo a largo plazo requiere recuperación. El tiempo libre es flexible (sin límite fijo) siempre que los resultados se mantengan sólidos y los equipos, cubiertos."
+      },
+      {
+        "title": "Recompensas",
+        "body": "Una economía más sólida financia mejor compensación, bonos y beneficios."
+      },
+      {
+        "title": "Orgullo",
+        "body": "Problemas difíciles, responsabilidad real y trabajo del que uno se enorgullece."
+      }
+    ]
+  },
+  "benefits": {
+    "eyebrow": "Beneficios",
+    "title": "Reinvertimos en el equipo",
+    "intro": "Mejores resultados generan una economía más sólida, y devolvemos esa economía a las personas que la hacen posible. Salud, dental, bienestar emocional y más."
+  },
+  "standApart": {
+    "eyebrow": "Por qué Viewnear se distingue",
+    "title": "Una victoria para uno es una victoria para todos",
+    "intro": "Una economía más sólida construye un equipo más sólido, y un equipo más sólido entrega mejores resultados. Es un círculo virtuoso, y todos participan de él.",
+    "items": [
+      "La colaboración es real: los equipos trabajan juntos de forma presencial y remota, con responsabilidad compartida por los resultados."
+    ],
+    "flywheel": ["Resultados", "Trabajo de mayor valor", "Reinversión", "Equipo más sólido", "Mejores resultados"]
+  },
+  "openRoles": {
+    "eyebrow": "Vacantes",
+    "title": "Vacantes actuales",
+    "intro": "¿No hay una vacante perfecta en la lista? Igual queremos conocer a buenas personas.",
+    "empty": "No hay vacantes abiertas por ahora, pero siempre estamos conociendo a buenas personas. Escríbanos a continuación.",
+    "locationLabel": "Ubicación",
+    "viewRole": "Ver vacante y postularse",
+    "ctaTitle": "¿No sabe qué vacante encaja? Escríbanos de todos modos.",
+    "ctaLabel": "Postularse ahora"
+  },
+  "apply": {
+    "eyebrow": "Postularse",
+    "title": "Salude",
+    "intro": "Comparta algunos datos y la vacante de interés. Leemos cada postulación."
+  },
+  "cta": {
+    "title": "Comience con los resultados. Construya el equipo que los hace posibles.",
+    "subtitle": "Trabajo con sentido, colegas que elevan el oficio y una empresa joven a la que ayudar a dar forma: hablemos.",
+    "seeRoles": "Ver vacantes",
+    "getInTouch": "Póngase en contacto"
+  }
+}

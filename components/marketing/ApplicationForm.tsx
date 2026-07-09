@@ -1,13 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { useRouter } from "@/i18n/navigation";
 
 const inputCls =
   "w-full rounded border border-border bg-surface2 px-4 py-3 text-foreground aria-[invalid=true]:border-danger";
 
 export function ApplicationForm({ openingTitle }: { openingTitle?: string }) {
   const router = useRouter();
+  const t = useTranslations("forms");
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
@@ -63,30 +65,30 @@ export function ApplicationForm({ openingTitle }: { openingTitle?: string }) {
       setError(
         err instanceof Error && err.message !== "Request failed"
           ? err.message
-          : "Something went wrong. Please try again or email us directly.",
+          : t("application.error"),
       );
     }
   }
 
   return (
     <form onSubmit={handleSubmit} noValidate className="card p-8">
-      <h3 className="font-display text-xl font-bold text-foreground">Apply now</h3>
+      <h3 className="font-display text-xl font-bold text-foreground">{t("application.title")}</h3>
       {openingTitle ? (
         <p className="mt-2 text-sm text-muted">
-          Applying for: <span className="text-primaryDeep">{openingTitle}</span>
+          {t("application.applyingFor")} <span className="text-primaryDeep">{openingTitle}</span>
         </p>
       ) : null}
 
       <input type="hidden" name="openingTitle" value={openingTitle ?? ""} />
 
       <p className="mt-6 text-sm text-muted">
-        Fields marked <span className="text-danger">*</span> are required.
+        {t.rich("application.requiredNote", { mark: (c) => <span className="text-danger">{c}</span> })}
       </p>
 
       <div className="mt-4 space-y-4">
         <div>
           <label htmlFor="app-name" className="mb-2 block text-sm text-muted">
-            Full name <span className="text-danger" aria-hidden="true">*</span>
+            {t("application.fullName")} <span className="text-danger" aria-hidden="true">*</span>
           </label>
           <input
             id="app-name"
@@ -107,7 +109,7 @@ export function ApplicationForm({ openingTitle }: { openingTitle?: string }) {
         </div>
         <div>
           <label htmlFor="app-email" className="mb-2 block text-sm text-muted">
-            Email <span className="text-danger" aria-hidden="true">*</span>
+            {t("application.email")} <span className="text-danger" aria-hidden="true">*</span>
           </label>
           <input
             id="app-email"
@@ -128,7 +130,7 @@ export function ApplicationForm({ openingTitle }: { openingTitle?: string }) {
         </div>
         <div>
           <label htmlFor="app-linkedin" className="mb-2 block text-sm text-muted">
-            LinkedIn profile
+            {t("application.linkedin")}
           </label>
           <input
             id="app-linkedin"
@@ -149,7 +151,7 @@ export function ApplicationForm({ openingTitle }: { openingTitle?: string }) {
         </div>
         <div>
           <label htmlFor="app-message" className="mb-2 block text-sm text-muted">
-            About the candidate <span className="text-danger" aria-hidden="true">*</span>
+            {t("application.aboutLabel")} <span className="text-danger" aria-hidden="true">*</span>
           </label>
           <textarea
             id="app-message"
@@ -169,7 +171,7 @@ export function ApplicationForm({ openingTitle }: { openingTitle?: string }) {
         </div>
         <div>
           <label htmlFor="app-resume" className="mb-2 block text-sm text-muted">
-            Resume <span className="text-muted">(PDF or Word, max 8 MB)</span>
+            {t("application.resumeLabel")} <span className="text-muted">{t("application.resumeHint")}</span>
           </label>
           <input
             id="app-resume"
@@ -186,7 +188,7 @@ export function ApplicationForm({ openingTitle }: { openingTitle?: string }) {
       ) : null}
 
       <button type="submit" disabled={status === "loading"} className="btn-primary mt-6 disabled:opacity-60">
-        {status === "loading" ? "Submitting..." : "Submit application"}
+        {status === "loading" ? t("application.submitting") : t("application.submit")}
       </button>
     </form>
   );

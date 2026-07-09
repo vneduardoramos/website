@@ -8,6 +8,12 @@ import type { ComponentType, SVGProps } from "react";
  *
  * Class strings are written out in full (never interpolated) so Tailwind's JIT
  * keeps them, same approach as the services page's tier meta.
+ *
+ * i18n note: only the NON-TEXT, visual identity (icon, decor, tile, bar, glow,
+ * text, accentVar) lives here, so this module stays safe to import from the
+ * client `Nav`. The localized COPY (pattern eyebrow, compliance sentence,
+ * capabilities, bullets) moved into the `contentData` message catalog and is
+ * read via `getFlavorText(slug, t)` by the server industry-detail page.
  */
 
 type IconProps = SVGProps<SVGSVGElement>;
@@ -91,10 +97,6 @@ export type DecorVariant = "blobs" | "dots" | "grid" | "swoosh" | "mesh" | "flow
 
 export interface IndustryFlavor {
   icon: ComponentType<IconProps>;
-  /** sub-sectors, shown as the hero eyebrow */
-  pattern: string;
-  /** one-line governance/compliance note (CXO trust signal) */
-  compliance: string;
   /** decorative texture that echoes the sector's nature */
   decor: DecorVariant;
   /** icon-tile background + foreground (full static classes) */
@@ -107,9 +109,19 @@ export interface IndustryFlavor {
   text: string;
   /** CSS color-token variable for the sector hue (e.g. "--color-amber"), used to tint eyebrows */
   accentVar: string;
-  /** Always-true capability facts for the sector-level strip. NOT outcome
-   *  numbers: measured client results live only in the attributed case-study
-   *  spotlight. Never put an invented percentage here. */
+}
+
+/**
+ * Localized per-sector copy, read from the `contentData` message catalog.
+ * `capabilities` are always-true capability facts for the sector-level strip,
+ * NOT outcome numbers: measured client results live only in the attributed
+ * case-study spotlight.
+ */
+export interface IndustryFlavorText {
+  /** sub-sectors, shown as the hero eyebrow */
+  pattern: string;
+  /** one-line governance/compliance note (CXO trust signal) */
+  compliance: string;
   capabilities: { value: string; label: string }[];
   bullets: string[];
 }
@@ -117,199 +129,93 @@ export interface IndustryFlavor {
 export const INDUSTRY_FLAVOR: Record<string, IndustryFlavor> = {
   "construction-real-estate": {
     icon: BuildingIcon,
-    pattern: "Contractors · Developers · Asset Owners",
     accentVar: "--color-amber",
-    compliance:
-      "Auditable cost, contract, and asset data with role-based access across every project.",
     decor: "grid", // blueprint precision
     tile: "bg-amber/15 text-amber",
     bar: "bg-amber",
     glow: "bg-amber/15",
     text: "text-amber",
-    capabilities: [
-      { value: "Cost + schedule", label: "One governed project view" },
-      { value: "Portfolio", label: "Analytics across every asset" },
-      { value: "8–16 wks", label: "To first value in production" },
-      { value: "SnowPro", label: "Certified delivery team" },
-    ],
-    bullets: [
-      "Project cost and schedule data consolidated into one governed view",
-      "Portfolio and asset analytics across every property and project",
-      "Budget-vs-actual and schedule risk surfaced while there's time to act",
-      "Forecasting and valuation grounded in trusted, current data",
-    ],
   },
   education: {
     icon: GraduationCapIcon,
-    pattern: "Schools · Universities · Training Providers",
     accentVar: "--color-secondary",
-    compliance:
-      "FERPA-aware handling of student data, with privacy and access control built in.",
     decor: "mesh", // networks of learning
     tile: "bg-secondary/15 text-primaryDeep",
     bar: "bg-secondary",
     glow: "bg-secondary/20",
     text: "text-primaryDeep",
-    capabilities: [
-      { value: "SIS + LMS", label: "Unified under one model" },
-      { value: "FERPA", label: "Aware handling of student data" },
-      { value: "8–16 wks", label: "To first value in production" },
-      { value: "SnowPro", label: "Certified delivery team" },
-    ],
-    bullets: [
-      "SIS, LMS, and operational data unified under one governance model",
-      "Student success analytics on engagement, attainment, and retention",
-      "Statutory, accreditation, and funder reporting automated from one source",
-      "Early-warning insight on the students most at risk",
-    ],
   },
   "financial-services": {
     icon: BankIcon,
-    pattern: "Banking · Insurance · Asset Management",
     accentVar: "--color-primary-deep",
-    compliance:
-      "FINRA, SEC, and SOX-aligned reporting with role-based access and full audit lineage.",
     decor: "grid", // ledger / blueprint precision
     tile: "bg-primaryDeep/15 text-primaryDeep",
     bar: "bg-primaryDeep",
     glow: "bg-primaryDeep/15",
     text: "text-primaryDeep",
-    capabilities: [
-      { value: "FINRA · SEC · SOX", label: "Aligned reporting" },
-      { value: "Full lineage", label: "On every reported number" },
-      { value: "8–16 wks", label: "To first value in production" },
-      { value: "Premier", label: "Snowflake Premier Partner" },
-    ],
-    bullets: [
-      "A single governed warehouse consolidating fragmented banking, insurance, and asset data",
-      "Automated regulatory and structured external reporting, auditable end to end",
-      "Self-service analytics so teams decide on current, reliable numbers",
-      "AI use cases prioritized against risk, compliance, and return",
-    ],
   },
   manufacturing: {
     icon: FactoryIcon,
-    pattern: "Discrete · Process · Supply Chain",
     accentVar: "--color-success",
-    compliance:
-      "Traceability from supplier to shipment, governed at every step for quality and audit.",
     decor: "flow", // assembly-line flow
     tile: "bg-success/15 text-success",
     bar: "bg-success",
     glow: "bg-success/15",
     text: "text-success",
-    capabilities: [
-      { value: "Shop-floor + ERP", label: "One governed source" },
-      { value: "Supplier → shipment", label: "Traceable, governed" },
-      { value: "8–16 wks", label: "To first value in production" },
-      { value: "SnowPro", label: "Certified delivery team" },
-    ],
-    bullets: [
-      "Shop-floor, sensor, and ERP data unified into one governed, trusted source",
-      "OEE and quality analytics that expose the real cost drivers",
-      "Supply-chain visibility from raw material to delivered order",
-      "Data foundations for predicting failures before they happen",
-    ],
   },
   "media-entertainment-advertising": {
     icon: BroadcastIcon,
-    pattern: "Media · Entertainment · Advertising",
     accentVar: "--color-accent",
-    compliance:
-      "Consent-aware audience data, governed for privacy across every channel.",
     decor: "swoosh", // motion & broadcast
     tile: "bg-accent/15 text-accent",
     bar: "bg-accent",
     glow: "bg-accent/15",
     text: "text-accent",
-    capabilities: [
-      { value: "Audience", label: "One unified, consent-aware view" },
-      { value: "Every channel", label: "Attribution in one place" },
-      { value: "8–16 wks", label: "To first value in production" },
-      { value: "SnowPro", label: "Certified delivery team" },
-    ],
-    bullets: [
-      "Viewing, subscription, and engagement data unified into one source",
-      "Near-real-time campaign and ad attribution across channels",
-      "Content performance analytics that guide what to commission",
-      "Audience signal teams act on, not gut feel",
-    ],
   },
   "retail-cpg": {
     icon: BagIcon,
-    pattern: "Retail · CPG · Loyalty",
     accentVar: "--color-purple",
-    compliance:
-      "PCI-aware handling of payment and customer data, governed end to end.",
     decor: "dots", // SKU grid
     tile: "bg-purple/15 text-purple",
     bar: "bg-purple",
     glow: "bg-purple/15",
     text: "text-purple",
-    capabilities: [
-      { value: "Online + in-store", label: "One demand view" },
-      { value: "PCI-aware", label: "Payment + customer data governed" },
-      { value: "8–16 wks", label: "To first value in production" },
-      { value: "SnowPro", label: "Certified delivery team" },
-    ],
-    bullets: [
-      "Online and in-store data unified into one near-real-time, governed foundation",
-      "Inventory and perishables analytics that cut shrink",
-      "Production, food cost, and logistics in a single view",
-      "Customer and loyalty performance tracked alongside margin",
-    ],
   },
   "technology-telco": {
     icon: ChipIcon,
-    pattern: "Software · Platforms · Telecom",
     accentVar: "--color-primary",
-    compliance:
-      "Usage and network data handled with privacy, consent, and access controls.",
     decor: "blobs", // signal & flow
     tile: "bg-primary/15 text-primaryDeep",
     bar: "bg-primary",
     glow: "bg-primary/15",
     text: "text-primaryDeep",
-    capabilities: [
-      { value: "Usage + network", label: "One governed source" },
-      { value: "Full-volume", label: "Telemetry, query-ready" },
-      { value: "8–16 wks", label: "To first value in production" },
-      { value: "Premier", label: "Snowflake Premier Partner" },
-    ],
-    bullets: [
-      "Product usage, billing, and network telemetry unified and governed",
-      "Churn and retention analytics that flag risk early",
-      "High-volume telemetry ingested, governed, and query-ready",
-      "Reliable, governed metrics every team reports from",
-    ],
   },
 };
 
 export const DEFAULT_FLAVOR: IndustryFlavor = {
   icon: BankIcon,
-  pattern: "Data & AI",
   accentVar: "--color-primary-deep",
-  compliance:
-    "Governance, lineage, and access controls built in from day one.",
   decor: "blobs",
   tile: "bg-primary/15 text-primaryDeep",
   bar: "bg-primary",
   glow: "bg-primary/15",
   text: "text-primaryDeep",
-  capabilities: [
-    { value: "Governed", label: "One source of truth" },
-    { value: "Built in", label: "Security and lineage" },
-    { value: "8–16 wks", label: "To first value in production" },
-    { value: "SnowPro", label: "Certified delivery team" },
-  ],
-  bullets: [
-    "Sector-specific data models and governance built in from the start",
-    "Industry specialists paired with SnowPro-certified engineers, embedded in the team",
-    "Measurable outcomes tied to the metrics teams report on",
-    "A roadmap that scales from first win to company-wide adoption",
-  ],
 };
 
 export function getFlavor(slug: string): IndustryFlavor {
   return INDUSTRY_FLAVOR[slug] ?? DEFAULT_FLAVOR;
+}
+
+/**
+ * Localized per-sector copy for `slug`, read from the `contentData` catalog.
+ * Falls back to the shared default copy when the slug has no dedicated entry
+ * (mirrors `getFlavor`'s fallback). Pass a `getTranslations("contentData")`
+ * (server) or `useTranslations("contentData")` (client) instance.
+ */
+export function getFlavorText(
+  slug: string,
+  t: { raw: (key: string) => unknown },
+): IndustryFlavorText {
+  const key = slug in INDUSTRY_FLAVOR ? slug : "default";
+  return t.raw(`industryFlavor.${key}`) as IndustryFlavorText;
 }

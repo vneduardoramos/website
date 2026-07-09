@@ -1,0 +1,28 @@
+{
+  "story": {
+    "beat1": {
+      "title": "Week 1–2: a scope worth signing",
+      "body": "It starts with a <art>paid discovery</art>: our architects sit with the stakeholders, walk the sources, and rank the use cases by what they return. The sponsor comes out holding a <art>fixed scope</art> at a fixed price, so what goes upstairs to the board is a commitment, not an estimate."
+    },
+    "beat2": {
+      "title": "The sprint rhythm",
+      "body": "Then the cadence sets in: every sprint closes with a <art>sprint demo</art> of something that works against real data, not a status deck. Something usable ships each time, so progress is a thing the team can click, not a percentage anyone is asked to believe."
+    },
+    "beat3": {
+      "title": "Week 3 feels like this",
+      "body": "The sponsor sits in the first <art>steering review</art>, reordering a <art>shared backlog</art> that is genuinely theirs to reorder, with a <art>decision gate</art> ahead that waits on the business, not on us. Scope, budget, and priorities stay in-house the whole way through."
+    },
+    "beat4": {
+      "title": "Proof before scale",
+      "body": "Before the full build, a focused <art>proof of concept</art> has to earn the go-ahead on real data and the hardest use case. The decision to scale rests on evidence the team watched happen, never on a slide."
+    },
+    "beat5": {
+      "title": "The parallel truth",
+      "body": "When the first dashboards go live, a <art>parallel run</art> checks them against the numbers teams trust today, and every mismatch gets chased down and explained. The new figures earn their standing by reconciling, not because we vouched for them."
+    },
+    "beat6": {
+      "title": "Handover, documented",
+      "body": "The build ships with <art>runbooks</art>, documentation, and <art>enablement</art> sessions, plus a transition plan that names who runs what when we step back. Most engagements reach first value in 8–16 weeks, and from there the team extends the work on its own terms."
+    }
+  }
+}

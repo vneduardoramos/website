@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "title": "Seguridad y confianza",
+    "description": "Cómo Viewnear mantiene los datos empresariales seguros y gobernados: sobre la base certificada de Snowflake, con gobierno, control de acceso y linaje auditable en cada proyecto."
+  },
+  "hero": {
+    "eyebrow": "Seguridad y confianza",
+    "title": "Datos empresariales, <hl>gobernados y seguros</hl>.",
+    "description": "La seguridad no es una fase en Viewnear; es la forma en que construimos. Todo lo que entregamos se ejecuta sobre la base certificada de Snowflake, con gobierno, control de acceso y linaje auditable diseñados desde la primera tabla."
+  },
+  "compliance": {
+    "eyebrow": "Postura de cumplimiento",
+    "title": "Sobre una base certificada",
+    "intro": "Construimos sobre la plataforma de Snowflake, auditada de forma independiente, y la extendemos con nuestras propias prácticas de entrega gobernadas. Las certificaciones a continuación son de Snowflake; los datos las heredan, y nosotros configuramos el entorno para cumplirlas."
+  },
+  "platformCompliance": [
+    { "name": "SOC 2 Type II", "note": "Plataforma Snowflake" },
+    { "name": "ISO 27001", "note": "Plataforma Snowflake" },
+    { "name": "HIPAA", "note": "Plataforma Snowflake (salud)" },
+    { "name": "PCI DSS", "note": "Plataforma Snowflake (pagos)" },
+    { "name": "FedRAMP", "note": "Plataforma Snowflake (gobierno de EE. UU.)" },
+    { "name": "GDPR-ready", "note": "Residencia y controles de datos" }
+  ],
+  "inheritedLabel": "Controles auditados de Snowflake",
+  "ourLabel": "Prácticas de entrega de Viewnear",
+  "inheritedControls": ["SOC 2 Type II", "ISO 27001", "HIPAA", "PCI DSS"],
+  "ourControls": [
+    "Acceso con privilegios mínimos",
+    "Linaje y auditabilidad",
+    "Clasificación de PII",
+    "Prácticas de entrega seguras"
+  ],
+  "practicesHeading": {
+    "eyebrow": "Nuestras prácticas",
+    "title": "Cómo protegemos los datos",
+    "intro": "Los controles que aplicamos en cada proyecto de forma predeterminada, nunca como complementos opcionales."
+  },
+  "practices": [
+    {
+      "label": "Acceso",
+      "title": "Acceso con privilegios mínimos",
+      "body": "Control de acceso basado en roles, modelado según la organización, para que cada persona vea solo los datos que necesita, aplicado en Snowflake y no añadido después."
+    },
+    {
+      "label": "Linaje",
+      "title": "Linaje y auditabilidad",
+      "body": "El linaje y el historial de acceso de Horizon Catalog hacen que cada cifra sea rastreable hasta su origen y que cada acceso quede registrado para auditoría."
+    },
+    {
+      "label": "PII",
+      "title": "Clasificación de PII",
+      "body": "Los datos sensibles se clasifican, enmascaran y protegen con etiquetado y políticas de fila y columna desde la primera tabla que construimos."
+    },
+    {
+      "label": "Residencia",
+      "title": "Residencia de datos por región",
+      "body": "Desplegamos en la región de Snowflake que se requiera en toda América, para que los datos permanezcan donde las políticas y los reguladores lo exigen."
+    },
+    {
+      "label": "Secretos",
+      "title": "Gestión de secretos y claves",
+      "body": "Las credenciales y las claves se gestionan a través de los servicios de secretos y KMS de la nube: nunca se escriben directamente en el código ni se comparten en texto plano."
+    },
+    {
+      "label": "Entrega",
+      "title": "Prácticas de entrega seguras",
+      "body": "La revisión de código, las cuentas de entrega con privilegios mínimos y la separación de entornos son estándar en cada proyecto."
+    }
+  ],
+  "governance": {
+    "eyebrow": "Gobierno",
+    "title": "Una base gobernada, <hl>no copias dispersas</hl>",
+    "body": "La mayor parte del riesgo de datos proviene de la dispersión: exportaciones, copias ocultas y hojas de cálculo sin gobierno. Consolidamos en una única plataforma Snowflake gobernada para que el acceso, el linaje y las políticas vivan en un solo lugar que sí se puede auditar.",
+    "bullets": [
+      "Una única fuente de verdad gobernada, no datos repartidos entre herramientas",
+      "Políticas de acceso, enmascaramiento y retención aplicadas de forma centralizada",
+      "Historial de acceso y linaje completos para auditoría y respuesta ante incidentes",
+      "Formatos de tabla abiertos (Apache Iceberg), consultables por cualquier motor, sin migrar de plataforma"
+    ],
+    "imageAlt": "Infraestructura de datos gobernada y segura",
+    "cta": "Hable con nuestro equipo"
+  },
+  "verticalsHeading": {
+    "eyebrow": "Por industria",
+    "title": "Cumplimiento donde importa",
+    "intro": "Los sectores regulados tienen obligaciones específicas. Configuramos el gobierno según las normas que cada industria debe cumplir."
+  },
+  "verticals": [
+    {
+      "sector": "Servicios financieros",
+      "body": "Informes alineados con FINRA, SEC y SOX, con linaje auditable y segregación de funciones incorporados por diseño."
+    },
+    {
+      "sector": "Salud",
+      "body": "Tratamiento de datos clínicos y de pacientes alineado con HIPAA, con enmascaramiento, políticas de acceso y registros de auditoría diseñados desde el inicio."
+    },
+    {
+      "sector": "Retail y pagos",
+      "body": "Tratamiento de datos de pago y de clientes conforme a PCI, aislado y gobernado de extremo a extremo."
+    }
+  ],
+  "contactLine": "¿Tiene un requisito específico de cumplimiento o seguridad? <link>Hable con nuestro equipo</link> y le explicaremos cómo lo cumpliríamos.",
+  "cta": {
+    "title": "¿Preguntas de seguridad antes de comenzar a construir?",
+    "subtitle": "Cuéntenos los requisitos (residencia de datos, certificaciones, auditoría o revisión de proveedores) y le mostraremos exactamente cómo los cumplimos."
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "current": "Seguridad y confianza"
+  }
+}

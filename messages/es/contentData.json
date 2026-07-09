@@ -1,0 +1,169 @@
+{
+  "industryFlavor": {
+    "construction-real-estate": {
+      "pattern": "Contratistas · Desarrolladores · Propietarios de activos",
+      "compliance": "Datos de costos, contratos y activos auditables, con acceso basado en roles en cada proyecto.",
+      "capabilities": [
+        { "value": "Costo + cronograma", "label": "Una vista de proyecto gobernada" },
+        { "value": "Portafolio", "label": "Analítica sobre cada activo" },
+        { "value": "8–16 sem", "label": "Hasta el primer valor en producción" },
+        { "value": "SnowPro", "label": "Equipo de entrega certificado" }
+      ],
+      "bullets": [
+        "Datos de costo y cronograma de proyecto consolidados en una vista gobernada",
+        "Analítica de portafolio y activos en cada propiedad y proyecto",
+        "Presupuesto contra real y riesgo de cronograma visibles mientras hay tiempo de actuar",
+        "Pronósticos y valuación basados en datos confiables y actuales"
+      ]
+    },
+    "education": {
+      "pattern": "Escuelas · Universidades · Proveedores de capacitación",
+      "compliance": "Manejo de datos de estudiantes acorde con FERPA, con privacidad y control de acceso incorporados.",
+      "capabilities": [
+        { "value": "SIS + LMS", "label": "Unificados bajo un solo modelo" },
+        { "value": "FERPA", "label": "Manejo conforme de datos de estudiantes" },
+        { "value": "8–16 sem", "label": "Hasta el primer valor en producción" },
+        { "value": "SnowPro", "label": "Equipo de entrega certificado" }
+      ],
+      "bullets": [
+        "Datos de SIS, LMS y operativos unificados bajo un solo modelo de gobierno",
+        "Analítica de éxito estudiantil sobre participación, logro y retención",
+        "Reportes normativos, de acreditación y para financiadores automatizados desde una sola fuente",
+        "Alertas tempranas sobre los estudiantes en mayor riesgo"
+      ]
+    },
+    "financial-services": {
+      "pattern": "Banca · Seguros · Gestión de activos",
+      "compliance": "Reportes alineados con FINRA, SEC y SOX, con acceso basado en roles y linaje de auditoría completo.",
+      "capabilities": [
+        { "value": "FINRA · SEC · SOX", "label": "Reportes alineados" },
+        { "value": "Linaje completo", "label": "En cada cifra reportada" },
+        { "value": "8–16 sem", "label": "Hasta el primer valor en producción" },
+        { "value": "Premier", "label": "Snowflake Premier Partner" }
+      ],
+      "bullets": [
+        "Un único almacén de datos gobernado que consolida datos fragmentados de banca, seguros y activos",
+        "Reportes regulatorios y externos estructurados automatizados, auditables de extremo a extremo",
+        "Analítica de autoservicio para que los equipos decidan con cifras actuales y confiables",
+        "Casos de uso de IA priorizados según riesgo, cumplimiento y retorno"
+      ]
+    },
+    "manufacturing": {
+      "pattern": "Discreta · Por procesos · Cadena de suministro",
+      "compliance": "Trazabilidad del proveedor al embarque, gobernada en cada paso para calidad y auditoría.",
+      "capabilities": [
+        { "value": "Planta + ERP", "label": "Una sola fuente gobernada" },
+        { "value": "Proveedor → embarque", "label": "Trazable y gobernado" },
+        { "value": "8–16 sem", "label": "Hasta el primer valor en producción" },
+        { "value": "SnowPro", "label": "Equipo de entrega certificado" }
+      ],
+      "bullets": [
+        "Datos de planta, sensores y ERP unificados en una sola fuente gobernada y confiable",
+        "Analítica de OEE y calidad que revela los verdaderos generadores de costo",
+        "Visibilidad de la cadena de suministro desde la materia prima hasta el pedido entregado",
+        "Fundamentos de datos para predecir fallas antes de que ocurran"
+      ]
+    },
+    "media-entertainment-advertising": {
+      "pattern": "Medios · Entretenimiento · Publicidad",
+      "compliance": "Datos de audiencia con gestión de consentimiento, gobernados para privacidad en cada canal.",
+      "capabilities": [
+        { "value": "Audiencia", "label": "Una vista unificada con gestión de consentimiento" },
+        { "value": "Cada canal", "label": "Atribución en un solo lugar" },
+        { "value": "8–16 sem", "label": "Hasta el primer valor en producción" },
+        { "value": "SnowPro", "label": "Equipo de entrega certificado" }
+      ],
+      "bullets": [
+        "Datos de visualización, suscripción y participación unificados en una sola fuente",
+        "Atribución de campañas y anuncios casi en tiempo real en todos los canales",
+        "Analítica de desempeño de contenido que guía qué producir",
+        "Señales de audiencia sobre las que los equipos actúan, no la intuición"
+      ]
+    },
+    "retail-cpg": {
+      "pattern": "Retail · CPG · Lealtad",
+      "compliance": "Manejo de datos de pago y clientes acorde con PCI, gobernado de extremo a extremo.",
+      "capabilities": [
+        { "value": "En línea + en tienda", "label": "Una vista de demanda" },
+        { "value": "Acorde con PCI", "label": "Datos de pago y clientes gobernados" },
+        { "value": "8–16 sem", "label": "Hasta el primer valor en producción" },
+        { "value": "SnowPro", "label": "Equipo de entrega certificado" }
+      ],
+      "bullets": [
+        "Datos en línea y en tienda unificados en una base gobernada y casi en tiempo real",
+        "Analítica de inventario y perecederos que reduce las mermas",
+        "Producción, costo de alimentos y logística en una sola vista",
+        "Desempeño de clientes y lealtad medido junto con el margen"
+      ]
+    },
+    "technology-telco": {
+      "pattern": "Software · Plataformas · Telecomunicaciones",
+      "compliance": "Datos de uso y de red manejados con privacidad, consentimiento y controles de acceso.",
+      "capabilities": [
+        { "value": "Uso + red", "label": "Una sola fuente gobernada" },
+        { "value": "Volumen completo", "label": "Telemetría lista para consultar" },
+        { "value": "8–16 sem", "label": "Hasta el primer valor en producción" },
+        { "value": "Premier", "label": "Snowflake Premier Partner" }
+      ],
+      "bullets": [
+        "Uso de producto, facturación y telemetría de red unificados y gobernados",
+        "Analítica de abandono y retención que señala el riesgo con anticipación",
+        "Telemetría de alto volumen ingerida, gobernada y lista para consultar",
+        "Métricas confiables y gobernadas desde las que reporta cada equipo"
+      ]
+    },
+    "default": {
+      "pattern": "Data & AI",
+      "compliance": "Gobierno, linaje y controles de acceso incorporados desde el primer día.",
+      "capabilities": [
+        { "value": "Gobernado", "label": "Una sola fuente de verdad" },
+        { "value": "Incorporado", "label": "Seguridad y linaje" },
+        { "value": "8–16 sem", "label": "Hasta el primer valor en producción" },
+        { "value": "SnowPro", "label": "Equipo de entrega certificado" }
+      ],
+      "bullets": [
+        "Modelos de datos y gobierno específicos del sector, incorporados desde el inicio",
+        "Especialistas de industria junto con ingenieros certificados en SnowPro, integrados en el equipo",
+        "Resultados medibles ligados a las métricas sobre las que reportan los equipos",
+        "Una hoja de ruta que escala desde el primer logro hasta la adopción en toda la empresa"
+      ]
+    }
+  },
+  "benefits": [
+    {
+      "label": "Salud",
+      "title": "Seguro médico",
+      "body": "Cobertura médica integral para toda la familia."
+    },
+    {
+      "label": "Salud",
+      "title": "Dental y visión",
+      "body": "Planes opcionales dental y de visión para lo esencial del día a día."
+    },
+    {
+      "label": "Bienestar",
+      "title": "Bienestar emocional",
+      "body": "Apoyo opcional de salud mental y bienestar emocional, porque el trabajo exigente necesita un equilibrio real."
+    },
+    {
+      "label": "Equilibrio",
+      "title": "Tiempo libre flexible",
+      "body": "El tiempo libre sigue la ley local y se mantiene flexible (sin tope fijo) mientras los resultados sigan sólidos y los equipos queden cubiertos."
+    },
+    {
+      "label": "Crecimiento",
+      "title": "Aprendizaje y certificaciones",
+      "body": "Capacitación, certificaciones SnowPro, viajes a conferencias y patrocinio de eventos: reinvertimos en el crecimiento del equipo."
+    },
+    {
+      "label": "Juntos",
+      "title": "Retiros de equipo",
+      "body": "Retiros de la empresa y encuentros presenciales que construyen las relaciones detrás de una gran entrega."
+    },
+    {
+      "label": "Herramientas",
+      "title": "Las herramientas para hacer el trabajo",
+      "body": "Hardware moderno, herramientas de IA pagadas y las licencias que cada proyecto necesita, desde el primer día."
+    }
+  ]
+}

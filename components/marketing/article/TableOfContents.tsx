@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import type { Heading } from "@/lib/toc";
 import { cn } from "@/lib/utils";
 
@@ -11,6 +12,7 @@ import { cn } from "@/lib/utils";
  * short articles (< 2 headings).
  */
 export function TableOfContents({ headings }: { headings: Heading[] }) {
+  const t = useTranslations("articleUi");
   const [active, setActive] = useState<string>("");
 
   useEffect(() => {
@@ -71,17 +73,17 @@ export function TableOfContents({ headings }: { headings: Heading[] }) {
       {/* Mobile: collapsible disclosure above the body */}
       <details className="mb-8 rounded-xl border border-border bg-surface2 p-4 lg:hidden">
         <summary className="cursor-pointer select-none font-display text-sm font-semibold text-foreground">
-          In this article
+          {t("toc.inThisArticle")}
         </summary>
-        <nav className="mt-4" aria-label="Table of contents">
+        <nav className="mt-4" aria-label={t("toc.ariaLabel")}>
           {list}
         </nav>
       </details>
 
       {/* Desktop: sticky rail */}
-      <nav className="sticky top-28 hidden lg:block" aria-label="Table of contents">
+      <nav className="sticky top-28 hidden lg:block" aria-label={t("toc.ariaLabel")}>
         <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-wider text-muted">
-          On this page
+          {t("toc.onThisPage")}
         </p>
         {list}
       </nav>

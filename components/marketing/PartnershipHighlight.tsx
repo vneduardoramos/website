@@ -1,44 +1,40 @@
+import { getTranslations } from "next-intl/server";
 import { Img as Image } from "@/components/marketing/Img";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { PartnerBadges } from "@/components/marketing/PartnerBadges";
 import { SnowflakeLockup } from "@/components/marketing/SnowflakeLockup";
 import { SectionDecor } from "@/components/marketing/Decor";
 
-const STATS = [
-  { value: "1,300+", label: "Snowflake partners worldwide" },
-  { value: "2026", label: "Featured on the Summit platform keynote" },
-  { value: "2", label: "Premier Partner + CoCo Preferred Partner recognition" },
-];
+const STAT_VALUES = ["1,300+", "2026", "2"];
 
 /**
  * Prominent partnership proof block: the official badges (large), the facts, the
  * CoCo Preferred Partner keynote slide, and stat tiles. Reused on home,
  * About, and the Partnership page (`showCta` adds a link to /partnership).
  */
-export function PartnershipHighlight({
-  title = "Recognized among Snowflake's top partners",
+export async function PartnershipHighlight({
+  title,
   showCta = false,
 }: {
   title?: string;
   showCta?: boolean;
 }) {
+  const t = await getTranslations("partnershipUi");
+  const heading = title ?? t("highlight.title");
+  const statLabels = t.raw("highlight.stats") as string[];
   return (
     <section className="section section-tint relative overflow-hidden">
       <SectionDecor variant="grid" />
       <div className="container-page relative grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div>
-          <p className="eyebrow mb-3">Snowflake Partnership</p>
+          <p className="eyebrow mb-3">{t("highlight.eyebrow")}</p>
           <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-[2.6rem] md:leading-[1.1]">
-            {title}
+            {heading}
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-muted">
-            Viewnear is a{" "}
-            <strong className="font-semibold text-foreground">Snowflake Premier Partner</strong>,
-            recognized in Snowflake&apos;s{" "}
-            <strong className="font-semibold text-foreground">CoCo Preferred Partner</strong> program. At
-            Snowflake Summit 2026 we were featured among the partners driving the most momentum on
-            Snowflake CoCo, the data-native coding agent, out of 1,300+ worldwide, alongside firms
-            like Accenture, Deloitte, IBM, and Capgemini.
+            {t.rich("highlight.body", {
+              strong: (c) => <strong className="font-semibold text-foreground">{c}</strong>,
+            })}
           </p>
 
           <SnowflakeLockup variant="default" height={30} className="mt-8" />
@@ -48,19 +44,19 @@ export function PartnershipHighlight({
           </div>
 
           <dl className="mt-8 grid grid-cols-3 gap-4">
-            {STATS.map((s) => (
-              <div key={s.label} className="rounded-2xl border border-border bg-background p-4">
+            {STAT_VALUES.map((value, i) => (
+              <div key={value} className="rounded-2xl border border-border bg-background p-4">
                 <dt className="font-display text-xl font-bold text-foreground md:text-2xl">
-                  {s.value}
+                  {value}
                 </dt>
-                <dd className="mt-1 text-xs leading-snug text-muted">{s.label}</dd>
+                <dd className="mt-1 text-xs leading-snug text-muted">{statLabels[i]}</dd>
               </div>
             ))}
           </dl>
 
           {showCta && (
             <Link href="/partnership" className="btn-primary group mt-8">
-              Explore our partnership
+              {t("highlight.cta")}
               <span className="transition-transform group-hover:translate-x-0.5">→</span>
             </Link>
           )}
@@ -70,7 +66,7 @@ export function PartnershipHighlight({
           <div className="overflow-hidden rounded-2xl border border-border shadow-soft-lg">
             <Image
               src="/assets/images/certs/coco-momentum-summit-2026.png"
-              alt="Snowflake Summit 2026 keynote: CoCo Preferred Partner momentum, featuring Viewnear among partners including Accenture, Deloitte, IBM, and Capgemini"
+              alt={t("highlight.imageAlt")}
               width={1500}
               height={1500}
               className="h-auto w-full"
@@ -78,7 +74,7 @@ export function PartnershipHighlight({
             />
           </div>
           <figcaption className="mt-3 text-center text-xs text-muted">
-            Snowflake Summit 2026: CoCo Preferred Partner momentum, platform keynote
+            {t("highlight.figcaption")}
           </figcaption>
         </figure>
       </div>

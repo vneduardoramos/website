@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "fallbackTitle": "Caso de éxito"
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "caseStudies": "Casos de éxito"
+  },
+  "eyebrow": "Caso de éxito",
+  "anonNote": "Un proyecto real; el nombre del cliente se reserva a petición suya.",
+  "clientName": "una organización de {sector}",
+  "metrics": {
+    "eyebrow": "Lo que cambió"
+  },
+  "fallbackMetrics": [
+    { "value": "Una", "label": "Fuente de verdad gobernada" },
+    { "value": "Medallion", "label": "Base de Bronze a Gold" },
+    { "value": "Incorporados", "label": "Seguridad y linaje" },
+    { "value": "8–16 sem", "label": "Del inicio al primer valor, sprint a sprint" }
+  ],
+  "leadershipLabel": "Entregado por nuestro equipo. El nombre del cliente se reserva; el nuestro no.",
+  "story": {
+    "eyebrow": "El proyecto",
+    "title": "Lo que Viewnear entregó para {clientName}",
+    "fallbackBody": "Viewnear se asoció con {clientName} para diseñar y entregar una base moderna y gobernada para los datos: unificar fuentes, automatizar pipelines y ofrecer información confiable donde el equipo de {sector} trabaja cada día.",
+    "detailImageAlt": "{title}: la solución en acción",
+    "relatedIndustry": "Industria relacionada"
+  },
+  "result": {
+    "eyebrow": "El resultado",
+    "title": "De datos crudos a <hl>decisiones con confianza</hl>",
+    "body": "Con datos gobernados y listos para IA, {clientName} logró informes más rápidos, pipelines confiables y una base preparada para escalar en el mercado de {region}.",
+    "imageAlt": "{title}: resultados",
+    "cta": "Iniciar una conversación"
+  },
+  "related": {
+    "eyebrow": "Siga explorando",
+    "title": "Más casos de éxito de {sector}"
+  },
+  "nav": {
+    "ariaLabel": "Más proyectos",
+    "prev": "← Proyecto anterior",
+    "next": "Proyecto siguiente →"
+  },
+  "backToIndex": "← Volver a los casos de éxito"
+}

@@ -1,0 +1,64 @@
+{
+  "stackDiagram": {
+    "entry": {
+      "files": "Files",
+      "streams": "Streams"
+    },
+    "exit": {
+      "dashboards": "Dashboards",
+      "answers": "Answers",
+      "agents": "Agents",
+      "apps": "Apps"
+    },
+    "sourceLabel": "Source systems in",
+    "decisionsLabel": "Decisions out",
+    "generallyAvailable": "Generally available",
+    "wrapsEveryLayer": "Wraps every layer",
+    "previewLegend": "Preview: early access our partner tier brings to the build"
+  },
+  "stackStory": {
+    "beats": {
+      "arriving": {
+        "title": "The data starts arriving",
+        "body": "In the first sprints we wire <prod>Openflow</prod> into the ERP, CRM, and SaaS systems the business already runs, and <prod>Snowpipe Streaming</prod> carries the live feeds. Nothing detours through a middleman: every source lands inside Snowflake, governed from the first table."
+      },
+      "shaped": {
+        "title": "It gets shaped into something trustworthy",
+        "body": "Our engineers model it with <prod>dbt</prod> and <prod>Snowpark</prod>, next to the data, in code the team can read and one day own. <prod>Dynamic Tables</prod> keep the derived views fresh with no scheduler to babysit."
+      },
+      "open": {
+        "title": "It lives once, in an open format",
+        "body": "The result is one governed copy on <prod>Apache Iceberg</prod>, readable by any engine the business ever chooses through <prod>Open Catalog</prod>. The foundation outlives any tool decision, ours included."
+      },
+      "governance": {
+        "title": "Governance runs through everything",
+        "body": "The whole way, <prod>Horizon Catalog</prod> is recording lineage and enforcing policy, and <prod>Semantic Views</prod> pin down what “revenue” actually means. It is the unglamorous work that makes the AI trustworthy later, and it is where our senior people spend real time working inside the team."
+      },
+      "ai": {
+        "title": "Then the AI has something to stand on",
+        "body": "<prod>Cortex Analyst</prod> answers questions against those shared definitions, <prod>Snowflake CoWork</prod> gives teams cited answers, and agents act inside <prod>AI Agent Identity</prod> policies. The results land where people already work: dashboards in <prod>Snowsight</prod>, apps in <prod>Streamlit</prod>, answers flowing back into the tools teams already use."
+      },
+      "oneTeam": {
+        "title": "One team answers for the whole arc",
+        "body": "Snowflake runs the platform. We design, build, and tune what runs on it with the team in the room, then hand over the keys: documented, and theirs to extend. Most foundations reach production in 8–16 weeks, because discovery fixes the scope up front and every sprint ends with working software in a demo."
+      }
+    }
+  },
+  "productShots": {
+    "cowork": {
+      "alt": "Snowflake CoWork home screen with cited sales analytics artifacts",
+      "caption": "Where the business meets it",
+      "detail": "Snowflake CoWork: plain-language questions, cited answers, no separate BI stack to secure."
+    },
+    "workspaces": {
+      "alt": "A semantic view being built and reviewed in Snowflake Workspaces",
+      "caption": "The engineering behind it",
+      "detail": "A semantic view taking shape in Snowflake Workspaces, reviewed change by change before it ships."
+    },
+    "catalog": {
+      "alt": "Horizon Catalog dataset page showing certification status, domain, and steward",
+      "caption": "Governance made visible",
+      "detail": "Certification status, domain, and a named steward on every dataset in Horizon Catalog."
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "interplay": {
+    "inside": {
+      "label": "Dentro de Snowflake",
+      "role": "Razonar sobre datos gobernados, sin moverlos",
+      "items": [
+        "Agentes de Cortex + AISQL, junto a los datos",
+        "Semantic Views: una definición compartida de cada métrica",
+        "Cortex Analyst + Search para respuestas con citas",
+        "AI Agent Identity: acceso por agente, linaje completo"
+      ]
+    },
+    "outside": {
+      "label": "En el flujo de trabajo",
+      "role": "Ejecutar la siguiente acción donde los equipos ya trabajan",
+      "items": [
+        "Claude en Slack, documentos y el navegador",
+        "Claude Code en el flujo de trabajo de ingeniería",
+        "Respuestas + acciones de vuelta en el ERP, el CRM y las aplicaciones",
+        "Agentes personalizados sobre endpoints gobernados"
+      ]
+    },
+    "connector": "interacción",
+    "connect": [
+      { "term": "Una identidad", "desc": "Cada agente, dentro o fuera, actúa como una identidad gobernada con permisos por agente." },
+      { "term": "Endpoints gobernados", "desc": "La empresa expone los datos como endpoints que los agentes invocan, nunca como copias sin procesar que retengan." },
+      { "term": "MCP", "desc": "El protocolo abierto de Anthropic conecta Claude con los datos gobernados y las herramientas que usan los equipos." }
+    ],
+    "eyebrow": "Una solicitud, ambos planos",
+    "loop": [
+      "Un representante pregunta a Claude en Slack qué cuentas están en riesgo.",
+      "Claude invoca un endpoint gobernado; Cortex responde desde Semantic Views, con citas.",
+      "Claude redacta el mensaje de contacto en la bandeja del representante, dentro de la política.",
+      "Todo el intercambio queda registrado contra una única identidad y su linaje."
+    ],
+    "badge": {
+      "inSnowflake": "en Snowflake",
+      "inField": "en el terreno"
+    }
+  },
+  "builtWithAnthropic": {
+    "eyebrow": "Partner de Anthropic",
+    "h2": "Claude, de forma predeterminada.",
+    "body": "Como Partner de Anthropic, Claude es el modelo de razonamiento al que recurrimos primero, dentro de Snowflake y en el flujo de trabajo. Es el mismo modelo en ambos planos, así que el comportamiento en el que un equipo confía en una demostración es el comportamiento que llega a producción.",
+    "points": [
+      { "term": "Dentro de Snowflake", "desc": "Claude se ejecuta como un modelo de Cortex, así que la inferencia ocurre junto a los datos gobernados y no se copia nada hacia fuera." },
+      { "term": "En el flujo de trabajo", "desc": "Claude y Claude Code funcionan en las herramientas que los equipos ya usan, desde la bandeja de entrada hasta el IDE." },
+      { "term": "Conectado por MCP", "desc": "El protocolo abierto de Anthropic enlaza los agentes con endpoints y herramientas gobernados, sin integraciones a medida." }
+    ],
+    "sqlComment": "   -- nuestro modelo de razonamiento predeterminado",
+    "figcaption": "Cortex AISQL · se ejecuta dentro de la cuenta de Snowflake",
+    "default": "predeterminado",
+    "closing": "El conjunto de modelos se mantiene abierto. Todos los modelos principales se pueden invocar en Cortex, y cambiar uno es una modificación de una sola línea. Evaluamos cada caso de uso según calidad, costo y latencia, y Claude es donde empezamos para el razonamiento empresarial."
+  }
+}

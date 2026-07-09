@@ -1,3 +1,5 @@
+import type { Locale } from "@/lib/i18n-content";
+
 export function cn(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
 }
@@ -13,10 +15,15 @@ export function slugify(input: string): string {
     .replace(/^-|-$/g, "");
 }
 
-export function formatDate(date: Date | string | null | undefined): string {
+const INTL_LOCALE: Record<Locale, string> = { en: "en-US", es: "es-419" };
+
+export function formatDate(
+  date: Date | string | null | undefined,
+  locale: Locale = "en",
+): string {
   if (!date) return "";
   const d = typeof date === "string" ? new Date(date) : date;
-  return d.toLocaleDateString("en-US", {
+  return d.toLocaleDateString(INTL_LOCALE[locale], {
     year: "numeric",
     month: "long",
     day: "numeric",

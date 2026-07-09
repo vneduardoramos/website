@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Entrega nearshore de Data + AI en Snowflake, en la zona horaria del centro de EE. UU.",
+    "description": "Viewnear entrega Data + AI en Snowflake desde Monterrey, México, en la zona horaria del centro de EE. UU. Expertos certificados en SnowPro que trabajan en el mismo horario laboral, con profundidad en cada nivel."
+  },
+  "hero": {
+    "eyebrow": "Ventaja nearshore",
+    "title": "Entrega nearshore de Data + AI, <hl>en sincronía con el equipo</hl>.",
+    "description": "Expertos en Snowflake certificados en SnowPro que trabajan en el mismo horario laboral. La entrega avanza al ritmo de un equipo en la oficina de al lado, no de una transferencia que espera hasta el día siguiente.",
+    "chips": [
+      "Zona horaria del centro de EE. UU.",
+      "Certificados en SnowPro",
+      "Snowflake Premier Partner",
+      "CoCo Preferred Partner"
+    ]
+  },
+  "trust": {
+    "eyebrow": "La confianza de equipos en toda América"
+  },
+  "reasonsHeading": {
+    "eyebrow": "Por qué nearshore con Viewnear",
+    "title": "Entrega profunda en Snowflake, sin las concesiones del offshore",
+    "intro": "El modelo nearshore ofrece las ventajas de costo y capacidad de un equipo distribuido, manteniendo la cercanía, el horario y la comunicación de uno que está en la misma oficina."
+  },
+  "monterrey": {
+    "imageAlt": "El edificio de oficinas de Viewnear en Monterrey, en Pueblo Serena",
+    "title": "El mismo horario, no una transferencia",
+    "caption": "Nuestro centro en Monterrey · en el mismo reloj"
+  },
+  "reasons": [
+    {
+      "label": "Profundidad",
+      "title": "Profundidad en Snowflake en cada nivel",
+      "body": "Estrategas, arquitectos e ingenieros, todos con dominio de Snowflake y certificados en SnowPro. La misma profundidad que dimensiona el trabajo es la que lo entrega."
+    },
+    {
+      "label": "Idioma",
+      "title": "Comunicación bilingüe y clara",
+      "body": "Un equipo con dominio pleno de inglés y español, y acceso directo a las personas que hacen el trabajo. Menos capas de traducción, menos requisitos mal interpretados."
+    },
+    {
+      "label": "Continuidad",
+      "title": "El mismo equipo desde el alcance hasta la operación",
+      "body": "Un equipo comprometido aprende los datos y los objetivos y permanece: sin cambios de personal a mitad del proyecto, sin una pirámide de entrega facturada por hora."
+    },
+    {
+      "label": "Cadencia",
+      "title": "Una cadencia de comunicación confiable",
+      "body": "Sesiones de trabajo periódicas y visibilidad total del avance. Nadie se queda sin saber en qué punto está una construcción ni qué sigue."
+    },
+    {
+      "label": "Entrega",
+      "title": "Entrega ágil, valor temprano",
+      "body": "Un modelo iterativo, guiado por casos de uso, que pone productos de datos funcionales frente al equipo en semanas y luego construye sobre lo que demuestra resultados."
+    }
+  ],
+  "numbersHeading": {
+    "eyebrow": "En cifras",
+    "title": "Credenciales, no métricas de vanidad"
+  },
+  "numbers": [
+    { "value": "Premier", "label": "Snowflake Premier + CoCo Preferred Partner" },
+    { "value": "SnowPro", "label": "Certificados en SnowPro en todo el equipo" },
+    { "value": "15+", "label": "Años construyendo datos e IA empresarial" },
+    { "value": "5", "label": "Países en toda América" }
+  ],
+  "deliverHeading": {
+    "eyebrow": "Lo que entregamos",
+    "title": "La construcción completa de Data + AI, entregada en nearshore",
+    "intro": "Nuestro equipo de entrega trabaja desde Monterrey, México, en la zona horaria del centro de EE. UU., cubriendo el mismo alcance que Viewnear entrega en cualquier lugar: desde la migración hasta IA gobernada en producción."
+  },
+  "delivers": [
+    {
+      "title": "Modernización y migración de datos",
+      "body": "Almacenes y pipelines heredados consolidados en Snowflake, gobernados desde la primera tabla."
+    },
+    {
+      "title": "IA y Cortex",
+      "body": "Datos gobernados y listos para IA, y casos de uso de Cortex priorizados según el retorno real para el negocio."
+    },
+    {
+      "title": "Gobierno y Horizon",
+      "body": "Acceso, linaje y políticas incorporados con Horizon, para que la confianza escale junto con los datos."
+    },
+    {
+      "title": "Aplicaciones de datos y Snowpark",
+      "body": "Aplicaciones de datos nativas y cargas de trabajo de Snowpark que se ejecutan donde los datos ya residen."
+    }
+  ],
+  "stack": ["Cortex", "Snowpark", "Iceberg", "dbt", "Openflow", "Horizon"],
+  "team": {
+    "eyebrow": "Talento nearshore certificado",
+    "title": "Nearshore no debería significar <hl>junior</hl>",
+    "body": "Nuestro equipo en Monterrey está certificado en SnowPro y probado en producción. Las personas que dimensionan el trabajo son las que lo construyen, y se especializan en exactamente una plataforma: Snowflake, en cada proyecto, cada día.",
+    "bullets": [
+      "Arquitectos e ingenieros certificados en SnowPro, probados en producción",
+      "Un estándar de contratación riguroso para cada integrante del equipo",
+      "Acceso directo a los ingenieros que hacen el trabajo"
+    ],
+    "imageAlt": "El equipo de entrega de Viewnear",
+    "cta": "Vea cómo trabajamos"
+  },
+  "cta": {
+    "title": "Ponga un equipo nearshore de Snowflake a trabajar en ello.",
+    "subtitle": "Cuéntenos en qué punto está la organización con Snowflake (migrando, escalando o construyendo IA) y llevaremos un equipo certificado en la misma zona horaria para hacerlo avanzar."
+  }
+}

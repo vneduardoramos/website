@@ -1,0 +1,57 @@
+{
+  "legacyContrast": {
+    "today": "Hoy",
+    "onSnowflake": "En Snowflake",
+    "pains": [
+      {
+        "title": "Las licencias no dejan de subir",
+        "body": "Teradata, Netezza, Exadata y SAP BW arrastran cuentas regresivas de fin de vida útil y facturas de soporte que solo suben."
+      },
+      {
+        "title": "Infraestructura que hay que vigilar",
+        "body": "Appliances que parchear, clústeres que ajustar, capacidad comprada con un año de antelación y ociosa la mitad del tiempo."
+      },
+      {
+        "title": "Analítica que se arrastra",
+        "body": "Los motores basados en filas y los clústeres sobrecargados convierten cada tablero en un proceso por lotes nocturno."
+      }
+    ],
+    "gains": [
+      {
+        "title": "Costo que se ajusta al uso",
+        "body": "Cómputo por segundo, escalado de forma independiente del almacenamiento. Sin clústeres ociosos."
+      },
+      {
+        "title": "Una base gobernada",
+        "body": "Una única fuente de verdad con acceso, linaje y políticas integrados a través de Horizon, para que las decisiones se apoyen en cifras en las que las personas confían."
+      },
+      {
+        "title": "La IA es el siguiente paso",
+        "body": "Cortex y los modelos líderes se ejecutan junto a los datos gobernados, para que los primeros casos de uso de IA salgan de la misma base y no de otro proyecto."
+      }
+    ]
+  },
+  "tangle": {
+    "ariaLabel": "Una maraña de sistemas heredados: almacén de datos, herramientas de ETL, data marts y exportaciones de archivos, todos interconectados de forma enredada",
+    "legacyWarehouse": "Almacén heredado",
+    "etlVendor1": "Proveedor de ETL n.º 1",
+    "etlVendor2": "Proveedor de ETL n.º 2",
+    "dataMarts": "Data marts x4",
+    "nightlyExports": "Exportaciones nocturnas"
+  },
+  "foundation": {
+    "ariaLabel": "Una única base gobernada en Snowflake: los orígenes fluyen hacia capas gobernadas y las decisiones fluyen hacia afuera",
+    "sources": "ERP · CRM · SaaS · flujos",
+    "layers": ["Datos gobernados", "Horizon: linaje + políticas", "Cortex, junto a los datos"],
+    "outputs": "Tableros · respuestas · agentes"
+  },
+  "cutover": {
+    "typicalArc": "Arco típico",
+    "weeks": ["sem 0", "sem 2", "sem 5", "sem 8", "sem 12"],
+    "typicalArcNote": "un arco típico de 8 a 16 semanas",
+    "legacy": "Heredado",
+    "retired": "Retirado",
+    "thePractice": "La práctica",
+    "parity": "Paridad de fila, agregado y hash, reconciliada cada noche"
+  }
+}

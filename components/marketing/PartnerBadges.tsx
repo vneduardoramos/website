@@ -3,6 +3,7 @@
  * status. Used on home, About, the Partnership page, and the footer.
  */
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import { cn } from "@/lib/utils";
 
 export const CERTIFICATIONS = [
@@ -30,7 +31,7 @@ function SnowflakeMark({ className = "h-4 w-4" }: { className?: string }) {
  * `chips`: compact pill row (default). `cards`: larger badge cards for the
  * Partnership page. `logos`: the official badge artwork.
  */
-export function PartnerBadges({
+export async function PartnerBadges({
   variant = "chips",
   size = "lg",
   className = "",
@@ -39,6 +40,7 @@ export function PartnerBadges({
   size?: "sm" | "lg";
   className?: string;
 }) {
+  const t = await getTranslations("sharedUi");
   const items = [...CERTIFICATIONS];
 
   // Real Snowflake badge artwork (Premier circle + CoCo shield), at a fixed height.
@@ -70,7 +72,7 @@ export function PartnerBadges({
             </span>
             <div>
               <p className="font-display text-lg font-bold text-foreground">{c}</p>
-              <p className="mt-0.5 text-sm text-muted">Verified Snowflake partner status</p>
+              <p className="mt-0.5 text-sm text-muted">{t("partnerBadges.verifiedStatus")}</p>
             </div>
           </div>
         ))}

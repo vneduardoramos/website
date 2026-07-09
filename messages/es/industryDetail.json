@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "fallbackTitle": "Industria no encontrada"
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "industries": "Industrias"
+  },
+  "hero": {
+    "discussCta": "Converse sobre datos de {industry}",
+    "seeWork": "Vea el trabajo"
+  },
+  "engagement": {
+    "eyebrow": "El proyecto",
+    "title": "Un socio que entiende <hl>{name}</hl>.",
+    "body": "Nadie dedica el primer mes a explicarnos {industry}. El equipo llega conociendo los sistemas, las regulaciones y los ritmos de reporte del sector, y luego construye los modelos de datos, el gobierno y los dashboards junto con los equipos internos, frente a las métricas de las que ya rinden cuentas.",
+    "imageAlt": "Soluciones de datos e IA para {industry} construidas sobre Snowflake",
+    "cta": "Inicie una conversación"
+  },
+  "foundation": {
+    "eyebrow": "Lo que ponemos en marcha",
+    "title": "La base sobre la que opera una práctica de {industry}",
+    "introWithStory": "Las capacidades que implementamos, y con qué rapidez. Los resultados medidos de un proyecto real de {industry} están en el caso destacado más abajo.",
+    "introNoStory": "Las capacidades que implementamos, y con qué rapidez alcanzan el primer valor."
+  },
+  "challenges": {
+    "eyebrow": "Retos que resolvemos",
+    "title": "A qué se enfrentan los equipos de {industry}",
+    "intro": "Los problemas recurrentes que escuchamos, y cómo los resolvemos."
+  },
+  "deliverables": {
+    "eyebrow": "Lo que se entrega",
+    "title": "Entregables",
+    "intro": "Resultados tangibles diseñados para mover las métricas que importan."
+  },
+  "tools": {
+    "eyebrow": "Stack",
+    "title": "Herramientas y tecnologías",
+    "intro": "El stack Snowflake-first al que recurrimos en este sector."
+  },
+  "showcase": {
+    "imageAlt": "Datos e IA de {industry} en Snowflake",
+    "title": "Diseñado para <hl>{name}</hl>, en Snowflake.",
+    "cta": "Converse sobre datos de {industry}"
+  },
+  "compliance": {
+    "label": "Cumplimiento",
+    "title": "Diseñado para los reguladores",
+    "link": "Cómo protegemos los datos →"
+  },
+  "featured": {
+    "eyebrow": "Proyecto destacado",
+    "title": "Cómo entregamos para {industry}",
+    "intro": "Un proyecto real, de principio a fin: el reto, la construcción y el resultado. Se omiten los nombres de los clientes para proteger su confidencialidad.",
+    "orgLabel": "Una organización de {industry}",
+    "storyTitle": "Datos gobernados y listos para IA para {industry} en Snowflake",
+    "quoteCaption": "Cita del patrocinador · proyecto de {industry}",
+    "readCase": "Lea el caso completo →"
+  },
+  "other": {
+    "eyebrow": "Explore",
+    "title": "Otras industrias"
+  }
+}

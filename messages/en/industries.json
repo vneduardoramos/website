@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "title": "Industries we serve",
+    "description": "Data & AI practices shaped to each sector's rules, KPIs, and systems: governed data and use cases in production, on Snowflake, across the Americas."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "current": "Industries"
+  },
+  "hero": {
+    "eyebrow": "Industries",
+    "title": "Solutions tailored to each <hl>sector</hl>.",
+    "description": "From regulated enterprises to high-growth challengers: governed, AI-ready data shaped by each sector's rules, KPIs, and systems, across the Americas."
+  },
+  "feature": {
+    "eyebrow": "Domain-led delivery",
+    "title": "Every sector’s data, <hl>regulations, and KPIs</hl>.",
+    "body": "Every sector has its own data, regulations, and pressures. We pair specialists who know the industry with SnowPro-certified engineers to map the problem, shape the roadmap, and build the solution alongside in-house teams, so what we deliver speaks the sector's language and moves the metrics that matter.",
+    "bullets": [
+      "Pre-built accelerators tuned to each sector's data patterns",
+      "Compliance and governance baked into the architecture",
+      "Outcomes mapped to the KPIs leadership tracks"
+    ],
+    "imageAlt": "Industry analytics dashboards built on Snowflake",
+    "cta": "Discuss a sector"
+  },
+  "sectors": {
+    "eyebrow": "Sectors we serve",
+    "title": "Find the right industry",
+    "intro": "Seven practices, each with its own accelerators and compliance patterns; explore the one closest to the work at hand."
+  },
+  "grid": {
+    "kicker": "Industry",
+    "imageAlt": "{name} data and AI solutions"
+  },
+  "endCap": {
+    "kicker": "Get in touch",
+    "title": "Don't see a sector here?",
+    "excerpt": "We work across the Americas. Share the data challenge and we'll map the fastest path to value."
+  },
+  "showcase": {
+    "eyebrow": "Across the Americas",
+    "title": "Sector depth, on <hl>one governed foundation</hl>.",
+    "body": "Whatever the industry, the foundation is the same: trusted, governed data on Snowflake. What changes is everything on top: the sources, the compliance obligations, and the decisions it has to carry.",
+    "imageAlt": "Industry analytics on a governed Snowflake foundation",
+    "cta": "Discuss a sector"
+  },
+  "cta": {
+    "title": "Let's stand up a lasting data & AI practice.",
+    "subtitle": "Tell us where the organization stands (migrating, scaling, or shipping AI) and we'll map the fastest path to use cases in production, run by in-house teams."
+  }
+}

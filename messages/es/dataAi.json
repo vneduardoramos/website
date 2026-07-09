@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "title": "Data + AI: agentes dentro de Snowflake y en el flujo de trabajo",
+    "description": "Agentes que razonan sobre datos gobernados dentro de Snowflake y actúan en las herramientas que los equipos ya usan, y la interacción entre ambos. Construido con Claude como socio de Anthropic, en producción en 8 a 16 semanas."
+  },
+  "hero": {
+    "eyebrow": "Data + AI",
+    "title": "Agentes que actúan donde ocurre el trabajo, <hl>sobre datos en los que los equipos pueden confiar.</hl>",
+    "description": "El valor de la IA aparece cuando los agentes razonan sobre datos gobernados dentro de Snowflake y ejecutan la siguiente acción en las herramientas que los equipos ya usan. Construimos ambos, y la interacción entre ellos, con Claude como socio de Anthropic. Probado primero a pequeña escala, en producción en 8 a 16 semanas."
+  },
+  "heroChips": [
+    "Dentro de Snowflake + en el campo",
+    "Anclado en datos gobernados",
+    "Construido con Claude",
+    "En producción, no en un laboratorio"
+  ],
+  "how": {
+    "eyebrow": "Cómo funciona",
+    "title": "Dos planos, un solo ciclo gobernado",
+    "intro": "Los agentes operan en dos lugares. Dentro de Snowflake, razonan sobre datos gobernados sin moverlos. En el flujo de trabajo, Claude ejecuta la siguiente acción donde los equipos ya están. Lo importante es la interacción: una solicitud cruza ambos planos y regresa citada, dentro de las políticas y registrada."
+  },
+  "ship": {
+    "eyebrow": "Lo que entregamos",
+    "title": "Seis tareas, funcionando en ambos planos.",
+    "intro": "Cada una razona sobre datos gobernados dentro de Snowflake y aparece donde trabajan los equipos. Donde un proyecto real lo demuestra, las cifras están en la tarjeta."
+  },
+  "runsOn": "Se ejecuta en",
+  "useCases": [
+    {
+      "eyebrow": "Documentos",
+      "title": "Documentación que se lee sola",
+      "body": "Reclamos, facturas y contratos que se clasifican, extraen y enrutan en segundos, en lugar de pilas ordenadas a mano. El acumulado de documentos se convierte en una tabla que los equipos pueden consultar.",
+      "mech": "AI_CLASSIFY · AI_EXTRACT · PARSE_DOCUMENT",
+      "stat": "60→95% de precisión · 4 s por documento",
+      "proof": { "label": "Vea el proyecto →", "href": "/case-studies/insurance-claims-cortex-ai" }
+    },
+    {
+      "eyebrow": "Respuestas",
+      "title": "Ejecutivos que le preguntan directamente a los datos",
+      "body": "Preguntas en lenguaje natural respondidas con citas frente a definiciones gobernadas, para que la reunión del lunes empiece desde la misma cifra y no desde tres versiones de ella.",
+      "mech": "Cortex Analyst · Semantic Views · CoWork",
+      "stat": "Miles de SKU descontrolados, un solo agente de catálogo",
+      "proof": { "label": "Vea el proyecto →", "href": "/case-studies/sku-catalog-governance" }
+    },
+    {
+      "eyebrow": "Anticipación",
+      "title": "Bajas y fallas, detectadas a tiempo",
+      "body": "Modelos sobre datos de uso, facturación y sensores que identifican clientes y equipos en riesgo antes de que termine el trimestre, con las razones adjuntas.",
+      "mech": "Cortex ML · Snowpark"
+    },
+    {
+      "eyebrow": "Búsqueda",
+      "title": "Documentos, buscados por significado",
+      "body": "Políticas, contratos y wikis respondidos directamente, con las fuentes citadas. Recuperación anclada en el propio contenido de la organización, para que las respuestas se mantengan precisas y actualizadas.",
+      "mech": "Cortex Search · RAG"
+    },
+    {
+      "eyebrow": "Agentes",
+      "title": "Agentes que actúan, dentro de las políticas",
+      "body": "IA que da el siguiente paso, no solo lo describe: redacta la respuesta, registra la actualización, inicia el flujo de trabajo, cada acción dentro de permisos por agente y con un registro de auditoría completo.",
+      "mech": "Cortex Agents · AI Agent Identity"
+    },
+    {
+      "eyebrow": "Integrado",
+      "title": "IA donde los equipos ya trabajan",
+      "body": "Respuestas y acciones que regresan al ERP, el CRM y las aplicaciones con las que opera el negocio, para que nadie tenga que entrar a otro panel para aprovecharlas.",
+      "mech": "Streamlit · APIs · Zero-Copy Integrations"
+    }
+  ],
+  "useCasesFootnote": "¿Un caso de uso que no aparece en la lista? Si los datos lo permiten, podemos entregarlo. <link>Cuéntenos la tarea →</link>",
+  "governed": {
+    "eyebrow": "Gobernado de forma predeterminada",
+    "title": "Un perímetro, una identidad, ambos planos",
+    "body": "La inferencia se ejecuta dentro de la cuenta de Snowflake del negocio, de modo que los prompts y los resultados permanecen dentro del mismo perímetro que los datos. Los agentes en el campo llegan a ellos a través de endpoints gobernados, nunca copias sin procesar, actuando como identidades verificables con permisos por agente. El acceso, el enmascaramiento y el linaje se mantienen en ambos planos, y las barreras de Cortex revisan cada llamada.",
+    "bullets": [
+      "Los modelos se ejecutan junto a los datos gobernados: sin copias, sin exportación",
+      "Cada agente actúa como una única identidad gobernada, dentro o fuera",
+      "Acceso, enmascaramiento y linaje heredados de Snowflake Horizon",
+      "Cortex Guard y barreras de IA en cada llamada"
+    ],
+    "imageAlt": "Snowflake CoWork respondiendo preguntas con resultados citados a partir de datos gobernados",
+    "figcaption": "Snowflake CoWork respondiendo a partir de datos gobernados (entorno de demostración)."
+  },
+  "credentials": {
+    "eyebrow": "Credenciales",
+    "title": "Certificados para ejecutar IA sobre datos empresariales",
+    "intro": "Cada modelo se ejecuta bajo los controles auditados de forma independiente de Snowflake, entregado por un equipo certificado en SnowPro que hace esto todos los días y que, como socio de Anthropic, construye con Claude.",
+    "anthropicLine": "Socio de Anthropic, construyendo con Claude"
+  },
+  "cta": {
+    "title": "Ponga el agente correcto en el trabajo.",
+    "subtitle": "Cuéntenos el caso de uso. Aportaremos Claude, el gobierno y las personas para llevarlo a producción junto con el equipo, dentro de Snowflake y en el flujo de trabajo."
+  }
+}

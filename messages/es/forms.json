@@ -1,0 +1,36 @@
+{
+  "contact": {
+    "requiredNote": "Los campos marcados con <mark>*</mark> son obligatorios.",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Correo electrónico",
+    "company": "Empresa",
+    "roleLabel": "¿En qué podemos ayudar?",
+    "selectPlaceholder": "Seleccione una opción",
+    "options": {
+      "strategy": "Estrategia de Data & AI / resultados de negocio",
+      "platform": "Plataforma y arquitectura de Snowflake",
+      "migration": "Migración o modernización",
+      "analytics": "Analítica, BI y productos de datos",
+      "other": "Otro tema"
+    },
+    "messageLabel": "¿Cómo podemos ayudar?",
+    "error": "Algo salió mal. Vuelva a intentarlo o escríbanos directamente por correo electrónico.",
+    "sending": "Enviando...",
+    "send": "Enviar mensaje"
+  },
+  "application": {
+    "title": "Postúlese ahora",
+    "applyingFor": "Postulación para:",
+    "requiredNote": "Los campos marcados con <mark>*</mark> son obligatorios.",
+    "fullName": "Nombre completo",
+    "email": "Correo electrónico",
+    "linkedin": "Perfil de LinkedIn",
+    "aboutLabel": "Sobre el candidato",
+    "resumeLabel": "Currículum",
+    "resumeHint": "(PDF o Word, máx. 8 MB)",
+    "error": "Algo salió mal. Vuelva a intentarlo o escríbanos directamente por correo electrónico.",
+    "submitting": "Enviando...",
+    "submit": "Enviar postulación"
+  }
+}

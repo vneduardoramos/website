@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "title": "Servicios: THINK · BUILD · GROW",
+    "description": "THINK, BUILD, GROW: estrategia, ingeniería y habilitación para establecer una práctica de datos y una práctica de IA sobre Snowflake, diseñadas para que los equipos internos las operen."
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "current": "Servicios"
+  },
+  "hero": {
+    "eyebrow": "Servicios",
+    "title": "De la estrategia a la <hl>empresa agéntica</hl>.",
+    "description": "Estrategia, ingeniería y habilitación bajo un único equipo responsable, que construye dos capacidades que permanecen dentro de la organización: una práctica de datos en la que las decisiones pueden confiar y una práctica de IA que llega a producción, a lo largo de THINK, BUILD y GROW."
+  },
+  "tiers": {
+    "THINK": {
+      "eyebrow": "Estrategia",
+      "intro": "Definir el rumbo. Trabajamos dentro del equipo para identificar dónde los datos y la IA generan valor real, y luego ordenamos una hoja de ruta que el negocio puede ejecutar, basada en lo que los datos pueden respaldar hoy."
+    },
+    "BUILD": {
+      "eyebrow": "Ingeniería",
+      "intro": "Hacerlo realidad. Lo construimos junto al equipo: la base gobernada sobre Snowflake que la IA realmente necesita, y luego las canalizaciones, los modelos y los agentes que se ejecutan sobre ella, integrados con los sistemas que el negocio utiliza."
+    },
+    "GROW": {
+      "eyebrow": "Habilitación",
+      "intro": "Multiplicar el valor. El equipo lleva casos de uso de IA y agentes a producción con nuestra gente a su lado, y sigue mejorándolos mucho tiempo después de que reducimos nuestra participación."
+    }
+  },
+  "toolsLabel": "Herramientas",
+  "agentic": {
+    "eyebrow": "Hacia dónde va esto",
+    "title": "Listos para <hl>agentes que actúan</hl>.",
+    "intro": "Una práctica de IA lista para agentes no comienza con los agentes. Comienza con datos gobernados y contexto confiable: una capa donde los datos, el contexto de negocio, los modelos y los flujos de trabajo se unen. Construimos esa capa junto al equipo, para que cuando los agentes actúen, lo hagan sobre cifras en las que el negocio confía.",
+    "proofLine": "Vea la IA que ponemos en producción en nuestros <cases>casos de éxito</cases>, y cómo elegimos el modelo para cada tarea en <dataai>Data + AI</dataai>.",
+    "thesis": {
+      "title": "Nuestra tesis: la empresa agéntica funciona sobre una única capa gobernada de datos y contexto",
+      "label": "Lea la tesis"
+    }
+  },
+  "impact": {
+    "eyebrow": "Impacto en el negocio",
+    "title": "Qué cambia, y cuándo",
+    "intro": "Una visión práctica del valor que devuelve un proyecto: por horizonte, no por lista de funciones, con las metas que acordamos por adelantado.",
+    "metrics": [
+      { "value": "60%", "label": "Más rápido hasta el primer insight" },
+      { "value": "3×", "label": "Canalizaciones más confiables" },
+      { "value": "40%", "label": "Menor costo de operación" }
+    ],
+    "phases": [
+      {
+        "phase": "Primeras 8 a 16 semanas",
+        "title": "Bases y primer valor",
+        "body": "Una base gobernada de Snowflake en marcha, los datos prioritarios fluyendo y los primeros dashboards en producción activos: valor desde el primer sprint, no después de un desarrollo de un año."
+      },
+      {
+        "phase": "6 a 12 meses",
+        "title": "Escala y autoservicio",
+        "body": "Casos de uso de analítica e IA desplegados en todos los equipos, autoservicio adoptado y reportes manuales retirados: las decisiones se basan en cifras actuales y confiables."
+      },
+      {
+        "phase": "Más de 18 meses",
+        "title": "Ventaja que se acumula",
+        "body": "Nuevos casos de uso entregados en semanas, costo de operación ajustado y un equipo con la soltura suficiente para seguir ampliándolo por su cuenta: los datos y la IA se convierten en una ventaja competitiva duradera."
+      }
+    ]
+  },
+  "run": {
+    "eyebrow": "Cómo se desarrollan los proyectos",
+    "title": "Los líderes de entrega pueden gobernar",
+    "intro": "Reducimos el riesgo del proyecto en sí (plazos claros, dirección y una transición ordenada) para que la decisión de contratar tenga tan poco riesgo como valor tiene el resultado.",
+    "phases": [
+      {
+        "label": "Plazos",
+        "title": "Un arco fijo de 8 a 16 semanas",
+        "body": "La mayoría de los primeros desarrollos llegan a producción en 8 a 16 semanas: una fase de descubrimiento pagada fija el alcance y el precio desde el inicio, y cada sprint cierra con software funcional, para que el valor llegue desde el primer sprint."
+      },
+      {
+        "label": "Dirección",
+        "title": "Dirección y transparencia",
+        "body": "Revisiones de dirección periódicas, un backlog compartido y puntos de decisión claros mantienen a los patrocinadores en control del alcance, el presupuesto y las prioridades en todo momento."
+      },
+      {
+        "label": "Prueba",
+        "title": "Riesgo reducido por diseño",
+        "body": "Probamos el enfoque con una prueba de concepto acotada antes del desarrollo completo, para que el compromiso de escalar se base en evidencia y no en una presentación de diapositivas."
+      },
+      {
+        "label": "Traspaso",
+        "title": "Construido para entregarse",
+        "body": "Documentación, habilitación y un plan de transición en cada proyecto, para que el equipo opere y amplíe el trabajo con confianza."
+      }
+    ],
+    "securityLine": "La seguridad y el gobierno están integrados en cada fase: <link>vea cómo mantenemos seguros los datos empresariales</link>."
+  },
+  "stack": {
+    "eyebrow": "Sobre qué construimos",
+    "title": "Por qué construimos de forma nativa en Snowflake",
+    "intro": "De Openflow a Horizon Catalog y a Cortex: priorizamos los productos nativos de Snowflake por encima de las herramientas de terceros, para que haya una sola copia gobernada de los datos, un solo linaje que auditar y un solo contexto confiable del que dependa cada agente de IA. dbt es el único framework externo que utilizamos, de forma nativa contra Snowflake.",
+    "cta": {
+      "title": "Vea el stack completo, capa por capa, con lo que está disponible (GA) y lo que viene",
+      "label": "Explore la plataforma"
+    }
+  },
+  "engagement": {
+    "eyebrow": "Cómo trabajamos",
+    "title": "Modelos de colaboración",
+    "intro": "Formas flexibles de colaborar con nosotros, ajustadas a la forma del problema, desde un desarrollo de alcance fijo hasta un equipo integrado o un servicio gestionado continuo. Sea cual sea el modelo que encaje, la forma en que entregamos no cambia.",
+    "bestForLabel": "Ideal para",
+    "howItWorksLabel": "Cómo funciona:",
+    "models": [
+      {
+        "title": "Costo fijo",
+        "body": "Un alcance, un cronograma y un precio definidos y acordados por adelantado. Ideal cuando el resultado es claro y la certeza presupuestaria importa desde el primer día.",
+        "how": "Definimos el alcance del trabajo en un descubrimiento pagado y breve, y luego nos comprometemos con un precio y una fecha.",
+        "includes": ["Enunciado de trabajo con alcance definido", "Hitos con puntos de decisión", "Control de cambios si el alcance varía"],
+        "bestFor": "Desarrollos de base definidos y migraciones"
+      },
+      {
+        "title": "Tiempo y materiales",
+        "body": "Entrega flexible e iterativa, facturada por esfuerzo sobre un backlog compartido. Ideal para requisitos cambiantes y trabajo guiado por el descubrimiento.",
+        "how": "Entregamos sprint a sprint sobre un backlog priorizado que el negocio controla.",
+        "includes": ["Backlog compartido y priorizado", "Demos de sprint e informes de avance", "Detener o cambiar de rumbo en cualquier sprint"],
+        "bestFor": "Descubrimiento, POCs y alcance cambiante"
+      },
+      {
+        "title": "Ampliación de equipo",
+        "body": "Integramos a nuestros profesionales certificados junto al equipo interno. Aceleramos la entrega a la vez que elevamos su capacidad.",
+        "how": "Ingenieros certificados en SnowPro se suman al equipo, a sus herramientas y a sus formas de trabajar.",
+        "includes": ["Profundidad en Snowflake en todos los niveles", "Transferencia de conocimiento incorporada", "Aumente o reduzca la escala cada mes"],
+        "bestFor": "Escalar rápido un equipo existente"
+      },
+      {
+        "title": "Servicios gestionados y soporte",
+        "body": "Operación, optimización y mejora continuas una vez que la práctica está en marcha, para que siga acumulando valor mientras el equipo interno crece con ella.",
+        "how": "Un equipo dedicado monitorea, ajusta el costo y el rendimiento, y entrega mejoras.",
+        "includes": ["Monitoreo y optimización de costos", "SLAs y un contacto asignado", "Una hoja de ruta de mejoras"],
+        "bestFor": "Operar y hacer crecer un entorno Snowflake en producción"
+      }
+    ],
+    "panel": {
+      "eyebrow": "Constante en todos los modelos",
+      "title": "El modelo se adapta. El estándar no.",
+      "body": "Sea cual sea la forma en que una organización elija colaborar, cada proyecto de Viewnear se entrega con el mismo estándar: los aspectos que marcan la diferencia entre un desarrollo que llega a producción y uno que se estanca."
+    },
+    "value": [
+      { "title": "Un solo equipo certificado, con profundidad en todos los niveles", "body": "Un único equipo responsable: quienes definen el alcance del trabajo son quienes lo entregan." },
+      { "title": "Profundidad verificada en Snowflake", "body": "Un equipo certificado en SnowPro con un historial verificado de entregas en Snowflake detrás de cada decisión, desde la estrategia hasta la producción." },
+      { "title": "Precio orientado a resultados", "body": "Alcance y precio acordados por adelantado, sea cual sea el modelo que encaje." },
+      { "title": "Gobierno incorporado", "body": "Seguridad, linaje y control de acceso diseñados desde la primera tabla, no añadidos después." },
+      { "title": "Traspaso y habilitación", "body": "Traspaso completo, documentación y habilitación para que el equipo lo opere con confianza." },
+      { "title": "Integrado con la empresa", "body": "Productos de datos que se conectan hacia y desde los sistemas que el negocio utiliza: ERP, CRM y aplicaciones de cara al cliente." }
+    ],
+    "leadershipLabel": "Un único equipo responsable.",
+    "cost": {
+      "eyebrow": "Qué determina el costo",
+      "body": "El alcance de los proyectos se define según el volumen de datos y la complejidad de las fuentes, el número de casos de uso de analítica e IA, el tamaño del equipo y el cronograma. Acordamos el alcance y el precio por adelantado (sea cual sea el modelo que encaje) para que no haya sorpresas."
+    },
+    "footer": {
+      "note": "¿No está seguro de qué modelo encaja? Cuéntenos el problema y le recomendaremos uno.",
+      "contactCta": "Hablemos de un proyecto",
+      "partnerCta": "Construir vs. colaborar →"
+    }
+  },
+  "faq": {
+    "eyebrow": "Preguntas frecuentes",
+    "title": "Preguntas comunes"
+  }
+}

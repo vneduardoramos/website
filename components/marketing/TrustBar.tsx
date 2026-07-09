@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { Section } from "@/components/marketing/ui";
 import { LogoRow } from "@/components/marketing/home/ClientLogos";
 import { getClientBands } from "@/lib/client-bands";
@@ -10,12 +11,14 @@ import { getClientBands } from "@/lib/client-bands";
  * are configured.
  */
 export async function TrustLogos({
-  label = "Trusted by teams across the Americas",
+  label,
 }: {
   label?: string;
 }) {
   const bands = await getClientBands();
   if (!bands.top || bands.top.length === 0) return null;
+  const t = await getTranslations("sharedUi");
+  const resolvedLabel = label ?? t("trustLogos.label");
   // Keep the per-logo scale/horizontal nudges (they equalize visual weight,
   // e.g. the compact H-E-B badge), but zero the vertical nudge tuned for the
   // home band, and scale from center (not the home baseline) so every logo
@@ -23,7 +26,7 @@ export async function TrustLogos({
   const logos = bands.top.map((l) => ({ ...l, dy: 0 }));
   return (
     <div className="flex flex-col items-center gap-8">
-      <span className="eyebrow">{label}</span>
+      <span className="eyebrow">{resolvedLabel}</span>
       <div className="w-full">
         <LogoRow logos={logos} scaleOrigin="center" />
       </div>

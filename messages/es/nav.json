@@ -1,0 +1,87 @@
+{
+  "home": "Inicio",
+  "services": "Servicios",
+  "industries": "Industrias",
+  "company": "Empresa",
+  "resources": "Recursos",
+  "migrations": "Migraciones",
+  "dataAi": "Data + AI",
+  "platform": "Plataforma",
+  "servicesOverview": "Visión general de servicios",
+  "approach": "Enfoque",
+  "pricing": "Precios",
+  "constructionRealEstate": "Construcción e inmobiliario",
+  "education": "Educación",
+  "financialServices": "Servicios financieros",
+  "manufacturing": "Manufactura",
+  "retailCpg": "Retail y CPG",
+  "technologyTelco": "Tecnología y telecomunicaciones",
+  "mediaEntertainmentAdvertising": "Medios, entretenimiento y publicidad",
+  "about": "Nosotros",
+  "partnership": "Alianza",
+  "nearshore": "Ventaja nearshore",
+  "lifeAtViewnear": "Vida en Viewnear",
+  "security": "Seguridad y confianza",
+  "allResources": "Todos los recursos",
+  "caseStudies": "Casos de éxito",
+  "blog": "Blog",
+  "faq": "Preguntas frecuentes",
+  "cta": "Hablemos",
+  "toggleMenu": "Abrir menú",
+  "switchLanguage": "Cambiar idioma",
+  "groups": {
+    "whatWeDo": "Qué hacemos",
+    "howWeWork": "Cómo trabajamos"
+  },
+  "descriptions": {
+    "about": "Quiénes somos",
+    "partnership": "Premier y CoCo Preferred, verificado",
+    "nearshore": "Entrega Snowflake en su zona horaria",
+    "security": "Gobernanza y cumplimiento",
+    "lifeAtViewnear": "Cultura, roles y beneficios",
+    "servicesOverview": "Cómo colaboramos: THINK · BUILD · GROW",
+    "migrations": "Desde Teradata, Oracle, Hadoop y más",
+    "dataAi": "Agentes sobre datos gobernados, con Claude",
+    "platform": "Cómo construimos en Snowflake",
+    "approach": "Metodología y reducción de riesgos",
+    "pricing": "Modelos de colaboración y costos",
+    "constructionRealEstate": "Proyectos, propiedades y activos",
+    "education": "Escuelas, universidades y capacitación",
+    "financialServices": "Banca, seguros y gestión de activos",
+    "manufacturing": "Producción, cadena de suministro y OEE",
+    "mediaEntertainmentAdvertising": "Audiencia, contenido y campañas",
+    "retailCpg": "Retail, CPG y fidelización",
+    "technologyTelco": "Software, plataformas y redes",
+    "allResources": "Todo en un solo lugar",
+    "caseStudies": "Evidencia y resultados",
+    "blog": "Apuntes de campo",
+    "faq": "Preguntas comunes"
+  },
+  "featured": {
+    "company": {
+      "eyebrow": "Alianza",
+      "title": "Snowflake Premier Partner",
+      "pitch": "Premier y CoCo Preferred: acceso directo al equipo de producto y visibilidad temprana de la hoja de ruta, aplicados en cada proyecto."
+    },
+    "industries": {
+      "eyebrow": "Servicios financieros",
+      "title": "Datos para industrias reguladas",
+      "pitch": "Resultados en banca, seguros y gestión de activos."
+    },
+    "resources": {
+      "eyebrow": "Casos de éxito",
+      "title": "Evidencia desde el campo",
+      "pitch": "Proyectos reales y anonimizados, con resultados medidos."
+    },
+    "servicesLive": {
+      "eyebrow": "Data + AI",
+      "title": "Agentes dentro de Snowflake y en el flujo de trabajo",
+      "cta": "Explorar Data + AI"
+    },
+    "learnMore": "Más información",
+    "caseSub": "Un resultado reciente que entregamos.",
+    "caseCta": "Leer el caso de éxito",
+    "blogEyebrow": "Lo último del blog",
+    "blogCta": "Leer artículo"
+  }
+}

@@ -1,14 +1,9 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { HeroBackground } from "@/components/marketing/HeroBackground";
 import { HeroAurora } from "@/components/marketing/home/HeroAurora";
-
-const PILLS = [
-  "Migrate & modernize",
-  "Govern data people trust",
-  "Ship AI into production",
-];
 
 /**
  * Home hero, "the governed data engine": a centered headline + CTAs over an
@@ -18,9 +13,9 @@ const PILLS = [
  * on-palette, and consistent with the centered hero language of the content pages.
  */
 export function MeshHeroSlide({ subhead }: { subhead?: string }) {
-  const sub =
-    subhead ||
-    "We help enterprises stand up two lasting capabilities: a data practice the whole company trusts and an AI practice that ships use cases into production. Built alongside in-house teams and run by them, guided and accelerated by ours, across the Americas.";
+  const t = useTranslations("heroUi");
+  const sub = subhead || t("hero.subhead");
+  const pills = t.raw("hero.pills") as string[];
 
   return (
     <div className="relative flex min-h-[36rem] items-center overflow-hidden lg:min-h-[42rem]">
@@ -38,13 +33,13 @@ export function MeshHeroSlide({ subhead }: { subhead?: string }) {
       <div className="container-page relative z-10 py-24 md:py-28">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-balance font-display text-4xl font-bold leading-[1.04] tracking-tight text-foreground md:text-[3.6rem]">
-            From data strategy to <span className="text-gradient-accent">AI in production</span>, on Snowflake.
+            {t.rich("hero.title", { hl: (c) => <span className="text-gradient-accent">{c}</span> })}
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">{sub}</p>
 
           <div className="mt-7 flex flex-wrap justify-center gap-2.5">
-            {PILLS.map((p) => (
+            {pills.map((p) => (
               <span key={p} className="pill-tag">
                 {p}
               </span>
@@ -53,16 +48,16 @@ export function MeshHeroSlide({ subhead }: { subhead?: string }) {
 
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link href="/contact" className="btn-primary btn-lg group">
-              Talk to an architect
+              {t("hero.ctaPrimary")}
               <span className="transition-transform group-hover:translate-x-0.5">→</span>
             </Link>
             <Link href="/services" className="btn-ghost btn-lg">
-              Explore services
+              {t("hero.ctaSecondary")}
             </Link>
           </div>
 
           <p className="mt-8 font-mono text-xs uppercase tracking-widest text-muted">
-            Snowflake Premier &amp; CoCo Preferred Partner · SnowPro-certified · The Americas
+            {t("hero.credential")}
           </p>
         </div>
       </div>

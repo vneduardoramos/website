@@ -1,6 +1,10 @@
 /**
  * Shared benefits, surfaced both on /life-at-viewnear and on each job page so
  * the two never drift. `label` is the short ledger eyebrow BenefitsGrid renders.
+ *
+ * i18n note: the copy moved into the `contentData` message catalog. Server
+ * consumers read the localized list via `getBenefits(t)` (passing a
+ * `getTranslations("contentData")` instance) and hand it to `BenefitsGrid`.
  */
 export type Benefit = {
   label: string;
@@ -8,40 +12,11 @@ export type Benefit = {
   body: string;
 };
 
-export const BENEFITS: Benefit[] = [
-  {
-    label: "Health",
-    title: "Health insurance",
-    body: "Comprehensive medical coverage for the whole family.",
-  },
-  {
-    label: "Health",
-    title: "Dental & vision",
-    body: "Optional dental and vision plans for the everyday essentials.",
-  },
-  {
-    label: "Wellness",
-    title: "Emotional wellness",
-    body: "Optional mental-health and emotional-wellbeing support, because demanding work needs real balance.",
-  },
-  {
-    label: "Balance",
-    title: "Flexible time off",
-    body: "Time off follows local law and stays flexible (no fixed cap) as long as outcomes stay strong and teams stay covered.",
-  },
-  {
-    label: "Growth",
-    title: "Learning & certifications",
-    body: "Training, SnowPro certifications, conference travel, and event sponsorships: we reinvest in the team's growth.",
-  },
-  {
-    label: "Together",
-    title: "Team retreats",
-    body: "Company retreats and in-person gatherings that build the relationships behind great delivery.",
-  },
-  {
-    label: "Tooling",
-    title: "The tools to do the work",
-    body: "Modern hardware, paid AI tooling, and the licenses each project needs, from day one.",
-  },
-];
+/**
+ * Localized benefits, read from the `contentData` catalog. Pass a
+ * `getTranslations("contentData")` (server) or `useTranslations("contentData")`
+ * (client) instance.
+ */
+export function getBenefits(t: { raw: (key: string) => unknown }): Benefit[] {
+  return t.raw("benefits") as Benefit[];
+}

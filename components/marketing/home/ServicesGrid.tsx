@@ -1,19 +1,15 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { CheckIcon } from "./Icons";
 import { RevealGroup } from "@/components/marketing/Motion";
 
 type Service = { slug: string; title: string; summary: string };
 
-// No-card tile (left column, row 2): the engagement models, the one commercial
-// fact the home page doesn't state anywhere else. Mirrors /pricing.
-const ENGAGE_POINTS = [
-  "Fixed cost: a defined outcome at a set price",
-  "Time & materials: discovery and evolving scope",
-  "Team augmentation: certified depth alongside in-house teams",
-  "Paid discovery fixes scope; foundations go live in 8–16 weeks",
-];
-
-export function ServicesGrid({ services }: { services: Service[] }) {
+export async function ServicesGrid({ services }: { services: Service[] }) {
+  const t = await getTranslations("homeServer");
+  // No-card tile (left column, row 2): the engagement models, the one commercial
+  // fact the home page doesn't state anywhere else. Mirrors /pricing.
+  const engagePoints = t.raw("servicesGrid.engagePoints") as string[];
   const cards = services.slice(0, 6);
   const [lead, ...rest] = cards;
   if (!lead) return null;
@@ -35,7 +31,7 @@ export function ServicesGrid({ services }: { services: Service[] }) {
       <h3 className="mt-3.5 font-display text-lg font-bold text-foreground">{svc.title}</h3>
       <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-muted">{svc.summary}</p>
       <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep">
-        <span className="link-underline">Learn more</span>
+        <span className="link-underline">{t("servicesGrid.learnMore")}</span>
         <span className="transition-transform group-hover:translate-x-0.5">→</span>
       </span>
     </Link>
@@ -45,14 +41,12 @@ export function ServicesGrid({ services }: { services: Service[] }) {
     <section className="section section-warm">
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="chip">What we offer</span>
+          <span className="chip">{t("servicesGrid.chip")}</span>
           <h2 className="mt-5 font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            A single accountable team, the whole data stack
+            {t("servicesGrid.title")}
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted">
-            From governed foundations and trusted pipelines to analytics and AI
-            agents in production: advisory through delivery through enablement,
-            on Snowflake.
+            {t("servicesGrid.body")}
           </p>
         </div>
 
@@ -72,7 +66,7 @@ export function ServicesGrid({ services }: { services: Service[] }) {
             <h3 className="mt-4 font-display text-2xl font-bold text-foreground">{lead.title}</h3>
             <p className="mt-3 max-w-lg flex-1 text-base leading-relaxed text-muted">{lead.summary}</p>
             <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep">
-              <span className="link-underline">Learn more</span>
+              <span className="link-underline">{t("servicesGrid.learnMore")}</span>
               <span className="transition-transform group-hover:translate-x-0.5">→</span>
             </span>
           </Link>
@@ -82,12 +76,12 @@ export function ServicesGrid({ services }: { services: Service[] }) {
 
           {/* No-card tile: how to engage (left column, row 2) */}
           <div className="flex flex-col justify-center py-2 lg:col-span-2 lg:pr-6">
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">How we engage</p>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">{t("servicesGrid.engageEyebrow")}</p>
             <h3 className="mt-3 max-w-xl text-balance font-display text-lg font-semibold leading-snug text-foreground/70 md:text-xl">
-              Three ways to buy the same accountable delivery.
+              {t("servicesGrid.engageTitle")}
             </h3>
             <ul className="mt-5 grid max-w-xl gap-x-8 gap-y-3 sm:grid-cols-2">
-              {ENGAGE_POINTS.map((p) => (
+              {engagePoints.map((p) => (
                 <li key={p} className="flex items-start gap-2.5 text-sm leading-snug text-muted">
                   <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary/40" />
                   <span>{p}</span>
@@ -98,7 +92,7 @@ export function ServicesGrid({ services }: { services: Service[] }) {
               href="/pricing"
               className="group mt-6 inline-flex items-center gap-1 text-sm font-medium text-muted transition-colors hover:text-primaryDeep"
             >
-              <span className="link-underline">How pricing works</span>
+              <span className="link-underline">{t("servicesGrid.pricingLink")}</span>
               <span className="transition-transform group-hover:translate-x-0.5">→</span>
             </Link>
           </div>

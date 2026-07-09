@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "title": "Acerca de: prácticas de data & AI en toda América",
+    "description": "Viewnear ayuda a las empresas a establecer prácticas de data & AI que conservan: datos gobernados que alimentan decisiones reales y casos de uso de IA en producción, construidos sobre Snowflake y operados por sus propios equipos."
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "current": "Acerca de nosotros"
+  },
+  "hero": {
+    "eyebrow": "Acerca de Viewnear",
+    "title": "Construimos prácticas de data & AI con empresas en toda <hl>América</hl>.",
+    "description": "Dos capacidades duraderas: una práctica de datos que alimenta decisiones reales y una práctica de IA que lleva casos de uso a producción, construidas sobre Snowflake y operadas por equipos internos, guiadas y aceleradas por el nuestro. Como Snowflake Premier y CoCo Preferred Partner, entregamos en Canadá, Estados Unidos, México, LATAM y el Caribe."
+  },
+  "heroChips": [
+    "Snowflake Premier Partner",
+    "CoCo Preferred Partner",
+    "Con certificación SnowPro",
+    "Entrega enfocada en América"
+  ],
+  "whoWeAre": {
+    "eyebrow": "Quiénes somos",
+    "title": "Lo construimos junto al equipo y luego le entregamos las llaves",
+    "body": "Viewnear ayuda a las empresas a establecer dos capacidades que conservan: una práctica de datos y una práctica de IA, construidas sobre Snowflake y operadas por equipos internos. Trabajamos junto a esos equipos desde el primer taller hasta la producción, en estrategia, arquitectura, ingeniería, analítica e IA gobernada, e integramos lo que construimos en ambos sentidos: los datos operativos entran, y las decisiones, respuestas y agentes de IA regresan a los sistemas donde ocurre el trabajo. Pasamos de ser una práctica especializada a un Snowflake Premier Partner al profundizar en una sola plataforma, y ese enfoque define cómo contratamos, capacitamos y entregamos.",
+    "cta": "Cómo entregamos",
+    "imageAlt": "Un collage del equipo de Viewnear en eventos de Snowflake: el stand de data + ai, Data for Breakfast, Snowflake Summit y comidas del equipo"
+  },
+  "operating": [
+    "Alcances fijos, sprints impulsados por casos de uso y software funcional en cada demo",
+    "Gobernado por diseño, desde la primera tabla",
+    "Las personas que definen el alcance del trabajo permanecen hasta la producción",
+    "Formatos abiertos (Apache Iceberg) para arquitecturas interoperables"
+  ],
+  "arcLabel": "La trayectoria hasta ahora",
+  "milestones": [
+    {
+      "label": "Origen",
+      "title": "Fundada en Monterrey",
+      "body": "Una práctica especializada en Snowflake desde el primer día: una plataforma, estudiada a fondo, en cada proyecto."
+    },
+    {
+      "label": "Presencia",
+      "title": "Dos sedes",
+      "body": "Austin y Monterrey, un solo equipo en el mismo horario laboral, entregando en toda América."
+    },
+    {
+      "label": "Nivel de partner",
+      "title": "Snowflake Premier Partner",
+      "body": "Entrega certificada y un historial verificado, medido por resultados y no por la cantidad de logotipos."
+    },
+    {
+      "label": "Impulso",
+      "title": "CoCo Preferred Partner",
+      "body": "Reconocidos en Snowflake Summit 2026 junto a los integradores de sistemas globales por el impulso en Snowflake CoCo."
+    }
+  ],
+  "trackRecordHeading": {
+    "eyebrow": "Historial",
+    "title": "Credenciales que cualquiera puede verificar",
+    "intro": "Sin cifras de vanidad: el nivel de partner, la certificación y el alcance regional que cualquiera puede comprobar."
+  },
+  "trackRecord": [
+    { "value": "Premier", "label": "Snowflake Premier + CoCo Preferred Partner" },
+    { "value": "SnowPro", "label": "Certificación SnowPro en todo el equipo" },
+    { "value": "15+", "label": "Años construyendo datos e IA empresarial" },
+    { "value": "5", "label": "Países en toda América" }
+  ],
+  "operateHeading": {
+    "eyebrow": "Cómo operamos",
+    "title": "Diseñado según la forma en que compran las empresas",
+    "intro": "Los principios operativos detrás de cada proyecto."
+  },
+  "principles": [
+    {
+      "title": "Profundidad en cada respuesta",
+      "body": "Cualquier pregunta difícil de arquitectura, gobierno o costos recibe una respuesta directa de un especialista con certificación SnowPro que ya lo ha llevado a producción en Snowflake."
+    },
+    {
+      "title": "Gobernado por diseño",
+      "body": "El linaje de Horizon Catalog y Horizon Context dan a cada equipo y agente de IA un único contexto de negocio confiable, desde la primera tabla."
+    },
+    {
+      "title": "Un solo equipo responsable, de principio a fin",
+      "body": "Desde la estrategia hasta la producción bajo un solo equipo, para que el contexto nunca se rompa entre proveedores o fases."
+    },
+    {
+      "title": "Dejamos equipos más fuertes",
+      "body": "Documentación, habilitación y un plan de transición en cada proyecto, para que el equipo opere y amplíe el trabajo con confianza."
+    },
+    {
+      "title": "El equipo local de América",
+      "body": "Experiencia local y alineación de zona horaria en Canadá, Estados Unidos, México, LATAM y el Caribe."
+    }
+  ],
+  "governanceBlock": {
+    "eyebrow": "Gobierno y confianza",
+    "title": "Los controles auditados de Snowflake, más nuestra disciplina de entrega.",
+    "body": "Todo lo que construimos es gobernado y auditable desde el primer día, y hereda los controles de la plataforma de Snowflake, auditada de forma independiente.",
+    "link": "Cómo protegemos los datos de los clientes"
+  },
+  "governance": [
+    "Acceso con privilegios mínimos y controles basados en roles (RBAC)",
+    "Linaje de Horizon Catalog + Horizon Context en cada activo",
+    "Clasificación y enmascaramiento de PII, residencia de datos por región",
+    "Sobre la plataforma auditada de Snowflake: SOC 2 Type II, ISO 27001, HIPAA"
+  ],
+  "team": {
+    "eyebrow": "Nuestro equipo",
+    "title": "Versados en Snowflake y en el ámbito empresarial, en todos los niveles",
+    "intro": "Somos un grupo de profesionales, desde la estrategia hasta la ingeniería, que profundizan en lo mismo: Snowflake y soluciones empresariales. No unos pocos nombres senior sobre un banco rotativo, sino profundidad combinada que se nota en cada nivel del proyecto.",
+    "leadershipLabel": "Liderazgo",
+    "leadershipTitle": "El equipo de liderazgo",
+    "leadershipBody": "Las personas que lideran la práctica, con experiencia combinada en datos, analítica e IA empresarial."
+  },
+  "close": {
+    "title": "Tráiganos el problema de datos más difícil.",
+    "body": "Sin importar en qué punto esté el trabajo hoy, migrando, escalando o fundamentando la IA, un arquitecto de Snowflake trazará la ruta más rápida hacia el valor.",
+    "primaryCta": "Hable con un arquitecto",
+    "secondaryCta": "Conozca nuestra alianza"
+  }
+}

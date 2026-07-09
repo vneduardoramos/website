@@ -1,0 +1,36 @@
+{
+  "contact": {
+    "requiredNote": "Fields marked <mark>*</mark> are required.",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "company": "Company",
+    "roleLabel": "What can we help with?",
+    "selectPlaceholder": "Select an option",
+    "options": {
+      "strategy": "Data & AI strategy / business outcomes",
+      "platform": "Snowflake platform & architecture",
+      "migration": "Migration or modernization",
+      "analytics": "Analytics, BI & data products",
+      "other": "Something else"
+    },
+    "messageLabel": "How can we help?",
+    "error": "Something went wrong. Please try again or email us directly.",
+    "sending": "Sending...",
+    "send": "Send message"
+  },
+  "application": {
+    "title": "Apply now",
+    "applyingFor": "Applying for:",
+    "requiredNote": "Fields marked <mark>*</mark> are required.",
+    "fullName": "Full name",
+    "email": "Email",
+    "linkedin": "LinkedIn profile",
+    "aboutLabel": "About the candidate",
+    "resumeLabel": "Resume",
+    "resumeHint": "(PDF or Word, max 8 MB)",
+    "error": "Something went wrong. Please try again or email us directly.",
+    "submitting": "Submitting...",
+    "submit": "Submit application"
+  }
+}

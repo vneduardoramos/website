@@ -1,5 +1,6 @@
 import { Img as Image } from "@/components/marketing/Img";
 import { RevealGroup } from "@/components/marketing/Motion";
+import { getTranslations } from "next-intl/server";
 
 /**
  * Real screens from our build environments (not mockups, not stock): the
@@ -10,35 +11,30 @@ import { RevealGroup } from "@/components/marketing/Motion";
 
 const SHOTS = [
   {
+    key: "cowork",
     src: "/assets/images/product/cowork-home.webp",
     w: 1920,
     h: 860,
-    alt: "Snowflake CoWork home screen with cited sales analytics artifacts",
-    caption: "Where the business meets it",
-    detail: "Snowflake CoWork: plain-language questions, cited answers, no separate BI stack to secure.",
     wide: true,
   },
   {
+    key: "workspaces",
     src: "/assets/images/product/workspaces-build.png",
     w: 2466,
     h: 1216,
-    alt: "A semantic view being built and reviewed in Snowflake Workspaces",
-    caption: "The engineering behind it",
-    detail: "A semantic view taking shape in Snowflake Workspaces, reviewed change by change before it ships.",
     wide: false,
   },
   {
+    key: "catalog",
     src: "/assets/images/product/catalog-governance.png",
     w: 1210,
     h: 766,
-    alt: "Horizon Catalog dataset page showing certification status, domain, and steward",
-    caption: "Governance made visible",
-    detail: "Certification status, domain, and a named steward on every dataset in Horizon Catalog.",
     wide: false,
   },
 ];
 
-export function ProductShots() {
+export async function ProductShots() {
+  const t = await getTranslations("platformUi");
   return (
     <RevealGroup className="mt-12 grid gap-6 md:grid-cols-2" variant="fade-up">
       {SHOTS.map((s) => (
@@ -51,7 +47,7 @@ export function ProductShots() {
             </div>
             <Image
               src={s.src}
-              alt={s.alt}
+              alt={t(`productShots.${s.key}.alt`)}
               width={s.w}
               height={s.h}
               sizes={s.wide ? "(max-width:768px) 100vw, 66vw" : "(max-width:768px) 100vw, 50vw"}
@@ -59,8 +55,8 @@ export function ProductShots() {
             />
           </div>
           <figcaption className="mt-3 px-1">
-            <span className="font-display text-sm font-bold text-foreground">{s.caption}.</span>{" "}
-            <span className="text-sm text-muted">{s.detail}</span>
+            <span className="font-display text-sm font-bold text-foreground">{t(`productShots.${s.key}.caption`)}.</span>{" "}
+            <span className="text-sm text-muted">{t(`productShots.${s.key}.detail`)}</span>
           </figcaption>
         </figure>
       ))}

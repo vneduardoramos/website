@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "fallbackTitle": "Case study"
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "caseStudies": "Case studies"
+  },
+  "eyebrow": "Case study",
+  "anonNote": "A real engagement; the client's name is withheld at their request.",
+  "clientName": "{article} {sector} organization",
+  "metrics": {
+    "eyebrow": "What changed"
+  },
+  "fallbackMetrics": [
+    { "value": "One", "label": "Governed source of truth" },
+    { "value": "Medallion", "label": "Bronze to Gold foundation" },
+    { "value": "Built in", "label": "Security and lineage" },
+    { "value": "8–16 wks", "label": "Kickoff to first value, sprint by sprint" }
+  ],
+  "leadershipLabel": "Delivered by our team. The client's name is withheld; ours isn't.",
+  "story": {
+    "eyebrow": "The engagement",
+    "title": "How Viewnear delivered for {clientName}",
+    "fallbackBody": "Viewnear partnered with {clientName} to design and deliver a modern, governed data foundation: unifying sources, automating pipelines, and surfacing trusted insight where the {sector} team works every day.",
+    "detailImageAlt": "{title} solution in action",
+    "relatedIndustry": "Related industry"
+  },
+  "result": {
+    "eyebrow": "The result",
+    "title": "From raw data to <hl>confident decisions</hl>",
+    "body": "With governed, AI-ready data in place, {clientName} unlocked faster reporting, dependable pipelines, and a foundation built to scale across the {region} market.",
+    "imageAlt": "{title} results",
+    "cta": "Start a conversation"
+  },
+  "related": {
+    "eyebrow": "Keep exploring",
+    "title": "More {sector} case studies"
+  },
+  "nav": {
+    "ariaLabel": "More engagements",
+    "prev": "← Previous engagement",
+    "next": "Next engagement →"
+  },
+  "backToIndex": "← Back to case studies"
+}

@@ -1,5 +1,11 @@
 import { prisma } from "@/lib/db";
 import { parseJson } from "@/lib/utils";
+import {
+  localize,
+  localizeMany,
+  type Locale,
+  DEFAULT_LOCALE,
+} from "@/lib/i18n-content";
 
 const PUBLISHED = { status: "PUBLISHED" as const };
 
@@ -18,15 +24,16 @@ export async function safe<T>(promise: Promise<T>, fallback: T): Promise<T> {
 }
 
 // ---------- Services ----------
-export async function getServices() {
-  return prisma.service.findMany({
+export async function getServices(locale: Locale = DEFAULT_LOCALE) {
+  const rows = await prisma.service.findMany({
     where: PUBLISHED,
     orderBy: [{ tier: "asc" }, { order: "asc" }],
   });
+  return localizeMany("service", rows, locale);
 }
 
-export async function getServicesByTier() {
-  const services = await getServices();
+export async function getServicesByTier(locale: Locale = DEFAULT_LOCALE) {
+  const services = await getServices(locale);
   const tiers = ["THINK", "BUILD", "GROW"] as const;
   return tiers.map((tier) => ({
     tier,
@@ -35,11 +42,12 @@ export async function getServicesByTier() {
 }
 
 // ---------- Industries ----------
-export async function getIndustries() {
-  return prisma.industry.findMany({
+export async function getIndustries(locale: Locale = DEFAULT_LOCALE) {
+  const rows = await prisma.industry.findMany({
     where: PUBLISHED,
     orderBy: { order: "asc" },
   });
+  return localizeMany("industry", rows, locale);
 }
 
 export async function getIndustrySlugs() {
@@ -50,8 +58,11 @@ export async function getIndustrySlugs() {
   return rows.map((r) => r.slug);
 }
 
-export async function getIndustryBySlug(slug: string) {
-  return prisma.industry.findFirst({
+export async function getIndustryBySlug(
+  slug: string,
+  locale: Locale = DEFAULT_LOCALE,
+) {
+  const row = await prisma.industry.findFirst({
     where: { slug, ...PUBLISHED },
     include: {
       caseStudies: {
@@ -61,16 +72,21 @@ export async function getIndustryBySlug(slug: string) {
       },
     },
   });
+  return row ? localize("industry", row, locale) : row;
 }
 
 // ---------- Case studies ----------
-export async function getCaseStudies(opts?: { featured?: boolean; take?: number }) {
-  return prisma.caseStudy.findMany({
+export async function getCaseStudies(
+  opts?: { featured?: boolean; take?: number },
+  locale: Locale = DEFAULT_LOCALE,
+) {
+  const rows = await prisma.caseStudy.findMany({
     where: { ...PUBLISHED, ...(opts?.featured ? { featured: true } : {}) },
     orderBy: { order: "asc" },
     take: opts?.take,
     include: { client: true, industry: true },
   });
+  return localizeMany("caseStudy", rows, locale);
 }
 
 export async function getCaseStudySlugs() {
@@ -81,16 +97,23 @@ export async function getCaseStudySlugs() {
   return rows.map((r) => r.slug);
 }
 
-export async function getCaseStudyBySlug(slug: string) {
-  return prisma.caseStudy.findFirst({
+export async function getCaseStudyBySlug(
+  slug: string,
+  locale: Locale = DEFAULT_LOCALE,
+) {
+  const row = await prisma.caseStudy.findFirst({
     where: { slug, ...PUBLISHED },
     include: { client: true, industry: true },
   });
+  return row ? localize("caseStudy", row, locale) : row;
 }
 
 // ---------- Blog ----------
-export async function getBlogPosts(opts?: { take?: number }) {
-  return prisma.blogPost.findMany({
+export async function getBlogPosts(
+  opts?: { take?: number },
+  locale: Locale = DEFAULT_LOCALE,
+) {
+  const rows = await prisma.blogPost.findMany({
     where: PUBLISHED,
     orderBy: { publishedAt: "desc" },
     take: opts?.take,
@@ -100,6 +123,7 @@ export async function getBlogPosts(opts?: { take?: number }) {
       authorTeam: { include: { headshot: true } },
     },
   });
+  return localizeMany("blogPost", rows, locale);
 }
 
 export async function getBlogSlugs() {
@@ -110,8 +134,11 @@ export async function getBlogSlugs() {
   return rows.map((r) => r.slug);
 }
 
-export async function getBlogPostBySlug(slug: string) {
-  return prisma.blogPost.findFirst({
+export async function getBlogPostBySlug(
+  slug: string,
+  locale: Locale = DEFAULT_LOCALE,
+) {
+  const row = await prisma.blogPost.findFirst({
     where: { slug, ...PUBLISHED },
     include: {
       author: true,
@@ -119,6 +146,7 @@ export async function getBlogPostBySlug(slug: string) {
       authorTeam: { include: { headshot: true } },
     },
   });
+  return row ? localize("blogPost", row, locale) : row;
 }
 
 // ---------- News & events ----------
@@ -143,11 +171,12 @@ export async function getNewsBySlug(slug: string) {
 }
 
 // ---------- Team / clients ----------
-export async function getTeam() {
-  return prisma.teamMember.findMany({
+export async function getTeam(locale: Locale = DEFAULT_LOCALE) {
+  const rows = await prisma.teamMember.findMany({
     where: { published: true },
     orderBy: { order: "asc" },
   });
+  return localizeMany("teamMember", rows, locale);
 }
 
 export async function getClients() {
@@ -155,11 +184,12 @@ export async function getClients() {
 }
 
 // ---------- Jobs ----------
-export async function getJobOpenings() {
-  return prisma.jobOpening.findMany({
+export async function getJobOpenings(locale: Locale = DEFAULT_LOCALE) {
+  const rows = await prisma.jobOpening.findMany({
     where: PUBLISHED,
     orderBy: { order: "asc" },
   });
+  return localizeMany("jobOpening", rows, locale);
 }
 
 export async function getJobSlugs() {
@@ -170,12 +200,30 @@ export async function getJobSlugs() {
   return rows.map((r) => r.slug);
 }
 
-export async function getJobOpeningBySlug(slug: string) {
-  return prisma.jobOpening.findFirst({ where: { slug, ...PUBLISHED } });
+export async function getJobOpeningBySlug(
+  slug: string,
+  locale: Locale = DEFAULT_LOCALE,
+) {
+  const row = await prisma.jobOpening.findFirst({ where: { slug, ...PUBLISHED } });
+  return row ? localize("jobOpening", row, locale) : row;
 }
 
 // ---------- Site settings ----------
-export async function getSetting<T = unknown>(key: string): Promise<T | null> {
+export async function getSetting<T = unknown>(
+  key: string,
+  locale: Locale = DEFAULT_LOCALE,
+): Promise<T | null> {
+  // Spanish settings live under a sibling `${key}.es` row; fall back to the
+  // base row when it is absent or resolves to null.
+  if (locale === "es") {
+    const esRow = await prisma.siteSetting.findUnique({
+      where: { key: `${key}.es` },
+    });
+    if (esRow) {
+      const esValue = parseJson<T | null>(esRow.value, null);
+      if (esValue != null) return esValue;
+    }
+  }
   const row = await prisma.siteSetting.findUnique({ where: { key } });
   if (!row) return null;
   return parseJson<T | null>(row.value, null);
