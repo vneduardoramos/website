@@ -9,39 +9,18 @@ import {
   GaugeIcon,
   CheckIcon,
 } from "./Icons";
+import { useTranslations } from "next-intl";
 import { Reveal, useStepThresholds } from "@/components/marketing/Motion";
 import { cn } from "@/lib/utils";
 
-const STEPS = [
-  { title: "Discover", desc: "Assess the current estate, data sources, and business goals; define success metrics.", Icon: CompassIcon },
-  { title: "Design", desc: "Architect the target Snowflake platform, governance model, and semantic layer.", Icon: PenIcon },
-  { title: "Migrate & Ingest", desc: "Move and connect data with automated translation, validation, and Openflow pipelines.", Icon: PipelineIcon },
-  { title: "Build", desc: "Engineer data products, analytics, and Cortex AI / agentic workloads on governed data.", Icon: RocketIcon },
-  { title: "Govern & Validate", desc: "Apply Horizon Catalog lineage, access controls, and PII classification, plus Horizon Context so every team and AI agent shares one trusted business context; test for trust.", Icon: ShieldIcon },
-  { title: "Run & Optimize", desc: "Operate, monitor, and tune consumption and performance, with enablement for the in-house team.", Icon: GaugeIcon },
-];
-
-const WHY = [
-  {
-    title: "The whole modern data stack, not one tool",
-    body: "Ingestion (Openflow, Snowpipe Streaming), transformation (dbt, Snowpark, Dynamic Tables), governance (Horizon Catalog and Horizon Context), analytics (Snowsight, Streamlit), and AI agents (Cortex, Snowflake CoWork), all centered on one governed Snowflake core.",
-  },
-  {
-    title: "Governed and open by design",
-    body: "Built on Apache Iceberg and Open Catalog (Polaris) so data stays interoperable across engines and clouds.",
-  },
-  {
-    title: "Get it right the first time",
-    body: "Proven migration frameworks and certified architects reduce risk and rework when moving off Teradata, Oracle, Hadoop, or SQL Server.",
-  },
-  {
-    title: "Beyond dashboards to data agents",
-    body: "We ground Snowflake CoWork (the personal AI agent) and Cortex Agents in governed Semantic Views and Horizon Context, so business users get cited, trustworthy answers from the same definitions every team uses.",
-  },
-];
+const STEP_ICONS = [CompassIcon, PenIcon, PipelineIcon, RocketIcon, ShieldIcon, GaugeIcon];
 
 export function Methodology() {
-  const { ref: timelineRef, activeUpTo } = useStepThresholds<HTMLDivElement>(STEPS.length, {
+  const t = useTranslations("methodology");
+  const steps = t.raw("steps") as { title: string; desc: string }[];
+  const why = t.raw("why.items") as { title: string; body: string }[];
+
+  const { ref: timelineRef, activeUpTo } = useStepThresholds<HTMLDivElement>(STEP_ICONS.length, {
     start: 0.85,
     end: 0.45,
   });
@@ -50,15 +29,12 @@ export function Methodology() {
     <section className="section section-tint">
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="chip">Our methodology</span>
+          <span className="chip">{t("chip")}</span>
           <h2 className="mt-5 font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            How we deliver and <span className="text-gradient">keep delivering</span>
+            {t.rich("heading", { hl: (c) => <span className="text-gradient">{c}</span> })}
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted">
-            A six-step loop, not a one-way project. We work one priority use case at a
-            time, taking each from discovery to governed, Cortex-powered data in
-            production on Snowflake, then start the next. The governed, AI-ready
-            foundation grows with the business as we keep delivering.
+            {t("intro")}
           </p>
         </div>
 
@@ -71,7 +47,7 @@ export function Methodology() {
                 "current" reaches each node exactly as that node lights up */}
             <div
               className="line-draw h-full bg-gradient-to-r from-secondary to-primary transition-[clip-path] duration-500 ease-out motion-reduce:transition-none"
-              style={{ ["--progress" as string]: String(activeUpTo / STEPS.length) }}
+              style={{ ["--progress" as string]: String(activeUpTo / STEP_ICONS.length) }}
             />
           </div>
           {/* loop-back arrow: the six steps run as a continuous, evolving cycle (desktop) */}
@@ -92,7 +68,8 @@ export function Methodology() {
             </svg>
           </div>
           <ol className="grid gap-y-10 sm:grid-cols-2 lg:grid-cols-6 lg:gap-4">
-            {STEPS.map(({ title, desc, Icon }, i) => {
+            {steps.map(({ title, desc }, i) => {
+              const Icon = STEP_ICONS[i];
               const active = i < activeUpTo;
               return (
               <Reveal key={title} delay={i * 60}>
@@ -127,12 +104,12 @@ export function Methodology() {
           <div className="bg-grid pointer-events-none absolute inset-0 opacity-30" />
           <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-primary/15 blur-3xl" />
           <div className="relative">
-            <p className="eyebrow mb-3">Why it works</p>
+            <p className="eyebrow mb-3">{t("why.eyebrow")}</p>
             <h3 className="font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
-              A partner who knows the whole journey
+              {t("why.title")}
             </h3>
             <ul className="mt-8 grid gap-6 sm:grid-cols-2">
-              {WHY.map((item) => (
+              {why.map((item) => (
                 <li key={item.title} className="flex items-start gap-3">
                   <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary/40 text-primaryDeep">
                     <CheckIcon className="h-4 w-4" />

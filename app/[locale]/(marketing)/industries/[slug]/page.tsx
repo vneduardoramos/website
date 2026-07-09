@@ -21,7 +21,7 @@ import { PlateCard } from "@/components/marketing/Cards";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { HeroBackground } from "@/components/marketing/HeroBackground";
 import { MaskReveal } from "@/components/marketing/Motion";
-import { getFlavor, INDUSTRY_FLAVOR } from "@/components/marketing/industries/flavor";
+import { getFlavor, getFlavorText, INDUSTRY_FLAVOR } from "@/components/marketing/industries/flavor";
 import { pageMeta } from "@/lib/seo";
 
 export const revalidate = 60;
@@ -76,6 +76,10 @@ export default async function IndustryDetailPage({
   const others = all.filter((i) => i.slug !== industry.slug);
 
   const flavor = getFlavor(industry.slug);
+  // Non-text visual identity (icon/tile/glow/etc.) comes from getFlavor; the
+  // localized sector copy (pattern, compliance, capabilities, bullets) is read
+  // from the contentData catalog via getFlavorText.
+  const flavorText = getFlavorText(industry.slug, await getTranslations("contentData"));
   const Icon = flavor.icon;
   const sectorImage = `/assets/images/industries/${industry.slug}.jpg`;
   // Short sector reference code for the compliance plate (e.g. "FIN", "EDU").
@@ -125,7 +129,7 @@ export default async function IndustryDetailPage({
               >
                 <Icon className="h-6 w-6" />
               </span>
-              <p className="eyebrow">{flavor.pattern}</p>
+              <p className="eyebrow">{flavorText.pattern}</p>
             </div>
             <h1 className="mt-7 text-balance font-display text-4xl font-bold leading-[1.08] tracking-tight text-foreground md:text-[3.3rem]">
               <span className="knockout-text">{industry.headline}</span>
@@ -160,7 +164,7 @@ export default async function IndustryDetailPage({
               hl: (c) => <span className="text-gradient">{c}</span>,
             })}
             body={t("engagement.body", { industry: industry.name.toLowerCase() })}
-            bullets={flavor.bullets}
+            bullets={flavorText.bullets}
             image={`/assets/images/industries/${industry.slug}-2.jpg`}
             imageAlt={t("engagement.imageAlt", { industry: industry.name })}
             cta={{ label: t("engagement.cta"), href: "/contact" }}
@@ -183,7 +187,7 @@ export default async function IndustryDetailPage({
           }
         />
         <div className="mt-12">
-          <MetricBand metrics={flavor.capabilities} />
+          <MetricBand metrics={flavorText.capabilities} />
         </div>
       </Section>
 
@@ -257,7 +261,7 @@ export default async function IndustryDetailPage({
       <ShowcaseBand
         image={sectorImage}
         imageAlt={t("showcase.imageAlt", { industry: industry.name })}
-        eyebrow={flavor.pattern}
+        eyebrow={flavorText.pattern}
         title={t.rich("showcase.title", {
           name: industry.name,
           hl: (c) => <span className="text-secondary">{c}</span>,
@@ -278,7 +282,7 @@ export default async function IndustryDetailPage({
             title={t("compliance.title")}
             stamp
           >
-            {flavor.compliance}{" "}
+            {flavorText.compliance}{" "}
             <Link
               href="/security"
               className="font-semibold text-primaryDeep underline-offset-4 hover:underline"

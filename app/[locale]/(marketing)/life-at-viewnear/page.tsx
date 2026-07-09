@@ -11,7 +11,7 @@ import { PageHero } from "@/components/marketing/PageHero";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { ApplicationForm } from "@/components/marketing/ApplicationForm";
 import { getJobOpenings } from "@/lib/queries";
-import { BENEFITS } from "@/lib/benefits";
+import { getBenefits } from "@/lib/benefits";
 import { BenefitsGrid } from "@/components/marketing/BenefitsGrid";
 import { asStringArray } from "@/lib/utils";
 import { theme } from "@/config/theme";
@@ -230,6 +230,8 @@ export default async function LifeAtViewnearPage({ params }: { params: { locale:
   const { locale } = params;
   setRequestLocale(locale);
   const t = await getTranslations("lifeAtViewnear");
+  // Shared benefits copy is localized via the contentData catalog.
+  const benefits = getBenefits(await getTranslations("contentData"));
   const openings = await getJobOpenings(locale as Locale);
 
   const offices = (
@@ -513,7 +515,7 @@ export default async function LifeAtViewnearPage({ params }: { params: { locale:
           title={t("benefits.title")}
           intro={t("benefits.intro")}
         />
-        <BenefitsGrid items={BENEFITS} className="mt-12" />
+        <BenefitsGrid items={benefits} className="mt-12" />
       </Section>
 
       {/* WHY VIEWNEAR STANDS APART + FLYWHEEL */}

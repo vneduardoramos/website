@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { RevealGroup } from "@/components/marketing/Motion";
 import { StatCounter } from "@/components/marketing/StatCounter";
@@ -6,17 +7,19 @@ const EDGE_FADE =
   "linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)";
 
 /** Horizontal "trusted by" marquee of monochrome client names, pause on hover. */
-export function LogoStrip({
-  label = "Trusted by data-driven teams across the Americas",
+export async function LogoStrip({
+  label,
   items,
 }: {
   label?: string;
   items: string[];
 }) {
+  const t = await getTranslations("sharedUi");
+  const resolvedLabel = label ?? t("logoStrip.label");
   const doubled = [...items, ...items];
   return (
     <div className="text-center">
-      <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">{label}</p>
+      <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">{resolvedLabel}</p>
       <div
         className="group relative mt-7 overflow-hidden"
         style={{ WebkitMaskImage: EDGE_FADE, maskImage: EDGE_FADE }}
@@ -58,20 +61,22 @@ export function MetricBand({
 }
 
 /** Compact CTA row used inside sections. */
-export function InlineCta({
+export async function InlineCta({
   title,
   href = "/contact",
-  label = "Get in touch",
+  label,
 }: {
   title: string;
   href?: string;
   label?: string;
 }) {
+  const t = await getTranslations("sharedUi");
+  const resolvedLabel = label ?? t("inlineCta.label");
   return (
     <div className="flex flex-col items-center justify-between gap-4 rounded-2xl border border-border bg-surface p-6 shadow-soft sm:flex-row">
       <p className="font-display text-lg font-bold text-foreground">{title}</p>
       <Link href={href} className="btn-primary group shrink-0">
-        {label}
+        {resolvedLabel}
         <span className="transition-transform group-hover:translate-x-0.5">→</span>
       </Link>
     </div>

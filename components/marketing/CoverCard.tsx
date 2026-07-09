@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { Img as Image } from "@/components/marketing/Img";
 import { Link } from "@/i18n/navigation";
 
@@ -41,7 +42,7 @@ function Placeholder({ kicker, seed }: { kicker?: string; seed: string }) {
   );
 }
 
-export function CoverCard({
+export async function CoverCard({
   href,
   image,
   imageAlt = "",
@@ -62,6 +63,7 @@ export function CoverCard({
   author?: { name: string; photo?: string | null };
   featured?: boolean;
 }) {
+  const t = await getTranslations("sharedUi");
   // Fall back to the title when no explicit alt is given, so covers are never
   // announced with an empty alt. The Img wrapper renders remote URLs via
   // next/image `unoptimized` (which bypasses remotePatterns), so both local and
@@ -131,7 +133,7 @@ export function CoverCard({
         meta && <p className="mt-4 text-xs text-muted">{meta}</p>
       )}
       <span className="mt-auto pt-4 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep">
-        Read more
+        {t("coverCard.readMore")}
         <svg className="h-4 w-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
           <path d="M5 12h14M13 6l6 6-6 6" />
         </svg>

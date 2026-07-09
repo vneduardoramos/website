@@ -1,0 +1,30 @@
+{
+  "hero": {
+    "pills": [
+      "Migrar y modernizar",
+      "Gobernar datos en los que la gente confía",
+      "Llevar la IA a producción"
+    ],
+    "subhead": "Ayudamos a las empresas a establecer dos capacidades duraderas: una práctica de datos en la que confía toda la empresa y una práctica de IA que lleva casos de uso a producción. Construidas junto a los equipos internos y operadas por ellos, guiadas y aceleradas por nuestro equipo, en toda América.",
+    "title": "De la estrategia de datos a la <hl>IA en producción</hl>, sobre Snowflake.",
+    "ctaPrimary": "Hable con un arquitecto",
+    "ctaSecondary": "Explorar servicios",
+    "credential": "Snowflake Premier & CoCo Preferred Partner · Certificación SnowPro · América"
+  },
+  "carousel": {
+    "label": "Destacados",
+    "previous": "Diapositiva anterior",
+    "next": "Diapositiva siguiente",
+    "slidePosition": "Diapositiva {current} de {total}",
+    "goToSlide": "Ir a la diapositiva {current}"
+  },
+  "split": {
+    "foundationPhotoAlt": "Un equipo revisando en conjunto tableros, informes y gráficos en torno a un único conjunto de datos compartido y gobernado.",
+    "aiPhotoAlt": "Un equipo colaborando con herramientas de analítica e IA en sus pantallas, en una oficina moderna y luminosa.",
+    "foundationLabel": "Muchas fuentes de datos dispersas y contradictorias consolidadas en una única fuente de verdad gobernada.",
+    "foundationText": "Una única fuente de verdad gobernada",
+    "aiLabel": "Cortex AI se ejecuta sobre datos gobernados y devuelve una respuesta fundamentada en ellos.",
+    "governedData": "DATOS GOBERNADOS",
+    "grounded": "BASADO"
+  }
+}

@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
@@ -79,11 +80,12 @@ function hashIndex(s: string, mod: number) {
   return h % mod;
 }
 
-export function CaseStudyCard({
+export async function CaseStudyCard({
   cs,
 }: {
   cs: { slug: string; title: string; summary: string; sector: string; region: string };
 }) {
+  const t = await getTranslations("sharedUi");
   const key = `${cs.sector}${cs.region}`;
   const hue = SPARK_HUES[hashIndex(key, SPARK_HUES.length)];
   const spark = SPARK_PATHS[hashIndex(cs.slug, SPARK_PATHS.length)];
@@ -112,37 +114,41 @@ export function CaseStudyCard({
       <h3 className="mt-4 font-display text-lg font-bold text-foreground">{cs.title}</h3>
       <p className="mt-2 line-clamp-4 text-sm leading-relaxed text-muted">{cs.summary}</p>
       <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-primaryDeep">
-        <span className="link-underline">Read case study</span>
+        <span className="link-underline">{t("caseStudyCard.readMore")}</span>
         <span className="transition-transform group-hover:translate-x-0.5">→</span>
       </span>
     </Link>
   );
 }
 
-export function IndustryCard({
+export async function IndustryCard({
   industry,
 }: {
   industry: { slug: string; name: string; headline: string };
 }) {
+  const t = await getTranslations("sharedUi");
   return (
     <Link href={`/industries/${industry.slug}`} className="card card-hover group block">
       <h3 className="font-display text-lg font-bold text-foreground">{industry.name}</h3>
       <p className="mt-2 text-sm leading-relaxed text-muted">{industry.headline}</p>
       <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep">
-        Explore
+        {t("industryCard.explore")}
         <span className="transition-transform group-hover:translate-x-0.5">→</span>
       </span>
     </Link>
   );
 }
 
-export function CtaBand({
-  title = "Let's stand up a lasting data & AI practice.",
-  subtitle = "Tell us where the organization stands (migrating, scaling, or shipping AI) and we'll map the fastest path to use cases in production, run by in-house teams.",
+export async function CtaBand({
+  title,
+  subtitle,
 }: {
   title?: string;
   subtitle?: string;
 }) {
+  const t = await getTranslations("sharedUi");
+  const resolvedTitle = title ?? t("ctaBand.title");
+  const resolvedSubtitle = subtitle ?? t("ctaBand.subtitle");
   return (
     <section className="section">
       <div className="container-page">
@@ -152,15 +158,15 @@ export function CtaBand({
           <div className="pointer-events-none absolute -bottom-20 -left-16 h-56 w-56 rounded-full bg-accent/20 blur-3xl" />
           <div className="relative">
             <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-              {title}
+              {resolvedTitle}
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-muted">{subtitle}</p>
+            <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-muted">{resolvedSubtitle}</p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link href="/contact" className="btn-primary btn-lg hover-sheen">
-                Talk to an architect
+                {t("ctaBand.primaryCta")}
               </Link>
               <Link href="/services" className="btn-ghost btn-lg">
-                Explore services
+                {t("ctaBand.secondaryCta")}
               </Link>
             </div>
           </div>

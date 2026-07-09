@@ -1,9 +1,11 @@
+import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Section, SectionHeading } from "@/components/marketing/ui";
 import { CoverCard } from "@/components/marketing/CoverCard";
 import { coverFor } from "@/lib/covers";
 import { formatDate } from "@/lib/utils";
 import { getBlogPosts, safe } from "@/lib/queries";
+import type { Locale } from "@/lib/i18n-content";
 
 /**
  * Self-fetching "latest from the blog" band: a 3-up grid of the most recent
@@ -11,8 +13,8 @@ import { getBlogPosts, safe } from "@/lib/queries";
  * LeadershipStrip, so the host page needs no query wiring.
  */
 export async function LatestPosts({
-  eyebrow = "Field notes",
-  title = "Latest from the blog",
+  eyebrow,
+  title,
   take = 3,
   tint = false,
 }: {
@@ -21,18 +23,23 @@ export async function LatestPosts({
   take?: number;
   tint?: boolean;
 }) {
-  const posts = await safe(getBlogPosts({ take }), []);
+  const t = await getTranslations("strips");
+  const locale = (await getLocale()) as Locale;
+  const posts = await safe(getBlogPosts({ take }, locale), []);
   if (posts.length === 0) return null;
 
   return (
     <Section className={tint ? "section-tint" : undefined}>
       <div className="flex items-end justify-between gap-4">
-        <SectionHeading eyebrow={eyebrow} title={title} />
+        <SectionHeading
+          eyebrow={eyebrow ?? t("latestPosts.eyebrow")}
+          title={title ?? t("latestPosts.title")}
+        />
         <Link
           href="/blog"
           className="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-primaryDeep"
         >
-          Read the blog
+          {t("latestPosts.readBlog")}
           <span>→</span>
         </Link>
       </div>
@@ -56,8 +63,8 @@ export async function LatestPosts({
             }
             meta={
               post.authorTeam
-                ? formatDate(post.publishedAt)
-                : `Viewnear · ${formatDate(post.publishedAt)}`
+                ? formatDate(post.publishedAt, locale)
+                : `Viewnear · ${formatDate(post.publishedAt, locale)}`
             }
           />
         ))}

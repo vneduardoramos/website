@@ -1,0 +1,14 @@
+{
+  "authorBio": {
+    "writtenBy": "Written by",
+    "connectLinkedin": "Connect on LinkedIn →"
+  },
+  "keyTakeaways": {
+    "heading": "Key takeaways"
+  },
+  "toc": {
+    "inThisArticle": "In this article",
+    "onThisPage": "On this page",
+    "ariaLabel": "Table of contents"
+  }
+}

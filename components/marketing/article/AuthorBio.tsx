@@ -1,3 +1,5 @@
+import { getTranslations } from "next-intl/server";
+
 export type ArticleAuthor = {
   name: string;
   title?: string | null;
@@ -9,8 +11,9 @@ export type ArticleAuthor = {
 
 /** End-of-article author card (photo, title, bio, LinkedIn). Renders nothing
  * when there is no author, e.g. org-bylined posts or news items. */
-export function AuthorBio({ author }: { author?: ArticleAuthor | null }) {
+export async function AuthorBio({ author }: { author?: ArticleAuthor | null }) {
   if (!author) return null;
+  const t = await getTranslations("articleUi");
   const photo = author.headshot?.url ?? author.photo ?? null;
 
   return (
@@ -32,7 +35,7 @@ export function AuthorBio({ author }: { author?: ArticleAuthor | null }) {
         )}
         <div className="min-w-0">
           <p className="font-mono text-xs font-semibold uppercase tracking-wider text-muted">
-            Written by
+            {t("authorBio.writtenBy")}
           </p>
           <p className="mt-1 font-display text-lg font-bold text-foreground">
             {author.name}
@@ -50,7 +53,7 @@ export function AuthorBio({ author }: { author?: ArticleAuthor | null }) {
               rel="noopener noreferrer"
               className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep"
             >
-              Connect on LinkedIn →
+              {t("authorBio.connectLinkedin")}
             </a>
           ) : null}
         </div>

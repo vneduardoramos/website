@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 
 // Shared input styling; `aria-[invalid=true]` firms the border to danger red
@@ -10,6 +11,7 @@ const inputCls =
 
 export function ContactForm() {
   const router = useRouter();
+  const t = useTranslations("forms");
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
@@ -78,7 +80,7 @@ export function ContactForm() {
       router.push("/thank-you");
     } catch {
       setStatus("error");
-      setError("Something went wrong. Please try again or email us directly.");
+      setError(t("contact.error"));
     }
   }
 
@@ -91,14 +93,14 @@ export function ContactForm() {
       </div>
 
       <p className="mb-5 text-sm text-muted">
-        Fields marked <span className="text-danger">*</span> are required.
+        {t.rich("contact.requiredNote", { mark: (c) => <span className="text-danger">{c}</span> })}
       </p>
 
       <div className="space-y-4">
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
             <label htmlFor="contact-first" className="mb-2 block text-sm text-muted">
-              First name <span className="text-danger" aria-hidden="true">*</span>
+              {t("contact.firstName")} <span className="text-danger" aria-hidden="true">*</span>
             </label>
             <input
               id="contact-first"
@@ -119,7 +121,7 @@ export function ContactForm() {
           </div>
           <div>
             <label htmlFor="contact-last" className="mb-2 block text-sm text-muted">
-              Last name <span className="text-danger" aria-hidden="true">*</span>
+              {t("contact.lastName")} <span className="text-danger" aria-hidden="true">*</span>
             </label>
             <input
               id="contact-last"
@@ -141,7 +143,7 @@ export function ContactForm() {
         </div>
         <div>
           <label htmlFor="contact-email" className="mb-2 block text-sm text-muted">
-            Email <span className="text-danger" aria-hidden="true">*</span>
+            {t("contact.email")} <span className="text-danger" aria-hidden="true">*</span>
           </label>
           <input
             id="contact-email"
@@ -162,7 +164,7 @@ export function ContactForm() {
         </div>
         <div>
           <label htmlFor="contact-company" className="mb-2 block text-sm text-muted">
-            Company
+            {t("contact.company")}
           </label>
           <input
             id="contact-company"
@@ -174,20 +176,20 @@ export function ContactForm() {
         </div>
         <div>
           <label htmlFor="contact-role" className="mb-2 block text-sm text-muted">
-            What can we help with?
+            {t("contact.roleLabel")}
           </label>
           <select id="contact-role" name="role" defaultValue="" className={inputCls}>
-            <option value="">Select an option</option>
-            <option value="strategy">Data &amp; AI strategy / business outcomes</option>
-            <option value="platform">Snowflake platform &amp; architecture</option>
-            <option value="migration">Migration or modernization</option>
-            <option value="analytics">Analytics, BI &amp; data products</option>
-            <option value="other">Something else</option>
+            <option value="">{t("contact.selectPlaceholder")}</option>
+            <option value="strategy">{t("contact.options.strategy")}</option>
+            <option value="platform">{t("contact.options.platform")}</option>
+            <option value="migration">{t("contact.options.migration")}</option>
+            <option value="analytics">{t("contact.options.analytics")}</option>
+            <option value="other">{t("contact.options.other")}</option>
           </select>
         </div>
         <div>
           <label htmlFor="contact-message" className="mb-2 block text-sm text-muted">
-            How can we help? <span className="text-danger" aria-hidden="true">*</span>
+            {t("contact.messageLabel")} <span className="text-danger" aria-hidden="true">*</span>
           </label>
           <textarea
             id="contact-message"
@@ -212,7 +214,7 @@ export function ContactForm() {
       ) : null}
 
       <button type="submit" disabled={status === "loading"} className="btn-primary mt-6 disabled:opacity-60">
-        {status === "loading" ? "Sending..." : "Send message"}
+        {status === "loading" ? t("contact.sending") : t("contact.send")}
       </button>
     </form>
   );

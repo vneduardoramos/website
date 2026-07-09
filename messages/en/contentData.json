@@ -1,0 +1,169 @@
+{
+  "industryFlavor": {
+    "construction-real-estate": {
+      "pattern": "Contractors · Developers · Asset Owners",
+      "compliance": "Auditable cost, contract, and asset data with role-based access across every project.",
+      "capabilities": [
+        { "value": "Cost + schedule", "label": "One governed project view" },
+        { "value": "Portfolio", "label": "Analytics across every asset" },
+        { "value": "8–16 wks", "label": "To first value in production" },
+        { "value": "SnowPro", "label": "Certified delivery team" }
+      ],
+      "bullets": [
+        "Project cost and schedule data consolidated into one governed view",
+        "Portfolio and asset analytics across every property and project",
+        "Budget-vs-actual and schedule risk surfaced while there's time to act",
+        "Forecasting and valuation grounded in trusted, current data"
+      ]
+    },
+    "education": {
+      "pattern": "Schools · Universities · Training Providers",
+      "compliance": "FERPA-aware handling of student data, with privacy and access control built in.",
+      "capabilities": [
+        { "value": "SIS + LMS", "label": "Unified under one model" },
+        { "value": "FERPA", "label": "Aware handling of student data" },
+        { "value": "8–16 wks", "label": "To first value in production" },
+        { "value": "SnowPro", "label": "Certified delivery team" }
+      ],
+      "bullets": [
+        "SIS, LMS, and operational data unified under one governance model",
+        "Student success analytics on engagement, attainment, and retention",
+        "Statutory, accreditation, and funder reporting automated from one source",
+        "Early-warning insight on the students most at risk"
+      ]
+    },
+    "financial-services": {
+      "pattern": "Banking · Insurance · Asset Management",
+      "compliance": "FINRA, SEC, and SOX-aligned reporting with role-based access and full audit lineage.",
+      "capabilities": [
+        { "value": "FINRA · SEC · SOX", "label": "Aligned reporting" },
+        { "value": "Full lineage", "label": "On every reported number" },
+        { "value": "8–16 wks", "label": "To first value in production" },
+        { "value": "Premier", "label": "Snowflake Premier Partner" }
+      ],
+      "bullets": [
+        "A single governed warehouse consolidating fragmented banking, insurance, and asset data",
+        "Automated regulatory and structured external reporting, auditable end to end",
+        "Self-service analytics so teams decide on current, reliable numbers",
+        "AI use cases prioritized against risk, compliance, and return"
+      ]
+    },
+    "manufacturing": {
+      "pattern": "Discrete · Process · Supply Chain",
+      "compliance": "Traceability from supplier to shipment, governed at every step for quality and audit.",
+      "capabilities": [
+        { "value": "Shop-floor + ERP", "label": "One governed source" },
+        { "value": "Supplier → shipment", "label": "Traceable, governed" },
+        { "value": "8–16 wks", "label": "To first value in production" },
+        { "value": "SnowPro", "label": "Certified delivery team" }
+      ],
+      "bullets": [
+        "Shop-floor, sensor, and ERP data unified into one governed, trusted source",
+        "OEE and quality analytics that expose the real cost drivers",
+        "Supply-chain visibility from raw material to delivered order",
+        "Data foundations for predicting failures before they happen"
+      ]
+    },
+    "media-entertainment-advertising": {
+      "pattern": "Media · Entertainment · Advertising",
+      "compliance": "Consent-aware audience data, governed for privacy across every channel.",
+      "capabilities": [
+        { "value": "Audience", "label": "One unified, consent-aware view" },
+        { "value": "Every channel", "label": "Attribution in one place" },
+        { "value": "8–16 wks", "label": "To first value in production" },
+        { "value": "SnowPro", "label": "Certified delivery team" }
+      ],
+      "bullets": [
+        "Viewing, subscription, and engagement data unified into one source",
+        "Near-real-time campaign and ad attribution across channels",
+        "Content performance analytics that guide what to commission",
+        "Audience signal teams act on, not gut feel"
+      ]
+    },
+    "retail-cpg": {
+      "pattern": "Retail · CPG · Loyalty",
+      "compliance": "PCI-aware handling of payment and customer data, governed end to end.",
+      "capabilities": [
+        { "value": "Online + in-store", "label": "One demand view" },
+        { "value": "PCI-aware", "label": "Payment + customer data governed" },
+        { "value": "8–16 wks", "label": "To first value in production" },
+        { "value": "SnowPro", "label": "Certified delivery team" }
+      ],
+      "bullets": [
+        "Online and in-store data unified into one near-real-time, governed foundation",
+        "Inventory and perishables analytics that cut shrink",
+        "Production, food cost, and logistics in a single view",
+        "Customer and loyalty performance tracked alongside margin"
+      ]
+    },
+    "technology-telco": {
+      "pattern": "Software · Platforms · Telecom",
+      "compliance": "Usage and network data handled with privacy, consent, and access controls.",
+      "capabilities": [
+        { "value": "Usage + network", "label": "One governed source" },
+        { "value": "Full-volume", "label": "Telemetry, query-ready" },
+        { "value": "8–16 wks", "label": "To first value in production" },
+        { "value": "Premier", "label": "Snowflake Premier Partner" }
+      ],
+      "bullets": [
+        "Product usage, billing, and network telemetry unified and governed",
+        "Churn and retention analytics that flag risk early",
+        "High-volume telemetry ingested, governed, and query-ready",
+        "Reliable, governed metrics every team reports from"
+      ]
+    },
+    "default": {
+      "pattern": "Data & AI",
+      "compliance": "Governance, lineage, and access controls built in from day one.",
+      "capabilities": [
+        { "value": "Governed", "label": "One source of truth" },
+        { "value": "Built in", "label": "Security and lineage" },
+        { "value": "8–16 wks", "label": "To first value in production" },
+        { "value": "SnowPro", "label": "Certified delivery team" }
+      ],
+      "bullets": [
+        "Sector-specific data models and governance built in from the start",
+        "Industry specialists paired with SnowPro-certified engineers, embedded in the team",
+        "Measurable outcomes tied to the metrics teams report on",
+        "A roadmap that scales from first win to company-wide adoption"
+      ]
+    }
+  },
+  "benefits": [
+    {
+      "label": "Health",
+      "title": "Health insurance",
+      "body": "Comprehensive medical coverage for the whole family."
+    },
+    {
+      "label": "Health",
+      "title": "Dental & vision",
+      "body": "Optional dental and vision plans for the everyday essentials."
+    },
+    {
+      "label": "Wellness",
+      "title": "Emotional wellness",
+      "body": "Optional mental-health and emotional-wellbeing support, because demanding work needs real balance."
+    },
+    {
+      "label": "Balance",
+      "title": "Flexible time off",
+      "body": "Time off follows local law and stays flexible (no fixed cap) as long as outcomes stay strong and teams stay covered."
+    },
+    {
+      "label": "Growth",
+      "title": "Learning & certifications",
+      "body": "Training, SnowPro certifications, conference travel, and event sponsorships: we reinvest in the team's growth."
+    },
+    {
+      "label": "Together",
+      "title": "Team retreats",
+      "body": "Company retreats and in-person gatherings that build the relationships behind great delivery."
+    },
+    {
+      "label": "Tooling",
+      "title": "The tools to do the work",
+      "body": "Modern hardware, paid AI tooling, and the licenses each project needs, from day one."
+    }
+  ]
+}

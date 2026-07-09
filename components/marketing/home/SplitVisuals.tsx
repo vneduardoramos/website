@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Img as Image } from "@/components/marketing/Img";
 import { SnowflakeIcon, CheckIcon, CpuIcon } from "@/components/marketing/home/Icons";
 import { useParallax } from "@/components/marketing/Motion";
@@ -51,20 +52,22 @@ function PhotoFrame({ src, alt }: { src: string; alt: string }) {
 
 /** "Data the whole business can trust": a team working from one shared, trusted set of data. */
 export function FoundationPhoto() {
+  const t = useTranslations("heroUi");
   return (
     <PhotoFrame
       src="/assets/images/photos/data-foundation.jpg"
-      alt="A team reviewing dashboards, reports, and charts together around one shared, governed set of data."
+      alt={t("split.foundationPhotoAlt")}
     />
   );
 }
 
 /** "AI teams actually use": a team working with analytics and AI on their screens. */
 export function AiPhoto() {
+  const t = useTranslations("heroUi");
   return (
     <PhotoFrame
       src="/assets/images/photos/ai-teams.jpg"
-      alt="A team collaborating with analytics and AI tools on their screens in a bright modern office."
+      alt={t("split.aiPhotoAlt")}
     />
   );
 }
@@ -107,11 +110,12 @@ function SourceTile({ x, y, rotate, hue }: { x: number; y: number; rotate: numbe
 
 /** "Many conflicting sources → one governed source of truth." */
 export function FoundationVisual() {
+  const t = useTranslations("heroUi");
   const panelX = 92;
   const panelY = 196;
   const panelW = 236;
   return (
-    <Frame label="Many scattered, conflicting data sources consolidated into one governed source of truth.">
+    <Frame label={t("split.foundationLabel")}>
       {/* scattered sources */}
       <SourceTile x={26} y={28} rotate={-5} hue="--color-accent" />
       <SourceTile x={164} y={18} rotate={2} hue="--color-secondary" />
@@ -148,7 +152,7 @@ export function FoundationVisual() {
       ))}
 
       <text x={210} y={panelY + 128} textAnchor="middle" className="fill-foreground font-display" fontSize={13} fontWeight={700}>
-        One governed source of truth
+        {t("split.foundationText")}
       </text>
     </Frame>
   );
@@ -156,15 +160,16 @@ export function FoundationVisual() {
 
 /** "Governed data → Cortex → an answer grounded in that data." */
 export function AiVisual() {
+  const t = useTranslations("heroUi");
   return (
-    <Frame label="Cortex AI runs on governed data and returns an answer grounded in it.">
+    <Frame label={t("split.aiLabel")}>
       {/* governed data layer (bottom) */}
       <rect x={70} y={214} width={280} height={78} rx={14} className="fill-surface stroke-border" strokeWidth={1.5} />
       <rect x={70} y={214} width={280} height={26} rx={14} className="fill-primaryDeep/10" />
       <rect x={70} y={228} width={280} height={12} className="fill-primaryDeep/10" />
       <circle cx={94} cy={227} r={8} className="fill-primary" />
       <CheckIcon x={88} y={221} width={12} height={12} className="text-primary-fg" />
-      <text x={112} y={231} className="fill-primaryDeep font-mono" fontSize={9} letterSpacing={0.5}>GOVERNED DATA</text>
+      <text x={112} y={231} className="fill-primaryDeep font-mono" fontSize={9} letterSpacing={0.5}>{t("split.governedData")}</text>
       {[0, 1].map((r) => (
         <g key={r}>
           <rect x={88} y={252 + r * 16} width={150} height={7} rx={3.5} className="fill-border" />
@@ -188,7 +193,7 @@ export function AiVisual() {
         <g transform="translate(264 80)">
           <rect x={0} y={0} width={70} height={14} rx={7} className="fill-primary/15" />
           <CpuIcon x={5} y={1} width={12} height={12} className="text-primaryDeep" />
-          <text x={22} y={10} className="fill-primaryDeep font-mono" fontSize={7.5} letterSpacing={0.3}>GROUNDED</text>
+          <text x={22} y={10} className="fill-primaryDeep font-mono" fontSize={7.5} letterSpacing={0.3}>{t("split.grounded")}</text>
         </g>
       </g>
     </Frame>

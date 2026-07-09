@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { RevealGroup } from "@/components/marketing/Motion";
 import { getFlavor } from "@/components/marketing/industries/flavor";
@@ -23,10 +24,12 @@ export const INDUSTRIES: { slug: string; name: string }[] = [
  * The multi-hue industry tiles (icon + per-sector accent), used by the home
  * IndustriesStrip.
  */
-export function IndustryTiles({ className }: { className?: string }) {
+export async function IndustryTiles({ className }: { className?: string }) {
+  const t = await getTranslations("homeServer");
+  const names = t.raw("industriesStrip.names") as string[];
   return (
     <RevealGroup className={cn("flex flex-wrap justify-center gap-4", className)} variant="fade-up">
-      {INDUSTRIES.map(({ slug, name }) => {
+      {INDUSTRIES.map(({ slug }, i) => {
         const f = getFlavor(slug);
         const Icon = f.icon;
         return (
@@ -43,7 +46,7 @@ export function IndustryTiles({ className }: { className?: string }) {
             >
               <Icon className="h-5 w-5" />
             </span>
-            <span className="font-display text-sm font-bold leading-tight text-foreground">{name}</span>
+            <span className="font-display text-sm font-bold leading-tight text-foreground">{names[i]}</span>
             <span className="ml-auto text-muted transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
           </Link>
         );
@@ -52,26 +55,26 @@ export function IndustryTiles({ className }: { className?: string }) {
   );
 }
 
-export function IndustriesStrip() {
+export async function IndustriesStrip() {
+  const t = await getTranslations("homeServer");
   return (
     <section className="section">
       <div className="container-page">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div className="max-w-2xl">
-            <p className="eyebrow mb-3">Industries</p>
+            <p className="eyebrow mb-3">{t("industriesStrip.eyebrow")}</p>
             <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-[2.6rem] md:leading-[1.1]">
-              Depth in the sectors enterprises operate in
+              {t("industriesStrip.title")}
             </h2>
             <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-              Sector-specific data models, governance, and compliance, built in
-              from day one across seven industries.
+              {t("industriesStrip.body")}
             </p>
           </div>
           <Link
             href="/industries"
             className="group inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep"
           >
-            <span className="link-underline">All industries</span>
+            <span className="link-underline">{t("industriesStrip.allIndustries")}</span>
             <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
           </Link>
         </div>

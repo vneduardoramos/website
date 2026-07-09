@@ -1,14 +1,17 @@
+import { getTranslations } from "next-intl/server";
+
 /** A short "Key takeaways" summary panel shown near the top of an article.
  * `items` is the parsed string[] from the post's keyTakeaways field; renders
  * nothing when empty. */
-export function KeyTakeaways({ items }: { items: string[] }) {
+export async function KeyTakeaways({ items }: { items: string[] }) {
   if (!items?.length) return null;
+  const t = await getTranslations("articleUi");
 
   return (
     <div className="mx-auto mt-10 max-w-3xl">
       <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6">
         <p className="font-mono text-xs font-semibold uppercase tracking-wider text-primaryDeep">
-          Key takeaways
+          {t("keyTakeaways.heading")}
         </p>
         <ul className="mt-4 space-y-3">
           {items.map((text, i) => (

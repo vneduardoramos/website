@@ -1,0 +1,42 @@
+{
+  "featuredCaseStudies": {
+    "eyebrow": "Evidencia",
+    "title": "Proyectos reales, resultados reales",
+    "viewAll": "Ver todos los casos de éxito"
+  },
+  "latestPosts": {
+    "eyebrow": "Apuntes de campo",
+    "title": "Lo último del blog",
+    "readBlog": "Leer el blog"
+  },
+  "leadershipStrip": {
+    "label": "Dirigido por nuestro equipo de liderazgo",
+    "link": "Conozca al equipo de liderazgo →"
+  },
+  "fieldStrip": {
+    "eyebrow": "En el terreno",
+    "more": "Más del equipo",
+    "moments": {
+      "team-group": {
+        "caption": "Conversaciones con clientes en el stand",
+        "alt": "El equipo de Viewnear detrás de su stand de data + ai en un evento de Snowflake"
+      },
+      "team-booth": {
+        "caption": "Lleno total en la demo en vivo",
+        "alt": "Un grupo de personas reunidas alrededor del stand de Viewnear viendo una demo de producto en vivo"
+      },
+      "team-stage": {
+        "caption": "Snowflake Data for Breakfast",
+        "alt": "Un integrante del equipo de Viewnear junto a la señalización de bienvenida de Snowflake Data for Breakfast"
+      },
+      "team-dinner": {
+        "caption": "Cena con el equipo",
+        "alt": "El equipo de Viewnear y sus partners reunidos en una cena de equipo"
+      },
+      "partner-momentum": {
+        "caption": "Entre los partners CoCo de Snowflake",
+        "alt": "El muro Snowflake CoCo Global Partner Momentum que incluye a Viewnear entre los partners de Snowflake"
+      }
+    }
+  }
+}

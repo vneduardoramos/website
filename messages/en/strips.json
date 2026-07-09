@@ -1,0 +1,42 @@
+{
+  "featuredCaseStudies": {
+    "eyebrow": "Proof",
+    "title": "Real engagements, real outcomes",
+    "viewAll": "View all case studies"
+  },
+  "latestPosts": {
+    "eyebrow": "Field notes",
+    "title": "Latest from the blog",
+    "readBlog": "Read the blog"
+  },
+  "leadershipStrip": {
+    "label": "Led by our leadership team",
+    "link": "Meet the leadership team →"
+  },
+  "fieldStrip": {
+    "eyebrow": "Out in the field",
+    "more": "More from the team",
+    "moments": {
+      "team-group": {
+        "caption": "Customer conversations at the booth",
+        "alt": "The Viewnear team behind their data + ai booth at a Snowflake event"
+      },
+      "team-booth": {
+        "caption": "A full house at the live demo",
+        "alt": "A crowd gathered around the Viewnear booth watching a live product demo"
+      },
+      "team-stage": {
+        "caption": "Snowflake Data for Breakfast",
+        "alt": "A Viewnear team member at the Snowflake Data for Breakfast welcome signage"
+      },
+      "team-dinner": {
+        "caption": "Dinner with the team",
+        "alt": "The Viewnear team and partners gathered for a team dinner"
+      },
+      "partner-momentum": {
+        "caption": "Among Snowflake's CoCo partners",
+        "alt": "Snowflake CoCo Global Partner Momentum wall listing Viewnear among Snowflake partners"
+      }
+    }
+  }
+}

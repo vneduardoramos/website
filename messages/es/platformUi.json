@@ -1,0 +1,64 @@
+{
+  "stackDiagram": {
+    "entry": {
+      "files": "Archivos",
+      "streams": "Flujos"
+    },
+    "exit": {
+      "dashboards": "Tableros",
+      "answers": "Respuestas",
+      "agents": "Agentes",
+      "apps": "Aplicaciones"
+    },
+    "sourceLabel": "Sistemas de origen que entran",
+    "decisionsLabel": "Decisiones que salen",
+    "generallyAvailable": "Disponible de forma general",
+    "wrapsEveryLayer": "Envuelve cada capa",
+    "previewLegend": "Preview: acceso anticipado que nuestro nivel de partner aporta al proyecto"
+  },
+  "stackStory": {
+    "beats": {
+      "arriving": {
+        "title": "Los datos empiezan a llegar",
+        "body": "En los primeros sprints conectamos <prod>Openflow</prod> a los sistemas ERP, CRM y SaaS que el negocio ya utiliza, y <prod>Snowpipe Streaming</prod> transporta los flujos en vivo. Nada se desvía por un intermediario: cada fuente aterriza dentro de Snowflake, gobernada desde la primera tabla."
+      },
+      "shaped": {
+        "title": "Toma forma hasta volverse confiable",
+        "body": "Nuestros ingenieros lo modelan con <prod>dbt</prod> y <prod>Snowpark</prod>, junto a los datos, en código que el equipo puede leer y con el tiempo hacer suyo. Las <prod>Dynamic Tables</prod> mantienen actualizadas las vistas derivadas sin un planificador que haya que supervisar."
+      },
+      "open": {
+        "title": "Vive una sola vez, en un formato abierto",
+        "body": "El resultado es una única copia gobernada sobre <prod>Apache Iceberg</prod>, legible por cualquier motor que el negocio llegue a elegir a través de <prod>Open Catalog</prod>. La base perdura más allá de cualquier decisión de herramienta, incluida la nuestra."
+      },
+      "governance": {
+        "title": "El gobierno atraviesa todo",
+        "body": "En todo el recorrido, <prod>Horizon Catalog</prod> registra el linaje y aplica las políticas, y las <prod>Semantic Views</prod> precisan lo que realmente significa “ingresos”. Es el trabajo poco vistoso que después vuelve confiable a la IA, y es donde nuestro personal senior dedica tiempo real trabajando dentro del equipo."
+      },
+      "ai": {
+        "title": "Entonces la IA tiene sobre qué apoyarse",
+        "body": "<prod>Cortex Analyst</prod> responde preguntas frente a esas definiciones compartidas, <prod>Snowflake CoWork</prod> entrega a los equipos respuestas con citas, y los agentes actúan dentro de las políticas de <prod>AI Agent Identity</prod>. Los resultados llegan donde las personas ya trabajan: tableros en <prod>Snowsight</prod>, aplicaciones en <prod>Streamlit</prod>, respuestas que regresan a las herramientas que los equipos ya usan."
+      },
+      "oneTeam": {
+        "title": "Un solo equipo responde por todo el arco",
+        "body": "Snowflake opera la plataforma. Nosotros diseñamos, construimos y afinamos lo que corre sobre ella con el equipo en la sala, y luego entregamos las llaves: documentado y listo para que lo amplíen. La mayoría de las bases llegan a producción en 8 a 16 semanas, porque el descubrimiento fija el alcance desde el inicio y cada sprint termina con software funcionando en una demo."
+      }
+    }
+  },
+  "productShots": {
+    "cowork": {
+      "alt": "Pantalla de inicio de Snowflake CoWork con artefactos de analítica de ventas con citas",
+      "caption": "Donde el negocio se encuentra con los datos",
+      "detail": "Snowflake CoWork: preguntas en lenguaje natural, respuestas con citas, sin un stack de BI aparte que proteger."
+    },
+    "workspaces": {
+      "alt": "Una vista semántica que se construye y se revisa en Snowflake Workspaces",
+      "caption": "La ingeniería detrás",
+      "detail": "Una vista semántica tomando forma en Snowflake Workspaces, revisada cambio a cambio antes de salir a producción."
+    },
+    "catalog": {
+      "alt": "Página de dataset en Horizon Catalog que muestra el estado de certificación, el dominio y el custodio",
+      "caption": "El gobierno hecho visible",
+      "detail": "Estado de certificación, dominio y un custodio designado en cada dataset de Horizon Catalog."
+    }
+  }
+}

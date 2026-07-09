@@ -8,7 +8,7 @@ import { ApplicationForm } from "@/components/marketing/ApplicationForm";
 import { JsonLd } from "@/components/JsonLd";
 import { getJobOpeningBySlug, getJobSlugs } from "@/lib/queries";
 import type { Locale } from "@/lib/i18n-content";
-import { BENEFITS } from "@/lib/benefits";
+import { getBenefits } from "@/lib/benefits";
 import { BenefitsGrid } from "@/components/marketing/BenefitsGrid";
 import { Markdown } from "@/lib/content";
 import { asStringArray } from "@/lib/utils";
@@ -59,6 +59,8 @@ export default async function CareerDetailPage({
   const { locale, slug } = params;
   setRequestLocale(locale);
   const t = await getTranslations("careerDetail");
+  // Shared benefits copy is localized via the contentData catalog.
+  const benefits = getBenefits(await getTranslations("contentData"));
   const job = await getJobOpeningBySlug(slug, locale as Locale);
   if (!job) notFound();
 
@@ -163,7 +165,7 @@ export default async function CareerDetailPage({
             title={t("life.title")}
             intro={t("life.intro")}
           />
-          <BenefitsGrid items={BENEFITS} className="mt-10" />
+          <BenefitsGrid items={benefits} className="mt-10" />
           <div className="mt-8">
             <Link
               href="/life-at-viewnear"

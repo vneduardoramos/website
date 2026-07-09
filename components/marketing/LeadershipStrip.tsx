@@ -1,6 +1,8 @@
+import { getLocale, getTranslations } from "next-intl/server";
 import { Img as Image } from "@/components/marketing/Img";
 import { Link } from "@/i18n/navigation";
 import { getTeam } from "@/lib/queries";
+import type { Locale } from "@/lib/i18n-content";
 
 function initials(name: string) {
   return name
@@ -16,7 +18,7 @@ function initials(name: string) {
  * for high-trust spots where the full named cards (/about#team) would be too heavy.
  */
 export async function LeadershipStrip({
-  label = "Led by our leadership team",
+  label,
   max = 6,
   className = "",
 }: {
@@ -24,7 +26,8 @@ export async function LeadershipStrip({
   max?: number;
   className?: string;
 }) {
-  const team = await getTeam();
+  const t = await getTranslations("strips");
+  const team = await getTeam((await getLocale()) as Locale);
   if (!team || team.length === 0) return null;
   const people = team.slice(0, max);
 
@@ -54,9 +57,9 @@ export async function LeadershipStrip({
         )}
       </div>
       <p className="text-sm text-muted">
-        <span className="font-medium text-foreground">{label}</span>{" "}
+        <span className="font-medium text-foreground">{label ?? t("leadershipStrip.label")}</span>{" "}
         <Link href="/about#team" className="font-semibold text-primaryDeep hover:underline">
-          Meet the leadership team →
+          {t("leadershipStrip.link")}
         </Link>
       </p>
     </div>
@@ -77,7 +80,7 @@ export async function FaceStack({
   max?: number;
   className?: string;
 }) {
-  const team = await getTeam();
+  const team = await getTeam((await getLocale()) as Locale);
   if (!team || team.length === 0) return null;
   const people = slugs
     ? slugs

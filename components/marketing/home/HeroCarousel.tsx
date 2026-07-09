@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
 function Chevron({ dir }: { dir: "left" | "right" }) {
@@ -19,12 +20,13 @@ function Chevron({ dir }: { dir: "left" | "right" }) {
 export function HeroCarousel({
   slides,
   intervalMs = 6500,
-  label = "Highlights",
+  label,
 }: {
   slides: React.ReactNode[];
   intervalMs?: number;
   label?: string;
 }) {
+  const t = useTranslations("heroUi");
   const count = slides.length;
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -48,7 +50,7 @@ export function HeroCarousel({
       className="relative"
       role="region"
       aria-roledescription="carousel"
-      aria-label={label}
+      aria-label={label ?? t("carousel.label")}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
@@ -65,7 +67,7 @@ export function HeroCarousel({
               className="w-full shrink-0"
               role="group"
               aria-roledescription="slide"
-              aria-label={`Slide ${i + 1} of ${count}`}
+              aria-label={t("carousel.slidePosition", { current: i + 1, total: count })}
               aria-hidden={i !== active}
               {...({ inert: i !== active ? "" : undefined } as Record<string, unknown>)}
             >
@@ -80,7 +82,7 @@ export function HeroCarousel({
           <button
             type="button"
             onClick={() => go(active - 1)}
-            aria-label="Previous slide"
+            aria-label={t("carousel.previous")}
             className="absolute left-3 top-1/2 z-20 hidden -translate-y-1/2 rounded-full border border-border bg-surface/80 p-2.5 text-foreground shadow-soft backdrop-blur transition hover:bg-surface md:flex lg:left-6"
           >
             <Chevron dir="left" />
@@ -88,7 +90,7 @@ export function HeroCarousel({
           <button
             type="button"
             onClick={() => go(active + 1)}
-            aria-label="Next slide"
+            aria-label={t("carousel.next")}
             className="absolute right-3 top-1/2 z-20 hidden -translate-y-1/2 rounded-full border border-border bg-surface/80 p-2.5 text-foreground shadow-soft backdrop-blur transition hover:bg-surface md:flex lg:right-6"
           >
             <Chevron dir="right" />
@@ -100,7 +102,7 @@ export function HeroCarousel({
                 key={i}
                 type="button"
                 onClick={() => go(i)}
-                aria-label={`Go to slide ${i + 1}`}
+                aria-label={t("carousel.goToSlide", { current: i + 1 })}
                 aria-current={i === active}
                 className={cn(
                   "h-2.5 rounded-full transition-all",

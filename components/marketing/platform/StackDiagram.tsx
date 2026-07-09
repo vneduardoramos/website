@@ -1,5 +1,6 @@
 import type { Layer } from "@/components/marketing/platform/PlatformStack";
 import { RevealGroup } from "@/components/marketing/Motion";
+import { getTranslations } from "next-intl/server";
 
 /**
  * The stack, drawn as a stack: sources flow in at the top, down through the
@@ -9,14 +10,12 @@ import { RevealGroup } from "@/components/marketing/Motion";
  * images; sequence reveal via the existing Motion primitives.
  */
 
-const ENTRY = ["ERP", "CRM", "SaaS", "Files", "Streams"];
-const EXIT = ["Dashboards", "Answers", "Agents", "Apps"];
-
-function StatusDot({ status }: { status: string }) {
+async function StatusDot({ status }: { status: string }) {
+  const t = await getTranslations("platformUi");
   const ga = status === "GA";
   return (
     <span
-      aria-label={ga ? "Generally available" : status}
+      aria-label={ga ? t("stackDiagram.generallyAvailable") : status}
       title={status}
       className={`inline-block h-1.5 w-1.5 shrink-0 rounded-full ${ga ? "bg-success" : "bg-warning"}`}
     />
@@ -74,7 +73,8 @@ function LayerBand({ layer }: { layer: Layer }) {
   );
 }
 
-function GovernanceRail({ rail }: { rail: Layer }) {
+async function GovernanceRail({ rail }: { rail: Layer }) {
+  const t = await getTranslations("platformUi");
   return (
     <div className="flex h-full flex-col rounded-2xl border border-primaryDeep/25 bg-primaryDeep/5 p-5">
       <h3 className="font-display text-base font-bold text-primaryDeep">{rail.layer}</h3>
@@ -92,16 +92,24 @@ function GovernanceRail({ rail }: { rail: Layer }) {
         ))}
       </ul>
       <p className="mt-4 font-mono text-[0.6rem] uppercase tracking-[0.16em] text-primaryDeep/70">
-        Wraps every layer
+        {t("stackDiagram.wrapsEveryLayer")}
       </p>
     </div>
   );
 }
 
-export function StackDiagram({ flow, rail }: { flow: Layer[]; rail: Layer }) {
+export async function StackDiagram({ flow, rail }: { flow: Layer[]; rail: Layer }) {
+  const t = await getTranslations("platformUi");
+  const entry = ["ERP", "CRM", "SaaS", t("stackDiagram.entry.files"), t("stackDiagram.entry.streams")];
+  const exit = [
+    t("stackDiagram.exit.dashboards"),
+    t("stackDiagram.exit.answers"),
+    t("stackDiagram.exit.agents"),
+    t("stackDiagram.exit.apps"),
+  ];
   return (
     <div className="mt-12 rounded-3xl border border-border bg-surface p-4 md:p-6">
-      <ChipRow items={ENTRY} label="Source systems in" />
+      <ChipRow items={entry} label={t("stackDiagram.sourceLabel")} />
       <Connector />
 
       <div className="grid gap-4 lg:grid-cols-[1fr_230px]">
@@ -120,14 +128,14 @@ export function StackDiagram({ flow, rail }: { flow: Layer[]; rail: Layer }) {
       </div>
 
       <Connector />
-      <ChipRow items={EXIT} label="Decisions out" />
+      <ChipRow items={exit} label={t("stackDiagram.decisionsLabel")} />
 
       <div className="mt-6 flex flex-wrap items-center gap-5 border-t border-border pt-4">
         <span className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-muted">
-          <span className="h-1.5 w-1.5 rounded-full bg-success" /> Generally available
+          <span className="h-1.5 w-1.5 rounded-full bg-success" /> {t("stackDiagram.generallyAvailable")}
         </span>
         <span className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-muted">
-          <span className="h-1.5 w-1.5 rounded-full bg-warning" /> Preview: early access our partner tier brings to the build
+          <span className="h-1.5 w-1.5 rounded-full bg-warning" /> {t("stackDiagram.previewLegend")}
         </span>
       </div>
     </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 
 /**
  * Two live clocks, Austin and Monterrey, proving the time-zone claim with the
@@ -14,8 +15,8 @@ const CLOCKS = [
   { city: "Monterrey", timeZone: "America/Monterrey" },
 ] as const;
 
-function timeIn(timeZone: string) {
-  return new Intl.DateTimeFormat("en-US", {
+function timeIn(timeZone: string, locale: string) {
+  return new Intl.DateTimeFormat(locale, {
     hour: "2-digit",
     minute: "2-digit",
     hour12: false,
@@ -24,14 +25,17 @@ function timeIn(timeZone: string) {
 }
 
 export function TwoClocks() {
+  const t = useTranslations("misc");
+  const locale = useLocale();
+  const intlLocale = locale === "es" ? "es-419" : "en-US";
   const [times, setTimes] = useState<string[] | null>(null);
 
   useEffect(() => {
-    const tick = () => setTimes(CLOCKS.map((c) => timeIn(c.timeZone)));
+    const tick = () => setTimes(CLOCKS.map((c) => timeIn(c.timeZone, intlLocale)));
     tick();
     const id = setInterval(tick, 30_000);
     return () => clearInterval(id);
-  }, []);
+  }, [intlLocale]);
 
   if (!times) return null;
 
@@ -43,7 +47,7 @@ export function TwoClocks() {
           <time>{times[i]}</time>
         </span>
       ))}
-      <span className="whitespace-nowrap">The same hour, every working day.</span>
+      <span className="whitespace-nowrap">{t("twoClocks.tagline")}</span>
     </div>
   );
 }

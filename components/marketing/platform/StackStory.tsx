@@ -1,4 +1,5 @@
 import { RevealGroup } from "@/components/marketing/Motion";
+import { getTranslations } from "next-intl/server";
 
 /**
  * The stack narrated as an engagement instead of drawn as an infographic:
@@ -17,74 +18,43 @@ function P({ children }: { children: React.ReactNode }) {
   );
 }
 
-const BEATS: { title: string; body: React.ReactNode }[] = [
-  {
-    title: "The data starts arriving",
-    body: (
-      <>
-        In the first sprints we wire <P>Openflow</P> into the ERP, CRM, and SaaS systems the
-        business already runs, and <P>Snowpipe Streaming</P> carries the live feeds. Nothing detours
-        through a middleman: every source lands inside Snowflake, governed from the first table.
-      </>
-    ),
-  },
-  {
-    title: "It gets shaped into something trustworthy",
-    body: (
-      <>
-        Our engineers model it with <P>dbt</P> and <P>Snowpark</P>, next to the data, in code
-        the team can read and one day own. <P>Dynamic Tables</P> keep the derived views fresh
-        with no scheduler to babysit.
-      </>
-    ),
-  },
-  {
-    title: "It lives once, in an open format",
-    body: (
-      <>
-        The result is one governed copy on <P>Apache Iceberg</P>, readable by any engine the
-        business ever chooses through <P>Open Catalog</P>. The foundation outlives any tool decision,
-        ours included.
-      </>
-    ),
-  },
-  {
-    title: "Governance runs through everything",
-    body: (
-      <>
-        The whole way, <P>Horizon Catalog</P> is recording lineage and enforcing policy, and{" "}
-        <P>Semantic Views</P> pin down what &ldquo;revenue&rdquo; actually means. It is the
-        unglamorous work that makes the AI trustworthy later, and it is where our senior
-        people spend real time working inside the team.
-      </>
-    ),
-  },
-  {
-    title: "Then the AI has something to stand on",
-    body: (
-      <>
-        <P>Cortex Analyst</P> answers questions against those shared definitions,{" "}
-        <P>Snowflake CoWork</P> gives teams cited answers, and agents act inside{" "}
-        <P>AI Agent Identity</P> policies. The results land where people already work:
-        dashboards in <P>Snowsight</P>, apps in <P>Streamlit</P>, answers flowing back into
-        the tools teams already use.
-      </>
-    ),
-  },
-  {
-    title: "One team answers for the whole arc",
-    body: (
-      <>
-        Snowflake runs the platform. We design, build, and tune what runs on it with the
-        team in the room, then hand over the keys: documented, and theirs to extend. Most
-        foundations reach production in 8&ndash;16 weeks, because discovery fixes the scope
-        up front and every sprint ends with working software in a demo.
-      </>
-    ),
-  },
-];
+export async function StackStory() {
+  const t = await getTranslations("platformUi");
+  const prod = (chunks: React.ReactNode) => <P>{chunks}</P>;
 
-export function StackStory() {
+  const BEATS: { key: string; title: string; body: React.ReactNode }[] = [
+    {
+      key: "arriving",
+      title: t("stackStory.beats.arriving.title"),
+      body: t.rich("stackStory.beats.arriving.body", { prod }),
+    },
+    {
+      key: "shaped",
+      title: t("stackStory.beats.shaped.title"),
+      body: t.rich("stackStory.beats.shaped.body", { prod }),
+    },
+    {
+      key: "open",
+      title: t("stackStory.beats.open.title"),
+      body: t.rich("stackStory.beats.open.body", { prod }),
+    },
+    {
+      key: "governance",
+      title: t("stackStory.beats.governance.title"),
+      body: t.rich("stackStory.beats.governance.body", { prod }),
+    },
+    {
+      key: "ai",
+      title: t("stackStory.beats.ai.title"),
+      body: t.rich("stackStory.beats.ai.body", { prod }),
+    },
+    {
+      key: "oneTeam",
+      title: t("stackStory.beats.oneTeam.title"),
+      body: t.rich("stackStory.beats.oneTeam.body", { prod }),
+    },
+  ];
+
   return (
     <RevealGroup as="ol" variant="fade-up" className="relative mt-14 max-w-3xl">
       {/* the spine: static hairline everywhere; browsers with CSS scroll-driven
@@ -97,7 +67,7 @@ export function StackStory() {
         <span className="spine-progress absolute inset-0 bg-primaryDeep/40" />
       </span>
       {BEATS.map((b, i) => (
-        <li key={b.title} className="relative pb-11 pl-10 last:pb-0">
+        <li key={b.key} className="relative pb-11 pl-10 last:pb-0">
           <span
             aria-hidden
             className="absolute left-0 top-1.5 flex h-[15px] w-[15px] items-center justify-center rounded-full border border-primaryDeep/40 bg-background"

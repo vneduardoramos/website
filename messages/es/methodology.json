@@ -1,0 +1,53 @@
+{
+  "chip": "Nuestra metodología",
+  "heading": "Cómo entregamos y <hl>seguimos entregando</hl>",
+  "intro": "Un ciclo de seis pasos, no un proyecto de un solo sentido. Trabajamos un caso de uso prioritario a la vez, llevando cada uno desde el descubrimiento hasta datos gobernados y potenciados por Cortex en producción sobre Snowflake, y luego comenzamos el siguiente. La base gobernada y lista para IA crece con el negocio a medida que seguimos entregando.",
+  "steps": [
+    {
+      "title": "Descubrir",
+      "desc": "Evaluamos el entorno actual, las fuentes de datos y los objetivos del negocio; definimos las métricas de éxito."
+    },
+    {
+      "title": "Diseñar",
+      "desc": "Diseñamos la arquitectura de la plataforma Snowflake objetivo, el modelo de gobierno y la capa semántica."
+    },
+    {
+      "title": "Migrar e ingerir",
+      "desc": "Movemos y conectamos los datos con traducción automatizada, validación y pipelines de Openflow."
+    },
+    {
+      "title": "Construir",
+      "desc": "Desarrollamos productos de datos, analítica y cargas de trabajo de Cortex AI / agénticas sobre datos gobernados."
+    },
+    {
+      "title": "Gobernar y validar",
+      "desc": "Aplicamos el linaje de Horizon Catalog, los controles de acceso y la clasificación de PII, además de Horizon Context para que cada equipo y agente de IA comparta un único contexto de negocio confiable; probamos para generar confianza."
+    },
+    {
+      "title": "Operar y optimizar",
+      "desc": "Operamos, monitoreamos y ajustamos el consumo y el rendimiento, con habilitación para el equipo interno."
+    }
+  ],
+  "why": {
+    "eyebrow": "Por qué funciona",
+    "title": "Un socio que conoce todo el recorrido",
+    "items": [
+      {
+        "title": "Todo el stack de datos moderno, no una sola herramienta",
+        "body": "Ingesta (Openflow, Snowpipe Streaming), transformación (dbt, Snowpark, Dynamic Tables), gobierno (Horizon Catalog y Horizon Context), analítica (Snowsight, Streamlit) y agentes de IA (Cortex, Snowflake CoWork), todo centrado en un único núcleo gobernado de Snowflake."
+      },
+      {
+        "title": "Gobernado y abierto por diseño",
+        "body": "Construido sobre Apache Iceberg y Open Catalog (Polaris) para que los datos sigan siendo interoperables entre motores y nubes."
+      },
+      {
+        "title": "Hacerlo bien desde la primera vez",
+        "body": "Frameworks de migración probados y arquitectos certificados reducen el riesgo y el retrabajo al migrar desde Teradata, Oracle, Hadoop o SQL Server."
+      },
+      {
+        "title": "Más allá de los dashboards, hacia agentes de datos",
+        "body": "Anclamos Snowflake CoWork (el agente de IA personal) y Cortex Agents en Semantic Views gobernadas y Horizon Context, para que los usuarios de negocio obtengan respuestas confiables y con citas a partir de las mismas definiciones que usa cada equipo."
+      }
+    ]
+  }
+}

@@ -87,15 +87,20 @@ export default async function LocaleRootLayout({
   if (!routing.locales.includes(locale as "en" | "es")) notFound();
   setRequestLocale(locale);
   const messages = await getMessages();
-  // Only ship namespaces that CLIENT components read (Nav, LocaleSwitcher, and
-  // any interactive marketing components). Page copy is server-rendered via
-  // getTranslations and must NOT be added here (it would bloat the client
-  // bundle). If a client component needs page copy, pass it in as props.
-  const clientMessages = {
-    nav: (messages as Record<string, unknown>).nav,
-    common: (messages as Record<string, unknown>).common,
-    footer: (messages as Record<string, unknown>).footer,
-  };
+  // Ship only the namespaces CLIENT components read: shared chrome (nav/footer),
+  // common microcopy, and the small shared-component namespaces. Large PAGE
+  // namespaces (home, about, security, ...) are server-rendered via
+  // getTranslations and deliberately kept OUT of the client bundle.
+  const CLIENT_NS = [
+    "nav", "common", "footer",
+    "sharedUi", "strips", "homeServer", "partnershipUi", "dataAiUi",
+    "platformUi", "approachUi", "migrationsUi", "contentData", "articleUi",
+    "heroUi", "methodology", "forms", "misc",
+  ];
+  const all = messages as Record<string, unknown>;
+  const clientMessages = Object.fromEntries(
+    CLIENT_NS.filter((ns) => all[ns] !== undefined).map((ns) => [ns, all[ns]]),
+  );
   return (
     <html lang={locale} className={fontVariables}>
       <body className="font-sans">

@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { MeshHeroSlide } from "@/components/marketing/home/MeshHeroSlide";
 
 /**
@@ -6,9 +7,10 @@ import { MeshHeroSlide } from "@/components/marketing/home/MeshHeroSlide";
  * mirrors that copy for reference. Only `subhead` is threaded through and editable
  * via the `hero` setting.
  */
-export function Hero({ subhead }: { subhead?: string }) {
+export async function Hero({ subhead }: { subhead?: string }) {
+  const t = await getTranslations("homeServer");
   return (
-    <section className="relative overflow-hidden" aria-label="Intro">
+    <section className="relative overflow-hidden" aria-label={t("hero.ariaLabel")}>
       <MeshHeroSlide subhead={subhead} />
     </section>
   );

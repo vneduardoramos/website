@@ -1,0 +1,28 @@
+{
+  "story": {
+    "beat1": {
+      "title": "Semana 1–2: un alcance que vale la pena firmar",
+      "body": "Comienza con un <art>descubrimiento pagado</art>: nuestros arquitectos se sientan con las partes interesadas, recorren las fuentes y priorizan los casos de uso según lo que aportan. El patrocinador sale con un <art>alcance fijo</art> a un precio fijo, de modo que lo que se presenta al directorio es un compromiso, no una estimación."
+    },
+    "beat2": {
+      "title": "El ritmo de los sprints",
+      "body": "Luego se instala la cadencia: cada sprint cierra con una <art>demo de sprint</art> de algo que funciona sobre datos reales, no con una presentación de estado. Cada vez se entrega algo utilizable, así el progreso es algo en lo que el equipo puede hacer clic, no un porcentaje que a alguien se le pide creer."
+    },
+    "beat3": {
+      "title": "Así se siente la semana 3",
+      "body": "El patrocinador participa en la primera <art>revisión de dirección</art>, reordenando un <art>backlog compartido</art> que es realmente suyo para reordenar, con un <art>punto de decisión</art> por delante que depende del negocio, no de nosotros. El alcance, el presupuesto y las prioridades permanecen dentro de la organización durante todo el proceso."
+    },
+    "beat4": {
+      "title": "Prueba antes de escalar",
+      "body": "Antes de la construcción completa, una <art>prueba de concepto</art> enfocada tiene que ganarse la aprobación con datos reales y el caso de uso más difícil. La decisión de escalar se apoya en evidencia que el equipo vio suceder, nunca en una diapositiva."
+    },
+    "beat5": {
+      "title": "La verdad en paralelo",
+      "body": "Cuando los primeros dashboards entran en producción, una <art>ejecución en paralelo</art> los contrasta con las cifras en las que los equipos confían hoy, y cada discrepancia se rastrea y se explica. Las nuevas cifras ganan su credibilidad al reconciliar, no porque nosotros respondamos por ellas."
+    },
+    "beat6": {
+      "title": "Traspaso, documentado",
+      "body": "La entrega incluye <art>runbooks</art>, documentación y sesiones de <art>habilitación</art>, además de un plan de transición que define quién opera qué cuando nos hacemos a un lado. La mayoría de los proyectos alcanzan el primer valor en 8–16 semanas, y a partir de ahí el equipo amplía el trabajo en sus propios términos."
+    }
+  }
+}

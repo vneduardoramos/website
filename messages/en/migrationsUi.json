@@ -1,0 +1,57 @@
+{
+  "legacyContrast": {
+    "today": "Today",
+    "onSnowflake": "On Snowflake",
+    "pains": [
+      {
+        "title": "Licenses keep rising",
+        "body": "Teradata, Netezza, Exadata, and SAP BW carry end-of-life clocks and support bills that only go up."
+      },
+      {
+        "title": "Infrastructure to babysit",
+        "body": "Appliances to patch, clusters to tune, capacity bought a year ahead and idle half the time."
+      },
+      {
+        "title": "Analytics that crawl",
+        "body": "Row-based engines and overloaded clusters turn every dashboard into an overnight batch."
+      }
+    ],
+    "gains": [
+      {
+        "title": "Cost that flexes with use",
+        "body": "Compute by the second, scaled independently from storage. No idle clusters."
+      },
+      {
+        "title": "One governed foundation",
+        "body": "One source of truth with access, lineage, and policy built in through Horizon, so decisions run on numbers people trust."
+      },
+      {
+        "title": "AI is the next step",
+        "body": "Cortex and the leading models run next to the governed data, so the first AI use cases ship from the same foundation, not another project."
+      }
+    ]
+  },
+  "tangle": {
+    "ariaLabel": "A tangle of legacy systems: warehouse, ETL tools, data marts, and file exports all cross-wired",
+    "legacyWarehouse": "Legacy warehouse",
+    "etlVendor1": "ETL vendor #1",
+    "etlVendor2": "ETL vendor #2",
+    "dataMarts": "Data marts x4",
+    "nightlyExports": "Nightly exports"
+  },
+  "foundation": {
+    "ariaLabel": "One governed Snowflake foundation: sources flow into governed layers and decisions flow out",
+    "sources": "ERP · CRM · SaaS · streams",
+    "layers": ["Governed data", "Horizon: lineage + policy", "Cortex, next to the data"],
+    "outputs": "Dashboards · answers · agents"
+  },
+  "cutover": {
+    "typicalArc": "Typical arc",
+    "weeks": ["wk 0", "wk 2", "wk 5", "wk 8", "wk 12"],
+    "typicalArcNote": "a typical 8–16 week arc",
+    "legacy": "Legacy",
+    "retired": "Retired",
+    "thePractice": "The practice",
+    "parity": "Row + aggregate + hash parity, reconciled nightly"
+  }
+}

@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Img as Image } from "@/components/marketing/Img";
 import { Reveal } from "@/components/marketing/Motion";
@@ -40,22 +41,28 @@ function BrandSwoosh({ className = "" }: { className?: string }) {
   );
 }
 
-export function CustomersFeature({ bottomLogos }: { bottomLogos: BandLogo[] }) {
+export async function CustomersFeature({ bottomLogos }: { bottomLogos: BandLogo[] }) {
+  const t = await getTranslations("homeServer");
+  const metrics = [
+    { value: FEATURED.metrics[0].value, label: t("customersFeature.featured.metricLabel1") },
+    { value: FEATURED.metrics[1].value, label: t("customersFeature.featured.metricLabel2") },
+  ];
   return (
     <section className="section section-warm relative overflow-hidden">
       <div className="container-page">
         {/* heading row */}
         <div className="flex flex-wrap items-end justify-between gap-5">
           <div>
-            <p className="eyebrow mb-3">Customers</p>
+            <p className="eyebrow mb-3">{t("customersFeature.eyebrow")}</p>
             <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-[2.9rem] md:leading-[1.04]">
-              Leading teams
-              <br />
-              <span className="text-gradient">build on governed, AI-ready data</span>
+              {t.rich("customersFeature.title", {
+                br: () => <br />,
+                hl: (c) => <span className="text-gradient">{c}</span>,
+              })}
             </h2>
           </div>
           <Link href="/case-studies" className="btn-ghost group">
-            View case studies
+            {t("customersFeature.viewCaseStudies")}
             <span className="transition-transform group-hover:translate-x-0.5">→</span>
           </Link>
         </div>
@@ -67,27 +74,27 @@ export function CustomersFeature({ bottomLogos }: { bottomLogos: BandLogo[] }) {
               {/* text */}
               <div className="p-8 md:p-10 lg:p-12">
                 <div className="flex flex-wrap items-center gap-3">
-                  <span className="font-display text-xl font-bold text-foreground">{FEATURED.client}</span>
+                  <span className="font-display text-xl font-bold text-foreground">{t("customersFeature.featured.client")}</span>
                   <span className="rounded-full bg-surface2 px-2.5 py-1 font-mono text-[0.6rem] uppercase tracking-wider text-muted">
-                    Snowflake Cortex AI
+                    {t("customersFeature.badge")}
                   </span>
                 </div>
                 <p className="mt-5 font-mono text-xs uppercase tracking-wider text-primaryDeep">
-                  {FEATURED.sector} · {FEATURED.region}
+                  {t("customersFeature.featured.sector")} · {t("customersFeature.featured.region")}
                 </p>
                 <h3 className="mt-2 text-balance font-display text-2xl font-bold leading-tight text-foreground md:text-[1.8rem]">
-                  {FEATURED.title}
+                  {t("customersFeature.featured.title")}
                 </h3>
-                <p className="mt-3 max-w-xl leading-relaxed text-muted">{FEATURED.summary}</p>
+                <p className="mt-3 max-w-xl leading-relaxed text-muted">{t("customersFeature.featured.summary")}</p>
                 <Link
                   href={`/case-studies/${FEATURED.slug}`}
                   className="group mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep"
                 >
-                  <span className="link-underline">Read the case study</span>
+                  <span className="link-underline">{t("customersFeature.readCaseStudy")}</span>
                   <span className="transition-transform group-hover:translate-x-0.5">→</span>
                 </Link>
                 <div className="mt-8 grid max-w-md grid-cols-2 gap-6">
-                  {FEATURED.metrics.map((m) => (
+                  {metrics.map((m) => (
                     <div key={m.label} className="border-l border-border pl-4">
                       <div className="text-gradient-bold font-display text-2xl font-bold sm:text-3xl md:text-4xl">{m.value}</div>
                       <div className="mt-1 text-xs leading-snug text-muted">{m.label}</div>
@@ -100,7 +107,7 @@ export function CustomersFeature({ bottomLogos }: { bottomLogos: BandLogo[] }) {
                 <BrandSwoosh className="pointer-events-none absolute -left-7 top-10 z-10 hidden h-28 w-28 lg:block" />
                 <Image
                   src={FEATURED.image}
-                  alt={`${FEATURED.sector}: ${FEATURED.title}`}
+                  alt={`${t("customersFeature.featured.sector")}: ${t("customersFeature.featured.title")}`}
                   fill
                   sizes="(min-width: 1024px) 45vw, 100vw"
                   className="object-cover"
