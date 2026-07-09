@@ -14,15 +14,23 @@ import {
   jobOpenings,
   faqs,
 } from "./data";
+import { servicesEs } from "./es/services";
+import { industriesEs } from "./es/industries";
+import { caseStudiesEs } from "./es/caseStudies";
+import { blogPostsEs } from "./es/blog";
+import { teamEs } from "./es/team";
+import { jobOpeningsEs } from "./es/jobs";
+import { siteSettingsEs, faqsEs } from "./es/settings";
 
 const prisma = new PrismaClient();
 const now = new Date();
 const J = (v: unknown) => JSON.stringify(v);
 
 /** Load long-form body markdown from prisma/seed/content/<type>/<slug>.md (falls back to inline body). */
-function readBody(type: string, slug: string): string | null {
+function readBody(type: string, slug: string, locale: "en" | "es" = "en"): string | null {
+  const file = locale === "es" ? `${slug}.es.md` : `${slug}.md`;
   try {
-    return readFileSync(join(process.cwd(), "prisma/seed/content", type, `${slug}.md`), "utf8").trim();
+    return readFileSync(join(process.cwd(), "prisma/seed/content", type, file), "utf8").trim();
   } catch {
     return null;
   }
@@ -56,17 +64,45 @@ async function main() {
     create: { key: "faqs", value: J(faqs) },
   });
 
+  // --- Site settings (es overlay) --- stored under "<key>.es"; empty overlay = no rows.
+  for (const [key, value] of Object.entries(siteSettingsEs)) {
+    await prisma.siteSetting.upsert({
+      where: { key: `${key}.es` },
+      update: { value: J(value) },
+      create: { key: `${key}.es`, value: J(value) },
+    });
+  }
+  if (faqsEs.length) {
+    await prisma.siteSetting.upsert({
+      where: { key: "faqs.es" },
+      update: { value: J(faqsEs) },
+      create: { key: "faqs.es", value: J(faqsEs) },
+    });
+  }
+
   // --- Services ---
   for (const s of services) {
+    const data = {
+      ...s,
+      tools: J(s.tools),
+      status: "PUBLISHED",
+      publishedAt: now,
+      titleEs: servicesEs[s.slug]?.title ?? null,
+      summaryEs: servicesEs[s.slug]?.summary ?? null,
+      bodyEs: servicesEs[s.slug]?.body ?? null,
+      seoTitleEs: servicesEs[s.slug]?.seoTitle ?? null,
+      seoDescriptionEs: servicesEs[s.slug]?.seoDescription ?? null,
+    };
     await prisma.service.upsert({
       where: { slug: s.slug },
-      update: { ...s, tools: J(s.tools), status: "PUBLISHED", publishedAt: now },
-      create: { ...s, tools: J(s.tools), status: "PUBLISHED", publishedAt: now },
+      update: data,
+      create: data,
     });
   }
 
   // --- Industries ---
   for (const i of industries) {
+    const iEs = industriesEs[i.slug] ?? {};
     const data = {
       slug: i.slug,
       name: i.name,
@@ -79,6 +115,15 @@ async function main() {
       order: i.order,
       status: "PUBLISHED",
       publishedAt: now,
+      nameEs: iEs.name ?? null,
+      headlineEs: iEs.headline ?? null,
+      introEs: iEs.intro ?? null,
+      bodyEs: iEs.body ?? null,
+      challengesEs: iEs.challenges ? J(iEs.challenges) : null,
+      deliverablesEs: iEs.deliverables ? J(iEs.deliverables) : null,
+      statsEs: iEs.stats ? J(iEs.stats) : null,
+      seoTitleEs: iEs.seoTitle ?? null,
+      seoDescriptionEs: iEs.seoDescription ?? null,
     };
     await prisma.industry.upsert({ where: { slug: i.slug }, update: data, create: data });
   }
@@ -94,6 +139,7 @@ async function main() {
     const industry = cs.industrySlug
       ? await prisma.industry.findUnique({ where: { slug: cs.industrySlug } })
       : null;
+    const csEs = caseStudiesEs[cs.slug] ?? {};
     const data = {
       slug: cs.slug,
       title: cs.title,
@@ -110,6 +156,16 @@ async function main() {
       industryId: industry?.id ?? null,
       status: "PUBLISHED",
       publishedAt: now,
+      titleEs: csEs.title ?? null,
+      summaryEs: csEs.summary ?? null,
+      bodyEs: readBody("case-studies", cs.slug, "es"),
+      challengeEs: csEs.challenge ?? null,
+      solutionEs: csEs.solution ?? null,
+      resultsEs: csEs.results ?? null,
+      metricsEs: csEs.metrics ? J(csEs.metrics) : null,
+      quoteEs: csEs.quote ? J(csEs.quote) : null,
+      seoTitleEs: csEs.seoTitle ?? null,
+      seoDescriptionEs: csEs.seoDescription ?? null,
     };
     await prisma.caseStudy.upsert({ where: { slug: cs.slug }, update: data, create: data });
   }
@@ -117,10 +173,16 @@ async function main() {
   // --- Team --- (remove any stale members not in the current list)
   await prisma.teamMember.deleteMany({ where: { slug: { notIn: team.map((t) => t.slug) } } });
   for (const t of team) {
+    const data = {
+      ...t,
+      published: true,
+      titleEs: teamEs[t.slug]?.title ?? null,
+      bioEs: teamEs[t.slug]?.bio ?? null,
+    };
     await prisma.teamMember.upsert({
       where: { slug: t.slug },
-      update: { ...t, published: true },
-      create: { ...t, published: true },
+      update: data,
+      create: data,
     });
   }
 
@@ -145,6 +207,7 @@ async function main() {
     const blogAuthorTeam = (b as { authorTeam?: string }).authorTeam
       ? await prisma.teamMember.findUnique({ where: { slug: (b as { authorTeam?: string }).authorTeam as string } })
       : null;
+    const bEs = blogPostsEs[b.slug] ?? {};
     const data = {
       slug: b.slug,
       title: b.title,
@@ -158,12 +221,19 @@ async function main() {
       authorTeamId: blogAuthorTeam?.id ?? null,
       status: "PUBLISHED",
       publishedAt: (b as { date?: string }).date ? new Date((b as { date?: string }).date as string) : now,
+      titleEs: bEs.title ?? null,
+      excerptEs: bEs.excerpt ?? null,
+      bodyEs: readBody("blog", b.slug, "es"),
+      keyTakeawaysEs: bEs.keyTakeaways ? J(bEs.keyTakeaways) : null,
+      seoTitleEs: bEs.seoTitle ?? null,
+      seoDescriptionEs: bEs.seoDescription ?? null,
     };
     await prisma.blogPost.upsert({ where: { slug: b.slug }, update: data, create: data });
   }
 
   // --- Job openings ---
   for (const j of jobOpenings) {
+    const jEs = jobOpeningsEs[j.slug] ?? {};
     const data = {
       slug: j.slug,
       title: j.title,
@@ -174,6 +244,10 @@ async function main() {
       skills: J(j.skills),
       order: j.order,
       status: "PUBLISHED",
+      titleEs: jEs.title ?? null,
+      descriptionEs: jEs.description ?? null,
+      employmentEs: jEs.employment ?? null,
+      bodyEs: readBody("careers", j.slug, "es") ?? jEs.body ?? null,
     };
     await prisma.jobOpening.upsert({ where: { slug: j.slug }, update: data, create: data });
   }

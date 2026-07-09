@@ -1,0 +1,2 @@
+// Spanish (es) overlay. Keyed by slug. Optional — empty means the row falls back to English. Filled by the content-translation phase.
+export const industriesEs: Record<string, { name?: string; headline?: string; intro?: string; body?: string; challenges?: { problem: string; response: string }[]; deliverables?: { title: string; description: string }[]; stats?: { label: string; value: string }[]; seoTitle?: string; seoDescription?: string }> = {};
