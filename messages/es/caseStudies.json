@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Casos de éxito",
+    "description": "Proyectos de data & AI en las Américas: resultados reales y anonimizados de datos gobernados y casos de uso de AI entregados sobre Snowflake."
+  },
+  "hero": {
+    "eyebrow": "Nuestro trabajo",
+    "title": "Casos de <hl>éxito</hl>.",
+    "description": "El trabajo real de data & AI que entregamos en las Américas. Vea cómo distintos equipos pasaron de fuentes dispersas a datos gobernados, decisiones en las que la gente confía y casos de uso en producción."
+  },
+  "featured": {
+    "eyebrow": "Trabajo destacado",
+    "note": "Los nombres de los clientes se reservan a petición suya. Todos son proyectos reales y anonimizados."
+  },
+  "filter": {
+    "label": "Sectores:"
+  },
+  "more": {
+    "eyebrow": "Más proyectos"
+  },
+  "empty": "Casos de éxito próximamente.",
+  "proof": {
+    "eyebrow": "Prueba verificable",
+    "title": "Prueba que cualquiera puede verificar hoy mismo.",
+    "body": "Viewnear es Snowflake Premier Partner y Snowflake CoCo Preferred Partner, con un equipo certificado en SnowPro. Ese reconocimiento se puede verificar hoy mismo, con independencia de cualquier proyecto individual."
+  }
+}

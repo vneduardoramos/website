@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { notFound } from "next/navigation";
 import { Section, SectionHeading, Pill, CtaBand } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 import { ApplicationForm } from "@/components/marketing/ApplicationForm";
 import { JsonLd } from "@/components/JsonLd";
 import { getJobOpeningBySlug, getJobSlugs } from "@/lib/queries";
+import type { Locale } from "@/lib/i18n-content";
 import { BENEFITS } from "@/lib/benefits";
 import { BenefitsGrid } from "@/components/marketing/BenefitsGrid";
 import { Markdown } from "@/lib/content";
@@ -23,15 +25,19 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: { locale: string; slug: string };
 }): Promise<Metadata> {
-  const job = await getJobOpeningBySlug(params.slug);
-  if (!job) return { title: "Careers" };
+  const { locale, slug } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "careerDetail.meta" });
+  const job = await getJobOpeningBySlug(slug, locale as Locale);
+  if (!job) return { title: t("fallbackTitle") };
   return pageMeta({
-    title: `${job.title}: Careers`,
+    title: t("titleTemplate", { title: job.title }),
     description: job.description,
-    path: `/careers/${params.slug}`,
+    path: `/careers/${slug}`,
     type: "article",
+    locale,
   });
 }
 
@@ -48,9 +54,12 @@ function employmentType(employment: string): string {
 export default async function CareerDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: { locale: string; slug: string };
 }) {
-  const job = await getJobOpeningBySlug(params.slug);
+  const { locale, slug } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("careerDetail");
+  const job = await getJobOpeningBySlug(slug, locale as Locale);
   if (!job) notFound();
 
   const skills = asStringArray(job.skills);
@@ -99,7 +108,7 @@ export default async function CareerDetailPage({
 
       <PageHero
         align="left"
-        eyebrow="Careers · Open role"
+        eyebrow={t("hero.eyebrow")}
         title={job.title}
         description={job.description}
       >
@@ -114,7 +123,7 @@ export default async function CareerDetailPage({
             href="/life-at-viewnear"
             className="inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep"
           >
-            <span aria-hidden="true">&larr;</span> Back to all roles
+            <span aria-hidden="true">&larr;</span> {t("hero.backToRoles")}
           </Link>
         </div>
       </PageHero>
@@ -128,14 +137,14 @@ export default async function CareerDetailPage({
           ) : (
             // Fallback for roles without a detailed body yet.
             <>
-              <SectionHeading eyebrow="About the role" title="The work" />
+              <SectionHeading eyebrow={t("aboutRole.eyebrow")} title={t("aboutRole.title")} />
               <p className="mt-6 text-lg leading-relaxed text-muted">{job.description}</p>
             </>
           )}
 
           {skills.length > 0 ? (
             <div className="mt-10 border-t border-border pt-8">
-              <p className="eyebrow mb-3">Skills &amp; tools</p>
+              <p className="eyebrow mb-3">{t("skills.label")}</p>
               <div className="flex flex-wrap gap-2">
                 {skills.map((s) => (
                   <Pill key={s}>{s}</Pill>
@@ -150,9 +159,9 @@ export default async function CareerDetailPage({
       <Section className="section-warm">
         <div className="mx-auto max-w-4xl">
           <SectionHeading
-            eyebrow="Life at Viewnear"
-            title="More than the role"
-            intro="This is a team judged on outcomes, working AI-native, pairing two hubs with remote depth. Here is some of what comes with the role."
+            eyebrow={t("life.eyebrow")}
+            title={t("life.title")}
+            intro={t("life.intro")}
           />
           <BenefitsGrid items={BENEFITS} className="mt-10" />
           <div className="mt-8">
@@ -160,7 +169,7 @@ export default async function CareerDetailPage({
               href="/life-at-viewnear"
               className="group inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep"
             >
-              <span className="link-underline">See life at Viewnear</span>
+              <span className="link-underline">{t("life.seeLink")}</span>
               <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
                 →
               </span>
@@ -171,9 +180,9 @@ export default async function CareerDetailPage({
 
       <Section id="apply">
         <SectionHeading
-          eyebrow="Apply"
-          title="Apply for this role"
-          intro="Share a few details and we will review the application. We read every one."
+          eyebrow={t("apply.eyebrow")}
+          title={t("apply.title")}
+          intro={t("apply.intro")}
           center
         />
         <div className="mx-auto mt-12 max-w-2xl">

@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "fallbackTitle": "Careers",
+    "titleTemplate": "{title}: Careers"
+  },
+  "hero": {
+    "eyebrow": "Careers · Open role",
+    "backToRoles": "Back to all roles"
+  },
+  "aboutRole": {
+    "eyebrow": "About the role",
+    "title": "The work"
+  },
+  "skills": {
+    "label": "Skills & tools"
+  },
+  "life": {
+    "eyebrow": "Life at Viewnear",
+    "title": "More than the role",
+    "intro": "This is a team judged on outcomes, working AI-native, pairing two hubs with remote depth. Here is some of what comes with the role.",
+    "seeLink": "See life at Viewnear"
+  },
+  "apply": {
+    "eyebrow": "Apply",
+    "title": "Apply for this role",
+    "intro": "Share a few details and we will review the application. We read every one."
+  }
+}

@@ -1,5 +1,7 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMeta } from "@/lib/seo";
+import { Link } from "@/i18n/navigation";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
@@ -9,110 +11,36 @@ import { ScrollHighlight } from "@/components/marketing/Motion";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { LegacyContrast, CutoverTimeline } from "@/components/marketing/migrations/Crossing";
 
-export const metadata = pageMeta({
-  title: "Migrations to Snowflake: Teradata, Oracle, Redshift, Hadoop & more",
-  description:
-    "Viewnear moves legacy warehouses and Hadoop onto one governed foundation on Snowflake: automated code conversion, validated parity, a phased cutover the business never feels, and a handover that leaves the team running it.",
-  path: "/migrations",
-});
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "migrations.meta" });
+  return pageMeta({ title: t("title"), description: t("description"), path: "/migrations", locale });
+}
 
-const HERO_CHIPS = ["20+ source platforms", "Automated conversion", "Validated parity", "Phased cutover"];
+export default async function MigrationsPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("migrations");
 
-// The full set of source platforms, grouped. `slug` maps to an official brand
-// mark in /assets/images/sources (rendered monochrome via CSS mask); platforms
-// without a mark fall back to a clean wordmark.
-// Only platforms with an official brand mark in /assets/images/sources are
-// listed; everything else rides on the "not listed? we've seen it" line.
-const SOURCE_GROUPS = [
-  {
-    label: "Legacy MPP & data warehouses",
-    items: [
-      { name: "Teradata", slug: "teradata" },
-      { name: "IBM Netezza", slug: "ibm" },
-      { name: "Oracle Exadata", slug: "oracle" },
-      { name: "SAP BW / BW4HANA", slug: "sap" },
-    ],
-  },
-  {
-    label: "Cloud data warehouses",
-    items: [
-      { name: "Amazon Redshift", slug: "redshift" },
-      { name: "Google BigQuery", slug: "bigquery" },
-      { name: "Azure Synapse", slug: "azure" },
-      { name: "Databricks", slug: "databricks" },
-    ],
-  },
-  {
-    label: "Hadoop & data lakes",
-    items: [
-      { name: "Cloudera / Hortonworks", slug: "cloudera" },
-      { name: "Apache Hive", slug: "hive" },
-      { name: "Apache Spark", slug: "spark" },
-      { name: "HDFS", slug: "hadoop" },
-    ],
-  },
-  {
-    label: "Databases doing warehouse duty",
-    items: [
-      { name: "Oracle Database", slug: "oracle" },
-      { name: "Microsoft SQL Server", slug: "sqlserver" },
-      { name: "IBM Db2", slug: "ibm" },
-      { name: "PostgreSQL", slug: "postgresql" },
-      { name: "MySQL", slug: "mysql" },
-    ],
-  },
-  {
-    label: "Legacy ETL & analytics",
-    items: [
-      { name: "Informatica", slug: "informatica" },
-      { name: "Talend", slug: "talend" },
-    ],
-  },
-];
+  const heroChips = t.raw("heroChips") as string[];
 
-// The phased, de-risked method. (The "why teams move" drivers live inside
-// LegacyContrast as before/after annotations.)
-const PHASES = [
-  {
-    title: "Assess & plan",
-    body: "We inventory every table, view, stored procedure, and downstream report, map the dependencies, and build the business case before anything moves.",
-  },
-  {
-    title: "Convert",
-    body: "The bulk of the SQL, stored procedures, and scripts convert automatically; our engineers remediate the edge cases by hand and review every object before it moves on.",
-  },
-  {
-    title: "Migrate & validate",
-    body: "Historical loads plus incremental CDC through Openflow and Snowpipe keep data current, while automated row, aggregate, and hash checks prove parity against the source.",
-  },
-  {
-    title: "Parallel run & cutover",
-    body: "Both systems run side by side with nightly reconciliation. We cut over in phases by business unit, never a big-bang switch, and only once the numbers match.",
-  },
-  {
-    title: "Optimize & decommission",
-    body: "We tune warehouses and pipelines on real usage, retire the legacy system, and hand over documentation and runbooks so the team runs it without us.",
-  },
-];
+  // The full set of source platforms, grouped. `slug` maps to an official brand
+  // mark in /assets/images/sources (rendered monochrome via CSS mask); platforms
+  // without a mark fall back to a clean wordmark.
+  // Only platforms with an official brand mark in /assets/images/sources are
+  // listed; everything else rides on the "not listed? we've seen it" line.
+  const sourceGroups = t.raw("sources") as { label: string; items: { name: string; slug: string }[] }[];
 
-// The hard parts, handled, for the most common sources.
-const HARD_PARTS = [
-  { source: "Teradata", detail: "BTEQ, FastLoad, and MultiLoad scripts, macros, and stored procedures converted; primary-index logic redesigned as clustering." },
-  { source: "Oracle", detail: "PL/SQL packages, triggers, and cursors translated to Snowflake Scripting; constraints moved into validated pipelines." },
-  { source: "SQL Server", detail: "T-SQL and SSIS packages converted to Snowflake SQL and dbt models on a native scheduler." },
-  { source: "Hadoop, Hive & Spark", detail: "Hive SQL and PySpark or Scala jobs moved to Snowflake SQL and Snowpark; Parquet landed as Iceberg." },
-  { source: "Redshift & BigQuery", detail: "Dialect differences and DISTKEY, SORTKEY, or partition logic translated; cost re-modeled for elastic compute." },
-  { source: "Netezza & Vertica", detail: "Appliance-specific SQL and procedures converted off end-of-life hardware onto elastic Snowflake." },
-];
+  // The phased, de-risked method. (The "why teams move" drivers live inside
+  // LegacyContrast as before/after annotations.)
+  const phases = t.raw("phases") as { title: string; body: string }[];
 
-const METRICS = [
-  { value: "20+", label: "Source platforms" },
-  { value: "Automated", label: "Code conversion with SnowConvert" },
-  { value: "Phased", label: "Cutover, not big-bang" },
-  { value: "Parity", label: "Validated before cutover" },
-];
+  // The hard parts, handled, for the most common sources.
+  const hardParts = t.raw("hardParts") as { source: string; detail: string }[];
 
-export default function MigrationsPage() {
+  const metrics = t.raw("metrics") as { value: string; label: string }[];
+
   return (
     <>
       {/* Hero */}
@@ -120,17 +48,12 @@ export default function MigrationsPage() {
         <SectionDecor variant="grid" />
         <div className="relative">
           <PageHero
-            eyebrow="Migrations"
-            title={
-              <>
-                Off Teradata, Oracle, or Hadoop.{" "}
-                <ScrollHighlight>Onto a data practice the team keeps.</ScrollHighlight>
-              </>
-            }
-            description="A migration is won in the planning, the parity checks, and the cutover no one notices, not in the license swap. We run that whole arc as one accountable team: code converted automatically, every number validated against the source, and the business running the entire way."
+            eyebrow={t("hero.eyebrow")}
+            title={t.rich("hero.title", { hl: (c) => <ScrollHighlight>{c}</ScrollHighlight> })}
+            description={t("hero.description")}
           >
             <div className="flex flex-wrap justify-center gap-2">
-              {HERO_CHIPS.map((c) => (
+              {heroChips.map((c) => (
                 <span key={c} className="chip">
                   {c}
                 </span>
@@ -146,13 +69,13 @@ export default function MigrationsPage() {
         <div className="relative">
           <SectionHeading
             align="center"
-            eyebrow="Every source platform"
-            title="We migrate from all of them"
-            intro="Legacy appliances, cloud warehouses, Hadoop, or the database quietly doing warehouse duty. If the data lives there today, we have a path to land it on Snowflake, governed and in the team's hands."
+            eyebrow={t("sourcesHeading.eyebrow")}
+            title={t("sourcesHeading.title")}
+            intro={t("sourcesHeading.intro")}
           />
           {/* One continuous board instead of five card boxes */}
           <div className="mt-12 rounded-3xl border border-border bg-surface">
-            {SOURCE_GROUPS.map((g, gi) => (
+            {sourceGroups.map((g, gi) => (
               <div
                 key={g.label}
                 className={`grid gap-3 p-5 md:grid-cols-[230px_1fr] md:items-baseline md:gap-6 md:px-7 ${gi > 0 ? "border-t border-border" : ""}`}
@@ -190,9 +113,7 @@ export default function MigrationsPage() {
             ))}
           </div>
           <p className="mx-auto mt-10 max-w-2xl text-center text-xs leading-relaxed text-muted">
-            Platform names and logos are trademarks of their respective owners, shown to indicate
-            migration sources we support. On something not listed here? We have almost certainly seen
-            it. Tell us what&rsquo;s running and we&rsquo;ll map the path.
+            {t("sourcesNote")}
           </p>
         </div>
       </Section>
@@ -201,9 +122,9 @@ export default function MigrationsPage() {
       <Section className="section-warm relative overflow-hidden">
         <SectionHeading
           align="center"
-          eyebrow="Why teams move"
-          title="The case for leaving legacy behind"
-          intro="The platform changes, but the reasons rhyme: cost, operational burden, and a foundation that is finally ready for AI."
+          eyebrow={t("whyHeading.eyebrow")}
+          title={t("whyHeading.title")}
+          intro={t("whyHeading.intro")}
         />
         <LegacyContrast />
         <WaveDivider position="bottom" fill="fill-background" />
@@ -213,37 +134,36 @@ export default function MigrationsPage() {
       <Section>
         <SectionHeading
           align="center"
-          eyebrow="How we migrate"
-          title="Automated, validated, and phased"
-          intro="A repeatable arc that de-risks the move. Most of the conversion is automated; the cutover never is."
+          eyebrow={t("howHeading.eyebrow")}
+          title={t("howHeading.title")}
+          intro={t("howHeading.intro")}
         />
-        <CutoverTimeline phases={PHASES} />
+        <CutoverTimeline phases={phases} />
       </Section>
 
       {/* The conviction: tools convert code; the team answers for it */}
       <Section className="section-tint relative overflow-hidden">
         <FeatureSplit
-          eyebrow="Our conviction"
-          title="The tools convert the code. They don't answer for the month-end close."
-          body="SnowConvert and the Snowpark Migration Accelerator do the typing: the SQL, stored procedures, and Spark jobs that took years to write convert in weeks. What we're actually hired for is everything the tools can't sign off on: the edge cases remediated by hand, every object reviewed before it moves on, and row, aggregate, and hash reconciliation proving the new numbers match the old ones before anyone cuts over."
-          bullets={[
-            "Conversion output reviewed object by object, in Snowflake Workspaces",
-            "Row, aggregate, and hash checks prove parity against the source",
-            "A parallel run with nightly reconciliation before any cutover",
-          ]}
+          eyebrow={t("conviction.eyebrow")}
+          title={t("conviction.title")}
+          body={t("conviction.body")}
+          bullets={t.raw("conviction.bullets") as string[]}
           image="/assets/images/product/workspaces-build.png"
-          imageAlt="Converted objects being reviewed change by change in Snowflake Workspaces"
+          imageAlt={t("conviction.imageAlt")}
           ratio="wide-text"
         />
         {/* One quiet, real proof point for the claim above. */}
         <p className="mt-10 text-center text-sm text-muted">
-          Live example:{" "}
-          <Link
-            href="/case-studies/real-time-student-data-pipeline"
-            className="font-semibold text-primaryDeep underline-offset-4 hover:underline"
-          >
-            real-time student data across campuses, live in seven weeks &rarr;
-          </Link>
+          {t.rich("liveExample", {
+            link: (c) => (
+              <Link
+                href="/case-studies/real-time-student-data-pipeline"
+                className="font-semibold text-primaryDeep underline-offset-4 hover:underline"
+              >
+                {c}
+              </Link>
+            ),
+          })}
         </p>
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
@@ -252,14 +172,14 @@ export default function MigrationsPage() {
       <Section className="section-warm">
         <SectionHeading
           align="center"
-          eyebrow="The hard parts, handled"
-          title="The legacy logic comes too"
-          intro="Migrations stall on the procedural code and pipelines, not the tables. Here is what we carry over for the platforms we see most."
+          eyebrow={t("hardPartsHeading.eyebrow")}
+          title={t("hardPartsHeading.title")}
+          intro={t("hardPartsHeading.intro")}
         />
         {/* Same continuous-board rhythm as the sources wall and the platform
             parts list: fixed label column, uniform hairline rows. */}
         <div className="mt-12 rounded-3xl border border-border bg-surface">
-          {HARD_PARTS.map((h, i) => (
+          {hardParts.map((h, i) => (
             <div
               key={h.source}
               className={`grid gap-2 p-5 md:grid-cols-[230px_1fr] md:items-baseline md:gap-8 md:px-8 ${i > 0 ? "border-t border-border" : ""}`}
@@ -277,27 +197,30 @@ export default function MigrationsPage() {
       <Section className="text-center">
         <SectionHeading
           align="center"
-          eyebrow="Backed by Snowflake"
-          title="A certified team that has done this before"
-          intro="Migrations run on Snowflake's own tooling, delivered by a SnowPro-certified team with a verified track record across the Americas."
+          eyebrow={t("proofHeading.eyebrow")}
+          title={t("proofHeading.title")}
+          intro={t("proofHeading.intro")}
         />
         <div className="mt-10">
-          <MetricBand metrics={METRICS} />
+          <MetricBand metrics={metrics} />
         </div>
         <div className="mt-10 flex justify-center">
           <PartnerBadges variant="logos" />
         </div>
         <p className="mt-8 text-sm text-muted">
-          See migrations in production in our{" "}
-          <Link href="/case-studies" className="font-semibold text-primaryDeep underline-offset-4 hover:underline">
-            case studies &rarr;
-          </Link>
+          {t.rich("caseStudiesLine", {
+            link: (c) => (
+              <Link href="/case-studies" className="font-semibold text-primaryDeep underline-offset-4 hover:underline">
+                {c}
+              </Link>
+            ),
+          })}
         </p>
       </Section>
 
       <CtaBand
-        title="Plan the migration."
-        subtitle="Tell us what's running today (Teradata, Oracle, Redshift, Hadoop, or anything else) and we'll map the crossing: what converts automatically, what needs hands, and when the team takes the keys."
+        title={t("cta.title")}
+        subtitle={t("cta.subtitle")}
       />
     </>
   );

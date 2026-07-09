@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "fallbackTitle": "Industry not found"
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "industries": "Industries"
+  },
+  "hero": {
+    "discussCta": "Discuss {industry} data",
+    "seeWork": "See the work"
+  },
+  "engagement": {
+    "eyebrow": "The engagement",
+    "title": "A partner who understands <hl>{name}</hl>.",
+    "body": "No one spends the first month explaining {industry} to us. The team arrives knowing the sector's systems, regulations, and reporting rhythms, then builds the data models, governance, and dashboards alongside in-house teams, against the metrics they already answer for.",
+    "imageAlt": "{industry} data and AI solutions built on Snowflake",
+    "cta": "Start a conversation"
+  },
+  "foundation": {
+    "eyebrow": "What we stand up",
+    "title": "The foundation a {industry} practice runs on",
+    "introWithStory": "The capabilities we put in place, and how fast. Measured results from a real {industry} engagement are in the featured story below.",
+    "introNoStory": "The capabilities we put in place, and how fast they reach first value."
+  },
+  "challenges": {
+    "eyebrow": "Challenges we solve",
+    "title": "What {industry} teams are up against",
+    "intro": "The recurring problems we hear, and how we resolve them."
+  },
+  "deliverables": {
+    "eyebrow": "What gets delivered",
+    "title": "Deliverables",
+    "intro": "Tangible outcomes engineered to move the metrics that matter."
+  },
+  "tools": {
+    "eyebrow": "Stack",
+    "title": "Tools & technologies",
+    "intro": "The Snowflake-first stack we reach for in this sector."
+  },
+  "showcase": {
+    "imageAlt": "{industry} data and AI on Snowflake",
+    "title": "Built for <hl>{name}</hl>, on Snowflake.",
+    "cta": "Discuss {industry} data"
+  },
+  "compliance": {
+    "label": "Compliance",
+    "title": "Built for the regulators",
+    "link": "How we keep data safe →"
+  },
+  "featured": {
+    "eyebrow": "Featured engagement",
+    "title": "How we delivered for {industry}",
+    "intro": "A real engagement, start to finish: the challenge, the build, and the outcome. Client names are withheld to protect confidentiality.",
+    "orgLabel": "A {industry} organization",
+    "storyTitle": "Governed, AI-ready data for {industry} on Snowflake",
+    "quoteCaption": "Sponsor quote · {industry} engagement",
+    "readCase": "Read the full case study →"
+  },
+  "other": {
+    "eyebrow": "Explore",
+    "title": "Other industries"
+  }
+}

@@ -1,7 +1,9 @@
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Img as Image } from "@/components/marketing/Img";
 import { pageMeta, breadcrumbLd } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Section, SectionHeading } from "@/components/marketing/ui";
 import { MetricBand } from "@/components/marketing/Blocks";
 import { TeamCard } from "@/components/marketing/TeamCard";
@@ -20,126 +22,60 @@ import {
 } from "@/components/marketing/home/Icons";
 import { PlateCard } from "@/components/marketing/Cards";
 import { getTeam } from "@/lib/queries";
-import { theme } from "@/config/theme";
+import type { Locale } from "@/lib/i18n-content";
 
-export const metadata = pageMeta({
-  title: "About: building data & AI practices across the Americas",
-  description:
-    "Viewnear helps enterprises stand up data & AI practices they keep: governed data feeding real decisions and AI use cases in production, built on Snowflake and run by their own teams.",
-  path: "/about",
-});
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "about.meta" });
+  return pageMeta({ title: t("title"), description: t("description"), path: "/about", locale });
+}
 
-const HERO_CHIPS = [
-  "Snowflake Premier Partner",
-  "CoCo Preferred Partner",
-  "SnowPro-certified",
-  "Americas-focused delivery",
-];
+// Icons pair with the principles copy by index (title/body live in messages).
+const principleIcons = [CheckIcon, ShieldIcon, PipelineIcon, DocIcon, CompassIcon];
 
-// What every engagement gets: the operating model, end to end.
-const operating = [
-  "Fixed scopes, use-case-driven sprints, and working software at every demo",
-  "Governed by design, from the first table",
-  "The people who scope the work stay through production",
-  "Open formats (Apache Iceberg) for interoperable architectures",
-];
+export default async function AboutPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("about");
 
-// Verifiable credential snapshot (no vanity metrics).
-const trackRecord = [
-  { value: "Premier", label: "Snowflake Premier + CoCo Preferred Partner" },
-  { value: "SnowPro", label: "SnowPro-certified across the team" },
-  { value: "15+", label: "Years building data & enterprise AI" },
-  { value: "5", label: "Countries across the Americas" },
-];
+  const team = await getTeam(locale as Locale);
 
-// How we operate: the principles enterprise buyers actually evaluate.
-const principles = [
-  {
-    Icon: CheckIcon,
-    title: "Depth in every answer",
-    body: "Any hard architecture, governance, or cost question gets a straight answer from a SnowPro-certified specialist who has shipped it on Snowflake.",
-  },
-  {
-    Icon: ShieldIcon,
-    title: "Governed by design",
-    body: "Horizon Catalog lineage and Horizon Context give every team and AI agent one trusted business context, from the first table.",
-  },
-  {
-    Icon: PipelineIcon,
-    title: "One accountable team, start to finish",
-    body: "Strategy through production under a single team, so context never breaks across vendors or phases.",
-  },
-  {
-    Icon: DocIcon,
-    title: "We leave teams stronger",
-    body: "Documentation, enablement, and a transition plan in every engagement, so the team runs and extends the work confidently.",
-  },
-  {
-    Icon: CompassIcon,
-    title: "The Americas' home team",
-    body: "Local expertise and time-zone alignment across Canada, the USA, Mexico, LATAM, and the Caribbean.",
-  },
-];
+  const heroChips = t.raw("heroChips") as string[];
 
-// The firm's arc in four plates. No dates we can't verify; each line is
-// grounded in copy that already lives elsewhere on the site.
-const milestones = [
-  {
-    label: "Origin",
-    refCode: "T1",
-    title: "Founded in Monterrey",
-    body: "A specialist Snowflake practice from day one: one platform, studied deeply, on every engagement.",
-  },
-  {
-    label: "Footprint",
-    refCode: "T2",
-    title: "Two hubs",
-    body: "Austin and Monterrey, one team on the same working hours, delivering across the Americas.",
-  },
-  {
-    label: "Partner tier",
-    refCode: "T3",
-    title: "Snowflake Premier Partner",
-    body: "Certified delivery and a verified track record, measured on outcomes rather than breadth of logos.",
-  },
-  {
-    label: "Momentum",
-    refCode: "T4",
-    title: "CoCo Preferred Partner",
-    body: "Recognized at Snowflake Summit 2026 alongside the global systems integrators for momentum on Snowflake CoCo.",
-  },
-];
+  // What every engagement gets: the operating model, end to end.
+  const operating = t.raw("operating") as string[];
 
-// Governance & trust posture (enterprise procurement checklist).
-const governance = [
-  "Least-privilege access and role-based controls (RBAC)",
-  "Horizon Catalog lineage + Horizon Context across every asset",
-  "PII classification and masking, data residency by region",
-  "Built on Snowflake's audited platform: SOC 2 Type II, ISO 27001, HIPAA",
-];
+  // The firm's arc in four plates. No dates we can't verify; each line is
+  // grounded in copy that already lives elsewhere on the site.
+  const milestones = t.raw("milestones") as { label: string; title: string; body: string }[];
 
-export default async function AboutPage() {
-  const team = await getTeam();
+  // Verifiable credential snapshot (no vanity metrics).
+  const trackRecord = t.raw("trackRecord") as { value: string; label: string }[];
+
+  // How we operate: the principles enterprise buyers actually evaluate.
+  const principles = t.raw("principles") as { title: string; body: string }[];
+
+  // Governance & trust posture (enterprise procurement checklist).
+  const governance = t.raw("governance") as string[];
 
   return (
     <>
-      <JsonLd data={breadcrumbLd([{ name: "Home", url: "/" }, { name: "About" }])} />
+      <JsonLd data={breadcrumbLd([{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }])} />
       <PageHero
-        eyebrow={`About ${theme.brand.name}`}
-        title={
-          <>
-            We build data &amp; AI practices with enterprises across the{" "}
+        eyebrow={t("hero.eyebrow")}
+        title={t.rich("hero.title", {
+          hl: (c) => (
             <ScrollHighlight color="cyan">
-              <span className="text-gradient">Americas</span>
+              <span className="text-gradient">{c}</span>
             </ScrollHighlight>
-            .
-          </>
-        }
-        description="Two lasting capabilities: a data practice that feeds real decisions and an AI practice that ships use cases into production, built on Snowflake and run by in-house teams, guided and accelerated by ours. As a Snowflake Premier and CoCo Preferred Partner, we deliver across Canada, the USA, Mexico, LATAM, and the Caribbean."
+          ),
+        })}
+        description={t("hero.description")}
         footer={<TrustLogos />}
       >
         <div className="mt-7 flex flex-wrap justify-center gap-2.5">
-          {HERO_CHIPS.map((c) => (
+          {heroChips.map((c) => (
             <span key={c} className="pill-chip">
               {c}
             </span>
@@ -155,16 +91,16 @@ export default async function AboutPage() {
         <FeatureSplit
           as="h2"
           ratio="wide-text"
-          eyebrow="Who we are"
-          title="We build it alongside the team, then hand over the keys"
-          body="Viewnear helps enterprises stand up two capabilities they keep: a data practice and an AI practice, built on Snowflake and run by in-house teams. We work alongside those teams from first workshop to production, across strategy, architecture, engineering, analytics, and governed AI, and we integrate what we build both ways: operational data flows in, and decisions, answers, and AI agents flow back into the systems where work happens. We grew from a specialist practice into a Snowflake Premier Partner by going deep on one platform, and that focus shapes how we hire, train, and deliver."
+          eyebrow={t("whoWeAre.eyebrow")}
+          title={t("whoWeAre.title")}
+          body={t("whoWeAre.body")}
           bullets={operating}
-          cta={{ label: "How we deliver", href: "/services" }}
+          cta={{ label: t("whoWeAre.cta"), href: "/services" }}
           visual={
             <div className="relative overflow-hidden rounded-3xl border border-border shadow-soft-lg">
               <Image
                 src="/assets/images/life/about-collage.jpg"
-                alt="A collage of the Viewnear team across Snowflake events: the data + ai booth, Data for Breakfast, Snowflake Summit, and team meals"
+                alt={t("whoWeAre.imageAlt")}
                 width={1500}
                 height={1500}
                 className="aspect-square w-full object-cover"
@@ -177,12 +113,12 @@ export default async function AboutPage() {
 
         {/* The arc so far: a compact firm timeline under the origin story. */}
         <div className="mt-16 flex items-center gap-4">
-          <p className="eyebrow">The arc so far</p>
+          <p className="eyebrow">{t("arcLabel")}</p>
           <span className="h-px flex-1 bg-border" />
         </div>
         <RevealGroup className="mt-6 grid gap-5 sm:grid-cols-2 md:auto-rows-fr md:grid-cols-4" variant="pop">
-          {milestones.map((m) => (
-            <PlateCard key={m.refCode} label={m.label} refCode={m.refCode} title={m.title}>
+          {milestones.map((m, i) => (
+            <PlateCard key={`T${i + 1}`} label={m.label} refCode={`T${i + 1}`} title={m.title}>
               {m.body}
             </PlateCard>
           ))}
@@ -192,9 +128,9 @@ export default async function AboutPage() {
       {/* Track record: verifiable credentials */}
       <Section className="section-tint">
         <SectionHeading
-          eyebrow="Track record"
-          title="Credentials anyone can verify"
-          intro="No vanity numbers: the partner tier, certification, and regional reach anyone can check."
+          eyebrow={t("trackRecordHeading.eyebrow")}
+          title={t("trackRecordHeading.title")}
+          intro={t("trackRecordHeading.intro")}
           center
         />
         <div className="mt-12">
@@ -205,20 +141,23 @@ export default async function AboutPage() {
       {/* How we operate: enterprise principles */}
       <Section>
         <SectionHeading
-          eyebrow="How we operate"
-          title="Built the way enterprises buy"
-          intro="The operating principles behind every engagement."
+          eyebrow={t("operateHeading.eyebrow")}
+          title={t("operateHeading.title")}
+          intro={t("operateHeading.intro")}
         />
         <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3" variant="pop">
-          {principles.map(({ Icon, title, body }) => (
-            <div key={title} className="card card-pop flex h-full flex-col">
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primaryDeep">
-                <Icon className="h-5 w-5" />
-              </span>
-              <h3 className="mt-4 font-display text-lg font-bold text-foreground">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{body}</p>
-            </div>
-          ))}
+          {principles.map(({ title, body }, i) => {
+            const Icon = principleIcons[i];
+            return (
+              <div key={title} className="card card-pop flex h-full flex-col">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primaryDeep">
+                  <Icon className="h-5 w-5" />
+                </span>
+                <h3 className="mt-4 font-display text-lg font-bold text-foreground">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{body}</p>
+              </div>
+            );
+          })}
         </RevealGroup>
       </Section>
 
@@ -227,20 +166,18 @@ export default async function AboutPage() {
         <div className="panel-indigo relative overflow-hidden rounded-3xl p-8 shadow-xl md:p-14">
           <div className="relative grid gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
             <div>
-              <p className="eyebrow eyebrow--invert mb-4">Governance &amp; trust</p>
+              <p className="eyebrow eyebrow--invert mb-4">{t("governanceBlock.eyebrow")}</p>
               <h2 className="max-w-xl font-display text-3xl font-bold tracking-tight text-white md:text-[2.6rem] md:leading-[1.08]">
-                Snowflake&rsquo;s audited controls, plus our delivery discipline.
+                {t("governanceBlock.title")}
               </h2>
               <p className="mt-4 max-w-lg text-lg leading-relaxed text-white/75">
-                Everything we build is governed and auditable from day one, and
-                inherits the controls of Snowflake&rsquo;s independently audited
-                platform.
+                {t("governanceBlock.body")}
               </p>
               <Link
                 href="/security"
                 className="group mt-6 inline-flex items-center gap-1 text-sm font-semibold text-white"
               >
-                <span className="link-underline">How we secure client data</span>
+                <span className="link-underline">{t("governanceBlock.link")}</span>
                 <span className="transition-transform group-hover:translate-x-0.5">→</span>
               </Link>
             </div>
@@ -263,22 +200,21 @@ export default async function AboutPage() {
       {/* Our team, versed at every level, plus the leadership behind it */}
       <Section id="team" className="section-warm">
         <SectionHeading
-          eyebrow="Our team"
-          title="Versed in Snowflake and enterprise, at every level"
-          intro="We're a group of professionals, strategy through engineering, who all go deep on the same thing: Snowflake and enterprise solutions. Not a few senior names over a rotating bench, but combined depth felt at every level of the engagement."
+          eyebrow={t("team.eyebrow")}
+          title={t("team.title")}
+          intro={t("team.intro")}
         />
         {team.length > 0 && (
           <div className="mt-16">
             <div className="flex items-center gap-4">
-              <p className="eyebrow">Leadership</p>
+              <p className="eyebrow">{t("team.leadershipLabel")}</p>
               <span className="h-px flex-1 bg-border" />
             </div>
             <h3 className="mt-3 font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
-              The leadership team
+              {t("team.leadershipTitle")}
             </h3>
             <p className="mt-2 max-w-2xl text-muted">
-              The people leading the practice, with combined experience across
-              data, analytics, and enterprise AI.
+              {t("team.leadershipBody")}
             </p>
             <RevealGroup className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 md:auto-rows-fr" variant="fade-up">
               {team.map((member) => (
@@ -312,18 +248,17 @@ export default async function AboutPage() {
             <div className="pointer-events-none absolute -bottom-20 -left-16 h-56 w-56 rounded-full bg-primary/15 blur-3xl" />
             <div className="relative">
               <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-                Bring us the hardest data problem.
+                {t("close.title")}
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-muted">
-                Wherever the work stands today, migrating, scaling, or grounding
-                AI, a Snowflake architect will map the fastest path to value.
+                {t("close.body")}
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Link href="/contact" className="btn-primary btn-lg hover-sheen">
-                  Talk to an architect
+                  {t("close.primaryCta")}
                 </Link>
                 <Link href="/partnership" className="btn-ghost btn-lg">
-                  Explore our partnership
+                  {t("close.secondaryCta")}
                 </Link>
               </div>
             </div>

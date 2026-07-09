@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMeta, breadcrumbLd } from "@/lib/seo";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { LedgerCard } from "@/components/marketing/Cards";
 import { FeaturedCaseStudies } from "@/components/marketing/FeaturedCaseStudies";
@@ -8,82 +10,55 @@ import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { JsonLd } from "@/components/JsonLd";
 import { theme } from "@/config/theme";
 
-export const metadata = pageMeta({
-  title: "Pricing & engagement",
-  description:
-    "How Viewnear engagements are scoped and priced (fixed cost, time & materials, or team augmentation), plus what drives cost. Scope and price agreed up front.",
-  path: "/pricing",
-});
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "pricing.meta" });
+  return pageMeta({ title: t("title"), description: t("description"), path: "/pricing", locale });
+}
 
-const engagementModels = [
-  {
-    title: "Fixed cost",
-    body: "A defined scope, timeline, and price agreed up front. Best when the outcome is clear and budget certainty matters from day one.",
-    bestFor: "Defined foundation builds & migrations",
-  },
-  {
-    title: "Time & materials",
-    body: "Flexible, iterative delivery billed by effort against a shared backlog. Ideal for evolving requirements and discovery-led work.",
-    bestFor: "Discovery, POCs & evolving scope",
-  },
-  {
-    title: "Team augmentation",
-    body: "Embed our certified practitioners alongside the in-house team. We accelerate delivery while leveling up their capability.",
-    bestFor: "Scaling an existing team fast",
-  },
-];
+export default async function PricingPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("pricing");
 
-// Service + engagement-model structured data (no fixed prices: scoped per engagement).
-const pricingLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Data & AI services on Snowflake",
-  serviceType: "Data and AI professional services",
-  provider: { "@type": "Organization", name: theme.brand.name, url: theme.brand.url },
-  areaServed: "Americas",
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Engagement models",
-    itemListElement: engagementModels.map((m) => ({
-      "@type": "Offer",
-      name: m.title,
-      description: m.body,
-    })),
-  },
-};
+  const engagementModels = t.raw("engagementModels") as { title: string; body: string; bestFor: string }[];
+  const costFactors = t.raw("costFactors") as string[];
+  const impactByPhase = t.raw("impactByPhase") as { phase: string; title: string; body: string }[];
 
-const costFactors = [
-  "Data volume and the number/complexity of source systems",
-  "How many analytics and AI use cases are in scope",
-  "Team size and target timeline",
-  "Governance, compliance, and security requirements",
-];
+  // Service + engagement-model structured data (no fixed prices: scoped per engagement).
+  const pricingLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: t("ld.name"),
+    serviceType: t("ld.serviceType"),
+    provider: { "@type": "Organization", name: theme.brand.name, url: theme.brand.url },
+    areaServed: t("ld.areaServed"),
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: t("ld.offerCatalogName"),
+      itemListElement: engagementModels.map((m) => ({
+        "@type": "Offer",
+        name: m.title,
+        description: m.body,
+      })),
+    },
+  };
 
-const impactByPhase = [
-  { phase: "First 8–16 weeks", title: "Foundations & first value", body: "The data practice stands up: scope fixed in a paid discovery, governance designed in from the first table, priority data flowing, and the first governed data products in production." },
-  { phase: "6–12 months", title: "Scale & self-service", body: "The AI practice ships: use cases spread across teams and each new one reaches first insight 60% faster. Self-service takes hold; manual reporting retires." },
-  { phase: "18+ months", title: "Compounding advantage", body: "Both practices are in-house: new use cases ship in weeks at 40% lower run cost, and the handover is real. The team runs and extends the work without us." },
-];
-
-export default function PricingPage() {
   return (
     <>
-      <JsonLd data={[pricingLd, breadcrumbLd([{ name: "Home", url: "/" }, { name: "Pricing" }])]} />
+      <JsonLd data={[pricingLd, breadcrumbLd([{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }])]} />
       <PageHero
-        eyebrow="Pricing & engagement"
-        title={
-          <>
-            Clear scope. <span className="text-gradient">No surprises.</span>
-          </>
-        }
-        description="Engagements are scoped to the data and goals at hand, and priced up front, whichever model fits. Here's how we structure the work and what shapes the investment."
+        eyebrow={t("hero.eyebrow")}
+        title={t.rich("hero.title", { hl: (c) => <span className="text-gradient">{c}</span> })}
+        description={t("hero.description")}
       />
 
       <Section>
         <SectionHeading
-          eyebrow="How we work"
-          title="Engagement models"
-          intro="Flexible ways to partner, matched to the shape of the problem."
+          eyebrow={t("modelsHeading.eyebrow")}
+          title={t("modelsHeading.title")}
+          intro={t("modelsHeading.intro")}
         />
         <div className="mt-12 grid gap-5 md:auto-rows-fr md:grid-cols-3">
           {engagementModels.map((m, i) => (
@@ -91,7 +66,7 @@ export default function PricingPage() {
               key={m.title}
               eyebrow={m.title}
               index={`0${i + 1}`}
-              foot={["Best for", m.bestFor]}
+              foot={[t("bestForLabel"), m.bestFor]}
             >
               {m.body}
             </LedgerCard>
@@ -100,12 +75,9 @@ export default function PricingPage() {
 
         {/* Worked example: the shape of a first engagement, no invented prices. */}
         <div className="panel-warm mt-10 rounded-3xl p-8">
-          <p className="eyebrow mb-2">A worked example</p>
+          <p className="eyebrow mb-2">{t("workedExample.eyebrow")}</p>
           <p className="max-w-3xl text-muted">
-            The shape of a typical first engagement: a paid discovery fixes scope and price, sprint
-            demos show working software from the first weeks, and a governed foundation reaches
-            production in 8–16 weeks, with a named team the sponsor meets before signing and
-            in-house people in the work from sprint one.
+            {t("workedExample.body")}
           </p>
         </div>
       </Section>
@@ -114,12 +86,12 @@ export default function PricingPage() {
         <SectionDecor variant="grid" />
         <div className="relative grid items-start gap-10 lg:grid-cols-2">
           <div>
-            <p className="eyebrow mb-3">What drives cost</p>
+            <p className="eyebrow mb-3">{t("cost.eyebrow")}</p>
             <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-[2.2rem]">
-              Priced to the work, not a sticker
+              {t("cost.title")}
             </h2>
             <p className="mt-4 text-muted">
-              We don&apos;t publish one-size pricing because no two engagements are the same. Cost is shaped by:
+              {t("cost.intro")}
             </p>
             <ul className="mt-6 space-y-3">
               {costFactors.map((c) => (
@@ -132,12 +104,12 @@ export default function PricingPage() {
               ))}
             </ul>
             <Link href="/contact" className="btn-primary mt-8 group">
-              Get a scoped estimate
+              {t("cost.cta")}
               <span className="transition-transform group-hover:translate-x-0.5">→</span>
             </Link>
           </div>
           <div className="panel-warm rounded-2xl p-8">
-            <p className="eyebrow mb-2">Practice adoption, by horizon</p>
+            <p className="eyebrow mb-2">{t("impact.eyebrow")}</p>
             <ul className="mt-4 space-y-6">
               {impactByPhase.map((p) => (
                 <li key={p.phase}>
@@ -152,11 +124,11 @@ export default function PricingPage() {
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
 
-      <FeaturedCaseStudies title="What an engagement looks like" />
+      <FeaturedCaseStudies title={t("featuredTitle")} />
 
       <CtaBand
-        title="Let's scope it together."
-        subtitle="Tell us the goals and constraints, and we'll come back with a model, a plan, and a price ready for the board."
+        title={t("cta.title")}
+        subtitle={t("cta.subtitle")}
       />
     </>
   );

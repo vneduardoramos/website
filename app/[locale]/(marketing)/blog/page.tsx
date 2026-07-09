@@ -1,5 +1,7 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getBlogPosts } from "@/lib/queries";
+import type { Locale } from "@/lib/i18n-content";
 import { pageMeta } from "@/lib/seo";
 import { formatDate } from "@/lib/utils";
 import { Section } from "@/components/marketing/ui";
@@ -9,15 +11,19 @@ import { coverFor } from "@/lib/covers";
 import { CtaBand } from "@/components/marketing/ui";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 
-export const metadata = pageMeta({
-  title: "Blog: field notes on data & AI",
-  description:
-    "Field notes, ideas, and practical guides on data engineering, AI, and building on Snowflake from the Viewnear team, straight from real engagements.",
-  path: "/blog",
-});
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "blog.meta" });
+  return pageMeta({ title: t("title"), description: t("description"), path: "/blog", locale });
+}
 
-export default async function BlogPage() {
-  const posts = await getBlogPosts({});
+export default async function BlogPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("blog");
+
+  const posts = await getBlogPosts({}, locale as Locale);
   const [featured, ...rest] = posts;
 
   // Collect unique tags across all posts for the topic chip row.
@@ -36,9 +42,9 @@ export default async function BlogPage() {
         <SectionDecor variant="dots" />
         <div className="relative">
           <PageHero
-            eyebrow="Blog"
-            title={<>Straight from the <span className="text-gradient">lab</span>.</>}
-            description="Notes, ideas, and field reports on data & AI, straight from the engagements we run on Snowflake."
+            eyebrow={t("hero.eyebrow")}
+            title={t.rich("hero.title", { hl: (c) => <span className="text-gradient">{c}</span> })}
+            description={t("hero.description")}
           >
             {uniqueTags.length ? (
               <div className="flex flex-wrap justify-center gap-2">
@@ -59,7 +65,7 @@ export default async function BlogPage() {
             href={`/blog/${featured.slug}`}
             image={featured.coverImageUrl ?? coverFor(featured.slug)}
             imageAlt={featured.title}
-            kicker={featured.tags?.[0]?.name ?? "Featured"}
+            kicker={featured.tags?.[0]?.name ?? t("featuredKicker")}
             title={featured.title}
             excerpt={featured.excerpt}
             author={
@@ -112,7 +118,7 @@ export default async function BlogPage() {
               ))}
             </div>
           ) : posts.length === 0 ? (
-            <p className="text-center text-muted">No posts yet. Check back soon.</p>
+            <p className="text-center text-muted">{t("emptyState")}</p>
           ) : null}
         </div>
       </section>

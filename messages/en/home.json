@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Viewnear: Data & AI practice, up and running.",
+    "description": "Viewnear helps enterprises stand up two capabilities they keep: a data practice that feeds real decisions with governed, trusted data, and an AI practice that ships use cases into production. Built on Snowflake, run by in-house teams, across the Americas."
+  },
+  "foundation": {
+    "eyebrow": "The foundation",
+    "title": "Data the whole business can trust",
+    "body": "We stand up the governed Snowflake foundation everything else depends on, so every team works from one current, reliable source instead of five conflicting spreadsheets.",
+    "bullets": [
+      "One governed source of truth, fed by the ERP, CRM, and SaaS systems already in place",
+      "Pipelines that keep it fresh, tested, and trustworthy",
+      "Horizon Catalog governance and lineage, plus Horizon Context: one trusted business context every team and AI agent shares"
+    ],
+    "cta": "Explore services"
+  },
+  "ai": {
+    "eyebrow": "Applied AI",
+    "title": "AI teams actually use",
+    "body": "With the data governed, AI stops being a science project. Cortex runs securely next to that data and grounds every answer in Horizon Context, so it reflects the real business, not a generic model's guesswork.",
+    "bullets": [
+      "Cortex LLMs and ML running next to governed data",
+      "Snowflake CoWork and Cortex Agents that act on decisions, not just chart them",
+      "Answers and actions that flow back into the tools teams already work in"
+    ],
+    "cta": "Explore services"
+  },
+  "outcomes": {
+    "heading": "The hour was never the point. <hl>The result always was.</hl>",
+    "lede": "For decades a services invoice was headcount times a rate, because the value lived in the manual work. AI has dissolved that link: the mechanical execution is increasingly automated, and the expertise that matters has moved upstream, into deciding what to build, orchestrating the agents that build it, and standing behind what they produce.",
+    "beats": [
+      {
+        "title": "Automation broke the billable hour",
+        "body": "Hourly rates made sense when value came from people doing the work by hand. AI now absorbs most of that work, so paying by the hour quietly rewards slowness and taxes the very efficiency that was the whole point. We attach our fee to the result, which means finishing sooner is a win on both sides of the table."
+      },
+      {
+        "title": "The expertise moved upstream",
+        "body": "The scarce skill is no longer typing the code or moving the data. It is framing the right problem, shaping the solution, directing the agents that execute, and judging whether the output can be trusted. That judgment runs through every engagement, from the architects who scope it to the engineers who ship it."
+      },
+      {
+        "title": "We design the outcome, then the delivery",
+        "body": "We begin from the result the business needs and build the delivery backward: experienced people on the decisions, AI agents on the execution, the balance retuned as the work shifts. It isn't a rented team or a block of hours. It's the outcome itself, and answering for it stays our job."
+      }
+    ],
+    "closing": "Not a cheaper way to buy services. A more honest one: the target is set up front, senior judgment runs the whole way through, and <hlCyan>the result is ours to answer for.</hlCyan>",
+    "leadershipLabel": "The people who answer for it.",
+    "featured": {
+      "imageAlt": "From Hours to Outcomes: the economics of AI-era data services",
+      "eyebrow": "Read the thesis",
+      "title": "From Hours to Outcomes: How AI Changed the Economics of Services",
+      "body": "The full argument: what AI did to the billable hour, where the expertise actually went, and how outcome-based delivery changes what a services invoice actually buys.",
+      "cta": "Read the article"
+    }
+  },
+  "derisk": {
+    "heading": {
+      "eyebrow": "Low-risk by design",
+      "title": "A big bet that doesn't feel like one",
+      "intro": "The way we engage is built to de-risk the decision itself, so committing to data & AI never means committing blind."
+    },
+    "cards": [
+      {
+        "label": "Proof",
+        "title": "Prove it first",
+        "body": "A focused proof of concept before the full build. The decision to scale rests on evidence, not a slide deck."
+      },
+      {
+        "label": "Control",
+        "title": "The sponsor stays in control",
+        "body": "Regular steering, a shared backlog, and clear decision gates keep scope, budget, and priorities in-house."
+      },
+      {
+        "label": "Pace",
+        "title": "Value from sprint one",
+        "body": "Use-case-driven sprints reach production in 8–16 weeks, with working software demoed from the very first sprint."
+      },
+      {
+        "label": "Handover",
+        "title": "Built to hand over",
+        "body": "Documentation, enablement, and a transition plan in every engagement, so in-house teams run and extend the work confidently."
+      }
+    ],
+    "panel": {
+      "headline": "<weeks>8–16 weeks</weeks> to production, vs. <months>6–12 months</months> building the team in-house.",
+      "body": "A SnowPro-certified team with enterprise depth at every level, working in use-case sprints scoped by paid discovery: no hiring runway, no ramp, no key-person risk.",
+      "ctaPrimary": "Talk to an architect",
+      "ctaGhost": "See the comparison"
+    }
+  },
+  "proof": {
+    "eyebrow": "Proof, not promises",
+    "title": "A Snowflake partner enterprises trust.",
+    "body": "Recognized in Snowflake’s CoCo Preferred Partner program at Summit 2026, alongside Accenture, Deloitte, IBM, and Capgemini. In practice, that means Snowflake’s product teams are a call away when a build hits a hard question.",
+    "badgeAlts": [
+      "Snowflake Premier Partner badge",
+      "Snowflake CoCo Preferred Partner badge",
+      "SnowPro Core certification badge"
+    ],
+    "security": "Everything we build inherits Snowflake’s independently audited controls (SOC 2 Type II, ISO 27001, HIPAA), extended by our governed delivery practices. <link>How we secure client data →</link>",
+    "figureAlt": "Snowflake's CoCo Global Partner Momentum wall listing Viewnear among Snowflake partners",
+    "figcaption": "Snowflake’s CoCo Partner Momentum wall · Summit 2026"
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "title": "Answers to what teams ask us first",
+    "all": "All questions answered"
+  },
+  "cta": {
+    "title": "The quarter data starts paying off for the business.",
+    "subtitle": "Every quarter on ungoverned data is decisions made half-blind. Tell us where the organization stands today, and we'll map the fastest path to data & AI its teams can trust."
+  }
+}

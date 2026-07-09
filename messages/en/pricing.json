@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "title": "Pricing & engagement",
+    "description": "How Viewnear engagements are scoped and priced (fixed cost, time & materials, or team augmentation), plus what drives cost. Scope and price agreed up front."
+  },
+  "ld": {
+    "name": "Data & AI services on Snowflake",
+    "serviceType": "Data and AI professional services",
+    "areaServed": "Americas",
+    "offerCatalogName": "Engagement models"
+  },
+  "hero": {
+    "eyebrow": "Pricing & engagement",
+    "title": "Clear scope. <hl>No surprises.</hl>",
+    "description": "Engagements are scoped to the data and goals at hand, and priced up front, whichever model fits. Here's how we structure the work and what shapes the investment."
+  },
+  "modelsHeading": {
+    "eyebrow": "How we work",
+    "title": "Engagement models",
+    "intro": "Flexible ways to partner, matched to the shape of the problem."
+  },
+  "bestForLabel": "Best for",
+  "engagementModels": [
+    {
+      "title": "Fixed cost",
+      "body": "A defined scope, timeline, and price agreed up front. Best when the outcome is clear and budget certainty matters from day one.",
+      "bestFor": "Defined foundation builds & migrations"
+    },
+    {
+      "title": "Time & materials",
+      "body": "Flexible, iterative delivery billed by effort against a shared backlog. Ideal for evolving requirements and discovery-led work.",
+      "bestFor": "Discovery, POCs & evolving scope"
+    },
+    {
+      "title": "Team augmentation",
+      "body": "Embed our certified practitioners alongside the in-house team. We accelerate delivery while leveling up their capability.",
+      "bestFor": "Scaling an existing team fast"
+    }
+  ],
+  "workedExample": {
+    "eyebrow": "A worked example",
+    "body": "The shape of a typical first engagement: a paid discovery fixes scope and price, sprint demos show working software from the first weeks, and a governed foundation reaches production in 8–16 weeks, with a named team the sponsor meets before signing and in-house people in the work from sprint one."
+  },
+  "cost": {
+    "eyebrow": "What drives cost",
+    "title": "Priced to the work, not a sticker",
+    "intro": "We don't publish one-size pricing because no two engagements are the same. Cost is shaped by:",
+    "cta": "Get a scoped estimate"
+  },
+  "costFactors": [
+    "Data volume and the number/complexity of source systems",
+    "How many analytics and AI use cases are in scope",
+    "Team size and target timeline",
+    "Governance, compliance, and security requirements"
+  ],
+  "impact": {
+    "eyebrow": "Practice adoption, by horizon"
+  },
+  "impactByPhase": [
+    {
+      "phase": "First 8–16 weeks",
+      "title": "Foundations & first value",
+      "body": "The data practice stands up: scope fixed in a paid discovery, governance designed in from the first table, priority data flowing, and the first governed data products in production."
+    },
+    {
+      "phase": "6–12 months",
+      "title": "Scale & self-service",
+      "body": "The AI practice ships: use cases spread across teams and each new one reaches first insight 60% faster. Self-service takes hold; manual reporting retires."
+    },
+    {
+      "phase": "18+ months",
+      "title": "Compounding advantage",
+      "body": "Both practices are in-house: new use cases ship in weeks at 40% lower run cost, and the handover is real. The team runs and extends the work without us."
+    }
+  ],
+  "featuredTitle": "What an engagement looks like",
+  "cta": {
+    "title": "Let's scope it together.",
+    "subtitle": "Tell us the goals and constraints, and we'll come back with a model, a plan, and a price ready for the board."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "current": "Pricing"
+  }
+}

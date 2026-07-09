@@ -1,7 +1,9 @@
 import { Fragment } from "react";
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMeta } from "@/lib/seo";
 import { Img as Image } from "@/components/marketing/Img";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Section, SectionHeading, Pill } from "@/components/marketing/ui";
 import { LedgerCard } from "@/components/marketing/Cards";
 import { InlineCta } from "@/components/marketing/Blocks";
@@ -14,15 +16,16 @@ import { BenefitsGrid } from "@/components/marketing/BenefitsGrid";
 import { asStringArray } from "@/lib/utils";
 import { theme } from "@/config/theme";
 import { JsonLd } from "@/components/JsonLd";
+import type { Locale } from "@/lib/i18n-content";
 
 export const revalidate = 60;
 
-export const metadata = pageMeta({
-  title: "Life at Viewnear",
-  description:
-    "Outcome-led, AI-native, team-powered: how we work at Viewnear, what we stand for, and the benefits behind it, from healthcare to emotional wellness.",
-  path: "/life-at-viewnear",
-});
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "lifeAtViewnear.meta" });
+  return pageMeta({ title: t("title"), description: t("description"), path: "/life-at-viewnear", locale });
+}
 
 /* ---- Inline icon set (Lucide-style strokes) ---- */
 const PATHS: Record<string, React.ReactNode> = {
@@ -137,33 +140,21 @@ function Ico({ name, className = "h-6 w-6" }: { name: keyof typeof PATHS; classN
   );
 }
 
-/* ---- Content ---- */
-const offices = [
+/* ---- Content (structural: image paths + layout; copy lives in messages) ---- */
+// building left, city (skyline) right for Austin; flipped for Monterrey so the
+// full Cerro de la Silla saddle shows on the right.
+const officeAssets = [
   {
-    city: "Austin",
-    region: "Texas, USA",
     flag: "🇺🇸",
-    place: "Quarry Oaks II · Stonelake Office Park",
     building: "/assets/images/life/austin-building.jpg",
     image: "/assets/images/life/austin.jpg",
-    alt: "Viewnear's Austin home: a glass office tower in Stonelake Office Park, set against the downtown Austin skyline",
-    street: "10900 Stonelake Blvd, Bldg 2, Suite 100",
-    cityZip: "Austin, TX 78759",
-    // building left, city (skyline) right
     flip: false,
     cityPosition: "center",
   },
   {
-    city: "Monterrey",
-    region: "Nuevo León, México",
     flag: "🇲🇽",
-    place: "Pueblo Serena",
     building: "/assets/images/life/monterrey-building.jpg",
     image: "/assets/images/life/monterrey.jpg",
-    alt: "Viewnear's Monterrey home: a modern office building at Pueblo Serena, at the foot of the Sierra Madre",
-    street: "Carr. Nacional 500, Valle Alto",
-    cityZip: "Monterrey, MX 64983",
-    // flipped: city (Cerro de la Silla) left, building right; framed right so the full saddle shows
     flip: true,
     cityPosition: "right",
   },
@@ -209,141 +200,86 @@ const OFFICES_LD = [
   },
 ];
 
-// Real moments from the team: Snowflake events, the booth, and the dinners in between.
-const moments = [
-  {
-    src: "/assets/images/life/team-group.jpg",
-    w: 1700,
-    h: 1275,
-    caption: "Customer conversations at the booth",
-    alt: "The Viewnear team behind their data + ai booth at a Snowflake event",
-  },
-  {
-    src: "/assets/images/life/team-booth.jpg",
-    w: 1700,
-    h: 1275,
-    caption: "A full house at the live demo",
-    alt: "A crowd gathered around the Viewnear booth watching a live product demo",
-  },
-  {
-    src: "/assets/images/life/team-breakfast.jpg",
-    w: 1700,
-    h: 1275,
-    caption: "Team breakfast on the road",
-    alt: "Viewnear team members sharing breakfast at a Snowflake event",
-  },
-  {
-    src: "/assets/images/life/team-stage.jpg",
-    w: 1275,
-    h: 1700,
-    caption: "Snowflake Data for Breakfast",
-    alt: "A Viewnear team member at the Snowflake Data for Breakfast welcome signage",
-  },
-  {
-    src: "/assets/images/life/team-dinner.jpg",
-    w: 1700,
-    h: 1275,
-    caption: "Dinner with the team",
-    alt: "The Viewnear team and partners gathered for a team dinner",
-  },
-  {
-    src: "/assets/images/life/partner-momentum.jpg",
-    w: 1700,
-    h: 1275,
-    caption: "Among Snowflake's CoCo partners",
-    alt: "Snowflake CoCo Global Partner Momentum wall listing Viewnear among Snowflake partners",
-  },
+// Real moments from the team: Snowflake events, the booth, and the dinners in
+// between. Image assets here; captions + alt text live in messages.
+const momentAssets = [
+  { src: "/assets/images/life/team-group.jpg", w: 1700, h: 1275 },
+  { src: "/assets/images/life/team-booth.jpg", w: 1700, h: 1275 },
+  { src: "/assets/images/life/team-breakfast.jpg", w: 1700, h: 1275 },
+  { src: "/assets/images/life/team-stage.jpg", w: 1275, h: 1700 },
+  { src: "/assets/images/life/team-dinner.jpg", w: 1700, h: 1275 },
+  { src: "/assets/images/life/partner-momentum.jpg", w: 1700, h: 1275 },
 ];
 
-const model = [
-  {
-    icon: "target" as const,
-    title: "Outcomes first",
-    body: "We organize our work around measurable business outcomes, not activity. Success is defined by client impact, quality, and trust, not hours logged.",
-  },
-  {
-    icon: "sparkles" as const,
-    title: "AI-native delivery",
-    body: "AI is embedded in how we work: our operating model, our tooling, our delivery rhythm. AI-native execution plus human judgment means one team ships more work in parallel, with the same people owning it throughout.",
-  },
-  {
-    icon: "users" as const,
-    title: "One team, flexible capacity",
-    body: "We collaborate in person often, because shared time strengthens alignment, trust, and execution. We believe in remote work, but not remote-first. Our model is remote-augmented: anchored by in-person collaboration, extended by flexibility.",
-  },
-];
+// Icon + tint assignments per content block; the copy is read from messages by index.
+const modelIcons = ["target", "sparkles", "users"] as const;
 
-const meaning = [
-  {
-    icon: "trendingUp" as const,
-    title: "Growth",
-    body: "Meaningful work that expands learning, business context, and technical range.",
-    tint: "bg-primary/15 text-primaryDeep",
-  },
-  {
-    icon: "target" as const,
-    title: "Focus",
-    body: "Less repetitive work, more time on judgment, delivery, and leadership.",
-    tint: "bg-primary/15 text-primaryDeep",
-  },
-  {
-    icon: "scale" as const,
-    title: "Balance",
-    body: "Great work over the long run requires recovery. Time off is flexible (no fixed cap) provided outcomes stay strong and teams stay covered.",
-    tint: "bg-primary/15 text-primaryDeep",
-  },
-  {
-    icon: "award" as const,
-    title: "Rewards",
-    body: "Stronger economics fund better compensation, bonuses, and benefits.",
-    tint: "bg-amber/15 text-amber",
-  },
-  {
-    icon: "heart" as const,
-    title: "Pride",
-    body: "Hard problems, real ownership, and work worth putting a name on.",
-    tint: "bg-primary/15 text-primaryDeep",
-  },
-];
+const meaningStyles = [
+  { icon: "trendingUp", tint: "bg-primary/15 text-primaryDeep" },
+  { icon: "target", tint: "bg-primary/15 text-primaryDeep" },
+  { icon: "scale", tint: "bg-primary/15 text-primaryDeep" },
+  { icon: "award", tint: "bg-amber/15 text-amber" },
+  { icon: "heart", tint: "bg-primary/15 text-primaryDeep" },
+] as const;
 
-const standApart = [
-  {
-    icon: "users" as const,
-    text: "Collaboration is real: teams work together in person and remotely, with shared accountability for outcomes.",
-  },
-];
+const standApartIcons = ["users"] as const;
 
-const flywheel = [
-  { icon: "target" as const, label: "Outcomes" },
-  { icon: "sparkles" as const, label: "Higher-value work" },
-  { icon: "refresh" as const, label: "Reinvestment" },
-  { icon: "users" as const, label: "Stronger team" },
-  { icon: "trendingUp" as const, label: "Better outcomes" },
-];
+const flywheelIcons = ["target", "sparkles", "refresh", "users", "trendingUp"] as const;
 
-export default async function LifeAtViewnearPage() {
-  const openings = await getJobOpenings();
+export default async function LifeAtViewnearPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("lifeAtViewnear");
+  const openings = await getJobOpenings(locale as Locale);
+
+  const offices = (
+    t.raw("offices.items") as {
+      city: string;
+      region: string;
+      place: string;
+      alt: string;
+      street: string;
+      cityZip: string;
+    }[]
+  ).map((o, i) => ({ ...o, ...officeAssets[i] }));
+
+  const moments = (t.raw("field.moments") as { caption: string; alt: string }[]).map(
+    (m, i) => ({ ...m, ...momentAssets[i] }),
+  );
+
+  const model = (t.raw("model.items") as { title: string; body: string }[]).map(
+    (m, i) => ({ ...m, icon: modelIcons[i] }),
+  );
+
+  const meaning = (t.raw("meaning.items") as { title: string; body: string }[]).map(
+    (m, i) => ({ ...m, ...meaningStyles[i] }),
+  );
+
+  const standApart = (t.raw("standApart.items") as string[]).map((text, i) => ({
+    text,
+    icon: standApartIcons[i],
+  }));
+
+  const flywheel = (t.raw("standApart.flywheel") as string[]).map((label, i) => ({
+    label,
+    icon: flywheelIcons[i],
+  }));
 
   return (
     <>
       <JsonLd data={OFFICES_LD} />
       {/* HERO */}
       <PageHero
-        eyebrow="Careers · Culture"
-        title={
-          <>
-            Building the{" "}
-            <span className="text-gradient">data &amp; AI home team</span> for the Americas.
-          </>
-        }
-        description={`${theme.brand.name} is outcome-led, AI-native, and built around one team that shares in every win. Here's how we work, what we stand for, and the benefits behind it.`}
+        eyebrow={t("hero.eyebrow")}
+        title={t.rich("hero.title", { hl: (c) => <span className="text-gradient">{c}</span> })}
+        description={t("hero.description")}
       >
         <div className="flex flex-wrap justify-center gap-4">
           <Link href="#open-roles" className="btn-primary btn-lg">
-            See open roles
+            {t("hero.seeRoles")}
           </Link>
           <Link href="/about#team" className="btn-ghost btn-lg">
-            Meet the team
+            {t("hero.meetTeam")}
           </Link>
         </div>
       </PageHero>
@@ -353,9 +289,9 @@ export default async function LifeAtViewnearPage() {
         <SectionDecor variant="dots" />
         <div className="relative">
           <SectionHeading
-            eyebrow="Our offices"
-            title="Two homes. One team."
-            intro="We're headquartered in Austin and Monterrey: two flagship spaces that anchor a team working across the Americas, in person and remote-augmented."
+            eyebrow={t("offices.eyebrow")}
+            title={t("offices.title")}
+            intro={t("offices.intro")}
             center
           />
           <div className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2">
@@ -429,27 +365,20 @@ export default async function LifeAtViewnearPage() {
       <Section>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
-            <p className="eyebrow mb-3">Where we work</p>
+            <p className="eyebrow mb-3">{t("whereWeWork.eyebrow")}</p>
             <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-              Two hubs for coming together, flexibility for everything else.
+              {t("whereWeWork.title")}
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-muted">
-              Inside, our offices are made for focus and for coming together: quiet corners for deep
-              work, open lounges for the conversations that move projects forward. We gather in
-              person because shared time builds the trust and alignment behind every outcome, and we
-              stay flexible so life and great work can coexist.
+              {t("whereWeWork.body")}
             </p>
             <ul className="mt-6 space-y-3">
-              {[
-                "Flexible, modern offices designed for focus and collaboration",
-                "In-person collaboration, extended by remote flexibility",
-                "Regular time together: retreats, Snowflake events, and team dinners",
-              ].map((t) => (
-                <li key={t} className="flex gap-3 text-foreground/85">
+              {(t.raw("whereWeWork.bullets") as string[]).map((bullet) => (
+                <li key={bullet} className="flex gap-3 text-foreground/85">
                   <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primaryDeep">
                     <Ico name="check" className="h-3.5 w-3.5" />
                   </span>
-                  {t}
+                  {bullet}
                 </li>
               ))}
             </ul>
@@ -457,7 +386,7 @@ export default async function LifeAtViewnearPage() {
           <div className="overflow-hidden rounded-2xl border border-border shadow-soft-lg">
             <Image
               src="/assets/images/life/lounge.jpg"
-              alt="Inside a Viewnear office: an open lounge and work area with sofas, plants, a café bar, and wood-lined meeting rooms"
+              alt={t("whereWeWork.imageAlt")}
               width={1500}
               height={1023}
               className="h-auto w-full"
@@ -472,9 +401,9 @@ export default async function LifeAtViewnearPage() {
         <SectionDecor variant="grid" />
         <div className="relative">
           <SectionHeading
-            eyebrow="The Viewnear model"
-            title="Outcome-led. AI-native. Team-powered."
-            intro="We deliver outcomes, expand leverage through AI-native execution, and operate as one team with shared accountability."
+            eyebrow={t("model.eyebrow")}
+            title={t("model.title")}
+            intro={t("model.intro")}
             center
           />
           <div className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-3">
@@ -489,7 +418,7 @@ export default async function LifeAtViewnearPage() {
                     <Ico name={m.icon} />
                   </span>
                   <span className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
-                    Step {i + 1}
+                    {t("model.stepLabel")} {i + 1}
                   </span>
                 </div>
                 <h3 className="mt-5 font-display text-xl font-bold text-foreground">{m.title}</h3>
@@ -506,9 +435,9 @@ export default async function LifeAtViewnearPage() {
         <SectionDecor variant="dots" />
         <div className="relative">
           <SectionHeading
-            eyebrow="Out in the field"
-            title="Where we show up"
-            intro="Snowflake Summit, Data for Breakfast, partner stages, and the dinners in between. A few moments from the team."
+            eyebrow={t("field.eyebrow")}
+            title={t("field.title")}
+            intro={t("field.intro")}
             center
           />
           <div className="mt-12 gap-4 sm:columns-2 lg:columns-3">
@@ -548,10 +477,9 @@ export default async function LifeAtViewnearPage() {
               <Ico name="trophy" className="h-8 w-8" />
             </span>
             <div>
-              <p className="eyebrow mb-2">The Viewnear standard</p>
+              <p className="eyebrow mb-2">{t("standard.eyebrow")}</p>
               <p className="font-display text-2xl font-bold leading-snug text-foreground md:text-3xl">
-                High standards are mutual. We ask a lot of our team, and our team should expect
-                just as much from Viewnear.
+                {t("standard.body")}
               </p>
             </div>
           </div>
@@ -561,8 +489,8 @@ export default async function LifeAtViewnearPage() {
       {/* WHAT IT MEANS FOR THE TEAM */}
       <Section className="section-tint">
         <SectionHeading
-          eyebrow="What it means for the team"
-          title="A better model is a better place to work"
+          eyebrow={t("meaning.eyebrow")}
+          title={t("meaning.title")}
           center
         />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 md:auto-rows-fr lg:grid-cols-5">
@@ -581,9 +509,9 @@ export default async function LifeAtViewnearPage() {
       {/* BENEFITS */}
       <Section>
         <SectionHeading
-          eyebrow="Benefits"
-          title="We reinvest in the team"
-          intro="Better outcomes create stronger economics, and we put those economics back into the people who deliver them. Healthcare, dental, emotional wellness, and more."
+          eyebrow={t("benefits.eyebrow")}
+          title={t("benefits.title")}
+          intro={t("benefits.intro")}
         />
         <BenefitsGrid items={BENEFITS} className="mt-12" />
       </Section>
@@ -593,9 +521,9 @@ export default async function LifeAtViewnearPage() {
         <SectionDecor variant="flow" />
         <div className="relative">
           <SectionHeading
-            eyebrow="Why Viewnear stands apart"
-            title="A win for one is a win for all"
-            intro="Stronger economics build a stronger team, and a stronger team delivers better outcomes. It's a flywheel, and everyone shares in it."
+            eyebrow={t("standApart.eyebrow")}
+            title={t("standApart.title")}
+            intro={t("standApart.intro")}
           />
 
           <div className="mt-10 grid gap-6">
@@ -651,13 +579,13 @@ export default async function LifeAtViewnearPage() {
       {/* OPEN ROLES */}
       <Section id="open-roles">
         <SectionHeading
-          eyebrow="Open roles"
-          title="Current openings"
-          intro="No perfect fit on the list? We still want to meet great people."
+          eyebrow={t("openRoles.eyebrow")}
+          title={t("openRoles.title")}
+          intro={t("openRoles.intro")}
         />
         {openings.length === 0 ? (
           <p className="mt-8 text-muted">
-            No open roles right now, but we are always meeting great people. Reach out below.
+            {t("openRoles.empty")}
           </p>
         ) : (
           <div className="mt-12 grid gap-5">
@@ -668,7 +596,7 @@ export default async function LifeAtViewnearPage() {
                   key={job.slug}
                   eyebrow={job.employment}
                   title={job.title}
-                  foot={job.location ? ["Location", job.location] : undefined}
+                  foot={job.location ? [t("openRoles.locationLabel"), job.location] : undefined}
                 >
                   <p>{job.description}</p>
                   {skills.length > 0 ? (
@@ -683,7 +611,7 @@ export default async function LifeAtViewnearPage() {
                       href={`/careers/${job.slug}`}
                       className="inline-flex items-center gap-1 font-semibold text-primaryDeep"
                     >
-                      View role &amp; apply
+                      {t("openRoles.viewRole")}
                       <span aria-hidden="true">&rarr;</span>
                     </Link>
                   </div>
@@ -694,9 +622,9 @@ export default async function LifeAtViewnearPage() {
         )}
         <div className="mt-12">
           <InlineCta
-            title="Not sure which role fits? Reach out anyway."
+            title={t("openRoles.ctaTitle")}
             href="#apply"
-            label="Apply now"
+            label={t("openRoles.ctaLabel")}
           />
         </div>
       </Section>
@@ -704,9 +632,9 @@ export default async function LifeAtViewnearPage() {
       {/* APPLY */}
       <Section id="apply" className="section-tint">
         <SectionHeading
-          eyebrow="Apply"
-          title="Say hello"
-          intro="Share a few details and the role of interest. We read every application."
+          eyebrow={t("apply.eyebrow")}
+          title={t("apply.title")}
+          intro={t("apply.intro")}
         />
         <div className="mx-auto mt-12 max-w-2xl">
           <ApplicationForm />
@@ -721,17 +649,17 @@ export default async function LifeAtViewnearPage() {
           <div className="pointer-events-none absolute -bottom-20 -left-16 h-56 w-56 rounded-full bg-primary/15 blur-3xl" />
           <div className="relative">
             <h2 className="font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-              Start with outcomes. Build the team that delivers them.
+              {t("cta.title")}
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-muted">
-              Meaningful work, peers who sharpen the craft, and a young firm to help shape: let&apos;s talk.
+              {t("cta.subtitle")}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link href="#open-roles" className="btn-primary btn-lg">
-                See open roles
+                {t("cta.seeRoles")}
               </Link>
               <Link href="/contact" className="btn-ghost btn-lg">
-                Get in touch
+                {t("cta.getInTouch")}
               </Link>
             </div>
           </div>

@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMeta } from "@/lib/seo";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { FeaturedCaseStudies } from "@/components/marketing/FeaturedCaseStudies";
@@ -8,64 +10,30 @@ import { ApproachStory } from "@/components/marketing/approach/ApproachStory";
 import { PlateCard } from "@/components/marketing/Cards";
 import { RevealGroup } from "@/components/marketing/Motion";
 
-export const metadata = pageMeta({
-  title: "Our approach",
-  description:
-    "How Viewnear delivers on Snowflake: use-case-driven sprints, proof before scale, and engagement governance, with fixed timelines, steering reviews, POC gates, and a clean handover.",
-  path: "/approach",
-});
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "approach.meta" });
+  return pageMeta({ title: t("title"), description: t("description"), path: "/approach", locale });
+}
 
-const runPhases = [
-  {
-    title: "A fixed 8–16 week arc",
-    body: "Most initial builds reach production in 8–16 weeks: a paid discovery fixes scope and price up front, and every sprint closes with working software, so value lands from sprint one.",
-  },
-  {
-    title: "Steering & transparency",
-    body: "Regular steering reviews, a shared backlog, and clear decision gates keep sponsors in control of scope, budget, and priorities throughout.",
-  },
-  {
-    title: "Proof before scale",
-    body: "We prove the approach with a focused proof of concept before the full build, so the commitment to scale rests on evidence, not a slide deck.",
-  },
-  {
-    title: "Built to hand over",
-    body: "Runbooks, documentation, and enablement sessions ship with the build, plus a transition plan that names who runs what when we step back.",
-  },
-];
+export default async function ApproachPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("approach");
 
-const impactByPhase = [
-  {
-    phase: "First 8–16 weeks",
-    title: "Foundations & first value",
-    body: "A governed foundation on Snowflake stood up, priority data flowing, and the first production dashboards live: the data practice takes root.",
-  },
-  {
-    phase: "6–12 months",
-    title: "Scale & self-service",
-    body: "Analytics and AI use cases rolled out across teams; self-service adopted and manual reporting retired.",
-  },
-  {
-    phase: "18+ months",
-    title: "Compounding advantage",
-    body: "New use cases shipped in weeks, run cost tuned, and a team fluent enough to keep extending it on their own.",
-  },
-];
+  const runPhases = t.raw("runPhases") as { title: string; body: string }[];
+  const impactByPhase = t.raw("impactByPhase") as { phase: string; title: string; body: string }[];
 
-export default function ApproachPage() {
   return (
     <>
       <div className="relative overflow-hidden">
         <SectionDecor variant="flow" />
         <div className="relative">
           <PageHero
-            eyebrow="Our approach"
-            title={
-              <>
-                Delivery leaders can <span className="text-gradient">govern</span>.
-              </>
-            }
-            description="Use-case-driven sprints with working software at every demo, plus the governance that de-risks the engagement itself, so sponsors always know where the work stands."
+            eyebrow={t("hero.eyebrow")}
+            title={t.rich("hero.title", { hl: (c) => <span className="text-gradient">{c}</span> })}
+            description={t("hero.description")}
           />
         </div>
       </div>
@@ -73,9 +41,9 @@ export default function ApproachPage() {
       {/* The centerpiece: the engagement narrated from the sponsor's seat */}
       <Section>
         <SectionHeading
-          eyebrow="The experience"
-          title="What an engagement feels like from the sponsor's seat"
-          intro="The reviews the sponsor runs, the demos the team watches, and the decisions that stay in-house: one engagement, from the first scoping session to handover."
+          eyebrow={t("experience.eyebrow")}
+          title={t("experience.title")}
+          intro={t("experience.intro")}
         />
         <ApproachStory />
       </Section>
@@ -88,9 +56,9 @@ export default function ApproachPage() {
         <SectionDecor variant="grid" />
         <div className="relative">
           <SectionHeading
-            eyebrow="How engagements run"
-            title="Checkpoints sponsors control"
-            intro="Clear timelines, steering, and a clean handover: the questions every sponsor asks, answered up front."
+            eyebrow={t("run.eyebrow")}
+            title={t("run.title")}
+            intro={t("run.intro")}
           />
           <div className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-4">
             {runPhases.map((r) => (
@@ -107,9 +75,9 @@ export default function ApproachPage() {
       {/* Value by horizon */}
       <Section className="section-warm">
         <SectionHeading
-          eyebrow="Business impact"
-          title="What changes, and when"
-          intro="A practical view of the value an engagement returns, by horizon, not by feature list."
+          eyebrow={t("impact.eyebrow")}
+          title={t("impact.title")}
+          intro={t("impact.intro")}
         />
         <RevealGroup className="mt-12 grid gap-5 md:auto-rows-fr md:grid-cols-3" variant="pop">
           {impactByPhase.map((p, i) => (
@@ -120,7 +88,7 @@ export default function ApproachPage() {
         </RevealGroup>
       </Section>
 
-      <FeaturedCaseStudies tint title="How it plays out in practice" />
+      <FeaturedCaseStudies tint title={t("caseStudies.title")} />
 
       <CtaBand />
     </>

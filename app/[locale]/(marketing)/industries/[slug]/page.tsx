@@ -1,10 +1,13 @@
+import type { Metadata } from "next";
 import type { CSSProperties } from "react";
-import Link from "next/link";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Img as Image } from "@/components/marketing/Img";
 import { Breadcrumbs } from "@/components/marketing/Breadcrumbs";
 import { notFound } from "next/navigation";
 import { getIndustryBySlug, getIndustrySlugs, getIndustries } from "@/lib/queries";
+import type { Locale } from "@/lib/i18n-content";
 import { asObjectArray, asStringArray, parseJson } from "@/lib/utils";
+import { Link } from "@/i18n/navigation";
 import {
   Section,
   SectionHeading,
@@ -28,23 +31,37 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const industry = await getIndustryBySlug(params.slug);
-  if (!industry) return { title: "Industry not found" };
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string; slug: string };
+}): Promise<Metadata> {
+  const { locale, slug } = params;
+  setRequestLocale(locale);
+  const industry = await getIndustryBySlug(slug, locale as Locale);
+  if (!industry) {
+    const t = await getTranslations({ locale, namespace: "industryDetail.meta" });
+    return { title: t("fallbackTitle") };
+  }
   return pageMeta({
     title: industry.name,
     description: industry.headline ?? industry.intro,
-    path: `/industries/${params.slug}`,
-    image: `/assets/images/industries/${params.slug}.jpg`,
+    path: `/industries/${slug}`,
+    image: `/assets/images/industries/${slug}.jpg`,
+    locale,
   });
 }
 
 export default async function IndustryDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: { locale: string; slug: string };
 }) {
-  const industry = await getIndustryBySlug(params.slug);
+  const { locale, slug } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("industryDetail");
+
+  const industry = await getIndustryBySlug(slug, locale as Locale);
   if (!industry) notFound();
 
   const challenges = asObjectArray<{ problem: string; response: string }>(
@@ -55,7 +72,7 @@ export default async function IndustryDetailPage({
   );
   const tools = asStringArray(industry.tools);
 
-  const all = await getIndustries();
+  const all = await getIndustries(locale as Locale);
   const others = all.filter((i) => i.slug !== industry.slug);
 
   const flavor = getFlavor(industry.slug);
@@ -79,7 +96,7 @@ export default async function IndustryDetailPage({
   // title so the spotlight focuses on the problem and solution, while client
   // names stay anonymized.
   const storyTitle = story
-    ? `Governed, AI-ready data for ${industry.name.toLowerCase()} on Snowflake`
+    ? t("featured.storyTitle", { industry: industry.name.toLowerCase() })
     : "";
 
   return (
@@ -96,8 +113,8 @@ export default async function IndustryDetailPage({
             <div className="mb-6">
               <Breadcrumbs
                 items={[
-                  { label: "Home", href: "/" },
-                  { label: "Industries", href: "/industries" },
+                  { label: t("breadcrumb.home"), href: "/" },
+                  { label: t("breadcrumb.industries"), href: "/industries" },
                   { label: industry.name },
                 ]}
               />
@@ -120,11 +137,11 @@ export default async function IndustryDetailPage({
             )}
             <div className="mt-8 flex flex-wrap gap-4">
               <Link href="/contact" className="btn-primary">
-                Discuss {industry.name.toLowerCase()} data
+                {t("hero.discussCta", { industry: industry.name.toLowerCase() })}
               </Link>
               {industry.caseStudies?.length > 0 && (
                 <Link href="/case-studies" className="btn-ghost">
-                  See the work
+                  {t("hero.seeWork")}
                 </Link>
               )}
             </div>
@@ -137,18 +154,16 @@ export default async function IndustryDetailPage({
         <SectionDecor variant={flavor.decor} />
         <div className="relative">
           <FeatureSplit
-            eyebrow="The engagement"
-            title={
-              <>
-                A partner who understands{" "}
-                <span className="text-gradient">{industry.name}</span>.
-              </>
-            }
-            body={`No one spends the first month explaining ${industry.name.toLowerCase()} to us. The team arrives knowing the sector's systems, regulations, and reporting rhythms, then builds the data models, governance, and dashboards alongside in-house teams, against the metrics they already answer for.`}
+            eyebrow={t("engagement.eyebrow")}
+            title={t.rich("engagement.title", {
+              name: industry.name,
+              hl: (c) => <span className="text-gradient">{c}</span>,
+            })}
+            body={t("engagement.body", { industry: industry.name.toLowerCase() })}
             bullets={flavor.bullets}
             image={`/assets/images/industries/${industry.slug}-2.jpg`}
-            imageAlt={`${industry.name} data and AI solutions built on Snowflake`}
-            cta={{ label: "Start a conversation", href: "/contact" }}
+            imageAlt={t("engagement.imageAlt", { industry: industry.name })}
+            cta={{ label: t("engagement.cta"), href: "/contact" }}
           />
         </div>
         <WaveDivider position="bottom" fill="fill-background" />
@@ -159,12 +174,12 @@ export default async function IndustryDetailPage({
           Featured-engagement spotlight below, never dressed as sector-wide. */}
       <Section>
         <SectionHeading
-          eyebrow="What we stand up"
-          title={`The foundation a ${industry.name.toLowerCase()} practice runs on`}
+          eyebrow={t("foundation.eyebrow")}
+          title={t("foundation.title", { industry: industry.name.toLowerCase() })}
           intro={
             story
-              ? `The capabilities we put in place, and how fast. Measured results from a real ${industry.name.toLowerCase()} engagement are in the featured story below.`
-              : "The capabilities we put in place, and how fast they reach first value."
+              ? t("foundation.introWithStory", { industry: industry.name.toLowerCase() })
+              : t("foundation.introNoStory")
           }
         />
         <div className="mt-12">
@@ -176,9 +191,9 @@ export default async function IndustryDetailPage({
       {challenges.length > 0 ? (
         <Section className="bg-surface">
           <SectionHeading
-            eyebrow="Challenges we solve"
-            title={`What ${industry.name} teams are up against`}
-            intro="The recurring problems we hear, and how we resolve them."
+            eyebrow={t("challenges.eyebrow")}
+            title={t("challenges.title", { industry: industry.name })}
+            intro={t("challenges.intro")}
           />
           <div className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3">
             {challenges.map((c, i) => (
@@ -198,9 +213,9 @@ export default async function IndustryDetailPage({
       {deliverables.length > 0 ? (
         <Section>
           <SectionHeading
-            eyebrow="What gets delivered"
-            title="Deliverables"
-            intro="Tangible outcomes engineered to move the metrics that matter."
+            eyebrow={t("deliverables.eyebrow")}
+            title={t("deliverables.title")}
+            intro={t("deliverables.intro")}
           />
           <div className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3">
             {deliverables.map((d, i) => (
@@ -226,9 +241,9 @@ export default async function IndustryDetailPage({
       {tools.length > 0 ? (
         <Section className="bg-surface">
           <SectionHeading
-            eyebrow="Stack"
-            title="Tools & technologies"
-            intro="The Snowflake-first stack we reach for in this sector."
+            eyebrow={t("tools.eyebrow")}
+            title={t("tools.title")}
+            intro={t("tools.intro")}
           />
           <div className="mt-8 flex flex-wrap gap-3">
             {tools.map((tool) => (
@@ -241,15 +256,14 @@ export default async function IndustryDetailPage({
       {/* Sector showcase - full-bleed sector photo, per-industry hue tint */}
       <ShowcaseBand
         image={sectorImage}
-        imageAlt={`${industry.name} data and AI on Snowflake`}
+        imageAlt={t("showcase.imageAlt", { industry: industry.name })}
         eyebrow={flavor.pattern}
-        title={
-          <>
-            Built for <span className="text-secondary">{industry.name}</span>, on Snowflake.
-          </>
-        }
+        title={t.rich("showcase.title", {
+          name: industry.name,
+          hl: (c) => <span className="text-secondary">{c}</span>,
+        })}
         cta={{
-          label: `Discuss ${industry.name.toLowerCase()} data`,
+          label: t("showcase.cta", { industry: industry.name.toLowerCase() }),
           href: "/contact",
         }}
         tintClass={flavor.glow}
@@ -259,9 +273,9 @@ export default async function IndustryDetailPage({
       <Section>
         <div className="max-w-xl">
           <PlateCard
-            label="Compliance"
+            label={t("compliance.label")}
             refCode={sectorCode}
-            title="Built for the regulators"
+            title={t("compliance.title")}
             stamp
           >
             {flavor.compliance}{" "}
@@ -269,7 +283,7 @@ export default async function IndustryDetailPage({
               href="/security"
               className="font-semibold text-primaryDeep underline-offset-4 hover:underline"
             >
-              How we keep data safe →
+              {t("compliance.link")}
             </Link>
           </PlateCard>
         </div>
@@ -279,9 +293,9 @@ export default async function IndustryDetailPage({
       {story ? (
         <Section>
           <SectionHeading
-            eyebrow="Featured engagement"
-            title={`How we delivered for ${industry.name}`}
-            intro="A real engagement, start to finish: the challenge, the build, and the outcome. Client names are withheld to protect confidentiality."
+            eyebrow={t("featured.eyebrow")}
+            title={t("featured.title", { industry: industry.name })}
+            intro={t("featured.intro")}
           />
           <div className="mt-12 overflow-hidden rounded-3xl border border-border bg-surface shadow-soft">
             <div className="grid lg:grid-cols-2">
@@ -312,7 +326,7 @@ export default async function IndustryDetailPage({
               <div className="flex flex-col gap-7 p-8 md:p-10 lg:p-12">
                 <div>
                   <p className="font-mono text-xs uppercase tracking-wider text-muted">
-                    {`A ${industry.name.toLowerCase()} organization`} · {story.region}
+                    {t("featured.orgLabel", { industry: industry.name.toLowerCase() })} · {story.region}
                   </p>
                   <h3 className="mt-3 font-display text-2xl font-bold leading-tight text-foreground md:text-3xl">
                     {storyTitle}
@@ -340,7 +354,7 @@ export default async function IndustryDetailPage({
                       &ldquo;{storyQuote.text}&rdquo;
                     </blockquote>
                     <figcaption className="mt-3 text-sm text-muted">
-                      Sponsor quote · {industry.name.toLowerCase()} engagement
+                      {t("featured.quoteCaption", { industry: industry.name.toLowerCase() })}
                     </figcaption>
                   </figure>
                 )}
@@ -349,7 +363,7 @@ export default async function IndustryDetailPage({
                   href={`/case-studies/${story.slug}`}
                   className="btn-primary mt-auto self-start"
                 >
-                  Read the full case study →
+                  {t("featured.readCase")}
                 </Link>
               </div>
             </div>
@@ -360,7 +374,7 @@ export default async function IndustryDetailPage({
       {/* Other industries - each chip carries its own sector icon */}
       {others.length > 0 ? (
         <Section className="bg-surface">
-          <SectionHeading eyebrow="Explore" title="Other industries" />
+          <SectionHeading eyebrow={t("other.eyebrow")} title={t("other.title")} />
           <div className="mt-8 flex flex-wrap gap-3">
             {others.map((i) => {
               const f = INDUSTRY_FLAVOR[i.slug];

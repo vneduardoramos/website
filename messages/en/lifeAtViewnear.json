@@ -1,0 +1,163 @@
+{
+  "meta": {
+    "title": "Life at Viewnear",
+    "description": "Outcome-led, AI-native, team-powered: how we work at Viewnear, what we stand for, and the benefits behind it, from healthcare to emotional wellness."
+  },
+  "hero": {
+    "eyebrow": "Careers · Culture",
+    "title": "Building the <hl>data & AI home team</hl> for the Americas.",
+    "description": "Viewnear is outcome-led, AI-native, and built around one team that shares in every win. Here's how we work, what we stand for, and the benefits behind it.",
+    "seeRoles": "See open roles",
+    "meetTeam": "Meet the team"
+  },
+  "offices": {
+    "eyebrow": "Our offices",
+    "title": "Two homes. One team.",
+    "intro": "We're headquartered in Austin and Monterrey: two flagship spaces that anchor a team working across the Americas, in person and remote-augmented.",
+    "items": [
+      {
+        "city": "Austin",
+        "region": "Texas, USA",
+        "place": "Quarry Oaks II · Stonelake Office Park",
+        "alt": "Viewnear's Austin home: a glass office tower in Stonelake Office Park, set against the downtown Austin skyline",
+        "street": "10900 Stonelake Blvd, Bldg 2, Suite 100",
+        "cityZip": "Austin, TX 78759"
+      },
+      {
+        "city": "Monterrey",
+        "region": "Nuevo León, México",
+        "place": "Pueblo Serena",
+        "alt": "Viewnear's Monterrey home: a modern office building at Pueblo Serena, at the foot of the Sierra Madre",
+        "street": "Carr. Nacional 500, Valle Alto",
+        "cityZip": "Monterrey, MX 64983"
+      }
+    ]
+  },
+  "whereWeWork": {
+    "eyebrow": "Where we work",
+    "title": "Two hubs for coming together, flexibility for everything else.",
+    "body": "Inside, our offices are made for focus and for coming together: quiet corners for deep work, open lounges for the conversations that move projects forward. We gather in person because shared time builds the trust and alignment behind every outcome, and we stay flexible so life and great work can coexist.",
+    "bullets": [
+      "Flexible, modern offices designed for focus and collaboration",
+      "In-person collaboration, extended by remote flexibility",
+      "Regular time together: retreats, Snowflake events, and team dinners"
+    ],
+    "imageAlt": "Inside a Viewnear office: an open lounge and work area with sofas, plants, a café bar, and wood-lined meeting rooms"
+  },
+  "model": {
+    "eyebrow": "The Viewnear model",
+    "title": "Outcome-led. AI-native. Team-powered.",
+    "intro": "We deliver outcomes, expand leverage through AI-native execution, and operate as one team with shared accountability.",
+    "stepLabel": "Step",
+    "items": [
+      {
+        "title": "Outcomes first",
+        "body": "We organize our work around measurable business outcomes, not activity. Success is defined by client impact, quality, and trust, not hours logged."
+      },
+      {
+        "title": "AI-native delivery",
+        "body": "AI is embedded in how we work: our operating model, our tooling, our delivery rhythm. AI-native execution plus human judgment means one team ships more work in parallel, with the same people owning it throughout."
+      },
+      {
+        "title": "One team, flexible capacity",
+        "body": "We collaborate in person often, because shared time strengthens alignment, trust, and execution. We believe in remote work, but not remote-first. Our model is remote-augmented: anchored by in-person collaboration, extended by flexibility."
+      }
+    ]
+  },
+  "field": {
+    "eyebrow": "Out in the field",
+    "title": "Where we show up",
+    "intro": "Snowflake Summit, Data for Breakfast, partner stages, and the dinners in between. A few moments from the team.",
+    "moments": [
+      {
+        "caption": "Customer conversations at the booth",
+        "alt": "The Viewnear team behind their data + ai booth at a Snowflake event"
+      },
+      {
+        "caption": "A full house at the live demo",
+        "alt": "A crowd gathered around the Viewnear booth watching a live product demo"
+      },
+      {
+        "caption": "Team breakfast on the road",
+        "alt": "Viewnear team members sharing breakfast at a Snowflake event"
+      },
+      {
+        "caption": "Snowflake Data for Breakfast",
+        "alt": "A Viewnear team member at the Snowflake Data for Breakfast welcome signage"
+      },
+      {
+        "caption": "Dinner with the team",
+        "alt": "The Viewnear team and partners gathered for a team dinner"
+      },
+      {
+        "caption": "Among Snowflake's CoCo partners",
+        "alt": "Snowflake CoCo Global Partner Momentum wall listing Viewnear among Snowflake partners"
+      }
+    ]
+  },
+  "standard": {
+    "eyebrow": "The Viewnear standard",
+    "body": "High standards are mutual. We ask a lot of our team, and our team should expect just as much from Viewnear."
+  },
+  "meaning": {
+    "eyebrow": "What it means for the team",
+    "title": "A better model is a better place to work",
+    "items": [
+      {
+        "title": "Growth",
+        "body": "Meaningful work that expands learning, business context, and technical range."
+      },
+      {
+        "title": "Focus",
+        "body": "Less repetitive work, more time on judgment, delivery, and leadership."
+      },
+      {
+        "title": "Balance",
+        "body": "Great work over the long run requires recovery. Time off is flexible (no fixed cap) provided outcomes stay strong and teams stay covered."
+      },
+      {
+        "title": "Rewards",
+        "body": "Stronger economics fund better compensation, bonuses, and benefits."
+      },
+      {
+        "title": "Pride",
+        "body": "Hard problems, real ownership, and work worth putting a name on."
+      }
+    ]
+  },
+  "benefits": {
+    "eyebrow": "Benefits",
+    "title": "We reinvest in the team",
+    "intro": "Better outcomes create stronger economics, and we put those economics back into the people who deliver them. Healthcare, dental, emotional wellness, and more."
+  },
+  "standApart": {
+    "eyebrow": "Why Viewnear stands apart",
+    "title": "A win for one is a win for all",
+    "intro": "Stronger economics build a stronger team, and a stronger team delivers better outcomes. It's a flywheel, and everyone shares in it.",
+    "items": [
+      "Collaboration is real: teams work together in person and remotely, with shared accountability for outcomes."
+    ],
+    "flywheel": ["Outcomes", "Higher-value work", "Reinvestment", "Stronger team", "Better outcomes"]
+  },
+  "openRoles": {
+    "eyebrow": "Open roles",
+    "title": "Current openings",
+    "intro": "No perfect fit on the list? We still want to meet great people.",
+    "empty": "No open roles right now, but we are always meeting great people. Reach out below.",
+    "locationLabel": "Location",
+    "viewRole": "View role & apply",
+    "ctaTitle": "Not sure which role fits? Reach out anyway.",
+    "ctaLabel": "Apply now"
+  },
+  "apply": {
+    "eyebrow": "Apply",
+    "title": "Say hello",
+    "intro": "Share a few details and the role of interest. We read every application."
+  },
+  "cta": {
+    "title": "Start with outcomes. Build the team that delivers them.",
+    "subtitle": "Meaningful work, peers who sharpen the craft, and a young firm to help shape: let's talk.",
+    "seeRoles": "See open roles",
+    "getInTouch": "Get in touch"
+  }
+}

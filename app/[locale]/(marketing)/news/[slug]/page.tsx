@@ -11,6 +11,7 @@ import { Markdown } from "@/lib/content";
 import { JsonLd } from "@/components/JsonLd";
 import { theme } from "@/config/theme";
 import { pageMeta } from "@/lib/seo";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getHeadings } from "@/lib/toc";
 import { asStringArray } from "@/lib/utils";
 import { ReadingProgress } from "@/components/marketing/article/ReadingProgress";
@@ -27,17 +28,22 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: { locale: string; slug: string };
 }) {
-  const item = await getNewsBySlug(params.slug);
-  if (!item) return { title: "News", robots: { index: false, follow: false } };
+  const { locale, slug } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "newsDetail.meta" });
+  const item = await getNewsBySlug(slug);
+  if (!item)
+    return { title: t("fallbackTitle"), robots: { index: false, follow: false } };
   return pageMeta({
     title: item.title,
     description: item.excerpt ?? undefined,
-    path: `/news/${params.slug}`,
+    path: `/news/${slug}`,
     image: item.coverImage,
     type: "article",
     noindex: true,
+    locale,
   });
 }
 
@@ -46,9 +52,12 @@ type AgendaItem = { time: string; item: string };
 export default async function NewsDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: { locale: string; slug: string };
 }) {
-  const item = await getNewsBySlug(params.slug);
+  const { locale, slug } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("newsDetail");
+  const item = await getNewsBySlug(slug);
   if (!item) notFound();
 
   const externalUrl = (item as { externalUrl?: string | null }).externalUrl;
@@ -91,8 +100,8 @@ export default async function NewsDetailPage({
           <div className="mx-auto max-w-3xl">
             <Breadcrumbs
               items={[
-                { label: "Home", href: "/" },
-                { label: "News & Events", href: "/news" },
+                { label: t("breadcrumb.home"), href: "/" },
+                { label: t("breadcrumb.news"), href: "/news" },
                 { label: item.title },
               ]}
             />
@@ -139,14 +148,14 @@ export default async function NewsDetailPage({
             <div className="card">
               {item.venue ? (
                 <p className="text-sm text-muted">
-                  <span className="font-medium text-foreground">Venue:</span>{" "}
+                  <span className="font-medium text-foreground">{t("event.venue")}</span>{" "}
                   {item.venue}
                 </p>
               ) : null}
 
               {agenda.length > 0 ? (
                 <div className={item.venue ? "mt-6" : ""}>
-                  <h2 className="eyebrow">Agenda</h2>
+                  <h2 className="eyebrow">{t("event.agenda")}</h2>
                   <ul className="mt-4 space-y-4">
                     {agenda.map((entry, i) => (
                       <li
@@ -182,7 +191,7 @@ export default async function NewsDetailPage({
               rel="noopener noreferrer"
               className="btn-primary"
             >
-              Read the full announcement &rarr;
+              {t("readFull")} &rarr;
             </a>
           </div>
         ) : null}
@@ -191,7 +200,7 @@ export default async function NewsDetailPage({
       {/* More news */}
       {more.length > 0 ? (
         <Section className="section-warm">
-          <SectionHeading eyebrow="Newsroom" title="More news & events" />
+          <SectionHeading eyebrow={t("more.eyebrow")} title={t("more.title")} />
           <div className="mt-10 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3">
             {more.map((n) => (
               <CoverCard

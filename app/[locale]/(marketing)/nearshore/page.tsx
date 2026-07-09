@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Img as Image } from "@/components/marketing/Img";
 import { pageMeta } from "@/lib/seo";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
@@ -16,88 +18,35 @@ import {
   DataStackIcon,
 } from "@/components/marketing/home/Icons";
 import { LedgerCard } from "@/components/marketing/Cards";
-import { theme } from "@/config/theme";
 
-export const metadata = pageMeta({
-  title: "Nearshore data & AI delivery on Snowflake, in the US Central time zone",
-  description:
-    "Viewnear delivers data & AI on Snowflake from Monterrey, Mexico, in the US Central time zone. SnowPro-certified experts who work the same business hours, with depth at every level.",
-  path: "/nearshore",
-});
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "nearshore.meta" });
+  return pageMeta({ title: t("title"), description: t("description"), path: "/nearshore", locale });
+}
 
-const HERO_CHIPS = [
-  "US Central time zone",
-  "SnowPro-certified",
-  "Snowflake Premier Partner",
-  "CoCo Preferred Partner",
-];
+export default async function NearshorePage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("nearshore");
 
-
-// Why nearshore with Viewnear: the real differentiators, reframed for data + AI.
-const reasons = [
-  {
-    label: "Depth",
-    title: "Snowflake depth at every level",
-    body: "Strategists, architects, and engineers all fluent in Snowflake and SnowPro-certified. The depth that scopes the work is the depth that delivers it.",
-  },
-  {
-    label: "Language",
-    title: "Clear, bilingual communication",
-    body: "A fully English- and Spanish-proficient team and direct access to the people doing the work. Fewer translation layers, fewer misread requirements.",
-  },
-  {
-    label: "Continuity",
-    title: "The same team from scope to run",
-    body: "A committed team learns the data and the goals and stays on: no re-staffing mid-engagement, no delivery pyramid billed by the hour.",
-  },
-  {
-    label: "Cadence",
-    title: "A communication cadence to count on",
-    body: "Regular working sessions and full visibility into progress. No one is ever in the dark on where a build stands or what comes next.",
-  },
-  {
-    label: "Delivery",
-    title: "Agile delivery, value early",
-    body: "An iterative, use-case-driven model that puts working data products in front of the team in weeks, then builds on what proves out.",
-  },
-];
-
-// Verified credentials only (no vanity metrics).
-const numbers = [
-  { value: "Premier", label: "Snowflake Premier + CoCo Preferred Partner" },
-  { value: "SnowPro", label: "SnowPro-certified across the team" },
-  { value: "15+", label: "Years building data & enterprise AI" },
-  { value: "5", label: "Countries across the Americas" },
-];
-
-// What the nearshore team delivers, mapped to Viewnear's service areas.
-const delivers = [
-  {
-    Icon: DatabaseIcon,
-    title: "Data modernization and migration",
-    body: "Legacy warehouses and pipelines consolidated onto Snowflake, governed from the first table.",
-  },
-  {
-    Icon: CpuIcon,
-    title: "AI and Cortex",
-    body: "Governed, AI-ready data and Cortex use cases prioritized against real business return.",
-  },
-  {
-    Icon: ShieldIcon,
-    title: "Governance and Horizon",
-    body: "Access, lineage, and policy built in with Horizon, so trust scales with the data.",
-  },
-  {
-    Icon: DataStackIcon,
-    title: "Data apps and Snowpark",
-    body: "Native data applications and Snowpark workloads that run where the data already lives.",
-  },
-];
-
-const STACK = ["Cortex", "Snowpark", "Iceberg", "dbt", "Openflow", "Horizon"];
-
-export default async function NearshorePage() {
   const bands = await getClientBands();
+
+  const heroChips = t.raw("hero.chips") as string[];
+
+  // Why nearshore with Viewnear: the real differentiators, reframed for data + AI.
+  const reasons = t.raw("reasons") as { label: string; title: string; body: string }[];
+
+  // Verified credentials only (no vanity metrics).
+  const numbers = t.raw("numbers") as { value: string; label: string }[];
+
+  // What the nearshore team delivers, mapped to Viewnear's service areas. Icons
+  // stay in code (component refs); copy comes from the message catalog by index.
+  const deliverIcons = [DatabaseIcon, CpuIcon, ShieldIcon, DataStackIcon];
+  const delivers = t.raw("delivers") as { title: string; body: string }[];
+
+  const stack = t.raw("stack") as string[];
 
   return (
     <>
@@ -106,20 +55,18 @@ export default async function NearshorePage() {
         <SectionDecor variant="grid" />
         <div className="relative">
           <PageHero
-            eyebrow="Nearshore Advantage"
-            title={
-              <>
-                Nearshore data and AI delivery,{" "}
+            eyebrow={t("hero.eyebrow")}
+            title={t.rich("hero.title", {
+              hl: (c) => (
                 <ScrollHighlight color="cyan">
-                  <span className="text-gradient">in sync with the team</span>
+                  <span className="text-gradient">{c}</span>
                 </ScrollHighlight>
-                .
-              </>
-            }
-            description="SnowPro-certified Snowflake experts who work the same business hours. Delivery moves at the pace of a team down the hall, not a handoff that waits overnight."
+              ),
+            })}
+            description={t("hero.description")}
           >
             <div className="flex flex-wrap justify-center gap-2">
-              {HERO_CHIPS.map((c) => (
+              {heroChips.map((c) => (
                 <span key={c} className="chip">
                   {c}
                 </span>
@@ -133,7 +80,7 @@ export default async function NearshorePage() {
 
       {/* Trust: real client logos */}
       <Section>
-        <p className="eyebrow mb-8 text-center">Trusted by teams across the Americas</p>
+        <p className="eyebrow mb-8 text-center">{t("trust.eyebrow")}</p>
         <LogoRow logos={bands.top} />
       </Section>
 
@@ -143,9 +90,9 @@ export default async function NearshorePage() {
         <div className="relative">
           <SectionHeading
             align="center"
-            eyebrow="Why nearshore with Viewnear"
-            title="Deep Snowflake delivery, without the offshore tradeoffs"
-            intro="Nearshore brings the cost and capacity advantages of a distributed team while keeping the proximity, hours, and communication of one in the building."
+            eyebrow={t("reasonsHeading.eyebrow")}
+            title={t("reasonsHeading.title")}
+            intro={t("reasonsHeading.intro")}
           />
           <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3" variant="pop">
             {/* The time-zone card, carried by the actual office: a real address
@@ -153,7 +100,7 @@ export default async function NearshorePage() {
             <div className="relative min-h-[220px] overflow-hidden rounded-2xl border border-border shadow-soft">
               <Image
                 src="/assets/images/life/monterrey-building.jpg"
-                alt="Viewnear's Monterrey office building at Pueblo Serena"
+                alt={t("monterrey.imageAlt")}
                 fill
                 sizes="(max-width:768px) 100vw, 33vw"
                 className="object-cover"
@@ -164,10 +111,10 @@ export default async function NearshorePage() {
               />
               <div className="absolute inset-x-0 bottom-0 p-5">
                 <h3 className="font-display text-lg font-bold text-white">
-                  The same time zone, not a handoff
+                  {t("monterrey.title")}
                 </h3>
                 <p className="mt-1 font-mono text-[0.66rem] uppercase tracking-[0.14em] text-white/75">
-                  Our Monterrey hub &middot; on the same clock
+                  {t("monterrey.caption")}
                 </p>
               </div>
             </div>
@@ -185,8 +132,8 @@ export default async function NearshorePage() {
       <Section>
         <SectionHeading
           align="center"
-          eyebrow="By the numbers"
-          title="Credentials, not vanity metrics"
+          eyebrow={t("numbersHeading.eyebrow")}
+          title={t("numbersHeading.title")}
         />
         <div className="mt-12">
           <MetricBand metrics={numbers} />
@@ -199,23 +146,26 @@ export default async function NearshorePage() {
         <div className="relative">
           <SectionHeading
             align="center"
-            eyebrow="What we deliver"
-            title="The full data & AI build, delivered nearshore"
-            intro={`Our delivery team works from Monterrey, Mexico, in the US Central time zone, covering the same scope ${theme.brand.name} delivers anywhere: from migration to governed AI in production.`}
+            eyebrow={t("deliverHeading.eyebrow")}
+            title={t("deliverHeading.title")}
+            intro={t("deliverHeading.intro")}
           />
           <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-4" variant="pop">
-            {delivers.map(({ Icon, title, body }) => (
-              <div key={title} className="card card-hover flex h-full flex-col">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary/15 text-secondary">
-                  <Icon className="h-5 w-5" />
-                </span>
-                <h3 className="mt-4 font-display text-lg font-bold text-foreground">{title}</h3>
-                <p className="mt-2 text-muted">{body}</p>
-              </div>
-            ))}
+            {delivers.map(({ title, body }, i) => {
+              const Icon = deliverIcons[i];
+              return (
+                <div key={title} className="card card-hover flex h-full flex-col">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary/15 text-secondary">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <h3 className="mt-4 font-display text-lg font-bold text-foreground">{title}</h3>
+                  <p className="mt-2 text-muted">{body}</p>
+                </div>
+              );
+            })}
           </RevealGroup>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
-            {STACK.map((s) => (
+            {stack.map((s) => (
               <span key={s} className="pill-chip">
                 {s}
               </span>
@@ -228,22 +178,14 @@ export default async function NearshorePage() {
       {/* The team behind it */}
       <Section>
         <FeatureSplit
-          eyebrow="Certified nearshore talent"
-          title={
-            <>
-              Nearshore should not mean <span className="text-gradient">junior</span>
-            </>
-          }
-          body="Our Monterrey team is SnowPro-certified and proven in production. The people who scope the work are the people who build it, and they specialize in exactly one platform: Snowflake, every project, every day."
-          bullets={[
-            "SnowPro-certified architects and engineers, proven in production",
-            "A rigorous hiring bar for every team member",
-            "Direct access to the engineers doing the work",
-          ]}
+          eyebrow={t("team.eyebrow")}
+          title={t.rich("team.title", { hl: (c) => <span className="text-gradient">{c}</span> })}
+          body={t("team.body")}
+          bullets={t.raw("team.bullets") as string[]}
           image="/assets/images/life/team-group.jpg"
-          imageAlt="The Viewnear delivery team"
+          imageAlt={t("team.imageAlt")}
           reverse
-          cta={{ label: "See how we work", href: "/approach" }}
+          cta={{ label: t("team.cta"), href: "/approach" }}
         />
       </Section>
 
@@ -252,8 +194,8 @@ export default async function NearshorePage() {
           both. One trust layer fewer, same claims.) */}
 
       <CtaBand
-        title="Put a nearshore Snowflake team on it."
-        subtitle="Tell us where the organization stands with Snowflake (migrating, scaling, or building AI) and we'll bring a certified team in the same time zone to move it forward."
+        title={t("cta.title")}
+        subtitle={t("cta.subtitle")}
       />
     </>
   );

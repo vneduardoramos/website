@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "title": "Contacto: ponga en marcha una práctica de datos e IA",
+    "description": "Póngase en contacto con Viewnear. Ayudamos a las empresas a poner en marcha prácticas de datos e IA sobre Snowflake, operadas por sus propios equipos, en toda América."
+  },
+  "hero": {
+    "eyebrow": "Contacte a Viewnear",
+    "title": "Ponga en marcha una práctica de <hl>datos e IA</hl>",
+    "description": "Cuéntenos los objetivos de datos e IA de la organización. Ya sea modernizar sobre Snowflake o empezar desde cero, trazaremos la ruta más rápida hacia datos gobernados y listos para IA."
+  },
+  "preferEmail": "¿Prefiere el correo?",
+  "imageAlt": "Un apretón de manos cálido que da la bienvenida a un nuevo cliente de Viewnear",
+  "next": {
+    "title": "Qué sigue",
+    "reply": "Un arquitecto responde en un día hábil.",
+    "call": "¿Prefiere llamar?"
+  },
+  "steps": [
+    {
+      "title": "Revisamos el mensaje",
+      "body": "Un arquitecto de nuestro equipo lee el mensaje y lo dirige a la persona indicada."
+    },
+    {
+      "title": "Conversación inicial",
+      "body": "Agendamos una llamada breve para entender los objetivos, el panorama de datos y los tiempos."
+    },
+    {
+      "title": "Un plan a la medida",
+      "body": "Sigue una propuesta clara y sin presión: los primeros casos de uso, un plan sprint por sprint y la habilitación que el equipo recibe desde el primer día."
+    }
+  ],
+  "leadershipLabel": "El equipo que se hace cargo del proyecto.",
+  "credentials": {
+    "eyebrow": "Credenciales verificadas",
+    "pills": ["Snowflake Premier Partner", "CoCo Preferred Partner", "SnowPro-certified"]
+  },
+  "offices": ["Austin, TX · 10900 Stonelake Blvd", "Monterrey, MX · Valle Alto"],
+  "booking": {
+    "prefer": "¿Prefiere omitir el formulario?",
+    "cta": "Agende 30 minutos con un arquitecto →"
+  }
+}

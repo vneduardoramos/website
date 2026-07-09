@@ -1,9 +1,11 @@
-import Link from "next/link";
 import { Img as Image } from "@/components/marketing/Img";
 import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getSetting, getServices, safe } from "@/lib/queries";
+import type { Locale } from "@/lib/i18n-content";
+import { pageMeta } from "@/lib/seo";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
-import { theme } from "@/config/theme";
+import { Link } from "@/i18n/navigation";
 import { Hero } from "@/components/marketing/home/Hero";
 import { ServicesGrid } from "@/components/marketing/home/ServicesGrid";
 import { FoundationPhoto, AiPhoto } from "@/components/marketing/home/SplitVisuals";
@@ -25,56 +27,41 @@ export const revalidate = 60;
 type HeroSetting = { headline: string; subhead: string };
 type FaqItem = { q: string; a: string };
 
-// ── Narrative beats (the story spine) ───────────────────────────────────────
-// Built for outcomes: the economics-of-services thesis, drawn from the
-// "From Hours to Outcomes" article. Fresh wording, three beats.
-const WHY_VIEWNEAR = [
-  {
-    title: "Automation broke the billable hour",
-    body: "Hourly rates made sense when value came from people doing the work by hand. AI now absorbs most of that work, so paying by the hour quietly rewards slowness and taxes the very efficiency that was the whole point. We attach our fee to the result, which means finishing sooner is a win on both sides of the table.",
-  },
-  {
-    title: "The expertise moved upstream",
-    body: "The scarce skill is no longer typing the code or moving the data. It is framing the right problem, shaping the solution, directing the agents that execute, and judging whether the output can be trusted. That judgment runs through every engagement, from the architects who scope it to the engineers who ship it.",
-  },
-  {
-    title: "We design the outcome, then the delivery",
-    body: "We begin from the result the business needs and build the delivery backward: experienced people on the decisions, AI agents on the execution, the balance retuned as the work shifts. It isn't a rented team or a block of hours. It's the outcome itself, and answering for it stays our job.",
-  },
-];
-
-// The plan, de-risked: what quiets the "this is a big bet" fear.
-const DERISK = [
-  { label: "Proof", title: "Prove it first", body: "A focused proof of concept before the full build. The decision to scale rests on evidence, not a slide deck." },
-  { label: "Control", title: "The sponsor stays in control", body: "Regular steering, a shared backlog, and clear decision gates keep scope, budget, and priorities in-house." },
-  { label: "Pace", title: "Value from sprint one", body: "Use-case-driven sprints reach production in 8–16 weeks, with working software demoed from the very first sprint." },
-  { label: "Handover", title: "Built to hand over", body: "Documentation, enablement, and a transition plan in every engagement, so in-house teams run and extend the work confidently." },
-];
-
 // Official Snowflake credibility badges (real artwork; shown on white chips so
 // they read on the deep indigo Proof & Trust band).
 const BADGES = [
-  { src: "/assets/images/certs/premier.webp", alt: "Snowflake Premier Partner badge", w: 460, h: 460 },
-  { src: "/assets/images/certs/coco-preferred.png", alt: "Snowflake CoCo Preferred Partner badge", w: 1910, h: 1572 },
-  { src: "/assets/images/certs/snowpro-core.png", alt: "SnowPro Core certification badge", w: 487, h: 402 },
+  { src: "/assets/images/certs/premier.webp", w: 460, h: 460 },
+  { src: "/assets/images/certs/coco-preferred.png", w: 1910, h: 1572 },
+  { src: "/assets/images/certs/snowpro-core.png", w: 487, h: 402 },
 ];
 
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: { absolute: `${theme.brand.name}: ${theme.brand.tagline}` },
-    description: theme.brand.description,
-    alternates: { canonical: "/" },
-  };
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "home.meta" });
+  const base = pageMeta({ title: t("title"), description: t("description"), path: "/", locale });
+  // Keep the flagship home <title> absolute (no "| Viewnear" template suffix),
+  // as it was before i18n; pageMeta still supplies the locale-aware canonical,
+  // hreflang alternates, and the OG/Twitter title.
+  return { ...base, title: { absolute: t("title") } };
 }
 
-export default async function HomePage() {
+export default async function HomePage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("home");
+
   const [hero, services, faqs, bands] =
     await Promise.all([
-      safe(getSetting<HeroSetting>("hero"), null),
-      safe(getServices(), []),
-      safe(getSetting<FaqItem[]>("faqs"), null),
+      safe(getSetting<HeroSetting>("hero", locale as Locale), null),
+      safe(getServices(locale as Locale), []),
+      safe(getSetting<FaqItem[]>("faqs", locale as Locale), null),
       getClientBands(),
     ]);
+
+  const beats = t.raw("outcomes.beats") as { title: string; body: string }[];
+  const derisk = t.raw("derisk.cards") as { label: string; title: string; body: string }[];
+  const badgeAlts = t.raw("proof.badgeAlts") as string[];
 
   // The home page teases the first five questions; /faq carries the full list.
   const homeFaqs = faqs?.slice(0, 5) ?? null;
@@ -110,17 +97,13 @@ export default async function HomePage() {
       {/* 3) THE PATH: customer-first foundation + AI */}
       <Section className="section-tint">
         <FeatureSplit
-          eyebrow="The foundation"
-          title="Data the whole business can trust"
-          body="We stand up the governed Snowflake foundation everything else depends on, so every team works from one current, reliable source instead of five conflicting spreadsheets."
-          bullets={[
-            "One governed source of truth, fed by the ERP, CRM, and SaaS systems already in place",
-            "Pipelines that keep it fresh, tested, and trustworthy",
-            "Horizon Catalog governance and lineage, plus Horizon Context: one trusted business context every team and AI agent shares",
-          ]}
+          eyebrow={t("foundation.eyebrow")}
+          title={t("foundation.title")}
+          body={t("foundation.body")}
+          bullets={t.raw("foundation.bullets") as string[]}
           visual={<FoundationPhoto />}
           ratio="wide-visual"
-          cta={{ label: "Explore services", href: "/services" }}
+          cta={{ label: t("foundation.cta"), href: "/services" }}
         />
       </Section>
 
@@ -130,18 +113,14 @@ export default async function HomePage() {
         <SectionDecor variant="flow" />
         <div className="container-page relative">
           <FeatureSplit
-            eyebrow="Applied AI"
-            title="AI teams actually use"
-            body="With the data governed, AI stops being a science project. Cortex runs securely next to that data and grounds every answer in Horizon Context, so it reflects the real business, not a generic model's guesswork."
-            bullets={[
-              "Cortex LLMs and ML running next to governed data",
-              "Snowflake CoWork and Cortex Agents that act on decisions, not just chart them",
-              "Answers and actions that flow back into the tools teams already work in",
-            ]}
+            eyebrow={t("ai.eyebrow")}
+            title={t("ai.title")}
+            body={t("ai.body")}
+            bullets={t.raw("ai.bullets") as string[]}
             visual={<AiPhoto />}
             reverse
             ratio="wide-text"
-            cta={{ label: "Explore services", href: "/services" }}
+            cta={{ label: t("ai.cta"), href: "/services" }}
           />
         </div>
       </section>
@@ -160,15 +139,10 @@ export default async function HomePage() {
       <Section>
         <div className="max-w-3xl">
           <h2 className="text-balance font-display text-4xl font-bold tracking-tight text-foreground md:text-5xl md:leading-[1.08]">
-            The hour was never the point.{" "}
-            <ScrollHighlight>The result always was.</ScrollHighlight>
+            {t.rich("outcomes.heading", { hl: (c) => <ScrollHighlight>{c}</ScrollHighlight> })}
           </h2>
           <p className="mt-6 max-w-2xl text-xl leading-relaxed text-muted">
-            For decades a services invoice was headcount times a rate, because the value
-            lived in the manual work. AI has dissolved that link: the mechanical execution
-            is increasingly automated, and the expertise that matters has moved upstream,
-            into deciding what to build, orchestrating the agents that build it, and
-            standing behind what they produce.
+            {t("outcomes.lede")}
           </p>
         </div>
 
@@ -176,7 +150,7 @@ export default async function HomePage() {
           {/* The argument */}
           <div className="lg:col-span-7">
             <RevealGroup as="ul" variant="fade-up">
-              {WHY_VIEWNEAR.map((s, i) => (
+              {beats.map((s, i) => (
                 <li
                   key={s.title}
                   className="flex gap-5 border-t border-border py-7 first:border-t-0 first:pt-0 md:gap-7"
@@ -197,12 +171,12 @@ export default async function HomePage() {
               ))}
             </RevealGroup>
             <p className="mt-9 border-t border-border pt-7 text-xl font-medium leading-relaxed text-foreground/90">
-              Not a cheaper way to buy services. A more honest one: the target is set up
-              front, senior judgment runs the whole way through, and{" "}
-              <ScrollHighlight color="cyan">the result is ours to answer for.</ScrollHighlight>
+              {t.rich("outcomes.closing", {
+                hlCyan: (c) => <ScrollHighlight color="cyan">{c}</ScrollHighlight>,
+              })}
             </p>
             {/* The accountability claim, with the accountable faces right under it. */}
-            <LeadershipStrip label="The people who answer for it." className="mt-7" />
+            <LeadershipStrip label={t("outcomes.leadershipLabel")} className="mt-7" />
           </div>
 
           {/* The source: a featured read in its own column */}
@@ -214,7 +188,7 @@ export default async function HomePage() {
               <div className="relative aspect-[16/10] w-full overflow-hidden">
                 <Image
                   src="/assets/images/blog/from-hours-to-outcomes-ai-economics-services.jpg"
-                  alt="From Hours to Outcomes: the economics of AI-era data services"
+                  alt={t("outcomes.featured.imageAlt")}
                   width={720}
                   height={450}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -222,18 +196,16 @@ export default async function HomePage() {
               </div>
               <div className="p-6 md:p-7">
                 <span className="font-mono text-xs font-semibold uppercase tracking-widest text-primaryDeep">
-                  Read the thesis
+                  {t("outcomes.featured.eyebrow")}
                 </span>
                 <h3 className="mt-2 font-display text-xl font-bold leading-snug text-foreground">
-                  From Hours to Outcomes: How AI Changed the Economics of Services
+                  {t("outcomes.featured.title")}
                 </h3>
                 <p className="mt-2 text-base leading-relaxed text-muted">
-                  The full argument: what AI did to the billable hour, where the
-                  expertise actually went, and how outcome-based delivery changes
-                  what a services invoice actually buys.
+                  {t("outcomes.featured.body")}
                 </p>
                 <span className="mt-5 inline-flex items-center gap-1.5 font-semibold text-primaryDeep">
-                  Read the article
+                  {t("outcomes.featured.cta")}
                   <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">&rarr;</span>
                 </span>
               </div>
@@ -245,12 +217,12 @@ export default async function HomePage() {
       {/* 4a) DE-RISKED BY DESIGN: quiet the "big bet" fear */}
       <Section className="section-tint">
         <SectionHeading
-          eyebrow="Low-risk by design"
-          title="A big bet that doesn't feel like one"
-          intro="The way we engage is built to de-risk the decision itself, so committing to data &amp; AI never means committing blind."
+          eyebrow={t("derisk.heading.eyebrow")}
+          title={t("derisk.heading.title")}
+          intro={t("derisk.heading.intro")}
         />
         <RevealGroup className="mt-12 grid gap-5 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-4" variant="pop">
-          {DERISK.map((d, i) => (
+          {derisk.map((d, i) => (
             <PlateCard key={d.title} label={d.label} refCode={`0${i + 1}`} title={d.title}>
               {d.body}
             </PlateCard>
@@ -263,21 +235,21 @@ export default async function HomePage() {
         <div className="panel-warm mt-12 flex flex-col items-start justify-between gap-6 rounded-2xl p-6 shadow-soft md:flex-row md:items-center md:p-8">
           <div>
             <p className="text-balance font-display text-xl font-bold leading-snug text-foreground md:text-2xl">
-              <span className="text-primaryDeep">8–16 weeks</span> to production, vs.{" "}
-              <span className="text-red">6–12 months</span> building the team in-house.
+              {t.rich("derisk.panel.headline", {
+                weeks: (c) => <span className="text-primaryDeep">{c}</span>,
+                months: (c) => <span className="text-red">{c}</span>,
+              })}
             </p>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
-              A SnowPro-certified team with enterprise depth at every level, working in
-              use-case sprints scoped by paid discovery: no hiring runway, no ramp,
-              no key-person risk.
+              {t("derisk.panel.body")}
             </p>
           </div>
           <div className="flex shrink-0 flex-wrap items-center gap-4">
             {/* The CTA promises a person; show the actual people. */}
             <FaceStack slugs={["eduardo-ramos", "jc-rodriguez", "rene-trevino"]} />
             <div className="flex flex-wrap gap-3">
-              <Link href="/contact" className="btn-primary">Talk to an architect</Link>
-              <Link href="/partnership" className="btn-ghost">See the comparison</Link>
+              <Link href="/contact" className="btn-primary">{t("derisk.panel.ctaPrimary")}</Link>
+              <Link href="/partnership" className="btn-ghost">{t("derisk.panel.ctaGhost")}</Link>
             </div>
           </div>
         </div>
@@ -291,22 +263,19 @@ export default async function HomePage() {
             <SnowMark variant="white" size={200} className="pointer-events-none absolute -bottom-12 -left-10 opacity-[0.05]" />
             <div className="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               <div>
-                <p className="eyebrow eyebrow--invert mb-4">Proof, not promises</p>
+                <p className="eyebrow eyebrow--invert mb-4">{t("proof.eyebrow")}</p>
                 <h2 className="max-w-xl font-display text-3xl font-bold tracking-tight text-white md:text-[2.6rem] md:leading-[1.08]">
-                  A Snowflake partner enterprises trust.
+                  {t("proof.title")}
                 </h2>
                 <p className="mt-4 max-w-lg text-lg leading-relaxed text-white/75">
-                  Recognized in Snowflake&rsquo;s CoCo Preferred Partner program at Summit 2026,
-                  alongside Accenture, Deloitte, IBM, and Capgemini. In practice, that means
-                  Snowflake&rsquo;s product teams are a call away when a build hits a hard
-                  question.
+                  {t("proof.body")}
                 </p>
                 <div className="mt-7 flex flex-wrap items-center gap-6">
-                  {BADGES.map((b) => (
+                  {BADGES.map((b, i) => (
                     <Image
                       key={b.src}
                       src={b.src}
-                      alt={b.alt}
+                      alt={badgeAlts[i]}
                       width={b.w}
                       height={b.h}
                       className="h-14 w-auto"
@@ -314,15 +283,16 @@ export default async function HomePage() {
                   ))}
                 </div>
                 <p className="mt-7 max-w-lg text-sm leading-relaxed text-white/70">
-                  Everything we build inherits Snowflake&rsquo;s independently audited
-                  controls (SOC 2 Type II, ISO 27001, HIPAA), extended by our
-                  governed delivery practices.{" "}
-                  <Link
-                    href="/security"
-                    className="font-semibold text-white underline-offset-4 hover:underline"
-                  >
-                    How we secure client data &rarr;
-                  </Link>
+                  {t.rich("proof.security", {
+                    link: (c) => (
+                      <Link
+                        href="/security"
+                        className="font-semibold text-white underline-offset-4 hover:underline"
+                      >
+                        {c}
+                      </Link>
+                    ),
+                  })}
                 </p>
               </div>
               {/* The recognition, photographed: Viewnear on Snowflake's CoCo
@@ -331,14 +301,14 @@ export default async function HomePage() {
                 <div className="relative aspect-[16/11] overflow-hidden rounded-2xl ring-1 ring-white/15">
                   <Image
                     src="/assets/images/life/partner-momentum.jpg"
-                    alt="Snowflake's CoCo Global Partner Momentum wall listing Viewnear among Snowflake partners"
+                    alt={t("proof.figureAlt")}
                     fill
                     sizes="(max-width:1024px) 100vw, 40vw"
                     className="object-cover"
                   />
                 </div>
                 <figcaption className="mt-3 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-white/60">
-                  Snowflake&rsquo;s CoCo Partner Momentum wall &middot; Summit 2026
+                  {t("proof.figcaption")}
                 </figcaption>
               </figure>
             </div>
@@ -351,8 +321,8 @@ export default async function HomePage() {
       {homeFaqs && homeFaqs.length > 0 && (
         <Section>
           <SectionHeading
-            eyebrow="Questions"
-            title="Answers to what teams ask us first"
+            eyebrow={t("faq.eyebrow")}
+            title={t("faq.title")}
             center
           />
           <div className="mt-12">
@@ -363,7 +333,7 @@ export default async function HomePage() {
               href="/faq"
               className="group inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep"
             >
-              <span className="link-underline">All questions answered</span>
+              <span className="link-underline">{t("faq.all")}</span>
               <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
                 &rarr;
               </span>
@@ -374,8 +344,8 @@ export default async function HomePage() {
 
       {/* CTA: restate the stakes, confident close */}
       <CtaBand
-        title="The quarter data starts paying off for the business."
-        subtitle="Every quarter on ungoverned data is decisions made half-blind. Tell us where the organization stands today, and we'll map the fastest path to data &amp; AI its teams can trust."
+        title={t("cta.title")}
+        subtitle={t("cta.subtitle")}
       />
     </>
   );

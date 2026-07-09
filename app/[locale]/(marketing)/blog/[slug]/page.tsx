@@ -1,7 +1,10 @@
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Img as Image } from "@/components/marketing/Img";
 import { Breadcrumbs } from "@/components/marketing/Breadcrumbs";
 import { notFound } from "next/navigation";
 import { getBlogPostBySlug, getBlogPosts, getBlogSlugs } from "@/lib/queries";
+import type { Locale } from "@/lib/i18n-content";
 import { formatDate } from "@/lib/utils";
 import { Section, Pill, CtaBand } from "@/components/marketing/ui";
 import { CoverCard } from "@/components/marketing/CoverCard";
@@ -28,25 +31,35 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
-}) {
-  const post = await getBlogPostBySlug(params.slug);
-  if (!post) return { title: "Blog" };
+  params: { locale: string; slug: string };
+}): Promise<Metadata> {
+  const { locale, slug } = params;
+  setRequestLocale(locale);
+  const post = await getBlogPostBySlug(slug, locale as Locale);
+  if (!post) {
+    const t = await getTranslations({ locale, namespace: "blogDetail.meta" });
+    return { title: t("fallbackTitle") };
+  }
   return pageMeta({
     title: post.title,
     description: post.excerpt ?? undefined,
-    path: `/blog/${params.slug}`,
+    path: `/blog/${slug}`,
     image: post.coverImageUrl,
     type: "article",
+    locale,
   });
 }
 
 export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string };
+  params: { locale: string; slug: string };
 }) {
-  const post = await getBlogPostBySlug(params.slug);
+  const { locale, slug } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("blogDetail");
+
+  const post = await getBlogPostBySlug(slug, locale as Locale);
   if (!post) notFound();
 
   // Estimated reading time from the markdown body.
@@ -66,7 +79,7 @@ export default async function BlogPostPage({
   const takeaways = asStringArray(post.keyTakeaways);
 
   // Related reading: 3 other recent posts (excluding the current one).
-  const recent = await getBlogPosts({ take: 4 });
+  const recent = await getBlogPosts({ take: 4 }, locale as Locale);
   const related = recent.filter((p) => p.slug !== post.slug).slice(0, 3);
 
   const articleLd = {
@@ -108,8 +121,8 @@ export default async function BlogPostPage({
         <div className="container-page relative pt-12 md:pt-16">
           <Breadcrumbs
             items={[
-              { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: t("breadcrumb.home"), href: "/" },
+              { label: t("breadcrumb.blog"), href: "/blog" },
               { label: post.title },
             ]}
           />
@@ -155,7 +168,7 @@ export default async function BlogPostPage({
                     <p className="text-sm text-muted">{author.title}</p>
                   ) : null}
                   <p className="mt-0.5 text-xs text-muted">
-                    {formatDate(post.publishedAt)} · {readingTime} min read
+                    {formatDate(post.publishedAt)} · {t("readTime", { minutes: readingTime })}
                   </p>
                   {author.linkedinUrl ? (
                     <a
@@ -164,7 +177,7 @@ export default async function BlogPostPage({
                       rel="noopener noreferrer"
                       className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep"
                     >
-                      Connect on LinkedIn →
+                      {t("connectLinkedIn")}
                     </a>
                   ) : null}
                 </div>
@@ -177,7 +190,7 @@ export default async function BlogPostPage({
                 <span aria-hidden>·</span>
                 <span>{formatDate(post.publishedAt)}</span>
                 <span aria-hidden>·</span>
-                <span>{readingTime} min read</span>
+                <span>{t("readTime", { minutes: readingTime })}</span>
               </div>
             )}
           </header>
@@ -227,7 +240,7 @@ export default async function BlogPostPage({
           <SectionDecor variant="grid" />
           <div className="container-page relative">
             <h2 className="font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
-              Related reading
+              {t("relatedHeading")}
             </h2>
             <div className="mt-8 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3">
               {related.map((p) => (

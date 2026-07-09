@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Img as Image } from "@/components/marketing/Img";
 import { pageMeta } from "@/lib/seo";
 import { Section } from "@/components/marketing/ui";
@@ -7,44 +9,36 @@ import { SectionDecor } from "@/components/marketing/Decor";
 import { SnowflakeLockup } from "@/components/marketing/SnowflakeLockup";
 import { LeadershipStrip } from "@/components/marketing/LeadershipStrip";
 import { getSetting, getTeam } from "@/lib/queries";
+import type { Locale } from "@/lib/i18n-content";
 import { theme } from "@/config/theme";
 
-export const metadata = pageMeta({
-  title: "Contact: start a data & AI practice",
-  description:
-    "Get in touch with Viewnear. We help enterprises stand up data & AI practices on Snowflake, run by their own teams, across the Americas.",
-  path: "/contact",
-});
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "contact.meta" });
+  return pageMeta({ title: t("title"), description: t("description"), path: "/contact", locale });
+}
 
 type ContactSetting = { email: string; blurb: string };
 
-const steps = [
-  {
-    title: "We review the message",
-    body: "An architect on our team reads the message and routes it to the right person.",
-  },
-  {
-    title: "Intro conversation",
-    body: "We schedule a short call to understand the goals, data landscape, and timeline.",
-  },
-  {
-    title: "A tailored plan",
-    body: "A clear, no-pressure proposal follows: the first use cases, a sprint-by-sprint plan, and the enablement the team gets from day one.",
-  },
-];
+export default async function ContactPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("contact");
 
-// Both offices, exactly as listed on /life-at-viewnear.
-const offices = ["Austin, TX · 10900 Stonelake Blvd", "Monterrey, MX · Valle Alto"];
-
-export default async function ContactPage() {
   const [contact, team] = await Promise.all([
-    getSetting<ContactSetting>("contact"),
-    getTeam(),
+    getSetting<ContactSetting>("contact", locale as Locale),
+    getTeam(locale as Locale),
   ]);
   const email = contact?.email ?? theme.brand.email;
   // First published member with a booking link, if any (none seeded today:
   // the block below renders nothing until a bookingUrl lands in the CMS).
   const bookingUrl = team.find((m) => m.bookingUrl)?.bookingUrl;
+
+  const steps = t.raw("steps") as { title: string; body: string }[];
+  const credentialPills = t.raw("credentials.pills") as string[];
+  // Both offices, exactly as listed on /life-at-viewnear.
+  const offices = t.raw("offices") as string[];
 
   return (
     <>
@@ -52,17 +46,9 @@ export default async function ContactPage() {
         <SectionDecor variant="blobs" />
         <div className="relative">
           <PageHero
-            eyebrow={`Contact ${theme.brand.name}`}
-            title={
-              <>
-                Start a <span className="text-gradient">data &amp; AI</span>{" "}
-                practice
-              </>
-            }
-            description={
-              contact?.blurb ??
-              "Tell us about the organization's data & AI goals. Whether it means modernizing on Snowflake or starting from scratch, we'll map the fastest path to governed, AI-ready data."
-            }
+            eyebrow={t("hero.eyebrow")}
+            title={t.rich("hero.title", { hl: (c) => <span className="text-gradient">{c}</span> })}
+            description={contact?.blurb ?? t("hero.description")}
           />
         </div>
       </div>
@@ -71,7 +57,7 @@ export default async function ContactPage() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <div className="order-2 lg:order-1">
             <div>
-              <p className="text-sm text-muted">Prefer email?</p>
+              <p className="text-sm text-muted">{t("preferEmail")}</p>
               <a
                 href={`mailto:${email}`}
                 className="mt-1 inline-block font-display text-xl font-bold text-primaryDeep"
@@ -84,7 +70,7 @@ export default async function ContactPage() {
               <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-tr from-primary/25 via-transparent to-accent/15" />
               <Image
                 src="/assets/images/photos/contact-handshake.jpg"
-                alt="A warm handshake welcoming a new Viewnear client"
+                alt={t("imageAlt")}
                 width={720}
                 height={480}
                 className="aspect-[3/2] w-full object-cover"
@@ -93,14 +79,14 @@ export default async function ContactPage() {
 
             <div className="mt-12">
               <h2 className="font-display text-lg font-bold text-foreground">
-                What happens next
+                {t("next.title")}
               </h2>
               <p className="mt-2 text-sm text-muted">
-                An architect replies within one business day.
+                {t("next.reply")}
               </p>
               {theme.brand.phone && (
                 <p className="mt-2 text-sm text-muted">
-                  Prefer to call?{" "}
+                  {t("next.call")}{" "}
                   <a
                     href={`tel:${theme.brand.phone.replace(/[^+\d]/g, "")}`}
                     className="font-semibold text-primaryDeep underline-offset-4 hover:underline"
@@ -122,17 +108,17 @@ export default async function ContactPage() {
                   </li>
                 ))}
               </ol>
-              <LeadershipStrip label="The team that picks up the project." className="mt-8" />
+              <LeadershipStrip label={t("leadershipLabel")} className="mt-8" />
             </div>
           </div>
 
           <div className="order-1 lg:order-2">
             <div className="mb-5">
-              <p className="eyebrow">Verified credentials</p>
+              <p className="eyebrow">{t("credentials.eyebrow")}</p>
               <div className="mt-3 flex flex-wrap gap-2">
-                <span className="pill-chip">Snowflake Premier Partner</span>
-                <span className="pill-chip">CoCo Preferred Partner</span>
-                <span className="pill-chip">SnowPro-certified</span>
+                {credentialPills.map((c) => (
+                  <span key={c} className="pill-chip">{c}</span>
+                ))}
               </div>
               <SnowflakeLockup variant="default" height={26} className="mt-5" />
               <div className="mt-5 flex flex-wrap gap-2">
@@ -149,14 +135,14 @@ export default async function ContactPage() {
             <ContactForm />
             {bookingUrl && (
               <p className="mt-6 text-sm text-muted">
-                Prefer to skip the form?{" "}
+                {t("booking.prefer")}{" "}
                 <a
                   href={bookingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-semibold text-primaryDeep underline-offset-4 hover:underline"
                 >
-                  Book 30 minutes with an architect &rarr;
+                  {t("booking.cta")}
                 </a>
               </p>
             )}

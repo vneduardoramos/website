@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMeta } from "@/lib/seo";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
@@ -7,100 +9,53 @@ import { PageHero } from "@/components/marketing/PageHero";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 import { PartnershipHighlight } from "@/components/marketing/PartnershipHighlight";
-import { theme } from "@/config/theme";
 
-export const metadata = pageMeta({
-  title: "Snowflake Partnership",
-  description:
-    "Viewnear is a Snowflake Premier Partner and a CoCo Preferred Partner: certified depth, a direct line to Snowflake's own team, and early access to what's next, all behind the data & AI practice we build.",
-  path: "/partnership",
-});
-
-const unlocks = [
-  {
-    title: "One plan with the Snowflake team",
-    body: "We work alongside the Snowflake account team on architecture, funding, and delivery: aligned incentives and one plan, not a vendor bolted on after the fact.",
-  },
-  {
-    title: "Snowflake procurement, simplified",
-    body: "Snowflake charges for the compute and storage actually consumed. Procuring that capacity through Viewnear means simpler commercial terms, with licensing and delivery under one accountable partner.",
-  },
-  {
-    title: "Priority roadmap & preview access",
-    body: "Early access to what's next on Snowflake (Cortex, Openflow, Horizon, CoCo), so new use cases can build on emerging capabilities before they're mainstream.",
-  },
-  {
-    title: "SnowPro-certified delivery",
-    body: "Certified architects and engineers on every engagement. Snowflake is what we do, not one of ten stacks we dabble in, so every engagement gets depth, not guesswork.",
-  },
-];
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "partnership.meta" });
+  return pageMeta({ title: t("title"), description: t("description"), path: "/partnership", locale });
+}
 
 // Build-vs-partner comparison: the question every leader weighs.
 type Row = { dimension: string; inhouse: string; big3: string; viewnear: string };
-const comparison: Row[] = [
-  {
-    dimension: "Time to production",
-    inhouse: "6–12 months to hire & ramp a team",
-    big3: "Slow mobilization, heavy process",
-    viewnear: "8–16 weeks to first value, demos every sprint",
-  },
-  {
-    dimension: "Who does the work",
-    inhouse: "Whoever can be hired and retained",
-    big3: "Rotating bench, layered delivery pyramids",
-    viewnear: "Certified, versed at every level",
-  },
-  {
-    dimension: "Snowflake expertise",
-    inhouse: "Learned on the job, funded in-house",
-    big3: "One of many platforms they cover",
-    viewnear: "Premier Partner specialists, end to end",
-  },
-  {
-    dimension: "Accountability",
-    inhouse: "Split across internal teams",
-    big3: "Spread across sub-contractors",
-    viewnear: "One team, owned start to finish",
-  },
-  {
-    dimension: "After go-live",
-    inhouse: "Knowledge walks out with attrition",
-    big3: "Day-rate dependency continues",
-    viewnear: "Enablement & hand-over, the team runs it",
-  },
-];
 
-export default function PartnershipPage() {
+export default async function PartnershipPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("partnership");
+
+  const unlocks = t.raw("unlocks") as { title: string; body: string }[];
+  const comparison = t.raw("comparison") as Row[];
+
   return (
     <>
       <div className="relative overflow-hidden">
         <SectionDecor variant="grid" />
         <div className="relative">
           <PageHero
-            eyebrow="Snowflake Partnership"
-            title={
-              <>
-                A Snowflake{" "}
+            eyebrow={t("hero.eyebrow")}
+            title={t.rich("hero.title", {
+              hl: (c) => (
                 <ScrollHighlight color="cyan">
-                  <span className="text-gradient">Premier Partner</span>
+                  <span className="text-gradient">{c}</span>
                 </ScrollHighlight>
-                , and CoCo Preferred Partner.
-              </>
-            }
-            description={`${theme.brand.name} holds two of Snowflake's highest partner recognitions. Together they mean certified depth, a direct line to Snowflake's own team, and early access to what's next, all put to work on enterprise data & AI by one accountable team across the Americas.`}
+              ),
+            })}
+            description={t("hero.description")}
           />
         </div>
       </div>
 
       {/* Badges + CoCo Preferred Partner momentum */}
-      <PartnershipHighlight title="Two recognitions, and CoCo Preferred Partner momentum to back them" />
+      <PartnershipHighlight title={t("highlight.title")} />
 
       {/* What it unlocks */}
       <Section>
         <SectionHeading
-          eyebrow="What it unlocks"
-          title="Faster to value, with less risk and lower cost"
-          intro="Certification isn't a logo on a slide; it changes how fast, how safely, and how affordably the business gets to value."
+          eyebrow={t("unlocksHeading.eyebrow")}
+          title={t("unlocksHeading.title")}
+          intro={t("unlocksHeading.intro")}
         />
         <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2" variant="pop">
           {unlocks.map((u) => (
@@ -117,9 +72,9 @@ export default function PartnershipPage() {
         <SectionDecor variant="grid" />
         <div className="relative">
           <SectionHeading
-            eyebrow="Build vs. partner"
-            title="The honest comparison"
-            intro="Every leader weighs building in-house, hiring a global systems integrator, or partnering with a specialist. Here's how the options actually stack up."
+            eyebrow={t("comparisonHeading.eyebrow")}
+            title={t("comparisonHeading.title")}
+            intro={t("comparisonHeading.intro")}
           />
 
           {/* Desktop table */}
@@ -128,9 +83,9 @@ export default function PartnershipPage() {
               <thead>
                 <tr className="border-b border-border bg-surface text-left">
                   <th className="px-5 py-4 font-medium text-muted">&nbsp;</th>
-                  <th className="px-5 py-4 font-display font-bold text-foreground">In-house build</th>
-                  <th className="px-5 py-4 font-display font-bold text-foreground">Global systems integrator</th>
-                  <th className="px-5 py-4 font-display font-bold text-primaryDeep">Viewnear</th>
+                  <th className="px-5 py-4 font-display font-bold text-foreground">{t("comparisonHeaders.inhouse")}</th>
+                  <th className="px-5 py-4 font-display font-bold text-foreground">{t("comparisonHeaders.big3")}</th>
+                  <th className="px-5 py-4 font-display font-bold text-primaryDeep">{t("comparisonHeaders.viewnear")}</th>
                 </tr>
               </thead>
               <tbody>
@@ -153,15 +108,15 @@ export default function PartnershipPage() {
                 <h3 className="font-display text-base font-bold text-foreground">{r.dimension}</h3>
                 <dl className="mt-3 space-y-2 text-sm">
                   <div className="flex justify-between gap-4">
-                    <dt className="text-muted">In-house</dt>
+                    <dt className="text-muted">{t("comparisonMobile.inhouse")}</dt>
                     <dd className="text-right text-muted">{r.inhouse}</dd>
                   </div>
                   <div className="flex justify-between gap-4">
-                    <dt className="text-muted">Global SI</dt>
+                    <dt className="text-muted">{t("comparisonMobile.big3")}</dt>
                     <dd className="text-right text-muted">{r.big3}</dd>
                   </div>
                   <div className="flex justify-between gap-4 border-t border-border pt-2">
-                    <dt className="font-semibold text-primaryDeep">Viewnear</dt>
+                    <dt className="font-semibold text-primaryDeep">{t("comparisonMobile.viewnear")}</dt>
                     <dd className="text-right font-medium text-foreground">{r.viewnear}</dd>
                   </div>
                 </dl>
@@ -177,25 +132,16 @@ export default function PartnershipPage() {
         <SectionDecor variant="flow" />
         <div className="relative">
           <FeatureSplit
-            eyebrow="Certified vs. generalist"
-            title={
-              <>
-                Depth that a <span className="text-gradient">generalist can&rsquo;t match</span>
-              </>
-            }
-            body="A Premier Partner is measured on certified people and verified outcomes, not breadth of logos. We know the full Snowflake stack and work hand in hand with Snowflake's own team on every engagement, so the build moves faster with less risk than a generalist or an in-house ramp."
-            bullets={[
-              "SnowPro-certified architects and engineers, from design to production",
-              "Working directly with the Snowflake account team",
-              "Early access to Cortex, Openflow, Horizon, and CoCo",
-              "One accountable team: the same named people from kickoff to handover",
-            ]}
+            eyebrow={t("certified.eyebrow")}
+            title={t.rich("certified.title", { hl: (c) => <span className="text-gradient">{c}</span> })}
+            body={t("certified.body")}
+            bullets={t.raw("certified.bullets") as string[]}
             image="/assets/images/life/team-booth.jpg"
-            imageAlt="The Viewnear team demoing to attendees at a Snowflake event"
+            imageAlt={t("certified.imageAlt")}
             reverse
-            cta={{ label: "Explore services", href: "/services" }}
+            cta={{ label: t("certified.cta"), href: "/services" }}
           />
-          <LeadershipStrip label="The people at the table are the people who deliver." className="mt-10" />
+          <LeadershipStrip label={t("certified.leadershipLabel")} className="mt-10" />
         </div>
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
@@ -206,8 +152,8 @@ export default function PartnershipPage() {
       <FieldStrip items={["team-group", "team-stage", "team-dinner"]} />
 
       <CtaBand
-        title="Put a certified partner on it."
-        subtitle="Tell us where the organization stands with Snowflake (procurement, migration, or AI) and we'll bring the certified team, with Snowflake at the table, to move it forward."
+        title={t("cta.title")}
+        subtitle={t("cta.subtitle")}
       />
     </>
   );

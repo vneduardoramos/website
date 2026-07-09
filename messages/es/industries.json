@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "title": "Industrias que atendemos",
+    "description": "Prácticas de datos e IA adaptadas a las reglas, los KPI y los sistemas de cada sector: datos gobernados y casos de uso en producción, sobre Snowflake, en toda América."
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "current": "Industrias"
+  },
+  "hero": {
+    "eyebrow": "Industrias",
+    "title": "Soluciones adaptadas a cada <hl>sector</hl>.",
+    "description": "Desde empresas reguladas hasta desafiantes de alto crecimiento: datos gobernados y listos para IA, moldeados por las reglas, los KPI y los sistemas de cada sector, en toda América."
+  },
+  "feature": {
+    "eyebrow": "Entrega guiada por el dominio",
+    "title": "Los datos de cada sector, <hl>sus regulaciones y KPI</hl>.",
+    "body": "Cada sector tiene sus propios datos, regulaciones y presiones. Combinamos a especialistas que conocen la industria con ingenieros certificados en SnowPro para mapear el problema, definir la hoja de ruta y construir la solución junto a los equipos internos, de modo que lo que entregamos hable el lenguaje del sector y mueva las métricas que importan.",
+    "bullets": [
+      "Aceleradores prediseñados ajustados a los patrones de datos de cada sector",
+      "Cumplimiento y gobierno integrados en la arquitectura",
+      "Resultados alineados con los KPI que sigue la dirección"
+    ],
+    "imageAlt": "Paneles de analítica por industria construidos sobre Snowflake",
+    "cta": "Hablemos de un sector"
+  },
+  "sectors": {
+    "eyebrow": "Sectores que atendemos",
+    "title": "Encuentre la industria adecuada",
+    "intro": "Siete prácticas, cada una con sus propios aceleradores y patrones de cumplimiento; explore la más cercana al trabajo que tiene entre manos."
+  },
+  "grid": {
+    "kicker": "Industria",
+    "imageAlt": "Soluciones de datos e IA de {name}"
+  },
+  "endCap": {
+    "kicker": "Póngase en contacto",
+    "title": "¿No ve su sector aquí?",
+    "excerpt": "Trabajamos en toda América. Cuéntenos su desafío de datos y trazaremos la vía más rápida hacia el valor."
+  },
+  "showcase": {
+    "eyebrow": "En toda América",
+    "title": "Profundidad por sector, sobre <hl>una base gobernada</hl>.",
+    "body": "Sea cual sea la industria, la base es la misma: datos confiables y gobernados sobre Snowflake. Lo que cambia es todo lo que va encima: las fuentes, las obligaciones de cumplimiento y las decisiones que debe sostener.",
+    "imageAlt": "Analítica por industria sobre una base gobernada de Snowflake",
+    "cta": "Hablemos de un sector"
+  },
+  "cta": {
+    "title": "Pongamos en marcha una práctica de datos e IA duradera.",
+    "subtitle": "Cuéntenos en qué punto está la organización (migrando, escalando o llevando IA a producción) y trazaremos la vía más rápida hacia casos de uso en producción, operados por equipos internos."
+  }
+}

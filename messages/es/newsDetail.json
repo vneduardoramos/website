@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "fallbackTitle": "Noticias"
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "news": "Noticias y eventos"
+  },
+  "event": {
+    "venue": "Lugar:",
+    "agenda": "Agenda"
+  },
+  "readFull": "Leer el anuncio completo",
+  "more": {
+    "eyebrow": "Sala de prensa",
+    "title": "Más noticias y eventos"
+  }
+}

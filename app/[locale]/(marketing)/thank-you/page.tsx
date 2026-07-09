@@ -1,47 +1,45 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { pageMeta } from "@/lib/seo";
+import { Link } from "@/i18n/navigation";
 import { Section } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 
-export const metadata: Metadata = {
-  title: "Thanks for reaching out",
-  description:
-    "Thanks for reaching out to Viewnear. Someone from our team will reply within one business day.",
-  robots: { index: false },
-  alternates: { canonical: "/thank-you" },
-};
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "thankYou.meta" });
+  return pageMeta({ title: t("title"), description: t("description"), path: "/thank-you", noindex: true, locale });
+}
 
-export default function ThankYouPage() {
+export default async function ThankYouPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("thankYou");
+
   return (
     <>
       <PageHero
-        eyebrow="Thanks"
-        title={
-          <>
-            Thanks for reaching out. <span className="text-gradient">We&apos;ll be in touch</span>.
-          </>
-        }
-        description="Someone from our team will reply within one business day. In the meantime, explore how we help enterprises turn data into a competitive advantage."
+        eyebrow={t("hero.eyebrow")}
+        title={t.rich("hero.title", { hl: (c) => <span className="text-gradient">{c}</span> })}
+        description={t("hero.description")}
       >
         <div className="flex flex-wrap justify-center gap-4">
           <Link href="/" className="btn-primary btn-lg">
-            Back to home
+            {t("actions.home")}
           </Link>
           <Link href="/case-studies" className="btn-ghost btn-lg">
-            See case studies
+            {t("actions.caseStudies")}
           </Link>
           <Link href="/resources" className="btn-ghost btn-lg">
-            Browse resources
+            {t("actions.resources")}
           </Link>
         </div>
       </PageHero>
 
       <Section>
         <div className="mx-auto max-w-2xl text-center text-muted">
-          <p>
-            We read every message and route it to the right person on our team. Time-sensitive
-            requests can also come by email, and we will prioritize accordingly.
-          </p>
+          <p>{t("body")}</p>
         </div>
       </Section>
     </>

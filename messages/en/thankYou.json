@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "title": "Thanks for reaching out",
+    "description": "Thanks for reaching out to Viewnear. Someone from our team will reply within one business day."
+  },
+  "hero": {
+    "eyebrow": "Thanks",
+    "title": "Thanks for reaching out. <hl>We’ll be in touch</hl>.",
+    "description": "Someone from our team will reply within one business day. In the meantime, explore how we help enterprises turn data into a competitive advantage."
+  },
+  "actions": {
+    "home": "Back to home",
+    "caseStudies": "See case studies",
+    "resources": "Browse resources"
+  },
+  "body": "We read every message and route it to the right person on our team. Time-sensitive requests can also come by email, and we will prioritize accordingly."
+}

@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "title": "Data + AI: agents inside Snowflake and in the flow of work",
+    "description": "Agents that reason over governed data inside Snowflake and act in the tools teams already use, and the interplay between them. Built with Claude as an Anthropic partner, in production in 8–16 weeks."
+  },
+  "hero": {
+    "eyebrow": "Data + AI",
+    "title": "Agents that act where work happens, <hl>on data teams can trust.</hl>",
+    "description": "The value of AI shows up when agents reason over governed data inside Snowflake and take the next action in the tools teams already use. We build both, and the interplay between them, with Claude as an Anthropic partner. Proven small first, in production in 8–16 weeks."
+  },
+  "heroChips": [
+    "Inside Snowflake + in the field",
+    "Grounded in governed data",
+    "Built with Claude",
+    "In production, not a lab"
+  ],
+  "how": {
+    "eyebrow": "How it works",
+    "title": "Two planes, one governed loop",
+    "intro": "Agents run in two places. Inside Snowflake, they reason over governed data without moving it. In the flow of work, Claude takes the next action where teams already are. The point is the interplay: a request crosses both and comes back cited, in policy, and logged."
+  },
+  "ship": {
+    "eyebrow": "What we ship",
+    "title": "Six jobs, running across both planes.",
+    "intro": "Each one reasons over governed data inside Snowflake and shows up where teams work. Where a real engagement proves it, the numbers are on the card."
+  },
+  "runsOn": "Runs on",
+  "useCases": [
+    {
+      "eyebrow": "Documents",
+      "title": "Paperwork that reads itself",
+      "body": "Claims, invoices, and contracts classified, extracted, and routed in seconds instead of hand-sorted piles. The document backlog becomes a table teams can query.",
+      "mech": "AI_CLASSIFY · AI_EXTRACT · PARSE_DOCUMENT",
+      "stat": "60→95% accuracy · 4 sec per document",
+      "proof": { "label": "Read the engagement →", "href": "/case-studies/insurance-claims-cortex-ai" }
+    },
+    {
+      "eyebrow": "Answers",
+      "title": "Executives who ask the data directly",
+      "body": "Plain-language questions answered with citations against governed definitions, so the Monday meeting starts from the same number, not three versions of it.",
+      "mech": "Cortex Analyst · Semantic Views · CoWork",
+      "stat": "Thousands of runaway SKUs, one catalog agent",
+      "proof": { "label": "Read the engagement →", "href": "/case-studies/sku-catalog-governance" }
+    },
+    {
+      "eyebrow": "Foresight",
+      "title": "Churn and failures, flagged early",
+      "body": "Models on usage, billing, and sensor data that surface at-risk customers and equipment before the quarter ends, with the reasons attached.",
+      "mech": "Cortex ML · Snowpark"
+    },
+    {
+      "eyebrow": "Search",
+      "title": "Documents, searched by meaning",
+      "body": "Policies, contracts, and wikis answered directly, with sources cited. Retrieval grounded in the organization's own content, so answers stay accurate and current.",
+      "mech": "Cortex Search · RAG"
+    },
+    {
+      "eyebrow": "Agents",
+      "title": "Agents that act, inside policy",
+      "body": "AI that does the next step, not just describes it: drafting the response, filing the update, kicking off the workflow, each action inside per-agent permissions with a full audit trail.",
+      "mech": "Cortex Agents · AI Agent Identity"
+    },
+    {
+      "eyebrow": "Embedded",
+      "title": "AI where teams already work",
+      "body": "Answers and actions flowing back into the ERP, CRM, and apps the business runs on, so nobody has to visit another dashboard to benefit.",
+      "mech": "Streamlit · APIs · Zero-Copy Integrations"
+    }
+  ],
+  "useCasesFootnote": "A use case we haven't listed? If the data can carry it, we can ship it. <link>Tell us the job →</link>",
+  "governed": {
+    "eyebrow": "Governed by default",
+    "title": "One perimeter, one identity, both planes",
+    "body": "Inference runs inside the business's Snowflake account, so prompts and results stay within the same perimeter as the data. Agents in the field reach it through governed endpoints, never raw copies, acting as verifiable identities with per-agent permissions. Access, masking, and lineage carry across both planes, and Cortex guardrails screen every call.",
+    "bullets": [
+      "Models run next to governed data: no copies, no export",
+      "Every agent acts as one governed identity, inside or out",
+      "Access, masking, and lineage inherited from Snowflake Horizon",
+      "Cortex Guard and AI guardrails on every call"
+    ],
+    "imageAlt": "Snowflake CoWork answering questions with cited results from governed data",
+    "figcaption": "Snowflake CoWork answering from governed data (demo environment)."
+  },
+  "credentials": {
+    "eyebrow": "Credentials",
+    "title": "Certified to run AI on enterprise data",
+    "intro": "Every model runs under Snowflake's independently audited controls, delivered by a SnowPro-certified team that does this every day, and, as an Anthropic partner, builds with Claude.",
+    "anthropicLine": "Anthropic partner, building with Claude"
+  },
+  "cta": {
+    "title": "Put the right agent on the work.",
+    "subtitle": "Tell us the use case. We'll bring Claude, the governance, and the people to ship it into production with the team, inside Snowflake and in the flow of work."
+  }
+}

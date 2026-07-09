@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "title": "Nuestro enfoque",
+    "description": "Cómo Viewnear entrega sobre Snowflake: sprints guiados por casos de uso, prueba antes de escalar y gobierno del proyecto, con plazos fijos, revisiones de dirección, puntos de control de POC y una transición ordenada."
+  },
+  "hero": {
+    "eyebrow": "Nuestro enfoque",
+    "title": "Los líderes de entrega pueden <hl>gobernar</hl>.",
+    "description": "Sprints guiados por casos de uso, con software funcional en cada demo, más el gobierno que reduce el riesgo del proyecto en sí, para que los patrocinadores siempre sepan en qué punto está el trabajo."
+  },
+  "experience": {
+    "eyebrow": "La experiencia",
+    "title": "Cómo se vive un proyecto desde la perspectiva del patrocinador",
+    "intro": "Las revisiones que dirige el patrocinador, las demos que observa el equipo y las decisiones que permanecen internas: un solo proyecto, desde la primera sesión de alcance hasta la transición."
+  },
+  "run": {
+    "eyebrow": "Cómo funcionan los proyectos",
+    "title": "Puntos de control que gestionan los patrocinadores",
+    "intro": "Plazos claros, dirección y una transición ordenada: las preguntas que todo patrocinador hace, respondidas de antemano."
+  },
+  "runPhases": [
+    {
+      "title": "Un arco fijo de 8 a 16 semanas",
+      "body": "La mayoría de los primeros desarrollos llegan a producción en 8 a 16 semanas: una fase de descubrimiento pagada fija el alcance y el precio desde el inicio, y cada sprint cierra con software funcional, para que el valor llegue desde el primer sprint."
+    },
+    {
+      "title": "Dirección y transparencia",
+      "body": "Revisiones de dirección periódicas, un backlog compartido y puntos de decisión claros mantienen a los patrocinadores en control del alcance, el presupuesto y las prioridades en todo momento."
+    },
+    {
+      "title": "Prueba antes de escalar",
+      "body": "Probamos el enfoque con una prueba de concepto acotada antes del desarrollo completo, para que el compromiso de escalar se base en evidencia y no en una presentación de diapositivas."
+    },
+    {
+      "title": "Construido para entregarse",
+      "body": "Los runbooks, la documentación y las sesiones de capacitación se entregan junto con el desarrollo, además de un plan de transición que define quién opera qué cuando nos retiramos."
+    }
+  ],
+  "impact": {
+    "eyebrow": "Impacto en el negocio",
+    "title": "Qué cambia y cuándo",
+    "intro": "Una visión práctica del valor que devuelve un proyecto, por horizonte, no por lista de funcionalidades."
+  },
+  "impactByPhase": [
+    {
+      "phase": "Primeras 8 a 16 semanas",
+      "title": "Bases y primer valor",
+      "body": "Una base gobernada sobre Snowflake en marcha, los datos prioritarios fluyendo y los primeros dashboards en producción activos: la práctica de datos echa raíces."
+    },
+    {
+      "phase": "6 a 12 meses",
+      "title": "Escala y autoservicio",
+      "body": "Casos de uso de analítica e IA desplegados en los distintos equipos; autoservicio adoptado y reportes manuales retirados."
+    },
+    {
+      "phase": "Más de 18 meses",
+      "title": "Ventaja acumulativa",
+      "body": "Nuevos casos de uso entregados en semanas, costo de operación ajustado y un equipo con la soltura suficiente para seguir ampliándolo por su cuenta."
+    }
+  ],
+  "caseStudies": {
+    "title": "Cómo se traduce en la práctica"
+  }
+}

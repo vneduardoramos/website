@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "title": "Migraciones a Snowflake: Teradata, Oracle, Redshift, Hadoop y más",
+    "description": "Viewnear traslada almacenes de datos heredados y Hadoop a una única base gobernada en Snowflake: conversión de código automatizada, paridad validada, una transición por fases que el negocio no percibe y una transferencia que deja al equipo operándola."
+  },
+  "hero": {
+    "eyebrow": "Migraciones",
+    "title": "Fuera de Teradata, Oracle o Hadoop. <hl>Hacia una práctica de datos que el equipo conserva.</hl>",
+    "description": "Una migración se gana en la planificación, en las verificaciones de paridad y en la transición que nadie nota, no en el cambio de licencia. Ejecutamos todo ese recorrido como un solo equipo responsable: código convertido de forma automática, cada cifra validada contra el origen y el negocio operando durante todo el proceso."
+  },
+  "heroChips": ["Más de 20 plataformas de origen", "Conversión automatizada", "Paridad validada", "Transición por fases"],
+  "sourcesHeading": {
+    "eyebrow": "Todas las plataformas de origen",
+    "title": "Migramos desde todas ellas",
+    "intro": "Appliances heredados, almacenes de datos en la nube, Hadoop o la base de datos que discretamente cumple funciones de almacén. Si los datos viven ahí hoy, tenemos una ruta para llevarlos a Snowflake, gobernados y en manos del equipo."
+  },
+  "sources": [
+    {
+      "label": "MPP heredado y almacenes de datos",
+      "items": [
+        { "name": "Teradata", "slug": "teradata" },
+        { "name": "IBM Netezza", "slug": "ibm" },
+        { "name": "Oracle Exadata", "slug": "oracle" },
+        { "name": "SAP BW / BW4HANA", "slug": "sap" }
+      ]
+    },
+    {
+      "label": "Almacenes de datos en la nube",
+      "items": [
+        { "name": "Amazon Redshift", "slug": "redshift" },
+        { "name": "Google BigQuery", "slug": "bigquery" },
+        { "name": "Azure Synapse", "slug": "azure" },
+        { "name": "Databricks", "slug": "databricks" }
+      ]
+    },
+    {
+      "label": "Hadoop y data lakes",
+      "items": [
+        { "name": "Cloudera / Hortonworks", "slug": "cloudera" },
+        { "name": "Apache Hive", "slug": "hive" },
+        { "name": "Apache Spark", "slug": "spark" },
+        { "name": "HDFS", "slug": "hadoop" }
+      ]
+    },
+    {
+      "label": "Bases de datos que hacen de almacén",
+      "items": [
+        { "name": "Oracle Database", "slug": "oracle" },
+        { "name": "Microsoft SQL Server", "slug": "sqlserver" },
+        { "name": "IBM Db2", "slug": "ibm" },
+        { "name": "PostgreSQL", "slug": "postgresql" },
+        { "name": "MySQL", "slug": "mysql" }
+      ]
+    },
+    {
+      "label": "ETL y analítica heredados",
+      "items": [
+        { "name": "Informatica", "slug": "informatica" },
+        { "name": "Talend", "slug": "talend" }
+      ]
+    }
+  ],
+  "sourcesNote": "Los nombres de plataformas y logotipos son marcas registradas de sus respectivos propietarios, mostrados para indicar los orígenes de migración que admitimos. ¿Usa algo que no aparece aquí? Es casi seguro que ya lo hemos visto. Cuéntenos qué está en ejecución y trazaremos la ruta.",
+  "whyHeading": {
+    "eyebrow": "Por qué los equipos migran",
+    "title": "Las razones para dejar atrás lo heredado",
+    "intro": "La plataforma cambia, pero las razones se repiten: costo, carga operativa y una base que por fin está lista para la IA."
+  },
+  "howHeading": {
+    "eyebrow": "Cómo migramos",
+    "title": "Automatizado, validado y por fases",
+    "intro": "Un recorrido repetible que reduce el riesgo del cambio. La mayor parte de la conversión es automática; la transición nunca lo es."
+  },
+  "phases": [
+    {
+      "title": "Evaluar y planificar",
+      "body": "Inventariamos cada tabla, vista, procedimiento almacenado y cada informe que depende de ellos, mapeamos las dependencias y construimos el caso de negocio antes de mover nada."
+    },
+    {
+      "title": "Convertir",
+      "body": "La mayor parte del SQL, los procedimientos almacenados y los scripts se convierten de forma automática; nuestros ingenieros corrigen los casos límite a mano y revisan cada objeto antes de que avance."
+    },
+    {
+      "title": "Migrar y validar",
+      "body": "Las cargas históricas más el CDC incremental a través de Openflow y Snowpipe mantienen los datos actualizados, mientras verificaciones automáticas de fila, agregado y hash demuestran la paridad contra el origen."
+    },
+    {
+      "title": "Ejecución en paralelo y transición",
+      "body": "Ambos sistemas funcionan en paralelo con reconciliación nocturna. Hacemos la transición por fases y por unidad de negocio, nunca un cambio de golpe, y solo cuando las cifras coinciden."
+    },
+    {
+      "title": "Optimizar y desmantelar",
+      "body": "Ajustamos los almacenes y las canalizaciones según el uso real, retiramos el sistema heredado y entregamos documentación y runbooks para que el equipo lo opere sin nosotros."
+    }
+  ],
+  "conviction": {
+    "eyebrow": "Nuestra convicción",
+    "title": "Las herramientas convierten el código. No responden por el cierre de fin de mes.",
+    "body": "SnowConvert y el Snowpark Migration Accelerator se encargan del trabajo mecánico: el SQL, los procedimientos almacenados y los trabajos de Spark que tomaron años en escribirse se convierten en semanas. Para lo que realmente se nos contrata es para todo lo que las herramientas no pueden dar por válido: los casos límite corregidos a mano, cada objeto revisado antes de que avance, y la reconciliación de fila, agregado y hash que demuestra que las cifras nuevas coinciden con las anteriores antes de que alguien haga la transición.",
+    "bullets": [
+      "Salida de la conversión revisada objeto por objeto, en Snowflake Workspaces",
+      "Verificaciones de fila, agregado y hash que demuestran la paridad contra el origen",
+      "Una ejecución en paralelo con reconciliación nocturna antes de cualquier transición"
+    ],
+    "imageAlt": "Objetos convertidos que se revisan cambio a cambio en Snowflake Workspaces"
+  },
+  "liveExample": "Ejemplo real: <link>datos de estudiantes en tiempo real en todos los campus, en producción en siete semanas →</link>",
+  "hardPartsHeading": {
+    "eyebrow": "Las partes difíciles, resueltas",
+    "title": "La lógica heredada también viaja",
+    "intro": "Las migraciones se atascan en el código procedimental y las canalizaciones, no en las tablas. Esto es lo que trasladamos para las plataformas que más vemos."
+  },
+  "hardParts": [
+    { "source": "Teradata", "detail": "Scripts de BTEQ, FastLoad y MultiLoad, macros y procedimientos almacenados convertidos; la lógica de índice primario rediseñada como clustering." },
+    { "source": "Oracle", "detail": "Paquetes PL/SQL, triggers y cursores traducidos a Snowflake Scripting; las restricciones trasladadas a canalizaciones validadas." },
+    { "source": "SQL Server", "detail": "Paquetes de T-SQL y SSIS convertidos a Snowflake SQL y modelos dbt sobre un planificador nativo." },
+    { "source": "Hadoop, Hive & Spark", "detail": "Hive SQL y trabajos de PySpark o Scala trasladados a Snowflake SQL y Snowpark; Parquet almacenado como Iceberg." },
+    { "source": "Redshift & BigQuery", "detail": "Diferencias de dialecto y la lógica de DISTKEY, SORTKEY o particiones traducidas; el costo remodelado para cómputo elástico." },
+    { "source": "Netezza & Vertica", "detail": "SQL y procedimientos específicos del appliance convertidos desde hardware al final de su vida útil hacia Snowflake elástico." }
+  ],
+  "proofHeading": {
+    "eyebrow": "Respaldado por Snowflake",
+    "title": "Un equipo certificado que ya lo ha hecho antes",
+    "intro": "Las migraciones se ejecutan sobre las propias herramientas de Snowflake, entregadas por un equipo certificado en SnowPro con una trayectoria verificada en toda América."
+  },
+  "metrics": [
+    { "value": "20+", "label": "Plataformas de origen" },
+    { "value": "Automatizada", "label": "Conversión de código con SnowConvert" },
+    { "value": "Por fases", "label": "Transición, no de golpe" },
+    { "value": "Paridad", "label": "Validada antes de la transición" }
+  ],
+  "caseStudiesLine": "Vea migraciones en producción en nuestros <link>casos de éxito →</link>",
+  "cta": {
+    "title": "Planifique la migración.",
+    "subtitle": "Cuéntenos qué está en ejecución hoy (Teradata, Oracle, Redshift, Hadoop o cualquier otra cosa) y trazaremos el recorrido: qué se convierte de forma automática, qué necesita manos y cuándo el equipo toma las llaves."
+  }
+}

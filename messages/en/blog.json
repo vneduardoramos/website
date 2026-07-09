@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "title": "Blog: field notes on data & AI",
+    "description": "Field notes, ideas, and practical guides on data engineering, AI, and building on Snowflake from the Viewnear team, straight from real engagements."
+  },
+  "hero": {
+    "eyebrow": "Blog",
+    "title": "Straight from the <hl>lab</hl>.",
+    "description": "Notes, ideas, and field reports on data & AI, straight from the engagements we run on Snowflake."
+  },
+  "featuredKicker": "Featured",
+  "emptyState": "No posts yet. Check back soon."
+}

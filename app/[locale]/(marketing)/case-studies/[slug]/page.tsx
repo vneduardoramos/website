@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { Breadcrumbs } from "@/components/marketing/Breadcrumbs";
 import { Img as Image } from "@/components/marketing/Img";
 import { notFound } from "next/navigation";
 import { getCaseStudyBySlug, getCaseStudySlugs, getCaseStudies } from "@/lib/queries";
+import type { Locale } from "@/lib/i18n-content";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { MetricBand } from "@/components/marketing/Blocks";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
@@ -20,16 +22,6 @@ import { pageMeta } from "@/lib/seo";
 
 export const revalidate = 60;
 
-// Qualitative, study-agnostic placeholders for CMS-created studies without their
-// own metrics. Deliberately NOT the firm-wide delivery band (0014 keeps
-// per-case-study outcomes study-specific; the band is not one client's result).
-const FALLBACK_METRICS = [
-  { value: "One", label: "Governed source of truth" },
-  { value: "Medallion", label: "Bronze to Gold foundation" },
-  { value: "Built in", label: "Security and lineage" },
-  { value: "8–16 wks", label: "Kickoff to first value, sprint by sprint" },
-];
-
 export async function generateStaticParams() {
   const slugs = await getCaseStudySlugs();
   return slugs.map((slug) => ({ slug }));
@@ -38,30 +30,45 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: { locale: string; slug: string };
 }): Promise<Metadata> {
-  const cs = await getCaseStudyBySlug(params.slug);
-  if (!cs) return { title: "Case study" };
+  const { locale, slug } = params;
+  setRequestLocale(locale);
+  const cs = await getCaseStudyBySlug(slug, locale as Locale);
+  if (!cs) {
+    const t = await getTranslations({ locale, namespace: "caseStudyDetail.meta" });
+    return { title: t("fallbackTitle") };
+  }
   return pageMeta({
     title: cs.title,
     description: cs.summary,
-    path: `/case-studies/${params.slug}`,
+    path: `/case-studies/${slug}`,
     image: cs.heroImage,
     type: "article",
+    locale,
   });
 }
 
 export default async function CaseStudyDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: { locale: string; slug: string };
 }) {
-  const cs = await getCaseStudyBySlug(params.slug);
+  const { locale, slug } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("caseStudyDetail");
+
+  const cs = await getCaseStudyBySlug(slug, locale as Locale);
   if (!cs) notFound();
+
+  // Qualitative, study-agnostic placeholders for CMS-created studies without
+  // their own metrics. Deliberately NOT the firm-wide delivery band (0014 keeps
+  // per-case-study outcomes study-specific; the band is not one client's result).
+  const FALLBACK_METRICS = t.raw("fallbackMetrics") as { value: string; label: string }[];
 
   // Refer to the client generically to preserve anonymity.
   const article = /^[aeiou]/i.test(cs.sector) ? "an" : "a";
-  const clientName = `${article} ${cs.sector.toLowerCase()} organization`;
+  const clientName = t("clientName", { article, sector: cs.sector.toLowerCase() });
   const heroImage = cs.heroImage ?? "/assets/images/photos/analytics.jpg";
 
   // DB-driven outcome metrics (fall back to a generic set if empty).
@@ -77,7 +84,7 @@ export default async function CaseStudyDetailPage({
   );
 
   // All studies in index-page order (order asc): related picks + prev/next nav.
-  const all = await getCaseStudies({});
+  const all = await getCaseStudies({}, locale as Locale);
   const related = all
     .filter((other) => other.slug !== cs.slug && other.sector === cs.sector)
     .slice(0, 3);
@@ -114,13 +121,13 @@ export default async function CaseStudyDetailPage({
         <div className="relative mx-auto max-w-3xl">
           <Breadcrumbs
             items={[
-              { label: "Home", href: "/" },
-              { label: "Case studies", href: "/case-studies" },
+              { label: t("breadcrumb.home"), href: "/" },
+              { label: t("breadcrumb.caseStudies"), href: "/case-studies" },
               { label: cs.title },
             ]}
           />
 
-          <p className="eyebrow mt-6">Case study</p>
+          <p className="eyebrow mt-6">{t("eyebrow")}</p>
           <p className="mt-3 font-mono text-xs uppercase tracking-wider text-muted">
             {cs.sector} · {cs.region}
           </p>
@@ -128,9 +135,7 @@ export default async function CaseStudyDetailPage({
             {cs.title}
           </h1>
           <p className="mt-6 text-lg text-muted">{cs.summary}</p>
-          <p className="mt-4 text-sm text-muted">
-            {"A real engagement; the client's name is withheld at their request."}
-          </p>
+          <p className="mt-4 text-sm text-muted">{t("anonNote")}</p>
         </div>
       </Section>
 
@@ -157,14 +162,14 @@ export default async function CaseStudyDetailPage({
           <div className="bg-grid pointer-events-none absolute inset-0 opacity-30" />
           <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-accent/20 blur-3xl" />
           <div className="relative">
-            <p className="eyebrow mb-8 text-center">What changed</p>
+            <p className="eyebrow mb-8 text-center">{t("metrics.eyebrow")}</p>
             <MetricBand metrics={metrics} />
           </div>
         </div>
         {/* Anonymization flipped into a strength: the client stays unnamed,
             the people who delivered don't. */}
         <LeadershipStrip
-          label="Delivered by our team. The client's name is withheld; ours isn't."
+          label={t("leadershipLabel")}
           className="mt-8 justify-center"
         />
       </Section>
@@ -176,8 +181,8 @@ export default async function CaseStudyDetailPage({
           <SectionDecor variant="grid" />
           <div className="relative">
             <SectionHeading
-              eyebrow="The engagement"
-              title={`How Viewnear delivered for ${clientName}`}
+              eyebrow={t("story.eyebrow")}
+              title={t("story.title", { clientName })}
             />
 
             <div className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,360px)] lg:gap-16">
@@ -186,10 +191,10 @@ export default async function CaseStudyDetailPage({
                   <Markdown>{cs.body}</Markdown>
                 ) : (
                   <p>
-                    Viewnear partnered with {clientName} to design and deliver a
-                    modern, governed data foundation: unifying sources,
-                    automating pipelines, and surfacing trusted insight where the{" "}
-                    {cs.sector.toLowerCase()} team works every day.
+                    {t("story.fallbackBody", {
+                      clientName,
+                      sector: cs.sector.toLowerCase(),
+                    })}
                   </p>
                 )}
               </div>
@@ -200,7 +205,7 @@ export default async function CaseStudyDetailPage({
                   <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-tr from-primary/15 via-transparent to-secondary/10" />
                   <Image
                     src={`/assets/images/cases/${cs.slug}-detail.jpg`}
-                    alt={`${cs.title} solution in action`}
+                    alt={t("story.detailImageAlt", { title: cs.title })}
                     width={720}
                     height={900}
                     className="aspect-[4/5] w-full object-cover"
@@ -208,7 +213,7 @@ export default async function CaseStudyDetailPage({
                 </div>
                 {cs.industry && (
                   <div className="mt-6 rounded-2xl border border-border bg-surface p-6">
-                    <p className="eyebrow">Related industry</p>
+                    <p className="eyebrow">{t("story.relatedIndustry")}</p>
                     <Link
                       href={`/industries/${cs.industry.slug}`}
                       className="mt-2 inline-block font-display text-lg font-bold text-primaryDeep"
@@ -227,19 +232,16 @@ export default async function CaseStudyDetailPage({
       {/* ── A FeatureSplit for visual rhythm ────────────────────── */}
       <Section>
         <FeatureSplit
-          eyebrow="The result"
-          title={
-            <>
-              From raw data to{" "}
-              <span className="text-gradient">confident decisions</span>
-            </>
-          }
-          body={`With governed, AI-ready data in place, ${clientName} unlocked faster reporting, dependable pipelines, and a foundation built to scale across the ${cs.region} market.`}
+          eyebrow={t("result.eyebrow")}
+          title={t.rich("result.title", {
+            hl: (c) => <span className="text-gradient">{c}</span>,
+          })}
+          body={t("result.body", { clientName, region: cs.region })}
           bullets={metrics.slice(0, 4).map((m) => `${m.value}: ${m.label}`)}
           image={heroImage}
-          imageAlt={`${cs.title} results`}
+          imageAlt={t("result.imageAlt", { title: cs.title })}
           reverse
-          cta={{ label: "Start a conversation", href: "/contact" }}
+          cta={{ label: t("result.cta"), href: "/contact" }}
         />
       </Section>
 
@@ -279,8 +281,8 @@ export default async function CaseStudyDetailPage({
           <SectionDecor variant="dots" />
           <div className="relative">
             <SectionHeading
-              eyebrow="Keep exploring"
-              title={`More ${cs.sector} case studies`}
+              eyebrow={t("related.eyebrow")}
+              title={t("related.title", { sector: cs.sector })}
             />
             <div className="mt-10 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3">
               {related.map((other) => (
@@ -304,14 +306,14 @@ export default async function CaseStudyDetailPage({
       {(prev || next) && (
         <div className="container-page">
           <nav
-            aria-label="More engagements"
+            aria-label={t("nav.ariaLabel")}
             className="grid gap-8 border-t border-border pt-10 sm:grid-cols-2"
           >
             <div>
               {prev && (
                 <Link href={`/case-studies/${prev.slug}`} className="group inline-block">
                   <span className="font-mono text-xs uppercase tracking-wider text-muted">
-                    ← Previous engagement
+                    {t("nav.prev")}
                   </span>
                   <span className="mt-1.5 block font-display text-base font-bold leading-snug text-foreground transition-colors group-hover:text-primaryDeep">
                     {prev.title}
@@ -323,7 +325,7 @@ export default async function CaseStudyDetailPage({
               {next && (
                 <Link href={`/case-studies/${next.slug}`} className="group inline-block">
                   <span className="font-mono text-xs uppercase tracking-wider text-muted">
-                    Next engagement →
+                    {t("nav.next")}
                   </span>
                   <span className="mt-1.5 block font-display text-base font-bold leading-snug text-foreground transition-colors group-hover:text-primaryDeep">
                     {next.title}
@@ -341,7 +343,7 @@ export default async function CaseStudyDetailPage({
             href="/case-studies"
             className="text-sm font-semibold text-primaryDeep"
           >
-            ← Back to case studies
+            {t("backToIndex")}
           </Link>
         </div>
       </div>

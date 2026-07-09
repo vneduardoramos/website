@@ -1,5 +1,8 @@
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMeta } from "@/lib/seo";
 import { getCaseStudies } from "@/lib/queries";
+import type { Locale } from "@/lib/i18n-content";
 import { Section, CtaBand, Pill } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 import { CoverCard } from "@/components/marketing/CoverCard";
@@ -7,15 +10,19 @@ import { coverForSector } from "@/lib/covers";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { PartnerBadges } from "@/components/marketing/PartnerBadges";
 
-export const metadata = pageMeta({
-  title: "Case studies",
-  description:
-    "Data & AI engagements across the Americas: real, anonymized results from governed data and AI use cases delivered on Snowflake.",
-  path: "/case-studies",
-});
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "caseStudies.meta" });
+  return pageMeta({ title: t("title"), description: t("description"), path: "/case-studies", locale });
+}
 
-export default async function CaseStudiesPage() {
-  const caseStudies = await getCaseStudies({});
+export default async function CaseStudiesPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("caseStudies");
+
+  const caseStudies = await getCaseStudies({}, locale as Locale);
 
   // Feature the strongest as one full-width card, the rest in a uniform grid.
   const featured = caseStudies[0];
@@ -29,13 +36,9 @@ export default async function CaseStudiesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Our work"
-        title={
-          <>
-            Case <span className="text-gradient">studies</span>.
-          </>
-        }
-        description="Real data & AI work we deliver across the Americas. See how teams went from scattered sources to governed data, decisions people trust, and use cases in production."
+        eyebrow={t("hero.eyebrow")}
+        title={t.rich("hero.title", { hl: (c) => <span className="text-gradient">{c}</span> })}
+        description={t("hero.description")}
       />
 
       {caseStudies.length > 0 ? (
@@ -44,15 +47,14 @@ export default async function CaseStudiesPage() {
           <Section className="relative overflow-hidden">
             <SectionDecor variant="dots" />
             <div className="relative">
-              <p className="eyebrow mb-3">Featured work</p>
+              <p className="eyebrow mb-3">{t("featured.eyebrow")}</p>
               <p className="mb-8 max-w-2xl text-sm text-muted">
-                Client names are withheld at their request. All are real,
-                anonymized engagements.
+                {t("featured.note")}
               </p>
               {sectors.length > 1 && (
                 <div className="mb-10 flex flex-wrap items-center gap-2">
                   <span className="mr-1 font-mono text-xs uppercase tracking-wider text-muted">
-                    Sectors:
+                    {t("filter.label")}
                   </span>
                   {sectors.map((s) => (
                     <Pill key={s}>{s}</Pill>
@@ -81,7 +83,7 @@ export default async function CaseStudiesPage() {
               <Section className="section-warm relative overflow-hidden">
                 <SectionDecor variant="grid" />
                 <div className="relative">
-                  <p className="eyebrow mb-8">More engagements</p>
+                  <p className="eyebrow mb-8">{t("more.eyebrow")}</p>
                   <div className="grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3">
                     {rest.map((cs) => (
                       <CoverCard
@@ -103,7 +105,7 @@ export default async function CaseStudiesPage() {
         </>
       ) : (
         <Section>
-          <p className="text-muted">Case studies coming soon.</p>
+          <p className="text-muted">{t("empty")}</p>
         </Section>
       )}
 
@@ -112,14 +114,12 @@ export default async function CaseStudiesPage() {
         <SectionDecor variant="dots" />
         <div className="panel-warm relative grid gap-8 rounded-3xl p-8 md:grid-cols-2 md:items-center md:p-10">
           <div>
-            <p className="eyebrow mb-3">Verified proof</p>
+            <p className="eyebrow mb-3">{t("proof.eyebrow")}</p>
             <h2 className="text-balance font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
-              Proof anyone can verify today.
+              {t("proof.title")}
             </h2>
             <p className="mt-3 text-muted">
-              Viewnear is a Snowflake Premier Partner and a Snowflake CoCo
-              Preferred Partner, with a SnowPro-certified team. That status is
-              verifiable today, independent of any single engagement.
+              {t("proof.body")}
             </p>
           </div>
           <div className="md:justify-self-end">

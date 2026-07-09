@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { pageMeta } from "@/lib/seo";
 import { getNews } from "@/lib/queries";
 import { formatDate } from "@/lib/utils";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
@@ -8,29 +11,33 @@ import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 
 export const revalidate = 60;
 
-export const metadata = {
-  title: "News & Events",
-  description:
-    "Snowflake and AI news, announcements, and events from across the Americas.",
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "news.meta" });
   // News is dormant (not linked in nav/footer/sitemap); keep it out of the index.
-  robots: { index: false, follow: false },
-};
+  return pageMeta({ title: t("title"), description: t("description"), path: "/news", noindex: true, locale });
+}
 
-export default async function NewsPage() {
+export default async function NewsPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("news");
+
   const news = await getNews({});
   const [latest, ...rest] = news;
 
   return (
     <>
       <PageHero
-        eyebrow="Newsroom"
-        title={<>Snowflake &amp; AI news from the <span className="text-gradient">Americas</span>.</>}
-        description="Announcements, press, and events spanning Canada, the USA, Mexico, LATAM, and the Caribbean."
+        eyebrow={t("hero.eyebrow")}
+        title={t.rich("hero.title", { hl: (c) => <span className="text-gradient">{c}</span> })}
+        description={t("hero.description")}
       />
 
       {news.length === 0 ? (
         <Section>
-          <p className="text-muted">No news to show yet. Check back soon.</p>
+          <p className="text-muted">{t("empty")}</p>
         </Section>
       ) : (
         <>
@@ -39,9 +46,9 @@ export default async function NewsPage() {
             <SectionDecor variant="blobs" />
             <div className="container-page relative">
               <SectionHeading
-                eyebrow="Latest"
-                title="Fresh from the newsroom"
-                intro="The most recent announcement, press mention, or event from across the Americas."
+                eyebrow={t("latest.eyebrow")}
+                title={t("latest.title")}
+                intro={t("latest.intro")}
               />
               <div className="mt-10">
                 <CoverCard
@@ -63,9 +70,9 @@ export default async function NewsPage() {
           {rest.length > 0 ? (
             <Section className="section-warm">
               <SectionHeading
-                eyebrow="More updates"
-                title="All news & events"
-                intro="Browse the full archive of announcements, press, and upcoming events."
+                eyebrow={t("more.eyebrow")}
+                title={t("more.title")}
+                intro={t("more.intro")}
               />
               <div className="mt-10 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3">
                 {rest.map((item) => (
@@ -87,8 +94,8 @@ export default async function NewsPage() {
       )}
 
       <CtaBand
-        title="Want to be the first to know?"
-        subtitle="Talk to our team about upcoming Snowflake & AI events across the Americas."
+        title={t("cta.title")}
+        subtitle={t("cta.subtitle")}
       />
     </>
   );

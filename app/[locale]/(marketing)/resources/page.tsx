@@ -1,18 +1,21 @@
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMeta } from "@/lib/seo";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 import { CoverCard } from "@/components/marketing/CoverCard";
 import { coverFor, coverForSector } from "@/lib/covers";
 import { formatDate } from "@/lib/utils";
 import { getBlogPosts, getCaseStudies, safe } from "@/lib/queries";
+import type { Locale } from "@/lib/i18n-content";
 
-export const metadata = pageMeta({
-  title: "Resources: case studies & blog",
-  description:
-    "Case studies and blog from Viewnear: proof from real engagements and field notes on data & AI, all in one place.",
-  path: "/resources",
-});
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "resources.meta" });
+  return pageMeta({ title: t("title"), description: t("description"), path: "/resources", locale });
+}
 
 export const revalidate = 60;
 
@@ -25,10 +28,14 @@ function SeeAll({ href, label }: { href: string; label: string }) {
   );
 }
 
-export default async function ResourcesPage() {
+export default async function ResourcesPage({ params }: { params: { locale: string } }) {
+  const { locale } = params;
+  setRequestLocale(locale);
+  const t = await getTranslations("resources");
+
   const [posts, caseStudies] = await Promise.all([
-    safe(getBlogPosts({ take: 4 }), []),
-    safe(getCaseStudies({ featured: true, take: 4 }), []),
+    safe(getBlogPosts({ take: 4 }, locale as Locale), []),
+    safe(getCaseStudies({ featured: true, take: 4 }, locale as Locale), []),
   ]);
 
   // Lead with one study + one post; the grids below carry the rest so
@@ -41,22 +48,18 @@ export default async function ResourcesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Resources"
-        title={
-          <>
-            Everything in <span className="text-gradient">one place</span>.
-          </>
-        }
-        description="Case studies from real engagements and field notes from the people who ran them. For anyone building a data & AI practice, this is what it looks like in the field."
+        eyebrow={t("hero.eyebrow")}
+        title={t.rich("hero.title", { hl: (c) => <span className="text-gradient">{c}</span> })}
+        description={t("hero.description")}
       />
 
       {/* Start here: one engagement + one field note, large and side by side */}
       {(featuredStudy || featuredPost) && (
         <Section>
           <SectionHeading
-            eyebrow="Start here"
-            title="One engagement, one field note"
-            intro="A real case study and a recent post from the team, the fastest way to see how we work."
+            eyebrow={t("startHere.eyebrow")}
+            title={t("startHere.title")}
+            intro={t("startHere.intro")}
           />
           <div className="mt-10 grid gap-6 md:auto-rows-fr md:grid-cols-2">
             {featuredStudy && (
@@ -67,7 +70,7 @@ export default async function ResourcesPage() {
                   coverForSector(featuredStudy.sector, featuredStudy.slug)
                 }
                 imageAlt={`${featuredStudy.title}: ${featuredStudy.sector}`}
-                kicker={`Case study · ${featuredStudy.sector}`}
+                kicker={t("startHere.caseKicker", { sector: featuredStudy.sector })}
                 title={featuredStudy.title}
                 excerpt={featuredStudy.summary}
                 meta={featuredStudy.client?.name ?? undefined}
@@ -78,7 +81,9 @@ export default async function ResourcesPage() {
                 href={`/blog/${featuredPost.slug}`}
                 image={featuredPost.coverImageUrl ?? coverFor(featuredPost.slug)}
                 imageAlt={featuredPost.title}
-                kicker={`Blog · ${featuredPost.tags?.[0]?.name ?? "Field notes"}`}
+                kicker={t("startHere.blogKicker", {
+                  tag: featuredPost.tags?.[0]?.name ?? t("startHere.fieldNotesFallback"),
+                })}
                 title={featuredPost.title}
                 excerpt={featuredPost.excerpt}
                 author={
@@ -106,8 +111,8 @@ export default async function ResourcesPage() {
       {restStudies.length > 0 && (
         <Section>
           <div className="flex items-end justify-between gap-4">
-            <SectionHeading eyebrow="Proof" title="Case studies" />
-            <SeeAll href="/case-studies" label="All case studies" />
+            <SectionHeading eyebrow={t("caseStudies.eyebrow")} title={t("caseStudies.title")} />
+            <SeeAll href="/case-studies" label={t("caseStudies.seeAll")} />
           </div>
           <div className="mt-10 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3">
             {restStudies.map((cs) => (
@@ -130,8 +135,8 @@ export default async function ResourcesPage() {
       {restPosts.length > 0 && (
         <Section className="section-warm">
           <div className="flex items-end justify-between gap-4">
-            <SectionHeading eyebrow="Field notes" title="Blog" />
-            <SeeAll href="/blog" label="All posts" />
+            <SectionHeading eyebrow={t("blog.eyebrow")} title={t("blog.title")} />
+            <SeeAll href="/blog" label={t("blog.seeAll")} />
           </div>
           <div className="mt-10 grid gap-6 md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3">
             {restPosts.map((post) => (
@@ -162,7 +167,7 @@ export default async function ResourcesPage() {
         </Section>
       )}
 
-      <CtaBand />
+      <CtaBand title={t("cta.title")} subtitle={t("cta.subtitle")} />
     </>
   );
 }

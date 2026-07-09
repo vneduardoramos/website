@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "title": "About: building data & AI practices across the Americas",
+    "description": "Viewnear helps enterprises stand up data & AI practices they keep: governed data feeding real decisions and AI use cases in production, built on Snowflake and run by their own teams."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "current": "About"
+  },
+  "hero": {
+    "eyebrow": "About Viewnear",
+    "title": "We build data & AI practices with enterprises across the <hl>Americas</hl>.",
+    "description": "Two lasting capabilities: a data practice that feeds real decisions and an AI practice that ships use cases into production, built on Snowflake and run by in-house teams, guided and accelerated by ours. As a Snowflake Premier and CoCo Preferred Partner, we deliver across Canada, the USA, Mexico, LATAM, and the Caribbean."
+  },
+  "heroChips": [
+    "Snowflake Premier Partner",
+    "CoCo Preferred Partner",
+    "SnowPro-certified",
+    "Americas-focused delivery"
+  ],
+  "whoWeAre": {
+    "eyebrow": "Who we are",
+    "title": "We build it alongside the team, then hand over the keys",
+    "body": "Viewnear helps enterprises stand up two capabilities they keep: a data practice and an AI practice, built on Snowflake and run by in-house teams. We work alongside those teams from first workshop to production, across strategy, architecture, engineering, analytics, and governed AI, and we integrate what we build both ways: operational data flows in, and decisions, answers, and AI agents flow back into the systems where work happens. We grew from a specialist practice into a Snowflake Premier Partner by going deep on one platform, and that focus shapes how we hire, train, and deliver.",
+    "cta": "How we deliver",
+    "imageAlt": "A collage of the Viewnear team across Snowflake events: the data + ai booth, Data for Breakfast, Snowflake Summit, and team meals"
+  },
+  "operating": [
+    "Fixed scopes, use-case-driven sprints, and working software at every demo",
+    "Governed by design, from the first table",
+    "The people who scope the work stay through production",
+    "Open formats (Apache Iceberg) for interoperable architectures"
+  ],
+  "arcLabel": "The arc so far",
+  "milestones": [
+    {
+      "label": "Origin",
+      "title": "Founded in Monterrey",
+      "body": "A specialist Snowflake practice from day one: one platform, studied deeply, on every engagement."
+    },
+    {
+      "label": "Footprint",
+      "title": "Two hubs",
+      "body": "Austin and Monterrey, one team on the same working hours, delivering across the Americas."
+    },
+    {
+      "label": "Partner tier",
+      "title": "Snowflake Premier Partner",
+      "body": "Certified delivery and a verified track record, measured on outcomes rather than breadth of logos."
+    },
+    {
+      "label": "Momentum",
+      "title": "CoCo Preferred Partner",
+      "body": "Recognized at Snowflake Summit 2026 alongside the global systems integrators for momentum on Snowflake CoCo."
+    }
+  ],
+  "trackRecordHeading": {
+    "eyebrow": "Track record",
+    "title": "Credentials anyone can verify",
+    "intro": "No vanity numbers: the partner tier, certification, and regional reach anyone can check."
+  },
+  "trackRecord": [
+    { "value": "Premier", "label": "Snowflake Premier + CoCo Preferred Partner" },
+    { "value": "SnowPro", "label": "SnowPro-certified across the team" },
+    { "value": "15+", "label": "Years building data & enterprise AI" },
+    { "value": "5", "label": "Countries across the Americas" }
+  ],
+  "operateHeading": {
+    "eyebrow": "How we operate",
+    "title": "Built the way enterprises buy",
+    "intro": "The operating principles behind every engagement."
+  },
+  "principles": [
+    {
+      "title": "Depth in every answer",
+      "body": "Any hard architecture, governance, or cost question gets a straight answer from a SnowPro-certified specialist who has shipped it on Snowflake."
+    },
+    {
+      "title": "Governed by design",
+      "body": "Horizon Catalog lineage and Horizon Context give every team and AI agent one trusted business context, from the first table."
+    },
+    {
+      "title": "One accountable team, start to finish",
+      "body": "Strategy through production under a single team, so context never breaks across vendors or phases."
+    },
+    {
+      "title": "We leave teams stronger",
+      "body": "Documentation, enablement, and a transition plan in every engagement, so the team runs and extends the work confidently."
+    },
+    {
+      "title": "The Americas' home team",
+      "body": "Local expertise and time-zone alignment across Canada, the USA, Mexico, LATAM, and the Caribbean."
+    }
+  ],
+  "governanceBlock": {
+    "eyebrow": "Governance & trust",
+    "title": "Snowflake’s audited controls, plus our delivery discipline.",
+    "body": "Everything we build is governed and auditable from day one, and inherits the controls of Snowflake’s independently audited platform.",
+    "link": "How we secure client data"
+  },
+  "governance": [
+    "Least-privilege access and role-based controls (RBAC)",
+    "Horizon Catalog lineage + Horizon Context across every asset",
+    "PII classification and masking, data residency by region",
+    "Built on Snowflake's audited platform: SOC 2 Type II, ISO 27001, HIPAA"
+  ],
+  "team": {
+    "eyebrow": "Our team",
+    "title": "Versed in Snowflake and enterprise, at every level",
+    "intro": "We're a group of professionals, strategy through engineering, who all go deep on the same thing: Snowflake and enterprise solutions. Not a few senior names over a rotating bench, but combined depth felt at every level of the engagement.",
+    "leadershipLabel": "Leadership",
+    "leadershipTitle": "The leadership team",
+    "leadershipBody": "The people leading the practice, with combined experience across data, analytics, and enterprise AI."
+  },
+  "close": {
+    "title": "Bring us the hardest data problem.",
+    "body": "Wherever the work stands today, migrating, scaling, or grounding AI, a Snowflake architect will map the fastest path to value.",
+    "primaryCta": "Talk to an architect",
+    "secondaryCta": "Explore our partnership"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "meta": {
+    "fallbackTitle": "Blog"
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "blog": "Blog"
+  },
+  "connectLinkedIn": "Conéctese en LinkedIn →",
+  "readTime": "{minutes} min de lectura",
+  "relatedHeading": "Lecturas relacionadas"
+}

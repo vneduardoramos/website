@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "title": "Precios y modalidades de trabajo",
+    "description": "Cómo se definen y se cotizan los proyectos de Viewnear (costo fijo, tiempo y materiales, o ampliación de equipo), y qué determina el costo. El alcance y el precio se acuerdan por adelantado."
+  },
+  "ld": {
+    "name": "Servicios de Data & AI en Snowflake",
+    "serviceType": "Servicios profesionales de Data & AI",
+    "areaServed": "América",
+    "offerCatalogName": "Modalidades de trabajo"
+  },
+  "hero": {
+    "eyebrow": "Precios y modalidades de trabajo",
+    "title": "Alcance claro. <hl>Sin sorpresas.</hl>",
+    "description": "Cada proyecto se define según los datos y los objetivos concretos, y se cotiza por adelantado, sea cual sea el modelo que corresponda. Así estructuramos el trabajo y esto es lo que determina la inversión."
+  },
+  "modelsHeading": {
+    "eyebrow": "Cómo trabajamos",
+    "title": "Modalidades de trabajo",
+    "intro": "Formas flexibles de colaborar, ajustadas a la naturaleza de cada problema."
+  },
+  "bestForLabel": "Ideal para",
+  "engagementModels": [
+    {
+      "title": "Costo fijo",
+      "body": "Un alcance, un cronograma y un precio definidos y acordados por adelantado. Ideal cuando el resultado es claro y la certeza presupuestaria importa desde el primer día.",
+      "bestFor": "Construcción de bases definidas y migraciones"
+    },
+    {
+      "title": "Tiempo y materiales",
+      "body": "Entrega flexible e iterativa, facturada por esfuerzo sobre un backlog compartido. Ideal para requisitos cambiantes y trabajo guiado por el descubrimiento.",
+      "bestFor": "Descubrimiento, POCs y alcance cambiante"
+    },
+    {
+      "title": "Ampliación de equipo",
+      "body": "Integramos a nuestros profesionales certificados junto al equipo interno. Aceleramos la entrega mientras elevamos su capacidad.",
+      "bestFor": "Escalar un equipo existente con rapidez"
+    }
+  ],
+  "workedExample": {
+    "eyebrow": "Un ejemplo concreto",
+    "body": "La forma de un primer proyecto típico: un descubrimiento pagado fija el alcance y el precio, las demos de cada sprint muestran software funcionando desde las primeras semanas, y una base gobernada llega a producción en 8 a 16 semanas, con un equipo nombrado que el patrocinador conoce antes de firmar y con personas internas en el trabajo desde el primer sprint."
+  },
+  "cost": {
+    "eyebrow": "Qué determina el costo",
+    "title": "Un precio ajustado al trabajo, no una tarifa de lista",
+    "intro": "No publicamos un precio único porque no hay dos proyectos iguales. El costo depende de:",
+    "cta": "Solicite un estimado con alcance definido"
+  },
+  "costFactors": [
+    "El volumen de datos y la cantidad y complejidad de los sistemas de origen",
+    "Cuántos casos de uso de analítica y AI están dentro del alcance",
+    "El tamaño del equipo y el cronograma objetivo",
+    "Los requisitos de gobierno, cumplimiento y seguridad"
+  ],
+  "impact": {
+    "eyebrow": "Adopción de la práctica, por horizonte"
+  },
+  "impactByPhase": [
+    {
+      "phase": "Primeras 8 a 16 semanas",
+      "title": "Bases y primer valor",
+      "body": "La práctica de datos se pone en marcha: el alcance queda fijado en un descubrimiento pagado, el gobierno se diseña desde la primera tabla, los datos prioritarios empiezan a fluir y los primeros productos de datos gobernados entran en producción."
+    },
+    {
+      "phase": "6 a 12 meses",
+      "title": "Escala y autoservicio",
+      "body": "La práctica de AI comienza a entregar: los casos de uso se extienden por los equipos y cada nuevo caso llega al primer insight un 60% más rápido. El autoservicio se afianza; los informes manuales quedan atrás."
+    },
+    {
+      "phase": "Más de 18 meses",
+      "title": "Ventaja que se acumula",
+      "body": "Ambas prácticas quedan en manos del equipo interno: los nuevos casos de uso se entregan en semanas con un costo operativo un 40% menor, y la transferencia es real. El equipo opera y amplía el trabajo sin nosotros."
+    }
+  ],
+  "featuredTitle": "Cómo se ve un proyecto",
+  "cta": {
+    "title": "Definámoslo juntos.",
+    "subtitle": "Cuéntenos los objetivos y las restricciones, y le presentaremos un modelo, un plan y un precio listos para el directorio."
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "current": "Precios"
+  }
+}

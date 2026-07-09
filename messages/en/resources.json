@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "title": "Resources: case studies & blog",
+    "description": "Case studies and blog from Viewnear: proof from real engagements and field notes on data & AI, all in one place."
+  },
+  "hero": {
+    "eyebrow": "Resources",
+    "title": "Everything in <hl>one place</hl>.",
+    "description": "Case studies from real engagements and field notes from the people who ran them. For anyone building a data & AI practice, this is what it looks like in the field."
+  },
+  "startHere": {
+    "eyebrow": "Start here",
+    "title": "One engagement, one field note",
+    "intro": "A real case study and a recent post from the team, the fastest way to see how we work.",
+    "caseKicker": "Case study · {sector}",
+    "blogKicker": "Blog · {tag}",
+    "fieldNotesFallback": "Field notes"
+  },
+  "caseStudies": {
+    "eyebrow": "Proof",
+    "title": "Case studies",
+    "seeAll": "All case studies"
+  },
+  "blog": {
+    "eyebrow": "Field notes",
+    "title": "Blog",
+    "seeAll": "All posts"
+  },
+  "cta": {
+    "title": "Let's stand up a lasting data & AI practice.",
+    "subtitle": "Tell us where the organization stands (migrating, scaling, or shipping AI) and we'll map the fastest path to use cases in production, run by in-house teams."
+  }
+}
