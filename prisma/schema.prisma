@@ -44,6 +44,9 @@ model TeamMember {
   bookingUrl    String?
   linkedinUrl   String?
   authoredPosts BlogPost[] @relation("BlogAuthor")
+  // --- Spanish (es) ---
+  titleEs       String?
+  bioEs         String?
   order         Int        @default(0)
   published     Boolean    @default(true)
   createdAt     DateTime   @default(now())
@@ -51,107 +54,141 @@ model TeamMember {
 }
 
 model Client {
-  id           String        @id @default(cuid())
-  slug         String        @unique
-  name         String
-  sector       String?
-  region       String?
-  logoColor    String? // path to placeholder logo asset
-  caseStudies  CaseStudy[]
-  createdAt    DateTime      @default(now())
-  updatedAt    DateTime      @updatedAt
+  id          String      @id @default(cuid())
+  slug        String      @unique
+  name        String
+  sector      String?
+  region      String?
+  logoColor   String? // path to placeholder logo asset
+  caseStudies CaseStudy[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
 }
 
 model Service {
-  id             String    @id @default(cuid())
-  slug           String    @unique
-  tier           String // THINK | BUILD | GROW
-  title          String
-  summary        String
-  body           String?
-  tools          String? // string[]
-  icon           String?
-  order          Int       @default(0)
-  status         String    @default("PUBLISHED") // DRAFT | PUBLISHED | ARCHIVED
-  publishedAt    DateTime?
-  seoTitle       String?
-  seoDescription String?
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
+  id               String    @id @default(cuid())
+  slug             String    @unique
+  tier             String // THINK | BUILD | GROW
+  title            String
+  summary          String
+  body             String?
+  tools            String? // string[]
+  icon             String?
+  order            Int       @default(0)
+  // --- Spanish (es) ---
+  titleEs          String?
+  summaryEs        String?
+  bodyEs           String?
+  seoTitleEs       String?
+  seoDescriptionEs String?
+  status           String    @default("PUBLISHED") // DRAFT | PUBLISHED | ARCHIVED
+  publishedAt      DateTime?
+  seoTitle         String?
+  seoDescription   String?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
 }
 
 model Industry {
-  id             String      @id @default(cuid())
-  slug           String      @unique
-  name           String
-  headline       String
-  intro          String
-  challenges     String? // [{problem, response}]
-  deliverables   String? // [{title, description}]
-  tools          String? // string[]
-  stats          String? // [{label, value}]
-  body           String?
-  ogImage        String?
-  caseStudies    CaseStudy[]
-  status         String      @default("PUBLISHED")
-  publishedAt    DateTime?
-  order          Int         @default(0)
-  seoTitle       String?
-  seoDescription String?
-  createdAt      DateTime    @default(now())
-  updatedAt      DateTime    @updatedAt
+  id               String      @id @default(cuid())
+  slug             String      @unique
+  name             String
+  headline         String
+  intro            String
+  challenges       String? // [{problem, response}]
+  deliverables     String? // [{title, description}]
+  tools            String? // string[]
+  stats            String? // [{label, value}]
+  body             String?
+  ogImage          String?
+  caseStudies      CaseStudy[]
+  // --- Spanish (es) ---
+  nameEs           String?
+  headlineEs       String?
+  introEs          String?
+  challengesEs     String?
+  deliverablesEs   String?
+  statsEs          String?
+  bodyEs           String?
+  seoTitleEs       String?
+  seoDescriptionEs String?
+  status           String      @default("PUBLISHED")
+  publishedAt      DateTime?
+  order            Int         @default(0)
+  seoTitle         String?
+  seoDescription   String?
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
 }
 
 model CaseStudy {
-  id             String    @id @default(cuid())
-  slug           String    @unique
-  title          String
-  summary        String
-  body           String?
-  sector         String
-  region         String
-  clientId       String?
-  client         Client?   @relation(fields: [clientId], references: [id])
-  industryId     String?
-  industry       Industry? @relation(fields: [industryId], references: [id])
-  heroImage      String?
-  metrics        String? // JSON [{value,label}]
-  quote          String? // JSON {text,author,role}
-  challenge      String?
-  solution       String?
-  results        String?
-  featured       Boolean   @default(false)
-  status         String    @default("PUBLISHED")
-  publishedAt    DateTime?
-  order          Int       @default(0)
-  seoTitle       String?
-  seoDescription String?
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
+  id               String    @id @default(cuid())
+  slug             String    @unique
+  title            String
+  summary          String
+  body             String?
+  sector           String
+  region           String
+  clientId         String?
+  client           Client?   @relation(fields: [clientId], references: [id])
+  industryId       String?
+  industry         Industry? @relation(fields: [industryId], references: [id])
+  heroImage        String?
+  metrics          String? // JSON [{value,label}]
+  quote            String? // JSON {text,author,role}
+  challenge        String?
+  solution         String?
+  results          String?
+  featured         Boolean   @default(false)
+  // --- Spanish (es) ---
+  titleEs          String?
+  summaryEs        String?
+  bodyEs           String?
+  metricsEs        String?
+  quoteEs          String?
+  challengeEs      String?
+  solutionEs       String?
+  resultsEs        String?
+  seoTitleEs       String?
+  seoDescriptionEs String?
+  status           String    @default("PUBLISHED")
+  publishedAt      DateTime?
+  order            Int       @default(0)
+  seoTitle         String?
+  seoDescription   String?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
 }
 
 model BlogPost {
-  id             String      @id @default(cuid())
-  slug           String      @unique
-  title          String
-  excerpt        String?
-  body           String
-  keyTakeaways   String? // JSON string[]
-  coverImageId   String?
-  coverImage     Media?      @relation("BlogCover", fields: [coverImageId], references: [id])
-  coverImageUrl  String?
-  authorId       String?
-  author         User?       @relation(fields: [authorId], references: [id])
-  authorTeamId   String?
-  authorTeam     TeamMember? @relation("BlogAuthor", fields: [authorTeamId], references: [id])
-  tags           Tag[]       @relation("BlogPostTags")
-  status         String      @default("DRAFT")
-  publishedAt    DateTime?
-  seoTitle       String?
-  seoDescription String?
-  ogImage        String?
-  createdAt      DateTime    @default(now())
-  updatedAt      DateTime    @updatedAt
+  id               String      @id @default(cuid())
+  slug             String      @unique
+  title            String
+  excerpt          String?
+  body             String
+  keyTakeaways     String? // JSON string[]
+  coverImageId     String?
+  coverImage       Media?      @relation("BlogCover", fields: [coverImageId], references: [id])
+  coverImageUrl    String?
+  authorId         String?
+  author           User?       @relation(fields: [authorId], references: [id])
+  authorTeamId     String?
+  authorTeam       TeamMember? @relation("BlogAuthor", fields: [authorTeamId], references: [id])
+  tags             Tag[]       @relation("BlogPostTags")
+  // --- Spanish (es) ---
+  titleEs          String?
+  excerptEs        String?
+  bodyEs           String?
+  keyTakeawaysEs   String?
+  seoTitleEs       String?
+  seoDescriptionEs String?
+  status           String      @default("DRAFT")
+  publishedAt      DateTime?
+  seoTitle         String?
+  seoDescription   String?
+  ogImage          String?
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
 }
 
 model NewsEvent {
@@ -177,10 +214,12 @@ model NewsEvent {
 }
 
 model Tag {
-  id    String     @id @default(cuid())
-  slug  String     @unique
-  name  String
-  posts BlogPost[] @relation("BlogPostTags")
+  id     String     @id @default(cuid())
+  slug   String     @unique
+  name   String
+  // --- Spanish (es) ---
+  nameEs String?
+  posts  BlogPost[] @relation("BlogPostTags")
 }
 
 model Media {
@@ -210,26 +249,31 @@ model Lead {
 }
 
 model JobOpening {
-  id           String           @id @default(cuid())
-  slug         String           @unique
-  title        String
-  employment   String
-  location     String?
-  description  String // short summary (hero subtitle, listing card, SEO)
-  body         String? // full role detail, Markdown (About the role / What you'll do / What we're looking for)
-  skills       String? // string[]
-  status       String           @default("PUBLISHED")
-  publishedAt  DateTime?
-  order        Int              @default(0)
-  applications JobApplication[]
-  createdAt    DateTime         @default(now())
-  updatedAt    DateTime         @updatedAt
+  id            String           @id @default(cuid())
+  slug          String           @unique
+  title         String
+  employment    String
+  location      String?
+  description   String // short summary (hero subtitle, listing card, SEO)
+  body          String? // full role detail, Markdown (About the role / What you'll do / What we're looking for)
+  skills        String? // string[]
+  // --- Spanish (es) ---
+  titleEs       String?
+  descriptionEs String?
+  bodyEs        String?
+  employmentEs  String?
+  status        String           @default("PUBLISHED")
+  publishedAt   DateTime?
+  order         Int              @default(0)
+  applications  JobApplication[]
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
 }
 
 model JobApplication {
-  id        String      @id @default(cuid())
-  openingId String?
-  opening   JobOpening? @relation(fields: [openingId], references: [id])
+  id          String      @id @default(cuid())
+  openingId   String?
+  opening     JobOpening? @relation(fields: [openingId], references: [id])
   name        String
   email       String
   message     String?
