@@ -1,3 +1,6 @@
+import createNextIntlPlugin from "next-intl/plugin";
+const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
+
 // Allow next/image to optimize images served from the object-storage public
 // host (Cloudflare R2 / S3). Derived from S3_PUBLIC_URL so there's a single
 // source of truth — set it to the bucket's public base URL, e.g.
@@ -62,4 +65,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

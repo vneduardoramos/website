@@ -1,4 +1,5 @@
 import { unstable_cache } from "next/cache";
+import { setRequestLocale } from "next-intl/server";
 import { Nav, type NavData } from "@/components/marketing/Nav";
 import { Footer } from "@/components/marketing/Footer";
 import { safe, getBlogPosts, getCaseStudies } from "@/lib/queries";
@@ -40,9 +41,12 @@ const getImageOverrides = unstable_cache(
 
 export default async function MarketingLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { locale: string };
 }) {
+  setRequestLocale(params.locale);
   const navData = await getNavData();
   const overrides = await getImageOverrides();
   return (
