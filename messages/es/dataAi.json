@@ -22,7 +22,7 @@
   "ship": {
     "eyebrow": "Lo que entregamos",
     "title": "Seis tareas, funcionando en ambos planos.",
-    "intro": "Cada una razona sobre datos gobernados dentro de Snowflake y aparece donde trabajan los equipos. Donde un proyecto real lo demuestra, las cifras están en la tarjeta."
+    "intro": "Cada una razona sobre datos gobernados dentro de Snowflake y aparece donde trabajan los equipos. Donde un proyecto real lo demuestra, los números están en la tarjeta."
   },
   "runsOn": "Se ejecuta en",
   "useCases": [
@@ -37,7 +37,7 @@
     {
       "eyebrow": "Respuestas",
       "title": "Ejecutivos que le preguntan directamente a los datos",
-      "body": "Preguntas en lenguaje natural respondidas con citas frente a definiciones gobernadas, para que la reunión del lunes empiece desde la misma cifra y no desde tres versiones de ella.",
+      "body": "Preguntas en lenguaje natural respondidas con citas frente a definiciones gobernadas, para que la junta del lunes empiece desde el mismo número y no desde tres versiones de él.",
       "mech": "Cortex Analyst · Semantic Views · CoWork",
       "stat": "Miles de SKU descontrolados, un solo agente de catálogo",
       "proof": { "label": "Vea el proyecto →", "href": "/case-studies/sku-catalog-governance" }

@@ -57,7 +57,7 @@
   "trackRecordHeading": {
     "eyebrow": "Historial",
     "title": "Credenciales que cualquiera puede verificar",
-    "intro": "Sin cifras de vanidad: el nivel de partner, la certificación y el alcance regional que cualquiera puede comprobar."
+    "intro": "Sin métricas de vanidad: el nivel de partner, la certificación y el alcance regional que cualquiera puede comprobar."
   },
   "trackRecord": [
     { "value": "Premier", "label": "Snowflake Premier + CoCo Preferred Partner" },
