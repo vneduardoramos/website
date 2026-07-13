@@ -6,7 +6,7 @@
   "hero": {
     "eyebrow": "Migraciones",
     "title": "Fuera de Teradata, Oracle o Hadoop. <hl>Hacia una práctica de datos que el equipo conserva.</hl>",
-    "description": "Una migración se gana en la planificación, en las verificaciones de paridad y en la transición que nadie nota, no en el cambio de licencia. Ejecutamos todo ese recorrido como un solo equipo responsable: código convertido de forma automática, cada cifra validada contra el origen y el negocio operando durante todo el proceso."
+    "description": "Una migración se gana en la planificación, en las verificaciones de paridad y en la transición que nadie nota, no en el cambio de licencia. Ejecutamos todo ese recorrido como un solo equipo responsable: código convertido de forma automática, cada número validado contra el origen y el negocio operando durante todo el proceso."
   },
   "heroChips": ["Más de 20 plataformas de origen", "Conversión automatizada", "Paridad validada", "Transición por fases"],
   "sourcesHeading": {
@@ -86,7 +86,7 @@
     },
     {
       "title": "Ejecución en paralelo y transición",
-      "body": "Ambos sistemas funcionan en paralelo con reconciliación nocturna. Hacemos la transición por fases y por unidad de negocio, nunca un cambio de golpe, y solo cuando las cifras coinciden."
+      "body": "Ambos sistemas funcionan en paralelo con reconciliación nocturna. Hacemos la transición por fases y por unidad de negocio, nunca un cambio de golpe, y solo cuando los números coinciden."
     },
     {
       "title": "Optimizar y desmantelar",
@@ -96,7 +96,7 @@
   "conviction": {
     "eyebrow": "Nuestra convicción",
     "title": "Las herramientas convierten el código. No responden por el cierre de fin de mes.",
-    "body": "SnowConvert y el Snowpark Migration Accelerator se encargan del trabajo mecánico: el SQL, los procedimientos almacenados y los trabajos de Spark que tomaron años en escribirse se convierten en semanas. Para lo que realmente se nos contrata es para todo lo que las herramientas no pueden dar por válido: los casos límite corregidos a mano, cada objeto revisado antes de que avance, y la reconciliación de fila, agregado y hash que demuestra que las cifras nuevas coinciden con las anteriores antes de que alguien haga la transición.",
+    "body": "SnowConvert y el Snowpark Migration Accelerator se encargan del trabajo mecánico: el SQL, los procedimientos almacenados y los trabajos de Spark que tomaron años en escribirse se convierten en semanas. Para lo que realmente se nos contrata es para todo lo que las herramientas no pueden dar por válido: los casos límite corregidos a mano, cada objeto revisado antes de que avance, y la reconciliación de fila, agregado y hash que demuestra que los números nuevos coinciden con los anteriores antes de que alguien haga la transición.",
     "bullets": [
       "Salida de la conversión revisada objeto por objeto, en Snowflake Workspaces",
       "Verificaciones de fila, agregado y hash que demuestran la paridad contra el origen",

@@ -13,7 +13,7 @@
       },
       {
         "title": "Analítica que se arrastra",
-        "body": "Los motores basados en filas y los clústeres sobrecargados convierten cada tablero en un proceso por lotes nocturno."
+        "body": "Los motores basados en filas y los clústeres sobrecargados convierten cada dashboard en un proceso por lotes nocturno."
       }
     ],
     "gains": [
@@ -23,7 +23,7 @@
       },
       {
         "title": "Una base gobernada",
-        "body": "Una única fuente de verdad con acceso, linaje y políticas integrados a través de Horizon, para que las decisiones se apoyen en cifras en las que las personas confían."
+        "body": "Una única fuente de verdad con acceso, linaje y políticas integrados a través de Horizon, para que las decisiones se apoyen en números en los que las personas confían."
       },
       {
         "title": "La IA es el siguiente paso",
@@ -43,7 +43,7 @@
     "ariaLabel": "Una única base gobernada en Snowflake: los orígenes fluyen hacia capas gobernadas y las decisiones fluyen hacia afuera",
     "sources": "ERP · CRM · SaaS · flujos",
     "layers": ["Datos gobernados", "Horizon: linaje + políticas", "Cortex, junto a los datos"],
-    "outputs": "Tableros · respuestas · agentes"
+    "outputs": "Dashboards · respuestas · agentes"
   },
   "cutover": {
     "typicalArc": "Arco típico",
