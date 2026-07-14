@@ -73,13 +73,13 @@ La adopción por parte de los usuarios requiere capacitación en técnicas de co
 
 ## Medir el éxito
 
-Haga seguimiento tanto del desempeño técnico como del impacto en el negocio. Supervise el tiempo hasta obtener información, las tasas de éxito de las consultas y la participación de los usuarios. Para el impacto en el negocio, mida el ahorro de tiempo, la velocidad de decisión, la precisión de la información y el descubrimiento de nuevos patrones.
+Haga seguimiento tanto del desempeño técnico como del impacto en el negocio. Supervise el tiempo hasta obtener información, las tasas de éxito de las consultas y la participación de los usuarios. Para el impacto en el negocio, mida el ahorro de tiempo, la velocidad de decisión, la precisión de la información y el discovery de nuevos patrones.
 
 ## Cómo empezar
 
 Comience con escenarios de alto valor que tengan criterios de éxito claros. Concéntrese en casos de uso donde el impacto en el negocio sea evidente y medible. Prepare los datos poniendo énfasis en el contexto de negocio por encima de la perfección técnica.
 
-Empiece con un número limitado de usuarios y un alcance acotado para aprender mientras demuestra el valor. Capacite a las personas en técnicas de conversación. Escale de forma gradual con base en lo que vaya aprendiendo.
+Empiece con un número limitado de usuarios y un scope acotado para aprender mientras demuestra el valor. Capacite a las personas en técnicas de conversación. Escale de forma gradual con base en lo que vaya aprendiendo.
 
 > El éxito requiere objetivos claros, apoyo ejecutivo, participación activa de los usuarios y compromiso con la mejora continua.
 

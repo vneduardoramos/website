@@ -40,7 +40,7 @@ Los éxitos repetidos crean un círculo virtuoso donde cada logro financia la si
 
 La disciplina escala. El heroísmo improvisado no.
 
-## Cinco preguntas directas para su próxima reunión de directorio
+## Cinco preguntas directas para su próxima junta de directorio
 
 1. **¿Revisamos los signos vitales de nuestros datos junto a nuestros números de ventas?** Un simple indicador de salud que cubra calidad, linaje y cumplimiento de políticas pertenece al mismo dashboard que los ingresos y el margen.
 2. **Si alguien tiene una buena idea, ¿podemos ponerla en producción y debidamente gobernada en un plazo de tres meses?** Un horizonte claro de noventa días demuestra que las áreas de tecnología, riesgo y cumplimiento pueden empujar juntas en lugar de tirar en direcciones opuestas.
@@ -50,7 +50,7 @@ La disciplina escala. El heroísmo improvisado no.
 
 ## Un primer paso práctico
 
-Elija una decisión que su organización repita cientos de veces cada semana, por ejemplo la clasificación de tickets, la calificación de prospectos (lead scoring) o los resúmenes de ventas semanales. Reconstruya ese flujo de trabajo con la capa de IA nativa de Snowflake. Mantenga el alcance acotado, publique la precisión y el costo de forma abierta, y entregue un resultado visible en cuestión de días. El impulso temprano siempre le gana al debate prolongado.
+Elija una decisión que su organización repita cientos de veces cada semana, por ejemplo la clasificación de tickets, la calificación de prospectos (lead scoring) o los resúmenes de ventas semanales. Reconstruya ese flujo de trabajo con la capa de IA nativa de Snowflake. Mantenga el scope acotado, publique la precisión y el costo de forma abierta, y entregue un resultado visible en cuestión de días. El impulso temprano siempre le gana al debate prolongado.
 
 ## Reflexión final
 

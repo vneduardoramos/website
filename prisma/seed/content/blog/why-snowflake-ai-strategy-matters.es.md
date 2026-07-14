@@ -52,7 +52,7 @@ La analítica conversacional permite preguntas de seguimiento y exploración ite
 
 La generación automatizada de informes puede resumir los hallazgos clave del análisis de datos, y crear resúmenes ejecutivos o explicaciones detalladas de tendencias y patrones. Esto ahorra tiempo y garantiza una comunicación consistente de los resultados analíticos.
 
-La documentación de datos puede generarse automáticamente, describiendo el contenido de los conjuntos de datos, las relaciones y las características de calidad. Esto mejora la capacidad de descubrimiento de los datos y ayuda a los equipos a comprender los activos de información disponibles.
+La documentación de datos puede generarse automáticamente, describiendo el contenido de los conjuntos de datos, las relaciones y las características de calidad. Esto mejora la capacidad de discovery de los datos y ayuda a los equipos a comprender los activos de información disponibles.
 
 Se pueden crear hallazgos personalizados para las distintas partes interesadas según sus roles e intereses. El mismo análisis subyacente puede generar resúmenes enfocados para ejecutivos, informes técnicos detallados para analistas y recomendaciones orientadas a la acción para los equipos operativos.
 

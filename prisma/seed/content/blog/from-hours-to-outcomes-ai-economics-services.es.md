@@ -18,7 +18,7 @@ Los servicios siguen siendo críticos. Simplemente ya no se entregan ni se cobra
 
 El cobro por hora no fue un accidente ni una falta de imaginación. Surgió porque se alineaba razonablemente bien con la forma en que se creaba el valor.
 
-El desarrollo de software y la ingeniería de datos eran disciplinas con mucha carga de ejecución. El progreso dependía de un esfuerzo humano sostenido en muchos roles: arquitectos para diseñar los sistemas, ingenieros para implementarlos, QA para validarlos y gerentes de proyecto para coordinarlo todo. La complejidad aumentaba de forma lineal con el alcance, y el tiempo era un indicador justo del costo y del valor.
+El desarrollo de software y la ingeniería de datos eran disciplinas con mucha carga de ejecución. El progreso dependía de un esfuerzo humano sostenido en muchos roles: arquitectos para diseñar los sistemas, ingenieros para implementarlos, QA para validarlos y gerentes de proyecto para coordinarlo todo. La complejidad aumentaba de forma lineal con el scope, y el tiempo era un indicador justo del costo y del valor.
 
 En ese entorno, pagar por horas significaba pagar por la reducción del riesgo. Los clientes compraban la confianza de que profesionales capacitados aplicaban su criterio con cuidado, paso a paso, a sistemas que importaban.
 
