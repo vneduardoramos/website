@@ -24,7 +24,7 @@ Los datos de los estudiantes son sensibles y están distribuidos en muchos campu
 
 - **Acceso con privilegios mínimos.** Los roles, RBAC y las políticas de red definen quién puede acceder a qué, por campus y por función.
 - **Consumo controlado.** Los monitores de recursos mantienen el cómputo y el costo predecibles en todo el grupo.
-- **Trazable por diseño.** Una estructura gobernada de RAW a analítica mantiene un linaje claro hacia cada sistema de origen, de modo que toda cifra puede rastrearse hasta su origen.
+- **Trazable por diseño.** Una estructura gobernada de RAW a analítica mantiene un linaje claro hacia cada sistema de origen, de modo que todo número puede rastrearse hasta su origen.
 - **Los datos permanecen en su lugar.** Todo se ejecuta en la propia cuenta de Snowflake del grupo; ninguna copia sale de su perímetro.
 
 ## Lo que entregamos

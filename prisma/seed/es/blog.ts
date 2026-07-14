@@ -31,7 +31,7 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
       "Separar cómputo y almacenamiento es la clave: cada uno escala de forma independiente, y la arquitectura multiclúster evita que las cargas de trabajo interfieran entre sí.",
       "Operaciones casi sin mantenimiento, escalado instantáneo y compartición de datos en vivo permiten a los equipos concentrarse en los problemas de negocio en lugar de en la carga administrativa.",
       "Los precios basados en consumo alinean el costo con el uso real, pero exigen nuevos hábitos de monitoreo para evitar sorpresas durante el desarrollo y las pruebas.",
-      "Comience con una prueba de concepto enfocada y de alto valor que muestre las nuevas capacidades, en lugar de intentar una migración completa de entrada.",
+      "Comience con un POC enfocado y de alto valor que muestre las nuevas capacidades, en lugar de intentar una migración completa de entrada.",
     ],
   },
   "bi-integration-challenge-power-bi-tableau-snowflake": {

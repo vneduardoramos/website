@@ -2,7 +2,7 @@
 
 Los titulares de los medios celebran el tamaño de los modelos, pero los directivos pronto plantean preguntas más profundas:
 
-- **Confianza en los datos:** ¿Las cifras detrás de las decisiones automatizadas son completas, precisas y están verificadas contra sesgos?
+- **Confianza en los datos:** ¿Los números detrás de las decisiones automatizadas son completos, precisos y están verificados contra sesgos?
 - **Controles adaptables:** ¿Puede la gobernanza mantener el ritmo a medida que los algoritmos aprenden y actúan en tiempo real?
 - **Velocidad de entrega:** ¿Llegará una idea prometedora a producción gobernada antes de que cierre el próximo trimestre?
 
@@ -42,10 +42,10 @@ La disciplina escala. El heroísmo improvisado no.
 
 ## Cinco preguntas directas para su próxima reunión de directorio
 
-1. **¿Revisamos los signos vitales de nuestros datos junto a nuestras cifras de ventas?** Un simple indicador de salud que cubra calidad, linaje y cumplimiento de políticas pertenece al mismo dashboard que los ingresos y el margen.
+1. **¿Revisamos los signos vitales de nuestros datos junto a nuestros números de ventas?** Un simple indicador de salud que cubra calidad, linaje y cumplimiento de políticas pertenece al mismo dashboard que los ingresos y el margen.
 2. **Si alguien tiene una buena idea, ¿podemos ponerla en producción y debidamente gobernada en un plazo de tres meses?** Un horizonte claro de noventa días demuestra que las áreas de tecnología, riesgo y cumplimiento pueden empujar juntas en lugar de tirar en direcciones opuestas.
 3. **¿Las personas que pueden ver los datos son las que realmente los necesitan hoy, ni más ni menos?** Los permisos deben reflejar las funciones reales, no los remanentes de los sistemas antiguos.
-4. **¿Tenemos una hipótesis clara sobre el valor que este proyecto de IA debería crear, y una forma de medirlo una vez que esté en producción?** Acordar las métricas de impacto desde el inicio, aunque la cifra exacta en dólares llegue después, mantiene los proyectos enfocados y evita que el trabajo de IA se desvíe del rumbo.
+4. **¿Tenemos una hipótesis clara sobre el valor que este proyecto de IA debería crear, y una forma de medirlo una vez que esté en producción?** Acordar las métricas de impacto desde el inicio, aunque el número exacto en dólares llegue después, mantiene los proyectos enfocados y evita que el trabajo de IA se desvíe del rumbo.
 5. **¿Cuándo fue la última vez que los equipos de producto, legal y riesgo se sentaron a analizar un escenario de IA del tipo "algo salió mal"?** Los simulacros regulares y honestos sacan a la luz los puntos ciegos mucho antes de que se conviertan en titulares.
 
 ## Un primer paso práctico

@@ -65,7 +65,7 @@ La optimización de costos sigue patrones ya conocidos de Snowflake: estructuras
 
 ## Desafíos de implementación
 
-El mayor desafío suele ser organizacional. Los equipos acostumbrados a herramientas de BI complejas a veces se resisten al enfoque simplificado. He comprobado que los proyectos de prueba de concepto bien enfocados funcionan mejor que intentar cambiar opiniones con argumentos.
+El mayor desafío suele ser organizacional. Los equipos acostumbrados a herramientas de BI complejas a veces se resisten al enfoque simplificado. He comprobado que los proyectos de POC bien enfocados funcionan mejor que intentar cambiar opiniones con argumentos.
 
 No espere a tener una calidad de datos perfecta. Los agentes funcionan bien con datos imperfectos y a menudo revelan problemas de calidad que requieren atención. Comience con lo que tiene y mejore a partir del uso.
 
