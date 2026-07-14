@@ -26,9 +26,9 @@
     "imageAlt": "Un collage del equipo de Viewnear en eventos de Snowflake: el stand de data + ai, Data for Breakfast, Snowflake Summit y comidas del equipo"
   },
   "operating": [
-    "Alcances fijos, sprints impulsados por casos de uso y software funcional en cada demo",
+    "Scope fijo, sprints impulsados por casos de uso y software funcional en cada demo",
     "Gobernado por diseño, desde la primera tabla",
-    "Las personas que definen el alcance del trabajo permanecen hasta la producción",
+    "Las personas que definen el scope del trabajo permanecen hasta la producción",
     "Formatos abiertos (Apache Iceberg) para arquitecturas interoperables"
   ],
   "arcLabel": "La trayectoria hasta ahora",

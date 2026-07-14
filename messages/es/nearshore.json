@@ -40,7 +40,7 @@
     },
     {
       "label": "Continuidad",
-      "title": "El mismo equipo desde el alcance hasta la operación",
+      "title": "El mismo equipo desde el scope hasta la operación",
       "body": "Un equipo comprometido aprende los datos y los objetivos y permanece: sin cambios de personal a mitad del proyecto, sin una pirámide de entrega facturada por hora."
     },
     {
@@ -67,7 +67,7 @@
   "deliverHeading": {
     "eyebrow": "Lo que entregamos",
     "title": "La construcción completa de Data + AI, entregada en nearshore",
-    "intro": "Nuestro equipo de entrega trabaja desde Monterrey, México, en la zona horaria del centro de EE. UU., cubriendo el mismo alcance que Viewnear entrega en cualquier lugar: desde la migración hasta IA gobernada en producción."
+    "intro": "Nuestro equipo de entrega trabaja desde Monterrey, México, en la zona horaria del centro de EE. UU., cubriendo el mismo scope que Viewnear entrega en cualquier lugar: desde la migración hasta IA gobernada en producción."
   },
   "delivers": [
     {
