@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { useEffect, useState } from "react";
 
 const KEY = "vn-consent";
@@ -11,6 +12,7 @@ const KEY = "vn-consent";
  * Provider-agnostic: it only flips consent; the Analytics component reads it.
  */
 export function ConsentBanner() {
+  const t = useTranslations("consent");
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -45,24 +47,26 @@ export function ConsentBanner() {
 
   return (
     <div
-      role="dialog"
-      aria-label="Cookie consent"
+      role="region"
+      aria-label={t("ariaLabel")}
       className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-surface/95 shadow-soft-lg backdrop-blur"
     >
       <div className="container-page flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-muted">
-          We use cookies to understand site usage and improve the experience. See our{" "}
-          <Link href="/privacy" className="font-semibold text-primaryDeep underline">
-            Privacy Policy
-          </Link>
-          .
+          {t.rich("body", {
+            privacyLink: (chunk) => (
+              <Link href="/privacy" className="font-semibold text-primaryDeep underline">
+                {chunk}
+              </Link>
+            ),
+          })}
         </p>
         <div className="flex shrink-0 gap-3">
           <button onClick={() => choose("denied")} className="btn-ghost btn-sm">
-            Decline
+            {t("decline")}
           </button>
           <button onClick={() => choose("granted")} className="btn-primary btn-sm">
-            Accept
+            {t("accept")}
           </button>
         </div>
       </div>

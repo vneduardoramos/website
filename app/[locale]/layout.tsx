@@ -95,7 +95,7 @@ export default async function LocaleRootLayout({
     "nav", "common", "footer",
     "sharedUi", "strips", "homeServer", "partnershipUi", "dataAiUi",
     "platformUi", "approachUi", "migrationsUi", "contentData", "articleUi",
-    "heroUi", "methodology", "forms", "misc",
+    "heroUi", "methodology", "forms", "misc", "consent",
   ];
   const all = messages as Record<string, unknown>;
   const clientMessages = Object.fromEntries(
@@ -105,8 +105,10 @@ export default async function LocaleRootLayout({
     <html lang={locale} className={fontVariables}>
       <body className="font-sans">
         <JsonLd data={[ORG_JSONLD, WEBSITE_JSONLD]} />
-        <NextIntlClientProvider locale={locale} messages={clientMessages}>{children}</NextIntlClientProvider>
-        <ConsentBanner />
+        <NextIntlClientProvider locale={locale} messages={clientMessages}>
+          {children}
+          <ConsentBanner />
+        </NextIntlClientProvider>
         <Analytics />
       </body>
     </html>
