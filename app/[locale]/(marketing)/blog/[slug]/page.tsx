@@ -110,7 +110,7 @@ export default async function BlogPostPage({
       ? coverIsRemote
         ? cover
         : `${theme.brand.url}${cover}`
-      : `${theme.brand.url}/blog/${post.slug}/opengraph-image`,
+      : `${theme.brand.url}${localePath}/blog/${post.slug}/opengraph-image`,
     mainEntityOfPage: `${theme.brand.url}${localePath}/blog/${post.slug}`,
   };
 

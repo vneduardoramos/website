@@ -75,14 +75,10 @@ export function pageMeta(opts: {
  */
 export type BreadcrumbItem = { name: string; url?: string };
 
-function absolute(url: string): string {
-  return /^https?:\/\//i.test(url) ? url : `${theme.brand.url}${url}`;
-}
-
-// Locale-aware counterpart to `absolute()`: mirrors `pageMeta`'s es URL
-// behavior so breadcrumb JSON-LD points at the same localized path the page
-// actually renders at. Absolute URLs pass through unchanged; en behaves like
-// `absolute()` always has.
+// Resolves a breadcrumb URL for the given locale, mirroring `pageMeta`'s es
+// URL behavior so breadcrumb JSON-LD points at the same localized path the
+// page actually renders at. Absolute URLs pass through unchanged; en resolves
+// relative paths against the site root.
 function absoluteForLocale(url: string, locale: string): string {
   if (/^https?:\/\//i.test(url)) return url;
   if (locale !== "es") return `${theme.brand.url}${url}`;
