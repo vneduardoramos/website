@@ -4,7 +4,6 @@ import { prisma } from "@/lib/db";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = theme.brand.url;
-  const now = new Date();
 
   const staticPaths = [
     "",
@@ -48,16 +47,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Every path emits two URLs (en + es), each carrying reciprocal hreflang
   // alternates. Home ("") maps to `${base}` / `${base}/es` (no trailing slash).
-  const langs = (p: string) => ({ en: p ? `${base}${p}` : base, es: `${base}/es${p}` });
-  function entry(p: string, lastModified: Date): MetadataRoute.Sitemap {
+  // x-default points at the en URL, matching the on-page canonical alternates.
+  const langs = (p: string) => ({
+    en: p ? `${base}${p}` : base,
+    es: `${base}/es${p}`,
+    "x-default": p ? `${base}${p}` : base,
+  });
+  // Static paths carry no lastModified (there is no real per-page freshness
+  // signal for them); dynamic entries carry their record's honest updatedAt.
+  function entry(p: string, lastModified?: Date): MetadataRoute.Sitemap {
     return [
-      { url: p ? `${base}${p}` : base, lastModified, alternates: { languages: langs(p) } },
-      { url: `${base}/es${p}`, lastModified, alternates: { languages: langs(p) } },
+      { url: p ? `${base}${p}` : base, alternates: { languages: langs(p) }, ...(lastModified ? { lastModified } : {}) },
+      { url: `${base}/es${p}`, alternates: { languages: langs(p) }, ...(lastModified ? { lastModified } : {}) },
     ];
   }
 
   return [
-    ...staticPaths.flatMap((path) => entry(path, now)),
+    ...staticPaths.flatMap((path) => entry(path)),
     ...dynamic.flatMap((e) => entry(e.path, e.lastModified)),
   ];
 }
