@@ -79,7 +79,22 @@ function absolute(url: string): string {
   return /^https?:\/\//i.test(url) ? url : `${theme.brand.url}${url}`;
 }
 
-export function breadcrumbLd(items: BreadcrumbItem[]): Record<string, unknown> {
+// Locale-aware counterpart to `absolute()`: mirrors `pageMeta`'s es URL
+// behavior so breadcrumb JSON-LD points at the same localized path the page
+// actually renders at. Absolute URLs pass through unchanged; en behaves like
+// `absolute()` always has.
+function absoluteForLocale(url: string, locale: string): string {
+  if (/^https?:\/\//i.test(url)) return url;
+  if (locale !== "es") return `${theme.brand.url}${url}`;
+  const base = theme.brand.url;
+  const isHome = url === "/" || url === "";
+  return isHome ? `${base}/es` : `${base}/es${url}`;
+}
+
+export function breadcrumbLd(
+  items: BreadcrumbItem[],
+  locale: string = DEFAULT_LOCALE,
+): Record<string, unknown> {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -87,7 +102,7 @@ export function breadcrumbLd(items: BreadcrumbItem[]): Record<string, unknown> {
       "@type": "ListItem",
       position: i + 1,
       name: c.name,
-      ...(c.url ? { item: absolute(c.url) } : {}),
+      ...(c.url ? { item: absoluteForLocale(c.url, locale) } : {}),
     })),
   };
 }

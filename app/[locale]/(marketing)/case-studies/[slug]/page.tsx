@@ -93,6 +93,8 @@ export default async function CaseStudyDetailPage({
   const next =
     currentIndex >= 0 && currentIndex < all.length - 1 ? all[currentIndex + 1] : null;
 
+  const localePath = locale === "es" ? "/es" : "";
+
   const caseStudyLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -109,7 +111,7 @@ export default async function CaseStudyDetailPage({
       logo: { "@type": "ImageObject", url: `${theme.brand.url}/assets/viewnear-logo.png` },
     },
     image: /^https?:\/\//i.test(heroImage) ? heroImage : `${theme.brand.url}${heroImage}`,
-    mainEntityOfPage: `${theme.brand.url}/case-studies/${cs.slug}`,
+    mainEntityOfPage: `${theme.brand.url}${localePath}/case-studies/${cs.slug}`,
   };
 
   return (

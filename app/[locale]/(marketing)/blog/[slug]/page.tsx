@@ -82,6 +82,8 @@ export default async function BlogPostPage({
   const recent = await getBlogPosts({ take: 4 }, locale as Locale);
   const related = recent.filter((p) => p.slug !== post.slug).slice(0, 3);
 
+  const localePath = locale === "es" ? "/es" : "";
+
   const articleLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -109,7 +111,7 @@ export default async function BlogPostPage({
         ? cover
         : `${theme.brand.url}${cover}`
       : `${theme.brand.url}/blog/${post.slug}/opengraph-image`,
-    mainEntityOfPage: `${theme.brand.url}/blog/${post.slug}`,
+    mainEntityOfPage: `${theme.brand.url}${localePath}/blog/${post.slug}`,
   };
 
   return (

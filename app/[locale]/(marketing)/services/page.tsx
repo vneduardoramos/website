@@ -113,7 +113,7 @@ export default async function ServicesPage({ params }: { params: { locale: strin
 
   return (
     <>
-      <JsonLd data={[serviceLd, breadcrumbLd([{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }])]} />
+      <JsonLd data={[serviceLd, breadcrumbLd([{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }], locale)]} />
       <PageHero
         eyebrow={t("hero.eyebrow")}
         title={t.rich("hero.title", {

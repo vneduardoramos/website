@@ -27,7 +27,7 @@ export default async function IndustriesPage({ params }: { params: { locale: str
 
   return (
     <>
-      <JsonLd data={breadcrumbLd([{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }])} />
+      <JsonLd data={breadcrumbLd([{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }], locale)} />
       <PageHero
         eyebrow={t("hero.eyebrow")}
         title={t.rich("hero.title", {

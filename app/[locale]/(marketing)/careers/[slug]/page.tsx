@@ -67,6 +67,8 @@ export default async function CareerDetailPage({
   const skills = asStringArray(job.skills);
   const isRemote = (job.location ?? "").toLowerCase().includes("remote");
 
+  const localePath = locale === "es" ? "/es" : "";
+
   const jobLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "JobPosting",
@@ -86,7 +88,7 @@ export default async function CareerDetailPage({
       logo: `${theme.brand.url}/assets/viewnear-logo.png`,
     },
     directApply: true,
-    url: `${theme.brand.url}/careers/${job.slug}`,
+    url: `${theme.brand.url}${localePath}/careers/${job.slug}`,
   };
 
   if (job.location) {
