@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Data + AI: agentes dentro de Snowflake y en el flujo de trabajo",
-    "description": "Agentes que razonan sobre datos gobernados dentro de Snowflake y actúan en las herramientas que los equipos ya usan, y la interacción entre ambos. Construido con Claude como socio de Anthropic, en producción en 8 a 16 semanas."
+    "description": "Agentes que razonan sobre datos gobernados en Snowflake y actúan en las herramientas que su equipo ya usa. Con Claude, en producción en 8 a 16 semanas."
   },
   "hero": {
     "eyebrow": "Data + AI",

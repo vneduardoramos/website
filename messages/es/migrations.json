@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Migraciones a Snowflake: Teradata, Oracle, Redshift, Hadoop y más",
-    "description": "Viewnear traslada almacenes de datos heredados y Hadoop a una única base gobernada en Snowflake: conversión de código automatizada, paridad validada, una transición por fases que el negocio no percibe y una transferencia que deja al equipo operándola."
+    "description": "Viewnear traslada almacenes heredados y Hadoop a Snowflake: conversión automatizada, paridad validada y una transferencia que su equipo termina operando."
   },
   "hero": {
     "eyebrow": "Migraciones",
