@@ -5,9 +5,15 @@ export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 export const alt = `${theme.brand.name}: Data & AI, Snowflake Partner`;
 
-export default function Image() {
-  return renderOg({
+const COPY = {
+  en: { eyebrow: "Data & AI · Snowflake Partner", title: theme.brand.tagline },
+  es: {
     eyebrow: "Data & AI · Snowflake Partner",
-    title: theme.brand.tagline,
-  });
+    title: "Datos e IA en producción, sobre Snowflake.",
+  },
+} as const;
+
+export default function Image({ params }: { params: { locale: string } }) {
+  const copy = COPY[params.locale as keyof typeof COPY] ?? COPY.en;
+  return renderOg(copy);
 }

@@ -4,6 +4,12 @@ export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 export const alt = "Viewnear services";
 
-export default function Image() {
-  return renderOg({ eyebrow: "Services", title: "THINK · BUILD · GROW" });
+const COPY = {
+  en: { eyebrow: "Services", title: "THINK · BUILD · GROW" },
+  es: { eyebrow: "Servicios", title: "THINK · BUILD · GROW" },
+} as const;
+
+export default function Image({ params }: { params: { locale: string } }) {
+  const copy = COPY[params.locale as keyof typeof COPY] ?? COPY.en;
+  return renderOg(copy);
 }
