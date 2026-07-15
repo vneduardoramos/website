@@ -31,7 +31,7 @@ export async function generateMetadata({
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "careerDetail.meta" });
   const job = await getJobOpeningBySlug(slug, locale as Locale);
-  if (!job) return { title: t("fallbackTitle") };
+  if (!job) return { title: t("fallbackTitle"), robots: { index: false, follow: false } };
   return pageMeta({
     title: t("titleTemplate", { title: job.title }),
     description: job.description,

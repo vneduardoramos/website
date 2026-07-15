@@ -38,7 +38,7 @@ export async function generateMetadata({
   const post = await getBlogPostBySlug(slug, locale as Locale);
   if (!post) {
     const t = await getTranslations({ locale, namespace: "blogDetail.meta" });
-    return { title: t("fallbackTitle") };
+    return { title: t("fallbackTitle"), robots: { index: false, follow: false } };
   }
   return pageMeta({
     title: post.title,

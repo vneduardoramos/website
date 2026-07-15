@@ -37,7 +37,7 @@ export async function generateMetadata({
   const cs = await getCaseStudyBySlug(slug, locale as Locale);
   if (!cs) {
     const t = await getTranslations({ locale, namespace: "caseStudyDetail.meta" });
-    return { title: t("fallbackTitle") };
+    return { title: t("fallbackTitle"), robots: { index: false, follow: false } };
   }
   return pageMeta({
     title: cs.title,

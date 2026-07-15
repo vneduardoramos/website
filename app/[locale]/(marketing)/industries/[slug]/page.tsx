@@ -41,7 +41,7 @@ export async function generateMetadata({
   const industry = await getIndustryBySlug(slug, locale as Locale);
   if (!industry) {
     const t = await getTranslations({ locale, namespace: "industryDetail.meta" });
-    return { title: t("fallbackTitle") };
+    return { title: t("fallbackTitle"), robots: { index: false, follow: false } };
   }
   return pageMeta({
     title: industry.name,
