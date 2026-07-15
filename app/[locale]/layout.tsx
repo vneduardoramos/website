@@ -95,7 +95,7 @@ export default async function LocaleRootLayout({
     "nav", "common", "footer",
     "sharedUi", "strips", "homeServer", "partnershipUi", "dataAiUi",
     "platformUi", "approachUi", "migrationsUi", "contentData", "articleUi",
-    "heroUi", "methodology", "forms", "misc", "consent",
+    "heroUi", "methodology", "forms", "misc", "consent", "errorPage",
   ];
   const all = messages as Record<string, unknown>;
   const clientMessages = Object.fromEntries(
