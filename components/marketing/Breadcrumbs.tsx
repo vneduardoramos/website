@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { breadcrumbLd } from "@/lib/seo";
 
@@ -11,10 +12,11 @@ export type Crumb = { label: string; href?: string };
  * where there's a real hierarchy, not on top-level pages.
  */
 export function Breadcrumbs({ items }: { items: Crumb[] }) {
+  const t = useTranslations("sharedUi");
   const jsonLd = breadcrumbLd(items.map((c) => ({ name: c.label, url: c.href })));
 
   return (
-    <nav aria-label="Breadcrumb" className="text-sm">
+    <nav aria-label={t("breadcrumbAria")} className="text-sm">
       <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-muted">
         {items.map((c, i) => {
           const last = i === items.length - 1;

@@ -441,7 +441,7 @@ export function Nav({ navData }: { navData?: NavData }) {
       )}
     >
       <nav className="container-page relative z-50 flex h-[4.8rem] items-center justify-between">
-        <Link href="/" className="flex items-center" aria-label={`${theme.brand.name} home`}>
+        <Link href="/" className="flex items-center" aria-label={t("homeAriaLabel", { brand: theme.brand.name })}>
           <Logo variant="dark" height={25} />
         </Link>
 
