@@ -60,13 +60,9 @@ export function ApplicationForm({ openingTitle }: { openingTitle?: string }) {
       }
       form.reset();
       router.push("/thank-you");
-    } catch (err) {
+    } catch {
       setStatus("error");
-      setError(
-        err instanceof Error && err.message !== "Request failed"
-          ? err.message
-          : t("application.error"),
-      );
+      setError(t("application.error"));
     }
   }
 
