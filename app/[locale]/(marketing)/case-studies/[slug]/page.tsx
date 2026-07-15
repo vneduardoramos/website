@@ -46,6 +46,7 @@ export async function generateMetadata({
     image: cs.heroImage,
     type: "article",
     locale,
+    ownOgFile: true,
   });
 }
 

@@ -47,6 +47,7 @@ export async function generateMetadata({
     image: post.coverImageUrl,
     type: "article",
     locale,
+    ownOgFile: true,
   });
 }
 

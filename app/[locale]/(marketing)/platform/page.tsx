@@ -15,7 +15,13 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const { locale } = params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "platform.meta" });
-  return pageMeta({ title: t("title"), description: t("description"), path: "/platform", locale });
+  return pageMeta({
+    title: t("title"),
+    description: t("description"),
+    path: "/platform",
+    locale,
+    ownOgFile: true,
+  });
 }
 
 export default async function PlatformPage({ params }: { params: { locale: string } }) {

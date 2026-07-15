@@ -49,6 +49,7 @@ export async function generateMetadata({
     path: `/industries/${slug}`,
     image: `/assets/images/industries/${slug}.jpg`,
     locale,
+    ownOgFile: true,
   });
 }
 

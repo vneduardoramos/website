@@ -25,20 +25,31 @@ export function pageMeta(opts: {
   // Accepts a plain string (page `params.locale`) so callers don't need to cast;
   // only the "es" value changes behavior, everything else resolves to the en default.
   locale?: string;
+  // Set true for routes that ship their own opengraph-image.tsx file (Next's
+  // file-based convention). Leaves the images key unset entirely so that file
+  // wins instead of being overridden by the site-wide default below.
+  ownOgFile?: boolean;
 }): Metadata {
-  const { title, description, path, image, type = "website", noindex, locale = DEFAULT_LOCALE } = opts;
+  const {
+    title,
+    description,
+    path,
+    image,
+    type = "website",
+    noindex,
+    locale = DEFAULT_LOCALE,
+    ownOgFile,
+  } = opts;
   const base = theme.brand.url;
   const isHome = path === "/" || path === "";
   const enUrl = isHome ? base : `${base}${path}`;
   const esUrl = isHome ? `${base}/es` : `${base}/es${path}`;
   const url = locale === "es" ? esUrl : enUrl;
   const abs = (src: string) => (/^https?:\/\//i.test(src) ? src : `${theme.brand.url}${src}`);
-  // Only pin an OG image when the caller passes one. Otherwise leave it unset
-  // so the cascade resolves correctly: a route's own opengraph-image.tsx file
-  // wins, and pages with neither fall back to the site-wide default declared
-  // in app/layout.tsx. (Previously this always injected og-default, which
-  // silently overrode the branded per-route opengraph-image files.)
-  const ogImage = image ? abs(image) : null;
+  // Pin an OG image when the caller passes one. Otherwise, if the route ships
+  // its own opengraph-image.tsx file, omit the images key so that file wins;
+  // every other route falls back to the site-wide default image.
+  const ogImage = image ? abs(image) : ownOgFile ? null : abs(DEFAULT_OG);
   return {
     ...(title ? { title } : {}),
     ...(description ? { description } : {}),
@@ -53,6 +64,7 @@ export function pageMeta(opts: {
       url,
       type,
       locale: locale === "es" ? "es_MX" : "en_US",
+      siteName: theme.brand.name,
       ...(ogImage ? { images: [{ url: ogImage, width: 1200, height: 630 }] } : {}),
     },
     twitter: {

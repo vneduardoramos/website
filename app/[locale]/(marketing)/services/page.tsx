@@ -26,7 +26,13 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const { locale } = params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "services.meta" });
-  return pageMeta({ title: t("title"), description: t("description"), path: "/services", locale });
+  return pageMeta({
+    title: t("title"),
+    description: t("description"),
+    path: "/services",
+    locale,
+    ownOgFile: true,
+  });
 }
 
 type TierMeta = {
