@@ -78,8 +78,8 @@ export default async function BlogPage({ params }: { params: { locale: string } 
             }
             meta={
               featured.authorTeam
-                ? formatDate(featured.publishedAt)
-                : `${featured.author?.name ?? "Viewnear"} · ${formatDate(featured.publishedAt)}`
+                ? formatDate(featured.publishedAt, locale as Locale)
+                : `${featured.author?.name ?? "Viewnear"} · ${formatDate(featured.publishedAt, locale as Locale)}`
             }
             featured
           />
@@ -111,8 +111,8 @@ export default async function BlogPage({ params }: { params: { locale: string } 
                   }
                   meta={
                     post.authorTeam
-                      ? formatDate(post.publishedAt)
-                      : `${post.author?.name ?? "Viewnear"} · ${formatDate(post.publishedAt)}`
+                      ? formatDate(post.publishedAt, locale as Locale)
+                      : `${post.author?.name ?? "Viewnear"} · ${formatDate(post.publishedAt, locale as Locale)}`
                   }
                 />
               ))}

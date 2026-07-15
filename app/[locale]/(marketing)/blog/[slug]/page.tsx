@@ -168,7 +168,7 @@ export default async function BlogPostPage({
                     <p className="text-sm text-muted">{author.title}</p>
                   ) : null}
                   <p className="mt-0.5 text-xs text-muted">
-                    {formatDate(post.publishedAt)} · {t("readTime", { minutes: readingTime })}
+                    {formatDate(post.publishedAt, locale as Locale)} · {t("readTime", { minutes: readingTime })}
                   </p>
                   {author.linkedinUrl ? (
                     <a
@@ -188,7 +188,7 @@ export default async function BlogPostPage({
                   {post.author?.name ?? "Viewnear"}
                 </span>
                 <span aria-hidden>·</span>
-                <span>{formatDate(post.publishedAt)}</span>
+                <span>{formatDate(post.publishedAt, locale as Locale)}</span>
                 <span aria-hidden>·</span>
                 <span>{t("readTime", { minutes: readingTime })}</span>
               </div>
@@ -262,8 +262,8 @@ export default async function BlogPostPage({
                   }
                   meta={
                     p.authorTeam
-                      ? formatDate(p.publishedAt)
-                      : `${p.author?.name ?? "Viewnear"} · ${formatDate(p.publishedAt)}`
+                      ? formatDate(p.publishedAt, locale as Locale)
+                      : `${p.author?.name ?? "Viewnear"} · ${formatDate(p.publishedAt, locale as Locale)}`
                   }
                 />
               ))}

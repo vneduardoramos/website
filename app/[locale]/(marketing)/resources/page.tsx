@@ -98,8 +98,8 @@ export default async function ResourcesPage({ params }: { params: { locale: stri
                 }
                 meta={
                   featuredPost.authorTeam
-                    ? formatDate(featuredPost.publishedAt)
-                    : `Viewnear · ${formatDate(featuredPost.publishedAt)}`
+                    ? formatDate(featuredPost.publishedAt, locale as Locale)
+                    : `Viewnear · ${formatDate(featuredPost.publishedAt, locale as Locale)}`
                 }
               />
             )}
@@ -158,8 +158,8 @@ export default async function ResourcesPage({ params }: { params: { locale: stri
                 }
                 meta={
                   post.authorTeam
-                    ? formatDate(post.publishedAt)
-                    : `Viewnear · ${formatDate(post.publishedAt)}`
+                    ? formatDate(post.publishedAt, locale as Locale)
+                    : `Viewnear · ${formatDate(post.publishedAt, locale as Locale)}`
                 }
               />
             ))}
