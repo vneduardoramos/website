@@ -25,6 +25,12 @@ const groups = [
     title: "Services",
     links: [
       { linkKey: "servicesOverview", label: "Services", href: "/services" },
+      { linkKey: "aiDataStrategy", label: "Data & AI Strategy", href: "/services/ai-data-strategy" },
+      { linkKey: "cloudArchitecture", label: "Cloud Architecture & Data Foundation", href: "/services/cloud-architecture" },
+      { linkKey: "dataEngineering", label: "Data Engineering & Pipelines", href: "/services/data-engineering" },
+      { linkKey: "aiAnalytics", label: "AI Analytics & Agents", href: "/services/data-visualisation" },
+      { linkKey: "embeddedAnalytics", label: "Embedded Analytics", href: "/services/embedded-analytics" },
+      { linkKey: "capabilityDevelopment", label: "Capability Development", href: "/services/capability-development" },
       { linkKey: "approach", label: "Approach", href: "/approach" },
       { linkKey: "pricing", label: "Pricing", href: "/pricing" },
       { linkKey: "platform", label: "Platform", href: "/platform" },

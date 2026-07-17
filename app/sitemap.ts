@@ -31,7 +31,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Dynamic content carries its real updatedAt so crawlers get an honest
   // per-URL freshness signal (instead of every URL sharing the build time).
   const sel = { where: { status: "PUBLISHED" }, select: { slug: true, updatedAt: true } } as const;
-  const [industries, caseStudies, blog, jobs] = await Promise.all([
+  const [services, industries, caseStudies, blog, jobs] = await Promise.all([
+    prisma.service.findMany(sel),
     prisma.industry.findMany(sel),
     prisma.caseStudy.findMany(sel),
     prisma.blogPost.findMany(sel),
@@ -39,6 +40,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]);
 
   const dynamic = [
+    ...services.map((r) => ({ path: `/services/${r.slug}`, lastModified: r.updatedAt })),
     ...industries.map((r) => ({ path: `/industries/${r.slug}`, lastModified: r.updatedAt })),
     ...caseStudies.map((r) => ({ path: `/case-studies/${r.slug}`, lastModified: r.updatedAt })),
     ...blog.map((r) => ({ path: `/blog/${r.slug}`, lastModified: r.updatedAt })),

@@ -171,24 +171,29 @@ export default async function ServicesPage({ params }: { params: { locale: strin
                 {services.map((service, i) => {
                   const tools = asStringArray(service.tools);
                   return (
-                    <LedgerCard
+                    <Link
                       key={service.slug}
-                      eyebrow={text?.eyebrow ?? tier}
-                      index={String(offset + i + 1).padStart(2, "0")}
-                      title={service.title}
-                      foot={
-                        tools.length > 0
-                          ? [t("toolsLabel"), tools.join(" · ")]
-                          : undefined
-                      }
+                      href={`/services/${service.slug}`}
+                      className="block h-full"
                     >
-                      <p>{service.summary}</p>
-                      {service.body && (
-                        <div className="prose-vn mt-3 text-sm">
-                          <Markdown>{service.body}</Markdown>
-                        </div>
-                      )}
-                    </LedgerCard>
+                      <LedgerCard
+                        eyebrow={text?.eyebrow ?? tier}
+                        index={String(offset + i + 1).padStart(2, "0")}
+                        title={service.title}
+                        foot={
+                          tools.length > 0
+                            ? [t("toolsLabel"), tools.join(" · ")]
+                            : undefined
+                        }
+                      >
+                        <p>{service.summary}</p>
+                        {service.body && (
+                          <div className="prose-vn mt-3 text-sm">
+                            <Markdown>{service.body}</Markdown>
+                          </div>
+                        )}
+                      </LedgerCard>
+                    </Link>
                   );
                 })}
               </RevealGroup>
