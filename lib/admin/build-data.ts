@@ -3,7 +3,6 @@ import type { AdminModel } from "@/lib/admin/config";
 
 /** Build a Prisma scalar data object from submitted FormData per the model's field config. */
 export function buildEntityData(model: AdminModel, form: FormData, isCreate: boolean) {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const data: Record<string, any> = {};
 
   for (const field of model.fields) {
@@ -90,7 +89,6 @@ export function buildEntityData(model: AdminModel, form: FormData, isCreate: boo
  * (which replaces the full set, correctly clearing relations when none are selected).
  */
 export function m2mConnections(model: AdminModel, form: FormData, isCreate: boolean) {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rel: Record<string, any> = {};
   for (const f of model.fields) {
     if (f.type === "relation" && f.relation?.multiple) {

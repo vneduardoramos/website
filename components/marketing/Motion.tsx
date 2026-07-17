@@ -85,7 +85,6 @@ export function RevealGroup({
   const { ref, inView } = useInViewOnce<HTMLElement>();
   return (
     <Tag
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ref={ref as any}
       data-variant={variant}
       className={cn("reveal-stagger", inView && "is-visible", className)}

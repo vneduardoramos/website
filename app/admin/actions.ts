@@ -16,7 +16,6 @@ async function requireSession() {
 }
 
 function delegate(model: AdminModel) {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return (prisma as any)[model.key];
 }
 
@@ -24,7 +23,6 @@ function delegate(model: AdminModel) {
 async function stampPublishedAt(
   model: AdminModel,
   id: string,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: Record<string, any>
 ) {
   if (!model.hasStatus || data.status !== "PUBLISHED") return;
@@ -69,7 +67,6 @@ export async function setStatus(modelKey: string, id: string, status: string) {
   await requireSession();
   const model = getModel(modelKey);
   if (!model || !model.hasStatus) throw new Error("Model has no status");
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const data: Record<string, any> = { status };
   await stampPublishedAt(model, id, data);
   await delegate(model).update({ where: { id }, data });

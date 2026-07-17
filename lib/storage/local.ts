@@ -23,7 +23,10 @@ function safeName(filename: string): string {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "")
     .slice(0, 60);
-  const stamp = Math.floor(performance.now()).toString(36);
+  // Wall-clock + random suffix: performance.now() resets to ~0 on every process
+  // restart, so two same-named uploads at a similar offset across restarts could
+  // collide and silently overwrite. Date.now() plus entropy avoids that.
+  const stamp = `${Date.now().toString(36)}-${crypto.randomUUID().slice(0, 6)}`;
   return `${base || "file"}-${stamp}${ext}`;
 }
 

@@ -12,7 +12,6 @@ export default async function EditEntityPage({ params }: { params: { model: stri
   if (!model) notFound();
 
   const include = relationInclude(model);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const record = await (prisma as any)[model.key].findUnique({
     where: { id: params.id },
     ...(Object.keys(include).length ? { include } : {}),

@@ -10,7 +10,6 @@ export async function loadFormExtras(model: AdminModel): Promise<{
   const options: Record<string, Option[]> = {};
   for (const f of model.fields) {
     if (f.type === "relation" && f.relation) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const rows: any[] = await (prisma as any)[f.relation.model].findMany({
         select: { id: true, [f.relation.labelField]: true },
         orderBy: { [f.relation.labelField]: "asc" },
