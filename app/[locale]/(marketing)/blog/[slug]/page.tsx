@@ -152,12 +152,12 @@ export default async function BlogPostPage({
             {author ? (
               <div className="mt-6 flex flex-wrap items-center gap-4 border-t border-border pt-6">
                 {authorPhoto ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
+                  <Image
                     src={authorPhoto}
                     alt={author.name}
-                    loading="lazy"
-                    decoding="async"
+                    width={48}
+                    height={48}
+                    sizes="48px"
                     className="h-12 w-12 shrink-0 rounded-full object-cover"
                   />
                 ) : (

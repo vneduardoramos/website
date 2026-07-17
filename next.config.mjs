@@ -2,17 +2,19 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 // Allow next/image to optimize images served from the object-storage public
-// host (Cloudflare R2 / S3). Derived from S3_PUBLIC_URL so there's a single
-// source of truth — set it to the bucket's public base URL, e.g.
-// https://pub-xxxx.r2.dev or a custom domain like https://cdn.viewnear.com.
-// NOTE: read at build time, so S3_PUBLIC_URL must be set in the build env.
+// host (Cloudflare R2 / S3). Derived from NEXT_PUBLIC_S3_PUBLIC_URL (falling
+// back to S3_PUBLIC_URL) so there's a single source of truth — set it to the
+// bucket's public base URL, e.g. https://pub-xxxx.r2.dev or a custom domain
+// like https://cdn.viewnear.com.
+// NOTE: read at build time, so the env var must be set in the build env.
+const mediaPublicUrl = process.env.NEXT_PUBLIC_S3_PUBLIC_URL ?? process.env.S3_PUBLIC_URL;
 const remotePatterns = [];
-if (process.env.S3_PUBLIC_URL) {
+if (mediaPublicUrl) {
   try {
-    const { protocol, hostname } = new URL(process.env.S3_PUBLIC_URL);
+    const { protocol, hostname } = new URL(mediaPublicUrl);
     remotePatterns.push({ protocol: protocol.replace(":", ""), hostname, pathname: "/**" });
   } catch {
-    // Malformed S3_PUBLIC_URL: leave remote images disallowed rather than crash the build.
+    // Malformed public media URL: leave remote images disallowed rather than crash the build.
   }
 }
 

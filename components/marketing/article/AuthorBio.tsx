@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { Img as Image } from "@/components/marketing/Img";
 
 export type ArticleAuthor = {
   name: string;
@@ -20,12 +21,12 @@ export async function AuthorBio({ author }: { author?: ArticleAuthor | null }) {
     <div className="mx-auto mt-14 max-w-3xl">
       <div className="flex flex-col gap-5 rounded-2xl border border-border bg-surface2 p-6 sm:flex-row sm:items-start">
         {photo ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <Image
             src={photo}
             alt={author.name}
-            loading="lazy"
-            decoding="async"
+            width={64}
+            height={64}
+            sizes="64px"
             className="h-16 w-16 shrink-0 rounded-full object-cover"
           />
         ) : (

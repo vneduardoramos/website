@@ -65,9 +65,11 @@ export async function CoverCard({
 }) {
   const t = await getTranslations("sharedUi");
   // Fall back to the title when no explicit alt is given, so covers are never
-  // announced with an empty alt. The Img wrapper renders remote URLs via
-  // next/image `unoptimized` (which bypasses remotePatterns), so both local and
-  // remote covers get lazy-loading, a blur placeholder, and a reserved box.
+  // announced with an empty alt. The Img wrapper renders remote covers through
+  // next/image: images from the configured media host (NEXT_PUBLIC_S3_PUBLIC_URL)
+  // are optimized via remotePatterns; any other remote host falls back to
+  // `unoptimized`. Either way covers get lazy-loading, a blur placeholder, and
+  // a reserved box.
   const alt = imageAlt || title;
   const media = (
     <div className={`relative overflow-hidden ${featured ? "h-full min-h-[260px]" : "aspect-[16/10]"}`}>
@@ -108,12 +110,12 @@ export async function CoverCard({
       {author ? (
         <div className="mt-4 flex items-center gap-2 text-xs text-muted">
           {author.photo ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
+            <Image
               src={author.photo}
               alt={author.name}
-              loading="lazy"
-              decoding="async"
+              width={24}
+              height={24}
+              sizes="24px"
               className="h-6 w-6 shrink-0 rounded-full object-cover"
             />
           ) : (
