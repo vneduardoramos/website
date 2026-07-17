@@ -163,7 +163,7 @@ export default async function AboutPage({ params }: { params: { locale: string }
 
       {/* Governance & trust: the enterprise signal */}
       <Section>
-        <div className="panel-indigo relative overflow-hidden rounded-3xl p-8 shadow-xl md:p-14">
+        <div className="panel-indigo relative overflow-hidden rounded-3xl p-8 shadow-soft-lg md:p-14">
           <div className="relative grid gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
             <div>
               <p className="eyebrow eyebrow--invert mb-4">{t("governanceBlock.eyebrow")}</p>

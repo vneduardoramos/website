@@ -202,7 +202,7 @@ export default async function BlogPostPage({
 
       {cover ? (
         <div className="container-page mt-10">
-          <div className="relative aspect-[2/1] w-full overflow-hidden rounded-3xl bg-surface2 shadow-lg md:aspect-[21/9]">
+          <div className="relative aspect-[2/1] w-full overflow-hidden rounded-3xl bg-surface2 shadow-soft md:aspect-[21/9]">
             <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-deep/20 to-transparent" />
             <Image
               src={cover}

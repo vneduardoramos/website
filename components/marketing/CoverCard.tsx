@@ -144,7 +144,7 @@ export async function CoverCard({
   return (
     <Link
       href={href}
-      className={`group flex h-full overflow-hidden rounded-2xl border border-border bg-surface shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg ${
+      className={`group flex h-full overflow-hidden rounded-2xl border border-border bg-surface shadow-soft transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-soft-lg ${
         featured ? "flex-col md:grid md:grid-cols-2 md:items-stretch" : "flex-col"
       }`}
     >

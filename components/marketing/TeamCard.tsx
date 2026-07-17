@@ -39,7 +39,7 @@ export function TeamCard({
         className="pointer-events-none absolute left-1/2 top-2 h-40 w-40 -translate-x-1/2 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 blur-2xl transition duration-500 group-hover:from-primary/30 group-hover:to-secondary/30"
       />
 
-      <div className="relative aspect-square w-36 overflow-hidden rounded-2xl bg-surface2 shadow-md ring-1 ring-border transition duration-300 group-hover:ring-primary/30">
+      <div className="relative aspect-square w-36 overflow-hidden rounded-2xl bg-surface2 shadow-soft ring-1 ring-border transition duration-300 group-hover:ring-primary/30">
         {member.photo ? (
           <Image
             src={member.photo}

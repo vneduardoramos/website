@@ -81,7 +81,7 @@ export default async function DataAiPage({ params }: { params: { locale: string 
       {/* WHAT WE SHIP: the dark kick. White cards on deep indigo, real
           engagement numbers on the proven ones. */}
       <Section>
-        <div className="panel-dark relative overflow-hidden rounded-3xl p-7 shadow-xl md:p-12">
+        <div className="panel-dark relative overflow-hidden rounded-3xl p-7 shadow-soft-lg md:p-12">
           <div className="relative">
             <div className="max-w-2xl">
               <p className="eyebrow mb-4">{t("ship.eyebrow")}</p>

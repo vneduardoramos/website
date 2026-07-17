@@ -145,7 +145,7 @@ export default async function CaseStudyDetailPage({
       {/* ── Full-bleed hero image (F2 cutout reveal) ────────────── */}
       <div className="container-page">
         <MaskReveal>
-          <div className="relative aspect-[21/9] w-full overflow-hidden rounded-3xl border border-border shadow-xl">
+          <div className="relative aspect-[21/9] w-full overflow-hidden rounded-3xl border border-border shadow-soft-lg">
             <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-tr from-primary/20 via-transparent to-secondary/15" />
             <Image
               src={heroImage}
@@ -161,7 +161,7 @@ export default async function CaseStudyDetailPage({
 
       {/* ── Outcome metrics (dark band for punch) ───────────────── */}
       <Section>
-        <div className="panel-dark relative overflow-hidden rounded-3xl p-10 shadow-xl md:p-14">
+        <div className="panel-dark relative overflow-hidden rounded-3xl p-10 shadow-soft-lg md:p-14">
           <div className="bg-grid pointer-events-none absolute inset-0 opacity-30" />
           <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-accent/20 blur-3xl" />
           <div className="relative">
@@ -204,7 +204,7 @@ export default async function CaseStudyDetailPage({
 
               {/* Sticky image rail for variety alongside the prose. */}
               <aside className="lg:sticky lg:top-28 lg:self-start">
-                <div className="relative overflow-hidden rounded-2xl border border-border shadow-lg">
+                <div className="relative overflow-hidden rounded-2xl border border-border shadow-soft">
                   <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-tr from-primary/15 via-transparent to-secondary/10" />
                   <Image
                     src={`/assets/images/cases/${cs.slug}-detail.jpg`}

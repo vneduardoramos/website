@@ -126,7 +126,7 @@ export default async function IndustryDetailPage({
             </div>
             <div className="flex items-center gap-3">
               <span
-                className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl shadow-sm ${flavor.tile}`}
+                className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl shadow-soft ${flavor.tile}`}
               >
                 <Icon className="h-6 w-6" />
               </span>
@@ -319,7 +319,7 @@ export default async function IndustryDetailPage({
                     aria-hidden="true"
                   />
                   <span
-                    className={`absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-background/90 px-3 py-1.5 font-mono text-xs uppercase tracking-wider shadow-sm ${flavor.text}`}
+                    className={`absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-background/90 px-3 py-1.5 font-mono text-xs uppercase tracking-wider shadow-soft ${flavor.text}`}
                   >
                     <Icon className="h-4 w-4" />
                     {story.sector}

@@ -471,7 +471,7 @@ export default async function LifeAtViewnearPage({ params }: { params: { locale:
 
       {/* THE VIEWNEAR STANDARD - dark band */}
       <Section>
-        <div className="panel-dark relative overflow-hidden rounded-3xl p-10 shadow-xl md:p-14">
+        <div className="panel-dark relative overflow-hidden rounded-3xl p-10 shadow-soft-lg md:p-14">
           <div className="bg-grid pointer-events-none absolute inset-0 opacity-30" />
           <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-amber/20 blur-3xl" />
           <div className="relative flex flex-col items-start gap-6 md:flex-row md:items-center md:gap-8">
