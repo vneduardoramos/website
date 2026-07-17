@@ -39,6 +39,9 @@ export default async function PanelLayout({
           <Link href="/admin/leads" className="block rounded-lg px-3 py-2 text-muted hover:bg-surface2 hover:text-foreground">
             Leads
           </Link>
+          <Link href="/admin/applications" className="block rounded-lg px-3 py-2 text-muted hover:bg-surface2 hover:text-foreground">
+            Applications
+          </Link>
           <Link href="/admin/media" className="block rounded-lg px-3 py-2 text-muted hover:bg-surface2 hover:text-foreground">
             Media
           </Link>
