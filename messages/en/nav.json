@@ -25,6 +25,7 @@
   "allResources": "All resources",
   "caseStudies": "Case Studies",
   "blog": "Blog",
+  "press": "Press",
   "faq": "FAQ",
   "cta": "Let's talk",
   "toggleMenu": "Toggle menu",
@@ -56,6 +57,7 @@
     "allResources": "Everything in one place",
     "caseStudies": "Proof & outcomes",
     "blog": "Field notes",
+    "press": "Featured in CRN",
     "faq": "Common questions"
   },
   "featured": {

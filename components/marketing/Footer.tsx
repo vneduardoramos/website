@@ -56,6 +56,7 @@ const groups = [
       { linkKey: "allResources", label: "All resources", href: "/resources" },
       { linkKey: "caseStudies", label: "Case Studies", href: "/case-studies" },
       { linkKey: "blog", label: "Blog", href: "/blog" },
+      { linkKey: "press", label: "Press", href: "/press" },
       { linkKey: "faq", label: "FAQ", href: "/faq" },
     ],
   },

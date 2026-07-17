@@ -126,6 +126,7 @@ export const theme = {
         { key: "allResources", label: "All resources", href: "/resources" },
         { key: "caseStudies", label: "Case Studies", href: "/case-studies" },
         { key: "blog", label: "Blog", href: "/blog" },
+        { key: "press", label: "Press", href: "/press" },
         { key: "faq", label: "FAQ", href: "/faq" },
       ],
     },

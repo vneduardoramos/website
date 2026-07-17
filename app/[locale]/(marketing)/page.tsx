@@ -20,6 +20,7 @@ import { SectionDecor } from "@/components/marketing/Decor";
 import { PlateCard } from "@/components/marketing/Cards";
 import { SnowMark, SnowflakeDivider } from "@/components/marketing/SnowMark";
 import { LeadershipStrip, FaceStack } from "@/components/marketing/LeadershipStrip";
+import { PressStrip } from "@/components/marketing/PressStrip";
 
 export const revalidate = 60;
 
@@ -301,6 +302,10 @@ export default async function HomePage({ params }: { params: { locale: string } 
           </div>
         </SectionFold>
       </Section>
+
+      {/* 4c) IN THE PRESS: third-party validation from CRN, right after the
+          partner-momentum proof band (a cool tint, not warm-before-CtaBand). */}
+      <PressStrip />
 
       {/* 5) FAQ */}
       {homeFaqs && homeFaqs.length > 0 && (
