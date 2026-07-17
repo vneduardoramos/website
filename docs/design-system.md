@@ -68,8 +68,27 @@ The cut-corner silhouette extends to two sibling utilities so the whole UI share
 
 - **Headings** use `.text-balance` (utility in `globals.css`) to avoid orphaned words / ragged wraps. Apply to new headings.
 - **Equal-height card grids:** add `auto-rows-fr` at the multi-column breakpoint and make cards `flex h-full flex-col`. `CoverCard`/`CaseStudyCard`/`TestimonialCard` already fill height.
-- Sections alternate white / `section-tint`; use `WaveDivider` between background shifts.
+- Sections alternate cool bands (plain white `background`, `.section-tint`) and warm bands (`.section-warm`), not just white / `.section-tint`; use `WaveDivider` between background shifts. See "Warm/cool rhythm" below for the rotation rules.
 - `MetricBand` values are large gradient numerals, **keep values short** (`60%`, `8–16 wks`, `2 hrs`); put phrasing in the label.
+
+### Warm/cool rhythm
+
+The page rhythm alternates cool and warm bands so no two like-toned sections sit back to back. The classes:
+
+- `.section-tint` (`globals.css`), the cool tinted band: `surface2` base lifted with faint sky and cyan glows.
+- `.section-warm` (`globals.css`), the warm tinted band: warm cream base with gold and orange glows; retints eyebrows/chips inside it to the legible burnt-orange (`accentDeep`) automatically via `--eyebrow-accent`.
+- `.panel-sunset`, the page's warmest moment: a sunset mesh over warm cream, reserved for `CtaBand`.
+- `.panel-warm`, a light warm callout box for a framed highlight inside any band (no colored top rail, a uniform warm hairline only).
+- `.panel-indigo`, the deep royal-indigo authority band, the single dark anchor with light text.
+- `.panel-dark`, despite the name, a light gradient-mesh panel (not dark) for a secondary panel moment that wants panel-scale gravity without inverting to white text.
+
+Rules:
+
+- Alternate warm and cool bands down the page; never stack two `.section-warm` bands back to back.
+- Never place a `.section-warm` band directly before `<CtaBand />` (`.panel-sunset`): two warm treatments touching flattens the CTA's pop. Keep the band right before the CTA cool (plain `section` or `.section-tint`).
+- Every page keeps at least one warm moment somewhere above the CTA. If no earlier Section reasonably takes the warm treatment, drop a `.panel-warm` callout inside a cool band instead of coloring the whole section; warm-on-cool pops.
+- Hero sections and the data/metric cards keep their own neutral treatment; they sit outside the warm/cool rotation.
+- `.panel-indigo` is reserved for exactly one dark authority moment per page. Everywhere else that wants that panel-scale weight uses `.panel-dark` instead, which reads as a light panel.
 
 ## Motion & animation
 
