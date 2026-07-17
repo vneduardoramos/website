@@ -66,7 +66,9 @@ function safeName(filename: string): string {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "")
     .slice(0, 60);
-  const stamp = Date.now().toString(36);
+  // Wall-clock plus entropy so two same-named uploads in the same millisecond
+  // cannot produce an identical key and overwrite each other.
+  const stamp = `${Date.now().toString(36)}-${crypto.randomUUID().slice(0, 6)}`;
   return `${base || "file"}-${stamp}${ext}`;
 }
 
