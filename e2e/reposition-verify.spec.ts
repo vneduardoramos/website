@@ -8,10 +8,11 @@
  *   B) a sized non-cover image (cert badge, h-14 w-auto) — root cause B
  * and confirm an anonymous viewer sees the same moved framing and no edit UI.
  */
-import { test, expect, type Page, type BrowserContext } from "playwright/test";
-import { chromium } from "playwright/test";
+import { test, expect, type Page, type BrowserContext } from "@playwright/test";
+import { chromium } from "@playwright/test";
 import * as fs from "node:fs";
 import * as path from "node:path";
+import { login as loginAdmin } from "./helpers";
 
 const editorLocator = '[aria-modal="true"]';
 const OUT = path.join(__dirname, "reposition-evidence");
@@ -25,11 +26,7 @@ const IMG_B = "/assets/images/certs/coco-preferred.png";
 // ~h-14 (small). We disambiguate by picking the smallest rendered instance.
 
 async function login(page: Page) {
-  await page.goto("/admin/login");
-  await page.locator('input[type="email"]').fill("admin@viewnear.com");
-  await page.locator('input[type="password"]').fill("changeme123");
-  await page.getByRole("button", { name: /sign in/i }).click();
-  await page.waitForURL((url) => !url.pathname.startsWith("/admin/login"), { timeout: 10_000 });
+  await loginAdmin(page);
 }
 
 async function gotoHome(page: Page) {
@@ -204,7 +201,7 @@ test("A) fill/cover photo: live image visibly moves after zoom+pan save (admin +
   // Anonymous context: same framing, no edit UI.
   const anon = await chromium.launchPersistentContext("", { headless: true });
   const ap = await anon.newPage();
-  await ap.goto("http://localhost:3005/");
+  await ap.goto("/");
   await ap.evaluate(async () => {
     for (let y = 0; y < document.body.scrollHeight; y += 500) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 60)); }
     window.scrollTo(0, 0);
@@ -237,7 +234,7 @@ test("B) sized non-cover badge (h-14 w-auto): live image visibly moves after zoo
 
   const anon = await chromium.launchPersistentContext("", { headless: true });
   const ap = await anon.newPage();
-  await ap.goto("http://localhost:3005/");
+  await ap.goto("/");
   await ap.evaluate(async () => {
     for (let y = 0; y < document.body.scrollHeight; y += 500) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 60)); }
     window.scrollTo(0, 0);

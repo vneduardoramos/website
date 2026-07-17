@@ -3,7 +3,8 @@
  *  Bug 1 — editor reopening showed defaults instead of saved override
  *  Bug 2 — focal drag did nothing (native image-drag intercepted mouse events)
  */
-import { test, expect, type Page } from "playwright/test";
+import { test, expect, type Page } from "@playwright/test";
+import { login as loginAdmin } from "./helpers";
 
 // The image editor uses aria-modal="true"; the cookie banner also uses role="dialog"
 // so we scope to the image editor by aria-modal.
@@ -11,11 +12,7 @@ const editorLocator = '[aria-modal="true"]';
 
 /** Log in via the credentials form and navigate to home page. */
 async function login(page: Page) {
-  await page.goto("/admin/login");
-  await page.locator('input[type="email"]').fill("admin@viewnear.com");
-  await page.locator('input[type="password"]').fill("changeme123");
-  await page.getByRole("button", { name: /sign in/i }).click();
-  await page.waitForURL((url) => !url.pathname.startsWith("/admin/login"), { timeout: 10_000 });
+  await loginAdmin(page);
   await page.goto("/");
   await page.waitForLoadState("networkidle");
 }
