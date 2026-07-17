@@ -4,7 +4,7 @@ import { pageMeta } from "@/lib/seo";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { RevealGroup } from "@/components/marketing/Motion";
 import { cn, formatDate } from "@/lib/utils";
-import { PRESS, getOutlet } from "@/lib/press";
+import { PRESS, getOutlet, PRIMARY_SPEAKER } from "@/lib/press";
 import type { Locale } from "@/lib/i18n-content";
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
@@ -46,8 +46,8 @@ export default async function PressPage({ params }: { params: { locale: string }
                 </div>
                 <h3
                   className={cn(
-                    "mt-3 font-display font-semibold leading-snug text-foreground",
-                    isFeatured ? "text-2xl md:text-[1.75rem]" : "text-lg",
+                    "mt-3 font-display font-bold leading-snug text-foreground",
+                    isFeatured ? "text-2xl md:text-3xl" : "text-xl",
                   )}
                 >
                   <a
@@ -61,22 +61,17 @@ export default async function PressPage({ params }: { params: { locale: string }
                 </h3>
                 <blockquote
                   className={cn(
-                    "relative italic leading-relaxed text-foreground",
-                    isFeatured ? "mt-5 max-w-2xl pl-6 text-lg" : "mt-4 pl-5 text-base",
+                    "mt-4 border-t border-border pt-4 italic leading-relaxed text-muted",
+                    isFeatured ? "max-w-2xl text-base" : "text-sm",
                   )}
                 >
-                  <span
-                    aria-hidden="true"
-                    className={cn(
-                      "absolute left-0 top-0 select-none font-display leading-none text-primary/25",
-                      isFeatured ? "text-3xl" : "text-2xl",
-                    )}
-                  >
-                    &ldquo;
-                  </span>
-                  {item.quote}
+                  &ldquo;{item.quote}&rdquo;
+                  {item.quoteBy !== PRIMARY_SPEAKER && (
+                    <cite className="mt-2 block not-italic text-sm font-semibold text-foreground">
+                      {item.quoteBy}
+                    </cite>
+                  )}
                 </blockquote>
-                <p className="mt-3 text-sm font-semibold text-muted">{item.quoteBy}</p>
                 <a
                   href={item.url}
                   target="_blank"

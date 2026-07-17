@@ -26,6 +26,13 @@ export function getOutlet(key: string): Outlet {
   return OUTLETS[key] ?? { name: key };
 }
 
+/**
+ * The person usually quoted (Viewnear's CEO). Coverage cards omit the speaker
+ * name when it matches this, so it isn't repeated on every card; a quote from
+ * anyone else is credited by name.
+ */
+export const PRIMARY_SPEAKER = "Eduardo Ramos";
+
 export type PressItem = {
   slug: string;
   title: string;
