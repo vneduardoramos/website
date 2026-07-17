@@ -260,44 +260,6 @@ export function useStepThresholds<T extends HTMLElement>(
   return { ref, activeUpTo };
 }
 
-/**
- * Hero "data converges" energy: writes `--mesh-energy` (1→0) onto the ref over
- * the first ~80vh of page scroll, so descendants (the HeroMesh SVG, via CSS var
- * inheritance) calm/settle as the user scrolls in. Desktop-only; mobile and
- * reduced-motion get a steady `1` (full, ambient).
- */
-export function useHeroConverge<T extends HTMLElement>() {
-  const ref = useRef<T>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const desktop = window.matchMedia("(min-width: 1024px)").matches;
-    if (prefersReducedMotion() || !desktop) {
-      el.style.setProperty("--mesh-energy", "1");
-      return;
-    }
-    let raf = 0;
-    const update = () => {
-      raf = 0;
-      const span = window.innerHeight * 0.8;
-      const energy = Math.min(1, Math.max(0, 1 - window.scrollY / span));
-      el.style.setProperty("--mesh-energy", String(energy));
-    };
-    const onScroll = () => {
-      if (!raf) raf = requestAnimationFrame(update);
-    };
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-      if (raf) cancelAnimationFrame(raf);
-    };
-  }, []);
-  return ref;
-}
-
 /* ── v3 "Dimensional" primitives ────────────────────────────────────────── */
 
 /**

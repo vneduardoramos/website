@@ -11,13 +11,6 @@
     "ctaSecondary": "Explore services",
     "credential": "Snowflake Premier & CoCo Preferred Partner · SnowPro-certified · The Americas"
   },
-  "carousel": {
-    "label": "Highlights",
-    "previous": "Previous slide",
-    "next": "Next slide",
-    "slidePosition": "Slide {current} of {total}",
-    "goToSlide": "Go to slide {current}"
-  },
   "split": {
     "foundationPhotoAlt": "A team reviewing dashboards, reports, and charts together around one shared, governed set of data.",
     "aiPhotoAlt": "A team collaborating with analytics and AI tools on their screens in a bright modern office.",

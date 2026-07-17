@@ -56,7 +56,6 @@ A single official lockup, "viewnear | data + ai" (mark + wordmark + slogan), nav
 - `Breadcrumbs.tsx`, accessible breadcrumb trail (`items: {label, href?}[]`, last = current) + `BreadcrumbList` JSON-LD; used only on 2-level detail pages (`industries`/`case-studies`/`blog`/`news` `[slug]`).
 - `PartnerBadges.tsx`, Snowflake certification badges (single source: `CERTIFICATIONS`). Variants: `chips` (text pill row), `cards` (text cards), and **`logos`** (the official badge artwork, Premier circle + CoCo shield from `public/assets/images/certs/`; `size="sm"|"lg"`), small in the footer.
 - `PartnershipHighlight.tsx`, prominent partnership proof section: the official badges (large `logos` variant), the facts, three stat tiles, and the **Snowflake Summit 2026 "CoCo Global Partner Momentum" keynote slide** (`certs/coco-momentum-summit-2026.png`, framed). `title?` overrides the heading; `showCta?` adds an "Explore our partnership →" link. Used on home, About (both `showCta`), and `/partnership`.
-- `home/HeroDiagram.tsx`, the hero's right-side visual: a branded, in-code "governed Snowflake platform" data-flow diagram (sources → one governed Snowflake platform → analytics & Cortex AI), themeable via the Glacier palette, with a gentle `animate-float`. Takes an optional `team` prop and renders a floating "Real people. Senior delivery." / "SnowPro-certified team" card overhanging the panel. Replaced the earlier product-screenshot hero, which implied a proprietary product ViewNear doesn't sell ([0029](decisions/0029-hero-platform-diagram.md)).
 
 ## Eyebrow / kicker ([0027](decisions/0027-eyebrow-tag.md))
 
@@ -95,7 +94,7 @@ Rules:
 Keyframes/utilities in `tailwind.config.ts`, all collapsing under the global `prefers-reduced-motion` rule in `globals.css`:
 
 - `Reveal` (`Motion.tsx`), scroll-reveal fade/slide via IntersectionObserver (`.reveal` → `.is-visible`).
-- `animate-float`, gentle vertical drift; the hero visual (`HeroDiagram` wrapper).
+- `animate-float`, gentle vertical drift (currently unused; its former consumer, `HeroDiagram`, was removed as dead code).
 - `animate-marquee`, `LogoStrip` ticker; `animate-drift`, decor blobs; `animate-pulse-dot`, status/live dots.
 - Buttons lift/brighten on hover, press on active (see Buttons).
 

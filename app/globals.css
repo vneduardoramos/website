@@ -566,8 +566,8 @@ select:focus-visible,
 }
 
 /* ── Scroll-linked engine utilities (v2). Driven by --progress (0→1, set by
-   useStepThresholds) or --mesh-energy (set by useHeroConverge). Default to the
-   "finished" state so no-JS / SSR renders fully revealed. ── */
+   useStepThresholds) or --mesh-energy. Default to the "finished" state so
+   no-JS / SSR renders fully revealed. ── */
 .line-draw {
   /* a left→right "current" reveal; consumer is a gradient bar */
   clip-path: inset(0 calc((1 - var(--progress, 1)) * 100%) 0 0);
