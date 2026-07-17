@@ -42,6 +42,24 @@ export async function getServicesByTier(locale: Locale = DEFAULT_LOCALE) {
   }));
 }
 
+export async function getServiceSlugs() {
+  const rows = await prisma.service.findMany({
+    where: PUBLISHED,
+    select: { slug: true },
+  });
+  return rows.map((r) => r.slug);
+}
+
+export const getServiceBySlug = cache(async (
+  slug: string,
+  locale: Locale = DEFAULT_LOCALE,
+) => {
+  const row = await prisma.service.findFirst({
+    where: { slug, ...PUBLISHED },
+  });
+  return row ? localize("service", row, locale) : row;
+});
+
 // ---------- Industries ----------
 export async function getIndustries(locale: Locale = DEFAULT_LOCALE) {
   const rows = await prisma.industry.findMany({
