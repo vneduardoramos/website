@@ -15,12 +15,14 @@ const schema = z.object({
   website: z.string().optional(), // honeypot
 });
 
-// Resume uploads: documents only, capped at 8 MB.
-const RESUME_TYPES = new Set([
-  "application/pdf",
-  "application/msword",
-  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-]);
+// Resume uploads: documents only, capped at 8 MB. The stored name is always
+// server-chosen (a random key + a mapped extension), so the client filename
+// never reaches storage.
+const RESUME_TYPES: Record<string, ".pdf" | ".doc" | ".docx"> = {
+  "application/pdf": ".pdf",
+  "application/msword": ".doc",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document": ".docx",
+};
 const RESUME_MAX_BYTES = 8 * 1024 * 1024;
 
 export async function POST(req: Request) {
@@ -53,11 +55,13 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  // Optional resume upload via the configured storage adapter.
-  let resumeUrl: string | null = null;
+  // Optional resume upload. Stored PRIVATELY (never web-served) under a random
+  // key; served only through the authenticated admin API.
+  let resumeKey: string | null = null;
   const resume = form.get("resume");
   if (resume instanceof File && resume.size > 0) {
-    if (!RESUME_TYPES.has(resume.type)) {
+    const ext = RESUME_TYPES[resume.type];
+    if (!ext) {
       return NextResponse.json(
         { error: "Resume must be a PDF or Word document." },
         { status: 415 },
@@ -68,8 +72,8 @@ export async function POST(req: Request) {
     }
     try {
       const buffer = Buffer.from(await resume.arrayBuffer());
-      const stored = await getStorage().save(buffer, resume.name || "resume", resume.type);
-      resumeUrl = stored.url;
+      const stored = await getStorage().savePrivate(buffer, ext, resume.type);
+      resumeKey = stored.storageKey;
     } catch (e) {
       console.error("[careers] resume upload failed:", e);
       return NextResponse.json(
@@ -86,10 +90,17 @@ export async function POST(req: Request) {
         email: data.email,
         message: data.message || null,
         linkedinUrl: data.linkedinUrl || null,
-        resumeUrl,
+        resumeUrl: null,
+        resumeKey,
         openingId: data.openingId || null,
       },
     });
+
+    // Admins download the resume through the authenticated admin API, not a
+    // public link. The raw private key is never exposed.
+    const resumeLink = resumeKey
+      ? `${process.env.NEXTAUTH_URL ?? "https://viewnear.com"}/api/admin/resume/${application.id}`
+      : null;
 
     await notify({
       subject: `New Viewnear job application: ${data.name}${
@@ -98,7 +109,7 @@ export async function POST(req: Request) {
       text: [
         `${data.name} <${data.email}>`,
         data.linkedinUrl ? `LinkedIn: ${data.linkedinUrl}` : null,
-        resumeUrl ? `Resume: ${resumeUrl}` : null,
+        resumeLink ? `Resume: ${resumeLink}` : null,
         "",
         data.message || "(no message)",
       ]

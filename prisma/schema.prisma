@@ -279,6 +279,7 @@ model JobApplication {
   message     String?
   linkedinUrl String?
   resumeUrl   String?
+  resumeKey   String?
   createdAt   DateTime    @default(now())
 }
 
