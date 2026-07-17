@@ -28,7 +28,7 @@ export const PRESS: PressItem[] = [
     url: "https://www.crn.com/news/ai/2026/anthropic-takes-step-toward-ipo-amid-channel-development",
     outlet: "CRN",
     author: "Wade Tyler Millward",
-    date: "2026-06-01",
+    date: "2026-06-01T12:00:00Z",
     quote:
       "Organizations are investing in platforms they believe can support long-term, production-scale AI initiatives. We're seeing that demand firsthand across our customers.",
     quoteBy: "Eduardo Ramos",
@@ -40,7 +40,7 @@ export const PRESS: PressItem[] = [
     url: "https://www.crn.com/news/ai/2026/snowflake-q1-earnings-5-channel-takeaways-on-ai-growth-data-product-consumption",
     outlet: "CRN",
     author: "Wade Tyler Millward",
-    date: "2026-06-01",
+    date: "2026-06-01T12:00:00Z",
     quote:
       "Data and AI are coming together. Leaders are understanding now that if they want to do AI, they need to do data first.",
     quoteBy: "Eduardo Ramos",
@@ -53,7 +53,7 @@ export const PRESS: PressItem[] = [
     url: "https://www.crn.com/news/ai/2026/anthropic-raises-65b-as-it-scale-partnerships",
     outlet: "CRN",
     author: "Wade Tyler Millward",
-    date: "2026-05-28",
+    date: "2026-05-28T12:00:00Z",
     quote:
       "Anthropic, at the end of the day, they want partners that know Anthropic top to bottom. We can bring in new accounts, co-sell accounts through them.",
     quoteBy: "Eduardo Ramos",
@@ -65,7 +65,7 @@ export const PRESS: PressItem[] = [
     url: "https://www.crn.com/news/ai/2026/outcome-based-business-models-gain-traction-in-the-channel-as-a-way-to-navigate-ai-economics",
     outlet: "CRN",
     author: "Wade Tyler Millward",
-    date: "2026-02-18",
+    date: "2026-02-18T12:00:00Z",
     quote:
       "We were born as a data AI company. I feel I'm with the right partner, with the right company.",
     quoteBy: "Eduardo Ramos",
@@ -77,7 +77,7 @@ export const PRESS: PressItem[] = [
     url: "https://www.crn.com/news/ai/2026/snowflake-partners-ai-s-impact-can-withstand-a-potential-bubble",
     outlet: "CRN",
     author: "Wade Tyler Millward",
-    date: "2026-02-18",
+    date: "2026-02-18T12:00:00Z",
     quote:
       "AI holds as much importance to technological innovation as the internet and electricity.",
     quoteBy: "Eduardo Ramos",
