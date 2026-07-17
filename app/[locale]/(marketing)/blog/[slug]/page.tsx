@@ -216,7 +216,7 @@ export default async function BlogPostPage({
         </div>
       ) : null}
 
-      <Section className="pt-12 section-warm">
+      <Section className={`pt-12 ${related.length ? "section-warm" : ""}`}>
         <KeyTakeaways items={takeaways} />
 
         <div className="mt-12">
