@@ -4,7 +4,7 @@ import { pageMeta } from "@/lib/seo";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { RevealGroup } from "@/components/marketing/Motion";
 import { cn, formatDate } from "@/lib/utils";
-import { PRESS } from "@/lib/press";
+import { PRESS, getOutlet } from "@/lib/press";
 import type { Locale } from "@/lib/i18n-content";
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
@@ -41,7 +41,7 @@ export default async function PressPage({ params }: { params: { locale: string }
                 <div className="flex flex-wrap items-center gap-3">
                   {isFeatured && <span className="pill-chip">{t("latest")}</span>}
                   <p className="font-mono text-xs uppercase tracking-widest text-muted">
-                    CRN &middot; {formatDate(item.date, locale as Locale)}
+                    {getOutlet(item.outlet).name} &middot; {formatDate(item.date, locale as Locale)}
                   </p>
                 </div>
                 <h3
@@ -83,7 +83,7 @@ export default async function PressPage({ params }: { params: { locale: string }
                   rel="noopener noreferrer"
                   className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-primaryDeep"
                 >
-                  <span className="link-underline">{t("readOn")}</span>
+                  <span className="link-underline">{t("readOn", { outlet: getOutlet(item.outlet).name })}</span>
                   <span aria-hidden="true">&rarr;</span>
                 </a>
               </article>

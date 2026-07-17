@@ -1,13 +1,13 @@
 {
   "meta": {
-    "title": "En la prensa: cobertura de CRN",
-    "description": "Viewnear en la prensa: cobertura de CRN que cita a Eduardo Ramos sobre Snowflake, Anthropic y la entrega de IA basada en resultados en el canal."
+    "title": "En la prensa",
+    "description": "Viewnear en la prensa tecnológica y del canal: cobertura que cita a Eduardo Ramos sobre Snowflake, Anthropic y la entrega de IA basada en resultados."
   },
   "eyebrow": "En la prensa",
   "heading": "Cobertura",
-  "intro": "CRN, la publicación especializada que cubre el canal de TI, ha citado a Eduardo Ramos en cinco artículos de 2026 sobre Snowflake, Anthropic y cómo se vive en el campo la entrega de datos e IA basada en resultados.",
+  "intro": "El trabajo de Viewnear aparece en la prensa tecnológica y del canal, con Eduardo Ramos citado sobre Snowflake, Anthropic y cómo se vive en el campo la entrega de datos e IA basada en resultados.",
   "homeCta": "Lea nuestra cobertura",
-  "readOn": "Lea el artículo en CRN",
+  "readOn": "Leer en {outlet}",
   "latest": "Más reciente",
   "storiesCount": "{count} artículos"
 }

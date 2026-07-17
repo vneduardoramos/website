@@ -1,19 +1,37 @@
 /**
- * CRN press coverage: 5 real 2026 articles quoting Eduardo Ramos / Viewnear,
- * all by CRN associate editor Wade Tyler Millward. A typed constant is
- * sufficient for this small, static list (no CMS/DB model).
+ * Press coverage of Viewnear. Outlet-agnostic: each publication's display name
+ * and optional logo live in OUTLETS, and every item references an outlet by
+ * key, so adding a future outlet is just a new OUTLETS entry plus items (no
+ * component changes). A typed constant is sufficient for this small, static
+ * list (no CMS/DB model); today the items happen to be CRN articles.
  *
- * Titles, URLs, dates, and quotes are copied verbatim from the approved
- * design doc (docs/superpowers/specs/2026-07-17-press-crn-coverage-design.md)
- * and are NEVER translated: only the chrome around them (messages/*\/press.json)
+ * Titles, URLs, dates, and quotes are verbatim from the source articles and
+ * are NEVER translated: only the chrome around them (messages/*\/press.json)
  * is localized. Newest first.
  */
+
+/**
+ * A publication that has covered Viewnear. `logo` is optional: outlets without
+ * a logo asset render their name as text instead. Add future outlets here so
+ * nothing downstream is tied to any single publication.
+ */
+export type Outlet = { name: string; logo?: string; logoWidth?: number; logoHeight?: number };
+
+export const OUTLETS: Record<string, Outlet> = {
+  crn: { name: "CRN", logo: "/assets/press/crn-mark.png", logoWidth: 767, logoHeight: 256 },
+};
+
+/** Resolve an outlet key to its metadata; an unknown key degrades to a name-only outlet. */
+export function getOutlet(key: string): Outlet {
+  return OUTLETS[key] ?? { name: key };
+}
 
 export type PressItem = {
   slug: string;
   title: string;
   url: string;
-  outlet: "CRN";
+  /** Key into OUTLETS. */
+  outlet: string;
   author: string;
   /** ISO date (YYYY-MM-DD). */
   date: string;
@@ -26,7 +44,7 @@ export const PRESS: PressItem[] = [
     slug: "anthropic-takes-step-toward-ipo-amid-channel-development",
     title: "Anthropic Takes Step Toward IPO Amid Channel Development",
     url: "https://www.crn.com/news/ai/2026/anthropic-takes-step-toward-ipo-amid-channel-development",
-    outlet: "CRN",
+    outlet: "crn",
     author: "Wade Tyler Millward",
     date: "2026-06-01T12:00:00Z",
     quote:
@@ -38,7 +56,7 @@ export const PRESS: PressItem[] = [
     title:
       "Snowflake Q1 Earnings: 5 Channel Takeaways On AI Growth, Data Product Consumption",
     url: "https://www.crn.com/news/ai/2026/snowflake-q1-earnings-5-channel-takeaways-on-ai-growth-data-product-consumption",
-    outlet: "CRN",
+    outlet: "crn",
     author: "Wade Tyler Millward",
     date: "2026-06-01T12:00:00Z",
     quote:
@@ -51,7 +69,7 @@ export const PRESS: PressItem[] = [
     // NOTE: the live CRN URL slug reads "scale" (singular), not "scales" as in
     // the headline; copied verbatim, do not "fix".
     url: "https://www.crn.com/news/ai/2026/anthropic-raises-65b-as-it-scale-partnerships",
-    outlet: "CRN",
+    outlet: "crn",
     author: "Wade Tyler Millward",
     date: "2026-05-28T12:00:00Z",
     quote:
@@ -63,7 +81,7 @@ export const PRESS: PressItem[] = [
     title:
       "Outcome-Based Business Models Gain Traction In The Channel As A Way To Navigate AI Economics",
     url: "https://www.crn.com/news/ai/2026/outcome-based-business-models-gain-traction-in-the-channel-as-a-way-to-navigate-ai-economics",
-    outlet: "CRN",
+    outlet: "crn",
     author: "Wade Tyler Millward",
     date: "2026-02-18T12:00:00Z",
     quote:
@@ -75,7 +93,7 @@ export const PRESS: PressItem[] = [
     title: "Snowflake Partners: AI's Impact Can Withstand A Potential Bubble",
     // NOTE: the live CRN URL slug reads "ai-s" (hyphenated), copied verbatim.
     url: "https://www.crn.com/news/ai/2026/snowflake-partners-ai-s-impact-can-withstand-a-potential-bubble",
-    outlet: "CRN",
+    outlet: "crn",
     author: "Wade Tyler Millward",
     date: "2026-02-18T12:00:00Z",
     quote:
@@ -85,13 +103,13 @@ export const PRESS: PressItem[] = [
 ];
 
 /**
- * The home strip's pull-quote: CRN's own framing (its lead-in on item 2), the
- * strongest third-party validation line. Attributed to CRN (not to a person),
- * linking to that source article.
+ * The home strip's pull-quote: the outlet's own framing line (its lead-in on
+ * the referenced article), the strongest third-party validation line.
+ * Attributed to the outlet (not to a person), linking to that source article.
  */
 export const PRESS_HOME_QUOTE = {
   quote:
     "Viewnear has been building enterprise-grade production AI systems with governed Snowflake data anchored on Anthropic Claude.",
-  quoteBy: "CRN",
+  outlet: "crn",
   url: PRESS[1].url,
 } as const;

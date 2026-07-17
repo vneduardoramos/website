@@ -1,13 +1,13 @@
 {
   "meta": {
-    "title": "In the press: CRN coverage",
-    "description": "Viewnear in the press: CRN coverage quoting Eduardo Ramos on Snowflake, Anthropic, and outcome-based AI delivery in the channel."
+    "title": "In the press",
+    "description": "Viewnear in the technology and channel press: coverage quoting Eduardo Ramos on Snowflake, Anthropic, and outcome-based AI delivery."
   },
   "eyebrow": "In the press",
   "heading": "Coverage",
-  "intro": "CRN, the trade publication that covers the IT channel, has quoted Eduardo Ramos across five 2026 articles on Snowflake, Anthropic, and how outcome-based data and AI delivery is playing out in the field.",
+  "intro": "Viewnear's work shows up in the technology and channel press, with Eduardo Ramos quoted on Snowflake, Anthropic, and how outcome-based data and AI delivery is playing out in the field.",
   "homeCta": "Read our coverage",
-  "readOn": "Read on CRN",
+  "readOn": "Read on {outlet}",
   "latest": "Latest",
   "storiesCount": "{count} stories"
 }
