@@ -15,15 +15,22 @@ const schema = z.object({
   website: z.string().optional(), // honeypot
 });
 
-// Resume uploads: documents only, capped at 8 MB. The stored name is always
-// server-chosen (a random key + a mapped extension), so the client filename
-// never reaches storage.
-const RESUME_TYPES: Record<string, ".pdf" | ".doc" | ".docx"> = {
-  "application/pdf": ".pdf",
-  "application/msword": ".doc",
-  "application/vnd.openxmlformats-officedocument.wordprocessingml.document": ".docx",
+// Resume uploads: documents only, capped at 8 MB. Type is validated by CONTENT
+// (magic bytes), never the client-supplied Content-Type, and the stored name is
+// server-chosen so neither the base name nor the extension comes from the client.
+const RESUME_MIME: Record<".pdf" | ".doc" | ".docx", string> = {
+  ".pdf": "application/pdf",
+  ".doc": "application/msword",
+  ".docx": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
 };
 const RESUME_MAX_BYTES = 8 * 1024 * 1024;
+
+function sniffResume(buf: Buffer): ".pdf" | ".doc" | ".docx" | null {
+  if (buf.subarray(0, 5).toString("latin1") === "%PDF-") return ".pdf";
+  if (buf.length >= 4 && buf.readUInt32BE(0) === 0xd0cf11e0) return ".doc"; // OLE compound file
+  if (buf.length >= 4 && buf.readUInt32BE(0) === 0x504b0304) return ".docx"; // ZIP (OOXML)
+  return null;
+}
 
 export async function POST(req: Request) {
   const rl = rateLimit(`careers:${clientIp(req)}`, { limit: 5, windowMs: 60_000 });
@@ -60,19 +67,20 @@ export async function POST(req: Request) {
   let resumeKey: string | null = null;
   const resume = form.get("resume");
   if (resume instanceof File && resume.size > 0) {
-    const ext = RESUME_TYPES[resume.type];
-    if (!ext) {
-      return NextResponse.json(
-        { error: "Resume must be a PDF or Word document." },
-        { status: 415 },
-      );
-    }
+    // Size check FIRST, before reading the whole file into memory.
     if (resume.size > RESUME_MAX_BYTES) {
       return NextResponse.json({ error: "Resume is too large (max 8 MB)." }, { status: 413 });
     }
+    const buffer = Buffer.from(await resume.arrayBuffer());
+    const ext = sniffResume(buffer);
+    if (!ext) {
+      return NextResponse.json(
+        { error: "Resume must be a PDF or Word document.", code: "unsupported_type" },
+        { status: 415 },
+      );
+    }
     try {
-      const buffer = Buffer.from(await resume.arrayBuffer());
-      const stored = await getStorage().savePrivate(buffer, ext, resume.type);
+      const stored = await getStorage().savePrivate(buffer, ext, RESUME_MIME[ext]);
       resumeKey = stored.storageKey;
     } catch (e) {
       console.error("[careers] resume upload failed:", e);
