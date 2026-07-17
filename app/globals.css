@@ -721,17 +721,6 @@ select:focus-visible,
   }
 }
 
-/* Flowing "current" along the hero diagram's connector paths (auto-disabled
-   by the reduced-motion rule below). */
-@keyframes hero-flow {
-  to {
-    stroke-dashoffset: -18;
-  }
-}
-.hero-flow {
-  animation: hero-flow 1.1s linear infinite;
-}
-
 /* Living network-mesh hero visual. All ambient + reduced-motion-safe (the
    block below neutralizes every animation). transform-box keeps SVG scale/
    translate centered on each element. */
