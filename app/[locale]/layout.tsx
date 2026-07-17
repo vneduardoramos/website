@@ -54,7 +54,20 @@ const ORG_JSONLD = {
   url: theme.brand.url,
   logo: `${theme.brand.url}/assets/viewnear-logo.png`,
   description: theme.brand.description,
+  // Append the off-site profile URLs here once they exist (Snowflake Partner
+  // Network listing, Clutch, G2, GoodFirms, Google Business Profile) so the
+  // entity graph links them back to viewnear.com.
   sameAs: [theme.socials.linkedin],
+  areaServed: ["United States", "Canada", "Mexico", "Latin America", "Caribbean"],
+  knowsAbout: [
+    "Snowflake",
+    "Snowflake data migration",
+    "Data engineering",
+    "Snowflake Cortex",
+    "AI agents",
+    "Nearshore software delivery",
+    "Data & AI strategy",
+  ],
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
