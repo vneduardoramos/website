@@ -18,7 +18,14 @@ const MAX_AGE_MS = 12 * 30 * 24 * 60 * 60 * 1000; // ~12 months, EDPB re-prompt 
 
 export function readConsent(): ConsentRecord | null {
   if (typeof window === "undefined") return null;
-  const raw = window.localStorage.getItem(KEY);
+  let raw: string | null;
+  try {
+    raw = window.localStorage.getItem(KEY);
+  } catch {
+    // Storage-hostile environments (Safari private mode, strict privacy) can
+    // throw on any access. Treat as "no choice recorded" rather than crashing.
+    return null;
+  }
   if (!raw) return null;
   if (raw === "granted" || raw === "denied") return { v: 0, value: raw, ts: 0 }; // legacy
   try {
@@ -37,7 +44,12 @@ export function consentIsCurrent(rec: ConsentRecord | null): rec is ConsentRecor
 
 export function writeConsent(value: ConsentValue) {
   if (typeof window === "undefined") return;
-  window.localStorage.setItem(KEY, JSON.stringify({ v: CONSENT_VERSION, value, ts: Date.now() }));
+  try {
+    window.localStorage.setItem(KEY, JSON.stringify({ v: CONSENT_VERSION, value, ts: Date.now() }));
+  } catch {
+    // Ignore persistence failure (e.g. Safari private mode) so the banner still
+    // dismisses and analytics still reacts for this session via the event below.
+  }
   window.dispatchEvent(new CustomEvent<ConsentValue>("vn-consent-change", { detail: value }));
 }
 
