@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "fallbackTitle": "Service not found"
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "services": "Services"
+  },
+  "hero": {
+    "eyebrow": "Snowflake services",
+    "primaryCta": "Talk to the team",
+    "secondaryCta": "See all services"
+  },
+  "overview": {
+    "eyebrow": "Overview",
+    "title": "What's included"
+  },
+  "tools": {
+    "eyebrow": "Stack",
+    "title": "Tools & products",
+    "intro": "The Snowflake-native stack we reach for on this engagement."
+  },
+  "related": {
+    "eyebrow": "Explore further",
+    "title": "How this fits the wider practice",
+    "body": "Pair this with our <migrations>Migrations</migrations> work, the <nearshore>nearshore delivery</nearshore> model behind it, and the broader <dataai>Data + AI</dataai> practice it feeds into."
+  },
+  "other": {
+    "eyebrow": "Explore",
+    "title": "Other services"
+  },
+  "cta": {
+    "title": "Ready to talk about {title}?"
+  }
+}

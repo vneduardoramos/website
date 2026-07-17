@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "fallbackTitle": "Servicio no encontrado"
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "services": "Servicios"
+  },
+  "hero": {
+    "eyebrow": "Servicios Snowflake",
+    "primaryCta": "Hable con el equipo",
+    "secondaryCta": "Vea todos los servicios"
+  },
+  "overview": {
+    "eyebrow": "Resumen",
+    "title": "Lo que incluye"
+  },
+  "tools": {
+    "eyebrow": "Stack",
+    "title": "Herramientas y productos",
+    "intro": "El stack nativo de Snowflake al que recurrimos en este proyecto."
+  },
+  "related": {
+    "eyebrow": "Profundice",
+    "title": "Cómo encaja en la práctica más amplia",
+    "body": "Combine esto con nuestro trabajo de <migrations>Migraciones</migrations>, el modelo de <nearshore>entrega nearshore</nearshore> detrás de él, y la práctica más amplia de <dataai>Data + AI</dataai> a la que alimenta."
+  },
+  "other": {
+    "eyebrow": "Explore",
+    "title": "Otros servicios"
+  },
+  "cta": {
+    "title": "¿Listo para hablar de {title}?"
+  }
+}
