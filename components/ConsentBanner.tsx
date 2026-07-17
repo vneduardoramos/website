@@ -3,44 +3,40 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useEffect, useState } from "react";
-
-const KEY = "vn-consent";
+import { consentIsCurrent, readConsent, writeConsent } from "@/lib/consent";
 
 /**
- * Lightweight cookie-consent banner. Records the choice in localStorage and,
- * on accept, upgrades GA Consent Mode to granted (if Analytics is mounted).
- * Provider-agnostic: it only flips consent; the Analytics component reads it.
+ * Lightweight cookie-consent banner. Records the choice via lib/consent.ts
+ * and, on accept, upgrades GA Consent Mode to granted (if Analytics is
+ * mounted). Provider-agnostic: it only flips consent; the Analytics
+ * component reads it. Also listens for "vn-consent-open" so the footer's
+ * Cookie settings control can reopen it after the initial choice.
  */
 export function ConsentBanner() {
   const t = useTranslations("consent");
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    try {
-      if (!localStorage.getItem(KEY)) setShow(true);
-    } catch {
-      /* localStorage unavailable. Don't block the page */
-    }
+    if (!consentIsCurrent(readConsent())) setShow(true);
+
+    const onOpen = () => setShow(true);
+    window.addEventListener("vn-consent-open", onOpen);
+    return () => window.removeEventListener("vn-consent-open", onOpen);
   }, []);
 
   if (!show) return null;
 
   const choose = (value: "granted" | "denied") => {
+    writeConsent(value);
     try {
-      localStorage.setItem(KEY, value);
+      const gtag = (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag;
+      if (value === "granted") {
+        gtag?.("consent", "update", { analytics_storage: "granted" });
+      } else {
+        gtag?.("consent", "update", { analytics_storage: "denied" });
+      }
     } catch {
       /* ignore */
-    }
-    if (value === "granted") {
-      try {
-        (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.(
-          "consent",
-          "update",
-          { analytics_storage: "granted" }
-        );
-      } catch {
-        /* ignore */
-      }
     }
     setShow(false);
   };
