@@ -65,7 +65,7 @@ export default async function ServiceDetailPage({
     "@type": "Service",
     name: service.title,
     description: service.summary,
-    serviceType: service.tier,
+    serviceType: "Snowflake data and AI services",
     areaServed: "Americas",
     provider: {
       "@type": "Organization",
@@ -135,7 +135,7 @@ export default async function ServiceDetailPage({
         </Section>
       )}
 
-      {/* Cross-links into the wider practice: migrations, nearshore, data & AI. */}
+      {/* Cross-links into the wider practice: migrations, nearshore, data & AI, industries. */}
       <Section className="bg-surface">
         <SectionHeading eyebrow={t("related.eyebrow")} title={t("related.title")} />
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
@@ -155,7 +155,11 @@ export default async function ServiceDetailPage({
                 {c}
               </Link>
             ),
-          })}
+          })}{" "}
+          <Link href="/industries" className="font-semibold text-primaryDeep link-underline">
+            {t("related.industries")}
+          </Link>
+          .
         </p>
       </Section>
 

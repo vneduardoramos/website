@@ -57,6 +57,9 @@ export const services = [
     title: "Data & AI Strategy",
     summary:
       "Turn AI ambition into a board-ready roadmap: where data and AI create measurable ROI, sequenced by value and grounded in what the data can actually support, on a clear path to the agentic enterprise.",
+    seoTitle: "Data & AI Strategy on Snowflake",
+    seoDescription:
+      "Snowflake data and AI strategy: a board-ready roadmap sequencing AI use cases by ROI and data readiness. Snowflake Premier Partner, nearshore Americas.",
     tools: [],
     order: 1,
     body: "Invest with confidence and know exactly what to build next. We work with CEOs and CTOs to turn 'we need an AI strategy' into a costed, sequenced roadmap, grounded in current data readiness and focused on the use cases with the clearest return.",
@@ -67,6 +70,9 @@ export const services = [
     title: "Cloud Architecture & Data Foundation",
     summary:
       "The AI-ready foundation: governed, built on Snowflake, and ready to scale, the single source of truth every model and agent depends on.",
+    seoTitle: "Snowflake Cloud Architecture & Data Foundation",
+    seoDescription:
+      "Snowflake cloud architecture and data foundation: a governed, AI-ready platform built to scale. Snowflake Premier Partner, nearshore across the Americas.",
     tools: ["Snowflake", "Openflow", "Iceberg"],
     order: 3,
     body: "Every team gets one fast, scalable foundation to build on. We design and deliver it cloud-native on Snowflake, sized for the AI workloads on the horizon rather than just the reporting teams run today, with security and governance built in from the start.",
@@ -77,6 +83,9 @@ export const services = [
     title: "Data Engineering & Pipelines",
     summary:
       "Always-current, trusted data: governed pipelines that unify every source (ERP, CRM, SaaS, and files) so analytics and AI run on inputs worth staking decisions on.",
+    seoTitle: "Snowflake Data Engineering & Pipelines",
+    seoDescription:
+      "Snowflake data engineering: governed pipelines that unify ERP, CRM, SaaS, and file sources into one trusted source. Snowflake Premier Partner, nearshore.",
     tools: ["Snowflake", "Openflow", "dbt"],
     order: 4,
     body: "No more chasing numbers across systems. We build automated, secure pipelines that pull every source (APIs, databases, flat files) into the warehouse reliably and on schedule, so teams work from data they can trust and AI workloads have clean, current inputs.",
@@ -87,6 +96,9 @@ export const services = [
     title: "AI Analytics & Agents",
     summary:
       "Put governed AI to work: Cortex Analyst and Snowflake CoWork agents that turn governed data into cited, decision-ready answers, embedded where leaders already work.",
+    seoTitle: "Snowflake Analytics & AI Agents",
+    seoDescription:
+      "Snowflake analytics and AI agents: Cortex Analyst and Snowflake CoWork turn governed data into decision-ready answers. Snowflake Premier Partner.",
     tools: ["Cortex Analyst", "Snowflake CoWork", "Snowsight", "Streamlit"],
     order: 2,
     body: "Put answers in the hands of the people making decisions. We build the reporting and self-service layer natively in Snowflake: Snowsight dashboards and Streamlit apps for the views teams live in, with Cortex Analyst answering questions over governed Semantic Views and Snowflake CoWork (the personal AI agent) letting business users explore and act in plain language. Anyone who needs insight can find it themselves: no waiting on the data team, no exporting to spreadsheets.",
@@ -97,6 +109,9 @@ export const services = [
     title: "Embedded Analytics",
     summary:
       "Differentiate the product: Cortex-powered data products embedded into apps and client workflows, turning insight into a competitive edge.",
+    seoTitle: "Embedded Analytics on Snowflake",
+    seoDescription:
+      "Embedded analytics on Snowflake: Cortex-powered data products built into your applications and client workflows. Snowflake Premier Partner, nearshore delivery.",
     tools: ["Streamlit", "Cortex"],
     order: 5,
     body: "Make analytics a feature customers pay for. We embed dashboards and reporting directly into applications, client portals, and partner interfaces, so the insight lives where users already work and the product stands apart from competitors.",
@@ -107,6 +122,9 @@ export const services = [
     title: "Capability Development",
     summary:
       "Compound the advantage: we embed with the team and build the in-house fluency to scale AI use cases long after launch.",
+    seoTitle: "Snowflake Capability Development",
+    seoDescription:
+      "Snowflake capability development: certified practitioners embed with your team to build lasting in-house AI fluency. Snowflake Premier Partner.",
     tools: [],
     order: 6,
     body: "Capability that outlasts the engagement. Our certified practitioners embed alongside in-house teams, coaching through real delivery and building fluency at every level (from executive data literacy to hands-on tool training for analysts and engineers) so the team keeps improving on its own.",
