@@ -1,6 +1,39 @@
 // Spanish (es) overlay. Keyed by slug. Optional: empty means the row falls back to English. Filled by the content-translation phase.
 // Body comes from prisma/seed/content/blog/<slug>.es.md, NOT here.
 export const blogPostsEs: Record<string, { title?: string; excerpt?: string; keyTakeaways?: string[]; seoTitle?: string; seoDescription?: string }> = {
+  "how-to-choose-a-snowflake-partner": {
+    title: "Cómo elegir un partner de Snowflake: una checklist para el comprador",
+    excerpt: "Las certificaciones son el piso, no la respuesta. Lo que separa a un buen partner de Snowflake de uno doloroso casi nunca está en la presentación de ventas: quién construye con su equipo, quién sigue siendo responsable después del go-live y quién cobra por terminar en lugar de por facturar. Una checklist práctica para llevar a cada conversación.",
+    keyTakeaways: [
+      "El nivel de partner y la certificación SnowPro son el piso: confírmelos, luego revise si la gente senior de la presentación es la que de verdad va a entregar.",
+      "El mejor predictor de estar contento a largo plazo es si un partner construye con su equipo y entrega el trabajo, o construye una caja negra y se va.",
+      "Ajuste el modelo de entrega a cómo trabaja: para empresas en Estados Unidos, un equipo nearshore en su zona horaria cambia el ritmo de todo el proyecto.",
+      "El precio revela los incentivos: cobrar por hora premia tardar más; cobrar por resultado premia terminar. Sepa cuál está comprando.",
+      "Pida evidencia, no adjetivos: referencias que pueda llamar, un proyecto recorrido de principio a fin, y gobierno y control de costo diseñados desde el día uno.",
+    ],
+  },
+  "snowflake-migration-cost": {
+    title: "Cuánto cuesta de verdad una migración a Snowflake (y qué mueve el número)",
+    excerpt: "Quien le cotice un precio cerrado de migración antes de ver su entorno está adivinando. Pero el costo no es imposible de conocer: es la suma de unos cuantos factores claros, del sistema de origen al número de pipelines al gobierno. Esto es lo que mueve el número, y cómo bajarlo.",
+    keyTakeaways: [
+      "Separe dos costos: el costo continuo de la plataforma de Snowflake por consumo, y el costo único del proyecto de migración. Confundirlos provoca sustos en ambas direcciones.",
+      "El mayor factor del proyecto suele ser los pipelines y las transformaciones, no el volumen de datos en crudo: cada job y cada regla de negocio enterrada hay que reconstruirlos y validarlos.",
+      "El sistema de origen importa: salir de Teradata, Oracle o Hadoop carga más equipaje propietario que Redshift o SQL Server.",
+      "Puede bajar el número con conversión automatizada de código, retirando pipelines muertos, con paridad validada y un cutover por fases en lugar de uno de un solo golpe.",
+      "El primer paso honesto es un discovery pagado, no una cotización: estrecha el rango de una adivinanza a un número con el que puede planear.",
+    ],
+  },
+  "nearshore-vs-offshore-snowflake": {
+    title: "Nearshore vs offshore para entregas de Snowflake: cómo decidir",
+    excerpt: "La decisión entre nearshore y offshore suele arrancar con las tarifas por hora. Debería arrancar con los relojes. El trabajo de Snowflake e IA es iterativo y denso en decisiones, justo el tipo de trabajo donde el traslape de zona horaria le gana a una tarifa más baja. Un marco para decidir qué modelo le conviene a su proyecto.",
+    keyTakeaways: [
+      "Compare costo por resultado, no costo por hora: una tarifa offshore más baja se borra con el retrabajo que causa la latencia de la noche en trabajo iterativo.",
+      "El trabajo de Snowflake e IA es intensivo en discovery y denso en decisiones, y eso premia el traslape de horario: un bloqueo resuelto para la comida frente a un día completo por ida y vuelta.",
+      "Offshore es una opción fuerte cuando el scope es estable, está documentado y se entrega limpiamente; en ese tipo de trabajo la ventaja de tarifa es real.",
+      "Califique su proyecto en dos ejes: qué tan estable es el scope y qué tan densa en decisiones es la obra. Cambiante y densa en decisiones se inclina a nearshore.",
+      "Elija lo que elija, vea más allá del tarifario: la estabilidad del equipo y quién queda como responsable después del go-live.",
+    ],
+  },
   "snowflake-control-plane-agentic-enterprise": {
     title: "Snowflake es ahora el plano de control de la empresa agéntica",
     excerpt: "Snowflake nació como plataforma de datos, pero el auge de la IA agéntica exige un plano de control gobernado que unifique datos confiables, contexto de negocio, elección de modelo, seguridad y flujos de trabajo. Este artículo explica por qué Snowflake se posiciona como esa capa operativa para la empresa agéntica.",
