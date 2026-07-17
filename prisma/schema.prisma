@@ -242,6 +242,7 @@ model Lead {
   lastName  String
   email     String
   company   String?
+  role      String? // enquiry type (e.g. strategy | platform | migration | analytics | other)
   message   String
   source    String   @default("contact")
   status    String   @default("NEW") // NEW | CONTACTED | QUALIFIED | CLOSED
