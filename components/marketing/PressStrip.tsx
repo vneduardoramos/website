@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Reveal, ScrollHighlight } from "@/components/marketing/Motion";
@@ -50,14 +51,22 @@ export async function PressStrip() {
             <ScrollHighlight>{highlight}</ScrollHighlight>
             {after}&rdquo;
           </blockquote>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-2 font-mono text-xs text-muted">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3 font-mono text-xs text-muted">
             <a
               href={PRESS_HOME_QUOTE.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="pill-chip transition-colors hover:bg-primaryDeep/15"
+              aria-label={`Read the coverage on CRN by ${sourceArticle.author}`}
+              className="inline-flex items-center rounded-lg border border-border bg-white px-3 py-1.5 shadow-soft transition-shadow hover:shadow-soft-lg"
             >
-              {PRESS_HOME_QUOTE.quoteBy}
+              <Image
+                src="/assets/press/crn-mark.png"
+                alt="CRN"
+                width={767}
+                height={256}
+                sizes="96px"
+                className="h-5 w-auto md:h-6"
+              />
             </a>
             <span aria-hidden="true">&middot;</span>
             <span>{sourceArticle.author}</span>
