@@ -416,7 +416,11 @@ export function Nav({ navData }: { navData?: NavData }) {
   // cursor across the gap between the trigger and the full-width panel (which
   // anchors under the whole nav, not the small button) doesn't dismiss it.
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // Guards against the trigger's onFocus reopening the panel while Escape is
+  // restoring focus to that same trigger (see the mega-menu `<li>` onKeyDown).
+  const restoringFocus = useRef(false);
   const openMega = (label: string) => {
+    if (restoringFocus.current) return;
     if (closeTimer.current) clearTimeout(closeTimer.current);
     setOpenMenu(label);
   };
@@ -482,7 +486,16 @@ export function Nav({ navData }: { navData?: NavData }) {
                 onMouseEnter={() => openMega(item.label)}
                 onMouseLeave={scheduleClose}
                 onKeyDown={(e) => {
-                  if (e.key === "Escape") setOpenMenu(null);
+                  if (e.key !== "Escape") return;
+                  e.stopPropagation();
+                  const trigger = e.currentTarget.querySelector<HTMLButtonElement>("button[aria-haspopup]");
+                  restoringFocus.current = true;
+                  trigger?.focus();
+                  restoringFocus.current = false;
+                  setOpenMenu(null);
+                }}
+                onBlur={(e) => {
+                  if (!e.currentTarget.contains(e.relatedTarget as Node)) setOpenMenu(null);
                 }}
               >
                 <button
