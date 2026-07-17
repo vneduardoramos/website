@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { prisma } from "@/lib/db";
 import { parseJson } from "@/lib/utils";
 import {
@@ -58,10 +59,10 @@ export async function getIndustrySlugs() {
   return rows.map((r) => r.slug);
 }
 
-export async function getIndustryBySlug(
+export const getIndustryBySlug = cache(async (
   slug: string,
   locale: Locale = DEFAULT_LOCALE,
-) {
+) => {
   const row = await prisma.industry.findFirst({
     where: { slug, ...PUBLISHED },
     include: {
@@ -73,7 +74,7 @@ export async function getIndustryBySlug(
     },
   });
   return row ? localize("industry", row, locale) : row;
-}
+});
 
 // ---------- Case studies ----------
 export async function getCaseStudies(
@@ -97,16 +98,16 @@ export async function getCaseStudySlugs() {
   return rows.map((r) => r.slug);
 }
 
-export async function getCaseStudyBySlug(
+export const getCaseStudyBySlug = cache(async (
   slug: string,
   locale: Locale = DEFAULT_LOCALE,
-) {
+) => {
   const row = await prisma.caseStudy.findFirst({
     where: { slug, ...PUBLISHED },
     include: { client: true, industry: true },
   });
   return row ? localize("caseStudy", row, locale) : row;
-}
+});
 
 // ---------- Blog ----------
 export async function getBlogPosts(
@@ -134,10 +135,10 @@ export async function getBlogSlugs() {
   return rows.map((r) => r.slug);
 }
 
-export async function getBlogPostBySlug(
+export const getBlogPostBySlug = cache(async (
   slug: string,
   locale: Locale = DEFAULT_LOCALE,
-) {
+) => {
   const row = await prisma.blogPost.findFirst({
     where: { slug, ...PUBLISHED },
     include: {
@@ -147,7 +148,7 @@ export async function getBlogPostBySlug(
     },
   });
   return row ? localize("blogPost", row, locale) : row;
-}
+});
 
 // ---------- News & events ----------
 export async function getNews(opts?: { take?: number }) {
@@ -200,13 +201,13 @@ export async function getJobSlugs() {
   return rows.map((r) => r.slug);
 }
 
-export async function getJobOpeningBySlug(
+export const getJobOpeningBySlug = cache(async (
   slug: string,
   locale: Locale = DEFAULT_LOCALE,
-) {
+) => {
   const row = await prisma.jobOpening.findFirst({ where: { slug, ...PUBLISHED } });
   return row ? localize("jobOpening", row, locale) : row;
-}
+});
 
 // ---------- Site settings ----------
 export async function getSetting<T = unknown>(
