@@ -1,6 +1,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { breadcrumbLd } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 
 export type Crumb = { label: string; href?: string };
 
@@ -47,10 +48,7 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
           );
         })}
       </ol>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
     </nav>
   );
 }
