@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { lookup } from "node:dns/promises";
+import { Agent } from "undici";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 import { getStorage } from "@/lib/storage";
@@ -93,8 +94,9 @@ export async function POST(req: Request) {
 
   // SSRF guard: resolve the host and reject if any address is private/loopback/etc.
   const host = parsed.hostname.replace(/^\[|\]$/g, "");
+  let addrs: { address: string; family: number }[];
   try {
-    const addrs = await lookup(host, { all: true });
+    addrs = await lookup(host, { all: true });
     if (addrs.length === 0 || addrs.some((a) => isBlockedIp(a.address))) {
       return NextResponse.json({ error: "URL host is not allowed" }, { status: 400 });
     }
@@ -102,10 +104,33 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Could not resolve URL host" }, { status: 400 });
   }
 
-  // Fetch the image
+  // Fetch the image, pinned to one of the addresses just validated above.
+  // Without this, fetch() would re-resolve DNS on its own right before
+  // connecting; an attacker controlling the DNS record could serve a benign
+  // address to our lookup() check and then a private/metadata address to the
+  // actual connection (DNS rebinding TOCTOU). A custom `connect.lookup` on an
+  // undici Agent, passed as the fetch `dispatcher`, forces the real TCP/TLS
+  // connection to use only the address we already vetted, while still
+  // connecting by hostname (so TLS servername/verification is unaffected).
+  const validatedAddr = addrs[0]!;
+  const pinnedDispatcher = new Agent({
+    connect: {
+      lookup: (
+        _hostname: string,
+        _options: unknown,
+        callback: (err: Error | null, address: string, family: number) => void
+      ) => {
+        callback(null, validatedAddr.address, validatedAddr.family);
+      },
+    },
+  });
+
   let imgRes: Response;
   try {
-    imgRes = await fetch(parsed.toString(), { redirect: "error" });
+    imgRes = await fetch(parsed.toString(), {
+      redirect: "error",
+      dispatcher: pinnedDispatcher,
+    } as RequestInit & { dispatcher: unknown });
   } catch (e) {
     console.error("[image-from-url] fetch error:", e);
     return NextResponse.json({ error: "Failed to fetch image" }, { status: 502 });
