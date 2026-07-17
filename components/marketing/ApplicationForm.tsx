@@ -7,7 +7,13 @@ import { useRouter } from "@/i18n/navigation";
 const inputCls =
   "w-full rounded border border-border bg-surface2 px-4 py-3 text-foreground aria-[invalid=true]:border-danger";
 
-export function ApplicationForm({ openingTitle }: { openingTitle?: string }) {
+export function ApplicationForm({
+  openingTitle,
+  openingId,
+}: {
+  openingTitle?: string;
+  openingId?: string;
+}) {
   const router = useRouter();
   const t = useTranslations("forms");
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
@@ -34,6 +40,7 @@ export function ApplicationForm({ openingTitle }: { openingTitle?: string }) {
       form
         .querySelectorAll<HTMLInputElement | HTMLTextAreaElement>("input[name], textarea[name]")
         .forEach((el) => {
+          if (el.name === "website") return; // honeypot: never surface
           if (!el.checkValidity()) {
             errs[el.name] = el.validationMessage;
             if (!firstInvalid) firstInvalid = el;
@@ -76,6 +83,13 @@ export function ApplicationForm({ openingTitle }: { openingTitle?: string }) {
       ) : null}
 
       <input type="hidden" name="openingTitle" value={openingTitle ?? ""} />
+      <input type="hidden" name="openingId" value={openingId ?? ""} />
+
+      {/* Honeypot field: hidden from humans, catches bots */}
+      <div className="hidden" aria-hidden="true">
+        <label htmlFor="app-website">Website</label>
+        <input id="app-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
 
       <p className="mt-6 text-sm text-muted">
         {t.rich("application.requiredNote", { mark: (c) => <span className="text-danger">{c}</span> })}

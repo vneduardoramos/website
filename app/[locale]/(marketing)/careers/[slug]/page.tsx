@@ -190,7 +190,7 @@ export default async function CareerDetailPage({
           center
         />
         <div className="mx-auto mt-12 max-w-2xl">
-          <ApplicationForm openingTitle={job.title} />
+          <ApplicationForm openingTitle={job.title} openingId={job.id} />
         </div>
       </Section>
 
