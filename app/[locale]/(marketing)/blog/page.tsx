@@ -60,7 +60,7 @@ export default async function BlogPage({ params }: { params: { locale: string } 
       </section>
 
       {featured ? (
-        <Section className="pt-4">
+        <Section className="pt-4 section-warm">
           <CoverCard
             href={`/blog/${featured.slug}`}
             image={featured.coverImageUrl ?? coverFor(featured.slug)}
@@ -86,7 +86,7 @@ export default async function BlogPage({ params }: { params: { locale: string } 
         </Section>
       ) : null}
 
-      <section className="section section-warm relative overflow-hidden">
+      <section className="section relative overflow-hidden">
         <WaveDivider position="top" fill="fill-background" />
         <SectionDecor variant="grid" />
         <div className="container-page relative">

@@ -216,7 +216,7 @@ export default async function BlogPostPage({
         </div>
       ) : null}
 
-      <Section className="pt-12">
+      <Section className="pt-12 section-warm">
         <KeyTakeaways items={takeaways} />
 
         <div className="mt-12">
@@ -239,7 +239,7 @@ export default async function BlogPostPage({
       </Section>
 
       {related.length ? (
-        <section className="section section-warm relative overflow-hidden">
+        <section className="section relative overflow-hidden">
           <SectionDecor variant="grid" />
           <div className="container-page relative">
             <h2 className="font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">

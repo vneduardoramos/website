@@ -132,7 +132,7 @@ export default async function CareerDetailPage({
         </div>
       </PageHero>
 
-      <Section className="pt-8 md:pt-10">
+      <Section className="pt-8 md:pt-10 section-warm">
         <div className="mx-auto max-w-3xl">
           {job.body ? (
             <div className="prose-vn">
@@ -160,7 +160,7 @@ export default async function CareerDetailPage({
       </Section>
 
       {/* Life at Viewnear: culture + benefits, so candidates see the whole picture. */}
-      <Section className="section-warm">
+      <Section>
         <div className="mx-auto max-w-4xl">
           <SectionHeading
             eyebrow={t("life.eyebrow")}
