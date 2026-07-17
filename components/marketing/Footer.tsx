@@ -86,9 +86,9 @@ export async function Footer() {
           </div>
           {groups.map((g) => (
             <div key={g.titleKey}>
-              <h4 className="font-mono text-xs uppercase tracking-widest text-muted">
+              <h2 className="font-mono text-xs uppercase tracking-widest text-muted">
                 {t(`groups.${g.titleKey}`)}
-              </h4>
+              </h2>
               <ul className="mt-4 space-y-2.5">
                 {g.links.map((l) => (
                   <li key={l.href}>
