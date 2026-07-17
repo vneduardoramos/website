@@ -33,6 +33,14 @@ export interface StorageAdapter {
 
 export function getStorage(): StorageAdapter {
   const driver = process.env.STORAGE_DRIVER ?? "local";
+  // Fail fast when the production server would silently write applicant
+  // resumes to Render's ephemeral local disk. Per ADR 0028: production
+  // requires STORAGE_DRIVER=s3.
+  if (process.env.NODE_ENV === "production" && driver === "local") {
+    throw new Error(
+      "STORAGE_DRIVER=s3 is required in production (local uploads are ephemeral on Render)."
+    );
+  }
   switch (driver) {
     case "local":
       return localStorageAdapter;
