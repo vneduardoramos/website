@@ -14,17 +14,6 @@
     ],
     "cta": "Ver servicios"
   },
-  "ai": {
-    "eyebrow": "IA aplicada",
-    "title": "IA que los equipos sí usan",
-    "body": "Con los datos en orden, la IA deja de ser un experimento. Cortex se ejecuta de forma segura junto a esos datos y fundamenta cada respuesta en Horizon Context, para que refleje su negocio y no lo que supone un modelo genérico.",
-    "bullets": [
-      "LLMs y ML de Cortex ejecutándose junto a datos gobernados",
-      "Snowflake CoWork y Cortex Agents que actúan sobre las decisiones, no solo las muestran en un dashboard",
-      "Respuestas y acciones que llegan a las herramientas donde su equipo ya trabaja"
-    ],
-    "cta": "Ver servicios"
-  },
   "outcomes": {
     "heading": "La hora nunca fue lo importante. <hl>El resultado siempre lo fue.</hl>",
     "lede": "Durante años, una factura de servicios era el número de personas por una tarifa, porque el valor estaba en el trabajo manual. La IA rompió ese vínculo: hoy la parte mecánica se automatiza y la experiencia que importa se desplazó a otro lugar, a decidir qué construir, dirigir a los agentes que lo construyen y responder por lo que entregan.",

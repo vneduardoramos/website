@@ -8,7 +8,7 @@ import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { Link } from "@/i18n/navigation";
 import { Hero } from "@/components/marketing/home/Hero";
 import { ServicesGrid } from "@/components/marketing/home/ServicesGrid";
-import { FoundationPhoto, AiPhoto } from "@/components/marketing/home/SplitVisuals";
+import { FoundationPhoto } from "@/components/marketing/home/SplitVisuals";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { Faq } from "@/components/marketing/Faq";
 import { RevealGroup, ScrollHighlight, SectionFold } from "@/components/marketing/Motion";
@@ -16,7 +16,6 @@ import { IndustriesStrip } from "@/components/marketing/home/IndustriesStrip";
 import { CustomersFeature } from "@/components/marketing/home/CustomersFeature";
 import { LogoRow } from "@/components/marketing/home/ClientLogos";
 import { getClientBands } from "@/lib/client-bands";
-import { SectionDecor } from "@/components/marketing/Decor";
 import { PlateCard } from "@/components/marketing/Cards";
 import { SnowMark, SnowflakeDivider } from "@/components/marketing/SnowMark";
 import { LeadershipStrip, FaceStack } from "@/components/marketing/LeadershipStrip";
@@ -94,23 +93,9 @@ export default async function HomePage({ params }: { params: { locale: string } 
         />
       </Section>
 
-      {/* A flowing "current" behind the AI row distinguishes it from the
-          foundation split and echoes its data → answer story. */}
-      <section className="section relative overflow-hidden">
-        <SectionDecor variant="flow" />
-        <div className="container-page relative">
-          <FeatureSplit
-            eyebrow={t("ai.eyebrow")}
-            title={t("ai.title")}
-            body={t("ai.body")}
-            bullets={t.raw("ai.bullets") as string[]}
-            visual={<AiPhoto />}
-            reverse
-            ratio="wide-text"
-            cta={{ label: t("ai.cta"), href: "/services" }}
-          />
-        </div>
-      </section>
+      {/* IN THE PRESS: third-party validation follows the foundation split,
+          a plain band between the cool foundation and the warm services grid. */}
+      <PressStrip />
 
       {/* 3) WHAT WE DO */}
       <ServicesGrid services={services} />
@@ -302,10 +287,6 @@ export default async function HomePage({ params }: { params: { locale: string } 
           </div>
         </SectionFold>
       </Section>
-
-      {/* 4c) IN THE PRESS: third-party validation from CRN, right after the
-          partner-momentum proof band (a cool tint, not warm-before-CtaBand). */}
-      <PressStrip />
 
       {/* 5) FAQ */}
       {homeFaqs && homeFaqs.length > 0 && (

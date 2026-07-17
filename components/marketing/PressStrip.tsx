@@ -12,9 +12,10 @@ import { PRESS, PRESS_HOME_QUOTE, getOutlet } from "@/lib/press";
  * element. Attributed to the outlet (its logo, or its name as a chip when no
  * logo exists) linking out to the article, with the article byline underneath,
  * plus a link to the full /press coverage list. Outlet-agnostic (see OUTLETS).
- * Server component (no hooks), a cool `.section-tint` band so it keeps the
- * site's warm/cool rhythm (never placed immediately before the warm CtaBand;
- * the home page puts FAQ between them).
+ * Server component (no hooks), on a plain (untinted) band: on the home page it
+ * sits between the cool `.section-tint` foundation split above and the warm
+ * ServicesGrid below, so the page keeps its warm/cool alternation without two
+ * tinted bands touching.
  */
 
 // The phrase in the quote worth a subtle accent: the substrate + partner
@@ -37,7 +38,7 @@ export async function PressStrip() {
   const outlet = getOutlet(PRESS_HOME_QUOTE.outlet);
 
   return (
-    <section className="section section-tint relative overflow-hidden">
+    <section className="section relative overflow-hidden">
       <SectionDecor variant="dots" />
       <div className="container-page relative">
         <Reveal className="mx-auto max-w-3xl text-center">

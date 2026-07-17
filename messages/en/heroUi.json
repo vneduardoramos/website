@@ -13,7 +13,6 @@
   },
   "split": {
     "foundationPhotoAlt": "A team reviewing dashboards, reports, and charts together around one shared, governed set of data.",
-    "aiPhotoAlt": "A team collaborating with analytics and AI tools on their screens in a bright modern office.",
     "foundationLabel": "Many scattered, conflicting data sources consolidated into one governed source of truth.",
     "foundationText": "One governed source of truth",
     "aiLabel": "Cortex AI runs on governed data and returns an answer grounded in it.",

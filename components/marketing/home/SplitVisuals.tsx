@@ -61,17 +61,6 @@ export function FoundationPhoto() {
   );
 }
 
-/** "AI teams actually use": a team working with analytics and AI on their screens. */
-export function AiPhoto() {
-  const t = useTranslations("heroUi");
-  return (
-    <PhotoFrame
-      src="/assets/images/photos/ai-teams.jpg"
-      alt={t("split.aiPhotoAlt")}
-    />
-  );
-}
-
 function Frame({ children, label }: { children: React.ReactNode; label: string }) {
   return (
     <div className="relative">

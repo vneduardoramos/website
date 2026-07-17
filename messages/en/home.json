@@ -14,17 +14,6 @@
     ],
     "cta": "Explore services"
   },
-  "ai": {
-    "eyebrow": "Applied AI",
-    "title": "AI teams actually use",
-    "body": "With the data governed, AI stops being a science project. Cortex runs securely next to that data and grounds every answer in Horizon Context, so it reflects the real business, not a generic model's guesswork.",
-    "bullets": [
-      "Cortex LLMs and ML running next to governed data",
-      "Snowflake CoWork and Cortex Agents that act on decisions, not just chart them",
-      "Answers and actions that flow back into the tools teams already work in"
-    ],
-    "cta": "Explore services"
-  },
   "outcomes": {
     "heading": "The hour was never the point. <hl>The result always was.</hl>",
     "lede": "For decades a services invoice was headcount times a rate, because the value lived in the manual work. AI has dissolved that link: the mechanical execution is increasingly automated, and the expertise that matters has moved upstream, into deciding what to build, orchestrating the agents that build it, and standing behind what they produce.",
