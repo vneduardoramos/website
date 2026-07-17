@@ -108,7 +108,7 @@ export default async function PricingPage({ params }: { params: { locale: string
               <span className="transition-transform group-hover:translate-x-0.5">→</span>
             </Link>
           </div>
-          <div className="panel-warm rounded-2xl p-8">
+          <div className="card p-8">
             <p className="eyebrow mb-2">{t("impact.eyebrow")}</p>
             <ul className="mt-4 space-y-6">
               {impactByPhase.map((p) => (
