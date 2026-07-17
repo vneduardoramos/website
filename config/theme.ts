@@ -45,6 +45,8 @@ export const theme = {
     // Logo-true palette (sampled from public/assets/viewnear-logo.png):
     royal: "44 83 200", //        #2C53C8 logo royal-blue: authority anchor, deep accents
     royalDeep: "20 35 88", //     #142358 deep indigo: the one dark authority band (.panel-indigo)
+    panelInk: "12 20 56", //      #0C1438 .panel-indigo gradient endpoint, darker than royalDeep
+    codeInk: "10 17 48", //       #0a1130 mock code-editor surface on .panel-indigo
     red: "255 72 60", //          #FF483C logo vermilion: rare high-energy accent (not the semantic danger)
     accent: "255 160 0", //       #FFA000 logo orange, the warm accent (was coral #FF8A4C; folded into the logo color)
     accentFg: "26 39 51", //      #1A2733 dark ink on the warm accent

@@ -15,6 +15,8 @@
   --color-primary-deep: 11 110 153; /* #0B6E99 legible blue (small text / links / hovers) */
   --color-royal: 44 83 200; /*         #2C53C8 logo royal-blue, authority anchor */
   --color-royal-deep: 20 35 88; /*     #142358 deep indigo, the one dark authority band */
+  --color-panel-ink: 12 20 56; /*      #0C1438 .panel-indigo gradient endpoint, darker than royal-deep */
+  --color-code-ink: 10 17 48; /*       #0a1130 mock code-editor surface on .panel-indigo */
   --color-red: 255 72 60; /*           #FF483C logo vermilion, rare high-energy accent */
   --color-accent: 255 160 0; /*        #FFA000 logo orange, warm accent (was coral) */
   --color-accent-fg: 26 39 51;
@@ -315,7 +317,7 @@ select:focus-visible,
       radial-gradient(90% 130% at 10% 0%, rgb(var(--color-royal) / 0.5), transparent 62%),
       radial-gradient(80% 110% at 100% 100%, rgb(var(--color-accent) / 0.32), transparent 55%),
       radial-gradient(55% 80% at 98% 4%, rgb(var(--color-red) / 0.22), transparent 55%),
-      linear-gradient(160deg, rgb(var(--color-royal-deep)), rgb(12 20 56));
+      linear-gradient(160deg, rgb(var(--color-royal-deep)), rgb(var(--color-panel-ink)));
   }
 }
 

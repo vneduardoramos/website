@@ -84,7 +84,7 @@ function FoundationSketch({
         {layers.map((layer, i) => (
           <g key={layer}>
             <rect x="78" y={56 + i * 36} width="244" height="26" rx="6" className="fill-white stroke-primaryDeep/25" />
-            <text x="200" y={73 + i * 36} textAnchor="middle" className="fill-[#0f2530] text-[10px]">{layer}</text>
+            <text x="200" y={73 + i * 36} textAnchor="middle" className="fill-foreground text-[10px]">{layer}</text>
           </g>
         ))}
         <path d="M200 168 v14" className="stroke-primaryDeep/50" strokeWidth="1.5" />

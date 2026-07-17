@@ -28,6 +28,8 @@ const config: Config = {
         primaryDeep: withVar("--color-primary-deep"),
         royal: withVar("--color-royal"),
         royalDeep: withVar("--color-royal-deep"),
+        panelInk: withVar("--color-panel-ink"),
+        codeInk: withVar("--color-code-ink"),
         red: withVar("--color-red"),
         accent: {
           DEFAULT: withVar("--color-accent"),

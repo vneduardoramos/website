@@ -41,7 +41,7 @@ export async function BuiltWithAnthropic() {
         {/* Right: Claude as the default in Cortex AISQL, then the open estate */}
         <div>
           <figure>
-            <div className="overflow-hidden rounded-2xl border border-white/15 bg-[#0a1130] shadow-2xl">
+            <div className="overflow-hidden rounded-2xl border border-white/15 bg-codeInk shadow-2xl">
               <div aria-hidden className="flex items-center gap-1.5 border-b border-white/10 px-4 py-2.5">
                 <span className="h-2 w-2 rounded-full bg-red/70" />
                 <span className="h-2 w-2 rounded-full bg-gold/80" />
