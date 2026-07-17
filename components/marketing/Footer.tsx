@@ -31,6 +31,8 @@ const groups = [
       { linkKey: "aiAnalytics", label: "AI Analytics & Agents", href: "/services/data-visualisation" },
       { linkKey: "embeddedAnalytics", label: "Embedded Analytics", href: "/services/embedded-analytics" },
       { linkKey: "capabilityDevelopment", label: "Capability Development", href: "/services/capability-development" },
+      { linkKey: "migrations", label: "Migrations", href: "/migrations" },
+      { linkKey: "nearshore", label: "Nearshore Advantage", href: "/nearshore" },
       { linkKey: "approach", label: "Approach", href: "/approach" },
       { linkKey: "pricing", label: "Pricing", href: "/pricing" },
       { linkKey: "platform", label: "Platform", href: "/platform" },

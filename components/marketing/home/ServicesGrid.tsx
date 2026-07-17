@@ -46,7 +46,13 @@ export async function ServicesGrid({ services }: { services: Service[] }) {
             {t("servicesGrid.title")}
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted">
-            {t("servicesGrid.body")}
+            {t.rich("servicesGrid.body", {
+              migrations: (c) => (
+                <Link href="/migrations" className="link-underline font-medium text-primaryDeep">
+                  {c}
+                </Link>
+              ),
+            })}
           </p>
         </div>
 

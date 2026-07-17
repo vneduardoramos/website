@@ -213,7 +213,13 @@ export default async function HomePage({ params }: { params: { locale: string } 
               })}
             </p>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
-              {t("derisk.panel.body")}
+              {t.rich("derisk.panel.body", {
+                nearshore: (c) => (
+                  <Link href="/nearshore" className="link-underline font-medium text-primaryDeep">
+                    {c}
+                  </Link>
+                ),
+              })}
             </p>
           </div>
           <div className="flex shrink-0 flex-wrap items-center gap-4">
