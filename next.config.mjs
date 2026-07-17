@@ -3,7 +3,7 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 // Allow next/image to optimize images served from the object-storage public
 // host (Cloudflare R2 / S3). Derived from NEXT_PUBLIC_S3_PUBLIC_URL (falling
-// back to S3_PUBLIC_URL) so there's a single source of truth — set it to the
+// back to S3_PUBLIC_URL) so there's a single source of truth. Set it to the
 // bucket's public base URL, e.g. https://pub-xxxx.r2.dev or a custom domain
 // like https://cdn.viewnear.com.
 // NOTE: read at build time, so the env var must be set in the build env.
