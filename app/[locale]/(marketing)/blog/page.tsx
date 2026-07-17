@@ -11,6 +11,8 @@ import { coverFor } from "@/lib/covers";
 import { CtaBand } from "@/components/marketing/ui";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 
+export const revalidate = 60;
+
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
   setRequestLocale(locale);

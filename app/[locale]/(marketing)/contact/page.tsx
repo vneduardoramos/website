@@ -12,6 +12,8 @@ import { getSetting, getTeam } from "@/lib/queries";
 import type { Locale } from "@/lib/i18n-content";
 import { theme } from "@/config/theme";
 
+export const revalidate = 60;
+
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
   setRequestLocale(locale);

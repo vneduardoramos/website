@@ -22,6 +22,8 @@ import { JsonLd } from "@/components/JsonLd";
 import { theme } from "@/config/theme";
 import type { Locale } from "@/lib/i18n-content";
 
+export const revalidate = 60;
+
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
   setRequestLocale(locale);

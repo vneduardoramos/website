@@ -12,6 +12,8 @@ import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { PageHero } from "@/components/marketing/PageHero";
 import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 
+export const revalidate = 60;
+
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
   setRequestLocale(locale);

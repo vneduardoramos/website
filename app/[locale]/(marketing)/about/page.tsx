@@ -24,6 +24,8 @@ import { PlateCard } from "@/components/marketing/Cards";
 import { getTeam } from "@/lib/queries";
 import type { Locale } from "@/lib/i18n-content";
 
+export const revalidate = 60;
+
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
   setRequestLocale(locale);
