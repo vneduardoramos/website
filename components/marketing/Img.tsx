@@ -9,6 +9,19 @@ const MANIFEST = blur as Record<string, string>;
 const FALLBACK_BLUR =
   "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAAAQAwCdASoUABQAPxGCuVWsKKWjKAgBgCIJaQDH5BhwXgAA/u8T3uP1gtQAAA==";
 
+// The public media host (R2/S3), if configured, so remote images from THAT
+// host can go through next/image optimization instead of the blanket
+// unoptimized bypass. Unset or malformed -> null, which keeps the crash-safe
+// all-remote-unoptimized behavior from before.
+let MEDIA_HOST: string | null = null;
+try {
+  MEDIA_HOST = process.env.NEXT_PUBLIC_S3_PUBLIC_URL
+    ? new URL(process.env.NEXT_PUBLIC_S3_PUBLIC_URL).hostname
+    : null;
+} catch {
+  MEDIA_HOST = null;
+}
+
 export function Img({ src, alt, placeholder, blurDataURL, editKey, style, ...props }: ImageProps & { editKey?: string }) {
   const key = editKey ?? (typeof src === "string" ? src : "");
   const rawOverride = useImageOverride(key);
@@ -43,7 +56,9 @@ export function Img({ src, alt, placeholder, blurDataURL, editKey, style, ...pro
       placeholder={placeholder ?? "blur"}
       blurDataURL={blurDataURL ?? (typeof effSrc === "string" ? MANIFEST[effSrc] : undefined) ?? FALLBACK_BLUR}
       style={mergedStyle}
-      unoptimized={isRemote || undefined}
+      unoptimized={
+        (isRemote && (!MEDIA_HOST || new URL(effSrc as string).hostname !== MEDIA_HOST)) || undefined
+      }
       {...props}
     />
   );

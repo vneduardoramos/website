@@ -3,7 +3,7 @@
 Un grupo de concesionarios de vehículos comerciales opera una red extensa: concesionarios que venden camiones pesados, talleres de servicio que mantienen las flotas en circulación y operaciones de repuestos que abastecen a ambos. En toda esa red, el mismo cliente, vehículo, repuesto, proveedor y empleado existía de forma diferente en cada sistema. El ERP, el dealer management system y el sistema de nómina y recursos humanos mantenían cada uno su propia versión, con sus propios códigos y sus propias reglas.
 
 - **Sin una versión única confiable.** Un cliente, vehículo, repuesto, proveedor o empleado se veía diferente según el sistema que se consultara.
-- **Generar reportes implicaba conciliar a mano.** Antes de que alguien pudiera confiar en una cifra, la misma entidad debía emparejarse y fusionarse manualmente entre los sistemas.
+- **Generar reportes implicaba conciliar a mano.** Antes de que alguien pudiera confiar en un número, la misma entidad debía emparejarse y fusionarse manualmente entre los sistemas.
 - **La gobernanza era conocimiento tribal.** El emparejamiento, el survivorship y la responsabilidad vivían en la mente de las personas, no en reglas diseñadas.
 
 La eficiencia operativa en ventas, servicio y repuestos dependía de datos en los que el grupo todavía no podía confiar como una sola versión.

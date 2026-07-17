@@ -24,6 +24,8 @@ import { PlateCard } from "@/components/marketing/Cards";
 import { getTeam } from "@/lib/queries";
 import type { Locale } from "@/lib/i18n-content";
 
+export const revalidate = 60;
+
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
   setRequestLocale(locale);
@@ -61,7 +63,7 @@ export default async function AboutPage({ params }: { params: { locale: string }
 
   return (
     <>
-      <JsonLd data={breadcrumbLd([{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }])} />
+      <JsonLd data={breadcrumbLd([{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }], locale)} />
       <PageHero
         eyebrow={t("hero.eyebrow")}
         title={t.rich("hero.title", {
@@ -163,7 +165,7 @@ export default async function AboutPage({ params }: { params: { locale: string }
 
       {/* Governance & trust: the enterprise signal */}
       <Section>
-        <div className="panel-indigo relative overflow-hidden rounded-3xl p-8 shadow-xl md:p-14">
+        <div className="panel-indigo relative overflow-hidden rounded-3xl p-8 shadow-soft-lg md:p-14">
           <div className="relative grid gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
             <div>
               <p className="eyebrow eyebrow--invert mb-4">{t("governanceBlock.eyebrow")}</p>

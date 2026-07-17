@@ -77,12 +77,41 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Response is not a supported image type" }, { status: 400 });
   }
 
-  const arrayBuffer = await imgRes.arrayBuffer();
-  if (arrayBuffer.byteLength > MAX_BYTES) {
+  const declaredLength = Number(imgRes.headers.get("content-length"));
+  if (Number.isFinite(declaredLength) && declaredLength > MAX_BYTES) {
     return NextResponse.json({ error: "Image exceeds 8 MB limit" }, { status: 413 });
   }
 
-  const buffer = Buffer.from(arrayBuffer);
+  // Stream with a hard size cap so a manipulated Content-Length can't force
+  // buffering an unbounded body.
+  let buffer: Buffer;
+  try {
+    const reader = imgRes.body?.getReader();
+    if (!reader) throw new Error("no body");
+    const chunks: Uint8Array[] = [];
+    let total = 0;
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      if (value) {
+        total += value.byteLength;
+        if (total > MAX_BYTES) {
+          await reader.cancel().catch(() => {});
+          return NextResponse.json({ error: "Image exceeds 8 MB limit" }, { status: 413 });
+        }
+        chunks.push(value);
+      }
+    }
+    buffer = Buffer.concat(chunks);
+  } catch (e) {
+    console.error("[pexels/select] read error:", e);
+    return NextResponse.json({ error: "Failed to read image" }, { status: 502 });
+  }
+
+  if (buffer.byteLength === 0) {
+    return NextResponse.json({ error: "Image was empty" }, { status: 400 });
+  }
+
   const ext = extFromMime(contentType);
   const filename = `pexels-${Date.now()}-${Math.floor(Math.random() * 10000)}.${ext}`;
 

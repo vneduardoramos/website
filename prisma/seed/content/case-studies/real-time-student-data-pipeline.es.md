@@ -11,7 +11,7 @@ Un grupo de universidades que atiende a más de 20,000 estudiantes en Miami y Am
 Viewnear construyó un pipeline de datos de estudiantes gobernado y en tiempo real sobre Snowflake, en la propia cuenta del grupo:
 
 - **Entorno de Snowflake gobernado.** Warehouses, roles, RBAC, políticas de red y monitores de recursos implementados desde el primer día, con un modelo de gobernanza claro.
-- **Integración nativa con Blackboard.** Una conexión directa a Anthology / Blackboard Data Share deposita los datos académicos en una capa RAW, con descubrimiento de esquema y validación de actualización, volumen y uso.
+- **Integración nativa con Blackboard.** Una conexión directa a Anthology / Blackboard Data Share deposita los datos académicos en una capa RAW, con discovery de esquema y validación de actualización, volumen y uso.
 - **Eventos Caliper en tiempo real.** Los eventos de actividad de aprendizaje se transmiten en streaming desde el LMS a través de Azure Event Hub hacia Snowflake RAW, validados de extremo a extremo desde el LMS hasta Snowflake.
 - **Modelo analítico del estudiante.** Un modelo analítico del estudiante, documentado y alineado con Blackboard, sobre las capas RAW.
 - **Documentación y transferencia de conocimiento.** Documentación técnica y funcional, además de sesiones de transferencia de conocimiento, para que el propio equipo del grupo pueda operarlo y extenderlo.
@@ -24,7 +24,7 @@ Los datos de los estudiantes son sensibles y están distribuidos en muchos campu
 
 - **Acceso con privilegios mínimos.** Los roles, RBAC y las políticas de red definen quién puede acceder a qué, por campus y por función.
 - **Consumo controlado.** Los monitores de recursos mantienen el cómputo y el costo predecibles en todo el grupo.
-- **Trazable por diseño.** Una estructura gobernada de RAW a analítica mantiene un linaje claro hacia cada sistema de origen, de modo que toda cifra puede rastrearse hasta su origen.
+- **Trazable por diseño.** Una estructura gobernada de RAW a analítica mantiene un linaje claro hacia cada sistema de origen, de modo que todo número puede rastrearse hasta su origen.
 - **Los datos permanecen en su lugar.** Todo se ejecuta en la propia cuenta de Snowflake del grupo; ninguna copia sale de su perímetro.
 
 ## Lo que entregamos

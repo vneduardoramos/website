@@ -54,7 +54,20 @@ const ORG_JSONLD = {
   url: theme.brand.url,
   logo: `${theme.brand.url}/assets/viewnear-logo.png`,
   description: theme.brand.description,
+  // Append the off-site profile URLs here once they exist (Snowflake Partner
+  // Network listing, Clutch, G2, GoodFirms, Google Business Profile) so the
+  // entity graph links them back to viewnear.com.
   sameAs: [theme.socials.linkedin],
+  areaServed: ["United States", "Canada", "Mexico", "Latin America", "Caribbean"],
+  knowsAbout: [
+    "Snowflake",
+    "Snowflake data migration",
+    "Data engineering",
+    "Snowflake Cortex",
+    "AI agents",
+    "Nearshore software delivery",
+    "Data & AI strategy",
+  ],
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
@@ -95,7 +108,7 @@ export default async function LocaleRootLayout({
     "nav", "common", "footer",
     "sharedUi", "strips", "homeServer", "partnershipUi", "dataAiUi",
     "platformUi", "approachUi", "migrationsUi", "contentData", "articleUi",
-    "heroUi", "methodology", "forms", "misc",
+    "heroUi", "methodology", "forms", "misc", "consent", "errorPage",
   ];
   const all = messages as Record<string, unknown>;
   const clientMessages = Object.fromEntries(
@@ -105,8 +118,10 @@ export default async function LocaleRootLayout({
     <html lang={locale} className={fontVariables}>
       <body className="font-sans">
         <JsonLd data={[ORG_JSONLD, WEBSITE_JSONLD]} />
-        <NextIntlClientProvider locale={locale} messages={clientMessages}>{children}</NextIntlClientProvider>
-        <ConsentBanner />
+        <NextIntlClientProvider locale={locale} messages={clientMessages}>
+          {children}
+          <ConsentBanner />
+        </NextIntlClientProvider>
         <Analytics />
       </body>
     </html>

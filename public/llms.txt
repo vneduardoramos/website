@@ -1,6 +1,6 @@
 # Viewnear
 
-> Viewnear is a data and AI consultancy and Snowflake Premier and CoCo Preferred Partner serving the Americas (Canada, USA, Mexico, LATAM, and the Caribbean). We take enterprises from data strategy to governed AI in production, built natively on Snowflake.
+> Viewnear builds data and AI practices inside enterprise teams and is a Snowflake Premier and CoCo Preferred Partner serving the Americas (Canada, USA, Mexico, LATAM, and the Caribbean). We take enterprises from data strategy to governed AI in production, built natively on Snowflake.
 
 ## Key facts
 - Snowflake Premier Partner and Snowflake CoCo Preferred Partner; SnowPro-certified team.

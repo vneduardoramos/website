@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Acerca de: prácticas de data & AI en toda América",
-    "description": "Viewnear ayuda a las empresas a establecer prácticas de data & AI que conservan: datos gobernados que alimentan decisiones reales y casos de uso de IA en producción, construidos sobre Snowflake y operados por sus propios equipos."
+    "description": "Viewnear ayuda a las empresas a construir prácticas de data & AI sobre Snowflake: datos gobernados y casos de uso de IA en producción, operados por su equipo."
   },
   "breadcrumb": {
     "home": "Inicio",
@@ -26,9 +26,9 @@
     "imageAlt": "Un collage del equipo de Viewnear en eventos de Snowflake: el stand de data + ai, Data for Breakfast, Snowflake Summit y comidas del equipo"
   },
   "operating": [
-    "Alcances fijos, sprints impulsados por casos de uso y software funcional en cada demo",
+    "Scope fijo, sprints impulsados por casos de uso y software funcional en cada demo",
     "Gobernado por diseño, desde la primera tabla",
-    "Las personas que definen el alcance del trabajo permanecen hasta la producción",
+    "Las personas que definen el scope del trabajo permanecen hasta la producción",
     "Formatos abiertos (Apache Iceberg) para arquitecturas interoperables"
   ],
   "arcLabel": "La trayectoria hasta ahora",
@@ -57,7 +57,7 @@
   "trackRecordHeading": {
     "eyebrow": "Historial",
     "title": "Credenciales que cualquiera puede verificar",
-    "intro": "Sin cifras de vanidad: el nivel de partner, la certificación y el alcance regional que cualquiera puede comprobar."
+    "intro": "Sin métricas de vanidad: el nivel de partner, la certificación y el alcance regional que cualquiera puede comprobar."
   },
   "trackRecord": [
     { "value": "Premier", "label": "Snowflake Premier + CoCo Preferred Partner" },

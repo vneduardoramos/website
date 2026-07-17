@@ -44,6 +44,7 @@ export async function generateMetadata({
     type: "article",
     noindex: true,
     locale,
+    ownOgFile: true,
   });
 }
 

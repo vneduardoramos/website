@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Servicios: THINK · BUILD · GROW",
-    "description": "THINK, BUILD, GROW: estrategia, ingeniería y habilitación para establecer una práctica de datos y una práctica de IA sobre Snowflake, diseñadas para que los equipos internos las operen."
+    "title": "Servicios de Data & AI en Snowflake",
+    "description": "Servicios de datos e IA en Snowflake: estrategia, migración, ingeniería, analítica y agentes de IA. Snowflake Premier Partner, entrega nearshore en América."
   },
   "breadcrumb": {
     "home": "Inicio",
@@ -9,7 +9,7 @@
   },
   "hero": {
     "eyebrow": "Servicios",
-    "title": "De la estrategia a la <hl>empresa agéntica</hl>.",
+    "title": "Servicios de datos e IA en Snowflake, de la estrategia a la <hl>empresa agéntica</hl>.",
     "description": "Estrategia, ingeniería y habilitación bajo un único equipo responsable, que construye dos capacidades que permanecen dentro de la organización: una práctica de datos en la que las decisiones pueden confiar y una práctica de IA que llega a producción, a lo largo de THINK, BUILD y GROW."
   },
   "tiers": {
@@ -30,7 +30,7 @@
   "agentic": {
     "eyebrow": "Hacia dónde va esto",
     "title": "Listos para <hl>agentes que actúan</hl>.",
-    "intro": "Una práctica de IA lista para agentes no comienza con los agentes. Comienza con datos gobernados y contexto confiable: una capa donde los datos, el contexto de negocio, los modelos y los flujos de trabajo se unen. Construimos esa capa junto al equipo, para que cuando los agentes actúen, lo hagan sobre cifras en las que el negocio confía.",
+    "intro": "Una práctica de IA lista para agentes no comienza con los agentes. Comienza con datos gobernados y contexto confiable: una capa donde los datos, el contexto de negocio, los modelos y los flujos de trabajo se unen. Construimos esa capa junto al equipo, para que cuando los agentes actúen, lo hagan sobre números en los que el negocio confía.",
     "proofLine": "Vea la IA que ponemos en producción en nuestros <cases>casos de éxito</cases>, y cómo elegimos el modelo para cada tarea en <dataai>Data + AI</dataai>.",
     "thesis": {
       "title": "Nuestra tesis: la empresa agéntica funciona sobre una única capa gobernada de datos y contexto",
@@ -55,7 +55,7 @@
       {
         "phase": "6 a 12 meses",
         "title": "Escala y autoservicio",
-        "body": "Casos de uso de analítica e IA desplegados en todos los equipos, autoservicio adoptado y reportes manuales retirados: las decisiones se basan en cifras actuales y confiables."
+        "body": "Casos de uso de analítica e IA desplegados en todos los equipos, autoservicio adoptado y reportes manuales retirados: las decisiones se basan en números actuales y confiables."
       },
       {
         "phase": "Más de 18 meses",
@@ -72,17 +72,17 @@
       {
         "label": "Plazos",
         "title": "Un arco fijo de 8 a 16 semanas",
-        "body": "La mayoría de los primeros desarrollos llegan a producción en 8 a 16 semanas: una fase de descubrimiento pagada fija el alcance y el precio desde el inicio, y cada sprint cierra con software funcional, para que el valor llegue desde el primer sprint."
+        "body": "La mayoría de los primeros desarrollos llegan a producción en 8 a 16 semanas: una fase de discovery pagado fija el scope y el precio desde el inicio, y cada sprint cierra con software funcional, para que el valor llegue desde el primer sprint."
       },
       {
         "label": "Dirección",
         "title": "Dirección y transparencia",
-        "body": "Revisiones de dirección periódicas, un backlog compartido y puntos de decisión claros mantienen a los patrocinadores en control del alcance, el presupuesto y las prioridades en todo momento."
+        "body": "Juntas de seguimiento periódicas, un backlog compartido y puntos de decisión claros mantienen a los sponsors en control del scope, el presupuesto y las prioridades en todo momento."
       },
       {
         "label": "Prueba",
         "title": "Riesgo reducido por diseño",
-        "body": "Probamos el enfoque con una prueba de concepto acotada antes del desarrollo completo, para que el compromiso de escalar se base en evidencia y no en una presentación de diapositivas."
+        "body": "Probamos el enfoque con un POC acotado antes del desarrollo completo, para que el compromiso de escalar se base en evidencia y no en una presentación de diapositivas."
       },
       {
         "label": "Traspaso",
@@ -104,23 +104,23 @@
   "engagement": {
     "eyebrow": "Cómo trabajamos",
     "title": "Modelos de colaboración",
-    "intro": "Formas flexibles de colaborar con nosotros, ajustadas a la forma del problema, desde un desarrollo de alcance fijo hasta un equipo integrado o un servicio gestionado continuo. Sea cual sea el modelo que encaje, la forma en que entregamos no cambia.",
+    "intro": "Formas flexibles de colaborar con nosotros, ajustadas a la forma del problema, desde un desarrollo de scope fijo hasta un equipo integrado o un servicio gestionado continuo. Sea cual sea el modelo que encaje, la forma en que entregamos no cambia.",
     "bestForLabel": "Ideal para",
     "howItWorksLabel": "Cómo funciona:",
     "models": [
       {
         "title": "Costo fijo",
-        "body": "Un alcance, un cronograma y un precio definidos y acordados por adelantado. Ideal cuando el resultado es claro y la certeza presupuestaria importa desde el primer día.",
-        "how": "Definimos el alcance del trabajo en un descubrimiento pagado y breve, y luego nos comprometemos con un precio y una fecha.",
-        "includes": ["Enunciado de trabajo con alcance definido", "Hitos con puntos de decisión", "Control de cambios si el alcance varía"],
+        "body": "Un scope, un cronograma y un precio definidos y acordados por adelantado. Ideal cuando el resultado es claro y la certeza presupuestaria importa desde el primer día.",
+        "how": "Definimos el scope del trabajo en un discovery pagado y breve, y luego nos comprometemos con un precio y una fecha.",
+        "includes": ["Enunciado de trabajo con scope definido", "Hitos con puntos de decisión", "Control de cambios si el scope varía"],
         "bestFor": "Desarrollos de base definidos y migraciones"
       },
       {
         "title": "Tiempo y materiales",
-        "body": "Entrega flexible e iterativa, facturada por esfuerzo sobre un backlog compartido. Ideal para requisitos cambiantes y trabajo guiado por el descubrimiento.",
+        "body": "Entrega flexible e iterativa, facturada por esfuerzo sobre un backlog compartido. Ideal para requisitos cambiantes y trabajo guiado por el discovery.",
         "how": "Entregamos sprint a sprint sobre un backlog priorizado que el negocio controla.",
         "includes": ["Backlog compartido y priorizado", "Demos de sprint e informes de avance", "Detener o cambiar de rumbo en cualquier sprint"],
-        "bestFor": "Descubrimiento, POCs y alcance cambiante"
+        "bestFor": "Discovery, POCs y scope cambiante"
       },
       {
         "title": "Ampliación de equipo",
@@ -143,9 +143,9 @@
       "body": "Sea cual sea la forma en que una organización elija colaborar, cada proyecto de Viewnear se entrega con el mismo estándar: los aspectos que marcan la diferencia entre un desarrollo que llega a producción y uno que se estanca."
     },
     "value": [
-      { "title": "Un solo equipo certificado, con profundidad en todos los niveles", "body": "Un único equipo responsable: quienes definen el alcance del trabajo son quienes lo entregan." },
+      { "title": "Un solo equipo certificado, con profundidad en todos los niveles", "body": "Un único equipo responsable: quienes definen el scope del trabajo son quienes lo entregan." },
       { "title": "Profundidad verificada en Snowflake", "body": "Un equipo certificado en SnowPro con un historial verificado de entregas en Snowflake detrás de cada decisión, desde la estrategia hasta la producción." },
-      { "title": "Precio orientado a resultados", "body": "Alcance y precio acordados por adelantado, sea cual sea el modelo que encaje." },
+      { "title": "Precio orientado a resultados", "body": "Scope y precio acordados por adelantado, sea cual sea el modelo que encaje." },
       { "title": "Gobierno incorporado", "body": "Seguridad, linaje y control de acceso diseñados desde la primera tabla, no añadidos después." },
       { "title": "Traspaso y habilitación", "body": "Traspaso completo, documentación y habilitación para que el equipo lo opere con confianza." },
       { "title": "Integrado con la empresa", "body": "Productos de datos que se conectan hacia y desde los sistemas que el negocio utiliza: ERP, CRM y aplicaciones de cara al cliente." }
@@ -153,7 +153,7 @@
     "leadershipLabel": "Un único equipo responsable.",
     "cost": {
       "eyebrow": "Qué determina el costo",
-      "body": "El alcance de los proyectos se define según el volumen de datos y la complejidad de las fuentes, el número de casos de uso de analítica e IA, el tamaño del equipo y el cronograma. Acordamos el alcance y el precio por adelantado (sea cual sea el modelo que encaje) para que no haya sorpresas."
+      "body": "El scope de los proyectos se define según el volumen de datos y la complejidad de las fuentes, el número de casos de uso de analítica e IA, el tamaño del equipo y el cronograma. Acordamos el scope y el precio por adelantado (sea cual sea el modelo que encaje) para que no haya sorpresas."
     },
     "footer": {
       "note": "¿No está seguro de qué modelo encaja? Cuéntenos el problema y le recomendaremos uno.",

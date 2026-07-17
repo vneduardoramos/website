@@ -12,6 +12,8 @@ import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { PageHero } from "@/components/marketing/PageHero";
 import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 
+export const revalidate = 60;
+
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
   setRequestLocale(locale);
@@ -27,7 +29,7 @@ export default async function IndustriesPage({ params }: { params: { locale: str
 
   return (
     <>
-      <JsonLd data={breadcrumbLd([{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }])} />
+      <JsonLd data={breadcrumbLd([{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }], locale)} />
       <PageHero
         eyebrow={t("hero.eyebrow")}
         title={t.rich("hero.title", {

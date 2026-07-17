@@ -14,7 +14,13 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const { locale } = params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "partnership.meta" });
-  return pageMeta({ title: t("title"), description: t("description"), path: "/partnership", locale });
+  return pageMeta({
+    title: t("title"),
+    description: t("description"),
+    path: "/partnership",
+    locale,
+    ownOgFile: true,
+  });
 }
 
 // Build-vs-partner comparison: the question every leader weighs.

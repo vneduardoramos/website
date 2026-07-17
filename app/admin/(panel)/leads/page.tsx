@@ -21,6 +21,11 @@ export default async function LeadsPage() {
                 <p className="font-semibold">
                   {lead.firstName} {lead.lastName}{" "}
                   {lead.company && <span className="text-muted">· {lead.company}</span>}
+                  {lead.role && (
+                    <span className="ml-2 rounded-full border border-border px-2 py-0.5 text-xs font-normal text-muted">
+                      {lead.role}
+                    </span>
+                  )}
                 </p>
                 <a href={`mailto:${lead.email}`} className="text-sm text-primary hover:underline">
                   {lead.email}

@@ -14,7 +14,7 @@ export const CERTIFICATIONS = [
 // Official Snowflake partner + certification badge artwork.
 const BADGE_IMAGES = [
   { src: "/assets/images/certs/premier.webp", alt: "Snowflake Premier Partner badge", w: 460, h: 460 },
-  { src: "/assets/images/certs/coco-preferred.png", alt: "Snowflake CoCo Preferred Partner badge", w: 1910, h: 1572 },
+  { src: "/assets/images/certs/coco-preferred.png", alt: "Snowflake CoCo Preferred Partner badge", w: 900, h: 741 },
   { src: "/assets/images/certs/snowpro-core.png", alt: "SnowPro Core certification badge", w: 487, h: 402 },
 ];
 
@@ -55,6 +55,7 @@ export async function PartnerBadges({
             alt={b.alt}
             width={b.w}
             height={b.h}
+            sizes={size === "sm" ? "70px" : "140px"}
             className={cn(h, "w-auto")}
           />
         ))}

@@ -5,7 +5,7 @@
       "streams": "Flujos"
     },
     "exit": {
-      "dashboards": "Tableros",
+      "dashboards": "Dashboards",
       "answers": "Respuestas",
       "agents": "Agentes",
       "apps": "Aplicaciones"
@@ -36,11 +36,11 @@
       },
       "ai": {
         "title": "Entonces la IA tiene sobre qué apoyarse",
-        "body": "<prod>Cortex Analyst</prod> responde preguntas frente a esas definiciones compartidas, <prod>Snowflake CoWork</prod> entrega a los equipos respuestas con citas, y los agentes actúan dentro de las políticas de <prod>AI Agent Identity</prod>. Los resultados llegan donde las personas ya trabajan: tableros en <prod>Snowsight</prod>, aplicaciones en <prod>Streamlit</prod>, respuestas que regresan a las herramientas que los equipos ya usan."
+        "body": "<prod>Cortex Analyst</prod> responde preguntas frente a esas definiciones compartidas, <prod>Snowflake CoWork</prod> entrega a los equipos respuestas con citas, y los agentes actúan dentro de las políticas de <prod>AI Agent Identity</prod>. Los resultados llegan donde las personas ya trabajan: dashboards en <prod>Snowsight</prod>, aplicaciones en <prod>Streamlit</prod>, respuestas que regresan a las herramientas que los equipos ya usan."
       },
       "oneTeam": {
         "title": "Un solo equipo responde por todo el arco",
-        "body": "Snowflake opera la plataforma. Nosotros diseñamos, construimos y afinamos lo que corre sobre ella con el equipo en la sala, y luego entregamos las llaves: documentado y listo para que lo amplíen. La mayoría de las bases llegan a producción en 8 a 16 semanas, porque el descubrimiento fija el alcance desde el inicio y cada sprint termina con software funcionando en una demo."
+        "body": "Snowflake opera la plataforma. Nosotros diseñamos, construimos y afinamos lo que corre sobre ella con el equipo en la sala, y luego entregamos las llaves: documentado y listo para que lo amplíen. La mayoría de las bases llegan a producción en 8 a 16 semanas, porque el discovery fija el scope desde el inicio y cada sprint termina con software funcionando en una demo."
       }
     }
   },

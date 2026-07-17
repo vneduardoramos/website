@@ -12,6 +12,8 @@ import { getSetting, getTeam } from "@/lib/queries";
 import type { Locale } from "@/lib/i18n-content";
 import { theme } from "@/config/theme";
 
+export const revalidate = 60;
+
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
   setRequestLocale(locale);
@@ -66,7 +68,7 @@ export default async function ContactPage({ params }: { params: { locale: string
               </a>
             </div>
 
-            <div className="relative mt-10 overflow-hidden rounded-2xl border border-border shadow-lg">
+            <div className="relative mt-10 overflow-hidden rounded-2xl border border-border shadow-soft">
               <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-tr from-primary/25 via-transparent to-accent/15" />
               <Image
                 src="/assets/images/photos/contact-handshake.jpg"
@@ -98,7 +100,7 @@ export default async function ContactPage({ params }: { params: { locale: string
               <ol className="relative mt-6 space-y-6 before:absolute before:left-[15px] before:top-3 before:bottom-3 before:w-px before:bg-border">
                 {steps.map((step, i) => (
                   <li key={step.title} className="relative flex gap-4">
-                    <span className="relative z-10 flex h-8 w-8 flex-none items-center justify-center rounded-full bg-primaryDeep font-mono text-sm text-primary-fg shadow-md ring-4 ring-background">
+                    <span className="relative z-10 flex h-8 w-8 flex-none items-center justify-center rounded-full bg-primaryDeep font-mono text-sm text-primary-fg shadow-soft ring-4 ring-background">
                       {i + 1}
                     </span>
                     <div className="pt-1">

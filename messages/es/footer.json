@@ -12,6 +12,12 @@
     "security": "Seguridad y confianza",
     "contact": "Contacto",
     "servicesOverview": "Servicios",
+    "aiDataStrategy": "Estrategia de Data & AI",
+    "cloudArchitecture": "Arquitectura en la Nube y Cimiento de Datos",
+    "dataEngineering": "Ingeniería de Datos y Pipelines",
+    "aiAnalytics": "Analítica de IA y Agentes",
+    "embeddedAnalytics": "Analítica Embebida",
+    "capabilityDevelopment": "Desarrollo de Capacidades",
     "approach": "Enfoque",
     "pricing": "Precios",
     "platform": "Plataforma",
@@ -29,6 +35,7 @@
   },
   "copyright": "© {year} {name}, Snowflake Premier Partner al servicio de América.",
   "privacy": "Privacidad",
+  "cookieSettings": "Configuración de cookies",
   "terms": "Términos",
   "linkedin": "LinkedIn"
 }

@@ -12,7 +12,7 @@ export const industriesEs: Record<string, { name?: string; headline?: string; in
     ],
     deliverables: [
       { title: "Analítica de costo y cronograma de proyecto", description: "Presupuesto frente al real, valor ganado y riesgo de cronograma en una sola vista." },
-      { title: "Tableros de portafolio y activos", description: "Ocupación, rendimiento y desempeño en todo el portafolio." },
+      { title: "Dashboards de portafolio y activos", description: "Ocupación, rendimiento y desempeño en todo el portafolio." },
       { title: "Cimiento de datos de proyecto unificado", description: "Una fuente gobernada que consolida los sistemas ERP, de proyecto y de campo." },
       { title: "Modelos de pronóstico y valuación", description: "Insumos basados en datos para valuación, planeación de capital y licitaciones." },
     ],
@@ -31,7 +31,7 @@ export const industriesEs: Record<string, { name?: string; headline?: string; in
     deliverables: [
       { title: "Analítica de éxito estudiantil", description: "Información de participación, logro y retención en un solo lugar." },
       { title: "Reportes institucionales", description: "Reportes normativos, de acreditación y para financiadores, automatizados." },
-      { title: "Tableros de inscripción y operación", description: "Admisiones, capacidad y desempeño operativo de un vistazo." },
+      { title: "Dashboards de inscripción y operación", description: "Admisiones, capacidad y desempeño operativo de un vistazo." },
       { title: "Cimiento de datos educativo unificado", description: "Una base gobernada que abarca los sistemas académicos y administrativos." },
     ],
     stats: [{ label: "Clientes en esta industria", value: "5+" }],
@@ -44,7 +44,7 @@ export const industriesEs: Record<string, { name?: string; headline?: string; in
     challenges: [
       { problem: "Fuentes de datos fragmentadas", response: "Consolidamos datos financieros complejos en un único data warehouse empresarial gobernado." },
       { problem: "Reportes de cumplimiento hechos a mano", response: "Automatizamos los reportes regulatorios y externos estructurados desde una única fuente gobernada." },
-      { problem: "Decisiones sobre datos desactualizados", response: "Entregamos analítica de autoservicio para que los equipos actúen sobre cifras actuales y confiables." },
+      { problem: "Decisiones sobre datos desactualizados", response: "Entregamos analítica de autoservicio para que los equipos actúen sobre números actuales y confiables." },
     ],
     deliverables: [
       { title: "Data warehouses empresariales", description: "Bases escalables y gobernadas para la analítica en todo el negocio." },

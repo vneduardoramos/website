@@ -25,20 +25,31 @@ export function pageMeta(opts: {
   // Accepts a plain string (page `params.locale`) so callers don't need to cast;
   // only the "es" value changes behavior, everything else resolves to the en default.
   locale?: string;
+  // Set true for routes that ship their own opengraph-image.tsx file (Next's
+  // file-based convention). Leaves the images key unset entirely so that file
+  // wins instead of being overridden by the site-wide default below.
+  ownOgFile?: boolean;
 }): Metadata {
-  const { title, description, path, image, type = "website", noindex, locale = DEFAULT_LOCALE } = opts;
+  const {
+    title,
+    description,
+    path,
+    image,
+    type = "website",
+    noindex,
+    locale = DEFAULT_LOCALE,
+    ownOgFile,
+  } = opts;
   const base = theme.brand.url;
   const isHome = path === "/" || path === "";
   const enUrl = isHome ? base : `${base}${path}`;
   const esUrl = isHome ? `${base}/es` : `${base}/es${path}`;
   const url = locale === "es" ? esUrl : enUrl;
   const abs = (src: string) => (/^https?:\/\//i.test(src) ? src : `${theme.brand.url}${src}`);
-  // Only pin an OG image when the caller passes one. Otherwise leave it unset
-  // so the cascade resolves correctly: a route's own opengraph-image.tsx file
-  // wins, and pages with neither fall back to the site-wide default declared
-  // in app/layout.tsx. (Previously this always injected og-default, which
-  // silently overrode the branded per-route opengraph-image files.)
-  const ogImage = image ? abs(image) : null;
+  // Pin an OG image when the caller passes one. Otherwise, if the route ships
+  // its own opengraph-image.tsx file, omit the images key so that file wins;
+  // every other route falls back to the site-wide default image.
+  const ogImage = image ? abs(image) : ownOgFile ? null : abs(DEFAULT_OG);
   return {
     ...(title ? { title } : {}),
     ...(description ? { description } : {}),
@@ -53,6 +64,7 @@ export function pageMeta(opts: {
       url,
       type,
       locale: locale === "es" ? "es_MX" : "en_US",
+      siteName: theme.brand.name,
       ...(ogImage ? { images: [{ url: ogImage, width: 1200, height: 630 }] } : {}),
     },
     twitter: {
@@ -75,11 +87,22 @@ export function pageMeta(opts: {
  */
 export type BreadcrumbItem = { name: string; url?: string };
 
-function absolute(url: string): string {
-  return /^https?:\/\//i.test(url) ? url : `${theme.brand.url}${url}`;
+// Resolves a breadcrumb URL for the given locale, mirroring `pageMeta`'s es
+// URL behavior so breadcrumb JSON-LD points at the same localized path the
+// page actually renders at. Absolute URLs pass through unchanged; en resolves
+// relative paths against the site root.
+function absoluteForLocale(url: string, locale: string): string {
+  if (/^https?:\/\//i.test(url)) return url;
+  if (locale !== "es") return `${theme.brand.url}${url}`;
+  const base = theme.brand.url;
+  const isHome = url === "/" || url === "";
+  return isHome ? `${base}/es` : `${base}/es${url}`;
 }
 
-export function breadcrumbLd(items: BreadcrumbItem[]): Record<string, unknown> {
+export function breadcrumbLd(
+  items: BreadcrumbItem[],
+  locale: string = DEFAULT_LOCALE,
+): Record<string, unknown> {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -87,7 +110,7 @@ export function breadcrumbLd(items: BreadcrumbItem[]): Record<string, unknown> {
       "@type": "ListItem",
       position: i + 1,
       name: c.name,
-      ...(c.url ? { item: absolute(c.url) } : {}),
+      ...(c.url ? { item: absoluteForLocale(c.url, locale) } : {}),
     })),
   };
 }

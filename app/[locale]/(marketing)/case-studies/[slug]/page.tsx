@@ -37,7 +37,7 @@ export async function generateMetadata({
   const cs = await getCaseStudyBySlug(slug, locale as Locale);
   if (!cs) {
     const t = await getTranslations({ locale, namespace: "caseStudyDetail.meta" });
-    return { title: t("fallbackTitle") };
+    return { title: t("fallbackTitle"), robots: { index: false, follow: false } };
   }
   return pageMeta({
     title: cs.title,
@@ -46,6 +46,7 @@ export async function generateMetadata({
     image: cs.heroImage,
     type: "article",
     locale,
+    ownOgFile: true,
   });
 }
 
@@ -93,6 +94,8 @@ export default async function CaseStudyDetailPage({
   const next =
     currentIndex >= 0 && currentIndex < all.length - 1 ? all[currentIndex + 1] : null;
 
+  const localePath = locale === "es" ? "/es" : "";
+
   const caseStudyLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -109,7 +112,7 @@ export default async function CaseStudyDetailPage({
       logo: { "@type": "ImageObject", url: `${theme.brand.url}/assets/viewnear-logo.png` },
     },
     image: /^https?:\/\//i.test(heroImage) ? heroImage : `${theme.brand.url}${heroImage}`,
-    mainEntityOfPage: `${theme.brand.url}/case-studies/${cs.slug}`,
+    mainEntityOfPage: `${theme.brand.url}${localePath}/case-studies/${cs.slug}`,
   };
 
   return (
@@ -142,7 +145,7 @@ export default async function CaseStudyDetailPage({
       {/* ── Full-bleed hero image (F2 cutout reveal) ────────────── */}
       <div className="container-page">
         <MaskReveal>
-          <div className="relative aspect-[21/9] w-full overflow-hidden rounded-3xl border border-border shadow-xl">
+          <div className="relative aspect-[21/9] w-full overflow-hidden rounded-3xl border border-border shadow-soft-lg">
             <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-tr from-primary/20 via-transparent to-secondary/15" />
             <Image
               src={heroImage}
@@ -158,7 +161,7 @@ export default async function CaseStudyDetailPage({
 
       {/* ── Outcome metrics (dark band for punch) ───────────────── */}
       <Section>
-        <div className="panel-dark relative overflow-hidden rounded-3xl p-10 shadow-xl md:p-14">
+        <div className="panel-dark relative overflow-hidden rounded-3xl p-10 shadow-soft-lg md:p-14">
           <div className="bg-grid pointer-events-none absolute inset-0 opacity-30" />
           <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-accent/20 blur-3xl" />
           <div className="relative">
@@ -201,7 +204,7 @@ export default async function CaseStudyDetailPage({
 
               {/* Sticky image rail for variety alongside the prose. */}
               <aside className="lg:sticky lg:top-28 lg:self-start">
-                <div className="relative overflow-hidden rounded-2xl border border-border shadow-lg">
+                <div className="relative overflow-hidden rounded-2xl border border-border shadow-soft">
                   <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-tr from-primary/15 via-transparent to-secondary/10" />
                   <Image
                     src={`/assets/images/cases/${cs.slug}-detail.jpg`}

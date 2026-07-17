@@ -11,6 +11,8 @@ import { coverFor } from "@/lib/covers";
 import { CtaBand } from "@/components/marketing/ui";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 
+export const revalidate = 60;
+
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
   setRequestLocale(locale);
@@ -60,7 +62,7 @@ export default async function BlogPage({ params }: { params: { locale: string } 
       </section>
 
       {featured ? (
-        <Section className="pt-4">
+        <Section className="pt-4 section-warm">
           <CoverCard
             href={`/blog/${featured.slug}`}
             image={featured.coverImageUrl ?? coverFor(featured.slug)}
@@ -78,15 +80,15 @@ export default async function BlogPage({ params }: { params: { locale: string } 
             }
             meta={
               featured.authorTeam
-                ? formatDate(featured.publishedAt)
-                : `${featured.author?.name ?? "Viewnear"} · ${formatDate(featured.publishedAt)}`
+                ? formatDate(featured.publishedAt, locale as Locale)
+                : `${featured.author?.name ?? "Viewnear"} · ${formatDate(featured.publishedAt, locale as Locale)}`
             }
             featured
           />
         </Section>
       ) : null}
 
-      <section className="section section-warm relative overflow-hidden">
+      <section className="section relative overflow-hidden">
         <WaveDivider position="top" fill="fill-background" />
         <SectionDecor variant="grid" />
         <div className="container-page relative">
@@ -111,8 +113,8 @@ export default async function BlogPage({ params }: { params: { locale: string } 
                   }
                   meta={
                     post.authorTeam
-                      ? formatDate(post.publishedAt)
-                      : `${post.author?.name ?? "Viewnear"} · ${formatDate(post.publishedAt)}`
+                      ? formatDate(post.publishedAt, locale as Locale)
+                      : `${post.author?.name ?? "Viewnear"} · ${formatDate(post.publishedAt, locale as Locale)}`
                   }
                 />
               ))}

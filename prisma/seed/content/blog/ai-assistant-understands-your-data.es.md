@@ -65,7 +65,7 @@ La optimización de costos sigue patrones ya conocidos de Snowflake: estructuras
 
 ## Desafíos de implementación
 
-El mayor desafío suele ser organizacional. Los equipos acostumbrados a herramientas de BI complejas a veces se resisten al enfoque simplificado. He comprobado que los proyectos de prueba de concepto bien enfocados funcionan mejor que intentar cambiar opiniones con argumentos.
+El mayor desafío suele ser organizacional. Los equipos acostumbrados a herramientas de BI complejas a veces se resisten al enfoque simplificado. He comprobado que los proyectos de POC bien enfocados funcionan mejor que intentar cambiar opiniones con argumentos.
 
 No espere a tener una calidad de datos perfecta. Los agentes funcionan bien con datos imperfectos y a menudo revelan problemas de calidad que requieren atención. Comience con lo que tiene y mejore a partir del uso.
 
@@ -73,13 +73,13 @@ La adopción por parte de los usuarios requiere capacitación en técnicas de co
 
 ## Medir el éxito
 
-Haga seguimiento tanto del desempeño técnico como del impacto en el negocio. Supervise el tiempo hasta obtener información, las tasas de éxito de las consultas y la participación de los usuarios. Para el impacto en el negocio, mida el ahorro de tiempo, la velocidad de decisión, la precisión de la información y el descubrimiento de nuevos patrones.
+Haga seguimiento tanto del desempeño técnico como del impacto en el negocio. Supervise el tiempo hasta obtener información, las tasas de éxito de las consultas y la participación de los usuarios. Para el impacto en el negocio, mida el ahorro de tiempo, la velocidad de decisión, la precisión de la información y el discovery de nuevos patrones.
 
 ## Cómo empezar
 
 Comience con escenarios de alto valor que tengan criterios de éxito claros. Concéntrese en casos de uso donde el impacto en el negocio sea evidente y medible. Prepare los datos poniendo énfasis en el contexto de negocio por encima de la perfección técnica.
 
-Empiece con un número limitado de usuarios y un alcance acotado para aprender mientras demuestra el valor. Capacite a las personas en técnicas de conversación. Escale de forma gradual con base en lo que vaya aprendiendo.
+Empiece con un número limitado de usuarios y un scope acotado para aprender mientras demuestra el valor. Capacite a las personas en técnicas de conversación. Escale de forma gradual con base en lo que vaya aprendiendo.
 
 > El éxito requiere objetivos claros, apoyo ejecutivo, participación activa de los usuarios y compromiso con la mejora continua.
 

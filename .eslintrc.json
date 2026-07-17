@@ -1,6 +1,7 @@
 {
   "extends": "next/core-web-vitals",
   "plugins": ["@typescript-eslint"],
+  "reportUnusedDisableDirectives": true,
   "rules": {
     "@typescript-eslint/no-explicit-any": "off"
   }

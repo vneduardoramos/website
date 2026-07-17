@@ -14,7 +14,7 @@ export async function BuiltWithAnthropic() {
   const points = t.raw("builtWithAnthropic.points") as { term: string; desc: string }[];
 
   return (
-    <div className="panel-indigo relative overflow-hidden rounded-3xl p-8 shadow-xl md:p-12">
+    <div className="panel-indigo relative overflow-hidden rounded-3xl p-8 shadow-soft-lg md:p-12">
       <div className="relative grid items-center gap-10 lg:grid-cols-[1fr_1.05fr]">
         {/* Left: the partnership + the case for Claude as default */}
         <div>
@@ -41,7 +41,7 @@ export async function BuiltWithAnthropic() {
         {/* Right: Claude as the default in Cortex AISQL, then the open estate */}
         <div>
           <figure>
-            <div className="overflow-hidden rounded-2xl border border-white/15 bg-[#0a1130] shadow-2xl">
+            <div className="overflow-hidden rounded-2xl border border-white/15 bg-codeInk shadow-soft-lg">
               <div aria-hidden className="flex items-center gap-1.5 border-b border-white/10 px-4 py-2.5">
                 <span className="h-2 w-2 rounded-full bg-red/70" />
                 <span className="h-2 w-2 rounded-full bg-gold/80" />

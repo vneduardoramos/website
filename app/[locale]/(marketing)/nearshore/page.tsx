@@ -155,7 +155,7 @@ export default async function NearshorePage({ params }: { params: { locale: stri
               const Icon = deliverIcons[i];
               return (
                 <div key={title} className="card card-hover flex h-full flex-col">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary/15 text-secondary">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accentDeep">
                     <Icon className="h-5 w-5" />
                   </span>
                   <h3 className="mt-4 font-display text-lg font-bold text-foreground">{title}</h3>

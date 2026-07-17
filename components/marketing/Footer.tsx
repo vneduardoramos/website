@@ -4,6 +4,7 @@ import { theme } from "@/config/theme";
 import { Logo } from "@/components/marketing/Logo";
 import { PartnerBadges } from "@/components/marketing/PartnerBadges";
 import { SnowflakeLockup } from "@/components/marketing/SnowflakeLockup";
+import { CookieSettingsButton } from "@/components/marketing/CookieSettingsButton";
 
 // `titleKey` / `linkKey` resolve against the `footer` message namespace; `label`
 // stays as the English source of truth and fallback. `href` unchanged.
@@ -24,6 +25,12 @@ const groups = [
     title: "Services",
     links: [
       { linkKey: "servicesOverview", label: "Services", href: "/services" },
+      { linkKey: "aiDataStrategy", label: "Data & AI Strategy", href: "/services/ai-data-strategy" },
+      { linkKey: "cloudArchitecture", label: "Cloud Architecture & Data Foundation", href: "/services/cloud-architecture" },
+      { linkKey: "dataEngineering", label: "Data Engineering & Pipelines", href: "/services/data-engineering" },
+      { linkKey: "aiAnalytics", label: "AI Analytics & Agents", href: "/services/data-visualisation" },
+      { linkKey: "embeddedAnalytics", label: "Embedded Analytics", href: "/services/embedded-analytics" },
+      { linkKey: "capabilityDevelopment", label: "Capability Development", href: "/services/capability-development" },
       { linkKey: "approach", label: "Approach", href: "/approach" },
       { linkKey: "pricing", label: "Pricing", href: "/pricing" },
       { linkKey: "platform", label: "Platform", href: "/platform" },
@@ -86,9 +93,9 @@ export async function Footer() {
           </div>
           {groups.map((g) => (
             <div key={g.titleKey}>
-              <h4 className="font-mono text-xs uppercase tracking-widest text-muted">
+              <h2 className="font-mono text-xs uppercase tracking-widest text-muted">
                 {t(`groups.${g.titleKey}`)}
-              </h4>
+              </h2>
               <ul className="mt-4 space-y-2.5">
                 {g.links.map((l) => (
                   <li key={l.href}>
@@ -111,6 +118,7 @@ export async function Footer() {
           </p>
           <div className="flex gap-5">
             <Link href="/privacy" className="transition-colors hover:text-primaryDeep">{t("privacy")}</Link>
+            <CookieSettingsButton label={t("cookieSettings")} />
             <Link href="/terms" className="transition-colors hover:text-primaryDeep">{t("terms")}</Link>
             <a href={theme.socials.linkedin} className="transition-colors hover:text-primaryDeep">{t("linkedin")}</a>
           </div>

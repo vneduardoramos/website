@@ -2,6 +2,11 @@
 
 Reverse-chronological record of notable changes. Finer-grained than the [decision log](decisions/); link to ADRs for the *why*.
 
+## 2026-07-17
+
+### Dead weight cleanup: unused chart deps, dead hero components, stale blur manifest
+Reverses the 2026-06-13 decision (below) to keep `HeroCarousel.tsx` and `PartnershipSlide.tsx` around "for reuse": after a month unused, they, plus `HeroDiagram.tsx`, `HorizonScene.tsx`, and `MeshConverge.tsx`, are removed as dead code (zero importers, verified). `useHeroConverge` (`Motion.tsx`) is removed too; `MeshConverge` was its only consumer. Pruned the `heroUi.carousel` and `partnershipUi.slide` message keys (en/es) that only those components read; every surviving component (`MeshHeroSlide`, `SplitVisuals`, `PartnershipHighlight`) keeps its keys untouched, and `certs/coco-momentum-summit-2026.png` stays (still rendered by `PartnershipHighlight`). Also removed the unused `chart.js` and `react-chartjs-2` dependencies (verified imported nowhere) and regenerated `lib/blur-manifest.json` via `npm run blur`.
+
 ## 2026-06-14
 
 ### Pre-publish audit + deploy-readiness fixes

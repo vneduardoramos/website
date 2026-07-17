@@ -56,7 +56,6 @@ A single official lockup, "viewnear | data + ai" (mark + wordmark + slogan), nav
 - `Breadcrumbs.tsx`, accessible breadcrumb trail (`items: {label, href?}[]`, last = current) + `BreadcrumbList` JSON-LD; used only on 2-level detail pages (`industries`/`case-studies`/`blog`/`news` `[slug]`).
 - `PartnerBadges.tsx`, Snowflake certification badges (single source: `CERTIFICATIONS`). Variants: `chips` (text pill row), `cards` (text cards), and **`logos`** (the official badge artwork, Premier circle + CoCo shield from `public/assets/images/certs/`; `size="sm"|"lg"`), small in the footer.
 - `PartnershipHighlight.tsx`, prominent partnership proof section: the official badges (large `logos` variant), the facts, three stat tiles, and the **Snowflake Summit 2026 "CoCo Global Partner Momentum" keynote slide** (`certs/coco-momentum-summit-2026.png`, framed). `title?` overrides the heading; `showCta?` adds an "Explore our partnership →" link. Used on home, About (both `showCta`), and `/partnership`.
-- `home/HeroDiagram.tsx`, the hero's right-side visual: a branded, in-code "governed Snowflake platform" data-flow diagram (sources → one governed Snowflake platform → analytics & Cortex AI), themeable via the Glacier palette, with a gentle `animate-float`. Takes an optional `team` prop and renders a floating "Real people. Senior delivery." / "SnowPro-certified team" card overhanging the panel. Replaced the earlier product-screenshot hero, which implied a proprietary product ViewNear doesn't sell ([0029](decisions/0029-hero-platform-diagram.md)).
 
 ## Eyebrow / kicker ([0027](decisions/0027-eyebrow-tag.md))
 
@@ -68,15 +67,34 @@ The cut-corner silhouette extends to two sibling utilities so the whole UI share
 
 - **Headings** use `.text-balance` (utility in `globals.css`) to avoid orphaned words / ragged wraps. Apply to new headings.
 - **Equal-height card grids:** add `auto-rows-fr` at the multi-column breakpoint and make cards `flex h-full flex-col`. `CoverCard`/`CaseStudyCard`/`TestimonialCard` already fill height.
-- Sections alternate white / `section-tint`; use `WaveDivider` between background shifts.
+- Sections alternate cool bands (plain white `background`, `.section-tint`) and warm bands (`.section-warm`), not just white / `.section-tint`; use `WaveDivider` between background shifts. See "Warm/cool rhythm" below for the rotation rules.
 - `MetricBand` values are large gradient numerals, **keep values short** (`60%`, `8–16 wks`, `2 hrs`); put phrasing in the label.
+
+### Warm/cool rhythm
+
+The page rhythm alternates cool and warm bands so no two like-toned sections sit back to back. The classes:
+
+- `.section-tint` (`globals.css`), the cool tinted band: `surface2` base lifted with faint sky and cyan glows.
+- `.section-warm` (`globals.css`), the warm tinted band: warm cream base with gold and orange glows; retints eyebrows/chips inside it to the legible burnt-orange (`accentDeep`) automatically via `--eyebrow-accent`.
+- `.panel-sunset`, the page's warmest moment: a sunset mesh over warm cream, reserved for `CtaBand`.
+- `.panel-warm`, a light warm callout box for a framed highlight inside any band (no colored top rail, a uniform warm hairline only).
+- `.panel-indigo`, the deep royal-indigo authority band, the single dark anchor with light text.
+- `.panel-dark`, despite the name, a light gradient-mesh panel (not dark) for a secondary panel moment that wants panel-scale gravity without inverting to white text.
+
+Rules:
+
+- Alternate warm and cool bands down the page; never stack two `.section-warm` bands back to back.
+- Never place a `.section-warm` band directly before `<CtaBand />` (`.panel-sunset`): two warm treatments touching flattens the CTA's pop. Keep the band right before the CTA cool (plain `section` or `.section-tint`).
+- Every page keeps at least one warm moment somewhere above the CTA. If no earlier Section reasonably takes the warm treatment, drop a `.panel-warm` callout inside a cool band instead of coloring the whole section; warm-on-cool pops.
+- Hero sections and the data/metric cards keep their own neutral treatment; they sit outside the warm/cool rotation.
+- `.panel-indigo` is reserved for exactly one dark authority moment per page. Everywhere else that wants that panel-scale weight uses `.panel-dark` instead, which reads as a light panel.
 
 ## Motion & animation
 
 Keyframes/utilities in `tailwind.config.ts`, all collapsing under the global `prefers-reduced-motion` rule in `globals.css`:
 
 - `Reveal` (`Motion.tsx`), scroll-reveal fade/slide via IntersectionObserver (`.reveal` → `.is-visible`).
-- `animate-float`, gentle vertical drift; the hero visual (`HeroDiagram` wrapper).
+- `animate-float`, gentle vertical drift (currently unused; its former consumer, `HeroDiagram`, was removed as dead code).
 - `animate-marquee`, `LogoStrip` ticker; `animate-drift`, decor blobs; `animate-pulse-dot`, status/live dots.
 - Buttons lift/brighten on hover, press on active (see Buttons).
 

@@ -10,7 +10,7 @@
 | certs/premier.webp | badge | Hero overlay | No | Official Snowflake Premier badge (triangle overlay, desktop). |
 | certs/coco-preferred.png | badge | Hero overlay | No | Official CoCo Preferred 2026 badge. |
 | certs/snowpro-core.png | badge | Hero overlay | No | Official SnowPro Core badge. |
-| certs/coco-momentum-summit-2026.png | photo | PartnershipSlide featured | Yes | Real Summit 2026 keynote screenshot. |
+| certs/coco-momentum-summit-2026.png | photo | PartnershipHighlight featured | Yes | Real Summit 2026 keynote screenshot. |
 | FoundationVisual / AiVisual | bespoke SVG | Feature splits | No | Source-consolidation + Cortex visuals. **Keep.** |
 | DataStackIcon / DocIcon | bespoke icon | Hero mesh packets | No | Glacier-palette packet icons. **Keep.** |
 | ServicesGrid area chart + Icons.tsx suite | icon | Services/methodology | No | Stroke SVG icon library. **Keep.** |

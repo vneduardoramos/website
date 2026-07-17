@@ -43,6 +43,7 @@ export async function POST(req: Request) {
         lastName: data.lastName,
         email: data.email,
         company: data.company || null,
+        role: data.role || null,
         message: data.message,
         source: "contact",
       },

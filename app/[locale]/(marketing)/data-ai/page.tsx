@@ -81,14 +81,14 @@ export default async function DataAiPage({ params }: { params: { locale: string 
       {/* WHAT WE SHIP: the dark kick. White cards on deep indigo, real
           engagement numbers on the proven ones. */}
       <Section>
-        <div className="panel-indigo relative overflow-hidden rounded-3xl p-7 shadow-xl md:p-12">
+        <div className="panel-dark relative overflow-hidden rounded-3xl p-7 shadow-soft-lg md:p-12">
           <div className="relative">
             <div className="max-w-2xl">
-              <p className="eyebrow eyebrow--invert mb-4">{t("ship.eyebrow")}</p>
-              <h2 className="font-display text-3xl font-bold tracking-tight text-white md:text-[2.6rem] md:leading-[1.08]">
+              <p className="eyebrow mb-4">{t("ship.eyebrow")}</p>
+              <h2 className="font-display text-3xl font-bold tracking-tight text-foreground md:text-[2.6rem] md:leading-[1.08]">
                 {t("ship.title")}
               </h2>
-              <p className="mt-4 max-w-xl text-lg leading-relaxed text-white/75">
+              <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
                 {t("ship.intro")}
               </p>
             </div>
@@ -114,10 +114,10 @@ export default async function DataAiPage({ params }: { params: { locale: string 
                 </LedgerCard>
               ))}
             </RevealGroup>
-            <p className="mt-8 text-center text-sm text-white/70">
+            <p className="mt-8 text-center text-sm text-muted">
               {t.rich("useCasesFootnote", {
                 link: (c) => (
-                  <Link href="/contact" className="font-semibold text-white underline-offset-4 hover:underline">
+                  <Link href="/contact" className="font-semibold text-primaryDeep underline-offset-4 hover:underline">
                     {c}
                   </Link>
                 ),

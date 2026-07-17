@@ -80,7 +80,7 @@
       "products": [
         { "name": "Cortex AISQL", "status": "GA", "desc": "Invoque LLMs y funciones de ML directamente desde SQL: COMPLETE, SENTIMENT, SUMMARIZE." },
         { "name": "Cortex Analyst", "status": "GA", "desc": "Preguntas en lenguaje natural respondidas frente a modelos semánticos gobernados." },
-        { "name": "Snowflake CoWork", "status": "GA", "desc": "Respuestas agénticas y citadas y tableros gobernados para trabajadores del conocimiento." },
+        { "name": "Snowflake CoWork", "status": "GA", "desc": "Respuestas agénticas y citadas y dashboards gobernados para trabajadores del conocimiento." },
         { "name": "Snowflake CoCo", "status": "GA", "desc": "Agente de programación para el desarrollo de IA empresarial, validado antes de producción." },
         { "name": "Cortex Training", "status": "Preview", "desc": "Ajuste modelos de pesos abiertos en GPUs gestionadas; los datos nunca se mueven." }
       ]
@@ -89,7 +89,7 @@
       "layer": "Consumo y aplicaciones",
       "blurb": "Lleve el conocimiento a donde trabajan las personas: sobre datos gobernados, no un stack de BI aparte que haya que asegurar.",
       "products": [
-        { "name": "Snowsight", "status": "GA", "desc": "Tableros gobernados y exploración ad hoc listos para usar." },
+        { "name": "Snowsight", "status": "GA", "desc": "Dashboards gobernados y exploración ad hoc listos para usar." },
         { "name": "Streamlit in Snowflake", "status": "GA", "desc": "Aplicaciones de datos interactivas desplegadas justo junto a los datos." },
         { "name": "Snowflake CoWork", "status": "GA", "desc": "Analítica en lenguaje sencillo para todo el negocio." }
       ]

@@ -55,7 +55,7 @@ export default async function ResourcesPage({ params }: { params: { locale: stri
 
       {/* Start here: one engagement + one field note, large and side by side */}
       {(featuredStudy || featuredPost) && (
-        <Section>
+        <Section className="section-warm">
           <SectionHeading
             eyebrow={t("startHere.eyebrow")}
             title={t("startHere.title")}
@@ -98,8 +98,8 @@ export default async function ResourcesPage({ params }: { params: { locale: stri
                 }
                 meta={
                   featuredPost.authorTeam
-                    ? formatDate(featuredPost.publishedAt)
-                    : `Viewnear · ${formatDate(featuredPost.publishedAt)}`
+                    ? formatDate(featuredPost.publishedAt, locale as Locale)
+                    : `Viewnear · ${formatDate(featuredPost.publishedAt, locale as Locale)}`
                 }
               />
             )}
@@ -133,7 +133,7 @@ export default async function ResourcesPage({ params }: { params: { locale: stri
 
       {/* Blog */}
       {restPosts.length > 0 && (
-        <Section className="section-warm">
+        <Section>
           <div className="flex items-end justify-between gap-4">
             <SectionHeading eyebrow={t("blog.eyebrow")} title={t("blog.title")} />
             <SeeAll href="/blog" label={t("blog.seeAll")} />
@@ -158,8 +158,8 @@ export default async function ResourcesPage({ params }: { params: { locale: stri
                 }
                 meta={
                   post.authorTeam
-                    ? formatDate(post.publishedAt)
-                    : `Viewnear · ${formatDate(post.publishedAt)}`
+                    ? formatDate(post.publishedAt, locale as Locale)
+                    : `Viewnear · ${formatDate(post.publishedAt, locale as Locale)}`
                 }
               />
             ))}

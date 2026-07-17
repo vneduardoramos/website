@@ -52,7 +52,6 @@ const TABLES = [
 ] as const;
 
 type Row = Record<string, unknown>;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const model = (name: string) => (prisma as any)[name];
 
 async function exportContent() {

@@ -86,7 +86,7 @@ Los enfoques de modelado de datos cambian cuando desaparecen las restricciones d
 
 ## Cómo empezar
 
-Comience con un caso de uso específico que demuestre un valor claro. Elija algo lo suficientemente importante como para llamar la atención, pero lo suficientemente acotado como para gestionar el riesgo. Los proyectos de prueba de concepto funcionan mejor que las migraciones integrales para lograr un éxito inicial.
+Comience con un caso de uso específico que demuestre un valor claro. Elija algo lo suficientemente importante como para llamar la atención, pero lo suficientemente acotado como para gestionar el riesgo. Los proyectos de POC funcionan mejor que las migraciones integrales para lograr un éxito inicial.
 
 Concéntrese en mostrar capacidades que antes no eran posibles en lugar de solo replicar la funcionalidad existente. La analítica en tiempo real, el procesamiento de datos a gran escala o la compartición de datos simplificada suelen ofrecer demostraciones convincentes.
 

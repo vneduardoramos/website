@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Viewnear: Data & AI practice, up and running.",
-    "description": "Viewnear helps enterprises stand up two capabilities they keep: a data practice that feeds real decisions with governed, trusted data, and an AI practice that ships use cases into production. Built on Snowflake, run by in-house teams, across the Americas."
+    "description": "Viewnear stands up two capabilities enterprises keep: governed data for real decisions, and an AI practice shipping to production, on Snowflake, run in-house."
   },
   "foundation": {
     "eyebrow": "The foundation",

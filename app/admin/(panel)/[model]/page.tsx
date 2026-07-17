@@ -22,7 +22,6 @@ export default async function ModelListPage({
   const model = getModel(params.model);
   if (!model) notFound();
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rows: any[] = await (prisma as any)[model.key].findMany({
     orderBy: model.defaultOrderBy ?? { id: "desc" },
   });

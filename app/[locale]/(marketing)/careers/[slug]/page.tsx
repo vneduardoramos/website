@@ -31,7 +31,7 @@ export async function generateMetadata({
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "careerDetail.meta" });
   const job = await getJobOpeningBySlug(slug, locale as Locale);
-  if (!job) return { title: t("fallbackTitle") };
+  if (!job) return { title: t("fallbackTitle"), robots: { index: false, follow: false } };
   return pageMeta({
     title: t("titleTemplate", { title: job.title }),
     description: job.description,
@@ -67,6 +67,8 @@ export default async function CareerDetailPage({
   const skills = asStringArray(job.skills);
   const isRemote = (job.location ?? "").toLowerCase().includes("remote");
 
+  const localePath = locale === "es" ? "/es" : "";
+
   const jobLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "JobPosting",
@@ -86,7 +88,7 @@ export default async function CareerDetailPage({
       logo: `${theme.brand.url}/assets/viewnear-logo.png`,
     },
     directApply: true,
-    url: `${theme.brand.url}/careers/${job.slug}`,
+    url: `${theme.brand.url}${localePath}/careers/${job.slug}`,
   };
 
   if (job.location) {
@@ -130,7 +132,7 @@ export default async function CareerDetailPage({
         </div>
       </PageHero>
 
-      <Section className="pt-8 md:pt-10">
+      <Section className="pt-8 md:pt-10 section-warm">
         <div className="mx-auto max-w-3xl">
           {job.body ? (
             <div className="prose-vn">
@@ -158,7 +160,7 @@ export default async function CareerDetailPage({
       </Section>
 
       {/* Life at Viewnear: culture + benefits, so candidates see the whole picture. */}
-      <Section className="section-warm">
+      <Section>
         <div className="mx-auto max-w-4xl">
           <SectionHeading
             eyebrow={t("life.eyebrow")}
@@ -188,7 +190,7 @@ export default async function CareerDetailPage({
           center
         />
         <div className="mx-auto mt-12 max-w-2xl">
-          <ApplicationForm openingTitle={job.title} />
+          <ApplicationForm openingTitle={job.title} openingId={job.id} />
         </div>
       </Section>
 

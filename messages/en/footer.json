@@ -12,6 +12,12 @@
     "security": "Security & Trust",
     "contact": "Contact",
     "servicesOverview": "Services",
+    "aiDataStrategy": "Data & AI Strategy",
+    "cloudArchitecture": "Cloud Architecture & Data Foundation",
+    "dataEngineering": "Data Engineering & Pipelines",
+    "aiAnalytics": "AI Analytics & Agents",
+    "embeddedAnalytics": "Embedded Analytics",
+    "capabilityDevelopment": "Capability Development",
     "approach": "Approach",
     "pricing": "Pricing",
     "platform": "Platform",
@@ -29,6 +35,7 @@
   },
   "copyright": "© {year} {name}, Snowflake Premier Partner serving {region}.",
   "privacy": "Privacy",
+  "cookieSettings": "Cookie settings",
   "terms": "Terms",
   "linkedin": "LinkedIn"
 }

@@ -1,7 +1,7 @@
 {
   "chip": "Nuestra metodología",
   "heading": "Cómo entregamos y <hl>seguimos entregando</hl>",
-  "intro": "Un ciclo de seis pasos, no un proyecto de un solo sentido. Trabajamos un caso de uso prioritario a la vez, llevando cada uno desde el descubrimiento hasta datos gobernados y potenciados por Cortex en producción sobre Snowflake, y luego comenzamos el siguiente. La base gobernada y lista para IA crece con el negocio a medida que seguimos entregando.",
+  "intro": "Un ciclo de seis pasos, no un proyecto de un solo sentido. Trabajamos un caso de uso prioritario a la vez, llevando cada uno desde el discovery hasta datos gobernados y potenciados por Cortex en producción sobre Snowflake, y luego comenzamos el siguiente. La base gobernada y lista para IA crece con el negocio a medida que seguimos entregando.",
   "steps": [
     {
       "title": "Descubrir",

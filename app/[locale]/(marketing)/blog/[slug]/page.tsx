@@ -38,7 +38,7 @@ export async function generateMetadata({
   const post = await getBlogPostBySlug(slug, locale as Locale);
   if (!post) {
     const t = await getTranslations({ locale, namespace: "blogDetail.meta" });
-    return { title: t("fallbackTitle") };
+    return { title: t("fallbackTitle"), robots: { index: false, follow: false } };
   }
   return pageMeta({
     title: post.title,
@@ -47,6 +47,7 @@ export async function generateMetadata({
     image: post.coverImageUrl,
     type: "article",
     locale,
+    ownOgFile: true,
   });
 }
 
@@ -82,6 +83,8 @@ export default async function BlogPostPage({
   const recent = await getBlogPosts({ take: 4 }, locale as Locale);
   const related = recent.filter((p) => p.slug !== post.slug).slice(0, 3);
 
+  const localePath = locale === "es" ? "/es" : "";
+
   const articleLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -108,8 +111,8 @@ export default async function BlogPostPage({
       ? coverIsRemote
         ? cover
         : `${theme.brand.url}${cover}`
-      : `${theme.brand.url}/blog/${post.slug}/opengraph-image`,
-    mainEntityOfPage: `${theme.brand.url}/blog/${post.slug}`,
+      : `${theme.brand.url}${localePath}/blog/${post.slug}/opengraph-image`,
+    mainEntityOfPage: `${theme.brand.url}${localePath}/blog/${post.slug}`,
   };
 
   return (
@@ -149,12 +152,12 @@ export default async function BlogPostPage({
             {author ? (
               <div className="mt-6 flex flex-wrap items-center gap-4 border-t border-border pt-6">
                 {authorPhoto ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
+                  <Image
                     src={authorPhoto}
                     alt={author.name}
-                    loading="lazy"
-                    decoding="async"
+                    width={48}
+                    height={48}
+                    sizes="48px"
                     className="h-12 w-12 shrink-0 rounded-full object-cover"
                   />
                 ) : (
@@ -168,7 +171,7 @@ export default async function BlogPostPage({
                     <p className="text-sm text-muted">{author.title}</p>
                   ) : null}
                   <p className="mt-0.5 text-xs text-muted">
-                    {formatDate(post.publishedAt)} · {t("readTime", { minutes: readingTime })}
+                    {formatDate(post.publishedAt, locale as Locale)} · {t("readTime", { minutes: readingTime })}
                   </p>
                   {author.linkedinUrl ? (
                     <a
@@ -188,7 +191,7 @@ export default async function BlogPostPage({
                   {post.author?.name ?? "Viewnear"}
                 </span>
                 <span aria-hidden>·</span>
-                <span>{formatDate(post.publishedAt)}</span>
+                <span>{formatDate(post.publishedAt, locale as Locale)}</span>
                 <span aria-hidden>·</span>
                 <span>{t("readTime", { minutes: readingTime })}</span>
               </div>
@@ -199,7 +202,7 @@ export default async function BlogPostPage({
 
       {cover ? (
         <div className="container-page mt-10">
-          <div className="relative aspect-[2/1] w-full overflow-hidden rounded-3xl bg-surface2 shadow-lg md:aspect-[21/9]">
+          <div className="relative aspect-[2/1] w-full overflow-hidden rounded-3xl bg-surface2 shadow-soft md:aspect-[21/9]">
             <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-deep/20 to-transparent" />
             <Image
               src={cover}
@@ -213,7 +216,7 @@ export default async function BlogPostPage({
         </div>
       ) : null}
 
-      <Section className="pt-12">
+      <Section className={`pt-12 ${related.length ? "section-warm" : ""}`}>
         <KeyTakeaways items={takeaways} />
 
         <div className="mt-12">
@@ -236,7 +239,7 @@ export default async function BlogPostPage({
       </Section>
 
       {related.length ? (
-        <section className="section section-warm relative overflow-hidden">
+        <section className="section relative overflow-hidden">
           <SectionDecor variant="grid" />
           <div className="container-page relative">
             <h2 className="font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
@@ -262,8 +265,8 @@ export default async function BlogPostPage({
                   }
                   meta={
                     p.authorTeam
-                      ? formatDate(p.publishedAt)
-                      : `${p.author?.name ?? "Viewnear"} · ${formatDate(p.publishedAt)}`
+                      ? formatDate(p.publishedAt, locale as Locale)
+                      : `${p.author?.name ?? "Viewnear"} · ${formatDate(p.publishedAt, locale as Locale)}`
                   }
                 />
               ))}

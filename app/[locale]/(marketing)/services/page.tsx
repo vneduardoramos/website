@@ -22,11 +22,19 @@ import { JsonLd } from "@/components/JsonLd";
 import { theme } from "@/config/theme";
 import type { Locale } from "@/lib/i18n-content";
 
+export const revalidate = 60;
+
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "services.meta" });
-  return pageMeta({ title: t("title"), description: t("description"), path: "/services", locale });
+  return pageMeta({
+    title: t("title"),
+    description: t("description"),
+    path: "/services",
+    locale,
+    ownOgFile: true,
+  });
 }
 
 type TierMeta = {
@@ -113,7 +121,7 @@ export default async function ServicesPage({ params }: { params: { locale: strin
 
   return (
     <>
-      <JsonLd data={[serviceLd, breadcrumbLd([{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }])]} />
+      <JsonLd data={[serviceLd, breadcrumbLd([{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }], locale)]} />
       <PageHero
         eyebrow={t("hero.eyebrow")}
         title={t.rich("hero.title", {
@@ -163,24 +171,29 @@ export default async function ServicesPage({ params }: { params: { locale: strin
                 {services.map((service, i) => {
                   const tools = asStringArray(service.tools);
                   return (
-                    <LedgerCard
+                    <Link
                       key={service.slug}
-                      eyebrow={text?.eyebrow ?? tier}
-                      index={String(offset + i + 1).padStart(2, "0")}
-                      title={service.title}
-                      foot={
-                        tools.length > 0
-                          ? [t("toolsLabel"), tools.join(" · ")]
-                          : undefined
-                      }
+                      href={`/services/${service.slug}`}
+                      className="block h-full"
                     >
-                      <p>{service.summary}</p>
-                      {service.body && (
-                        <div className="prose-vn mt-3 text-sm">
-                          <Markdown>{service.body}</Markdown>
-                        </div>
-                      )}
-                    </LedgerCard>
+                      <LedgerCard
+                        eyebrow={text?.eyebrow ?? tier}
+                        index={String(offset + i + 1).padStart(2, "0")}
+                        title={service.title}
+                        foot={
+                          tools.length > 0
+                            ? [t("toolsLabel"), tools.join(" · ")]
+                            : undefined
+                        }
+                      >
+                        <p>{service.summary}</p>
+                        {service.body && (
+                          <div className="prose-vn mt-3 text-sm">
+                            <Markdown>{service.body}</Markdown>
+                          </div>
+                        )}
+                      </LedgerCard>
+                    </Link>
                   );
                 })}
               </RevealGroup>

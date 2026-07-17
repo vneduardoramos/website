@@ -2,6 +2,7 @@ import type { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/db";
+import { rateLimit, peek } from "@/lib/ratelimit";
 
 // Fail fast when the production server boots with a guessable/default secret.
 // Skipped during `next build` (NEXT_PHASE === "phase-production-build"), which
@@ -28,14 +29,39 @@ export const authOptions: NextAuthOptions = {
         email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials) {
+      async authorize(credentials, req) {
         if (!credentials?.email || !credentials?.password) return null;
+        const email = credentials.email.toLowerCase();
+        // Rightmost X-Forwarded-For hop: Render is the single trusted proxy
+        // and appends the real client IP there (see lib/ratelimit.ts).
+        const xff = req?.headers?.["x-forwarded-for"] as string | undefined;
+        const ip = xff?.split(",").pop()?.trim() || "unknown";
+        // Brute-force guard, keyed by email first (so one account can't be
+        // hammered from many IPs) and by IP second (so one IP can't spray
+        // many emails). Checked before the prisma lookup so a flood of
+        // invalid credentials never reaches the database or bcrypt.
+        // Pre-lookup IP shield: bounds total attempts per IP so a flood of
+        // invalid credentials never reaches the database or bcrypt.
+        if (!rateLimit(`login-ip:${ip}`, { limit: 20, windowMs: 15 * 60_000 }).ok) {
+          return null;
+        }
+        // Per-email budget enforced by peek (no increment), so repeated failures
+        // lock out an account even across IPs, while successful logins never
+        // consume the budget and thus can't lock the admin out.
+        if (!peek(`login:${email}`, { limit: 5 })) {
+          return null; // NextAuth surfaces this as a generic CredentialsSignin error
+        }
         const user = await prisma.user.findUnique({
-          where: { email: credentials.email.toLowerCase() },
+          where: { email },
         });
-        if (!user) return null;
-        const ok = await bcrypt.compare(credentials.password, user.passwordHash);
-        if (!ok) return null;
+        const ok = user
+          ? await bcrypt.compare(credentials.password, user.passwordHash)
+          : false;
+        if (!user || !ok) {
+          // Count this failure (bad email or bad password) against the budget.
+          rateLimit(`login:${email}`, { limit: 5, windowMs: 15 * 60_000 });
+          return null;
+        }
         return {
           id: user.id,
           email: user.email,

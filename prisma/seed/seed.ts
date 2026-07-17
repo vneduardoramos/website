@@ -41,12 +41,22 @@ async function main() {
 
   // --- Admin user ---
   const email = (process.env.SEED_ADMIN_EMAIL || "admin@viewnear.com").toLowerCase();
-  const password = process.env.SEED_ADMIN_PASSWORD || "changeme123";
+  const seedPassword = process.env.SEED_ADMIN_PASSWORD;
+  const name = process.env.SEED_ADMIN_NAME || "Viewnear Admin";
+  if ((process.env.NODE_ENV === "production" || process.env.RENDER) && !seedPassword) {
+    throw new Error("SEED_ADMIN_PASSWORD must be set when seeding production");
+  }
+  // Dev-only fallback so a fresh local DB is still usable out of the box.
+  // Only reached when not seeding production (guarded above).
+  const password = seedPassword || "changeme123";
   const passwordHash = await bcrypt.hash(password, 10);
   const admin = await prisma.user.upsert({
     where: { email },
-    update: { passwordHash, role: "ADMIN", name: process.env.SEED_ADMIN_NAME || "Viewnear Admin" },
-    create: { email, passwordHash, role: "ADMIN", name: process.env.SEED_ADMIN_NAME || "Viewnear Admin" },
+    // No passwordHash here unless SEED_ADMIN_PASSWORD was explicitly set, so
+    // re-running the seed locally (var unset) never downgrades a password
+    // that was since changed through the admin UI.
+    update: { role: "ADMIN", name, ...(seedPassword ? { passwordHash } : {}) },
+    create: { email, passwordHash, role: "ADMIN", name },
   });
   console.log(`  admin: ${admin.email}`);
 

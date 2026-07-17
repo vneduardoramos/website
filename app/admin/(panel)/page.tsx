@@ -7,7 +7,6 @@ export const dynamic = "force-dynamic";
 export default async function AdminDashboard() {
   const entries = await Promise.all(
     Object.values(ADMIN_MODELS).map(async (m) => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const count = await (prisma as any)[m.key].count();
       return { model: m, count };
     })

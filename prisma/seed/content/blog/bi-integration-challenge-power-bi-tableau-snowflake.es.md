@@ -135,7 +135,7 @@ La clave está en diseñar integraciones pensando en la flexibilidad y la gobern
 
 Empiece por entender lo que tiene y lo que la gente realmente necesita. No intente resolver todos los escenarios posibles en la primera implementación. Diseñe una arquitectura de integración capaz de crecer en lugar de tratar de predecir cada requisito futuro.
 
-Haga pilotos con casos de uso enfocados para demostrar valor antes de intentar un despliegue integral. El éxito con un alcance limitado genera confianza y aporta aprendizajes que informan despliegues más amplios.
+Haga pilotos con casos de uso enfocados para demostrar valor antes de intentar un despliegue integral. El éxito con un scope limitado genera confianza y aporta aprendizajes que informan despliegues más amplios.
 
 Haga de la optimización un esfuerzo continuo y no algo que se hace una sola vez. Las necesidades de los usuarios cambian, los datos crecen, las capacidades de la plataforma se amplían. Las revisiones periódicas de rendimiento y el feedback de los usuarios aseguran que las integraciones sigan aportando valor a medida que evolucionan los requisitos.
 

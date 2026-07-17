@@ -1,8 +1,15 @@
 "use client";
 import { createContext, useContext, useState } from "react";
+import dynamic from "next/dynamic";
 import { useSession } from "next-auth/react";
-import { ImageEditOverlay } from "@/components/marketing/ImageEditOverlay";
 import type { ImageOverrideData } from "@/lib/image-overrides";
+
+// Code-split the 363-line editor (plus its Pexels UI) out of the shared
+// bundle: anonymous visitors never render it, only admins who open it.
+const ImageEditOverlay = dynamic(
+  () => import("@/components/marketing/ImageEditOverlay").then((m) => m.ImageEditOverlay),
+  { ssr: false }
+);
 
 export type EditRequest = {
   key: string;

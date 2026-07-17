@@ -11,7 +11,9 @@ export function LocaleSwitcher({ className = "" }: { className?: string }) {
     <Link
       href={pathname}
       locale={other}
-      aria-label={t("switchLanguage")}
+      lang={other}
+      hrefLang={other}
+      aria-label={t("switchToTarget")}
       className={className || "rounded-lg px-2 py-1 text-sm font-medium text-foreground/80 transition-colors hover:text-primaryDeep"}
     >
       {other.toUpperCase()}

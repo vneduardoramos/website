@@ -60,7 +60,7 @@ export function renderOg({ title, eyebrow }: { title: string; eyebrow?: string }
         <div style={{ display: "flex", alignItems: "center", fontSize: "30px", fontWeight: 700, color: "#0F2530" }}>
           <span style={{ display: "flex", width: "18px", height: "18px", background: "#FFA000", borderRadius: "50%", marginRight: "14px" }} />
           {theme.brand.name.toLowerCase()}
-          <span style={{ color: "#5C7385", fontWeight: 500, marginLeft: "12px" }}>| data + ai</span>
+          <span style={{ color: "#546C7E", fontWeight: 500, marginLeft: "12px" }}>| data + ai</span>
         </div>
       </div>
     ),

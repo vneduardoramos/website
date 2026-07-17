@@ -54,23 +54,30 @@ export default async function MarketingLayout({
   const t = await getTranslations("common");
   const navData = await getNavData(locale);
   const overrides = await getImageOverrides();
+  const adminEnabled =
+    process.env.ADMIN_ENABLED === "true" || process.env.NODE_ENV === "development";
+  const body = (
+    <div className="flex min-h-screen flex-col">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-primaryDeep focus:px-4 focus:py-2 focus:text-white focus:shadow-soft-lg"
+      >
+        {t("skipToContent")}
+      </a>
+      <Nav navData={navData} />
+      <main id="main-content" className="flex-1">{children}</main>
+      <Footer />
+    </div>
+  );
   return (
-    <AuthProvider>
-      <ImageOverrideProvider value={overrides}>
-        <EditModeProvider>
-          <div className="flex min-h-screen flex-col">
-            <a
-              href="#main-content"
-              className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-primaryDeep focus:px-4 focus:py-2 focus:text-white focus:shadow-soft-lg"
-            >
-              {t("skipToContent")}
-            </a>
-            <Nav navData={navData} />
-            <main id="main-content" className="flex-1">{children}</main>
-            <Footer />
-          </div>
-        </EditModeProvider>
-      </ImageOverrideProvider>
-    </AuthProvider>
+    <ImageOverrideProvider value={overrides}>
+      {adminEnabled ? (
+        <AuthProvider>
+          <EditModeProvider>{body}</EditModeProvider>
+        </AuthProvider>
+      ) : (
+        body
+      )}
+    </ImageOverrideProvider>
   );
 }

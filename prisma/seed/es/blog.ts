@@ -20,7 +20,7 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
       "El servicio al cliente es el mejor punto de partida porque el valor es inmediato: los agentes dan a los representantes el historial completo de un cliente y la memoria institucional de casos anteriores.",
       "La preparación de datos se trata de contexto de negocio, no de ingeniería pesada: nombres de campos legibles, categorías significativas y reglas de negocio documentadas.",
       "La seguridad y el costo se comportan como el resto de Snowflake, con seguridad a nivel de fila, enmascaramiento, registros de auditoría compartidos y precios transparentes basados en consumo.",
-      "El mayor obstáculo suele ser organizacional, así que comience con casos de uso de alto valor, alcance limitado y capacitación enfocada en técnicas de conversación.",
+      "El mayor obstáculo suele ser organizacional, así que comience con casos de uso de alto valor, scope limitado y capacitación enfocada en técnicas de conversación.",
     ],
   },
   "data-warehouse-revolution-five-years": {
@@ -31,7 +31,7 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
       "Separar cómputo y almacenamiento es la clave: cada uno escala de forma independiente, y la arquitectura multiclúster evita que las cargas de trabajo interfieran entre sí.",
       "Operaciones casi sin mantenimiento, escalado instantáneo y compartición de datos en vivo permiten a los equipos concentrarse en los problemas de negocio en lugar de en la carga administrativa.",
       "Los precios basados en consumo alinean el costo con el uso real, pero exigen nuevos hábitos de monitoreo para evitar sorpresas durante el desarrollo y las pruebas.",
-      "Comience con una prueba de concepto enfocada y de alto valor que muestre las nuevas capacidades, en lugar de intentar una migración completa de entrada.",
+      "Comience con un POC enfocado y de alto valor que muestre las nuevas capacidades, en lugar de intentar una migración completa de entrada.",
     ],
   },
   "bi-integration-challenge-power-bi-tableau-snowflake": {
@@ -86,7 +86,7 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
       "Cortex AISQL aplica IA generativa directamente dentro de SQL, resumiendo, analizando y clasificando datos no estructurados sin sacar nada de Snowflake.",
       "Adaptive Compute, Gen 2 Warehouses y valores de seguridad predeterminados más sólidos (passkeys, MFA, monitoreo de credenciales filtradas) liberan tiempo para el diseño estratégico por encima del ajuste manual.",
       "Los dbt Projects nativos en Snowsight estrechan el ciclo de analytics engineering, y Openflow (mediante la adquisición de Datavolo) apunta hacia un movimiento de datos más rico dentro de la plataforma.",
-      "Viewnear ya está actuando: pilotos de Cortex AISQL, líneas base de arquitectura actualizadas para Gen 2, y definición de alcance de Snowflake CoWork dentro de las organizaciones de los clientes.",
+      "Viewnear ya está actuando: pilotos de Cortex AISQL, líneas base de arquitectura actualizadas para Gen 2, y definición de scope de Snowflake CoWork dentro de las organizaciones de los clientes.",
     ],
   },
   "snowflake-cortex-aisql-first-look": {

@@ -17,8 +17,9 @@ export async function notify({ subject, text }: NotifyArgs): Promise<void> {
     return;
   }
 
+  let res: Response;
   try {
-    await fetch("https://api.resend.com/emails", {
+    res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${apiKey}`,
@@ -33,5 +34,12 @@ export async function notify({ subject, text }: NotifyArgs): Promise<void> {
     });
   } catch (err) {
     console.error("[notify] failed to send email:", err);
+    throw err;
+  }
+
+  if (!res.ok) {
+    const body = await res.text().catch(() => "");
+    console.error(`[notify] Resend ${res.status}: ${body}`);
+    throw new Error(`Resend responded ${res.status}`);
   }
 }

@@ -40,7 +40,7 @@ export default async function SecurityPage({ params }: { params: { locale: strin
 
   return (
     <>
-      <JsonLd data={breadcrumbLd([{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }])} />
+      <JsonLd data={breadcrumbLd([{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }], locale)} />
       <div className="relative overflow-hidden">
         <SectionDecor variant="grid" />
         <div className="relative">
