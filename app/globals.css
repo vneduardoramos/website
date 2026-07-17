@@ -9,7 +9,7 @@
   --color-surface2: 234 244 251; /*    #EAF4FB soft tinted bands / hover fills */
   --color-border: 224 235 244; /*      #E0EBF4 hairline borders */
   --color-foreground: 15 37 48; /*     #0F2530 near-navy text */
-  --color-muted: 92 115 133; /*        #5C7385 secondary / caption text */
+  --color-muted: 84 108 126; /*        #546C7E secondary / caption text */
   --color-primary: 41 181 232; /*      #29B5E8 signature sky-blue */
   --color-primary-fg: 255 255 255;
   --color-primary-deep: 11 110 153; /* #0B6E99 legible blue (small text / links / hovers) */

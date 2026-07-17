@@ -588,7 +588,7 @@ export function Nav({ navData }: { navData?: NavData }) {
                             // distinct without per-link icons. Color keys off the
                             // English `group` value; the label itself is translated.
                             const groupHeader = (name: string) =>
-                              /how we work/i.test(name) ? "text-accentDeep/80" : "text-royal/75";
+                              /how we work/i.test(name) ? "text-accentDeep" : "text-royal";
                             const groupLabel = (name: string) =>
                               /how we work/i.test(name) ? t("groups.howWeWork") : t("groups.whatWeDo");
 
