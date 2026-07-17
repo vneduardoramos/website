@@ -25,7 +25,10 @@ not used.
 2. **Dump SQLite** (before switching the client): `scripts/export-sqlite.ts`
    reads every model → `prisma/data-export.json`.
 3. **Switch Prisma**: edit `schema.prisma` provider, delete `schema.postgres.prisma`,
-   `prisma generate`, `prisma migrate dev --name init`.
+   `prisma generate`, `prisma migrate dev --name init`. (Superseded: the
+   generated migrations were later removed; the live schema path is
+   `prisma db push` everywhere, and a full local reset is `npm run db:reset`,
+   which runs `prisma db push --force-reset && prisma db seed`.)
 4. **Import**: `scripts/import-postgres.ts` loads the JSON, inserts in FK-safe
    order, reconnects BlogPost↔Tag m2m.
 5. **Verify**: per-model row-count parity, `npm run typecheck`, `next dev` smoke.
