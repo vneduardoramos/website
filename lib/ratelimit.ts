@@ -58,6 +58,18 @@ export function clientIp(req: Request): string {
   return req.headers.get("x-real-ip") ?? "unknown";
 }
 
+/**
+ * Read-only check: true if `key` is still under `limit` (not yet blocked),
+ * WITHOUT consuming a slot. Lets a caller enforce a budget up front while
+ * leaving the actual increment to a later, conditional rateLimit() call, e.g.
+ * count only failed logins so successful logins never exhaust the budget.
+ */
+export function peek(key: string, opts: { limit: number }): boolean {
+  const b = buckets.get(key);
+  if (!b || Date.now() > b.resetAt) return true;
+  return b.count < opts.limit;
+}
+
 /** Exposed only so unit tests can assert the eviction sweep actually runs. */
 export function __bucketCount(): number {
   return buckets.size;

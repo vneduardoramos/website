@@ -117,10 +117,21 @@ export async function POST(req: Request) {
     connect: {
       lookup: (
         _hostname: string,
-        _options: unknown,
-        callback: (err: Error | null, address: string, family: number) => void
+        options: { all?: boolean } | undefined,
+        callback: (
+          err: Error | null,
+          address: string | { address: string; family: number }[],
+          family?: number
+        ) => void
       ) => {
-        callback(null, validatedAddr.address, validatedAddr.family);
+        // Node 22 defaults autoSelectFamily=true, so undici calls lookup with
+        // { all: true } and expects the array form; older Node uses the single
+        // form. Support both so the pinned address is returned either way.
+        if (options?.all) {
+          callback(null, [{ address: validatedAddr.address, family: validatedAddr.family }]);
+        } else {
+          callback(null, validatedAddr.address, validatedAddr.family);
+        }
       },
     },
   });
