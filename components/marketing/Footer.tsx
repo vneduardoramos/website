@@ -4,6 +4,7 @@ import { theme } from "@/config/theme";
 import { Logo } from "@/components/marketing/Logo";
 import { PartnerBadges } from "@/components/marketing/PartnerBadges";
 import { SnowflakeLockup } from "@/components/marketing/SnowflakeLockup";
+import { CookieSettingsButton } from "@/components/marketing/CookieSettingsButton";
 
 // `titleKey` / `linkKey` resolve against the `footer` message namespace; `label`
 // stays as the English source of truth and fallback. `href` unchanged.
@@ -111,6 +112,7 @@ export async function Footer() {
           </p>
           <div className="flex gap-5">
             <Link href="/privacy" className="transition-colors hover:text-primaryDeep">{t("privacy")}</Link>
+            <CookieSettingsButton label={t("cookieSettings")} />
             <Link href="/terms" className="transition-colors hover:text-primaryDeep">{t("terms")}</Link>
             <a href={theme.socials.linkedin} className="transition-colors hover:text-primaryDeep">{t("linkedin")}</a>
           </div>
