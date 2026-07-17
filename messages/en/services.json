@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Services: THINK · BUILD · GROW",
-    "description": "THINK, BUILD, GROW: strategy, engineering, and enablement to stand up a data practice and an AI practice on Snowflake, built for in-house teams to run."
+    "title": "Snowflake Data & AI Services",
+    "description": "Snowflake data and AI services: strategy, migration, engineering, analytics, and AI agents. Snowflake Premier Partner, nearshore delivery across the Americas."
   },
   "breadcrumb": {
     "home": "Home",
@@ -9,7 +9,7 @@
   },
   "hero": {
     "eyebrow": "Services",
-    "title": "From strategy to the <hl>agentic enterprise</hl>.",
+    "title": "Snowflake data and AI services, from strategy to the <hl>agentic enterprise</hl>.",
     "description": "Strategy, engineering, and enablement under one accountable team, building two capabilities that stay in-house: a data practice decisions can trust and an AI practice that ships to production, across THINK, BUILD, and GROW."
   },
   "tiers": {

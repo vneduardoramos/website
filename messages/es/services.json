@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Servicios: THINK · BUILD · GROW",
-    "description": "THINK, BUILD, GROW: estrategia, ingeniería y habilitación para establecer una práctica de datos y una práctica de IA sobre Snowflake, diseñadas para que los equipos internos las operen."
+    "title": "Servicios de Data & AI en Snowflake",
+    "description": "Servicios de datos e IA en Snowflake: estrategia, migración, ingeniería, analítica y agentes de IA. Snowflake Premier Partner, entrega nearshore en América."
   },
   "breadcrumb": {
     "home": "Inicio",
@@ -9,7 +9,7 @@
   },
   "hero": {
     "eyebrow": "Servicios",
-    "title": "De la estrategia a la <hl>empresa agéntica</hl>.",
+    "title": "Servicios de datos e IA en Snowflake, de la estrategia a la <hl>empresa agéntica</hl>.",
     "description": "Estrategia, ingeniería y habilitación bajo un único equipo responsable, que construye dos capacidades que permanecen dentro de la organización: una práctica de datos en la que las decisiones pueden confiar y una práctica de IA que llega a producción, a lo largo de THINK, BUILD y GROW."
   },
   "tiers": {
