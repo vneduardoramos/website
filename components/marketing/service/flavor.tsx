@@ -20,30 +20,36 @@ const base = {
   strokeLinejoin: "round" as const,
 };
 
-function CompassIcon(p: IconProps) {
+// Data & AI Strategy → a target: priorities and ROI, the point of a roadmap.
+function TargetIcon(p: IconProps) {
   return (
     <svg {...base} {...p}>
-      <circle cx="12" cy="12" r="9" />
-      <path d="m15.5 8.5-2.2 4.8L8.5 15.5l2.2-4.8z" />
+      <circle cx="12" cy="12" r="8.5" />
+      <circle cx="12" cy="12" r="4.5" />
+      <circle cx="12" cy="12" r="1" fill="currentColor" stroke="none" />
     </svg>
   );
 }
-function DatabaseIcon(p: IconProps) {
+// Cloud Architecture & Data Foundation → stacked layers: the governed base
+// everything is built on.
+function LayersIcon(p: IconProps) {
   return (
     <svg {...base} {...p}>
-      <ellipse cx="12" cy="5" rx="7" ry="3" />
-      <path d="M5 5v6c0 1.7 3.1 3 7 3s7-1.3 7-3V5" />
-      <path d="M5 11v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" />
+      <path d="M12 3 3 8l9 5 9-5-9-5z" />
+      <path d="m3 12 9 5 9-5" />
+      <path d="m3 16 9 5 9-5" />
     </svg>
   );
 }
-function PipelineIcon(p: IconProps) {
+// Data Engineering & Pipelines → two sources converging into one node: the
+// pipelines that unify every source into a single governed store.
+function BranchIcon(p: IconProps) {
   return (
     <svg {...base} {...p}>
       <circle cx="5" cy="6" r="2" />
       <circle cx="5" cy="18" r="2" />
       <circle cx="19" cy="12" r="2" />
-      <path d="M7 6h4a3 3 0 0 1 3 3v0M7 18h4a3 3 0 0 0 3-3v0M14 10.5l3 .9M14 13.5l3-.9" />
+      <path d="M6.9 6.9 17 11M6.9 17.1 17 13" />
     </svg>
   );
 }
@@ -88,21 +94,16 @@ export interface ServiceFlavor {
   glow: string;
   /** accent text for small labels + deliverable check marks */
   text: string;
-  /** CSS color-token variable for the hue, drives --eyebrow-accent (kept on the
-   *  legible-on-white end of the palette) */
+  /** CSS color-token variable for the hue, drives --eyebrow-accent */
   accentVar: string;
-  /** CSS color-token variable for the signature diagram's fills/strokes; picked
-   *  for visual pop and distinct across all six services */
-  figureVar: string;
 }
 
 // One distinct hue + texture per service. Decor variants are all six different
 // so the page textures never repeat across services.
 export const SERVICE_FLAVOR: Record<string, ServiceFlavor> = {
   "ai-data-strategy": {
-    icon: CompassIcon,
+    icon: TargetIcon,
     accentVar: "--color-royal",
-    figureVar: "--color-royal",
     decor: "dots",
     tile: "bg-royal/10 text-royal",
     bar: "bg-royal",
@@ -110,9 +111,8 @@ export const SERVICE_FLAVOR: Record<string, ServiceFlavor> = {
     text: "text-royal",
   },
   "cloud-architecture": {
-    icon: DatabaseIcon,
+    icon: LayersIcon,
     accentVar: "--color-primary-deep",
-    figureVar: "--color-primary-deep",
     decor: "grid",
     tile: "bg-primaryDeep/10 text-primaryDeep",
     bar: "bg-primaryDeep",
@@ -120,9 +120,8 @@ export const SERVICE_FLAVOR: Record<string, ServiceFlavor> = {
     text: "text-primaryDeep",
   },
   "data-engineering": {
-    icon: PipelineIcon,
+    icon: BranchIcon,
     accentVar: "--color-primary-deep",
-    figureVar: "--color-primary",
     decor: "flow",
     tile: "bg-primary/15 text-primaryDeep",
     bar: "bg-primary",
@@ -132,7 +131,6 @@ export const SERVICE_FLAVOR: Record<string, ServiceFlavor> = {
   "data-visualisation": {
     icon: SparkIcon,
     accentVar: "--color-primary-deep",
-    figureVar: "--color-secondary",
     decor: "mesh",
     tile: "bg-secondary/15 text-primaryDeep",
     bar: "bg-secondary",
@@ -142,7 +140,6 @@ export const SERVICE_FLAVOR: Record<string, ServiceFlavor> = {
   "embedded-analytics": {
     icon: EmbedIcon,
     accentVar: "--color-accent-deep",
-    figureVar: "--color-accent",
     decor: "swoosh",
     tile: "bg-accent/15 text-accentDeep",
     bar: "bg-accent",
@@ -152,7 +149,6 @@ export const SERVICE_FLAVOR: Record<string, ServiceFlavor> = {
   "capability-development": {
     icon: UsersIcon,
     accentVar: "--color-success",
-    figureVar: "--color-success",
     decor: "blobs",
     tile: "bg-success/15 text-success",
     bar: "bg-success",
@@ -162,9 +158,8 @@ export const SERVICE_FLAVOR: Record<string, ServiceFlavor> = {
 };
 
 export const DEFAULT_SERVICE_FLAVOR: ServiceFlavor = {
-  icon: DatabaseIcon,
+  icon: LayersIcon,
   accentVar: "--color-primary-deep",
-  figureVar: "--color-primary-deep",
   decor: "dots",
   tile: "bg-primaryDeep/10 text-primaryDeep",
   bar: "bg-primaryDeep",

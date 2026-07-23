@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { Logo } from "@/components/marketing/Logo";
 import { LocaleSwitcher } from "@/components/marketing/LocaleSwitcher";
 import { getFlavor } from "@/components/marketing/industries/flavor";
+import { getServiceFlavor } from "@/components/marketing/service/flavor";
 import { MODEL_PROVIDERS } from "@/lib/model-providers";
 
 type NavChild = { key: string; label: string; href: string; group?: string };
@@ -222,38 +223,8 @@ const NAV_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   "/faq": ChatQuestionIcon,
 };
 
-function PipelineIcon(p: SVGProps<SVGSVGElement>) {
-  // sources flowing through a node → governed pipelines
-  return (
-    <svg {...ic} {...p}>
-      <circle cx="5" cy="6" r="2" />
-      <circle cx="5" cy="18" r="2" />
-      <circle cx="19" cy="12" r="2" />
-      <path d="M7 6h4a3 3 0 0 1 3 3v0M7 18h4a3 3 0 0 0 3-3v0M14 10.5l3 .9M14 13.5l3-.9" />
-    </svg>
-  );
-}
-function EmbedIcon(p: SVGProps<SVGSVGElement>) {
-  // a chart inside a window frame → analytics embedded in a product
-  return (
-    <svg {...ic} {...p}>
-      <rect x="3" y="4.5" width="18" height="15" rx="2" />
-      <path d="M3 9h18" />
-      <path d="m7 15 2.5-2.6 2 2L16 11" />
-    </svg>
-  );
-}
-
-// One representative icon per service, keyed by slug. Reuses the shared nav icon
-// family so the Services panel reads as one system.
-const SERVICE_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
-  "ai-data-strategy": CompassIcon,
-  "cloud-architecture": DatabaseIcon,
-  "data-engineering": PipelineIcon,
-  "data-visualisation": SparkIcon,
-  "embedded-analytics": EmbedIcon,
-  "capability-development": UsersIcon,
-};
+// Per-service icons come from the shared service-flavor module (getServiceFlavor),
+// so the mega-menu icon and the service page's hero icon always match.
 
 // Per-tier accent for the Services mega-menu columns (THINK/BUILD/GROW). Colors
 // stay on the legible-on-white end of the palette; opacities on 5-step steps.
@@ -475,7 +446,7 @@ function ServicesMega({
                   href={`/services/${s.slug}`}
                   label={s.title}
                   description={t(`serviceDescriptions.${s.slug}`)}
-                  Icon={SERVICE_ICONS[s.slug]}
+                  Icon={getServiceFlavor(s.slug).icon}
                   tile={meta.tile}
                   onNav={onNav}
                   active={isActiveHref(`/services/${s.slug}`)}
