@@ -88,8 +88,12 @@ export interface ServiceFlavor {
   glow: string;
   /** accent text for small labels + deliverable check marks */
   text: string;
-  /** CSS color-token variable for the hue, drives --eyebrow-accent */
+  /** CSS color-token variable for the hue, drives --eyebrow-accent (kept on the
+   *  legible-on-white end of the palette) */
   accentVar: string;
+  /** CSS color-token variable for the signature diagram's fills/strokes; picked
+   *  for visual pop and distinct across all six services */
+  figureVar: string;
 }
 
 // One distinct hue + texture per service. Decor variants are all six different
@@ -98,6 +102,7 @@ export const SERVICE_FLAVOR: Record<string, ServiceFlavor> = {
   "ai-data-strategy": {
     icon: CompassIcon,
     accentVar: "--color-royal",
+    figureVar: "--color-royal",
     decor: "dots",
     tile: "bg-royal/10 text-royal",
     bar: "bg-royal",
@@ -107,6 +112,7 @@ export const SERVICE_FLAVOR: Record<string, ServiceFlavor> = {
   "cloud-architecture": {
     icon: DatabaseIcon,
     accentVar: "--color-primary-deep",
+    figureVar: "--color-primary-deep",
     decor: "grid",
     tile: "bg-primaryDeep/10 text-primaryDeep",
     bar: "bg-primaryDeep",
@@ -116,6 +122,7 @@ export const SERVICE_FLAVOR: Record<string, ServiceFlavor> = {
   "data-engineering": {
     icon: PipelineIcon,
     accentVar: "--color-primary-deep",
+    figureVar: "--color-primary",
     decor: "flow",
     tile: "bg-primary/15 text-primaryDeep",
     bar: "bg-primary",
@@ -125,6 +132,7 @@ export const SERVICE_FLAVOR: Record<string, ServiceFlavor> = {
   "data-visualisation": {
     icon: SparkIcon,
     accentVar: "--color-primary-deep",
+    figureVar: "--color-secondary",
     decor: "mesh",
     tile: "bg-secondary/15 text-primaryDeep",
     bar: "bg-secondary",
@@ -134,6 +142,7 @@ export const SERVICE_FLAVOR: Record<string, ServiceFlavor> = {
   "embedded-analytics": {
     icon: EmbedIcon,
     accentVar: "--color-accent-deep",
+    figureVar: "--color-accent",
     decor: "swoosh",
     tile: "bg-accent/15 text-accentDeep",
     bar: "bg-accent",
@@ -143,6 +152,7 @@ export const SERVICE_FLAVOR: Record<string, ServiceFlavor> = {
   "capability-development": {
     icon: UsersIcon,
     accentVar: "--color-success",
+    figureVar: "--color-success",
     decor: "blobs",
     tile: "bg-success/15 text-success",
     bar: "bg-success",
@@ -154,6 +164,7 @@ export const SERVICE_FLAVOR: Record<string, ServiceFlavor> = {
 export const DEFAULT_SERVICE_FLAVOR: ServiceFlavor = {
   icon: DatabaseIcon,
   accentVar: "--color-primary-deep",
+  figureVar: "--color-primary-deep",
   decor: "dots",
   tile: "bg-primaryDeep/10 text-primaryDeep",
   bar: "bg-primaryDeep",
