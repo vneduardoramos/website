@@ -57,12 +57,50 @@ export const services = [
     title: "Data & AI Strategy",
     summary:
       "Turn AI ambition into a board-ready roadmap: where data and AI create measurable ROI, sequenced by value and grounded in what the data can actually support, on a clear path to the agentic enterprise.",
-    seoTitle: "Data & AI Strategy on Snowflake",
+    seoTitle: "Data & AI Strategy Services: Roadmap on Snowflake",
     seoDescription:
-      "Snowflake data and AI strategy: a board-ready roadmap sequencing AI use cases by ROI and data readiness. Snowflake Premier Partner, nearshore Americas.",
+      "Data and AI strategy services: an AI readiness assessment and a roadmap sequenced by ROI, from a Snowflake Premier Partner. Start with a paid discovery.",
     tools: [],
     order: 1,
-    body: "Invest with confidence and know exactly what to build next. We work with CEOs and CTOs to turn 'we need an AI strategy' into a costed, sequenced roadmap, grounded in current data readiness and focused on the use cases with the clearest return.",
+    // Body convention: paragraph 1 is the standalone card pitch (no headings or
+    // links); the full markdown renders on the service detail page.
+    body: `Invest with confidence and know exactly what to build next. Our data and AI strategy services turn "we need an AI strategy" into a costed, sequenced roadmap: we work with CEOs and CTOs to ground every use case in what the data can actually support today, and to prioritize the ones with the clearest measurable return.
+
+## What our data and AI strategy services deliver
+
+Strategy here is not a slide deck. Every data and AI strategy engagement produces decisions you can fund and a plan your team can execute:
+
+- **An AI readiness assessment.** An honest read of data quality, governance, and architecture against the use cases you want to ship, so investment lands where the gaps actually are.
+- **A board-ready AI roadmap for the enterprise.** Use cases sequenced by ROI and data readiness, each one costed, owned, and tied to a business metric rather than a technology wish list.
+- **A data strategy anchored in a governed foundation.** The target state on Snowflake that the roadmap depends on: governed, trusted data feeding real decisions, with Horizon Catalog and Semantic Views giving every team and every agent one business context. We design it hand in hand with our [cloud architecture and data foundation](/services/cloud-architecture) work.
+- **A clear path to the agentic enterprise.** Where Cortex Analyst, Cortex Agents, and Snowflake CoWork earn a place on the roadmap, and where they do not yet. As an Anthropic partner we default to Claude for agentic work; see how [agentic AI runs inside and outside Snowflake](/data-ai).
+- **An operating model your team keeps.** Roles, governance, and a capability plan so both practices, data and AI, run on your payroll and keep improving after we step back.
+
+## How a strategy engagement runs
+
+We price on outcomes, not hours, and we compress the distance between strategy and production. A paid discovery fixes scope and surfaces the real state of your data. Use-case sprints then ship working increments, and proof comes before scale: the decision to invest further is made on evidence, not a deck. That mechanism is why first value lands in 8–16 weeks, and why, across the engagements we deliver, teams see 60% faster time to first insight, 3× pipeline reliability, and 40% lower run cost.
+
+The advice stays concrete because the same team delivers on it: SnowPro-certified engineers, a Snowflake Premier Partner and Snowflake CoCo Preferred Partner, with leadership carrying 15+ years of data experience. The roadmap also stays honest about sequencing. If a legacy warehouse stands between you and the first use case, [migration to Snowflake](/migrations) is planned into the sequence, not discovered later. You can see how that sequencing plays out across industries in our [case studies](/case-studies).
+
+## Strategy built in live working sessions, in your time zone
+
+An AI roadmap is shaped in the room, in workshops where your executives argue priorities and trade-offs with ours. That collaboration does not survive an overnight async gap, which is why our senior strategists work nearshore from Monterrey and Austin, in US time zones, serving clients across the Americas. Strategy workshops, working sessions, and steering meetings happen live, the same day the question comes up.
+
+The result is a roadmap your leadership pressure-tests in the same meeting it is drafted, not a deliverable that arrives by email for comments. [See how the nearshore model works](/nearshore).
+
+## Frequently asked questions
+
+### How do I know if my company is ready for AI?
+
+Readiness is measurable, not a feeling. We assess data quality, governance, architecture, and team skills against the specific use cases you want to ship, and score each gap by the effort to close it. Most organizations turn out readier than they feared in some areas and less ready than they assumed in others, which is exactly what the roadmap needs to reflect.
+
+### What should an AI roadmap include?
+
+Four things at minimum: use cases prioritized by business value and feasibility, the data foundations each one depends on, costs and owners per initiative, and the operating model that keeps it running. A roadmap missing any of these is a vision statement, not a plan.
+
+### How long does a data and AI strategy engagement take?
+
+The readiness assessment and roadmap take shape during a paid discovery in the opening weeks, and the first use-case sprint ships a working increment against real data soon after, so first value lands in 8–16 weeks with proof before scale. Strategy and delivery are not separate phases; the roadmap earns trust by shipping against it.`,
   },
   {
     slug: "cloud-architecture",
@@ -70,12 +108,51 @@ export const services = [
     title: "Cloud Architecture & Data Foundation",
     summary:
       "The AI-ready foundation: governed, built on Snowflake, and ready to scale, the single source of truth every model and agent depends on.",
-    seoTitle: "Snowflake Cloud Architecture & Data Foundation",
+    seoTitle: "Snowflake Data Foundation & Cloud Architecture",
     seoDescription:
-      "Snowflake cloud architecture and data foundation: a governed, AI-ready platform built to scale. Snowflake Premier Partner, nearshore across the Americas.",
+      "Governed, AI-ready Snowflake data foundation and cloud architecture from a Snowflake Premier Partner, built with your team in US time zones.",
     tools: ["Snowflake", "Openflow", "Iceberg"],
     order: 3,
-    body: "Every team gets one fast, scalable foundation to build on. We design and deliver it cloud-native on Snowflake, sized for the AI workloads on the horizon rather than just the reporting teams run today, with security and governance built in from the start.",
+    body: `Every team gets one fast, scalable foundation to build on. We design and deliver a governed Snowflake data foundation, with cloud architecture sized for the AI workloads on the horizon, not just the reporting teams run today, and security and governance built in from the first table: the single source of truth every model, dashboard, and agent depends on.
+
+## What a governed Snowflake data foundation includes
+
+Architecture is where cost, security, and trust get decided, usually years before anyone feels the consequences. We design with the decisions documented and build with your team, so the people who will run the foundation understand every layer. A typical build covers:
+
+- Cloud architecture design: account and environment topology, role-based access, and warehouses organized so Snowflake's consumption-based model stays predictable as workloads grow.
+- Ingestion built on Openflow, Snowpipe Streaming, and Zero-Copy Integrations, bringing ERP, CRM, and SaaS sources into one governed source of truth.
+- A tested transformation layer with dbt and Dynamic Tables, so every metric is versioned, reviewed, and reproducible.
+- Lakehouse architecture with Apache Iceberg and Open Catalog (Polaris) where open table formats are the right call, keeping storage open without giving up governance.
+- Governance from the first table: Horizon Catalog for lineage and access policy, and Semantic Views so business definitions live with the data, ready for Cortex when the AI use cases arrive.
+- A Snowflake architecture review for environments already running: we audit design, security, and spend, then leave a prioritized fix list your team can execute.
+
+That discipline is what produces the delivery numbers we are measured on: 60% faster time to first insight, 3× more reliable pipelines, and 40% lower run cost.
+
+## How a foundation build runs
+
+Choosing a Snowflake implementation partner is choosing the architecture you will live with for years, so we make the first step small and evidence-based. A paid discovery fixes scope: sources, workloads, security requirements, and the first use cases the foundation must serve. Delivery then runs in use-case sprints, proving each slice in production before scaling it, which is how first value lands in 8–16 weeks instead of at the end of a long build, with pricing tied to outcomes rather than hours.
+
+The Snowflake data foundation is never the finish line. It feeds the [governed data pipelines](/services/data-engineering) that keep it current and the [AI practice](/data-ai) that puts Cortex analytics and agents to work on top of it. And when a legacy warehouse is in the way, [migration to Snowflake](/migrations) is usually the first sprint, not a separate project.
+
+## Nearshore architecture depth, on your hours
+
+Foundation work fails quietly when the architects and your platform and security teams are half a world apart: a design decision that waits overnight turns into days of rework. Our delivery hub in Monterrey, Mexico works US business hours, with leadership in Austin, Texas, serving clients across the Americas, so architecture reviews, security sign-offs, and scope decisions happen the same day they come up.
+
+Nearshore does not mean the work disappears into a delivery queue. We [work inside your team](/nearshore): SnowPro-certified engineers pair daily with your infrastructure and security people, senior judgment lands on the hardest architecture decisions, and your team keeps control of scope and priorities. That is architecture depth at nearshore economics, from a [Snowflake Premier Partner and Snowflake CoCo Preferred Partner](/partnership).
+
+## Frequently asked questions
+
+### How long does a Snowflake implementation take?
+
+For a governed Snowflake data foundation, we put first value in production in 8–16 weeks. The mechanism matters more than the number: a paid discovery fixes scope up front, delivery runs in use-case sprints, and each slice proves out before it scales. A full estate takes longer, but no one waits until the end to see working data products.
+
+### What is a Snowflake architecture review?
+
+A structured audit of an existing Snowflake environment: account topology, security and access design, cost drivers, and pipeline reliability, measured against how Snowflake is built to run. You get a prioritized findings list with the reasoning documented, so your team can act on it with us or on its own.
+
+### Should we build a Snowflake lakehouse with Apache Iceberg?
+
+Iceberg makes sense when other engines need to read the same tables, when data volumes push toward open storage economics, or when open formats are organizational policy. Open Catalog (Polaris) keeps those tables governed either way. When workloads live end to end in Snowflake, native tables are often simpler; discovery is where we decide with evidence rather than defaults.`,
   },
   {
     slug: "data-engineering",
@@ -83,12 +160,50 @@ export const services = [
     title: "Data Engineering & Pipelines",
     summary:
       "Always-current, trusted data: governed pipelines that unify every source (ERP, CRM, SaaS, and files) so analytics and AI run on inputs worth staking decisions on.",
-    seoTitle: "Snowflake Data Engineering & Pipelines",
+    seoTitle: "Snowflake Data Engineering Services, Nearshore",
     seoDescription:
-      "Snowflake data engineering: governed pipelines that unify ERP, CRM, SaaS, and file sources into one trusted source. Snowflake Premier Partner, nearshore.",
+      "Snowflake data engineering services: governed ELT pipelines with dbt, built nearshore in US time zones. Snowflake Premier Partner. Get a scoped plan.",
     tools: ["Snowflake", "Openflow", "dbt"],
     order: 4,
-    body: "No more chasing numbers across systems. We build automated, secure pipelines that pull every source (APIs, databases, flat files) into the warehouse reliably and on schedule, so teams work from data they can trust and AI workloads have clean, current inputs.",
+    body: `No more chasing numbers across systems. Our Snowflake data engineering services deliver automated, governed pipelines that pull every source (ERP, CRM, SaaS, APIs, databases, flat files) into Snowflake reliably and on schedule, so teams work from data they can trust and AI workloads run on clean, current inputs. Built by a nearshore team in US time zones, priced on outcomes, not hours.
+
+## What our Snowflake data engineering services deliver
+
+Every pipeline we build exists to feed a decision, a report, or an AI use case someone is waiting on. The typical scope includes:
+
+- **ELT pipeline development.** Ingestion with Openflow, Snowpipe Streaming for real-time feeds, and Zero-Copy Integrations where a SaaS source never needed a pipeline in the first place. Batch and streaming, one governed pattern.
+- **dbt transformation layers.** Business logic modeled in dbt: tested, versioned, documented, and reviewed like the production code it is, with Dynamic Tables handling incremental processing where it saves compute.
+- **ETL modernization.** Legacy jobs, stored procedures, and brittle scripts rebuilt as maintainable ELT, often as part of a broader [migration to Snowflake](/migrations).
+- **Governance and data quality built in.** Access policies and lineage in Horizon Catalog, quality tests that run inside the pipeline, and alerting that catches failures before the business does.
+- **Open formats where they earn their place.** Apache Iceberg tables and Open Catalog (Polaris) when interoperability across engines matters to your architecture.
+
+Reliability and run cost are deliverables too, not side effects. Across Snowflake data engineering engagements, the delivery band clients plan around is 60% faster time to first insight, 3× pipeline reliability, and 40% lower run cost.
+
+## How a pipeline build runs
+
+We start with a paid discovery that fixes scope: which sources, which data products, which decisions they feed. The work then runs as use-case sprints, each shipping a working pipeline into your environment, with proof before anything scales. First value lands in 8–16 weeks because that structure removes the usual drift, not because anyone is rushing.
+
+The pipelines land on a [governed data foundation](/services/cloud-architecture) and feed everything downstream, from Snowsight reporting to the [AI analytics layer](/services/data-visualisation) built on Cortex. And because pricing is on outcomes rather than hours, there is no incentive to stretch the build.
+
+## Data engineering outsourcing, without the handoff
+
+Teams that look into data engineering outsourcing usually want the same thing: reliable pipeline capacity without a months-long hiring cycle. What they fear is the classic version of it: requirements handed off into silence, code coming back weeks later, every question waiting overnight for another continent.
+
+Our nearshore data engineering model is built to be the opposite. SnowPro-certified engineers work from Monterrey, Mexico and Austin, Texas, in US time zones, serving organizations across the Americas with the depth of Latin America's data engineering talent. They work inside your repos, your CI, and your standards; sprint reviews happen inside your working day; and your engineers build alongside ours from the first sprint, because the goal is a data practice your team keeps, not a dependency on ours. That difference shows in [how our nearshore delivery works](/nearshore) and in the [case studies](/case-studies) behind it.
+
+## Frequently asked questions
+
+### Should we use ETL or ELT with Snowflake?
+
+ELT. Land raw data in Snowflake first, then transform it in-warehouse with dbt and Dynamic Tables. You keep full lineage from raw data to reporting, reprocessing becomes a rerun instead of a re-extract, and transformations scale on Snowflake compute instead of a separate ETL server.
+
+### Is it safe to outsource data engineering?
+
+It is when the work never leaves your environment. Our engineers build inside your Snowflake account and your repositories, under access you grant and can revoke, with lineage and policies governed in Horizon Catalog. Everything inherits Snowflake's independently audited controls, and nothing about the model requires data to be copied out.
+
+### How fast does a nearshore data engineering team deliver value?
+
+The first advantage is onboarding: the team already works your hours, so no ramp-up is lost to time zones and the hiring lead time disappears. From there the sprint mechanism takes over: a paid discovery fixes scope up front, use-case sprints ship working pipelines from the first weeks, and proof comes before scale, so first value lands in 8–16 weeks.`,
   },
   {
     slug: "data-visualisation",
@@ -96,12 +211,52 @@ export const services = [
     title: "AI Analytics & Agents",
     summary:
       "Put governed AI to work: Cortex Analyst and Snowflake CoWork agents that turn governed data into cited, decision-ready answers, embedded where leaders already work.",
-    seoTitle: "Snowflake Analytics & AI Agents",
+    seoTitle: "Self-Service Analytics on Snowflake: Cortex Analyst",
     seoDescription:
-      "Snowflake analytics and AI agents: Cortex Analyst and Snowflake CoWork turn governed data into decision-ready answers. Snowflake Premier Partner.",
+      "Self-service analytics on Snowflake: Cortex Analyst, Snowsight dashboards, and AI agents that reach production, from a SnowPro-certified nearshore team.",
     tools: ["Cortex Analyst", "Snowflake CoWork", "Snowsight", "Streamlit"],
     order: 2,
-    body: "Put answers in the hands of the people making decisions. We build the reporting and self-service layer natively in Snowflake: Snowsight dashboards and Streamlit apps for the views teams live in, with Cortex Analyst answering questions over governed Semantic Views and Snowflake CoWork (the personal AI agent) letting business users explore and act in plain language. Anyone who needs insight can find it themselves: no waiting on the data team, no exporting to spreadsheets.",
+    body: `Put answers in the hands of the people making decisions. We build self-service analytics and AI agents on Snowflake: Snowsight dashboards and Streamlit apps for the views teams live in, Cortex Analyst answering plain-language questions over governed Semantic Views, and Snowflake CoWork letting business users explore and act. No waiting on the data team, no exporting to spreadsheets.
+
+## What we deliver: self-service analytics on Snowflake
+
+Every engagement builds the layer where the business actually meets its data, natively on Snowflake so governance travels with every answer:
+
+- **Cortex Analyst implementation.** Semantic Views that encode your metrics, joins, and business terms, so natural language questions return accurate, cited answers instead of guesses.
+- **AI agents on Snowflake.** Cortex Agents that plan across structured data and documents, with Cortex Search handling retrieval. They run on Claude, the model at the center of our Anthropic partnership.
+- **Snowflake CoWork for business users.** The personal AI agent, configured over your governed data so anyone can explore, ask follow-ups, and act in plain language.
+- **Snowsight dashboards and Streamlit in Snowflake apps.** The data visualization layer teams open every morning: curated views and interactive data apps, with nothing copied outside the governed perimeter.
+- **Answers where work happens.** Insight delivered into the workflows leaders already use; when analytics becomes part of your product, our [embedded analytics service](/services/embedded-analytics) carries it into customer-facing apps.
+
+## How an analytics rollout runs
+
+Self-service analytics is only as good as the data underneath it. When pipelines need hardening first, our [data engineering team](/services/data-engineering) gets the inputs decision-grade; from there the work moves into the analytics and agent layer.
+
+First value lands in 8–16 weeks, and the mechanism is what makes that number honest: a paid discovery fixes scope, use-case sprints ship one governed answer set at a time, and scaling decisions rest on proof, not a slide. Many AI-agent projects on Snowflake stall between demo and production; the sprint model exists to close exactly that gap, and it is why our engagements show 60% faster time to first insight, with pricing tied to outcomes, not hours.
+
+Agents inside Snowflake are half the story. How they connect with agents working outside it, over one governed context, is laid out in our [data & AI approach](/data-ai).
+
+## A nearshore team in your review sessions
+
+Analytics and agent tuning is feedback-heavy work. A semantic model gets good the way a forecast does: someone asks a question, the answer comes back slightly off, an analyst explains why, and the definition is corrected. That loop breaks when the delivery team wakes up as yours logs off.
+
+Our engineers work from Monterrey and Austin, on your hours. Nearshore AI development from Latin America usually means an outsourcing handoff; this model is the opposite. SnowPro-certified engineers sit in the same review sessions as your analysts, hear objections firsthand, and turn them into sharper Semantic Views and better-behaved agents in days, not release cycles. The full delivery model is on our [nearshore page](/nearshore).
+
+And the practice is built to stay yours: your team learns the semantic model and the agent configurations as we build, so the dashboards and agents keep improving after handover. See how that plays out in our [case studies](/case-studies).
+
+## Questions teams ask before rolling out AI analytics
+
+### How accurate is Cortex Analyst?
+
+As accurate as its semantic model. Cortex Analyst answers only through the Semantic Views it is given, shows the query behind every answer, and asks for clarification rather than guessing when a question falls outside them. Most of our implementation effort goes exactly there: verified queries, business-term coverage, and review cycles with your analysts until the answers hold up.
+
+### Do I need a semantic model for Cortex Analyst?
+
+Yes. Text-to-SQL over raw schemas has to guess what "revenue" or "active customer" means, and guessing is what erodes trust. Semantic Views encode those definitions once, and Cortex Analyst, Cortex Agents, and Snowflake CoWork all answer through them. We build the first version during discovery and refine it with your team every sprint.
+
+### What is the difference between Cortex Analyst and Snowflake CoWork?
+
+Cortex Analyst is the service that turns a natural language question into governed SQL, built to be embedded in apps and workflows. Snowflake CoWork is the agent experience business users open directly to explore data and act on it. Most engagements deliver both: CoWork for people, Cortex Analyst wherever answers need to surface inside a product or process.`,
   },
   {
     slug: "embedded-analytics",
@@ -109,12 +264,50 @@ export const services = [
     title: "Embedded Analytics",
     summary:
       "Differentiate the product: Cortex-powered data products embedded into apps and client workflows, turning insight into a competitive edge.",
-    seoTitle: "Embedded Analytics on Snowflake",
+    seoTitle: "Embedded Analytics on Snowflake for SaaS Products",
     seoDescription:
-      "Embedded analytics on Snowflake: Cortex-powered data products built into your applications and client workflows. Snowflake Premier Partner, nearshore delivery.",
+      "Embedded analytics on Snowflake: customer-facing dashboards, Streamlit apps, and Cortex answers built into your product by a nearshore product squad.",
     tools: ["Streamlit", "Cortex"],
     order: 5,
-    body: "Make analytics a feature customers pay for. We embed dashboards and reporting directly into applications, client portals, and partner interfaces, so the insight lives where users already work and the product stands apart from competitors.",
+    body: `Make analytics a feature customers pay for. We build embedded analytics on Snowflake: dashboards, reporting, and Cortex-powered answers delivered inside your applications, client portals, and partner interfaces, so insight lives where users already work and the product stands apart from competitors. The result is a set of customer-facing data products backed by a governed foundation your team keeps.
+
+## What we build into your product
+
+Customer-facing analytics is product work, not an internal reporting exercise. Everything we build is designed to live inside your product, carry your brand, and scale with your customer base:
+
+- **Embedded dashboards and reports**, served straight from the governed data already in Snowflake, with no second copy of every table to sync, secure, and pay for.
+- **Multi-tenant analytics architecture** designed for SaaS: tenant isolation, row-level security, and per-tenant cost visibility on Snowflake's consumption model, so the feature scales without billing surprises.
+- **Streamlit in Snowflake data apps**: interactive applications that run where the data lives and inherit Snowflake's security and governance instead of re-implementing them.
+- **Cortex-powered answers inside the product**: Cortex Analyst over governed Semantic Views for natural language questions, and Cortex Search for retrieval, so customers ask and act without leaving your app.
+- **Governance built in from the first tenant**: access, lineage, and policy managed through Horizon Catalog, with serving layers kept fresh by Dynamic Tables.
+
+For the analytics your own teams use day to day, see [AI Analytics & Agents](/services/data-visualisation); this page is about the analytics your customers see.
+
+## From roadmap item to revenue feature
+
+An analytics feature earns its place the way any feature does: it ships, customers use it, and sales can point at it. Our engagement model is built for that bar. A paid discovery fixes scope against your product roadmap, use-case sprints put working screens in front of design partners early, and proof runs before scale, so the first slice of embedded analytics reaches real users in 8–16 weeks. Pricing is on outcomes, not hours, so finishing sooner benefits both sides.
+
+Under the feature sits the plumbing that decides whether it survives contact with customers. Where the pipelines feeding it need hardening, our [data engineering and pipelines](/services/data-engineering) work comes first, so the feature inherits pipelines that hold up as tenants grow. Outcomes like these are documented in our [case studies](/case-studies). And when customers start asking questions instead of reading charts, the same governed foundation powers [AI agents in production](/data-ai).
+
+## A product squad alongside yours, in your time zone
+
+Embedded analytics is never a hand-off project. It lives on your product roadmap and moves at your release cadence. Teams looking to add nearshore analytics capacity from Latin America usually discover they need something different from classic outsourcing: a squad that works inside their process, not at the end of a ticket queue.
+
+That is how we staff it. A Viewnear product squad delivers from our Monterrey hub on US time zones, with leadership in Austin: your standups, your sprint reviews, your release trains. Product managers and designers get same-day answers instead of overnight handoffs, and the SnowPro-certified engineers building the feature are in the room when priorities shift. As a Snowflake Premier Partner and Snowflake CoCo Preferred Partner, we bring Snowflake and enterprise depth at every level, guided by leadership with 15+ years in data and serving clients across the Americas. The full model is on our [nearshore delivery](/nearshore) page.
+
+## Embedded analytics on Snowflake: common questions
+
+### How do I add analytics to my SaaS product?
+
+Start where the data already lives. If your product data lands in Snowflake, embedding analytics from that governed source avoids standing up a separate BI stack and maintaining a second copy of every table. The build order that works: model the data for multi-tenant access, pick the serving pattern (embedded dashboards, Streamlit in Snowflake apps, or APIs into your own front end), and ship one high-value view to design partners before rolling it out to every customer.
+
+### Is Streamlit in Snowflake good for production data apps?
+
+Yes, when it is matched to the job. Streamlit in Snowflake inherits the account's security, governance, and access controls, which removes most of the operational overhead of running a separate app stack, and it excels at interactive data products. For deeply custom in-app experiences, we serve governed data through APIs into your own components instead. That architecture call gets made in discovery, per use case, before any build starts.
+
+### Can we outsource embedded analytics development to Latin America?
+
+You can, and time zones decide whether it works. Analytics inside a product needs daily contact with your product and design teams, exactly where offshore handoffs strain. A nearshore squad in Mexico works US business hours, joins your sprints directly, and is measured on shipped outcomes rather than hours logged. Ours serves clients across the Americas.`,
   },
   {
     slug: "capability-development",
@@ -122,12 +315,47 @@ export const services = [
     title: "Capability Development",
     summary:
       "Compound the advantage: we embed with the team and build the in-house fluency to scale AI use cases long after launch.",
-    seoTitle: "Snowflake Capability Development",
+    seoTitle: "Snowflake Enablement Services: Nearshore Coaching",
     seoDescription:
-      "Snowflake capability development: certified practitioners embed with your team to build lasting in-house AI fluency. Snowflake Premier Partner.",
+      "Snowflake enablement services from a Snowflake Premier Partner: SnowPro-certified coaches embed with your team through real delivery, in your time zone.",
     tools: [],
     order: 6,
-    body: "Capability that outlasts the engagement. Our certified practitioners embed alongside in-house teams, coaching through real delivery and building fluency at every level (from executive data literacy to hands-on tool training for analysts and engineers) so the team keeps improving on its own.",
+    body: `Capability that outlasts the engagement. Our SnowPro-certified practitioners embed alongside your in-house team and coach through real delivery: Snowflake enablement that builds fluency at every level, from executive data literacy to hands-on work for analysts and engineers, so the team keeps improving long after we step back.
+
+## What our Snowflake enablement services deliver
+
+Courses teach syntax. Capability comes from shipping. Our enablement work happens inside live delivery, on your data and your backlog, and it leaves behind:
+
+- **Role-based enablement paths.** Executives learn to read, question, and act on governed numbers; analysts get fluent in Snowsight, Semantic Views, and Cortex Analyst; engineers go deep on dbt, Snowpark, and Dynamic Tables.
+- **A data team upskilling program with a visible bar.** Skills map to SnowPro certification, so progress is measurable and portable, not a certificate of attendance.
+- **AI enablement for the whole data team.** Your people learn to build, evaluate, and operate Cortex Analyst, Cortex Search, and Cortex Agents over governed data, [the AI practice we help you stand up](/data-ai), with Snowflake CoCo accelerating the build. As an Anthropic partner we default to Claude, and we teach your team to hold any model to the same evaluation bar.
+- **Standards that stay.** Coding standards, review rituals, runbooks, and documentation written into every sprint, so the practice survives turnover.
+
+## How enablement runs
+
+Enablement is not a training track that runs beside the project; it is how we deliver. A paid discovery fixes scope and picks the first use cases. Then use-case sprints ship working data products with your people pairing on the build, which is how first value lands in 8–16 weeks and proof arrives before scale. Along the way, your engineers absorb the patterns behind our delivery band: 60% faster time to first insight, 3× pipeline reliability, 40% lower run cost.
+
+We price on outcomes, not hours, so there is no incentive to keep knowledge on our side of the table. Teams often start here after a [data engineering](/services/data-engineering) build or a warehouse migration, when the foundation is live and the question becomes who runs it. The [case studies](/case-studies) show what teams kept after we stepped back.
+
+## Coaching in your working hours, in English and Spanish
+
+Enablement only sticks when the coach is in the room while the real work happens. That is the case for nearshore: our team coaches from Monterrey and Austin, in US time zones, so every pairing session, design review, and office hour lands inside your business day, whether your team sits in the US, Mexico, or anywhere across the Americas.
+
+The offshore alternative usually means choosing between recorded courses and an overnight handoff. [Nearshore delivery](/nearshore) removes that trade: same-day answers, live working sessions, and coaching in English or Spanish, whichever language your team thinks in.
+
+## Questions teams ask about Snowflake enablement
+
+### How is Snowflake enablement different from Snowflake training?
+
+Training transfers information; enablement transfers capability. Snowflake's own courses and SnowPro certification prep are excellent for syntax and concepts, and we build on them. Enablement adds what a course cannot: a certified engineer beside your team on a real backlog, standards and runbooks that outlast the engagement, and verifiable proof (SnowPro certifications, use cases in production) that the capability exists.
+
+### How do I build a Snowflake team?
+
+Start from use cases, not job descriptions. A paid discovery fixes the first use cases and reveals the roles they actually require; then hire a small core and grow it through delivery, with certified engineers embedded alongside while your people come up to speed. The team forms while value ships, instead of spending those months recruiting first.
+
+### Snowflake enablement vs staff augmentation: what is the difference?
+
+Staff augmentation rents capacity and takes it away when the contract ends; classic outsourcing moves the work, and the learning, outside your walls. Enablement is the opposite bet: we work inside your team, price on outcomes, and measure success by how little you need us next quarter. Our [Snowflake Premier Partner practice](/partnership) is built around that handover.`,
   },
 ];
 

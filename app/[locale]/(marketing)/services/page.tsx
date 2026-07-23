@@ -187,9 +187,12 @@ export default async function ServicesPage({ params }: { params: { locale: strin
                         }
                       >
                         <p>{service.summary}</p>
+                        {/* Body convention: paragraph 1 is the standalone card
+                            pitch (no headings/links); the full long-form body
+                            renders only on the detail page. */}
                         {service.body && (
                           <div className="prose-vn mt-3 text-sm">
-                            <Markdown>{service.body}</Markdown>
+                            <Markdown>{service.body.split(/\n\s*\n/)[0]}</Markdown>
                           </div>
                         )}
                       </LedgerCard>
