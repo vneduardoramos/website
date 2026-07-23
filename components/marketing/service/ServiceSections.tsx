@@ -7,12 +7,14 @@
  */
 import { Link } from "@/i18n/navigation";
 import { Markdown } from "@/lib/content";
+import { cn } from "@/lib/utils";
 import type { DeliverItem, Faq } from "@/lib/service-content";
 
-/** Small check glyph, matching the industry deliverables treatment. */
-function Check() {
+/** Small check glyph, matching the industry deliverables treatment. `accent`
+ *  is a full Tailwind text-color class so the mark can carry the service hue. */
+function Check({ accent = "text-primaryDeep" }: { accent?: string }) {
   return (
-    <span className="mt-0.5 shrink-0 text-primaryDeep" aria-hidden="true">
+    <span className={cn("mt-0.5 shrink-0", accent)} aria-hidden="true">
       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
         <path d="M5 12l4 4 10-11" />
       </svg>
@@ -28,16 +30,19 @@ function Check() {
 export function DeliverableGrid({
   items,
   mode,
+  accent = "text-primaryDeep",
 }: {
   items: DeliverItem[];
   mode: "cards" | "list";
+  /** Full text-color class for the check marks (the service accent). */
+  accent?: string;
 }) {
   if (mode === "cards") {
     return (
       <div className="grid gap-5 md:auto-rows-fr md:grid-cols-2">
         {items.map((it, i) => (
           <div key={i} className="card card-hover flex gap-4">
-            <Check />
+            <Check accent={accent} />
             <div className="min-w-0">
               {it.term && (
                 <h3 className="font-display text-lg font-bold text-foreground">{it.term}</h3>
@@ -55,7 +60,7 @@ export function DeliverableGrid({
     <ul className="grid gap-x-8 gap-y-5 sm:grid-cols-2">
       {items.map((it, i) => (
         <li key={i} className="flex gap-3">
-          <Check />
+          <Check accent={accent} />
           <div className="text-[0.95rem] leading-relaxed text-muted [&_p]:mb-0">
             <Markdown>{it.body}</Markdown>
           </div>

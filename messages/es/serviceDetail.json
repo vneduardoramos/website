@@ -46,6 +46,20 @@
     "eyebrow": "Entrega nearshore",
     "cta": "Conozca cómo funciona la entrega nearshore"
   },
+  "inPractice": {
+    "eyebrow": "En la práctica",
+    "title": "Cómo se ve dentro de su stack",
+    "body": "Una mirada de cerca a lo que dejamos funcionando y cómo aterriza donde su equipo ya trabaja. Reemplace la imagen por una pantalla o un diagrama real cuando lo tenga.",
+    "cta": "Hable con un arquitecto",
+    "imageAlt": "{title}: vista ilustrativa"
+  },
+  "showcase": {
+    "eyebrow": "Prueba",
+    "title": "Véalo funcionando en producción",
+    "body": "Proyectos reales y anonimizados con resultados medibles, de un Snowflake Premier Partner con entrega nearshore en toda América.",
+    "cta": "Explore los casos de éxito",
+    "imageAlt": "{title}: resultados en producción"
+  },
   "faq": {
     "eyebrow": "Preguntas frecuentes"
   },

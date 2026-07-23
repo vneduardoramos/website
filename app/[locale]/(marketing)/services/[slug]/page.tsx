@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/marketing/Breadcrumbs";
@@ -6,6 +7,8 @@ import { HeroBackground } from "@/components/marketing/HeroBackground";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { MetricBand } from "@/components/marketing/Blocks";
+import { FeatureSplit } from "@/components/marketing/FeatureSplit";
+import { ShowcaseBand } from "@/components/marketing/ShowcaseBand";
 import {
   AtAGlance,
   DeliverableGrid,
@@ -13,11 +16,12 @@ import {
   FaqAccordion,
   NearshoreBand,
 } from "@/components/marketing/service/ServiceSections";
+import { getServiceFlavor } from "@/components/marketing/service/flavor";
 import { Markdown } from "@/lib/content";
 import { Link } from "@/i18n/navigation";
 import { getServiceBySlug, getServiceSlugs, getServices } from "@/lib/queries";
 import type { Locale } from "@/lib/i18n-content";
-import { asStringArray } from "@/lib/utils";
+import { asStringArray, cn } from "@/lib/utils";
 import { parseServiceBody, stripMd } from "@/lib/service-content";
 import { JsonLd } from "@/components/JsonLd";
 import { theme } from "@/config/theme";
@@ -71,6 +75,19 @@ export default async function ServiceDetailPage({
     content.deliverables || content.engagement || content.nearshore || content.faq,
   );
 
+  // Per-service visual identity (accent hue, texture, icon) so no two pages
+  // read the same, plus the two placeholder image slots.
+  const flavor = getServiceFlavor(slug);
+  const FlavorIcon = flavor.icon;
+  const practiceImg = `/assets/images/services/${slug}-practice.jpg`;
+  const showcaseImg = `/assets/images/services/${slug}-showcase.jpg`;
+  // Three short bullets for the "in practice" split, drawn from the parsed
+  // deliverables (their bold lead-in, or the phrase before the first colon).
+  const practiceBullets = (content.deliverables?.items ?? [])
+    .map((it) => (it.term ?? it.body.split(/[:.]/)[0]).trim())
+    .filter(Boolean)
+    .slice(0, 3);
+
   // Tier eyebrow ("Strategy" / "Engineering" / "Enablement") + the canonical
   // delivery metric band, both sourced from the localized services catalog so
   // the numbers stay a single source of truth.
@@ -118,15 +135,20 @@ export default async function ServiceDetailPage({
       : null;
 
   return (
-    <>
+    <div style={{ "--eyebrow-accent": `var(${flavor.accentVar})` } as CSSProperties}>
       {/* Breadcrumbs (in the hero) already emit the BreadcrumbList JSON-LD, so
           only the Service (+ FAQ) entities are emitted here. */}
       <JsonLd data={faqLd ? [serviceLd, faqLd] : serviceLd} />
 
-      {/* HERO - tier chip anchors the service in its THINK/BUILD/GROW phase; the
-          H1 is the service title (the head term). */}
+      {/* HERO - a per-service glow + icon give each page its own flavor; the
+          tier chip anchors it in the THINK/BUILD/GROW phase; the H1 is the
+          service title (the head term). */}
       <section className="relative overflow-hidden">
         <HeroBackground compact />
+        <div
+          aria-hidden="true"
+          className={cn("pointer-events-none absolute -right-24 top-0 h-80 w-80 rounded-full blur-3xl", flavor.glow)}
+        />
         <div className="container-page relative py-16 md:py-24">
           <div className="mb-7">
             <Breadcrumbs
@@ -139,6 +161,9 @@ export default async function ServiceDetailPage({
           </div>
           <div className="max-w-3xl">
             <div className="flex flex-wrap items-center gap-3">
+              <span className={cn("flex h-11 w-11 items-center justify-center rounded-2xl shadow-soft", flavor.tile)}>
+                <FlavorIcon className="h-6 w-6" aria-hidden="true" />
+              </span>
               {phase && <span className="chip">{phase}</span>}
               <span className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
                 {t("hero.eyebrow")}
@@ -185,7 +210,7 @@ export default async function ServiceDetailPage({
           {/* DELIVERABLES */}
           {content.deliverables && (
             <Section className="section-warm relative overflow-hidden">
-              <SectionDecor variant="dots" />
+              <SectionDecor variant={flavor.decor} />
               <div className="relative">
                 <SectionHeading
                   eyebrow={t("deliver.eyebrow")}
@@ -196,6 +221,7 @@ export default async function ServiceDetailPage({
                   <DeliverableGrid
                     items={content.deliverables.items}
                     mode={content.deliverables.mode}
+                    accent={flavor.text}
                   />
                 </div>
                 {content.deliverables.outro && (
@@ -207,6 +233,21 @@ export default async function ServiceDetailPage({
               <WaveDivider position="bottom" fill="fill-background" />
             </Section>
           )}
+
+          {/* IN PRACTICE - first image slot: a framed shot with the top
+              deliverables as bullets and a CTA. Placeholder art for now. */}
+          <Section>
+            <FeatureSplit
+              as="h2"
+              eyebrow={t("inPractice.eyebrow")}
+              title={t("inPractice.title")}
+              body={t("inPractice.body")}
+              bullets={practiceBullets}
+              image={practiceImg}
+              imageAlt={t("inPractice.imageAlt", { title: service.title })}
+              cta={{ label: t("inPractice.cta"), href: "/contact" }}
+            />
+          </Section>
 
           {/* ENGAGEMENT - the fixed 4-step flow, then the service-specific prose,
               then the canonical delivery-metric band as the payoff. */}
@@ -270,6 +311,19 @@ export default async function ServiceDetailPage({
               <FaqAccordion items={content.faq.items} />
             </Section>
           )}
+
+          {/* SHOWCASE - second image slot: the one immersive, full-bleed beat,
+              tinted to the service hue, closing on a proof CTA. Placeholder
+              art for now. */}
+          <ShowcaseBand
+            image={showcaseImg}
+            imageAlt={t("showcase.imageAlt", { title: service.title })}
+            eyebrow={t("showcase.eyebrow")}
+            title={t("showcase.title")}
+            body={t("showcase.body")}
+            cta={{ label: t("showcase.cta"), href: "/case-studies" }}
+            tintClass={flavor.glow}
+          />
         </>
       ) : (
         service.body && (
@@ -336,6 +390,6 @@ export default async function ServiceDetailPage({
       )}
 
       <CtaBand title={t("cta.title", { title: service.title })} />
-    </>
+    </div>
   );
 }

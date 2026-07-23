@@ -46,6 +46,20 @@
     "eyebrow": "Nearshore delivery",
     "cta": "See how nearshore delivery works"
   },
+  "inPractice": {
+    "eyebrow": "In practice",
+    "title": "What it looks like in your stack",
+    "body": "A closer look at what we stand up and how it lands where your team already works. Swap the artwork here for a real screen or diagram when you have one.",
+    "cta": "Talk to an architect",
+    "imageAlt": "{title}: illustrative view"
+  },
+  "showcase": {
+    "eyebrow": "Proof",
+    "title": "See it running in production",
+    "body": "Real, anonymized engagements with measured outcomes, from a Snowflake Premier Partner delivering nearshore across the Americas.",
+    "cta": "Explore the case studies",
+    "imageAlt": "{title}: outcomes in production"
+  },
   "faq": {
     "eyebrow": "FAQ"
   },
