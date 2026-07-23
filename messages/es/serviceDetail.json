@@ -15,6 +15,40 @@
     "eyebrow": "Resumen",
     "title": "Lo que incluye"
   },
+  "atAGlance": {
+    "eyebrow": "De un vistazo",
+    "stackLabel": "Stack nativo de Snowflake",
+    "ttvLabel": "Primer valor",
+    "ttvValue": "8 a 16 semanas",
+    "modelLabel": "Entrega",
+    "modelValue": "Nearshore, en su horario",
+    "phaseLabel": "Fase"
+  },
+  "deliver": {
+    "eyebrow": "Qué entregamos"
+  },
+  "engagement": {
+    "eyebrow": "Cómo trabajamos",
+    "flowTitle": "Cada proyecto se desarrolla igual",
+    "flowIntro": "Una cadencia fija que pone software funcionando frente a usted rápido y toma cada decisión con evidencia, no con una presentación.",
+    "steps": [
+      { "label": "01", "title": "Discovery pagado", "body": "Un proyecto corto y pagado que fija el scope y revela el estado real de sus datos." },
+      { "label": "02", "title": "Sprints por caso de uso", "body": "Incrementos funcionando en su ambiente, una pieza lista para decidir a la vez." },
+      { "label": "03", "title": "Prueba antes de escalar", "body": "Cada pieza se comprueba en producción antes de comprometer la siguiente." },
+      { "label": "04", "title": "Una práctica que conserva", "body": "Su equipo construye junto al nuestro, así la capacidad permanece después de nuestra salida." }
+    ]
+  },
+  "proof": {
+    "eyebrow": "Qué entregan los proyectos",
+    "title": "Los resultados con los que se nos mide"
+  },
+  "nearshore": {
+    "eyebrow": "Entrega nearshore",
+    "cta": "Conozca cómo funciona la entrega nearshore"
+  },
+  "faq": {
+    "eyebrow": "Preguntas frecuentes"
+  },
   "tools": {
     "eyebrow": "Stack",
     "title": "Herramientas y productos",

@@ -15,6 +15,40 @@
     "eyebrow": "Overview",
     "title": "What's included"
   },
+  "atAGlance": {
+    "eyebrow": "At a glance",
+    "stackLabel": "Snowflake-native stack",
+    "ttvLabel": "First value",
+    "ttvValue": "8–16 weeks",
+    "modelLabel": "Delivery",
+    "modelValue": "Nearshore, US hours",
+    "phaseLabel": "Phase"
+  },
+  "deliver": {
+    "eyebrow": "What we deliver"
+  },
+  "engagement": {
+    "eyebrow": "How we work",
+    "flowTitle": "Every engagement runs the same way",
+    "flowIntro": "A fixed cadence that puts working software in front of you fast and makes each decision on evidence, not a deck.",
+    "steps": [
+      { "label": "01", "title": "Paid discovery", "body": "A short, paid engagement that fixes scope and surfaces the real state of your data." },
+      { "label": "02", "title": "Use-case sprints", "body": "Working increments ship into your environment, one decision-ready slice at a time." },
+      { "label": "03", "title": "Proof before scale", "body": "Each slice proves out in production before anyone commits to the next." },
+      { "label": "04", "title": "A practice you keep", "body": "Your team builds alongside ours, so the capability stays after we step back." }
+    ]
+  },
+  "proof": {
+    "eyebrow": "What engagements deliver",
+    "title": "The outcomes we're measured on"
+  },
+  "nearshore": {
+    "eyebrow": "Nearshore delivery",
+    "cta": "See how nearshore delivery works"
+  },
+  "faq": {
+    "eyebrow": "FAQ"
+  },
   "tools": {
     "eyebrow": "Stack",
     "title": "Tools & products",
