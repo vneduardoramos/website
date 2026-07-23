@@ -2,7 +2,7 @@ import { unstable_cache } from "next/cache";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Nav, type NavData } from "@/components/marketing/Nav";
 import { Footer } from "@/components/marketing/Footer";
-import { safe, getBlogPosts, getCaseStudies } from "@/lib/queries";
+import { safe, getBlogPosts, getCaseStudies, getServices } from "@/lib/queries";
 import type { Locale } from "@/lib/i18n-content";
 import { prisma } from "@/lib/db";
 import type { OverrideMap } from "@/lib/image-overrides";
@@ -13,9 +13,10 @@ import { EditModeProvider } from "@/components/marketing/EditModeProvider";
 // Small content-aware bits surfaced in the mega-menu featured tiles. Fetched
 // here (server) and passed to the client <Nav>; each falls back gracefully.
 async function getNavData(locale: Locale): Promise<NavData> {
-  const [posts, cases] = await Promise.all([
+  const [posts, cases, services] = await Promise.all([
     safe(getBlogPosts({ take: 1 }, locale), []),
     safe(getCaseStudies({ featured: true, take: 1 }, locale), []),
+    safe(getServices(locale), []),
   ]);
   const fmtDate = (d: Date | null) =>
     d
@@ -26,6 +27,8 @@ async function getNavData(locale: Locale): Promise<NavData> {
   return {
     latestPost: post ? { title: post.title, slug: post.slug, date: fmtDate(post.publishedAt) } : null,
     featuredCase: cs ? { title: cs.title, slug: cs.slug, sector: cs.sector } : null,
+    // The 6 services, laid out by tier in the Services mega-menu.
+    services: services.map((s) => ({ slug: s.slug, title: s.title, tier: s.tier })),
   };
 }
 

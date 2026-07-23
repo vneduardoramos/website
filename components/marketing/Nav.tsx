@@ -222,12 +222,56 @@ const NAV_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   "/faq": ChatQuestionIcon,
 };
 
+function PipelineIcon(p: SVGProps<SVGSVGElement>) {
+  // sources flowing through a node → governed pipelines
+  return (
+    <svg {...ic} {...p}>
+      <circle cx="5" cy="6" r="2" />
+      <circle cx="5" cy="18" r="2" />
+      <circle cx="19" cy="12" r="2" />
+      <path d="M7 6h4a3 3 0 0 1 3 3v0M7 18h4a3 3 0 0 0 3-3v0M14 10.5l3 .9M14 13.5l3-.9" />
+    </svg>
+  );
+}
+function EmbedIcon(p: SVGProps<SVGSVGElement>) {
+  // a chart inside a window frame → analytics embedded in a product
+  return (
+    <svg {...ic} {...p}>
+      <rect x="3" y="4.5" width="18" height="15" rx="2" />
+      <path d="M3 9h18" />
+      <path d="m7 15 2.5-2.6 2 2L16 11" />
+    </svg>
+  );
+}
+
+// One representative icon per service, keyed by slug. Reuses the shared nav icon
+// family so the Services panel reads as one system.
+const SERVICE_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
+  "ai-data-strategy": CompassIcon,
+  "cloud-architecture": DatabaseIcon,
+  "data-engineering": PipelineIcon,
+  "data-visualisation": SparkIcon,
+  "embedded-analytics": EmbedIcon,
+  "capability-development": UsersIcon,
+};
+
+// Per-tier accent for the Services mega-menu columns (THINK/BUILD/GROW). Colors
+// stay on the legible-on-white end of the palette; opacities on 5-step steps.
+const TIER_ORDER = ["THINK", "BUILD", "GROW"] as const;
+const TIER_META: Record<string, { tile: string; text: string; dot: string }> = {
+  THINK: { tile: "bg-primaryDeep/10 text-primaryDeep", text: "text-primaryDeep", dot: "bg-primaryDeep" },
+  BUILD: { tile: "bg-royal/10 text-royal", text: "text-royal", dot: "bg-royal" },
+  GROW: { tile: "bg-accent/10 text-accentDeep", text: "text-accentDeep", dot: "bg-accent" },
+};
+
 // Live content surfaced in the featured tiles, fetched server-side in the
 // marketing layout and passed in. Optional so <Nav /> still renders (with the
 // static fallback tiles) where no data is provided (e.g. not-found).
 export type NavData = {
   latestPost?: { title: string; slug: string; date: string } | null;
   featuredCase?: { title: string; slug: string; sector: string } | null;
+  /** The published services, for the tier-organized Services mega-menu. */
+  services?: { slug: string; title: string; tier: string }[];
 };
 
 function Chevron({ className }: { className?: string }) {
@@ -381,6 +425,92 @@ function MegaFeatured({
         <span className="transition-transform duration-200 group-hover/feat:translate-x-0.5">→</span>
       </span>
     </Link>
+  );
+}
+
+// The Services panel, reimagined as the THINK -> BUILD -> GROW engagement arc:
+// three columns, each service one click away under its phase. The two light
+// columns (Strategy, Enablement) absorb the supporting cross-links so the panel
+// reads as a map of how an engagement runs, not a flat list of pages.
+function ServicesMega({
+  services,
+  support,
+  onNav,
+  isActiveHref,
+}: {
+  services: NonNullable<NavData["services"]>;
+  support: NavChild[];
+  onNav: () => void;
+  isActiveHref: (href: string) => boolean;
+}) {
+  const t = useTranslations("nav");
+  // Supporting links, split by their group so each sits under the right column.
+  const engage = support.filter((c) => /engage/i.test(c.group ?? ""));
+  const explore = support.filter((c) => /explore/i.test(c.group ?? ""));
+  const supportFor: Record<string, { label: string; items: NavChild[] }> = {
+    THINK: { label: t("groups.howWeEngage"), items: engage },
+    GROW: { label: t("groups.alsoExplore"), items: explore },
+  };
+
+  return (
+    <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
+      {TIER_ORDER.map((tier) => {
+        const meta = TIER_META[tier];
+        const svcs = services.filter((s) => s.tier === tier);
+        const sup = supportFor[tier];
+        return (
+          <div key={tier} className="self-start">
+            <div className="flex items-baseline gap-2 px-3 pb-1">
+              <span className={cn("font-mono text-xs font-bold uppercase tracking-[0.18em]", meta.text)}>
+                {tier}
+              </span>
+              <span className="font-mono text-xs uppercase tracking-[0.14em] text-muted">
+                · {t(`tiers.${tier}`)}
+              </span>
+            </div>
+            <ul className="grid gap-0.5">
+              {svcs.map((s) => (
+                <MenuLink
+                  key={s.slug}
+                  href={`/services/${s.slug}`}
+                  label={s.title}
+                  description={t(`serviceDescriptions.${s.slug}`)}
+                  Icon={SERVICE_ICONS[s.slug]}
+                  tile={meta.tile}
+                  onNav={onNav}
+                  active={isActiveHref(`/services/${s.slug}`)}
+                />
+              ))}
+            </ul>
+            {sup && sup.items.length > 0 && (
+              <div className="mt-4 border-t border-border/70 pt-4">
+                <p className={cn("px-3 font-mono text-xs uppercase tracking-wider", meta.text)}>
+                  {sup.label}
+                </p>
+                <ul className="mt-1.5 grid gap-0.5">
+                  {sup.items.map((c) => (
+                    <li key={c.href}>
+                      <Link
+                        href={c.href}
+                        onClick={onNav}
+                        aria-current={isActiveHref(c.href) ? "page" : undefined}
+                        className={cn(
+                          "flex items-center gap-2.5 rounded-lg px-3 py-1.5 text-sm transition-colors hover:bg-surface2 hover:text-primaryDeep",
+                          isActiveHref(c.href) ? "font-semibold text-primaryDeep" : "text-foreground/80"
+                        )}
+                      >
+                        <span className={cn("h-1.5 w-1.5 flex-none rounded-full", meta.dot)} aria-hidden="true" />
+                        {t(c.key)}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
   );
 }
 
@@ -550,6 +680,14 @@ export function Nav({ navData }: { navData?: NavData }) {
                     {/* Surface is full-bleed; this wrapper re-aligns the content
                         to the same max-width/gutters as the logo and nav items. */}
                     <div className="container-page py-5">
+                      {item.label === "Services" && navData?.services?.length ? (
+                        <ServicesMega
+                          services={navData.services}
+                          support={item.children as NavChild[]}
+                          onNav={() => setOpenMenu(null)}
+                          isActiveHref={isActiveHref}
+                        />
+                      ) : (
                       <div className="grid gap-6 lg:grid-cols-[1fr_18rem]">
                         <ul
                           className={cn(
@@ -588,9 +726,13 @@ export function Nav({ navData }: { navData?: NavData }) {
                             // distinct without per-link icons. Color keys off the
                             // English `group` value; the label itself is translated.
                             const groupHeader = (name: string) =>
-                              /how we work/i.test(name) ? "text-accentDeep" : "text-royal";
-                            const groupLabel = (name: string) =>
-                              /how we work/i.test(name) ? t("groups.howWeWork") : t("groups.whatWeDo");
+                              /work|explore/i.test(name) ? "text-accentDeep" : "text-royal";
+                            const groupLabel = (name: string) => {
+                              if (/engage/i.test(name)) return t("groups.howWeEngage");
+                              if (/explore/i.test(name)) return t("groups.alsoExplore");
+                              if (/how we work/i.test(name)) return t("groups.howWeWork");
+                              return t("groups.whatWeDo");
+                            };
 
                             // When children declare a `group`, render a small
                             // header per group (spanning both columns); otherwise
@@ -628,6 +770,7 @@ export function Nav({ navData }: { navData?: NavData }) {
                           onNav={() => setOpenMenu(null)}
                         />
                       </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -695,6 +838,33 @@ export function Nav({ navData }: { navData?: NavData }) {
                         <Chevron className="transition-transform group-open:rotate-180" />
                       </summary>
                       <div className="pl-4">
+                        {/* On mobile, the Services accordion leads with the 6
+                            services themselves (the primary targets), then the
+                            supporting cross-links. */}
+                        {item.label === "Services" &&
+                          navData?.services
+                            ?.slice()
+                            .sort((a, b) => TIER_ORDER.indexOf(a.tier as (typeof TIER_ORDER)[number]) - TIER_ORDER.indexOf(b.tier as (typeof TIER_ORDER)[number]))
+                            .map((s) => {
+                            const svcActive = isActiveHref(`/services/${s.slug}`);
+                            return (
+                              <Link
+                                key={s.slug}
+                                href={`/services/${s.slug}`}
+                                onClick={() => setOpen(false)}
+                                aria-current={svcActive ? "page" : undefined}
+                                className={cn(
+                                  "block py-2 text-base hover:text-primaryDeep",
+                                  svcActive ? "font-semibold text-primaryDeep" : "text-foreground"
+                                )}
+                              >
+                                {s.title}
+                              </Link>
+                            );
+                          })}
+                        {item.label === "Services" && navData?.services?.length ? (
+                          <div className="my-1 h-px bg-border" />
+                        ) : null}
                         {item.children.map((c) => {
                           const childActive = c.href ? isActiveHref(c.href) : false;
                           return (

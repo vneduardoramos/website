@@ -87,12 +87,15 @@ export const theme = {
       key: "services",
       label: "Services",
       children: [
-        { key: "migrations", label: "Migrations", href: "/migrations", group: "What we do" },
-        { key: "dataAi", label: "Data + AI", href: "/data-ai", group: "What we do" },
-        { key: "platform", label: "Platform", href: "/platform", group: "What we do" },
-        { key: "servicesOverview", label: "Services overview", href: "/services", group: "How we work" },
-        { key: "approach", label: "Approach", href: "/approach", group: "How we work" },
-        { key: "pricing", label: "Pricing", href: "/pricing", group: "How we work" },
+        // The 6 services themselves are sourced live from the DB and laid out by
+        // tier (THINK/BUILD/GROW) in the mega-menu; these children are the
+        // supporting cross-links that sit beneath the tier columns.
+        { key: "servicesOverview", label: "Services overview", href: "/services", group: "How we engage" },
+        { key: "approach", label: "Approach", href: "/approach", group: "How we engage" },
+        { key: "pricing", label: "Pricing", href: "/pricing", group: "How we engage" },
+        { key: "migrations", label: "Migrations", href: "/migrations", group: "Also explore" },
+        { key: "dataAi", label: "Data + AI", href: "/data-ai", group: "Also explore" },
+        { key: "platform", label: "Platform", href: "/platform", group: "Also explore" },
       ],
     },
     {

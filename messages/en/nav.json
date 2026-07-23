@@ -33,7 +33,22 @@
   "switchToTarget": "Cambiar a español",
   "groups": {
     "whatWeDo": "What we do",
-    "howWeWork": "How we work"
+    "howWeWork": "How we work",
+    "howWeEngage": "How we engage",
+    "alsoExplore": "Also explore"
+  },
+  "tiers": {
+    "THINK": "Strategy",
+    "BUILD": "Engineering",
+    "GROW": "Enablement"
+  },
+  "serviceDescriptions": {
+    "ai-data-strategy": "Board-ready roadmap, sequenced by ROI",
+    "cloud-architecture": "Governed, AI-ready foundation on Snowflake",
+    "data-engineering": "Governed pipelines that unify every source",
+    "data-visualisation": "Cortex Analyst, dashboards & AI agents",
+    "embedded-analytics": "Analytics built into your product",
+    "capability-development": "Enablement that stays with your team"
   },
   "descriptions": {
     "about": "Who we are",

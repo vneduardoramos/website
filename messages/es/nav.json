@@ -33,7 +33,22 @@
   "switchToTarget": "Switch to English",
   "groups": {
     "whatWeDo": "Qué hacemos",
-    "howWeWork": "Cómo trabajamos"
+    "howWeWork": "Cómo trabajamos",
+    "howWeEngage": "Cómo trabajamos",
+    "alsoExplore": "También explore"
+  },
+  "tiers": {
+    "THINK": "Estrategia",
+    "BUILD": "Ingeniería",
+    "GROW": "Habilitación"
+  },
+  "serviceDescriptions": {
+    "ai-data-strategy": "Hoja de ruta priorizada por ROI",
+    "cloud-architecture": "Base gobernada y lista para IA en Snowflake",
+    "data-engineering": "Pipelines gobernados que unifican sus fuentes",
+    "data-visualisation": "Cortex Analyst, dashboards y agentes de IA",
+    "embedded-analytics": "Analítica dentro de su producto",
+    "capability-development": "Habilitación que permanece en su equipo"
   },
   "descriptions": {
     "about": "Quiénes somos",
