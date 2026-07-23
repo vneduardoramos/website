@@ -17,7 +17,6 @@ import {
   NearshoreBand,
 } from "@/components/marketing/service/ServiceSections";
 import { getServiceFlavor } from "@/components/marketing/service/flavor";
-import { ServiceSignature } from "@/components/marketing/service/ServiceSignature";
 import { Markdown } from "@/lib/content";
 import { Link } from "@/i18n/navigation";
 import { getServiceBySlug, getServiceSlugs, getServices } from "@/lib/queries";
@@ -160,8 +159,7 @@ export default async function ServiceDetailPage({
               ]}
             />
           </div>
-          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
-            <div>
+          <div className="max-w-3xl">
             <div className="flex flex-wrap items-center gap-3">
               <span className={cn("flex h-11 w-11 items-center justify-center rounded-2xl shadow-soft", flavor.tile)}>
                 <FlavorIcon className="h-6 w-6" aria-hidden="true" />
@@ -184,10 +182,6 @@ export default async function ServiceDetailPage({
               <Link href="/services" className="btn-ghost">
                 {t("hero.secondaryCta")}
               </Link>
-            </div>
-            </div>
-            <div className="w-full max-w-md lg:justify-self-end">
-              <ServiceSignature slug={slug} flavor={flavor} />
             </div>
           </div>
         </div>
