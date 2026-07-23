@@ -229,10 +229,12 @@ const NAV_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
 // Per-tier accent for the Services mega-menu columns (THINK/BUILD/GROW). Colors
 // stay on the legible-on-white end of the palette; opacities on 5-step steps.
 const TIER_ORDER = ["THINK", "BUILD", "GROW"] as const;
-const TIER_META: Record<string, { tile: string; text: string; dot: string }> = {
-  THINK: { tile: "bg-primaryDeep/10 text-primaryDeep", text: "text-primaryDeep", dot: "bg-primaryDeep" },
-  BUILD: { tile: "bg-royal/10 text-royal", text: "text-royal", dot: "bg-royal" },
-  GROW: { tile: "bg-accent/10 text-accentDeep", text: "text-accentDeep", dot: "bg-accent" },
+// `wash` is a faint tier-tinted panel fill that delimits the three phase columns
+// (kept on a 5-step opacity; the panel border stays a neutral hairline).
+const TIER_META: Record<string, { tile: string; text: string; dot: string; wash: string }> = {
+  THINK: { tile: "bg-primaryDeep/10 text-primaryDeep", text: "text-primaryDeep", dot: "bg-primaryDeep", wash: "bg-primaryDeep/5" },
+  BUILD: { tile: "bg-royal/10 text-royal", text: "text-royal", dot: "bg-royal", wash: "bg-royal/5" },
+  GROW: { tile: "bg-accent/10 text-accentDeep", text: "text-accentDeep", dot: "bg-accent", wash: "bg-accent/5" },
 };
 
 // Live content surfaced in the featured tiles, fetched server-side in the
@@ -415,7 +417,8 @@ function ServicesMega({
   isActiveHref: (href: string) => boolean;
 }) {
   const t = useTranslations("nav");
-  // Supporting links, split by their group so each sits under the right column.
+  // Supporting links, split by group. They render UNDER the THINK / GROW columns
+  // (their original places), but outside the phase boxes.
   const engage = support.filter((c) => /engage/i.test(c.group ?? ""));
   const explore = support.filter((c) => /explore/i.test(c.group ?? ""));
   const supportFor: Record<string, { label: string; items: NavChild[] }> = {
@@ -424,37 +427,41 @@ function ServicesMega({
   };
 
   return (
-    <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
+    <div className="grid items-start gap-3 lg:grid-cols-3">
       {TIER_ORDER.map((tier) => {
         const meta = TIER_META[tier];
         const svcs = services.filter((s) => s.tier === tier);
         const sup = supportFor[tier];
         return (
-          <div key={tier} className="self-start">
-            <div className="flex items-baseline gap-2 px-3 pb-1">
-              <span className={cn("font-mono text-xs font-bold uppercase tracking-[0.18em]", meta.text)}>
-                {tier}
-              </span>
-              <span className="font-mono text-xs uppercase tracking-[0.14em] text-muted">
-                · {t(`tiers.${tier}`)}
-              </span>
+          <div key={tier} className="flex flex-col">
+            {/* Phase box: services only, so THINK and GROW stay compact. */}
+            <div className={cn("flex flex-col rounded-2xl border border-border/70 p-2.5", meta.wash)}>
+              <div className="flex items-baseline gap-2 px-3 pb-2 pt-1">
+                <span className={cn("font-mono text-xs font-bold uppercase tracking-[0.18em]", meta.text)}>
+                  {tier}
+                </span>
+                <span className="font-mono text-xs uppercase tracking-[0.14em] text-muted">
+                  · {t(`tiers.${tier}`)}
+                </span>
+              </div>
+              <ul className="grid gap-0.5">
+                {svcs.map((s) => (
+                  <MenuLink
+                    key={s.slug}
+                    href={`/services/${s.slug}`}
+                    label={s.title}
+                    description={t(`serviceDescriptions.${s.slug}`)}
+                    Icon={getServiceFlavor(s.slug).icon}
+                    tile={meta.tile}
+                    onNav={onNav}
+                    active={isActiveHref(`/services/${s.slug}`)}
+                  />
+                ))}
+              </ul>
             </div>
-            <ul className="grid gap-0.5">
-              {svcs.map((s) => (
-                <MenuLink
-                  key={s.slug}
-                  href={`/services/${s.slug}`}
-                  label={s.title}
-                  description={t(`serviceDescriptions.${s.slug}`)}
-                  Icon={getServiceFlavor(s.slug).icon}
-                  tile={meta.tile}
-                  onNav={onNav}
-                  active={isActiveHref(`/services/${s.slug}`)}
-                />
-              ))}
-            </ul>
+            {/* Supporting links, below the box (not inside it). */}
             {sup && sup.items.length > 0 && (
-              <div className="mt-4 border-t border-border/70 pt-4">
+              <div className="mt-5 px-2.5">
                 <p className={cn("px-3 font-mono text-xs uppercase tracking-wider", meta.text)}>
                   {sup.label}
                 </p>
