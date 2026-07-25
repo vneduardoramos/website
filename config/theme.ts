@@ -22,6 +22,9 @@ export const theme = {
     // Organization contactPoint JSON-LD. Empty = dormant (nothing renders).
     // Format for display, e.g. "+1 (512) 555-0100".
     phone: "" as string,
+    // Calendly event used by the booking block and the floating badge.
+    // A `bookingUrl` on a team member (admin) or NEXT_PUBLIC_BOOKING_URL wins over this.
+    bookingUrl: "https://calendly.com/eduardo-viewnear/30min",
     tagline: "Data & AI practice, up and running.",
     description:
       "Viewnear helps enterprises stand up two capabilities they keep: a data practice that feeds real decisions with governed, trusted data, and an AI practice that ships use cases into production. Built on Snowflake, run by in-house teams, across the Americas.",

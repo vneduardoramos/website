@@ -1,0 +1,29 @@
+{
+  "eyebrow": "Hablar con una persona",
+  "title": "Agendar 30 minutos con un arquitecto",
+  "body": "No es una llamada de prospección con alguien leyendo un guion. Atiende una de las personas que dimensionaría y construiría el trabajo, y la respuesta sobre si hay encaje es directa.",
+  "agendaLabel": "Qué cubren los 30 minutos",
+  "agenda": [
+    "Dónde están los datos hoy y qué bloquea los casos de uso que se quieren",
+    "Qué es realmente alcanzable sobre Snowflake, y en qué orden",
+    "Una forma y un rango aproximados, o un no honesto si el encaje no está"
+  ],
+  "reassure": "Sin presentación, sin compromiso y sin una secuencia de correos de la que haya que darse de baja.",
+  "meta": {
+    "duration": "30 minutos",
+    "timezone": "Se agenda en la zona horaria del cliente",
+    "who": "Un arquitecto, no un vendedor"
+  },
+  "cta": "Elegir un horario",
+  "ctaAria": "Elegir un horario para hablar con un arquitecto (abre el calendario)",
+  "embedTitle": "Calendario de agendamiento",
+  "fallback": {
+    "prefer": "¿Mejor por correo?",
+    "cta": "Usar el formulario de contacto"
+  },
+  "facesLabel": "Las personas que responden por el trabajo",
+  "picker": {
+    "label": "¿Con quién conviene la llamada?"
+  },
+  "teamBook": "Agendar"
+}

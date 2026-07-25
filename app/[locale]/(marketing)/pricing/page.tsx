@@ -4,6 +4,7 @@ import { pageMeta, breadcrumbLd } from "@/lib/seo";
 import { Link } from "@/i18n/navigation";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { LedgerCard } from "@/components/marketing/Cards";
+import { BookACall } from "@/components/marketing/BookACall";
 import { InlineCta } from "@/components/marketing/Blocks";
 import { FeaturedCaseStudies } from "@/components/marketing/FeaturedCaseStudies";
 import { PageHero } from "@/components/marketing/PageHero";
@@ -136,6 +137,11 @@ export default async function PricingPage({ params }: { params: { locale: string
       </Section>
 
       <FeaturedCaseStudies title={t("featuredTitle")} />
+
+      {/* People hesitate hardest right after reading about cost. */}
+      <Section>
+        <BookACall />
+      </Section>
 
       <CtaBand
         title={t("cta.title")}

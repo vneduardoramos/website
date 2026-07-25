@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Img as Image } from "@/components/marketing/Img";
 import { pageMeta } from "@/lib/seo";
+import { BookACall } from "@/components/marketing/BookACall";
 import { officesLd } from "@/lib/offices";
 import { JsonLd } from "@/components/JsonLd";
 import { Section } from "@/components/marketing/ui";
@@ -37,7 +38,6 @@ export default async function ContactPage({ params }: { params: { locale: string
   const email = contact?.email ?? theme.brand.email;
   // First published member with a booking link, if any (none seeded today:
   // the block below renders nothing until a bookingUrl lands in the CMS).
-  const bookingUrl = team.find((m) => m.bookingUrl)?.bookingUrl;
 
   const steps = t.raw("steps") as { title: string; body: string }[];
   const credentialPills = t.raw("credentials.pills") as string[];
@@ -140,21 +140,15 @@ export default async function ContactPage({ params }: { params: { locale: string
               </div>
             </div>
             <ContactForm />
-            {bookingUrl && (
-              <p className="mt-6 text-sm text-muted">
-                {t("booking.prefer")}{" "}
-                <a
-                  href={bookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold text-primaryDeep underline-offset-4 hover:underline"
-                >
-                  {t("booking.cta")}
-                </a>
-              </p>
-            )}
+
           </div>
         </div>
+      </Section>
+
+      {/* Booking, given the prominence it deserves: this used to be a one-line
+          text link under the form. Renders nothing until a bookingUrl exists. */}
+      <Section>
+        <BookACall />
       </Section>
     </>
   );

@@ -16,6 +16,7 @@ import { Faq } from "@/components/marketing/Faq";
 import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { getClientBands } from "@/lib/client-bands";
+import { BookACall } from "@/components/marketing/BookACall";
 
 export const revalidate = 60;
 
@@ -258,6 +259,11 @@ export default async function SnowflakeConsultingPage({ params }: { params: { lo
         <div className="mt-12">
           <Faq items={faq} />
         </div>
+      </Section>
+
+      {/* Highest-intent page on the site, so give it the human next step. */}
+      <Section className="section-tint">
+        <BookACall />
       </Section>
 
       <CtaBand title={t("cta.title")} subtitle={t("cta.subtitle")} />

@@ -1,0 +1,29 @@
+{
+  "eyebrow": "Talk to a person",
+  "title": "Book 30 minutes with an architect",
+  "body": "Not a discovery call with an SDR reading a script. You get one of the people who would actually scope and build the work, and you get a straight answer on whether we are the right fit.",
+  "agendaLabel": "What the 30 minutes covers",
+  "agenda": [
+    "Where the data sits today and what is blocking the use cases you want",
+    "What is realistically achievable on Snowflake, and in what order",
+    "A rough shape and range, or an honest no if the fit is wrong"
+  ],
+  "reassure": "No deck, no obligation, and no follow-up sequence you have to unsubscribe from.",
+  "meta": {
+    "duration": "30 minutes",
+    "timezone": "Booked in your time zone",
+    "who": "An architect, not a salesperson"
+  },
+  "cta": "Pick a time",
+  "ctaAria": "Pick a time to talk to an architect (opens the scheduler)",
+  "embedTitle": "Scheduling calendar",
+  "fallback": {
+    "prefer": "Prefer email?",
+    "cta": "Use the contact form"
+  },
+  "facesLabel": "The people who answer for the work",
+  "picker": {
+    "label": "Who would you like to meet?"
+  },
+  "teamBook": "Book time"
+}

@@ -45,7 +45,7 @@
   },
   "cookies": {
     "heading": "Cookies and similar technologies",
-    "body": "Our website uses cookies and similar technologies to make the site work, to remember your preferences, and to understand how the site is used. Essential cookies are required for the site to function; analytics cookies help us improve it. You can control or disable cookies through your browser settings, though some features may not work as intended if you do. You can also change or withdraw your consent at any time using the Cookie settings link in the footer."
+    "body": "Our website uses cookies and similar technologies to make the site work, to remember your preferences, and to understand how the site is used. Essential cookies are required for the site to function; analytics cookies help us improve it. You can control or disable cookies through your browser settings, though some features may not work as intended if you do. You can also change or withdraw your consent at any time using the Cookie settings link in the footer. Our scheduling provider loads when you reach the booking section of a page, and it may set its own cookies to hold a booking."
   },
   "sharing": {
     "heading": "Sharing your information",

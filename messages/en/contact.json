@@ -32,11 +32,14 @@
   "leadershipLabel": "The team that picks up the project.",
   "credentials": {
     "eyebrow": "Verified credentials",
-    "pills": ["Snowflake Premier Partner", "CoCo Preferred Partner", "SnowPro-certified"]
+    "pills": [
+      "Snowflake Premier Partner",
+      "CoCo Preferred Partner",
+      "SnowPro-certified"
+    ]
   },
-  "offices": ["Austin, TX · 10900 Stonelake Blvd", "Monterrey, MX · Valle Alto"],
-  "booking": {
-    "prefer": "Prefer to skip the form?",
-    "cta": "Book 30 minutes with an architect →"
-  }
+  "offices": [
+    "Austin, TX · 10900 Stonelake Blvd",
+    "Monterrey, MX · Valle Alto"
+  ]
 }

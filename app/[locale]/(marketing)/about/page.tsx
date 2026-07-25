@@ -40,6 +40,7 @@ export default async function AboutPage({ params }: { params: { locale: string }
   const { locale } = params;
   setRequestLocale(locale);
   const t = await getTranslations("about");
+  const tb = await getTranslations("booking");
 
   const team = await getTeam(locale as Locale);
 
@@ -230,6 +231,7 @@ export default async function AboutPage({ params }: { params: { locale: string }
               {team.map((member) => (
                 <TeamCard
                   key={member.slug}
+                  bookLabel={tb("teamBook")}
                   member={{
                     name: member.name,
                     title: member.title,
