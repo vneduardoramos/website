@@ -1,0 +1,216 @@
+{
+  "meta": {
+    "title": "Snowflake Consulting & Implementation Services",
+    "description": "Snowflake consulting and implementation services from a Snowflake Premier and CoCo Preferred Partner. SnowPro-certified consultants, nearshore delivery in US hours, first production value in 8–16 weeks."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "services": "Services",
+    "current": "Snowflake consulting & implementation"
+  },
+  "hero": {
+    "eyebrow": "Snowflake consulting & implementation",
+    "title": "Snowflake consulting and <hl>implementation services</hl>",
+    "description": "A Snowflake Premier and CoCo Preferred Partner that scopes, designs, and implements the whole thing: governed data foundation, migration, analytics, and AI in production. SnowPro-certified consultants working US business hours, priced on the outcome rather than the hour.",
+    "chips": [
+      "Snowflake Premier Partner",
+      "CoCo Preferred Partner",
+      "SnowPro-certified consultants",
+      "First value in 8–16 weeks"
+    ],
+    "ctaPrimary": "Scope an implementation",
+    "ctaSecondary": "See what it costs"
+  },
+  "trust": {
+    "eyebrow": "Trusted by teams across the Americas"
+  },
+  "scopeHeading": {
+    "eyebrow": "What the engagement covers",
+    "title": "Consulting and implementation, end to end",
+    "intro": "Most Snowflake work fails in the seams: a strategy nobody can build, a build nobody governs, a platform nobody adopts. One accountable team covers all of it."
+  },
+  "scope": [
+    {
+      "label": "01",
+      "title": "Readiness assessment & roadmap",
+      "body": "An honest read of the data, the architecture, and the skills against the use cases the business actually wants, then a roadmap sequenced by return and readiness. Costed, owned, and tied to a business number."
+    },
+    {
+      "label": "02",
+      "title": "Architecture & data foundation",
+      "body": "Account topology, environments, role-based access, and warehouse design sized for the AI workloads coming rather than only today's reports. Governance designed in from the first table."
+    },
+    {
+      "label": "03",
+      "title": "Implementation & build",
+      "body": "The actual delivery: ingestion with Openflow and Snowpipe, dbt transformations, a Medallion warehouse, and tested pipelines that hold up when volume and sources grow."
+    },
+    {
+      "label": "04",
+      "title": "Migration from legacy systems",
+      "body": "Teradata, Oracle, Redshift, SQL Server, and Hadoop moved onto one governed foundation, with automated code conversion, validated parity, and a phased cutover the business never feels."
+    },
+    {
+      "label": "05",
+      "title": "Governance, security & compliance",
+      "body": "Horizon Catalog lineage and PII classification, least-privilege access, masking, data residency by region, and audit-ready controls configured to the sector's rules."
+    },
+    {
+      "label": "06",
+      "title": "Analytics & business intelligence",
+      "body": "The layer where the business meets its data: Snowsight dashboards, Streamlit apps, Semantic Views encoding real metric definitions, and self-service that does not route through a ticket queue."
+    },
+    {
+      "label": "07",
+      "title": "AI, Cortex & agents",
+      "body": "Cortex Analyst over governed Semantic Views, Cortex Search for retrieval, and agents that take the next action inside per-agent permissions. Built with Claude as an Anthropic partner."
+    },
+    {
+      "label": "08",
+      "title": "Enablement & managed run",
+      "body": "Runbooks, documentation, and pairing that leave the in-house team able to operate and extend the work, with ongoing optimization and support when that is wanted rather than assumed."
+    }
+  ],
+  "processHeading": {
+    "eyebrow": "How an implementation runs",
+    "title": "Four phases, evidence at every gate",
+    "intro": "The mechanism matters more than the promise. This is the shape of a first engagement, and why the 8 to 16 week number holds up."
+  },
+  "process": [
+    {
+      "phase": "Phase 1 · Weeks 1–2",
+      "title": "Paid discovery",
+      "body": "A short, paid engagement that inventories sources, profiles the real state of the data, and fixes scope. It ends in a design, a plan, and a price, which is why we can commit to both instead of guessing at them."
+    },
+    {
+      "phase": "Phase 2 · Weeks 2–8",
+      "title": "Governed foundation",
+      "body": "The Snowflake environment stands up: accounts and roles, priority sources flowing, the Medallion warehouse modeled, and Horizon governance and lineage live from the first table rather than retrofitted later."
+    },
+    {
+      "phase": "Phase 3 · Weeks 6–16",
+      "title": "Use cases into production",
+      "body": "Use-case sprints ship one governed answer set at a time, with working software demoed every sprint. Proof runs before scale, so the decision to invest further rests on a result rather than a slide."
+    },
+    {
+      "phase": "Phase 4 · Ongoing",
+      "title": "Handover and run",
+      "body": "Enablement, runbooks, and a transition plan that names who operates what. The in-house team can run and extend the work; managed support stays optional, not a dependency we engineer in."
+    }
+  ],
+  "deliveryBand": [
+    { "value": "60%", "label": "Faster time to first insight" },
+    { "value": "3×", "label": "More reliable pipelines" },
+    { "value": "40%", "label": "Lower platform run cost" },
+    { "value": "8–16", "label": "Weeks to first production value" }
+  ],
+  "whyHeading": {
+    "eyebrow": "Why this partner",
+    "title": "What separates a good Snowflake partner from a painful one",
+    "intro": "Certifications are the floor. These are the things that actually decide how an implementation goes."
+  },
+  "why": [
+    {
+      "title": "Premier and CoCo Preferred, verified",
+      "body": "Recognized in Snowflake's CoCo Preferred Partner program at Summit 2026 alongside Accenture, Deloitte, IBM, and Capgemini. In practice it means Snowflake's product teams are a call away when a build hits a hard question, and early visibility into what is coming."
+    },
+    {
+      "title": "The people who scope it are the people who build it",
+      "body": "No pitch team handing off to a delivery pyramid. SnowPro-certified architects and engineers stay on from discovery through handover, so the depth that sized the work is the depth that delivers it."
+    },
+    {
+      "title": "Nearshore, inside your working day",
+      "body": "Engineers work from Monterrey, Mexico and Austin, Texas on US business hours. A blocker raised at 10am gets answered before lunch instead of waiting a night, which is the difference between a two-week task and a month."
+    },
+    {
+      "title": "Priced on the outcome, not the hour",
+      "body": "Hourly billing quietly rewards taking longer. We agree scope and price up front and attach the fee to the result, so finishing sooner is a win on both sides of the table."
+    },
+    {
+      "title": "Snowflake-native by default",
+      "body": "Openflow, Snowpark, Horizon Catalog, Cortex, Snowsight, and Streamlit, so governance and AI context stay in one place. dbt is the one external framework we run, natively against Snowflake."
+    },
+    {
+      "title": "Built to hand over",
+      "body": "Every engagement includes documentation, enablement, and a transition plan. Success is measured by how little the team needs us afterward, which is the opposite of how most implementations are staffed."
+    }
+  ],
+  "cost": {
+    "eyebrow": "What it costs",
+    "title": "Priced to the work, agreed up front",
+    "body": "There is no standard price for a Snowflake implementation, and anyone quoting one before seeing the environment is guessing. Cost is driven by a few clear factors, and a paid discovery turns the range into a number that can be planned around.",
+    "factors": [
+      "Data volume, plus the number and complexity of source systems",
+      "How many analytics and AI use cases are in scope",
+      "The source system being migrated from, if any",
+      "Governance, compliance, and security requirements",
+      "Team size and target timeline"
+    ],
+    "note": "Snowflake's own consumption cost is separate from the implementation cost, and capacity can be procured through Viewnear under one accountable partner.",
+    "cta": "Engagement models & pricing"
+  },
+  "proof": {
+    "eyebrow": "Proof, not promises",
+    "title": "Implementations already in production"
+  },
+  "industries": {
+    "eyebrow": "Sector depth",
+    "title": "The rules change by industry",
+    "body": "A claims processor, a manufacturer, and a university group do not share a data model, a regulator, or a definition of done. Implementations are shaped to the sector's systems and KPIs rather than dropped in from a template.",
+    "cta": "Industries we serve"
+  },
+  "faqHeading": {
+    "eyebrow": "Questions",
+    "title": "Snowflake consulting and implementation, answered"
+  },
+  "faq": [
+    {
+      "q": "What do Snowflake consultants actually do?",
+      "a": "Three things, in order: decide what to build, build it, and make sure the in-house team can run it. In practice that means assessing the current data estate, designing the target architecture on Snowflake, implementing ingestion, modeling and governance, delivering the analytics and AI use cases that justify the work, and handing over documentation and skills. A partner who only does the middle step leaves the hardest parts with the client."
+    },
+    {
+      "q": "What is included in Snowflake implementation services?",
+      "a": "A full implementation covers account and environment setup, role-based access and security, ingestion from the source systems, transformation and data modeling, governance and lineage, the consumption layer (dashboards, semantic models, apps), and enablement. Where a legacy warehouse is involved, migration and validated parity are part of it. AI and Cortex use cases sit on top once the governed foundation exists."
+    },
+    {
+      "q": "How much does a Snowflake implementation cost?",
+      "a": "It depends on data volume, the number and complexity of source systems, how many use cases are in scope, and what governance the sector demands. We do not publish a standard price because no two data estates are alike. A paid discovery is the honest first step: it fixes scope and returns a firm price, and it is far cheaper than the rework that follows a guessed quote. Note that Snowflake's consumption cost is separate from the implementation project cost."
+    },
+    {
+      "q": "How long does a Snowflake implementation take?",
+      "a": "A first production build typically runs 8 to 16 weeks, depending on data volume, source complexity, and the use cases in scope. What keeps that real is the mechanism: a paid discovery fixes scope up front, use-case sprints demo working software from the first weeks, and proof runs in parallel with the build so value shows from sprint one rather than at the end."
+    },
+    {
+      "q": "What Snowflake partner status does Viewnear hold?",
+      "a": "Viewnear is a Snowflake Premier Partner and a Snowflake CoCo Preferred Partner, with SnowPro-certified engineers and a verified delivery track record across the Americas. Premier status reflects certified delivery across the full Snowflake stack and means we work directly with Snowflake's team on architecture and delivery, with early visibility into new capabilities."
+    },
+    {
+      "q": "Can you migrate our existing data warehouse to Snowflake?",
+      "a": "Yes, and it is one of our most common engagements: Teradata, Oracle, Redshift, SQL Server, and Hadoop. We handle automated code conversion, validated parity between old and new, a phased cutover rather than a big bang, and the program governance around it, so reporting does not break during a quarter close."
+    },
+    {
+      "q": "Do you implement AI and Cortex, or only the data foundation?",
+      "a": "Both, in that order. Governed data comes first because AI on ungoverned data produces confident wrong answers. From there we implement Cortex Analyst over Semantic Views, Cortex Search for retrieval, and agents that act inside per-agent permissions, built with Claude as an Anthropic partner and with evals that measure accuracy before a use case scales."
+    },
+    {
+      "q": "Do you use third-party tools or stay native to Snowflake?",
+      "a": "We lead with the Snowflake-native stack (Openflow, Snowpark, Horizon Catalog, Cortex, Snowsight, Streamlit, plus the Snowflake CoCo coding agent and CoWork AI agent) so governance and AI context stay in one place instead of spread across vendors. dbt is the one external framework we run, natively against Snowflake."
+    },
+    {
+      "q": "Can we buy Snowflake capacity through you?",
+      "a": "Yes. Snowflake is consumption-based, so the business pays for the compute and storage it actually uses. Capacity can be procured through Viewnear for simpler commercial terms and account management under a single accountable partner."
+    },
+    {
+      "q": "Where is the delivery team located?",
+      "a": "Our nearshore delivery center is in Monterrey, Nuevo León, Mexico, with leadership in Austin, Texas, serving clients across Canada, the United States, Mexico, LATAM, and the Caribbean. The team works US business hours, so the working day overlaps end to end and onsite travel is short rather than a two-day trip."
+    },
+    {
+      "q": "What happens after go-live?",
+      "a": "Every engagement includes documentation, runbooks, enablement, and a transition plan naming who operates what. The in-house team can run and extend the work without us. Ongoing optimization, cost tuning, and support are available when a team wants them, not engineered in as a dependency."
+    }
+  ],
+  "cta": {
+    "title": "Scope the implementation before committing to it.",
+    "subtitle": "Tell us where the organization stands with Snowflake and what the business needs from it. A paid discovery returns a design, a plan, and a firm price, and it is the cheapest part of the whole engagement."
+  }
+}

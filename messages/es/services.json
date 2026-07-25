@@ -42,9 +42,18 @@
     "title": "Qué cambia, y cuándo",
     "intro": "Una visión práctica del valor que devuelve un proyecto: por horizonte, no por lista de funciones, con las metas que acordamos por adelantado.",
     "metrics": [
-      { "value": "60%", "label": "Más rápido hasta el primer insight" },
-      { "value": "3×", "label": "Canalizaciones más confiables" },
-      { "value": "40%", "label": "Menor costo de operación" }
+      {
+        "value": "60%",
+        "label": "Más rápido hasta el primer insight"
+      },
+      {
+        "value": "3×",
+        "label": "Canalizaciones más confiables"
+      },
+      {
+        "value": "40%",
+        "label": "Menor costo de operación"
+      }
     ],
     "phases": [
       {
@@ -112,28 +121,44 @@
         "title": "Costo fijo",
         "body": "Un scope, un cronograma y un precio definidos y acordados por adelantado. Ideal cuando el resultado es claro y la certeza presupuestaria importa desde el primer día.",
         "how": "Definimos el scope del trabajo en un discovery pagado y breve, y luego nos comprometemos con un precio y una fecha.",
-        "includes": ["Enunciado de trabajo con scope definido", "Hitos con puntos de decisión", "Control de cambios si el scope varía"],
+        "includes": [
+          "Enunciado de trabajo con scope definido",
+          "Hitos con puntos de decisión",
+          "Control de cambios si el scope varía"
+        ],
         "bestFor": "Desarrollos de base definidos y migraciones"
       },
       {
         "title": "Tiempo y materiales",
         "body": "Entrega flexible e iterativa, facturada por esfuerzo sobre un backlog compartido. Ideal para requisitos cambiantes y trabajo guiado por el discovery.",
         "how": "Entregamos sprint a sprint sobre un backlog priorizado que el negocio controla.",
-        "includes": ["Backlog compartido y priorizado", "Demos de sprint e informes de avance", "Detener o cambiar de rumbo en cualquier sprint"],
+        "includes": [
+          "Backlog compartido y priorizado",
+          "Demos de sprint e informes de avance",
+          "Detener o cambiar de rumbo en cualquier sprint"
+        ],
         "bestFor": "Discovery, POCs y scope cambiante"
       },
       {
         "title": "Equipo dedicado y staff augmentation",
         "body": "Integramos a nuestros profesionales certificados junto al equipo interno, como equipo dedicado o como extensión del equipo. Aceleramos la entrega a la vez que elevamos la capacidad del equipo.",
         "how": "Ingenieros certificados en SnowPro se suman al equipo, a las herramientas y las formas de trabajar ya establecidas.",
-        "includes": ["Profundidad en Snowflake en todos los niveles", "Transferencia de conocimiento incorporada", "Escala que sube o baja cada mes"],
+        "includes": [
+          "Profundidad en Snowflake en todos los niveles",
+          "Transferencia de conocimiento incorporada",
+          "Escala que sube o baja cada mes"
+        ],
         "bestFor": "Escalar rápido un equipo existente"
       },
       {
         "title": "Servicios gestionados y soporte",
         "body": "Operación, optimización y mejora continuas una vez que la práctica está en marcha, para que siga acumulando valor mientras el equipo interno crece con ella.",
         "how": "Un equipo dedicado monitorea, ajusta el costo y el rendimiento, y entrega mejoras.",
-        "includes": ["Monitoreo y optimización de costos", "SLAs y un contacto asignado", "Una hoja de ruta de mejoras"],
+        "includes": [
+          "Monitoreo y optimización de costos",
+          "SLAs y un contacto asignado",
+          "Una hoja de ruta de mejoras"
+        ],
         "bestFor": "Operar y hacer crecer un entorno Snowflake en producción"
       }
     ],
@@ -143,12 +168,30 @@
       "body": "Sea cual sea la forma en que una organización elija colaborar, cada proyecto de Viewnear se entrega con el mismo estándar: los aspectos que marcan la diferencia entre un desarrollo que llega a producción y uno que se estanca."
     },
     "value": [
-      { "title": "Un solo equipo certificado, con profundidad en todos los niveles", "body": "Un único equipo responsable: quienes definen el scope del trabajo son quienes lo entregan." },
-      { "title": "Profundidad verificada en Snowflake", "body": "Un equipo certificado en SnowPro con un historial verificado de entregas en Snowflake detrás de cada decisión, desde la estrategia hasta la producción." },
-      { "title": "Precio orientado a resultados", "body": "Scope y precio acordados por adelantado, sea cual sea el modelo que encaje." },
-      { "title": "Gobierno incorporado", "body": "Seguridad, linaje y control de acceso diseñados desde la primera tabla, no añadidos después." },
-      { "title": "Traspaso y habilitación", "body": "Traspaso completo, documentación y habilitación para que el equipo lo opere con confianza." },
-      { "title": "Integrado con la empresa", "body": "Productos de datos que se conectan hacia y desde los sistemas que el negocio utiliza: ERP, CRM y aplicaciones de cara al cliente." }
+      {
+        "title": "Un solo equipo certificado, con profundidad en todos los niveles",
+        "body": "Un único equipo responsable: quienes definen el scope del trabajo son quienes lo entregan."
+      },
+      {
+        "title": "Profundidad verificada en Snowflake",
+        "body": "Un equipo certificado en SnowPro con un historial verificado de entregas en Snowflake detrás de cada decisión, desde la estrategia hasta la producción."
+      },
+      {
+        "title": "Precio orientado a resultados",
+        "body": "Scope y precio acordados por adelantado, sea cual sea el modelo que encaje."
+      },
+      {
+        "title": "Gobierno incorporado",
+        "body": "Seguridad, linaje y control de acceso diseñados desde la primera tabla, no añadidos después."
+      },
+      {
+        "title": "Traspaso y habilitación",
+        "body": "Traspaso completo, documentación y habilitación para que el equipo lo opere con confianza."
+      },
+      {
+        "title": "Integrado con la empresa",
+        "body": "Productos de datos que se conectan hacia y desde los sistemas que el negocio utiliza: ERP, CRM y aplicaciones de cara al cliente."
+      }
     ],
     "leadershipLabel": "Un único equipo responsable.",
     "cost": {
@@ -164,5 +207,9 @@
   "faq": {
     "eyebrow": "Preguntas frecuentes",
     "title": "Preguntas comunes"
+  },
+  "consultingCta": {
+    "title": "¿Hace falta dimensionar toda la implementación y no solo elegir un servicio?",
+    "label": "Consultoría e implementación"
   }
 }

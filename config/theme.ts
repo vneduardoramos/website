@@ -91,6 +91,7 @@ export const theme = {
         // tier (THINK/BUILD/GROW) in the mega-menu; these children are the
         // supporting cross-links that sit beneath the tier columns.
         { key: "servicesOverview", label: "Services overview", href: "/services", group: "How we engage" },
+        { key: "snowflakeConsulting", label: "Snowflake Consulting & Implementation", href: "/snowflake-consulting-services", group: "How we engage" },
         { key: "approach", label: "Approach", href: "/approach", group: "How we engage" },
         { key: "pricing", label: "Pricing", href: "/pricing", group: "How we engage" },
         { key: "migrations", label: "Migrations", href: "/migrations", group: "Also explore" },

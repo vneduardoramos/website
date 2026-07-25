@@ -74,7 +74,8 @@
     "blog": "Field notes",
     "press": "Media coverage",
     "faq": "Common questions",
-    "careers": "Open roles in Monterrey & Austin"
+    "careers": "Open roles in Monterrey & Austin",
+    "snowflakeConsulting": "Scope, design & implement on Snowflake"
   },
   "featured": {
     "company": {
@@ -103,5 +104,6 @@
     "blogEyebrow": "Latest from the blog",
     "blogCta": "Read post"
   },
-  "careers": "Careers"
+  "careers": "Careers",
+  "snowflakeConsulting": "Snowflake Consulting & Implementation"
 }

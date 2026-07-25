@@ -74,7 +74,8 @@
     "blog": "Apuntes de campo",
     "press": "Cobertura de medios",
     "faq": "Preguntas comunes",
-    "careers": "Vacantes en Monterrey y Austin"
+    "careers": "Vacantes en Monterrey y Austin",
+    "snowflakeConsulting": "Dimensionar, diseñar e implementar en Snowflake"
   },
   "featured": {
     "company": {
@@ -103,5 +104,6 @@
     "blogEyebrow": "Lo último del blog",
     "blogCta": "Leer artículo"
   },
-  "careers": "Carreras"
+  "careers": "Carreras",
+  "snowflakeConsulting": "Consultoría e implementación de Snowflake"
 }

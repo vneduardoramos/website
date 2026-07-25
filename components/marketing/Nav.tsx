@@ -207,6 +207,7 @@ function ChatQuestionIcon(p: SVGProps<SVGSVGElement>) {
 
 const NAV_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   "/services": LayersIcon,
+  "/snowflake-consulting-services": CompassIcon,
   "/migrations": MigrateIcon,
   "/data-ai": SparkIcon,
   "/platform": DatabaseIcon,

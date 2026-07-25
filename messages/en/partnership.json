@@ -98,5 +98,9 @@
   "cta": {
     "title": "Put a certified partner on it.",
     "subtitle": "Tell us where the organization stands with Snowflake (procurement, migration, or AI) and we'll bring the certified team, with Snowflake at the table, to move it forward."
+  },
+  "consultingCta": {
+    "title": "Premier status is the credential. This is what it delivers.",
+    "label": "Consulting & implementation"
   }
 }

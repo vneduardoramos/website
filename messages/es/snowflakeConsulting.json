@@ -1,0 +1,216 @@
+{
+  "meta": {
+    "title": "Consultoría e implementación de Snowflake",
+    "description": "Servicios de consultoría e implementación de Snowflake de un Snowflake Premier y CoCo Preferred Partner. Consultores certificados en SnowPro, entrega nearshore en horario de EE. UU., primer valor en producción en 8 a 16 semanas."
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "current": "Consultoría e implementación de Snowflake"
+  },
+  "hero": {
+    "eyebrow": "Consultoría e implementación de Snowflake",
+    "title": "Consultoría e <hl>implementación de Snowflake</hl>",
+    "description": "Un Snowflake Premier y CoCo Preferred Partner que dimensiona, diseña e implementa todo: base de datos gobernada, migración, analítica e IA en producción. Consultores certificados en SnowPro en horario laboral de Estados Unidos, con precio atado al resultado y no a la hora.",
+    "chips": [
+      "Snowflake Premier Partner",
+      "CoCo Preferred Partner",
+      "Consultores certificados en SnowPro",
+      "Primer valor en 8 a 16 semanas"
+    ],
+    "ctaPrimary": "Dimensionar una implementación",
+    "ctaSecondary": "Ver costos"
+  },
+  "trust": {
+    "eyebrow": "La confianza de equipos en toda América"
+  },
+  "scopeHeading": {
+    "eyebrow": "Qué cubre el proyecto",
+    "title": "Consultoría e implementación, de extremo a extremo",
+    "intro": "La mayoría del trabajo en Snowflake falla en las costuras: una estrategia que nadie puede construir, una construcción que nadie gobierna, una plataforma que nadie adopta. Un solo equipo responsable cubre todo."
+  },
+  "scope": [
+    {
+      "label": "01",
+      "title": "Evaluación de preparación y hoja de ruta",
+      "body": "Una lectura honesta de los datos, la arquitectura y las habilidades frente a los casos de uso que el negocio realmente quiere, y después una hoja de ruta secuenciada por retorno y preparación. Costeada, con responsable y atada a un número de negocio."
+    },
+    {
+      "label": "02",
+      "title": "Arquitectura y base de datos gobernada",
+      "body": "Topología de cuentas, ambientes, accesos por roles y diseño de warehouses dimensionados para las cargas de IA que vienen, no solo para los reportes de hoy. Gobierno diseñado desde la primera tabla."
+    },
+    {
+      "label": "03",
+      "title": "Implementación y construcción",
+      "body": "La entrega real: ingesta con Openflow y Snowpipe, transformaciones con dbt, un warehouse Medallion y pipelines probados que se sostienen cuando crecen el volumen y las fuentes."
+    },
+    {
+      "label": "04",
+      "title": "Migración de sistemas heredados",
+      "body": "Teradata, Oracle, Redshift, SQL Server y Hadoop trasladados a una sola base gobernada, con conversión automatizada de código, paridad validada y un cutover por fases que el negocio no siente."
+    },
+    {
+      "label": "05",
+      "title": "Gobierno, seguridad y cumplimiento",
+      "body": "Linaje y clasificación de PII con Horizon Catalog, acceso de mínimo privilegio, enmascaramiento, residencia de datos por región y controles listos para auditoría, configurados según las reglas del sector."
+    },
+    {
+      "label": "06",
+      "title": "Analítica e inteligencia de negocio",
+      "body": "La capa donde el negocio se encuentra con sus datos: dashboards de Snowsight, apps de Streamlit, Semantic Views que codifican las definiciones reales de cada métrica y autoservicio que no pasa por una cola de tickets."
+    },
+    {
+      "label": "07",
+      "title": "IA, Cortex y agentes",
+      "body": "Cortex Analyst sobre Semantic Views gobernadas, Cortex Search para recuperación y agentes que ejecutan la siguiente acción dentro de permisos por agente. Construido con Claude como socio de Anthropic."
+    },
+    {
+      "label": "08",
+      "title": "Habilitación y operación gestionada",
+      "body": "Runbooks, documentación y trabajo en pareja que dejan al equipo interno capaz de operar y extender el trabajo, con optimización y soporte continuos cuando se quieren y no por defecto."
+    }
+  ],
+  "processHeading": {
+    "eyebrow": "Cómo corre una implementación",
+    "title": "Cuatro fases, con evidencia en cada punto de decisión",
+    "intro": "El mecanismo importa más que la promesa. Esta es la forma de un primer proyecto, y por qué el número de 8 a 16 semanas se sostiene."
+  },
+  "process": [
+    {
+      "phase": "Fase 1 · Semanas 1 a 2",
+      "title": "Discovery pagado",
+      "body": "Un proyecto corto y pagado que inventaría las fuentes, perfila el estado real de los datos y fija el scope. Termina en un diseño, un plan y un precio, y por eso podemos comprometer ambos en lugar de adivinarlos."
+    },
+    {
+      "phase": "Fase 2 · Semanas 2 a 8",
+      "title": "Base gobernada",
+      "body": "El ambiente de Snowflake se levanta: cuentas y roles, las fuentes prioritarias fluyendo, el warehouse Medallion modelado, y el gobierno y el linaje de Horizon activos desde la primera tabla en lugar de agregados después."
+    },
+    {
+      "phase": "Fase 3 · Semanas 6 a 16",
+      "title": "Casos de uso en producción",
+      "body": "Los sprints por caso de uso entregan un conjunto de respuestas gobernadas a la vez, con software funcionando en cada demo. La prueba corre antes de escalar, así que la decisión de invertir más se apoya en un resultado y no en una presentación."
+    },
+    {
+      "phase": "Fase 4 · Continuo",
+      "title": "Traspaso y operación",
+      "body": "Habilitación, runbooks y un plan de transición que define quién opera qué. El equipo interno puede operar y extender el trabajo; el soporte gestionado es opcional, no una dependencia diseñada a propósito."
+    }
+  ],
+  "deliveryBand": [
+    { "value": "60%", "label": "Más rápido al primer insight" },
+    { "value": "3×", "label": "Pipelines más confiables" },
+    { "value": "40%", "label": "Menor costo de operación" },
+    { "value": "8-16", "label": "Semanas al primer valor en producción" }
+  ],
+  "whyHeading": {
+    "eyebrow": "Por qué este partner",
+    "title": "Qué separa a un buen partner de Snowflake de uno doloroso",
+    "intro": "Las certificaciones son el piso. Esto es lo que en realidad decide cómo sale una implementación."
+  },
+  "why": [
+    {
+      "title": "Premier y CoCo Preferred, verificado",
+      "body": "Reconocidos en el programa CoCo Preferred Partner de Snowflake en Summit 2026, junto a Accenture, Deloitte, IBM y Capgemini. En la práctica significa que los equipos de producto de Snowflake están a una llamada de distancia cuando un build enfrenta una pregunta difícil, y visibilidad temprana de lo que viene."
+    },
+    {
+      "title": "Quien dimensiona es quien construye",
+      "body": "Sin un equipo de preventa que entrega a una pirámide de delivery. Los arquitectos e ingenieros certificados en SnowPro permanecen desde el discovery hasta el traspaso, así que la profundidad que dimensionó el trabajo es la que lo entrega."
+    },
+    {
+      "title": "Nearshore, dentro de la jornada del cliente",
+      "body": "Los ingenieros trabajan desde Monterrey, México y Austin, Texas en horario laboral de Estados Unidos. Un bloqueo planteado a las 10am se responde antes de la comida en lugar de esperar toda la noche, y eso es la diferencia entre una tarea de dos semanas y un mes."
+    },
+    {
+      "title": "Precio por resultado, no por hora",
+      "body": "Cobrar por hora premia en silencio tardar más. Acordamos scope y precio por adelantado y atamos la tarifa al resultado, así que terminar antes conviene a ambos lados de la mesa."
+    },
+    {
+      "title": "Nativo en Snowflake por defecto",
+      "body": "Openflow, Snowpark, Horizon Catalog, Cortex, Snowsight y Streamlit, para que el gobierno y el contexto de IA se mantengan en un solo lugar en vez de repartidos entre proveedores. dbt es el único framework externo que operamos, de forma nativa contra Snowflake."
+    },
+    {
+      "title": "Construido para entregarse",
+      "body": "Cada proyecto incluye documentación, habilitación y un plan de transición. El éxito se mide por lo poco que el equipo nos necesita después, que es lo contrario de cómo se dimensiona la mayoría de las implementaciones."
+    }
+  ],
+  "cost": {
+    "eyebrow": "Cuánto cuesta",
+    "title": "Precio según el trabajo, acordado por adelantado",
+    "body": "No hay un precio estándar para una implementación de Snowflake, y quien cotice uno antes de ver el entorno está adivinando. El costo lo determinan unos cuantos factores claros, y un discovery pagado convierte el rango en un número que se puede planear.",
+    "factors": [
+      "Volumen de datos, más la cantidad y complejidad de los sistemas fuente",
+      "Cuántos casos de uso de analítica e IA entran en el scope",
+      "El sistema de origen de la migración, si hay una",
+      "Requisitos de gobierno, cumplimiento y seguridad",
+      "Tamaño del equipo y cronograma objetivo"
+    ],
+    "note": "El costo de consumo de Snowflake es independiente del costo de la implementación, y la capacidad se puede adquirir a través de Viewnear bajo un único partner responsable.",
+    "cta": "Modelos de colaboración y precios"
+  },
+  "proof": {
+    "eyebrow": "Pruebas, no promesas",
+    "title": "Implementaciones ya en producción"
+  },
+  "industries": {
+    "eyebrow": "Profundidad por sector",
+    "title": "Las reglas cambian según la industria",
+    "body": "Una procesadora de reclamos, una manufacturera y un grupo de universidades no comparten modelo de datos, regulador ni definición de terminado. Las implementaciones se ajustan a los sistemas y los KPI del sector en lugar de bajarse de una plantilla.",
+    "cta": "Industrias que atendemos"
+  },
+  "faqHeading": {
+    "eyebrow": "Preguntas",
+    "title": "Consultoría e implementación de Snowflake, respondidas"
+  },
+  "faq": [
+    {
+      "q": "¿Qué hace en realidad un consultor de Snowflake?",
+      "a": "Tres cosas, en orden: decidir qué construir, construirlo y asegurar que el equipo interno pueda operarlo. En la práctica implica evaluar el estado actual de los datos, diseñar la arquitectura objetivo sobre Snowflake, implementar ingesta, modelado y gobierno, entregar los casos de uso de analítica e IA que justifican el trabajo, y traspasar documentación y habilidades. Un partner que solo hace el paso intermedio deja las partes más difíciles del lado del cliente."
+    },
+    {
+      "q": "¿Qué incluye un servicio de implementación de Snowflake?",
+      "a": "Una implementación completa cubre configuración de cuentas y ambientes, accesos por roles y seguridad, ingesta desde los sistemas fuente, transformación y modelado de datos, gobierno y linaje, la capa de consumo (dashboards, modelos semánticos, aplicaciones) y habilitación. Cuando hay un warehouse heredado, la migración y la paridad validada forman parte. Los casos de uso de IA y Cortex van encima una vez que existe la base gobernada."
+    },
+    {
+      "q": "¿Cuánto cuesta una implementación de Snowflake?",
+      "a": "Depende del volumen de datos, la cantidad y complejidad de los sistemas fuente, cuántos casos de uso entran en el scope y qué gobierno exige el sector. No publicamos un precio estándar porque no hay dos entornos de datos iguales. Un discovery pagado es el primer paso honesto: fija el scope y devuelve un precio firme, y sale mucho más barato que el retrabajo que sigue a una cotización adivinada. El costo de consumo de Snowflake es independiente del costo del proyecto."
+    },
+    {
+      "q": "¿Cuánto tarda una implementación de Snowflake?",
+      "a": "Una primera construcción en producción suele tomar de 8 a 16 semanas, según el volumen de datos, la complejidad de las fuentes y los casos de uso en scope. Lo que mantiene ese número real es el mecanismo: un discovery pagado fija el scope desde el inicio, los sprints por caso de uso muestran software funcionando desde las primeras semanas, y la prueba corre en paralelo con la construcción, así que el valor aparece desde el primer sprint y no al final."
+    },
+    {
+      "q": "¿Qué estatus de partner de Snowflake tiene Viewnear?",
+      "a": "Viewnear es Snowflake Premier Partner y Snowflake CoCo Preferred Partner, con ingenieros certificados en SnowPro y un historial de entrega verificado en las Américas. El estatus Premier refleja entrega certificada en todo el stack de Snowflake y significa que trabajamos directamente con el equipo de Snowflake en arquitectura y entrega, con visibilidad temprana de nuevas capacidades."
+    },
+    {
+      "q": "¿Pueden migrar nuestro data warehouse actual a Snowflake?",
+      "a": "Sí, y es uno de nuestros proyectos más comunes: Teradata, Oracle, Redshift, SQL Server y Hadoop. Nos encargamos de la conversión automatizada de código, la paridad validada entre lo viejo y lo nuevo, un cutover por fases en lugar de un solo golpe, y la gobernanza del programa alrededor, para que los reportes no se rompan durante un cierre trimestral."
+    },
+    {
+      "q": "¿Implementan IA y Cortex o solo la base de datos?",
+      "a": "Ambos, en ese orden. Los datos gobernados van primero, porque la IA sobre datos sin gobierno produce respuestas equivocadas con mucha seguridad. De ahí implementamos Cortex Analyst sobre Semantic Views, Cortex Search para recuperación y agentes que actúan dentro de permisos por agente, construidos con Claude como socio de Anthropic y con evals que miden la precisión antes de escalar un caso de uso."
+    },
+    {
+      "q": "¿Usan herramientas de terceros o se mantienen nativos en Snowflake?",
+      "a": "Lideramos con el stack nativo de Snowflake (Openflow, Snowpark, Horizon Catalog, Cortex, Snowsight, Streamlit, más el agente de codificación Snowflake CoCo y el agente de IA CoWork) para que el gobierno y el contexto de IA se mantengan en un solo lugar en vez de repartidos entre proveedores. dbt es el único framework externo que operamos, de forma nativa contra Snowflake."
+    },
+    {
+      "q": "¿Se puede adquirir capacidad de Snowflake a través de Viewnear?",
+      "a": "Sí. Snowflake es basado en consumo, así que el negocio paga por el cómputo y el almacenamiento que realmente usa. La capacidad se puede adquirir a través de Viewnear para simplificar los términos comerciales y la gestión de cuenta bajo un único partner responsable."
+    },
+    {
+      "q": "¿Dónde está el equipo de entrega?",
+      "a": "Nuestro centro de entrega nearshore está en Monterrey, Nuevo León, México, con la dirección en Austin, Texas, atendiendo clientes en Canadá, Estados Unidos, México, LATAM y el Caribe. El equipo trabaja en horario laboral de Estados Unidos, así que la jornada se traslapa por completo y los viajes presenciales son cortos en lugar de dos días de traslado."
+    },
+    {
+      "q": "¿Qué pasa después del go-live?",
+      "a": "Cada proyecto incluye documentación, runbooks, habilitación y un plan de transición que define quién opera qué. El equipo interno puede operar y extender el trabajo sin nosotros. La optimización continua, el ajuste de costos y el soporte están disponibles cuando un equipo los quiere, no integrados como dependencia."
+    }
+  ],
+  "cta": {
+    "title": "Dimensionar la implementación antes de comprometerse con ella.",
+    "subtitle": "Basta con contarnos en qué punto está la organización con Snowflake y qué necesita el negocio de eso. Un discovery pagado devuelve un diseño, un plan y un precio firme, y es la parte más barata de todo el proyecto."
+  }
+}

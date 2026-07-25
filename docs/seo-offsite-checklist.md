@@ -33,9 +33,11 @@ Copy-paste from here so nothing drifts.
 > Austin, Texas, delivering data engineering, migrations, analytics, and AI agents across
 > the Americas, priced on outcomes rather than hours.
 
-> Note: the words "consulting/consultant" are banned on viewnear.com by brand rule, but
-> they are fine (and useful) on third-party directories, where buyers literally search
-> "Snowflake consulting." Let the directories carry that term; keep the site clean.
+> Note (revised 2026-07-25): the site now has one page that targets the term head-on,
+> `/snowflake-consulting-services`. Everywhere else "consulting/consultant" stays out of the
+> copy by brand rule. Directories are still the right place to lean on the term hard, since
+> buyers literally search "Snowflake consulting" and the review sites rank for it. Link the
+> directory profiles at `/snowflake-consulting-services`, not just the home page.
 
 ---
 

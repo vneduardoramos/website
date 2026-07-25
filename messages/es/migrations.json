@@ -8,7 +8,12 @@
     "title": "Fuera de Teradata, Oracle o Hadoop. <hl>Hacia una práctica de datos que el equipo conserva.</hl>",
     "description": "Una migración se gana en la planificación, en las verificaciones de paridad y en la transición que nadie nota, no en el cambio de licencia. Ejecutamos todo ese recorrido como un solo equipo responsable: código convertido de forma automática, cada número validado contra el origen y el negocio operando durante todo el proceso."
   },
-  "heroChips": ["Más de 20 plataformas de origen", "Conversión automatizada", "Paridad validada", "Transición por fases"],
+  "heroChips": [
+    "Más de 20 plataformas de origen",
+    "Conversión automatizada",
+    "Paridad validada",
+    "Transición por fases"
+  ],
   "sourcesHeading": {
     "eyebrow": "Todas las plataformas de origen",
     "title": "Migramos desde todas ellas",
@@ -18,45 +23,102 @@
     {
       "label": "MPP heredado y almacenes de datos",
       "items": [
-        { "name": "Teradata", "slug": "teradata" },
-        { "name": "IBM Netezza", "slug": "ibm" },
-        { "name": "Oracle Exadata", "slug": "oracle" },
-        { "name": "SAP BW / BW4HANA", "slug": "sap" }
+        {
+          "name": "Teradata",
+          "slug": "teradata"
+        },
+        {
+          "name": "IBM Netezza",
+          "slug": "ibm"
+        },
+        {
+          "name": "Oracle Exadata",
+          "slug": "oracle"
+        },
+        {
+          "name": "SAP BW / BW4HANA",
+          "slug": "sap"
+        }
       ]
     },
     {
       "label": "Almacenes de datos en la nube",
       "items": [
-        { "name": "Amazon Redshift", "slug": "redshift" },
-        { "name": "Google BigQuery", "slug": "bigquery" },
-        { "name": "Azure Synapse", "slug": "azure" },
-        { "name": "Databricks", "slug": "databricks" }
+        {
+          "name": "Amazon Redshift",
+          "slug": "redshift"
+        },
+        {
+          "name": "Google BigQuery",
+          "slug": "bigquery"
+        },
+        {
+          "name": "Azure Synapse",
+          "slug": "azure"
+        },
+        {
+          "name": "Databricks",
+          "slug": "databricks"
+        }
       ]
     },
     {
       "label": "Hadoop y data lakes",
       "items": [
-        { "name": "Cloudera / Hortonworks", "slug": "cloudera" },
-        { "name": "Apache Hive", "slug": "hive" },
-        { "name": "Apache Spark", "slug": "spark" },
-        { "name": "HDFS", "slug": "hadoop" }
+        {
+          "name": "Cloudera / Hortonworks",
+          "slug": "cloudera"
+        },
+        {
+          "name": "Apache Hive",
+          "slug": "hive"
+        },
+        {
+          "name": "Apache Spark",
+          "slug": "spark"
+        },
+        {
+          "name": "HDFS",
+          "slug": "hadoop"
+        }
       ]
     },
     {
       "label": "Bases de datos que hacen de almacén",
       "items": [
-        { "name": "Oracle Database", "slug": "oracle" },
-        { "name": "Microsoft SQL Server", "slug": "sqlserver" },
-        { "name": "IBM Db2", "slug": "ibm" },
-        { "name": "PostgreSQL", "slug": "postgresql" },
-        { "name": "MySQL", "slug": "mysql" }
+        {
+          "name": "Oracle Database",
+          "slug": "oracle"
+        },
+        {
+          "name": "Microsoft SQL Server",
+          "slug": "sqlserver"
+        },
+        {
+          "name": "IBM Db2",
+          "slug": "ibm"
+        },
+        {
+          "name": "PostgreSQL",
+          "slug": "postgresql"
+        },
+        {
+          "name": "MySQL",
+          "slug": "mysql"
+        }
       ]
     },
     {
       "label": "ETL y analítica heredados",
       "items": [
-        { "name": "Informatica", "slug": "informatica" },
-        { "name": "Talend", "slug": "talend" }
+        {
+          "name": "Informatica",
+          "slug": "informatica"
+        },
+        {
+          "name": "Talend",
+          "slug": "talend"
+        }
       ]
     }
   ],
@@ -111,12 +173,30 @@
     "intro": "Las migraciones se atascan en el código procedimental y las canalizaciones, no en las tablas. Esto es lo que trasladamos para las plataformas que más vemos."
   },
   "hardParts": [
-    { "source": "Teradata", "detail": "Scripts de BTEQ, FastLoad y MultiLoad, macros y procedimientos almacenados convertidos; la lógica de índice primario rediseñada como clustering." },
-    { "source": "Oracle", "detail": "Paquetes PL/SQL, triggers y cursores traducidos a Snowflake Scripting; las restricciones trasladadas a canalizaciones validadas." },
-    { "source": "SQL Server", "detail": "Paquetes de T-SQL y SSIS convertidos a Snowflake SQL y modelos dbt sobre un planificador nativo." },
-    { "source": "Hadoop, Hive & Spark", "detail": "Hive SQL y trabajos de PySpark o Scala trasladados a Snowflake SQL y Snowpark; Parquet almacenado como Iceberg." },
-    { "source": "Redshift & BigQuery", "detail": "Diferencias de dialecto y la lógica de DISTKEY, SORTKEY o particiones traducidas; el costo remodelado para cómputo elástico." },
-    { "source": "Netezza & Vertica", "detail": "SQL y procedimientos específicos del appliance convertidos desde hardware al final de su vida útil hacia Snowflake elástico." }
+    {
+      "source": "Teradata",
+      "detail": "Scripts de BTEQ, FastLoad y MultiLoad, macros y procedimientos almacenados convertidos; la lógica de índice primario rediseñada como clustering."
+    },
+    {
+      "source": "Oracle",
+      "detail": "Paquetes PL/SQL, triggers y cursores traducidos a Snowflake Scripting; las restricciones trasladadas a canalizaciones validadas."
+    },
+    {
+      "source": "SQL Server",
+      "detail": "Paquetes de T-SQL y SSIS convertidos a Snowflake SQL y modelos dbt sobre un planificador nativo."
+    },
+    {
+      "source": "Hadoop, Hive & Spark",
+      "detail": "Hive SQL y trabajos de PySpark o Scala trasladados a Snowflake SQL y Snowpark; Parquet almacenado como Iceberg."
+    },
+    {
+      "source": "Redshift & BigQuery",
+      "detail": "Diferencias de dialecto y la lógica de DISTKEY, SORTKEY o particiones traducidas; el costo remodelado para cómputo elástico."
+    },
+    {
+      "source": "Netezza & Vertica",
+      "detail": "SQL y procedimientos específicos del appliance convertidos desde hardware al final de su vida útil hacia Snowflake elástico."
+    }
   ],
   "proofHeading": {
     "eyebrow": "Respaldado por Snowflake",
@@ -124,14 +204,30 @@
     "intro": "Las migraciones se ejecutan sobre las propias herramientas de Snowflake, entregadas por un equipo certificado en SnowPro con una trayectoria verificada en toda América."
   },
   "metrics": [
-    { "value": "20+", "label": "Plataformas de origen" },
-    { "value": "Automatizada", "label": "Conversión de código con SnowConvert" },
-    { "value": "Por fases", "label": "Transición, no de golpe" },
-    { "value": "Paridad", "label": "Validada antes de la transición" }
+    {
+      "value": "20+",
+      "label": "Plataformas de origen"
+    },
+    {
+      "value": "Automatizada",
+      "label": "Conversión de código con SnowConvert"
+    },
+    {
+      "value": "Por fases",
+      "label": "Transición, no de golpe"
+    },
+    {
+      "value": "Paridad",
+      "label": "Validada antes de la transición"
+    }
   ],
   "caseStudiesLine": "Migraciones en producción, en nuestros <link>casos de éxito →</link>",
   "cta": {
     "title": "Planear la migración.",
     "subtitle": "Con saber qué está en ejecución hoy (Teradata, Oracle, Redshift, Hadoop o cualquier otra cosa), trazamos el recorrido: qué se convierte de forma automática, qué necesita manos y cuándo el equipo toma las llaves."
+  },
+  "consultingCta": {
+    "title": "Una migración suele ser una parte de una implementación más amplia.",
+    "label": "Consultoría e implementación"
   }
 }

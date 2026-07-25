@@ -15,6 +15,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/life-at-viewnear",
     "/careers",
     "/services",
+    "/snowflake-consulting-services",
     "/migrations",
     "/data-ai",
     "/approach",

@@ -98,5 +98,9 @@
   "cta": {
     "title": "Poner un partner certificado a cargo.",
     "subtitle": "Con saber en qué punto está la organización con Snowflake (adquisición, migración o IA), llevamos al equipo certificado, con Snowflake en la mesa, para hacerlo avanzar."
+  },
+  "consultingCta": {
+    "title": "El estatus Premier es la credencial. Esto es lo que entrega.",
+    "label": "Consultoría e implementación"
   }
 }

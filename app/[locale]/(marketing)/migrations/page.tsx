@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMeta } from "@/lib/seo";
 import { Link } from "@/i18n/navigation";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
+import { InlineCta } from "@/components/marketing/Blocks";
 import { PageHero } from "@/components/marketing/PageHero";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { MetricBand } from "@/components/marketing/Blocks";
@@ -216,6 +217,17 @@ export default async function MigrationsPage({ params }: { params: { locale: str
             ),
           })}
         </p>
+      </Section>
+
+      {/* A migration is one slice of the wider implementation engagement. */}
+      <Section>
+        <div className="mx-auto max-w-3xl">
+          <InlineCta
+            title={t("consultingCta.title")}
+            href="/snowflake-consulting-services"
+            label={t("consultingCta.label")}
+          />
+        </div>
       </Section>
 
       <CtaBand

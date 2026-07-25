@@ -42,9 +42,18 @@
     "title": "What changes, and when",
     "intro": "A practical view of the value an engagement returns: by horizon, not by feature list, with the targets we agree up front.",
     "metrics": [
-      { "value": "60%", "label": "Faster time to first insight" },
-      { "value": "3×", "label": "More reliable pipelines" },
-      { "value": "40%", "label": "Lower run cost" }
+      {
+        "value": "60%",
+        "label": "Faster time to first insight"
+      },
+      {
+        "value": "3×",
+        "label": "More reliable pipelines"
+      },
+      {
+        "value": "40%",
+        "label": "Lower run cost"
+      }
     ],
     "phases": [
       {
@@ -112,28 +121,44 @@
         "title": "Fixed cost",
         "body": "A defined scope, timeline, and price agreed up front: fixed-outcome delivery, priced to the result rather than the hours. Best when the outcome is clear and budget certainty matters from day one.",
         "how": "We scope the work in a short, paid discovery, then commit to a price and a date.",
-        "includes": ["Scoped statement of work", "Milestones with decision gates", "Change control if scope moves"],
+        "includes": [
+          "Scoped statement of work",
+          "Milestones with decision gates",
+          "Change control if scope moves"
+        ],
         "bestFor": "Defined foundation builds & migrations"
       },
       {
         "title": "Time & materials",
         "body": "Flexible, iterative delivery billed by effort against a shared backlog. Ideal for evolving requirements and discovery-led work.",
         "how": "We deliver sprint to sprint against a prioritized backlog the business controls.",
-        "includes": ["Prioritized, shared backlog", "Sprint demos & burn reporting", "Stop or pivot any sprint"],
+        "includes": [
+          "Prioritized, shared backlog",
+          "Sprint demos & burn reporting",
+          "Stop or pivot any sprint"
+        ],
         "bestFor": "Discovery, POCs & evolving scope"
       },
       {
         "title": "Dedicated team & staff augmentation",
         "body": "Embed our certified practitioners alongside the in-house team, as a dedicated team or a team extension. We accelerate delivery while leveling up their capability.",
         "how": "SnowPro-certified engineers join the team, its tools, and its ways of working.",
-        "includes": ["Snowflake depth at every level", "Knowledge transfer built in", "Scale up or down monthly"],
+        "includes": [
+          "Snowflake depth at every level",
+          "Knowledge transfer built in",
+          "Scale up or down monthly"
+        ],
         "bestFor": "Scaling an existing team fast"
       },
       {
         "title": "Managed services & support",
         "body": "Ongoing run, optimization, and enhancement once the practice is live, so it keeps compounding while the in-house team grows into it.",
         "how": "A retained team monitors, tunes cost and performance, and ships enhancements.",
-        "includes": ["Monitoring & cost optimization", "SLAs and a named contact", "A roadmap of enhancements"],
+        "includes": [
+          "Monitoring & cost optimization",
+          "SLAs and a named contact",
+          "A roadmap of enhancements"
+        ],
         "bestFor": "Running & growing a live Snowflake estate"
       }
     ],
@@ -143,12 +168,30 @@
       "body": "However an organization chooses to engage, every Viewnear engagement is delivered to the same standard: the things that make the difference between a build that ships and one that stalls."
     },
     "value": [
-      { "title": "One certified team, with depth at every level", "body": "One accountable team: the people who scope the work are the ones who deliver it." },
-      { "title": "Verified Snowflake depth", "body": "A SnowPro-certified team with a verified Snowflake delivery record behind every decision, from strategy through production." },
-      { "title": "Priced to outcomes", "body": "Scope and price agreed up front, whichever model fits." },
-      { "title": "Governance built in", "body": "Security, lineage, and access control designed in from the first table, not bolted on." },
-      { "title": "Handover and enablement", "body": "Full handover, documentation, and enablement so the team runs it confidently." },
-      { "title": "Integrated with the enterprise", "body": "Data products that connect to and from the systems the business runs on: ERP, CRM, and customer-facing apps." }
+      {
+        "title": "One certified team, with depth at every level",
+        "body": "One accountable team: the people who scope the work are the ones who deliver it."
+      },
+      {
+        "title": "Verified Snowflake depth",
+        "body": "A SnowPro-certified team with a verified Snowflake delivery record behind every decision, from strategy through production."
+      },
+      {
+        "title": "Priced to outcomes",
+        "body": "Scope and price agreed up front, whichever model fits."
+      },
+      {
+        "title": "Governance built in",
+        "body": "Security, lineage, and access control designed in from the first table, not bolted on."
+      },
+      {
+        "title": "Handover and enablement",
+        "body": "Full handover, documentation, and enablement so the team runs it confidently."
+      },
+      {
+        "title": "Integrated with the enterprise",
+        "body": "Data products that connect to and from the systems the business runs on: ERP, CRM, and customer-facing apps."
+      }
     ],
     "leadershipLabel": "One accountable team.",
     "cost": {
@@ -164,5 +207,9 @@
   "faq": {
     "eyebrow": "FAQ",
     "title": "Common questions"
+  },
+  "consultingCta": {
+    "title": "Need the whole implementation scoped, not just a service picked?",
+    "label": "Consulting & implementation"
   }
 }

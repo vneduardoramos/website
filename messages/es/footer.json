@@ -35,7 +35,8 @@
     "blog": "Blog",
     "press": "Prensa",
     "faq": "Preguntas frecuentes",
-    "careers": "Carreras"
+    "careers": "Carreras",
+    "snowflakeConsulting": "Consultoría e implementación de Snowflake"
   },
   "copyright": "© {year} {name}, Snowflake Premier Partner al servicio de América.",
   "privacy": "Privacidad",

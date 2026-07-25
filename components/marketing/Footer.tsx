@@ -26,6 +26,7 @@ const groups = [
     title: "Services",
     links: [
       { linkKey: "servicesOverview", label: "Services", href: "/services" },
+      { linkKey: "snowflakeConsulting", label: "Snowflake Consulting & Implementation", href: "/snowflake-consulting-services" },
       { linkKey: "aiDataStrategy", label: "Data & AI Strategy", href: "/services/ai-data-strategy" },
       { linkKey: "cloudArchitecture", label: "Cloud Architecture & Data Foundation", href: "/services/cloud-architecture" },
       { linkKey: "dataEngineering", label: "Data Engineering & Pipelines", href: "/services/data-engineering" },

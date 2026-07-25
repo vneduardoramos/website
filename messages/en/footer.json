@@ -35,7 +35,8 @@
     "blog": "Blog",
     "press": "Press",
     "faq": "FAQ",
-    "careers": "Careers"
+    "careers": "Careers",
+    "snowflakeConsulting": "Snowflake Consulting & Implementation"
   },
   "copyright": "© {year} {name}, Snowflake Premier Partner serving {region}.",
   "privacy": "Privacy",

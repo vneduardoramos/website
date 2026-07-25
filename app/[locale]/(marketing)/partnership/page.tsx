@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMeta } from "@/lib/seo";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
+import { InlineCta } from "@/components/marketing/Blocks";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { FieldStrip } from "@/components/marketing/FieldStrip";
 import { LeadershipStrip } from "@/components/marketing/LeadershipStrip";
@@ -156,6 +157,17 @@ export default async function PartnershipPage({ params }: { params: { locale: st
           team-booth is excluded here since the FeatureSplit above already uses
           it, and partner-momentum since it now anchors the inset up top. */}
       <FieldStrip items={["team-group", "team-stage", "team-dinner"]} />
+
+      {/* Partner status is the credential; this is what it buys. */}
+      <Section>
+        <div className="mx-auto max-w-3xl">
+          <InlineCta
+            title={t("consultingCta.title")}
+            href="/snowflake-consulting-services"
+            label={t("consultingCta.label")}
+          />
+        </div>
+      </Section>
 
       <CtaBand
         title={t("cta.title")}

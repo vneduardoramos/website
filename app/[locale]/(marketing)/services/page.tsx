@@ -294,6 +294,18 @@ export default async function ServicesPage({ params }: { params: { locale: strin
 
       {/* The stack itself lives on /platform (single source of truth); this is
           just the scent trail. */}
+      {/* The head-term consulting/implementation page: buyers searching for it
+          land here from nav, so give the overview an explicit route to it. */}
+      <Section>
+        <div className="mx-auto max-w-3xl">
+          <InlineCta
+            title={t("consultingCta.title")}
+            href="/snowflake-consulting-services"
+            label={t("consultingCta.label")}
+          />
+        </div>
+      </Section>
+
       <Section className="section-warm">
         <SectionHeading
           eyebrow={<><SnowMark size={11} />{t("stack.eyebrow")}</>}
