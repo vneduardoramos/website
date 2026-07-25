@@ -24,7 +24,7 @@
     "connect": [
       { "term": "One identity", "desc": "Every agent, inside or out, acts as a governed identity with per-agent permissions." },
       { "term": "Governed endpoints", "desc": "The business exposes data as endpoints agents call, never raw copies they hold." },
-      { "term": "MCP", "desc": "Anthropic's open protocol connects Claude to governed data and the tools teams use." }
+      { "term": "MCP (Model Context Protocol)", "desc": "Anthropic's open protocol connects Claude to governed data and the tools teams use." }
     ],
     "eyebrow": "One request, both planes",
     "loop": [

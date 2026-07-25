@@ -76,7 +76,7 @@
     },
     {
       "layer": "IA y agentes",
-      "blurb": "IA en producción que se ejecuta de forma segura junto a los datos gobernados; los modelos nunca ven copias sin gobierno.",
+      "blurb": "IA en producción que se ejecuta de forma segura junto a los datos gobernados; los modelos nunca ven copias sin gobierno. El ciclo de MLOps se queda en un solo lugar: entrenar, desplegar, monitorear, reentrenar.",
       "products": [
         { "name": "Cortex AISQL", "status": "GA", "desc": "Invocar LLMs y funciones de ML directamente desde SQL: COMPLETE, SENTIMENT, SUMMARIZE." },
         { "name": "Cortex Analyst", "status": "GA", "desc": "Preguntas en lenguaje natural respondidas frente a modelos semánticos gobernados." },

@@ -110,7 +110,7 @@
     "models": [
       {
         "title": "Fixed cost",
-        "body": "A defined scope, timeline, and price agreed up front. Best when the outcome is clear and budget certainty matters from day one.",
+        "body": "A defined scope, timeline, and price agreed up front: fixed-outcome delivery, priced to the result rather than the hours. Best when the outcome is clear and budget certainty matters from day one.",
         "how": "We scope the work in a short, paid discovery, then commit to a price and a date.",
         "includes": ["Scoped statement of work", "Milestones with decision gates", "Change control if scope moves"],
         "bestFor": "Defined foundation builds & migrations"
@@ -123,8 +123,8 @@
         "bestFor": "Discovery, POCs & evolving scope"
       },
       {
-        "title": "Team augmentation",
-        "body": "Embed our certified practitioners alongside the in-house team. We accelerate delivery while leveling up their capability.",
+        "title": "Dedicated team & staff augmentation",
+        "body": "Embed our certified practitioners alongside the in-house team, as a dedicated team or a team extension. We accelerate delivery while leveling up their capability.",
         "how": "SnowPro-certified engineers join the team, its tools, and its ways of working.",
         "includes": ["Snowflake depth at every level", "Knowledge transfer built in", "Scale up or down monthly"],
         "bestFor": "Scaling an existing team fast"

@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Nearshore Delivery Center in Monterrey, Mexico",
+    "description": "Viewnear's nearshore delivery center in Monterrey, Nuevo León: SnowPro-certified data and AI engineers on Central Time, two hours from Texas, working US business hours."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "nearshore": "Nearshore",
+    "current": "Monterrey"
+  },
+  "hero": {
+    "eyebrow": "Nearshore delivery center",
+    "title": "Our nearshore delivery center in <hl>Monterrey, Mexico</hl>",
+    "description": "The engineers, architects, and strategists who build on Snowflake work from one office in Monterrey, Nuevo León, on Central Time and US business hours, with leadership in Austin, Texas.",
+    "chips": ["Monterrey, Nuevo León", "Central Time all year", "SnowPro-certified", "Bilingual team"]
+  },
+  "office": {
+    "eyebrow": "The office",
+    "title": "Pueblo Serena, at the foot of the <hl>Sierra Madre</hl>",
+    "body": "This is a real office with a real team in it, not a coordination address. Architecture reviews happen on the whiteboard, engineers pair at the same table, and the people who scope an engagement are the people who build it. Clients are welcome, and visits are common at the start of a build.",
+    "bullets": [
+      "Carr. Nacional 500, Valle Alto, Monterrey, NL 64983, Mexico",
+      "Data engineers, architects, and AI engineers in one room, all SnowPro-certified",
+      "Leadership in Austin, Texas, serving clients across the Americas"
+    ],
+    "imageAlt": "Viewnear's nearshore delivery center in Monterrey, Mexico, at Pueblo Serena",
+    "addressLabel": "Delivery center"
+  },
+  "factsHeading": {
+    "eyebrow": "Why Monterrey",
+    "title": "The closest thing to down the hall",
+    "intro": "Nearshore is a claim about geography before it is a claim about staffing. These are the specifics behind it."
+  },
+  "facts": [
+    {
+      "label": "Distance",
+      "title": "140 miles to Texas",
+      "body": "Monterrey sits about 140 miles (225 km) from the Texas border, the industrial anchor of the corridor the United States and Mexico trade across under USMCA."
+    },
+    {
+      "label": "Travel",
+      "title": "Nonstop, one to four hours",
+      "body": "Monterrey International Airport (MTY) has nonstop service to major US cities. An onsite workshop costs a morning of travel instead of a two-day trip on either side."
+    },
+    {
+      "label": "Clock",
+      "title": "Central Time, all year",
+      "body": "The working day overlaps end to end. A question raised at 10am gets an answer before lunch rather than waiting for a handoff overnight."
+    },
+    {
+      "label": "Language",
+      "title": "Bilingual by default",
+      "body": "Every engineer works in English, and Spanish is there when the room prefers it. No translation layer between the client and the people doing the work."
+    }
+  ],
+  "timeZone": {
+    "eyebrow": "The honest version of the time-zone claim",
+    "title": "Central Time, with one caveat worth stating",
+    "body": "Mexico stopped observing daylight saving time in 2022, so Monterrey holds Central Standard Time (CST) all year while US Central switches to CDT from March to November. In those months the Monterrey clock reads an hour earlier than the client's. It changes nothing operationally, because the team works the client's business hours either way, and it is worth saying plainly rather than claiming an identical clock twelve months a year.",
+    "bullets": [
+      "Standups, sprint reviews, and steering meetings inside the client's working day",
+      "Same-day answers on blockers, not a queue that clears overnight",
+      "Full overlap with US Central, Eastern, and Mountain business hours"
+    ]
+  },
+  "talent": {
+    "eyebrow": "The talent pool",
+    "title": "Why the engineering is <hl>here</hl>",
+    "body": "Monterrey is Mexico's industrial capital and one of the largest engineering talent pools in Latin America. Tecnológico de Monterrey and the Universidad Autónoma de Nuevo León graduate engineers into a city that has run manufacturing, logistics, and enterprise IT at scale for decades. That matters for data work specifically: the people here have seen real ERP estates, real shop-floor systems, and real regulatory constraints, not just tutorials.",
+    "bullets": [
+      "A rigorous hiring bar, then SnowPro certification across the team",
+      "Snowflake and enterprise depth at every level, not only at the top",
+      "A committed team that stays on an engagement from scope through run"
+    ],
+    "imageAlt": "Monterrey, Nuevo León, with Cerro de la Silla behind the San Pedro skyline",
+    "cta": "How the nearshore model works"
+  },
+  "deliversHeading": {
+    "eyebrow": "What ships from here",
+    "title": "The full data and AI build",
+    "intro": "This office covers the same scope Viewnear delivers anywhere, from a first migration to governed AI agents in production."
+  },
+  "delivers": [
+    "Data modernization and migration onto Snowflake, governed from the first table",
+    "Governed pipelines, data quality, and the AI-ready foundation underneath them",
+    "Cortex use cases and AI agents, built with Claude as an Anthropic partner",
+    "Analytics, data apps, and enablement that leaves the practice in-house"
+  ],
+  "visit": {
+    "eyebrow": "Come see it",
+    "title": "The office is open to clients",
+    "body": "Meeting the engineers before signing is the fastest way to judge whether a partner is real. Visits usually pair a working session on the architecture with time to see how the team runs day to day, and travel in the other direction is just as easy: our people are on your site for discovery workshops, steering reviews, and the moments where a room beats a call.",
+    "cta": "Arrange a visit"
+  },
+  "cta": {
+    "title": "Put a nearshore team on your Snowflake work.",
+    "subtitle": "Tell us where the organization stands (migrating, scaling, or building AI) and we'll bring a certified team on your business hours to move it forward."
+  }
+}

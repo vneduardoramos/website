@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Centro de entrega nearshore en Monterrey, México",
+    "description": "El centro de entrega nearshore de Viewnear en Monterrey, Nuevo León: ingenieros de datos e IA certificados en SnowPro, en horario del centro, a dos horas de Texas."
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "nearshore": "Nearshore",
+    "current": "Monterrey"
+  },
+  "hero": {
+    "eyebrow": "Centro de entrega nearshore",
+    "title": "Nuestro centro de entrega nearshore en <hl>Monterrey, México</hl>",
+    "description": "Los ingenieros, arquitectos y estrategas que construyen sobre Snowflake trabajan desde una oficina en Monterrey, Nuevo León, en horario del centro y en la jornada laboral de Estados Unidos, con la dirección en Austin, Texas.",
+    "chips": ["Monterrey, Nuevo León", "Horario del centro todo el año", "Certificados en SnowPro", "Equipo bilingüe"]
+  },
+  "office": {
+    "eyebrow": "La oficina",
+    "title": "Pueblo Serena, al pie de la <hl>Sierra Madre</hl>",
+    "body": "Es una oficina real con un equipo real dentro, no un domicilio de coordinación. Las revisiones de arquitectura ocurren en el pizarrón, los ingenieros trabajan en pareja en la misma mesa, y quienes dimensionan un proyecto son quienes lo construyen. Los clientes son bienvenidos, y las visitas son comunes al inicio de un build.",
+    "bullets": [
+      "Carr. Nacional 500, Valle Alto, Monterrey, NL 64983, México",
+      "Ingenieros de datos, arquitectos e ingenieros de IA en una misma sala, todos certificados en SnowPro",
+      "La dirección en Austin, Texas, atendiendo clientes en toda América"
+    ],
+    "imageAlt": "El centro de entrega nearshore de Viewnear en Monterrey, México, en Pueblo Serena",
+    "addressLabel": "Centro de entrega"
+  },
+  "factsHeading": {
+    "eyebrow": "Por qué Monterrey",
+    "title": "Lo más cercano a la oficina de al lado",
+    "intro": "El modelo nearshore es primero una afirmación sobre geografía y después una sobre personal. Estos son los datos que la sostienen."
+  },
+  "facts": [
+    {
+      "label": "Distancia",
+      "title": "225 kilómetros a Texas",
+      "body": "Monterrey está a unos 225 kilómetros (140 millas) de la frontera con Texas, el ancla industrial del corredor por el que Estados Unidos y México comercian bajo el T-MEC."
+    },
+    {
+      "label": "Viaje",
+      "title": "Vuelos directos, de una a cuatro horas",
+      "body": "El Aeropuerto Internacional de Monterrey (MTY) tiene vuelos directos a las principales ciudades de Estados Unidos. Un taller presencial cuesta una mañana de viaje en lugar de dos días de cada lado."
+    },
+    {
+      "label": "Reloj",
+      "title": "Horario del centro, todo el año",
+      "body": "La jornada laboral se traslapa por completo. Una pregunta planteada a las 10am recibe respuesta antes de la comida, en lugar de esperar una transferencia hasta el día siguiente."
+    },
+    {
+      "label": "Idioma",
+      "title": "Bilingüe por defecto",
+      "body": "Cada ingeniero trabaja en inglés, y el español está ahí cuando la sala lo prefiere. Sin capa de traducción entre el cliente y las personas que hacen el trabajo."
+    }
+  ],
+  "timeZone": {
+    "eyebrow": "La versión honesta del argumento de horario",
+    "title": "Horario del centro, con una aclaración que vale decir",
+    "body": "México dejó de aplicar el horario de verano en 2022, así que Monterrey mantiene el horario estándar del centro (CST) todo el año, mientras que el centro de Estados Unidos cambia a CDT de marzo a noviembre. En esos meses el reloj de Monterrey marca una hora antes que el del cliente. En la operación no cambia nada, porque el equipo trabaja en el horario laboral del cliente de cualquier forma, y vale más decirlo con claridad que presumir un reloj idéntico los doce meses del año.",
+    "bullets": [
+      "Standups, sprint reviews y juntas de seguimiento dentro de la jornada del cliente",
+      "Respuestas el mismo día ante un bloqueo, no una cola que se libera al día siguiente",
+      "Traslape completo con el horario laboral del centro, el este y la montaña de Estados Unidos"
+    ]
+  },
+  "talent": {
+    "eyebrow": "El talento",
+    "title": "Por qué la ingeniería está <hl>aquí</hl>",
+    "body": "Monterrey es la capital industrial de México y una de las mayores reservas de talento en ingeniería de América Latina. El Tecnológico de Monterrey y la Universidad Autónoma de Nuevo León forman ingenieros en una ciudad que ha operado manufactura, logística y TI empresarial a escala durante décadas. Eso importa en particular para el trabajo de datos: la gente de aquí ha visto entornos ERP reales, sistemas de piso de planta reales y restricciones regulatorias reales, no solo tutoriales.",
+    "bullets": [
+      "Un estándar de contratación riguroso y después certificación SnowPro en todo el equipo",
+      "Profundidad en Snowflake y en el mundo empresarial en cada nivel, no solo arriba",
+      "Un equipo comprometido que permanece en el proyecto desde el scope hasta la operación"
+    ],
+    "imageAlt": "Monterrey, Nuevo León, con el Cerro de la Silla detrás del skyline de San Pedro",
+    "cta": "Cómo funciona el modelo nearshore"
+  },
+  "deliversHeading": {
+    "eyebrow": "Qué sale de aquí",
+    "title": "La construcción completa de datos e IA",
+    "intro": "Esta oficina cubre el mismo scope que Viewnear entrega en cualquier lugar, desde una primera migración hasta agentes de IA gobernados en producción."
+  },
+  "delivers": [
+    "Modernización y migración de datos a Snowflake, gobernados desde la primera tabla",
+    "Pipelines gobernados, calidad de datos y la base lista para IA que los sostiene",
+    "Casos de uso de Cortex y agentes de IA, construidos con Claude como socio de Anthropic",
+    "Analítica, aplicaciones de datos y habilitación que deja la práctica del lado interno"
+  ],
+  "visit": {
+    "eyebrow": "Venir a verla",
+    "title": "La oficina está abierta a los clientes",
+    "body": "Conocer a los ingenieros antes de firmar es la forma más rápida de juzgar si un partner es real. Las visitas suelen combinar una sesión de trabajo sobre la arquitectura con tiempo para ver cómo opera el equipo día a día, y el viaje en la otra dirección es igual de sencillo: nuestra gente va al sitio del cliente para talleres de discovery, juntas de seguimiento y los momentos en que una sala le gana a una llamada.",
+    "cta": "Agendar una visita"
+  },
+  "cta": {
+    "title": "Poner un equipo nearshore en el trabajo de Snowflake.",
+    "subtitle": "Con saber en qué punto está la organización (migrando, escalando o construyendo IA), llevamos un equipo certificado en el horario del cliente para hacerlo avanzar."
+  }
+}

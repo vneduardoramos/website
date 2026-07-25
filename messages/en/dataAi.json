@@ -71,12 +71,13 @@
   "governed": {
     "eyebrow": "Governed by default",
     "title": "One perimeter, one identity, both planes",
-    "body": "Inference runs inside the business's Snowflake account, so prompts and results stay within the same perimeter as the data. Agents in the field reach it through governed endpoints, never raw copies, acting as verifiable identities with per-agent permissions. Access, masking, and lineage carry across both planes, and Cortex guardrails screen every call.",
+    "body": "AI governance is not a separate layer here. Inference runs inside the business's Snowflake account, so prompts and results stay within the same perimeter as the data. Agents in the field reach it through governed endpoints, never raw copies, acting as verifiable identities with per-agent permissions. Access, masking, and lineage carry across both planes, and Cortex guardrails screen every call.",
     "bullets": [
       "Models run next to governed data: no copies, no export",
       "Every agent acts as one governed identity, inside or out",
       "Access, masking, and lineage inherited from Snowflake Horizon",
-      "Cortex Guard and AI guardrails on every call"
+      "Cortex Guard and AI guardrails on every call",
+      "Evals that measure accuracy before a use case scales, not after"
     ],
     "imageAlt": "Snowflake CoWork answering questions with cited results from governed data",
     "figcaption": "Snowflake CoWork answering from governed data (demo environment)."

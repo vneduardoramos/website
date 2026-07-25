@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Img as Image } from "@/components/marketing/Img";
 import { pageMeta } from "@/lib/seo";
+import { officesLd } from "@/lib/offices";
+import { JsonLd } from "@/components/JsonLd";
 import { Section } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 import { ContactForm } from "@/components/marketing/ContactForm";
@@ -44,6 +46,9 @@ export default async function ContactPage({ params }: { params: { locale: string
 
   return (
     <>
+      {/* Both offices as ProfessionalService: this is the page with the
+          strongest location intent, so the NAP belongs here. */}
+      <JsonLd data={officesLd()} />
       <div className="relative overflow-hidden">
         <SectionDecor variant="blobs" />
         <div className="relative">

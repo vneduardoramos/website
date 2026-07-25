@@ -24,7 +24,7 @@
     "connect": [
       { "term": "Una identidad", "desc": "Cada agente, dentro o fuera, actúa como una identidad gobernada con permisos por agente." },
       { "term": "Endpoints gobernados", "desc": "La empresa expone los datos como endpoints que los agentes invocan, nunca como copias sin procesar que retengan." },
-      { "term": "MCP", "desc": "El protocolo abierto de Anthropic conecta Claude con los datos gobernados y las herramientas que usan los equipos." }
+      { "term": "MCP (Model Context Protocol)", "desc": "El protocolo abierto de Anthropic conecta Claude con los datos gobernados y las herramientas que usan los equipos." }
     ],
     "eyebrow": "Una solicitud, ambos planos",
     "loop": [

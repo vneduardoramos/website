@@ -245,7 +245,12 @@ Good ones to model on: `/nearshore` (67), `/migrations` (66), `/data-ai` (58), `
 
 ## Prioritized actions
 
-**P0, this week (copy only, no new routes)**
+> **Status (2026-07-25): P0 and P1 are shipped.** What remains is P2 (items 11 to 13) and
+> the off-site half in `docs/seo-offsite-checklist.md`. Search Console is still unverified,
+> so none of this is measurable yet: that is the next real blocker, and it needs account
+> access rather than code.
+
+**P0, this week (copy only, no new routes)** — done
 
 1. Fix the DST claim on `/nearshore` (`messages/en/nearshore.json:13,27,28` + es mirror). Correctness issue, visible on the page today.
 2. Add a proximity block to `/nearshore`: flights, distance, onsite cadence, CST/CDT, USMCA, bilingual. Takes the page from roughly 700 to roughly 1,100 words and clears most of Gap A.
@@ -253,13 +258,13 @@ Good ones to model on: `/nearshore` (67), `/migrations` (66), `/data-ai` (58), `
 4. Add 8 nearshore and engagement FAQ entries to `prisma/seed/data.ts` so `FAQPage` schema starts carrying the long tail.
 5. Add "artificial intelligence" and "business intelligence" in prose where they read naturally (`/data-ai`, `/services/data-visualisation`).
 
-**P1, next**
+**P1, next** — done
 
-6. Rewrite the 9 thin title tags listed above (en + es).
-7. Ship `/nearshore/monterrey` (or `/monterrey-delivery-center`): the delivery center page, roughly 900 to 1,200 words, with the office photo, address, `ProfessionalService` schema, talent pool, travel and time zone, and a link back to `/nearshore`.
-8. Add address and location to `Organization` schema; duplicate `ProfessionalService` onto `/contact` and `/nearshore`.
-9. Name the engagement models in the buyer's words on `/pricing`: dedicated team, team extension, staff augmentation, fixed outcome.
-10. Add the AI-ops vocabulary where it is true: MLOps, evals, AI governance, model context protocol.
+6. Rewrite the 9 thin title tags listed above (en + es). *Done: 8 rewritten (`/news` skipped, it is noindex).*
+7. Ship `/nearshore/monterrey` (or `/monterrey-delivery-center`): the delivery center page, roughly 900 to 1,200 words, with the office photo, address, `ProfessionalService` schema, talent pool, travel and time zone, and a link back to `/nearshore`. *Done: 1,057 words, en + es, in the sitemap, linked from the `/nearshore` proximity section.*
+8. Add address and location to `Organization` schema; duplicate `ProfessionalService` onto `/contact` and `/nearshore`. *Done: addresses extracted to `lib/offices.ts` as the single NAP source, now emitted on `/contact`, `/nearshore`, `/nearshore/monterrey` and `/life-at-viewnear`, with `address` + `location` on the site-wide `Organization` and `knowsAbout` extended to 13 topics.*
+9. Name the engagement models in the buyer's words on `/pricing`: dedicated team, team extension, staff augmentation, fixed outcome. *Done, on `/pricing` and `/services`.*
+10. Add the AI-ops vocabulary where it is true: MLOps, evals, AI governance, model context protocol. *Done. MLOps is described as the Snowflake loop the platform supports, not as a separate service we sell; NLP and computer vision stay at zero because we do not deliver them.*
 
 **P2, when there is room**
 

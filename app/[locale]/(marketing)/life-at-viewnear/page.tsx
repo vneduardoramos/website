@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMeta } from "@/lib/seo";
+import { officesLd } from "@/lib/offices";
 import { Img as Image } from "@/components/marketing/Img";
 import { Link } from "@/i18n/navigation";
 import { Section, SectionHeading, Pill } from "@/components/marketing/ui";
@@ -14,7 +15,6 @@ import { getJobOpenings } from "@/lib/queries";
 import { getBenefits } from "@/lib/benefits";
 import { BenefitsGrid } from "@/components/marketing/BenefitsGrid";
 import { asStringArray } from "@/lib/utils";
-import { theme } from "@/config/theme";
 import { JsonLd } from "@/components/JsonLd";
 import type { Locale } from "@/lib/i18n-content";
 
@@ -164,41 +164,10 @@ const officeAssets = [
 const LEFT_CLIP = "polygon(0 0, 58% 0, 42% 100%, 0 100%)";
 const RIGHT_CLIP = "polygon(58% 0, 100% 0, 100% 100%, 42% 100%)";
 
-// LocalBusiness structured data for the two offices (helps local SEO + AI engines).
-const OFFICES_LD = [
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: theme.brand.name,
-    url: theme.brand.url,
-    parentOrganization: { "@type": "Organization", name: theme.brand.name, url: theme.brand.url },
-    areaServed: "Americas",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "10900 Stonelake Blvd, Bldg 2, Suite 100",
-      addressLocality: "Austin",
-      addressRegion: "TX",
-      postalCode: "78759",
-      addressCountry: "US",
-    },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: theme.brand.name,
-    url: theme.brand.url,
-    parentOrganization: { "@type": "Organization", name: theme.brand.name, url: theme.brand.url },
-    areaServed: "Americas",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Carr. Nacional 500, Valle Alto",
-      addressLocality: "Monterrey",
-      addressRegion: "NL",
-      postalCode: "64983",
-      addressCountry: "MX",
-    },
-  },
-];
+// LocalBusiness structured data for the two offices (helps local SEO + AI
+// engines). The addresses live in lib/offices.ts so /contact, /nearshore and
+// the Organization entity all emit the same NAP.
+const OFFICES_LD = officesLd();
 
 // Real moments from the team: Snowflake events, the booth, and the dinners in
 // between. Image assets here; captions + alt text live in messages.

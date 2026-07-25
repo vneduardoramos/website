@@ -76,7 +76,7 @@
     },
     {
       "layer": "AI & agents",
-      "blurb": "Production AI that runs securely next to governed data; models never see ungoverned copies.",
+      "blurb": "Production AI that runs securely next to governed data; models never see ungoverned copies. The MLOps loop stays in one place: train, deploy, monitor, retrain.",
       "products": [
         { "name": "Cortex AISQL", "status": "GA", "desc": "Call LLMs and ML functions directly from SQL: COMPLETE, SENTIMENT, SUMMARIZE." },
         { "name": "Cortex Analyst", "status": "GA", "desc": "Natural-language questions answered against governed semantic models." },

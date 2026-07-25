@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Img as Image } from "@/components/marketing/Img";
 import { pageMeta } from "@/lib/seo";
+import { officesLd } from "@/lib/offices";
+import { JsonLd } from "@/components/JsonLd";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
@@ -50,6 +52,8 @@ export default async function NearshorePage({ params }: { params: { locale: stri
 
   return (
     <>
+      {/* The nearshore claim is geographic, so emit the real addresses. */}
+      <JsonLd data={officesLd()} />
       {/* Hero */}
       <div className="relative overflow-hidden">
         <SectionDecor variant="grid" />
@@ -149,7 +153,7 @@ export default async function NearshorePage({ params }: { params: { locale: stri
           bullets={t.raw("proximity.bullets") as string[]}
           image="/assets/images/life/monterrey.jpg"
           imageAlt={t("proximity.imageAlt")}
-          cta={{ label: t("proximity.cta"), href: "/contact" }}
+          cta={{ label: t("proximity.cta"), href: "/nearshore/monterrey" }}
         />
       </Section>
 

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { theme } from "@/config/theme";
+import { officePlaces, primaryAddress } from "@/lib/offices";
 import { JsonLd } from "@/components/JsonLd";
 import { Analytics } from "@/components/Analytics";
 import { ConsentBanner } from "@/components/ConsentBanner";
@@ -59,6 +60,11 @@ const ORG_JSONLD = {
   // entity graph links them back to viewnear.com.
   sameAs: [theme.socials.linkedin],
   areaServed: ["United States", "Canada", "Mexico", "Latin America", "Caribbean"],
+  // The entity needs a postal address, not just a service area: these were
+  // previously only on /life-at-viewnear. Austin is the primary (US) address;
+  // `location` carries both offices.
+  address: primaryAddress(),
+  location: officePlaces(),
   knowsAbout: [
     "Snowflake",
     "Snowflake data migration",
@@ -66,7 +72,13 @@ const ORG_JSONLD = {
     "Snowflake Cortex",
     "AI agents",
     "Nearshore software delivery",
+    "Nearshore delivery center",
+    "Monterrey, Mexico",
     "Data & AI strategy",
+    "Artificial intelligence",
+    "Business intelligence",
+    "Data governance",
+    "MLOps",
   ],
   contactPoint: {
     "@type": "ContactPoint",

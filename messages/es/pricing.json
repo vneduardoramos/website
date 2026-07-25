@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Precios y modalidades de trabajo",
+    "title": "Precios y modelos de colaboración en datos e IA",
     "description": "Cómo se definen y se cotizan los proyectos de Viewnear (costo fijo, tiempo y materiales, o ampliación de equipo), y qué determina el costo. El scope y el precio se acuerdan por adelantado."
   },
   "ld": {
@@ -17,7 +17,7 @@
   "modelsHeading": {
     "eyebrow": "Cómo trabajamos",
     "title": "Modalidades de trabajo",
-    "intro": "Formas flexibles de colaborar, ajustadas a la naturaleza de cada problema."
+    "intro": "Formas flexibles de colaborar, ajustadas a la naturaleza de cada problema: entrega de resultado fijo, capacidad flexible o un equipo dedicado integrado al interno."
   },
   "bestForLabel": "Ideal para",
   "engagementModels": [
@@ -32,8 +32,8 @@
       "bestFor": "Discovery, POCs y scope cambiante"
     },
     {
-      "title": "Ampliación de equipo",
-      "body": "Integramos a nuestros profesionales certificados junto al equipo interno. Aceleramos la entrega mientras elevamos la capacidad del equipo.",
+      "title": "Equipo dedicado y staff augmentation",
+      "body": "Integramos a nuestros profesionales certificados junto al equipo interno, como equipo dedicado o como extensión del equipo. Aceleramos la entrega mientras elevamos la capacidad del equipo.",
       "bestFor": "Escalar un equipo existente con rapidez"
     }
   ],

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Pricing & engagement",
+    "title": "Pricing & engagement models: fixed outcome or embedded team",
     "description": "How Viewnear engagements are scoped and priced (fixed cost, time & materials, or team augmentation), plus what drives cost. Scope and price agreed up front."
   },
   "ld": {
@@ -17,13 +17,13 @@
   "modelsHeading": {
     "eyebrow": "How we work",
     "title": "Engagement models",
-    "intro": "Flexible ways to partner, matched to the shape of the problem."
+    "intro": "Flexible ways to partner, matched to the shape of the problem: fixed-outcome delivery, flex capacity, or a dedicated team embedded in yours."
   },
   "bestForLabel": "Best for",
   "engagementModels": [
     {
       "title": "Fixed cost",
-      "body": "A defined scope, timeline, and price agreed up front. Best when the outcome is clear and budget certainty matters from day one.",
+      "body": "A defined scope, timeline, and price agreed up front: fixed-outcome delivery, priced to the result rather than the hours. Best when the outcome is clear and budget certainty matters from day one.",
       "bestFor": "Defined foundation builds & migrations"
     },
     {
@@ -32,8 +32,8 @@
       "bestFor": "Discovery, POCs & evolving scope"
     },
     {
-      "title": "Team augmentation",
-      "body": "Embed our certified practitioners alongside the in-house team. We accelerate delivery while leveling up their capability.",
+      "title": "Dedicated team & staff augmentation",
+      "body": "Embed our certified practitioners alongside the in-house team, as a dedicated team or a team extension. We accelerate delivery while leveling up their capability.",
       "bestFor": "Scaling an existing team fast"
     }
   ],

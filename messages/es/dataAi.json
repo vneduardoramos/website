@@ -71,12 +71,13 @@
   "governed": {
     "eyebrow": "Gobernado de forma predeterminada",
     "title": "Un perímetro, una identidad, ambos planos",
-    "body": "La inferencia se ejecuta dentro de la cuenta de Snowflake del negocio, de modo que los prompts y los resultados permanecen dentro del mismo perímetro que los datos. Los agentes en el campo llegan a ellos a través de endpoints gobernados, nunca copias sin procesar, actuando como identidades verificables con permisos por agente. El acceso, el enmascaramiento y el linaje se mantienen en ambos planos, y las barreras de Cortex revisan cada llamada.",
+    "body": "El gobierno de la IA no es una capa aparte. La inferencia se ejecuta dentro de la cuenta de Snowflake del negocio, de modo que los prompts y los resultados permanecen dentro del mismo perímetro que los datos. Los agentes en el campo llegan a ellos a través de endpoints gobernados, nunca copias sin procesar, actuando como identidades verificables con permisos por agente. El acceso, el enmascaramiento y el linaje se mantienen en ambos planos, y las barreras de Cortex revisan cada llamada.",
     "bullets": [
       "Los modelos se ejecutan junto a los datos gobernados: sin copias, sin exportación",
       "Cada agente actúa como una única identidad gobernada, dentro o fuera",
       "Acceso, enmascaramiento y linaje heredados de Snowflake Horizon",
-      "Cortex Guard y barreras de IA en cada llamada"
+      "Cortex Guard y barreras de IA en cada llamada",
+      "Evals que miden la precisión antes de escalar un caso de uso, no después"
     ],
     "imageAlt": "Snowflake CoWork respondiendo preguntas con resultados citados a partir de datos gobernados",
     "figcaption": "Snowflake CoWork respondiendo a partir de datos gobernados (entorno de demostración)."
