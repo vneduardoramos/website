@@ -13,6 +13,8 @@ export type BookablePerson = {
   title: string;
   photo?: string | null;
   url: string;
+  /** What this person can usefully talk about; optional, admin-editable. */
+  topics?: string | null;
   /** Accessible name, interpolated server-side (next-intl treats {name} as ICU). */
   ariaLabel: string;
 };
@@ -125,7 +127,12 @@ export function BookingPills({
               rel="noopener noreferrer"
               onClick={open(p.url)}
               aria-label={p.ariaLabel}
-              className="group flex items-center gap-3 rounded-full border border-border bg-surface py-1.5 pl-1.5 pr-5 text-left shadow-soft transition hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-soft-lg"
+              className={[
+                "group flex items-center gap-3 border border-border bg-surface py-2 pl-2 pr-5 text-left shadow-soft transition hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-soft-lg",
+                // A topics line makes the pill two lines taller, so soften the
+                // radius rather than keeping a full pill shape.
+                p.topics ? "max-w-sm rounded-2xl" : "rounded-full",
+              ].join(" ")}
             >
               {p.photo ? (
                 <Image
@@ -142,6 +149,9 @@ export function BookingPills({
                   {p.name}
                 </span>
                 <span className="block text-xs text-muted">{p.title}</span>
+                {p.topics && (
+                  <span className="mt-1 block text-xs leading-snug text-muted/90">{p.topics}</span>
+                )}
               </span>
               <CalendarIcon />
             </a>

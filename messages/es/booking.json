@@ -1,7 +1,7 @@
 {
   "eyebrow": "Hablar con una persona",
-  "title": "Agendar 30 minutos con un arquitecto",
-  "body": "No es una llamada de prospección con alguien leyendo un guion. Atiende una de las personas que dimensionaría y construiría el trabajo, y la respuesta sobre si hay encaje es directa.",
+  "title": "Agendar 30 minutos con quien de verdad puede responder",
+  "body": "No es una llamada de prospección con alguien leyendo un guion. Atiende alguien que sería responsable del trabajo, sea cual sea la parte sobre la que va la pregunta, y la respuesta sobre si hay encaje es directa.",
   "agendaLabel": "Qué cubren los 30 minutos",
   "agenda": [
     "Dónde están los datos hoy y qué bloquea los casos de uso que se quieren",
@@ -12,10 +12,10 @@
   "meta": {
     "duration": "30 minutos",
     "timezone": "Se agenda en la zona horaria del cliente",
-    "who": "Un arquitecto, no un vendedor"
+    "who": "Gente técnica, no un área de ventas"
   },
   "cta": "Elegir un horario",
-  "ctaAria": "Elegir un horario para hablar con un arquitecto (abre el calendario)",
+  "ctaAria": "Elegir un horario para hablar con el equipo (abre el calendario)",
   "fallback": {
     "prefer": "¿Mejor por correo?",
     "cta": "Usar el formulario de contacto"

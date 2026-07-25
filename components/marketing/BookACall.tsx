@@ -47,6 +47,7 @@ export async function BookACall({
       title: m.title,
       photo: m.photo,
       url: m.bookingUrl as string,
+      topics: m.bookingTopics,
       ariaLabel: t("pills.aria", { name: m.name }),
     }));
 

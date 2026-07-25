@@ -261,6 +261,8 @@ export const ADMIN_MODELS: Record<string, AdminModel> = {
       { name: "title", label: "Title", type: "text", required: true },
       { name: "bio", label: "Bio", type: "textarea" },
       { name: "bookingUrl", label: "Booking URL", type: "text" },
+      { name: "bookingTopics", label: "Booking topics", type: "text", help: "Shown on the booking pill, e.g. \"Delivery model, timelines, migrations\"" },
+      { name: "bookingTopicsEs", label: "Booking topics (ES)", type: "text" },
       { name: "linkedinUrl", label: "LinkedIn URL", type: "text" },
       { name: "order", label: "Order", type: "number" },
       { name: "published", label: "Published", type: "boolean" },

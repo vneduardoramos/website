@@ -16,7 +16,7 @@ const FIELDS: Record<string, string[]> = {
   industry: ["name", "headline", "intro", "body", "challenges", "deliverables", "stats", "seoTitle", "seoDescription"],
   caseStudy: ["title", "summary", "body", "challenge", "solution", "results", "metrics", "quote", "seoTitle", "seoDescription"],
   blogPost: ["title", "excerpt", "body", "keyTakeaways", "seoTitle", "seoDescription"],
-  teamMember: ["title", "bio"],
+  teamMember: ["title", "bio", "bookingTopics"],
   jobOpening: ["title", "description", "body", "employment"],
   tag: ["name"],
 };

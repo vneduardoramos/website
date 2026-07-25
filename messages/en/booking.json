@@ -1,7 +1,7 @@
 {
   "eyebrow": "Talk to a person",
-  "title": "Book 30 minutes with an architect",
-  "body": "Not a discovery call with an SDR reading a script. You get one of the people who would actually scope and build the work, and you get a straight answer on whether we are the right fit.",
+  "title": "Book 30 minutes with the person who can actually answer",
+  "body": "Not a discovery call with an SDR reading a script. You get someone who would actually own the work, whichever part of it your question is about, and a straight answer on whether we are the right fit.",
   "agendaLabel": "What the 30 minutes covers",
   "agenda": [
     "Where the data sits today and what is blocking the use cases you want",
@@ -12,10 +12,10 @@
   "meta": {
     "duration": "30 minutes",
     "timezone": "Booked in your time zone",
-    "who": "An architect, not a salesperson"
+    "who": "Technical people, not a sales desk"
   },
   "cta": "Pick a time",
-  "ctaAria": "Pick a time to talk to an architect (opens the scheduler)",
+  "ctaAria": "Pick a time to talk to the team (opens the scheduler)",
   "fallback": {
     "prefer": "Prefer email?",
     "cta": "Use the contact form"

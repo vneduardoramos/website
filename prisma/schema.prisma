@@ -42,11 +42,16 @@ model TeamMember {
   headshotId    String?
   headshot      Media?     @relation(fields: [headshotId], references: [id])
   bookingUrl    String?
+  // Short line on what this person can usefully talk about, shown on their
+  // booking pill. Roles differ (CEO, delivery, commercial, architects), so the
+  // topics are per person rather than inferred from the title.
+  bookingTopics String?
   linkedinUrl   String?
   authoredPosts BlogPost[] @relation("BlogAuthor")
   // --- Spanish (es) ---
   titleEs       String?
   bioEs         String?
+  bookingTopicsEs String?
   order         Int        @default(0)
   published     Boolean    @default(true)
   createdAt     DateTime   @default(now())
