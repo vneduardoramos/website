@@ -2,7 +2,7 @@
 
 Recientemente ayudé a un cliente a optimizar los costos de su data warehouse en un 40%, simplemente por entender cómo funcionan de forma independiente el cómputo y el almacenamiento en Snowflake. El concepto suena técnico, pero los beneficios prácticos son significativos para cualquier organización que gestione grandes conjuntos de datos.
 
-Los data warehouses tradicionales agrupan el cómputo y el almacenamiento en un solo bloque. Si necesita más capacidad de procesamiento, también obtiene más almacenamiento, lo necesite o no. Si necesita más almacenamiento, también paga por capacidad de cómputo adicional que podría quedar sin usar.
+Los data warehouses tradicionales agrupan el cómputo y el almacenamiento en un solo bloque. Si se necesita más capacidad de procesamiento, también se obtiene más almacenamiento, se necesite o no. Si se necesita más almacenamiento, también se paga por capacidad de cómputo adicional que podría quedar sin usar.
 
 ## Cómo el escalado independiente cambia la economía del modelo
 
@@ -46,7 +46,7 @@ Los distintos tipos de trabajo se benefician de configuraciones de cómputo dife
 
 El aislamiento de recursos garantiza que las distintas cargas de trabajo no interfieran entre sí. Los trabajos ETL pesados se ejecutan en clústeres dedicados, mientras que las consultas de los usuarios usan recursos separados optimizados para la capacidad de respuesta.
 
-Las capacidades de programación le permiten alinear el uso de recursos con los patrones del negocio. Aumente la capacidad durante el horario laboral para las consultas de los usuarios y escale para el procesamiento por lotes nocturno.
+Las capacidades de programación le permiten alinear el uso de recursos con los patrones del negocio. Conviene aumentar la capacidad durante el horario laboral para las consultas de los usuarios y escale para el procesamiento por lotes nocturno.
 
 ## Carga y procesamiento de datos
 
@@ -58,7 +58,7 @@ Los procesos de transformación se benefician de un escalado elástico que se aj
 
 ## Optimización del almacenamiento
 
-La optimización del almacenamiento ocurre de forma automática mediante la compresión y la organización inteligente de los datos. La plataforma se encarga de la gestión física del almacenamiento mientras usted se enfoca en la organización lógica de los datos.
+La optimización del almacenamiento ocurre de forma automática mediante la compresión y la organización inteligente de los datos. La plataforma se encarga de la gestión física del almacenamiento mientras el equipo se enfoca en la organización lógica de los datos.
 
 Las capacidades de Time Travel proporcionan acceso a datos históricos en un momento específico, sin la sobrecarga de almacenamiento de los respaldos tradicionales. Puede consultar los datos tal como existían hace horas, días o semanas, sin mantener sistemas de respaldo separados.
 
@@ -108,11 +108,11 @@ Los servicios de Search Optimization mejoran el rendimiento de las consultas sel
 
 ## Cómo empezar
 
-Comience por analizar los patrones de uso de recursos actuales para entender por separado los requisitos de cómputo y de almacenamiento. Este análisis ayuda a dimensionar los recursos de forma adecuada en el nuevo entorno.
+Conviene empezar por analizar los patrones de uso de recursos actuales para entender por separado los requisitos de cómputo y de almacenamiento. Este análisis ayuda a dimensionar los recursos de forma adecuada en el nuevo entorno.
 
-Empiece con configuraciones de cómputo conservadoras y ajústelas según los requisitos reales de rendimiento. La capacidad de escalar recursos con rapidez significa que puede comenzar en pequeño y crecer según sea necesario.
+Mejor empezar con configuraciones de cómputo conservadoras y ajustarlas según los requisitos reales de rendimiento. La capacidad de escalar recursos con rapidez significa que puede comenzar en pequeño y crecer según sea necesario.
 
-Implemente el monitoreo y las alertas desde el inicio para entender los patrones de uso y controlar los costos. Esta visibilidad permite optimizar y planificar el crecimiento futuro.
+Implementar el monitoreo y las alertas desde el inicio para entender los patrones de uso y controlar los costos. Esta visibilidad permite optimizar y planificar el crecimiento futuro.
 
 ## Por qué es importante esta arquitectura
 

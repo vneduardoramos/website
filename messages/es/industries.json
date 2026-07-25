@@ -26,17 +26,17 @@
   },
   "sectors": {
     "eyebrow": "Sectores que atendemos",
-    "title": "Encuentre la industria adecuada",
-    "intro": "Siete prácticas, cada una con sus propios aceleradores y patrones de cumplimiento; explore la más cercana al trabajo que tiene entre manos."
+    "title": "La industria adecuada",
+    "intro": "Siete prácticas, cada una con sus propios aceleradores y patrones de cumplimiento; la más cercana al trabajo en curso."
   },
   "grid": {
     "kicker": "Industria",
     "imageAlt": "Soluciones de datos e IA de {name}"
   },
   "endCap": {
-    "kicker": "Póngase en contacto",
-    "title": "¿No ve su sector aquí?",
-    "excerpt": "Trabajamos en toda América. Cuéntenos su desafío de datos y trazaremos la vía más rápida hacia el valor."
+    "kicker": "Contacto",
+    "title": "¿El sector no aparece aquí?",
+    "excerpt": "Trabajamos en toda América. Con el desafío de datos sobre la mesa, trazamos la vía más rápida hacia el valor."
   },
   "showcase": {
     "eyebrow": "En toda América",
@@ -47,6 +47,6 @@
   },
   "cta": {
     "title": "Pongamos en marcha una práctica de datos e IA duradera.",
-    "subtitle": "Cuéntenos en qué punto está la organización (migrando, escalando o llevando IA a producción) y trazaremos la vía más rápida hacia casos de uso en producción, operados por equipos internos."
+    "subtitle": "Con el punto de partida claro (migrando, escalando o llevando IA a producción), trazamos la vía más rápida hacia casos de uso en producción, operados por equipos internos."
   }
 }

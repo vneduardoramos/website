@@ -9,7 +9,7 @@
     "description": "Casos de éxito de proyectos reales y apuntes de campo de quienes los ejecutaron. Para cualquiera que esté construyendo una práctica de datos e IA, así es como se ve en el terreno."
   },
   "startHere": {
-    "eyebrow": "Empiece aquí",
+    "eyebrow": "Empezar aquí",
     "title": "Un proyecto, un apunte de campo",
     "intro": "Un caso de éxito real y una publicación reciente del equipo: la forma más rápida de ver cómo trabajamos.",
     "caseKicker": "Caso de éxito · {sector}",
@@ -28,6 +28,6 @@
   },
   "cta": {
     "title": "Pongamos en marcha una práctica de datos e IA duradera.",
-    "subtitle": "Cuéntenos en qué punto está la organización (migrando, escalando o llevando IA a producción) y trazaremos la vía más rápida hacia casos de uso en producción, operados por equipos internos."
+    "subtitle": "Con el punto de partida claro (migrando, escalando o llevando IA a producción), trazamos la vía más rápida hacia casos de uso en producción, operados por equipos internos."
   }
 }

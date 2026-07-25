@@ -6,7 +6,7 @@
     "email": "Correo electrónico",
     "company": "Empresa",
     "roleLabel": "¿En qué podemos ayudar?",
-    "selectPlaceholder": "Seleccione una opción",
+    "selectPlaceholder": "Elegir una opción",
     "options": {
       "strategy": "Estrategia de Data & AI / resultados de negocio",
       "platform": "Plataforma y arquitectura de Snowflake",
@@ -15,12 +15,12 @@
       "other": "Otro tema"
     },
     "messageLabel": "¿Cómo podemos ayudar?",
-    "error": "Algo salió mal. Vuelva a intentarlo o escríbanos directamente por correo electrónico.",
+    "error": "Algo salió mal. Se puede intentar de nuevo o escribirnos directamente por correo electrónico.",
     "sending": "Enviando...",
     "send": "Enviar mensaje"
   },
   "application": {
-    "title": "Postúlese ahora",
+    "title": "Postularse ahora",
     "applyingFor": "Postulación para:",
     "requiredNote": "Los campos marcados con <mark>*</mark> son obligatorios.",
     "fullName": "Nombre completo",
@@ -29,7 +29,7 @@
     "aboutLabel": "Sobre el candidato",
     "resumeLabel": "Currículum",
     "resumeHint": "(PDF o Word, máx. 8 MB)",
-    "error": "Algo salió mal. Vuelva a intentarlo o escríbanos directamente por correo electrónico.",
+    "error": "Algo salió mal. Se puede intentar de nuevo o escribirnos directamente por correo electrónico.",
     "submitting": "Enviando...",
     "submit": "Enviar postulación"
   }

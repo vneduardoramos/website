@@ -8,7 +8,7 @@ Los data warehouses tradicionales estaban bien diseñados para su época. Cuando
 
 Esto no se trata solo de migrar a la nube. He visto muchas migraciones a la nube que recrean los mismos problemas en un lugar más costoso. Plataformas como Snowflake representan un replanteamiento fundamental del diseño de la infraestructura de datos.
 
-Los sistemas tradicionales se construían en torno a restricciones: almacenamiento limitado, capacidad de cómputo fija, cargas de trabajo predecibles. Cada decisión implicaba gestionar estas limitaciones. ¿Necesita más capacidad de procesamiento? Había que planificar con meses de anticipación. ¿Quiere conservar más datos históricos? Los costos de almacenamiento se volvían una consideración importante.
+Los sistemas tradicionales se construían en torno a restricciones: almacenamiento limitado, capacidad de cómputo fija, cargas de trabajo predecibles. Cada decisión implicaba gestionar estas limitaciones. ¿Hacía falta más capacidad de procesamiento? Había que planificar con meses de anticipación. ¿Conservar más datos históricos? Los costos de almacenamiento se volvían una consideración importante.
 
 Las plataformas nativas de la nube funcionan de otra manera. El almacenamiento es prácticamente ilimitado y rentable. La capacidad de cómputo aparece cuando se necesita y se reduce cuando no está en uso. Las restricciones que dieron forma al diseño tradicional simplemente ya no aplican.
 
@@ -24,7 +24,7 @@ La arquitectura de múltiples clústeres significa que las distintas cargas de t
 
 ## Beneficios prácticos
 
-Las operaciones se acercan a un mantenimiento nulo. No hay índices que ajustar, ni particiones que gestionar, ni optimización de almacenamiento que hacer. La plataforma se encarga de la optimización del rendimiento automáticamente mientras usted se concentra en los problemas del negocio.
+Las operaciones se acercan a un mantenimiento nulo. No hay índices que ajustar, ni particiones que gestionar, ni optimización de almacenamiento que hacer. La plataforma se encarga de la optimización del rendimiento automáticamente mientras el equipo se concentra en los problemas del negocio.
 
 El escalado instantáneo significa que se pueden manejar cargas de trabajo inesperadas sin planificar. ¿Marketing quiere analizar cinco años de datos de clientes para una campaña? Sin problema. ¿Finanzas necesita procesar los reportes de cierre de trimestre? El sistema escala para manejar la carga.
 
@@ -86,11 +86,11 @@ Los enfoques de modelado de datos cambian cuando desaparecen las restricciones d
 
 ## Cómo empezar
 
-Comience con un caso de uso específico que demuestre un valor claro. Elija algo lo suficientemente importante como para llamar la atención, pero lo suficientemente acotado como para gestionar el riesgo. Los proyectos de POC funcionan mejor que las migraciones integrales para lograr un éxito inicial.
+Conviene empezar con un caso de uso específico que demuestre un valor claro: algo lo suficientemente importante como para llamar la atención, pero lo suficientemente acotado como para gestionar el riesgo. Los proyectos de POC funcionan mejor que las migraciones integrales para lograr un éxito inicial.
 
-Concéntrese en mostrar capacidades que antes no eran posibles en lugar de solo replicar la funcionalidad existente. La analítica en tiempo real, el procesamiento de datos a gran escala o la compartición de datos simplificada suelen ofrecer demostraciones convincentes.
+Conviene concentrarse en mostrar capacidades que antes no eran posibles en lugar de solo replicar la funcionalidad existente. La analítica en tiempo real, el procesamiento de datos a gran escala o la compartición de datos simplificada suelen ofrecer demostraciones convincentes.
 
-Planifique para el éxito considerando cómo se expandirán las capacidades una vez que los proyectos iniciales demuestren su valor. La flexibilidad de la plataforma significa que se puede aumentar el uso de forma significativa sin grandes cambios de arquitectura.
+Planificar para el éxito considerando cómo se expandirán las capacidades una vez que los proyectos iniciales demuestren su valor. La flexibilidad de la plataforma significa que se puede aumentar el uso de forma significativa sin grandes cambios de arquitectura.
 
 ## Por qué esto importa
 

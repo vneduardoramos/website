@@ -2,11 +2,11 @@
 
 He trabajado con plataformas de datos durante años, y la integración de capacidades de IA representa uno de los avances más prácticos que he visto. En lugar de requerir infraestructura de IA independiente o integraciones complejas, estas capacidades se están convirtiendo en parte de la propia plataforma de datos.
 
-Esta integración importa porque elimina las barreras tradicionales entre el almacenamiento de datos y el procesamiento de IA. Puede aplicar machine learning directamente a sus datos sin moverlos a sistemas externos ni administrar infraestructura adicional.
+Esta integración importa porque elimina las barreras tradicionales entre el almacenamiento de datos y el procesamiento de IA. Se puede aplicar machine learning directamente a los datos sin moverlos a sistemas externos ni administrar infraestructura adicional.
 
 ## Grandes modelos de lenguaje en plataformas de datos
 
-Tener LLMs disponibles dentro de su plataforma de datos cambia la forma en que puede abordar el análisis de texto y el procesamiento de lenguaje natural. En lugar de exportar datos para su procesamiento externo, puede analizar los comentarios de los clientes, los tickets de soporte o el contenido de los documentos directamente donde residen sus datos.
+Tener LLMs disponibles dentro de su plataforma de datos cambia la forma en que puede abordar el análisis de texto y el procesamiento de lenguaje natural. En lugar de exportar datos para su procesamiento externo, puede analizar los comentarios de los clientes, los tickets de soporte o el contenido de los documentos directamente donde residen los datos.
 
 Las aplicaciones prácticas son sencillas: análisis de sentimiento en las reseñas de clientes, categorización automática de las solicitudes de soporte, resumen de contenido para grandes conjuntos de documentos y extracción de información clave de texto no estructurado.
 
@@ -42,7 +42,7 @@ La detección de anomalías puede ejecutarse de forma continua sobre los flujos 
 
 ## Interfaces de lenguaje natural
 
-La capacidad de consultar datos mediante lenguaje natural elimina las barreras técnicas para los usuarios de negocio. En lugar de aprender SQL o usar herramientas de BI complejas, los usuarios pueden formular preguntas en lenguaje sencillo y obtener respuestas significativas. Con Cortex Analyst y Snowflake CoWork, esa conversación ocurre directamente sobre sus datos gobernados.
+La capacidad de consultar datos mediante lenguaje natural elimina las barreras técnicas para los usuarios de negocio. En lugar de aprender SQL o usar herramientas de BI complejas, los usuarios pueden formular preguntas en lenguaje sencillo y obtener respuestas significativas. Con Cortex Analyst y Snowflake CoWork, esa conversación ocurre directamente sobre los datos gobernados.
 
 Esto democratiza el acceso a los datos de maneras prácticas. Los equipos de marketing pueden analizar el rendimiento de las campañas, los equipos de finanzas pueden explorar las variaciones de presupuesto y los equipos de operaciones pueden investigar las métricas de procesos sin necesitar intermediarios técnicos.
 
@@ -58,7 +58,7 @@ Se pueden crear hallazgos personalizados para las distintas partes interesadas s
 
 ## Beneficios de seguridad y gobernanza
 
-Tener capacidades de IA dentro de la plataforma de datos significa que las políticas de seguridad y gobernanza existentes se aplican automáticamente. Los datos no salen de su entorno para el procesamiento de IA, lo que reduce la complejidad del cumplimiento y los riesgos de seguridad.
+Tener capacidades de IA dentro de la plataforma de datos significa que las políticas de seguridad y gobernanza existentes se aplican automáticamente. Los datos no salen del entorno para el procesamiento de IA, lo que reduce la complejidad del cumplimiento y los riesgos de seguridad.
 
 Los controles de acceso funcionan de la misma manera para las operaciones de IA que para las consultas tradicionales. Los usuarios solo pueden aplicar las capacidades de IA a los datos que están autorizados a acceder, lo que mantiene los límites de seguridad sin configuración adicional.
 
@@ -74,11 +74,11 @@ La gestión de recursos le permite controlar los costos de las cargas de trabajo
 
 ## Estrategias de implementación
 
-Comience con casos de uso específicos que aporten un valor de negocio claro y tengan criterios de éxito medibles. El análisis de texto, el procesamiento de documentos o la analítica predictiva básica suelen ser buenos puntos de partida.
+Conviene empezar con casos de uso específicos que aporten un valor de negocio claro y tengan criterios de éxito medibles. El análisis de texto, el procesamiento de documentos o la analítica predictiva básica suelen ser buenos puntos de partida.
 
-Prepare los datos asegurando su calidad y una organización adecuada. Las capacidades de IA funcionan mejor con datos limpios y bien estructurados, aunque a menudo pueden ayudar a identificar y resolver problemas de calidad.
+Preparar los datos asegurando su calidad y una organización adecuada. Las capacidades de IA funcionan mejor con datos limpios y bien estructurados, aunque a menudo pueden ayudar a identificar y resolver problemas de calidad.
 
-Capacite a los usuarios en técnicas de interacción efectivas para las interfaces de lenguaje natural, y proporcione ejemplos de consultas y aplicaciones exitosas.
+Capacitar a los usuarios en técnicas de interacción efectivas para las interfaces de lenguaje natural, y proporcione ejemplos de consultas y aplicaciones exitosas.
 
 ## Aplicaciones comunes
 
@@ -92,11 +92,11 @@ El análisis financiero se beneficia del análisis automatizado de variaciones, 
 
 ## Cómo empezar
 
-Comience con casos de uso que se ajusten a los procesos de negocio existentes, en lugar de intentar crear flujos de trabajo completamente nuevos. Esto reduce las barreras de adopción y ofrece una demostración de valor más clara.
+Conviene empezar con casos de uso que se ajusten a los procesos de negocio existentes, en lugar de intentar crear flujos de trabajo completamente nuevos. Esto reduce las barreras de adopción y ofrece una demostración de valor más clara.
 
-Concéntrese en aumentar las capacidades humanas en lugar de reemplazar el criterio humano. La IA funciona mejor cuando potencia la toma de decisiones en lugar de automatizar las decisiones por completo.
+Conviene concentrarse en aumentar las capacidades humanas en lugar de reemplazar el criterio humano. La IA funciona mejor cuando potencia la toma de decisiones en lugar de automatizar las decisiones por completo.
 
-Planifique una mejora iterativa basada en los comentarios de los usuarios y en los requisitos cambiantes. Las capacidades de IA siguen avanzando, así que incorpore flexibilidad en sus implementaciones.
+Planificar una mejora iterativa basada en los comentarios de los usuarios y en los requisitos cambiantes. Las capacidades de IA siguen avanzando, así que incorpore flexibilidad en sus implementaciones.
 
 ## Implicaciones futuras
 

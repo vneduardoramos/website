@@ -1,12 +1,12 @@
 {
   "meta": {
     "title": "Gracias por escribirnos",
-    "description": "Gracias por escribirnos a Viewnear. Alguien de nuestro equipo le responderá en un día hábil."
+    "description": "Gracias por escribirnos a Viewnear. Alguien de nuestro equipo responderá en un día hábil."
   },
   "hero": {
     "eyebrow": "Gracias",
     "title": "Gracias por escribirnos. <hl>Nos pondremos en contacto</hl>.",
-    "description": "Alguien de nuestro equipo le responderá en un día hábil. Mientras tanto, explore cómo ayudamos a las empresas a convertir los datos en una ventaja competitiva."
+    "description": "Alguien de nuestro equipo responderá en un día hábil. Mientras tanto, aquí está cómo ayudamos a las empresas a convertir los datos en una ventaja competitiva."
   },
   "actions": {
     "home": "Volver al inicio",

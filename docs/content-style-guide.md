@@ -9,13 +9,20 @@ Confident, precise, and human: a partner who knows the work, not a vendor readin
 - **Do:** be precise and technical; speak to outcomes; stay warm and human.
 - **Don't:** bury value in jargon; overpromise ("revolutionary", "magic"); sound corporate/cold.
 
-### Spanish (es) voice — Mexican professional register (approved 2026-07-09)
+### Spanish (es) voice — Mexican professional register, impersonal (revised 2026-07-25)
 
-The `/es` site is **Mexican business Spanish**: formal `usted`, professional and human, NOT a literal translation of the English and NOT casual/slangy. The exemplar is the home page (`messages/es/home.json`, `heroUi.json`, `homeServer.json`, and the `hero` blob in `prisma/seed/es/settings.ts`). Match its register when translating any other page.
+The `/es` site is **Mexican business Spanish**: professional and human, NOT a literal translation of the English and NOT casual/slangy. The exemplar is the home page (`messages/es/home.json`, `heroUi.json`, `homeServer.json`, and the `hero` blob in `prisma/seed/es/settings.ts`). Match its register when translating any other page.
 
-- **Register:** formal `usted`, third-person where it reads more corporate ("Nuestro equipo arma ambas prácticas y las deja funcionando en un nivel productivo"). Keep the formality; use the *right* words, not the literal ones.
+**Register: impersonal. Never address the reader as a person.** This supersedes the earlier `usted` rule (2026-07-09), which was reversed on 2026-07-25 and swept out of the whole `/es` surface. Concretely:
+
+- **No `usted`/`ustedes`**, and no verb forms that address the reader: not `usted acepta`, not `si quiere`, not `puede ver` (use `se puede ver`).
+- **No `usted` imperatives.** Buttons, links, and eyebrows take the **infinitive**: `Hablar con un arquitecto`, `Ver el proyecto →`, `Leer el artículo`, `Explorar la plataforma`, `Postularse`, `Contacto` (not `Contáctenos`). Body-copy advice becomes `Conviene + infinitive`, `Vale la pena + infinitive`, `Basta con + infinitive`, or a plain statement.
+- **No reader-directed `su`/`sus`.** Use `el`/`la`/`los`/`las`, or name the owner: `los datos`, `el equipo interno`, `la oficina del cliente`, `el horario del cliente`, `la organización`. Third-person `su` is fine when it belongs to something already named (`el producto ... llevar su marca`, `los clientes confían en sus datos`).
+- **No reader-directed dative `le`/`les`:** `le responderemos` → `respondemos`; `le mostraremos` → `mostramos`.
+- **`cuéntenos X y haremos Y`** becomes a condition: `Con X sobre la mesa, hacemos Y` / `Con saber X, hacemos Y`.
+- **Legal pages** (`privacy`, `terms`) use third-person **`el usuario`**, not `usted`.
 - **Use the English terms Mexican tech/enterprise teams actually use** (do NOT translate these): `sponsor` (not "patrocinador"), `POC`, `build`, `scope`, `backlog`, `discovery`, `stack`, `dashboard`, `pipeline`, `Time & materials`, `Staff augmentation`, `compliance`, plus all brand/product nouns (Snowflake, Cortex, Horizon, Data + AI, ...).
-- **Right words:** `números` (never "cifras"); `juntas` (not "reuniones"); `en producción` / `en un nivel productivo`. Translate for real *intent*, not dictionary meaning (e.g. "prove it first" → "Compruébelo con un POC", not "pruébelo primero").
+- **Right words:** `números` (never "cifras"); `juntas` (not "reuniones"); `en producción` / `en un nivel productivo`. Translate for real *intent*, not dictionary meaning (e.g. "prove it first" → "Comprobado con un POC", not "pruébelo primero").
 - **Do NOT get casual/slangy.** Banned as too informal: "Ahí entramos", "se las dejamos operando", "le entramos", "cinco Excels", "no en un PowerPoint", "en corto", "nos conviene a los dos", "meterle a", "aventarse a ciegas". These over-corrected a prior draft and were rejected.
 - **Carry over the English rules:** generic "AI" → **"IA"** but keep the brand pairing **"Data + AI"** in English; no em dashes; all the Positioning/banned-word rules below apply in Spanish too (no "consultoría/consultor"; Snowflake is the platform, never call the deliverable "la plataforma").
 

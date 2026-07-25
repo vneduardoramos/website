@@ -8,7 +8,7 @@
     "title": "Noticias sobre Snowflake e IA de toda <hl>América</hl>.",
     "description": "Anuncios, prensa y eventos que abarcan Canadá, Estados Unidos, México, LATAM y el Caribe."
   },
-  "empty": "Aún no hay noticias para mostrar. Vuelva pronto.",
+  "empty": "Aún no hay noticias para mostrar. Pronto habrá más.",
   "latest": {
     "eyebrow": "Lo más reciente",
     "title": "Lo último de la sala de prensa",
@@ -17,10 +17,10 @@
   "more": {
     "eyebrow": "Más novedades",
     "title": "Todas las noticias y eventos",
-    "intro": "Explore el archivo completo de anuncios, prensa y próximos eventos."
+    "intro": "Explorar el archivo completo de anuncios, prensa y próximos eventos."
   },
   "cta": {
-    "title": "¿Quiere ser el primero en enterarse?",
-    "subtitle": "Hable con nuestro equipo sobre los próximos eventos de Snowflake e IA en toda América."
+    "title": "Para enterarse primero",
+    "subtitle": "Hablar con nuestro equipo sobre los próximos eventos de Snowflake e IA en toda América."
   }
 }

@@ -8,7 +8,7 @@
     "title": "Construimos el <hl>equipo local de data & AI</hl> para las Américas.",
     "description": "Viewnear está orientada a resultados, es nativa de IA y se construye en torno a un solo equipo que comparte cada logro. Así trabajamos, esto defendemos y estos son los beneficios que lo respaldan.",
     "seeRoles": "Ver vacantes",
-    "meetTeam": "Conozca al equipo"
+    "meetTeam": "Conocer al equipo"
   },
   "offices": {
     "eyebrow": "Nuestras oficinas",
@@ -143,21 +143,21 @@
     "eyebrow": "Vacantes",
     "title": "Vacantes actuales",
     "intro": "¿No hay una vacante perfecta en la lista? Igual queremos conocer a buenas personas.",
-    "empty": "No hay vacantes abiertas por ahora, pero siempre estamos conociendo a buenas personas. Escríbanos a continuación.",
+    "empty": "No hay vacantes abiertas por ahora, pero siempre estamos conociendo a buenas personas. El formulario está a continuación.",
     "locationLabel": "Ubicación",
     "viewRole": "Ver vacante y postularse",
-    "ctaTitle": "¿No sabe qué vacante encaja? Escríbanos de todos modos.",
+    "ctaTitle": "¿Ninguna vacante encaja? El formulario sirve igual.",
     "ctaLabel": "Postularse ahora"
   },
   "apply": {
     "eyebrow": "Postularse",
-    "title": "Salude",
-    "intro": "Comparta algunos datos y la vacante de interés. Leemos cada postulación."
+    "title": "Un saludo",
+    "intro": "Basta con unos cuantos datos y la vacante de interés. Leemos cada postulación."
   },
   "cta": {
-    "title": "Comience con los resultados. Construya el equipo que los hace posibles.",
+    "title": "Empezar por los resultados. Construir el equipo que los hace posibles.",
     "subtitle": "Trabajo con sentido, colegas que elevan el oficio y una empresa joven a la que ayudar a dar forma: hablemos.",
     "seeRoles": "Ver vacantes",
-    "getInTouch": "Póngase en contacto"
+    "getInTouch": "Contacto"
   }
 }

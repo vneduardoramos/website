@@ -1,18 +1,19 @@
 {
   "meta": {
-    "title": "Equipo nearshore de Snowflake: ingenieros de Data & AI en la zona horaria del centro de EE. UU.",
-    "description": "Equipo nearshore de Snowflake: ingenieros de datos e IA certificados en SnowPro, en el horario del centro de EE. UU., desde Monterrey, México."
+    "title": "Equipo nearshore de Snowflake en Monterrey, México: ingenieros de Data & AI",
+    "description": "Equipo nearshore de Snowflake: ingenieros de datos e IA certificados en SnowPro, en el horario del centro de EE. UU., desde nuestro centro de entrega en Monterrey, México."
   },
   "hero": {
     "eyebrow": "Equipo nearshore de Snowflake",
     "title": "Un equipo nearshore de Snowflake, <hl>en sincronía con el suyo</hl>.",
     "description": "Expertos en Snowflake certificados en SnowPro que trabajan en el mismo horario laboral. La entrega avanza al ritmo de un equipo en la oficina de al lado, no de una transferencia que espera hasta el día siguiente.",
     "chips": [
-      "Zona horaria del centro de EE. UU.",
+      "Horario del centro de EE. UU.",
       "Certificados en SnowPro",
       "Snowflake Premier Partner",
       "CoCo Preferred Partner"
-    ]
+    ],
+    "clocksNote": "Monterrey mantiene el horario estándar del centro (CST) todo el año, mientras que el centro de EE. UU. cambia a CDT de marzo a noviembre. En esos meses el reloj de Monterrey marca una hora antes. El equipo trabaja en el horario laboral del cliente de cualquier forma: la jornada se traslapa por completo y nada espera hasta el día siguiente."
   },
   "trust": {
     "eyebrow": "La confianza de equipos en toda América"
@@ -23,9 +24,9 @@
     "intro": "El modelo nearshore ofrece las ventajas de costo y capacidad de un equipo distribuido, manteniendo la cercanía, el horario y la comunicación de uno que está en la misma oficina."
   },
   "monterrey": {
-    "imageAlt": "El edificio de oficinas de Viewnear en Monterrey, en Pueblo Serena",
-    "title": "El mismo horario, no una transferencia",
-    "caption": "Nuestro centro en Monterrey · en el mismo reloj"
+    "imageAlt": "El centro de entrega nearshore de Viewnear en Monterrey, México, en Pueblo Serena",
+    "title": "Nuestro centro de entrega nearshore en Monterrey",
+    "caption": "Monterrey, Nuevo León · horario del centro todo el año"
   },
   "reasons": [
     {
@@ -54,6 +55,19 @@
       "body": "Un modelo iterativo, guiado por casos de uso, que pone productos de datos funcionales frente al equipo en semanas y luego construye sobre lo que demuestra resultados."
     }
   ],
+  "proximity": {
+    "eyebrow": "Cercanía",
+    "title": "Lo bastante cerca para estar <hl>en la sala</hl>",
+    "body": "Monterrey está a unos 225 kilómetros de la frontera con Texas, el ancla industrial del corredor por el que Estados Unidos y México comercian bajo el T-MEC. Los vuelos directos desde el Aeropuerto Internacional de Monterrey (MTY) llegan a las principales ciudades de Estados Unidos en una a cuatro horas, así que un taller presencial cuesta una mañana de viaje en lugar de dos días. La mayoría de las semanas ni siquiera surge, porque la jornada laboral ya se traslapa por completo.",
+    "bullets": [
+      "Vuelos directos a las principales ciudades de Estados Unidos en una a cuatro horas",
+      "Horario del centro todo el año: las mañanas empiezan juntas y las respuestas llegan el mismo día",
+      "Presencial cuando importa: talleres de discovery y juntas de seguimiento en la oficina del cliente",
+      "Bilingüe por defecto, en inglés o español, en el idioma que piense la sala"
+    ],
+    "imageAlt": "Monterrey, Nuevo León, donde trabaja el equipo nearshore de datos e IA de Viewnear",
+    "cta": "Hablar con el equipo"
+  },
   "numbersHeading": {
     "eyebrow": "En números",
     "title": "Credenciales, no métricas de vanidad"
@@ -67,7 +81,7 @@
   "deliverHeading": {
     "eyebrow": "Lo que entregamos",
     "title": "La construcción completa de Data + AI, entregada en nearshore",
-    "intro": "Nuestro equipo de entrega trabaja desde Monterrey, México, en la zona horaria del centro de EE. UU., cubriendo el mismo scope que Viewnear entrega en cualquier lugar: desde la migración hasta IA gobernada en producción."
+    "intro": "Nuestro equipo de entrega trabaja desde Monterrey, México, en horario del centro y en la jornada laboral del cliente, cubriendo el mismo scope que Viewnear entrega en cualquier lugar: desde la migración hasta IA gobernada en producción."
   },
   "delivers": [
     {
@@ -98,10 +112,10 @@
       "Acceso directo a los ingenieros que hacen el trabajo"
     ],
     "imageAlt": "El equipo de entrega de Viewnear",
-    "cta": "Vea cómo trabajamos"
+    "cta": "Ver cómo trabajamos"
   },
   "cta": {
-    "title": "Ponga un equipo nearshore de Snowflake a trabajar en ello.",
-    "subtitle": "Cuéntenos en qué punto está la organización con Snowflake (migrando, escalando o construyendo IA) y llevaremos un equipo certificado en la misma zona horaria para hacerlo avanzar."
+    "title": "Poner un equipo nearshore de Snowflake a trabajar en ello.",
+    "subtitle": "Con saber en qué punto está la organización con Snowflake (migrando, escalando o construyendo IA), llevamos un equipo certificado en el horario del cliente para hacerlo avanzar."
   }
 }

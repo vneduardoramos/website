@@ -6,8 +6,8 @@ Nosotros entregamos nearshore, así que aquí tenemos una postura. Pero la versi
 
 ## Las definiciones claras
 
-- **Offshore** significa que el equipo de entrega está a muchas zonas horarias de distancia (comúnmente el sur de Asia o Europa del Este respecto a Estados Unidos), a menudo ocho a doce horas de diferencia. La tarifa más baja de entrada, el menor traslape con su jornada.
-- **Nearshore** significa que el equipo está en su zona horaria o cerca (para empresas en Estados Unidos, normalmente América Latina). Una tarifa de entrada algo más alta, un traslape casi total con su jornada.
+- **Offshore** significa que el equipo de entrega está a muchas zonas horarias de distancia (comúnmente el sur de Asia o Europa del Este respecto a Estados Unidos), a menudo ocho a doce horas de diferencia. La tarifa más baja de entrada, el menor traslape con la jornada local.
+- **Nearshore** significa que el equipo está en la misma zona horaria o cerca (para empresas en Estados Unidos, normalmente América Latina). Una tarifa de entrada algo más alta, un traslape casi total con la jornada local.
 
 La palabra que importa es *traslape*. En silencio decide qué tan rápido avanza el trabajo.
 
@@ -19,7 +19,7 @@ La palabra que importa es *traslape*. En silencio decide qué tan rápido avanza
 
 **Comunicación y contexto compartido.** El pairing en vivo, los standups reales y un ritmo compartido en Slack construyen el contexto que hace efectivo a un equipo. La cercanía cultural y de idioma reduce los pequeños malentendidos que se acumulan a lo largo de un proyecto largo. Esto no es sobre talento (hay talento excelente en todas partes); es sobre cuánta fricción hay entre una pregunta y una buena respuesta.
 
-**Responsabilidad y retención.** Pregunte quién es dueño del resultado y qué tan estable es el equipo. La rotación alta significa volver a explicar su negocio cada pocos meses sin importar la ubicación, pero el costo de esa reexplicación es mayor cuando el traslape para hacerla es escaso.
+**Responsabilidad y retención.** Vale la pena preguntar quién es dueño del resultado y qué tan estable es el equipo. La rotación alta significa volver a explicar el negocio cada pocos meses sin importar la ubicación, pero el costo de esa reexplicación es mayor cuando el traslape para hacerla es escaso.
 
 **Seguridad, compliance y residencia de datos.** Para datos regulados, dónde se sienta el equipo y cómo se accede a los datos puede tener peso real de compliance. Nearshore en América puede simplificar las conversaciones de residencia de datos y de revisión de accesos para empresas de Estados Unidos; offshore también puede, pero conviene confirmarlo en lugar de suponerlo.
 
@@ -31,13 +31,13 @@ Siendo honestos: offshore es una opción fuerte cuando el trabajo está bien def
 
 La mayor parte del trabajo de Snowflake e IA que vemos es lo opuesto a bien definido y estable. Es intensivo en discovery: los requisitos se afinan a medida que mira los datos, el mejor caso de uso se revela a media marcha y las decisiones necesitan un sponsor en la sala, no en el correo de mañana. Ese trabajo premia el traslape. Por eso, para empresas de Estados Unidos que construyen sobre Snowflake, pensamos que nearshore suele ser el mejor punto de partida, no porque la gente sea mejor, sino porque el reloj está de su lado.
 
-## Cómo decidir para su proyecto
+## Cómo decidir en cada caso
 
-Califique su proyecto en dos ejes:
+El proyecto se califica en dos ejes:
 
 - **¿Qué tan estable es el scope?** Cerrado y documentado se inclina a offshore. Cambiante e intensivo en discovery se inclina a nearshore.
 - **¿Qué tan densa en decisiones es la obra?** Mayormente ejecución se inclina a offshore. Muchos juicios y participación de sponsors se inclina a nearshore.
 
 Si cae en el cuadrante de "cambiante y denso en decisiones", donde caen la mayoría de los builds de Snowflake e IA, priorice el traslape sobre la tarifa. Si cae en "estable e intensivo en ejecución", la ventaja de tarifa offshore es real.
 
-Elija lo que elija, vea más allá del tarifario: costo por resultado, estabilidad del equipo y quién queda como responsable después del go-live. Si quiere ver cómo funciona un modelo nearshore en la práctica, nuestra [página nearshore](/es/nearshore) detalla el modelo de entrega, y nuestras credenciales de [alianza](/es/partnership) muestran la profundidad en Snowflake que lo respalda.
+Cualquiera sea la elección, conviene ver más allá del tarifario: costo por resultado, estabilidad del equipo y quién queda como responsable después del go-live. Para ver cómo funciona un modelo nearshore en la práctica, nuestra [página nearshore](/es/nearshore) detalla el modelo de entrega, y nuestras credenciales de [alianza](/es/partnership) muestran la profundidad en Snowflake que lo respalda.

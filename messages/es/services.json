@@ -23,7 +23,7 @@
     },
     "GROW": {
       "eyebrow": "Habilitación",
-      "intro": "Multiplicar el valor. El equipo lleva casos de uso de IA y agentes a producción con nuestra gente a su lado, y sigue mejorándolos mucho tiempo después de que reducimos nuestra participación."
+      "intro": "Multiplicar el valor. El equipo lleva casos de uso de IA y agentes a producción con nuestra gente al lado, y sigue mejorándolos mucho tiempo después de que reducimos nuestra participación."
     }
   },
   "toolsLabel": "Herramientas",
@@ -31,10 +31,10 @@
     "eyebrow": "Hacia dónde va esto",
     "title": "Listos para <hl>agentes que actúan</hl>.",
     "intro": "Una práctica de IA lista para agentes no comienza con los agentes. Comienza con datos gobernados y contexto confiable: una capa donde los datos, el contexto de negocio, los modelos y los flujos de trabajo se unen. Construimos esa capa junto al equipo, para que cuando los agentes actúen, lo hagan sobre números en los que el negocio confía.",
-    "proofLine": "Vea la IA que ponemos en producción en nuestros <cases>casos de éxito</cases>, y cómo elegimos el modelo para cada tarea en <dataai>Data + AI</dataai>.",
+    "proofLine": "La IA que ponemos en producción está en nuestros <cases>casos de éxito</cases>, y cómo elegimos el modelo para cada tarea en <dataai>Data + AI</dataai>.",
     "thesis": {
       "title": "Nuestra tesis: la empresa agéntica funciona sobre una única capa gobernada de datos y contexto",
-      "label": "Lea la tesis"
+      "label": "Leer la tesis"
     }
   },
   "impact": {
@@ -60,7 +60,7 @@
       {
         "phase": "Más de 18 meses",
         "title": "Ventaja que se acumula",
-        "body": "Nuevos casos de uso entregados en semanas, costo de operación ajustado y un equipo con la soltura suficiente para seguir ampliándolo por su cuenta: los datos y la IA se convierten en una ventaja competitiva duradera."
+        "body": "Nuevos casos de uso entregados en semanas, costo de operación ajustado y un equipo con la soltura suficiente para seguir ampliándolo por cuenta propia: los datos y la IA se convierten en una ventaja competitiva duradera."
       }
     ]
   },
@@ -97,8 +97,8 @@
     "title": "Por qué construimos de forma nativa en Snowflake",
     "intro": "De Openflow a Horizon Catalog y a Cortex: priorizamos los productos nativos de Snowflake por encima de las herramientas de terceros, para que haya una sola copia gobernada de los datos, un solo linaje que auditar y un solo contexto confiable del que dependa cada agente de IA. dbt es el único framework externo que utilizamos, de forma nativa contra Snowflake.",
     "cta": {
-      "title": "Vea el stack completo, capa por capa, con lo que está disponible (GA) y lo que viene",
-      "label": "Explore la plataforma"
+      "title": "El stack completo, capa por capa, con lo que está disponible (GA) y lo que viene",
+      "label": "Explorar la plataforma"
     }
   },
   "engagement": {
@@ -124,9 +124,9 @@
       },
       {
         "title": "Ampliación de equipo",
-        "body": "Integramos a nuestros profesionales certificados junto al equipo interno. Aceleramos la entrega a la vez que elevamos su capacidad.",
-        "how": "Ingenieros certificados en SnowPro se suman al equipo, a sus herramientas y a sus formas de trabajar.",
-        "includes": ["Profundidad en Snowflake en todos los niveles", "Transferencia de conocimiento incorporada", "Aumente o reduzca la escala cada mes"],
+        "body": "Integramos a nuestros profesionales certificados junto al equipo interno. Aceleramos la entrega a la vez que elevamos la capacidad del equipo.",
+        "how": "Ingenieros certificados en SnowPro se suman al equipo, a las herramientas y las formas de trabajar ya establecidas.",
+        "includes": ["Profundidad en Snowflake en todos los niveles", "Transferencia de conocimiento incorporada", "Escala que sube o baja cada mes"],
         "bestFor": "Escalar rápido un equipo existente"
       },
       {
@@ -156,7 +156,7 @@
       "body": "El scope de los proyectos se define según el volumen de datos y la complejidad de las fuentes, el número de casos de uso de analítica e IA, el tamaño del equipo y el cronograma. Acordamos el scope y el precio por adelantado (sea cual sea el modelo que encaje) para que no haya sorpresas."
     },
     "footer": {
-      "note": "¿No está seguro de qué modelo encaja? Cuéntenos el problema y le recomendaremos uno.",
+      "note": "¿No queda claro qué modelo encaja? Con el problema sobre la mesa, recomendamos uno.",
       "contactCta": "Hablemos de un proyecto",
       "partnerCta": "Construir vs. colaborar →"
     }

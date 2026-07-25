@@ -78,7 +78,7 @@
       "Formatos de tabla abiertos (Apache Iceberg), consultables por cualquier motor, sin migrar de plataforma"
     ],
     "imageAlt": "Infraestructura de datos gobernada y segura",
-    "cta": "Hable con nuestro equipo"
+    "cta": "Hablar con nuestro equipo"
   },
   "verticalsHeading": {
     "eyebrow": "Por industria",
@@ -99,10 +99,10 @@
       "body": "Tratamiento de datos de pago y de clientes conforme a PCI, aislado y gobernado de extremo a extremo."
     }
   ],
-  "contactLine": "¿Tiene un requisito específico de cumplimiento o seguridad? <link>Hable con nuestro equipo</link> y le explicaremos cómo lo cumpliríamos.",
+  "contactLine": "¿Hay un requisito específico de cumplimiento o seguridad? <link>Hablar con nuestro equipo</link> y explicamos cómo se cumpliría.",
   "cta": {
     "title": "¿Preguntas de seguridad antes de comenzar a construir?",
-    "subtitle": "Cuéntenos los requisitos (residencia de datos, certificaciones, auditoría o revisión de proveedores) y le mostraremos exactamente cómo los cumplimos."
+    "subtitle": "Con los requisitos sobre la mesa (residencia de datos, certificaciones, auditoría o revisión de proveedores), mostramos exactamente cómo los cumplimos."
   },
   "breadcrumb": {
     "home": "Inicio",

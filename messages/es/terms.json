@@ -9,19 +9,19 @@
     "description": "Los términos que rigen el uso de nuestro sitio web y servicios."
   },
   "lastUpdated": "Última actualización: 7 de junio de 2026",
-  "intro": "Estos Términos del servicio (“Términos”) rigen su acceso y uso del sitio web de Viewnear y de cualquier servicio que prestemos a través de él. Al usar nuestro sitio web, usted acepta estos Términos. Si no está de acuerdo, le pedimos que no use el sitio.",
+  "intro": "Estos Términos del servicio (“Términos”) rigen el acceso y uso del sitio web de Viewnear y de cualquier servicio que prestemos a través de él. Al usar nuestro sitio web, el usuario acepta estos Términos. Quien no esté de acuerdo no debe usar el sitio.",
   "sections": {
     "use": {
       "title": "Uso del sitio",
-      "body": "Usted puede usar este sitio web únicamente con fines lícitos. Se compromete a no hacer un uso indebido del sitio, no interferir en su funcionamiento, no intentar acceder a él de forma no autorizada y no utilizarlo para infringir los derechos de terceros."
+      "body": "Este sitio web puede usarse únicamente con fines lícitos. El usuario se compromete a no hacer un uso indebido del sitio, no interferir en su funcionamiento, no intentar acceder a él de forma no autorizada y no utilizarlo para infringir los derechos de terceros."
     },
     "ip": {
       "title": "Propiedad intelectual",
-      "body": "El contenido de este sitio (incluidos textos, gráficos, logotipos y la marca Viewnear) es propiedad de Viewnear o de sus licenciantes y está protegido por las leyes de propiedad intelectual aplicables. No puede reproducir, distribuir ni crear obras derivadas sin nuestro consentimiento previo por escrito, salvo lo permitido para consulta personal y no comercial."
+      "body": "El contenido de este sitio (incluidos textos, gráficos, logotipos y la marca Viewnear) es propiedad de Viewnear o de sus licenciantes y está protegido por las leyes de propiedad intelectual aplicables. No está permitido reproducir, distribuir ni crear obras derivadas sin nuestro consentimiento previo por escrito, salvo lo permitido para consulta personal y no comercial."
     },
     "services": {
       "title": "Servicios y proyectos",
-      "body": "La información de este sitio tiene carácter de orientación general y no constituye una oferta vinculante. Cualquier servicio o proyecto de entrega se rige por un acuerdo escrito independiente entre usted y Viewnear, que establece el alcance, las tarifas, los plazos y las obligaciones. Cuando esos términos entren en conflicto con estos, prevalecerá el acuerdo del proyecto."
+      "body": "La información de este sitio tiene carácter de orientación general y no constituye una oferta vinculante. Cualquier servicio o proyecto de entrega se rige por un acuerdo escrito independiente entre el cliente y Viewnear, que establece el alcance, las tarifas, los plazos y las obligaciones. Cuando esos términos entren en conflicto con estos, prevalecerá el acuerdo del proyecto."
     },
     "thirdParty": {
       "title": "Referencias a terceros",
@@ -44,8 +44,8 @@
       "body": "Podemos actualizar estos Términos de vez en cuando. Cuando lo hagamos, revisaremos la fecha de “Última actualización” indicada arriba. El uso continuado del sitio después de que los cambios entren en vigor constituye la aceptación de los Términos revisados."
     },
     "contact": {
-      "title": "Contáctenos",
-      "body": "¿Tiene preguntas sobre estos Términos? Contáctenos en <link>contact@viewnear.com</link>."
+      "title": "Contacto",
+      "body": "¿Hay preguntas sobre estos Términos? Basta con escribirnos a <link>contact@viewnear.com</link>."
     }
   }
 }

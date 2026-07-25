@@ -3,20 +3,20 @@
 export const blogPostsEs: Record<string, { title?: string; excerpt?: string; keyTakeaways?: string[]; seoTitle?: string; seoDescription?: string }> = {
   "how-to-choose-a-snowflake-partner": {
     title: "Cómo elegir un partner de Snowflake: una checklist para el comprador",
-    excerpt: "Las certificaciones son el piso, no la respuesta. Lo que separa a un buen partner de Snowflake de uno doloroso casi nunca está en la presentación de ventas: quién construye con su equipo, quién sigue siendo responsable después del go-live y quién cobra por terminar en lugar de por facturar. Una checklist práctica para llevar a cada conversación.",
+    excerpt: "Las certificaciones son el piso, no la respuesta. Lo que separa a un buen partner de Snowflake de uno doloroso casi nunca está en la presentación de ventas: quién construye con el equipo interno, quién sigue siendo responsable después del go-live y quién cobra por terminar en lugar de por facturar. Una checklist práctica para llevar a cada conversación.",
     keyTakeaways: [
       "El nivel de partner y la certificación SnowPro son el piso: confírmelos, luego revise si la gente senior de la presentación es la que de verdad va a entregar.",
-      "El mejor predictor de estar contento a largo plazo es si un partner construye con su equipo y entrega el trabajo, o construye una caja negra y se va.",
-      "Ajuste el modelo de entrega a cómo trabaja: para empresas en Estados Unidos, un equipo nearshore en su zona horaria cambia el ritmo de todo el proyecto.",
-      "El precio revela los incentivos: cobrar por hora premia tardar más; cobrar por resultado premia terminar. Sepa cuál está comprando.",
-      "Pida evidencia, no adjetivos: referencias que pueda llamar, un proyecto recorrido de principio a fin, y gobierno y control de costo diseñados desde el día uno.",
+      "El mejor predictor de estar contento a largo plazo es si un partner construye con el equipo interno y entrega el trabajo, o construye una caja negra y se va.",
+      "El modelo de entrega debe ajustarse a la forma de trabajar: para empresas en Estados Unidos, un equipo nearshore en la misma zona horaria cambia el ritmo de todo el proyecto.",
+      "El precio revela los incentivos: cobrar por hora premia tardar más; cobrar por resultado premia terminar. Vale la pena saber cuál se está comprando.",
+      "Evidencia, no adjetivos: referencias que se puedan llamar, un proyecto recorrido de principio a fin, y gobierno y control de costo diseñados desde el día uno.",
     ],
   },
   "snowflake-migration-cost": {
     title: "Cuánto cuesta de verdad una migración a Snowflake (y qué mueve el número)",
-    excerpt: "Quien le cotice un precio cerrado de migración antes de ver su entorno está adivinando. Pero el costo no es imposible de conocer: es la suma de unos cuantos factores claros, del sistema de origen al número de pipelines al gobierno. Esto es lo que mueve el número, y cómo bajarlo.",
+    excerpt: "Quien cotice un precio cerrado de migración antes de ver el entorno está adivinando. Pero el costo no es imposible de conocer: es la suma de unos cuantos factores claros, del sistema de origen al número de pipelines al gobierno. Esto es lo que mueve el número, y cómo bajarlo.",
     keyTakeaways: [
-      "Separe dos costos: el costo continuo de la plataforma de Snowflake por consumo, y el costo único del proyecto de migración. Confundirlos provoca sustos en ambas direcciones.",
+      "Conviene separar dos costos: el costo continuo de la plataforma de Snowflake por consumo, y el costo único del proyecto de migración. Confundirlos provoca sustos en ambas direcciones.",
       "El mayor factor del proyecto suele ser los pipelines y las transformaciones, no el volumen de datos en crudo: cada job y cada regla de negocio enterrada hay que reconstruirlos y validarlos.",
       "El sistema de origen importa: salir de Teradata, Oracle o Hadoop carga más equipaje propietario que Redshift o SQL Server.",
       "Puede bajar el número con conversión automatizada de código, retirando pipelines muertos, con paridad validada y un cutover por fases en lugar de uno de un solo golpe.",
@@ -25,13 +25,13 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   },
   "nearshore-vs-offshore-snowflake": {
     title: "Nearshore vs offshore para entregas de Snowflake: cómo decidir",
-    excerpt: "La decisión entre nearshore y offshore suele arrancar con las tarifas por hora. Debería arrancar con los relojes. El trabajo de Snowflake e IA es iterativo y denso en decisiones, justo el tipo de trabajo donde el traslape de zona horaria le gana a una tarifa más baja. Un marco para decidir qué modelo le conviene a su proyecto.",
+    excerpt: "La decisión entre nearshore y offshore suele arrancar con las tarifas por hora. Debería arrancar con los relojes. El trabajo de Snowflake e IA es iterativo y denso en decisiones, justo el tipo de trabajo donde el traslape de zona horaria le gana a una tarifa más baja. Un marco para decidir qué modelo conviene a cada proyecto.",
     keyTakeaways: [
-      "Compare costo por resultado, no costo por hora: una tarifa offshore más baja se borra con el retrabajo que causa la latencia de la noche en trabajo iterativo.",
+      "Comparar costo por resultado, no costo por hora: una tarifa offshore más baja se borra con el retrabajo que causa la latencia de la noche en trabajo iterativo.",
       "El trabajo de Snowflake e IA es intensivo en discovery y denso en decisiones, y eso premia el traslape de horario: un bloqueo resuelto para la comida frente a un día completo por ida y vuelta.",
       "Offshore es una opción fuerte cuando el scope es estable, está documentado y se entrega limpiamente; en ese tipo de trabajo la ventaja de tarifa es real.",
-      "Califique su proyecto en dos ejes: qué tan estable es el scope y qué tan densa en decisiones es la obra. Cambiante y densa en decisiones se inclina a nearshore.",
-      "Elija lo que elija, vea más allá del tarifario: la estabilidad del equipo y quién queda como responsable después del go-live.",
+      "Calificar el proyecto en dos ejes: qué tan estable es el scope y qué tan densa en decisiones es la obra. Cambiante y densa en decisiones se inclina a nearshore.",
+      "Cualquiera sea la elección, conviene ver más allá del tarifario: la estabilidad del equipo y quién queda como responsable después del go-live.",
     ],
   },
   "snowflake-control-plane-agentic-enterprise": {
@@ -46,10 +46,10 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
     ],
   },
   "ai-assistant-understands-your-data": {
-    title: "El asistente de IA que de verdad entiende sus datos (y por qué eso importa)",
+    title: "El asistente de IA que de verdad entiende los datos (y por qué eso importa)",
     excerpt: "Snowflake Cortex Agents no son solo otra función de chatbot. Tras implementarlos en múltiples entornos de clientes, he visto cómo transforman la manera en que los usuarios de negocio interactúan con los datos, y es más profundo de lo que esperaba en un principio.",
     keyTakeaways: [
-      "Cortex Agents operan dentro de la plataforma de datos, así que consultan datos en vivo y heredan de forma automática los permisos y el gobierno que usted ya tiene.",
+      "Cortex Agents operan dentro de la plataforma de datos, así que consultan datos en vivo y heredan de forma automática los permisos y el gobierno ya existentes.",
       "El servicio al cliente es el mejor punto de partida porque el valor es inmediato: los agentes dan a los representantes el historial completo de un cliente y la memoria institucional de casos anteriores.",
       "La preparación de datos se trata de contexto de negocio, no de ingeniería pesada: nombres de campos legibles, categorías significativas y reglas de negocio documentadas.",
       "La seguridad y el costo se comportan como el resto de Snowflake, con seguridad a nivel de fila, enmascaramiento, registros de auditoría compartidos y precios transparentes basados en consumo.",
@@ -64,44 +64,44 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
       "Separar cómputo y almacenamiento es la clave: cada uno escala de forma independiente, y la arquitectura multiclúster evita que las cargas de trabajo interfieran entre sí.",
       "Operaciones casi sin mantenimiento, escalado instantáneo y compartición de datos en vivo permiten a los equipos concentrarse en los problemas de negocio en lugar de en la carga administrativa.",
       "Los precios basados en consumo alinean el costo con el uso real, pero exigen nuevos hábitos de monitoreo para evitar sorpresas durante el desarrollo y las pruebas.",
-      "Comience con un POC enfocado y de alto valor que muestre las nuevas capacidades, en lugar de intentar una migración completa de entrada.",
+      "Conviene empezar con un POC enfocado y de alto valor que muestre las nuevas capacidades, en lugar de intentar una migración completa de entrada.",
     ],
   },
   "bi-integration-challenge-power-bi-tableau-snowflake": {
     title: "El reto de integración que enfrenta todo equipo de BI (y cómo lo resolvemos)",
-    excerpt: "Conectar Snowflake con sus herramientas de BI favoritas no debería ser ciencia espacial. Tras decenas de implementaciones, estos son los patrones que funcionan y las trampas que hacen perder tiempo.",
+    excerpt: "Conectar Snowflake con las herramientas de BI favoritas no debería ser ciencia espacial. Tras decenas de implementaciones, estos son los patrones que funcionan y las trampas que hacen perder tiempo.",
     keyTakeaways: [
-      "Use cuentas de servicio con autenticación por par de llaves y warehouses dedicados por herramienta para mantener el rendimiento predecible y los costos claros.",
-      "Elija DirectQuery o conexiones en vivo para datos grandes y cambiantes, e importación o extractos para datos más pequeños y estables, y combínelos en un modelo híbrido.",
-      "Implemente la seguridad una sola vez en Snowflake con políticas a nivel de fila y vistas seguras para que cada herramienta de BI herede el mismo gobierno.",
+      "Usar cuentas de servicio con autenticación por par de llaves y warehouses dedicados por herramienta para mantener el rendimiento predecible y los costos claros.",
+      "Elegir DirectQuery o conexiones en vivo para datos grandes y cambiantes, e importación o extractos para datos más pequeños y estables, y combinarlos en un modelo híbrido.",
+      "Implementar la seguridad una sola vez en Snowflake con políticas a nivel de fila y vistas seguras para que cada herramienta de BI herede el mismo gobierno.",
       "Un auto-suspend agresivo más el auto-escalado multiclúster controla el costo sin perjudicar la experiencia del usuario.",
-      "Diseñe las integraciones para la flexibilidad y el gobierno en lugar de optimizarlas para una sola herramienta o caso de uso.",
+      "Diseñar las integraciones para la flexibilidad y el gobierno en lugar de optimizarlas para una sola herramienta o caso de uso.",
     ],
   },
   "why-snowflake-ai-strategy-matters": {
     title: "Por qué todo equipo de datos debería prestar atención a la estrategia de IA de Snowflake",
     excerpt: "Desde una posición privilegiada observando la evolución de la IA de Snowflake, esto no es solo otro proveedor agregando funciones de ML. Es un cambio fundamental que transformará cómo construimos e implementamos aplicaciones de IA.",
     keyTakeaways: [
-      "Llevar la IA a la nube de datos elimina la barrera entre el almacenamiento de datos y el procesamiento de IA, de modo que puede analizar texto y ejecutar modelos donde sus datos ya residen.",
+      "Llevar la IA a la nube de datos elimina la barrera entre el almacenamiento de datos y el procesamiento de IA, de modo que se puede analizar texto y ejecutar modelos donde los datos ya residen.",
       "Las funciones de Cortex permiten combinar la analítica tradicional con hallazgos de IA en una sola consulta, desde el análisis de sentimiento hasta la extracción de documentos y el pronóstico.",
       "Como la IA se ejecuta dentro de la plataforma, los controles de acceso, los registros de auditoría y las políticas de gobierno existentes se aplican de forma automática sin configuración adicional.",
-      "Los precios basados en consumo implican que los costos de IA escalan con el uso, y los mismos hábitos de monitoreo y optimización que usa para las consultas aplican a las cargas de trabajo de IA.",
-      "Comience con casos de uso enfocados y de alto valor, potencie el juicio humano en lugar de reemplazarlo, y planifique una mejora iterativa a medida que las capacidades evolucionan.",
+      "Los precios basados en consumo implican que los costos de IA escalan con el uso, y los mismos hábitos de monitoreo y optimización que se usan para las consultas aplican a las cargas de trabajo de IA.",
+      "Conviene empezar con casos de uso enfocados y de alto valor, potenciar el juicio humano en lugar de reemplazarlo, y planificar una mejora iterativa a medida que las capacidades evolucionan.",
     ],
   },
   "zero-copy-cloning-snowflake": {
     title: "Entender el Zero-Copy Cloning: la función más subutilizada de Snowflake",
-    excerpt: "El Zero-Copy Cloning suena demasiado bueno para ser cierto hasta que entiende su mecánica. Así funciona esta capacidad y por qué debería formar parte del arsenal de todo equipo de datos.",
+    excerpt: "El Zero-Copy Cloning suena demasiado bueno para ser cierto hasta que se entiende su mecánica. Así funciona esta capacidad y por qué debería formar parte del arsenal de todo equipo de datos.",
     keyTakeaways: [
       "El Zero-Copy Cloning crea copias de base de datos instantáneas y totalmente funcionales al compartir los archivos de datos subyacentes, de modo que clonar una base de datos de 100TB toma el mismo tiempo que clonar una de 100GB.",
       "Los costos de almacenamiento parten de cero y solo crecen a medida que el clon y el original divergen por actualizaciones, lo que hace práctica la clonación para el desarrollo, las pruebas y el análisis cotidianos.",
       "Los clones heredan la seguridad, el enmascaramiento y los controles de acceso del origen, así que el gobierno se aplica de forma automática sin configuración adicional.",
-      "Acompañe los clones con nomenclatura descriptiva, políticas de ciclo de vida y monitoreo de almacenamiento para evitar clones olvidados y de larga duración que acumulan costo en silencio.",
+      "Acompañar los clones con nomenclatura descriptiva, políticas de ciclo de vida y monitoreo de almacenamiento para evitar clones olvidados y de larga duración que acumulan costo en silencio.",
       "Los casos de uso abarcan entornos de desarrollo, pruebas A/B, reportes de un momento específico, ensayos de migración, pruebas de recuperación ante desastres e investigaciones de soporte aisladas.",
     ],
   },
   "snowflake-compute-storage-architecture": {
-    title: "Por qué la arquitectura de cómputo y almacenamiento de Snowflake sí importa para su estrategia de datos",
+    title: "Por qué la arquitectura de cómputo y almacenamiento de Snowflake sí importa para la estrategia de datos",
     excerpt: "Entender las decisiones arquitectónicas de Snowflake no es mera curiosidad técnica. Es la base para optimizar el rendimiento, controlar los costos y construir soluciones de datos escalables.",
     keyTakeaways: [
       "Separar cómputo y almacenamiento permite escalar cada uno de forma independiente, así que paga por lo que realmente usa en lugar de aprovisionar para la capacidad máxima las 24 horas.",
@@ -126,7 +126,7 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
     title: "De SQL a IA generativa: un primer vistazo a Snowflake Cortex AISQL",
     excerpt: "Las nuevas funciones Cortex AISQL de Snowflake permiten ejecutar tareas de modelos de lenguaje grandes como clasificación, extracción, traducción e incluso preguntas y respuestas sobre imágenes directamente en SQL. Esto es lo que significa para los equipos de datos, cómo funciona en la práctica y dónde vemos en Viewnear las mayores oportunidades.",
     keyTakeaways: [
-      "Cortex AISQL integra LLMs de última generación directamente dentro del motor de Snowflake, así que no hay infraestructura de IA adicional que levantar y sus datos nunca salen de la plataforma.",
+      "Cortex AISQL integra LLMs de última generación directamente dentro del motor de Snowflake, así que no hay infraestructura de IA adicional que levantar y los datos nunca salen de la plataforma.",
       "Los analistas pueden prototipar flujos de trabajo con LLM sin más que una sentencia SELECT, clasificando sentimiento, extrayendo campos y respondiendo preguntas sobre imágenes en una sola consulta.",
       "Combinar PARSE_DOCUMENT con AI_COMPLETE procesa PDFs y fotos de celular en un solo pipeline, lo que es ideal para casos de uso de hipotecas y seguros.",
       "Los roles, las políticas de enmascaramiento y la seguridad a nivel de fila existentes siguen aplicando, y los créditos escalan con los tokens de entrada y el modelo elegido, así que prototipe en pequeño y monitoree el uso.",
@@ -141,7 +141,7 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
       "La calidad de los datos se capitaliza como el interés: el linaje explicable, las políticas portables y el conocimiento continuo rinden más cuando llega la primera auditoría de IA.",
       "La separación entre almacenamiento y cómputo de Snowflake permite que los registros crudos, las vistas gobernadas y los agentes inteligentes coexistan sin saltos de datos.",
       "Los ejecutivos ganan al presupuestar para la calidad de datos, patrocinar pilotos enfocados con métricas claras y hacer evolucionar el gobierno en tiempo real.",
-      "Comience con una decisión de alta frecuencia, reconstrúyala sobre la capa de IA nativa de Snowflake, y publique la precisión y el costo abiertamente para generar impulso.",
+      "Conviene empezar con una decisión de alta frecuencia, reconstruirla sobre la capa de IA nativa de Snowflake, y publicar la precisión y el costo abiertamente para generar impulso.",
     ],
   },
   "llms-to-ai-agents-snowflake-cortex": {
@@ -152,7 +152,7 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
       "Los agentes de datos son la categoría de mayor impacto, combinando datos estructurados y no estructurados en hallazgos confiables con precisión, eficiencia y gobierno incorporados.",
       "Snowflake Cortex ha avanzado rápido: el soporte multimodal llegó en abril de 2025 y Cortex AISQL en junio de 2025, haciendo que la IA se trate más de resultados de negocio que de habilidad técnica.",
       "El gobierno y la seguridad deben estar incorporados desde el primer día, que es lo que permite a los líderes pasar de los experimentos a la producción sin comprometer la confianza.",
-      "La brecha entre las empresas que experimentan con IA agéntica y las que la ponen en operación se está ampliando, y quienes adoptan temprano avanzarán más rápido y superarán a su competencia.",
+      "La brecha entre las empresas que experimentan con IA agéntica y las que la ponen en operación se está ampliando, y quienes adoptan temprano avanzarán más rápido y superarán a la competencia.",
     ],
   },
   "viewnear-snowflake-openflow-data-workflows": {
@@ -201,7 +201,7 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   },
   "snowflake-foundation-for-data-intelligence": {
     title: "De lo restringido a lo omnipresente: Snowflake como base para la inteligencia de datos",
-    excerpt: "Snowflake cambió la economía de los datos, convirtiendo lo que antes era restringido, lento y limitado en algo elástico, gobernado y accesible en toda la empresa. A medida que la IA reduce la distancia entre las preguntas y las respuestas, Snowflake se convierte en el lugar donde usted conversa con sus datos y pasa del conocimiento a la acción más rápido que nunca.",
+    excerpt: "Snowflake cambió la economía de los datos, convirtiendo lo que antes era restringido, lento y limitado en algo elástico, gobernado y accesible en toda la empresa. A medida que la IA reduce la distancia entre las preguntas y las respuestas, Snowflake se convierte en el lugar donde se conversa con los datos y se pasa del conocimiento a la acción más rápido que nunca.",
     keyTakeaways: [
       "Snowflake cambió la economía de los datos: el desacoplamiento de almacenamiento y cómputo, la escala elástica y la compartición nativa convirtieron el uso de los datos de restringido a omnipresente.",
       "El verdadero valor de Snowflake es como capa de distribución para datos empresariales gobernados, donde los dominios se cruzan sobre una única fuente de verdad sin copias ni fricción.",

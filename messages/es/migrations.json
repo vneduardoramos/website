@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Migraciones a Snowflake: Teradata, Oracle, Redshift, Hadoop y más",
-    "description": "Viewnear traslada almacenes heredados y Hadoop a Snowflake: conversión automatizada, paridad validada y una transferencia que su equipo termina operando."
+    "description": "Viewnear traslada almacenes heredados y Hadoop a Snowflake: conversión automatizada, paridad validada y una transferencia que el equipo interno termina operando."
   },
   "hero": {
     "eyebrow": "Migraciones",
@@ -60,7 +60,7 @@
       ]
     }
   ],
-  "sourcesNote": "Los nombres de plataformas y logotipos son marcas registradas de sus respectivos propietarios, mostrados para indicar los orígenes de migración que admitimos. ¿Usa algo que no aparece aquí? Es casi seguro que ya lo hemos visto. Cuéntenos qué está en ejecución y trazaremos la ruta.",
+  "sourcesNote": "Los nombres de plataformas y logotipos son marcas registradas de sus respectivos propietarios, mostrados para indicar los orígenes de migración que admitimos. ¿Hay algo en ejecución que no aparece aquí? Es casi seguro que ya lo hemos visto. Con saber qué está corriendo, trazamos la ruta.",
   "whyHeading": {
     "eyebrow": "Por qué los equipos migran",
     "title": "Las razones para dejar atrás lo heredado",
@@ -129,9 +129,9 @@
     { "value": "Por fases", "label": "Transición, no de golpe" },
     { "value": "Paridad", "label": "Validada antes de la transición" }
   ],
-  "caseStudiesLine": "Vea migraciones en producción en nuestros <link>casos de éxito →</link>",
+  "caseStudiesLine": "Migraciones en producción, en nuestros <link>casos de éxito →</link>",
   "cta": {
-    "title": "Planifique la migración.",
-    "subtitle": "Cuéntenos qué está en ejecución hoy (Teradata, Oracle, Redshift, Hadoop o cualquier otra cosa) y trazaremos el recorrido: qué se convierte de forma automática, qué necesita manos y cuándo el equipo toma las llaves."
+    "title": "Planear la migración.",
+    "subtitle": "Con saber qué está en ejecución hoy (Teradata, Oracle, Redshift, Hadoop o cualquier otra cosa), trazamos el recorrido: qué se convierte de forma automática, qué necesita manos y cuándo el equipo toma las llaves."
   }
 }

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Viewnear: datos e IA en producción, sobre Snowflake.",
-    "description": "Viewnear ayuda a las empresas a establecer dos capacidades que permanecen: datos confiables y una práctica de IA en producción, sobre Snowflake, con su equipo."
+    "description": "Viewnear ayuda a las empresas a establecer dos capacidades que permanecen: datos confiables y una práctica de IA en producción, sobre Snowflake, con equipos internos."
   },
   "foundation": {
     "eyebrow": "La base",
@@ -28,17 +28,17 @@
       },
       {
         "title": "Diseñamos el resultado y luego la entrega",
-        "body": "Partimos del resultado que su negocio necesita y diseñamos la entrega en sentido inverso: personas con experiencia en las decisiones, agentes de IA en la ejecución y una mezcla que se ajusta conforme cambia el trabajo. No le rentamos un equipo ni un paquete de horas. Le entregamos el resultado, y responder por él es nuestra responsabilidad."
+        "body": "Partimos del resultado que el negocio necesita y diseñamos la entrega en sentido inverso: personas con experiencia en las decisiones, agentes de IA en la ejecución y una mezcla que se ajusta conforme cambia el trabajo. No se renta un equipo ni un paquete de horas. Lo que se entrega es el resultado, y responder por él es nuestra responsabilidad."
       }
     ],
     "closing": "No es una forma más barata de contratar servicios. Es una más honesta: el objetivo se fija desde el inicio, el criterio senior recorre todo el camino y <hlCyan>respondemos por el resultado.</hlCyan>",
     "leadershipLabel": "Las personas que responden por él.",
     "featured": {
       "imageAlt": "De las horas a los resultados: la economía de los servicios de datos en la era de la IA",
-      "eyebrow": "Lea el análisis",
+      "eyebrow": "Leer el análisis",
       "title": "De las horas a los resultados: cómo la IA cambió la economía de los servicios",
       "body": "El argumento completo: qué le hizo la IA a la hora facturable, a dónde se desplazó en realidad la experiencia y cómo la entrega por resultados cambia lo que en realidad paga una factura de servicios.",
-      "cta": "Lea el artículo"
+      "cta": "Leer el artículo"
     }
   },
   "derisk": {
@@ -50,7 +50,7 @@
     "cards": [
       {
         "label": "POC",
-        "title": "Compruébelo con un POC",
+        "title": "Comprobado con un POC",
         "body": "Un POC acotado antes del build completo. La decisión de escalar se sustenta en evidencia, no en una presentación."
       },
       {
@@ -66,14 +66,14 @@
       {
         "label": "Traspaso",
         "title": "Construido para entregarse",
-        "body": "Documentación, capacitación y un plan de transición en cada proyecto, para que su equipo opere y amplíe el trabajo con autonomía."
+        "body": "Documentación, capacitación y un plan de transición en cada proyecto, para que el equipo interno opere y amplíe el trabajo con autonomía."
       }
     ],
     "panel": {
       "headline": "<weeks>8 a 16 semanas</weeks> hasta producción, frente a <months>6 a 12 meses</months> construyendo el equipo internamente.",
-      "body": "Un <nearshore>equipo nearshore con certificación SnowPro</nearshore> y profundidad empresarial en cada nivel, en sprints por caso de uso definidos mediante un discovery pagado: sin tiempos de contratación, sin curva de arranque, sin riesgo de persona clave.",
-      "ctaPrimary": "Hable con un arquitecto",
-      "ctaGhost": "Vea la comparación"
+      "body": "Un <nearshore>equipo nearshore con certificación SnowPro</nearshore> en Monterrey, México y Austin, Texas, en horario del centro y en la jornada laboral del cliente, con profundidad empresarial en cada nivel: sprints por caso de uso definidos mediante un discovery pagado, sin tiempos de contratación, sin curva de arranque, sin riesgo de persona clave.",
+      "ctaPrimary": "Hablar con un arquitecto",
+      "ctaGhost": "Ver la comparación"
     }
   },
   "proof": {
@@ -96,6 +96,6 @@
   },
   "cta": {
     "title": "El trimestre en que los datos por fin dan resultados.",
-    "subtitle": "Cada trimestre con datos sin gobierno son decisiones tomadas a medias. Cuéntenos en qué punto está hoy y le trazaremos la ruta más corta hacia unos datos e IA en los que su equipo pueda confiar."
+    "subtitle": "Cada trimestre con datos sin gobierno son decisiones tomadas a medias. Con saber en qué punto está la organización hoy, trazamos la ruta más corta hacia unos datos e IA en los que los equipos puedan confiar."
   }
 }

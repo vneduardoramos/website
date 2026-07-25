@@ -33,7 +33,7 @@
     },
     {
       "title": "Ampliación de equipo",
-      "body": "Integramos a nuestros profesionales certificados junto al equipo interno. Aceleramos la entrega mientras elevamos su capacidad.",
+      "body": "Integramos a nuestros profesionales certificados junto al equipo interno. Aceleramos la entrega mientras elevamos la capacidad del equipo.",
       "bestFor": "Escalar un equipo existente con rapidez"
     }
   ],
@@ -45,7 +45,7 @@
     "eyebrow": "Qué determina el costo",
     "title": "Un precio ajustado al trabajo, no una tarifa de lista",
     "intro": "No publicamos un precio único porque no hay dos proyectos iguales. El costo depende de:",
-    "cta": "Solicite un estimado con scope definido"
+    "cta": "Solicitar un estimado con scope definido"
   },
   "costFactors": [
     "El volumen de datos y la cantidad y complejidad de los sistemas de origen",
@@ -76,7 +76,7 @@
   "featuredTitle": "Cómo se ve un proyecto",
   "cta": {
     "title": "Definámoslo juntos.",
-    "subtitle": "Cuéntenos los objetivos y las restricciones, y le presentaremos un modelo, un plan y un precio listos para el directorio."
+    "subtitle": "Con los objetivos y las restricciones sobre la mesa, presentamos un modelo, un plan y un precio listos para el directorio."
   },
   "breadcrumb": {
     "home": "Inicio",

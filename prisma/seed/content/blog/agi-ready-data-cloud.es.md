@@ -50,8 +50,8 @@ La disciplina escala. El heroísmo improvisado no.
 
 ## Un primer paso práctico
 
-Elija una decisión que su organización repita cientos de veces cada semana, por ejemplo la clasificación de tickets, la calificación de prospectos (lead scoring) o los resúmenes de ventas semanales. Reconstruya ese flujo de trabajo con la capa de IA nativa de Snowflake. Mantenga el scope acotado, publique la precisión y el costo de forma abierta, y entregue un resultado visible en cuestión de días. El impulso temprano siempre le gana al debate prolongado.
+Conviene elegir una decisión que la organización repita cientos de veces cada semana, por ejemplo la clasificación de tickets, la calificación de prospectos (lead scoring) o los resúmenes de ventas semanales. Reconstruir ese flujo de trabajo con la capa de IA nativa de Snowflake, mantener el scope acotado, publicar la precisión y el costo de forma abierta, y entregar un resultado visible en cuestión de días. El impulso temprano siempre le gana al debate prolongado.
 
 ## Reflexión final
 
-Las organizaciones que combinan una disciplina rigurosa de datos con una curiosidad enfocada prosperarán en un futuro de AGI. Snowflake pone las vías. El liderazgo traza la ruta. Cuando usted esté listo para comparar mapas, Viewnear está preparada para recorrer el siguiente tramo a su lado.
+Las organizaciones que combinan una disciplina rigurosa de datos con una curiosidad enfocada prosperarán en un futuro de AGI. Snowflake pone las vías. El liderazgo traza la ruta. Cuando llegue el momento de comparar mapas, Viewnear está preparada para recorrer el siguiente tramo a su lado.

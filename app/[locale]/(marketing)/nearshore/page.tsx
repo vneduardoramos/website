@@ -72,8 +72,15 @@ export default async function NearshorePage({ params }: { params: { locale: stri
                 </span>
               ))}
             </div>
-            {/* The time-zone claim, proven by the actual clocks. */}
+            {/* The time-zone claim, proven by the actual clocks. Mexico dropped
+                DST in 2022, so Monterrey holds CST while US Central moves to
+                CDT from March to November: the clocks read an hour apart for
+                most of the year, and the note says so instead of letting the
+                widget contradict the copy. */}
             <TwoClocks />
+            <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-relaxed text-muted">
+              {t("hero.clocksNote")}
+            </p>
           </PageHero>
         </div>
       </div>
@@ -126,6 +133,24 @@ export default async function NearshorePage({ params }: { params: { locale: stri
           </RevealGroup>
         </div>
         <WaveDivider position="bottom" fill="fill-background" />
+      </Section>
+
+      {/* Proximity: the part of "nearshore" that is geography, not scheduling.
+          Flights, distance, and onsite cadence, which the rest of the page
+          asserts ("in sync") but never actually evidences. */}
+      <Section>
+        <FeatureSplit
+          as="h2"
+          eyebrow={t("proximity.eyebrow")}
+          title={t.rich("proximity.title", {
+            hl: (c) => <span className="text-gradient">{c}</span>,
+          })}
+          body={t("proximity.body")}
+          bullets={t.raw("proximity.bullets") as string[]}
+          image="/assets/images/life/monterrey.jpg"
+          imageAlt={t("proximity.imageAlt")}
+          cta={{ label: t("proximity.cta"), href: "/contact" }}
+        />
       </Section>
 
       {/* By the numbers */}

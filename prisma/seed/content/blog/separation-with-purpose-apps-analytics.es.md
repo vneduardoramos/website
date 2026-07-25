@@ -14,7 +14,7 @@ Los problemas comienzan cuando se espera que un único sistema gestione el tráf
 
 La separación con propósito es la idea que resuelve esto. Significa ser intencional respecto a las responsabilidades. PostgreSQL existe para servir a las aplicaciones con transacciones rápidas y confiables. Snowflake existe para ayudar a los equipos a entender el comportamiento, las tendencias y los resultados a escala. Snowflake Postgres reúne a ambos en un único entorno gestionado, sin obligarlos a hacer el trabajo del otro.
 
-Los equipos modernos adoptan este modelo no por teoría, sino porque coincide con la forma en que sus sistemas se comportan en la práctica.
+Los equipos modernos adoptan este modelo no por teoría, sino porque coincide con la forma en que los sistemas se comportan en la práctica.
 
 ## Las cargas de trabajo tienen formas distintas
 

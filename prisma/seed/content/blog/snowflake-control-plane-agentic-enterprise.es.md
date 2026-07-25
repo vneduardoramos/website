@@ -307,19 +307,19 @@ Eso hace que el posicionamiento de Snowflake sea especialmente relevante. Da a l
 
 Para las organizaciones que están pensando en esta transición, la hoja de ruta debe ser estructurada.
 
-Empiece con los cimientos de datos. Identifique los dominios, sistemas, tablas, documentos y flujos de trabajo más importantes que los agentes de IA necesitarán usar.
+Conviene empezar con los cimientos de datos e identificar los dominios, sistemas, tablas, documentos y flujos de trabajo más importantes que los agentes de IA necesitarán usar.
 
-Luego defina el contexto de negocio. Aclare las métricas, la propiedad, las definiciones, las políticas y las fuentes de verdad aprobadas.
+Luego defina el contexto de negocio. Aclarar las métricas, la propiedad, las definiciones, las políticas y las fuentes de verdad aprobadas.
 
-Luego establezca el gobierno. Decida a qué pueden acceder los agentes, qué acciones pueden tomar, qué requiere aprobación y cómo se auditará la actividad.
+Luego establezca el gobierno. Decidir a qué pueden acceder los agentes, qué acciones pueden tomar, qué requiere aprobación y cómo se auditará la actividad.
 
-Luego elija los modelos adecuados. Haga coincidir los modelos con las cargas de trabajo según el rendimiento, el costo, la latencia, el cumplimiento y la precisión.
+Luego elija los modelos adecuados. Hacer coincidir los modelos con las cargas de trabajo según el rendimiento, el costo, la latencia, el cumplimiento y la precisión.
 
-Luego diseñe los flujos de trabajo de los agentes. Empiece con casos de uso enfocados donde el valor de negocio sea claro y el riesgo pueda controlarse.
+Luego diseñe los flujos de trabajo de los agentes. Conviene empezar con casos de uso enfocados donde el valor de negocio sea claro y el riesgo pueda controlarse.
 
-Luego conecte los agentes con la acción. Realice la integración con los sistemas donde el trabajo realmente ocurre, pero hágalo con controles claros y observabilidad.
+Luego conecte los agentes con la acción. Realizar la integración con los sistemas donde el trabajo realmente ocurre, pero con controles claros y observabilidad.
 
-Por último, escale con un enfoque de plataforma. Evite los experimentos de IA aislados que crean nuevos silos. Construya patrones reutilizables, contexto compartido, acceso gobernado y modelos operativos repetibles.
+Por último, escale con un enfoque de plataforma. Evitar los experimentos de IA aislados que crean nuevos silos. Construir patrones reutilizables, contexto compartido, acceso gobernado y modelos operativos repetibles.
 
 Así es como la IA agéntica se convierte en IA empresarial.
 

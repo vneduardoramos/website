@@ -2,13 +2,13 @@ La semana del Summit siempre concentra mucho en pocos días, pero este año la s
 
 ## Snowflake CoWork: lenguaje natural con estructura detrás
 
-Uno de los grandes anuncios fue Snowflake CoWork, una interfaz de lenguaje natural que permite a los usuarios hacer preguntas a sus datos en lenguaje sencillo.
+Uno de los grandes anuncios fue Snowflake CoWork, una interfaz de lenguaje natural que permite a los usuarios hacer preguntas a los datos en lenguaje sencillo.
 
 No es la primera vez que vemos esta idea, pero esta versión se sintió sólida. Está construida sobre datos gobernados y seguros. Respeta roles, modelos y niveles de acceso. Eso por sí solo le da una base mucho más fuerte que la mayoría.
 
 Podemos ver cómo esto simplificará la forma en que los equipos interactúan con los datos. Tiene un potencial real para acelerar la generación de insights y reducir la dependencia de los dashboards. Pero, como siempre, el impacto real vendrá de una implementación bien pensada. Combinarlo con los modelos de datos y los casos de uso adecuados será clave.
 
-## Cortex AISQL: IA donde ya viven sus datos
+## Cortex AISQL: IA donde ya viven los datos
 
 Cortex AISQL también dejó una fuerte impresión. Da a los equipos la capacidad de aplicar IA generativa directamente dentro de SQL. Puede resumir documentos, analizar comentarios y clasificar datos no estructurados, todo sin sacar nada de Snowflake.
 

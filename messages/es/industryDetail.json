@@ -7,15 +7,15 @@
     "industries": "Industrias"
   },
   "hero": {
-    "discussCta": "Converse sobre datos de {industry}",
-    "seeWork": "Vea el trabajo"
+    "discussCta": "Hablar sobre datos de {industry}",
+    "seeWork": "Ver el trabajo"
   },
   "engagement": {
     "eyebrow": "El proyecto",
     "title": "Un socio que entiende <hl>{name}</hl>.",
     "body": "Nadie dedica el primer mes a explicarnos {industry}. El equipo llega conociendo los sistemas, las regulaciones y los ritmos de reporte del sector, y luego construye los modelos de datos, el gobierno y los dashboards junto con los equipos internos, frente a las métricas de las que ya rinden cuentas.",
     "imageAlt": "Soluciones de datos e IA para {industry} construidas sobre Snowflake",
-    "cta": "Inicie una conversación"
+    "cta": "Iniciar una conversación"
   },
   "foundation": {
     "eyebrow": "Lo que ponemos en marcha",
@@ -41,7 +41,7 @@
   "showcase": {
     "imageAlt": "Datos e IA de {industry} en Snowflake",
     "title": "Diseñado para <hl>{name}</hl>, en Snowflake.",
-    "cta": "Converse sobre datos de {industry}"
+    "cta": "Hablar sobre datos de {industry}"
   },
   "compliance": {
     "label": "Cumplimiento",
@@ -55,10 +55,10 @@
     "orgLabel": "Una organización de {industry}",
     "storyTitle": "Datos gobernados y listos para IA para {industry} en Snowflake",
     "quoteCaption": "Cita del sponsor · proyecto de {industry}",
-    "readCase": "Lea el caso completo →"
+    "readCase": "Leer el caso completo →"
   },
   "other": {
-    "eyebrow": "Explore",
+    "eyebrow": "Explorar",
     "title": "Otras industrias"
   }
 }

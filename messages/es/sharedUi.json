@@ -1,8 +1,8 @@
 {
   "ctaBand": {
     "title": "Pongamos en marcha una práctica de datos e IA duradera.",
-    "subtitle": "Cuéntenos en qué punto está la organización (migrando, escalando o llevando IA a producción) y trazaremos la vía más rápida hacia casos de uso en producción, operados por equipos internos.",
-    "primaryCta": "Hable con un arquitecto",
+    "subtitle": "Con el punto de partida claro (migrando, escalando o llevando IA a producción), trazamos la vía más rápida hacia casos de uso en producción, operados por equipos internos.",
+    "primaryCta": "Hablar con un arquitecto",
     "secondaryCta": "Explorar servicios"
   },
   "caseStudyCard": {
@@ -15,7 +15,7 @@
     "label": "La confianza de equipos orientados a los datos en toda América"
   },
   "inlineCta": {
-    "label": "Contáctenos"
+    "label": "Contacto"
   },
   "coverCard": {
     "readMore": "Leer más"

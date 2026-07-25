@@ -1,12 +1,12 @@
 {
   "meta": {
     "title": "Contacto: ponga en marcha una práctica de datos e IA",
-    "description": "Póngase en contacto con Viewnear. Ayudamos a las empresas a poner en marcha prácticas de datos e IA sobre Snowflake, operadas por sus propios equipos, en toda América."
+    "description": "Contacto con Viewnear. Ayudamos a las empresas a poner en marcha prácticas de datos e IA sobre Snowflake, operadas por sus propios equipos, en toda América."
   },
   "hero": {
     "eyebrow": "Contacte a Viewnear",
-    "title": "Ponga en marcha una práctica de <hl>datos e IA</hl>",
-    "description": "Cuéntenos los objetivos de datos e IA de la organización. Ya sea modernizar sobre Snowflake o empezar desde cero, trazaremos la ruta más rápida hacia datos gobernados y listos para IA."
+    "title": "Poner en marcha una práctica de <hl>datos e IA</hl>",
+    "description": "Con los objetivos de datos e IA de la organización sobre la mesa, y ya sea modernizar sobre Snowflake o empezar desde cero, trazamos la ruta más rápida hacia datos gobernados y listos para IA."
   },
   "preferEmail": "¿Prefiere el correo?",
   "imageAlt": "Un apretón de manos cálido que da la bienvenida a un nuevo cliente de Viewnear",
@@ -37,6 +37,6 @@
   "offices": ["Austin, TX · 10900 Stonelake Blvd", "Monterrey, MX · Valle Alto"],
   "booking": {
     "prefer": "¿Prefiere omitir el formulario?",
-    "cta": "Agende 30 minutos con un arquitecto →"
+    "cta": "Agendar 30 minutos con un arquitecto →"
   }
 }

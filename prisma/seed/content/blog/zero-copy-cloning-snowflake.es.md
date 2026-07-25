@@ -29,7 +29,7 @@ CREATE DATABASE dev_environment CLONE production_db;
 
 Los científicos de datos a menudo necesitan entornos experimentales donde puedan probar hipótesis sin afectar los sistemas de producción. La clonación zero-copy proporciona espacios de experimentación aislados con datos reales.
 
-El análisis histórico se vuelve práctico cuando puede clonar bases de datos desde momentos específicos en el tiempo. ¿Quiere comparar el rendimiento de este trimestre con el mismo periodo del año pasado usando estructuras de datos idénticas? Clone desde el punto de Time Travel apropiado.
+El análisis histórico se vuelve práctico cuando se pueden clonar bases de datos desde momentos específicos en el tiempo. ¿Comparar el rendimiento de este trimestre con el mismo periodo del año pasado usando estructuras de datos idénticas? Basta con clonar desde el punto de Time Travel apropiado.
 
 Los escenarios de pruebas A/B funcionan bien con entornos clonados. Puede probar distintos enfoques de procesamiento de datos o cambios de esquema contra conjuntos de datos idénticos para medir el impacto con precisión.
 
@@ -37,7 +37,7 @@ Los escenarios de pruebas A/B funcionan bien con entornos clonados. Puede probar
 
 Aunque no reemplaza a los respaldos tradicionales, la clonación zero-copy ofrece opciones adicionales de recuperación. Puede crear snapshots en un momento específico antes de cambios importantes en el sistema o de migraciones de datos.
 
-Las capacidades de rollback rápido significan que puede revertir a estados previos a un cambio si surgen problemas. En lugar de procedimientos de rollback complejos, puede cambiar a un clon creado antes del cambio problemático.
+Las capacidades de rollback rápido significan que se puede revertir a estados previos a un cambio si surgen problemas. En lugar de procedimientos de rollback complejos, se puede cambiar a un clon creado antes del cambio problemático.
 
 Las pruebas de recuperación ante desastres se vuelven prácticas cuando puede crear copias completas de un entorno para probar procedimientos sin afectar los sistemas de producción.
 
@@ -45,7 +45,7 @@ Las pruebas de recuperación ante desastres se vuelven prácticas cuando puede c
 
 Los costos de almacenamiento de los clones comienzan en cero y aumentan solo a medida que los datos divergen del original. Esto hace que la clonación sea rentable para casos de uso de corto plazo, como pruebas o desarrollo.
 
-Monitoree el uso de los clones para entender los patrones de costos. Los clones de larga duración con cambios significativos consumirán más almacenamiento que los clones de prueba de corto plazo que permanecen en su mayoría sin cambios.
+Monitorear el uso de los clones para entender los patrones de costos. Los clones de larga duración con cambios significativos consumirán más almacenamiento que los clones de prueba de corto plazo que permanecen en su mayoría sin cambios.
 
 Las políticas de limpieza automática ayudan a gestionar los costos al eliminar los clones después de periodos de tiempo específicos o cuando concluyen los proyectos. Esto evita que los entornos de prueba olvidados acumulen cargos de almacenamiento.
 
@@ -70,13 +70,13 @@ Los registros de auditoría rastrean la creación y el uso de los clones, lo que
 
 ## Buenas prácticas de implementación
 
-Planifique la gestión del ciclo de vida de los clones antes de crearlos. Defina cuándo deben crearse los clones, cuánto tiempo deben existir y quién es responsable de su limpieza.
+Planificar la gestión del ciclo de vida de los clones antes de crearlos, y definir cuándo deben crearse los clones, cuánto tiempo deben existir y quién es responsable de su limpieza.
 
-Use convenciones de nombres descriptivas que indiquen el propósito y la propiedad del clon. Incluya nombres de proyectos, fechas o equipos responsables en los nombres de los clones para una mejor organización.
+Usar convenciones de nombres descriptivas que indiquen el propósito y la propiedad del clon. Incluir nombres de proyectos, fechas o equipos responsables en los nombres de los clones para una mejor organización.
 
-Documente el uso de los clones para la coordinación del equipo. Cuando varias personas puedan necesitar entornos de prueba similares, coordinen para evitar duplicar esfuerzos.
+Documentar el uso de los clones para la coordinación del equipo. Cuando varias personas puedan necesitar entornos de prueba similares, coordinen para evitar duplicar esfuerzos.
 
-Configure el monitoreo del consumo de almacenamiento de los clones para evitar costos inesperados. Establezca alertas cuando el almacenamiento de los clones supere los umbrales esperados.
+Configurar el monitoreo del consumo de almacenamiento de los clones para evitar costos inesperados. Establecer alertas cuando el almacenamiento de los clones supere los umbrales esperados.
 
 ## Integración con flujos de trabajo de desarrollo
 
@@ -92,7 +92,7 @@ La creación de clones es casi instantánea sin importar el tamaño de la base d
 
 El rendimiento de las consultas en los clones coincide con el de la base de datos original al inicio. A medida que los clones divergen con las actualizaciones, las características de rendimiento pueden cambiar según las modificaciones específicas.
 
-Considere la ubicación de los clones y los recursos de cómputo según el uso previsto. Los clones de desarrollo podrían usar recursos de cómputo más pequeños, mientras que los clones de pruebas de rendimiento necesitan una capacidad equivalente a la de producción.
+Considerar la ubicación de los clones y los recursos de cómputo según el uso previsto. Los clones de desarrollo podrían usar recursos de cómputo más pequeños, mientras que los clones de pruebas de rendimiento necesitan una capacidad equivalente a la de producción.
 
 ## Casos de uso comunes
 
@@ -106,13 +106,13 @@ Los entornos de capacitación funcionan bien con datos clonados, lo que brinda a
 
 ## Cómo empezar
 
-Comience con casos de uso simples, como crear clones de entornos de desarrollo. Esto aporta valor inmediato mientras se familiariza con la funcionalidad.
+Conviene empezar con casos de uso simples, como crear clones de entornos de desarrollo. Esto aporta valor inmediato mientras se familiariza con la funcionalidad.
 
-Establezca políticas de gobernanza para la creación y gestión de clones antes de su adopción generalizada. Defina procesos de aprobación, convenciones de nombres y procedimientos de limpieza.
+Establecer políticas de gobernanza para la creación y gestión de clones antes de su adopción generalizada, y definir procesos de aprobación, convenciones de nombres y procedimientos de limpieza.
 
-Monitoree los patrones de uso y los costos para entender cómo encaja la clonación zero-copy en los flujos de trabajo y el presupuesto de su organización.
+Monitorear los patrones de uso y los costos para entender cómo encaja la clonación zero-copy en los flujos de trabajo y el presupuesto de la organización.
 
-Capacite a los equipos en los casos de uso apropiados y las buenas prácticas para maximizar el valor y evitar errores comunes, como los clones olvidados de larga duración.
+Capacitar a los equipos en los casos de uso apropiados y las buenas prácticas para maximizar el valor y evitar errores comunes, como los clones olvidados de larga duración.
 
 ## Por qué es importante esta funcionalidad
 

@@ -1,16 +1,16 @@
-Existe una diferencia significativa entre una herramienta de IA que se ubica junto a sus datos y una que realmente opera dentro de ellos. Snowflake Cortex Agents pertenecen con claridad a la segunda categoría y, tras ponerlos a trabajar en distintos entornos de clientes, he visto cómo transforman la manera en que los usuarios de negocio obtienen respuestas. El cambio ha sido más práctico, y más duradero, de lo que esperaba al comenzar.
+Existe una diferencia significativa entre una herramienta de IA que se ubica junto a los datos y una que realmente opera dentro de ellos. Snowflake Cortex Agents pertenecen con claridad a la segunda categoría y, tras ponerlos a trabajar en distintos entornos de clientes, he visto cómo transforman la manera en que los usuarios de negocio obtienen respuestas. El cambio ha sido más práctico, y más duradero, de lo que esperaba al comenzar.
 
 ## Primeros pasos con Cortex Agents
 
 Hace poco ayudé a una gerente de marketing a configurar un sistema sencillo de preguntas y respuestas para datos de campañas. En lugar de esperar informes o escribir consultas, podía preguntar "¿Qué campañas tuvieron mejor desempeño en el Q3?" y obtener respuestas completas con gráficos y recomendaciones en unos 30 segundos.
 
-No era una demostración. Era trabajo real con datos en vivo. Ahí fue cuando comprendí que Snowflake Cortex Agents representan un cambio práctico en la forma en que las personas pueden interactuar con sus datos.
+No era una demostración. Era trabajo real con datos en vivo. Ahí fue cuando comprendí que Snowflake Cortex Agents representan un cambio práctico en la forma en que las personas pueden interactuar con los datos.
 
 ## Qué hace útiles a estos agentes
 
 La mayoría de las herramientas de IA con las que he trabajado impresionan al principio, pero tienen dificultades con las tareas reales de negocio. Cortex Agents funcionan de otra manera porque operan dentro de su plataforma de datos y no como herramientas externas.
 
-Trabajan con datos en vivo, no con resúmenes almacenados en caché. Respetan de forma automática los permisos y el gobierno de datos que ya tiene. Comprenden su esquema y las relaciones de negocio sin una configuración extensa. Y lo más importante: pueden razonar sobre patrones y explicar por qué cambiaron las cosas, no solo informar que cambiaron.
+Trabajan con datos en vivo, no con resúmenes almacenados en caché. Respetan de forma automática los permisos y el gobierno de datos ya existentes. Comprenden el esquema y las relaciones de negocio sin una configuración extensa. Y lo más importante: pueden razonar sobre patrones y explicar por qué cambiaron las cosas, no solo informar que cambiaron.
 
 ## Comenzar con la atención al cliente
 
@@ -22,9 +22,9 @@ Para los equipos de ventas, los agentes ofrecen información en tiempo real sobr
 
 ## Preparación de datos que funciona
 
-La buena noticia es que la preparación de datos se centra en el contexto de negocio y no en ingeniería compleja. Se trata de hacer que sus datos sean más comprensibles, no de optimizar algoritmos.
+La buena noticia es que la preparación de datos se centra en el contexto de negocio y no en ingeniería compleja. Se trata de hacer que los datos sean más comprensibles, no de optimizar algoritmos.
 
-Use nombres de campos comprensibles para el negocio, como "customer_acquisition_date" en lugar de "cust_acq_dt". Reemplace códigos crípticos por categorías con significado. Haga que sus datos reflejen la forma en que las personas piensan sobre su negocio.
+Conviene usar nombres de campos comprensibles para el negocio, como "customer_acquisition_date" en lugar de "cust_acq_dt". Reemplazar códigos crípticos por categorías con significado, y hacer que los datos reflejen la forma en que las personas piensan sobre el negocio.
 
 ```sql
 -- Make data readable for agents
@@ -43,7 +43,7 @@ SELECT
 FROM customers c;
 ```
 
-Documente las reglas de negocio y el linaje de datos para que los agentes puedan explicar de dónde proviene la información y qué significa.
+Documentar las reglas de negocio y el linaje de datos para que los agentes puedan explicar de dónde proviene la información y qué significa.
 
 ## Funciones avanzadas
 
@@ -67,19 +67,19 @@ La optimización de costos sigue patrones ya conocidos de Snowflake: estructuras
 
 El mayor desafío suele ser organizacional. Los equipos acostumbrados a herramientas de BI complejas a veces se resisten al enfoque simplificado. He comprobado que los proyectos de POC bien enfocados funcionan mejor que intentar cambiar opiniones con argumentos.
 
-No espere a tener una calidad de datos perfecta. Los agentes funcionan bien con datos imperfectos y a menudo revelan problemas de calidad que requieren atención. Comience con lo que tiene y mejore a partir del uso.
+No espere a tener una calidad de datos perfecta. Los agentes funcionan bien con datos imperfectos y a menudo revelan problemas de calidad que requieren atención. Conviene empezar con lo que hay y mejorar a partir del uso.
 
 La adopción por parte de los usuarios requiere capacitación en técnicas de conversación efectivas, más que en habilidades tradicionales de consultas. Las historias de éxito ayudan a generar impulso.
 
 ## Medir el éxito
 
-Haga seguimiento tanto del desempeño técnico como del impacto en el negocio. Supervise el tiempo hasta obtener información, las tasas de éxito de las consultas y la participación de los usuarios. Para el impacto en el negocio, mida el ahorro de tiempo, la velocidad de decisión, la precisión de la información y el discovery de nuevos patrones.
+Vale la pena dar seguimiento tanto al desempeño técnico como al impacto en el negocio, y supervisar el tiempo hasta obtener información, las tasas de éxito de las consultas y la participación de los usuarios. Para el impacto en el negocio, mida el ahorro de tiempo, la velocidad de decisión, la precisión de la información y el discovery de nuevos patrones.
 
 ## Cómo empezar
 
-Comience con escenarios de alto valor que tengan criterios de éxito claros. Concéntrese en casos de uso donde el impacto en el negocio sea evidente y medible. Prepare los datos poniendo énfasis en el contexto de negocio por encima de la perfección técnica.
+Conviene empezar con escenarios de alto valor que tengan criterios de éxito claros, concentrarse en casos de uso donde el impacto en el negocio sea evidente y medible, y preparar los datos poniendo énfasis en el contexto de negocio por encima de la perfección técnica.
 
-Empiece con un número limitado de usuarios y un scope acotado para aprender mientras demuestra el valor. Capacite a las personas en técnicas de conversación. Escale de forma gradual con base en lo que vaya aprendiendo.
+Mejor empezar con un número limitado de usuarios y un scope acotado para aprender mientras se demuestra el valor, capacitar a las personas en técnicas de conversación y escalar de forma gradual con base en lo aprendido.
 
 > El éxito requiere objetivos claros, apoyo ejecutivo, participación activa de los usuarios y compromiso con la mejora continua.
 

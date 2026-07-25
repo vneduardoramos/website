@@ -45,15 +45,15 @@
   "serviceDescriptions": {
     "ai-data-strategy": "Hoja de ruta priorizada por ROI",
     "cloud-architecture": "Base gobernada y lista para IA en Snowflake",
-    "data-engineering": "Pipelines gobernados que unifican sus fuentes",
+    "data-engineering": "Pipelines gobernados que unifican todas las fuentes",
     "data-visualisation": "Cortex Analyst, dashboards y agentes de IA",
-    "embedded-analytics": "Analítica dentro de su producto",
-    "capability-development": "Habilitación que permanece en su equipo"
+    "embedded-analytics": "Analítica dentro del producto",
+    "capability-development": "Habilitación que permanece en el equipo"
   },
   "descriptions": {
     "about": "Quiénes somos",
     "partnership": "Premier y CoCo Preferred, verificado",
-    "nearshore": "Entrega Snowflake en su zona horaria",
+    "nearshore": "Entrega Snowflake en horario del centro",
     "security": "Gobernanza y cumplimiento",
     "lifeAtViewnear": "Cultura, roles y beneficios",
     "servicesOverview": "Cómo colaboramos: THINK · BUILD · GROW",

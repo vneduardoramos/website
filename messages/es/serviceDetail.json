@@ -8,8 +8,8 @@
   },
   "hero": {
     "eyebrow": "Servicios Snowflake",
-    "primaryCta": "Hable con el equipo",
-    "secondaryCta": "Vea todos los servicios"
+    "primaryCta": "Hablar con el equipo",
+    "secondaryCta": "Ver todos los servicios"
   },
   "overview": {
     "eyebrow": "Resumen",
@@ -21,7 +21,7 @@
     "ttvLabel": "Primer valor",
     "ttvValue": "8 a 16 semanas",
     "modelLabel": "Entrega",
-    "modelValue": "Nearshore, en su horario",
+    "modelValue": "Nearshore, en horario del cliente",
     "phaseLabel": "Fase"
   },
   "deliver": {
@@ -30,12 +30,12 @@
   "engagement": {
     "eyebrow": "Cómo trabajamos",
     "flowTitle": "Cada proyecto se desarrolla igual",
-    "flowIntro": "Una cadencia fija que pone software funcionando frente a usted rápido y toma cada decisión con evidencia, no con una presentación.",
+    "flowIntro": "Una cadencia fija que pone software funcionando frente al equipo rápido y toma cada decisión con evidencia, no con una presentación.",
     "steps": [
-      { "label": "01", "title": "Discovery pagado", "body": "Un proyecto corto y pagado que fija el scope y revela el estado real de sus datos." },
-      { "label": "02", "title": "Sprints por caso de uso", "body": "Incrementos funcionando en su ambiente, una pieza lista para decidir a la vez." },
+      { "label": "01", "title": "Discovery pagado", "body": "Un proyecto corto y pagado que fija el scope y revela el estado real de los datos." },
+      { "label": "02", "title": "Sprints por caso de uso", "body": "Incrementos funcionando en el ambiente del cliente, una pieza lista para decidir a la vez." },
       { "label": "03", "title": "Prueba antes de escalar", "body": "Cada pieza se comprueba en producción antes de comprometer la siguiente." },
-      { "label": "04", "title": "Una práctica que conserva", "body": "Su equipo construye junto al nuestro, así la capacidad permanece después de nuestra salida." }
+      { "label": "04", "title": "Una práctica que conserva", "body": "El equipo del cliente construye junto al nuestro, así la capacidad permanece después de nuestra salida." }
     ]
   },
   "proof": {
@@ -44,20 +44,20 @@
   },
   "nearshore": {
     "eyebrow": "Entrega nearshore",
-    "cta": "Conozca cómo funciona la entrega nearshore"
+    "cta": "Conocer cómo funciona la entrega nearshore"
   },
   "inPractice": {
     "eyebrow": "En la práctica",
-    "title": "Cómo se ve dentro de su stack",
-    "body": "Una mirada de cerca a lo que dejamos funcionando y cómo aterriza donde su equipo ya trabaja. Reemplace la imagen por una pantalla o un diagrama real cuando lo tenga.",
-    "cta": "Hable con un arquitecto",
+    "title": "Cómo se ve dentro del stack",
+    "body": "Una mirada de cerca a lo que dejamos funcionando y cómo aterriza donde el equipo ya trabaja.",
+    "cta": "Hablar con un arquitecto",
     "imageAlt": "{title}: vista ilustrativa"
   },
   "showcase": {
     "eyebrow": "Prueba",
-    "title": "Véalo funcionando en producción",
+    "title": "Funcionando en producción",
     "body": "Proyectos reales y anonimizados con resultados medibles, de un Snowflake Premier Partner con entrega nearshore en toda América.",
-    "cta": "Explore los casos de éxito",
+    "cta": "Explorar los casos de éxito",
     "imageAlt": "{title}: resultados en producción"
   },
   "faq": {
@@ -69,13 +69,13 @@
     "intro": "El stack nativo de Snowflake al que recurrimos en este proyecto."
   },
   "related": {
-    "eyebrow": "Profundice",
+    "eyebrow": "Profundizar",
     "title": "Cómo encaja en la práctica más amplia",
     "industries": "Industrias que atendemos",
-    "body": "Combine esto con nuestro trabajo de <migrations>Migraciones</migrations>, el modelo de <nearshore>entrega nearshore</nearshore> detrás de él, y la práctica más amplia de <dataai>Data + AI</dataai> a la que alimenta."
+    "body": "Combinar esto con nuestro trabajo de <migrations>Migraciones</migrations>, el modelo de <nearshore>entrega nearshore</nearshore> detrás de él, y la práctica más amplia de <dataai>Data + AI</dataai> a la que alimenta."
   },
   "other": {
-    "eyebrow": "Explore",
+    "eyebrow": "Explorar",
     "title": "Otros servicios"
   },
   "cta": {

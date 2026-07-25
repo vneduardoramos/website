@@ -28,7 +28,7 @@ A medida que los datos están disponibles en todas partes, la confianza se convi
 
 Las respuestas rápidas no sirven de nada si no son confiables. La IA solo funciona cuando se apoya en datos gobernados y de alta calidad. Aquí es donde el papel de Snowflake se vuelve crítico. La inteligencia no se apoya en extractos aleatorios ni en copias paralelas. Se ejecuta directamente sobre el sistema de registro.
 
-Snowflake aporta la consistencia, el linaje y la gobernanza que la inteligencia necesita para ser accionable. Cuando usted conversa con sus datos, no está consultando una instantánea. Está interactuando con una base confiable y compartida.
+Snowflake aporta la consistencia, el linaje y la gobernanza que la inteligencia necesita para ser accionable. Conversar con los datos no es consultar una instantánea. Está interactuando con una base confiable y compartida.
 
 Esta es la diferencia entre la experimentación y la inteligencia empresarial.
 
@@ -48,7 +48,7 @@ Cortex AI no reemplaza a los analistas ni a los ingenieros. Elimina la fricción
 
 El verdadero cambio no es una mejor analítica; es la inteligencia operacional.
 
-Cuando usted puede conversar con sus datos, la inteligencia se traslada a los flujos de trabajo diarios. Los pronósticos se actualizan de forma continua. Las anomalías se explican a medida que ocurren. Las decisiones se fundamentan en tiempo real, no semanas después.
+Cuando se puede conversar con los datos, la inteligencia se traslada a los flujos de trabajo diarios. Los pronósticos se actualizan de forma continua. Las anomalías se explican a medida que ocurren. Las decisiones se fundamentan en tiempo real, no semanas después.
 
 Esto no se trata de construir más artefactos. Se trata de integrar la inteligencia en la forma en que opera el negocio. Snowflake se convierte en la capa de ejecución de esta inteligencia, no solo en la capa de almacenamiento.
 
@@ -58,4 +58,4 @@ Las herramientas de BI heredadas no desaparecerán de la noche a la mañana, per
 
 Como lo vemos en Viewnear, Snowflake es el centro de gravedad de este cambio. Que el uso de los datos pase de estar limitado a estar en todas partes no es una tendencia. Es el nuevo punto de partida.
 
-> Snowflake es donde usted conversa con sus datos.
+> Snowflake es donde se conversa con los datos.

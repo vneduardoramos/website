@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Acerca de: prácticas de data & AI en toda América",
-    "description": "Viewnear ayuda a las empresas a construir prácticas de data & AI sobre Snowflake: datos gobernados y casos de uso de IA en producción, operados por su equipo."
+    "description": "Viewnear ayuda a las empresas a construir prácticas de data & AI sobre Snowflake: datos gobernados y casos de uso de IA en producción, operados por equipos internos."
   },
   "breadcrumb": {
     "home": "Inicio",
@@ -20,7 +20,7 @@
   ],
   "whoWeAre": {
     "eyebrow": "Quiénes somos",
-    "title": "Lo construimos junto al equipo y luego le entregamos las llaves",
+    "title": "Lo construimos junto al equipo y luego entregamos las llaves",
     "body": "Viewnear ayuda a las empresas a establecer dos capacidades que conservan: una práctica de datos y una práctica de IA, construidas sobre Snowflake y operadas por equipos internos. Trabajamos junto a esos equipos desde el primer taller hasta la producción, en estrategia, arquitectura, ingeniería, analítica e IA gobernada, e integramos lo que construimos en ambos sentidos: los datos operativos entran, y las decisiones, respuestas y agentes de IA regresan a los sistemas donde ocurre el trabajo. Pasamos de ser una práctica especializada a un Snowflake Premier Partner al profundizar en una sola plataforma, y ese enfoque define cómo contratamos, capacitamos y entregamos.",
     "cta": "Cómo entregamos",
     "imageAlt": "Un collage del equipo de Viewnear en eventos de Snowflake: el stand de data + ai, Data for Breakfast, Snowflake Summit y comidas del equipo"
@@ -113,9 +113,9 @@
     "leadershipBody": "Las personas que lideran la práctica, con experiencia combinada en datos, analítica e IA empresarial."
   },
   "close": {
-    "title": "Tráiganos el problema de datos más difícil.",
+    "title": "El problema de datos más difícil es bienvenido.",
     "body": "Sin importar en qué punto esté el trabajo hoy, migrando, escalando o fundamentando la IA, un arquitecto de Snowflake trazará la ruta más rápida hacia el valor.",
-    "primaryCta": "Hable con un arquitecto",
-    "secondaryCta": "Conozca nuestra alianza"
+    "primaryCta": "Hablar con un arquitecto",
+    "secondaryCta": "Conocer nuestra alianza"
   }
 }

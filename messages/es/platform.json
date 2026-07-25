@@ -37,7 +37,7 @@
   "layers": [
     {
       "layer": "Ingesta y movimiento",
-      "blurb": "Traiga cada fuente, por lotes o en streaming, sin añadir un proveedor de ETL aparte.",
+      "blurb": "Traer cada fuente, por lotes o en streaming, sin añadir un proveedor de ETL aparte.",
       "products": [
         { "name": "Openflow", "status": "GA", "desc": "Integración gestionada sobre Apache NiFi; por lotes + streaming, BYOC o gestionada por Snowflake." },
         { "name": "Snowpipe Streaming", "status": "GA", "desc": "Ingesta continua de baja latencia directamente en tablas gobernadas." },
@@ -47,7 +47,7 @@
     },
     {
       "layer": "Transformación e ingeniería",
-      "blurb": "Modele y transforme dentro de la plataforma, en los lenguajes que el equipo ya usa.",
+      "blurb": "Modelar y transformar dentro de la plataforma, en los lenguajes que el equipo ya usa.",
       "products": [
         { "name": "dbt", "status": "GA", "desc": "Nuestro framework de transformación preferido, ejecutado de forma nativa sobre Snowflake." },
         { "name": "Snowpark", "status": "GA", "desc": "Pipelines y UDFs en Python/Java/Scala que se ejecutan junto a los datos." },
@@ -68,7 +68,7 @@
       "blurb": "Gobierno, linaje y contexto de negocio confiable incorporados: la base que la IA realmente necesita.",
       "products": [
         { "name": "Horizon Catalog", "status": "GA", "desc": "Linaje, historial de acceso, clasificación y políticas en todo el entorno." },
-        { "name": "Horizon Context", "status": "Private Preview", "desc": "Recopile, enriquezca y active metadatos con búsqueda semántica + por palabra clave." },
+        { "name": "Horizon Context", "status": "Private Preview", "desc": "Recopilar, enriquecer y activar metadatos con búsqueda semántica + por palabra clave." },
         { "name": "Cortex Sense", "status": "GA", "desc": "Capa de ejecución que reúne datos + definiciones de negocio para los agentes de IA." },
         { "name": "Semantic Views", "status": "GA", "desc": "Definiciones de negocio compartidas para que cada consulta y cada agente hablen el mismo idioma." },
         { "name": "AI Agent Identity", "status": "GA", "desc": "Identidad verificable y RBAC por agente para cada agente de IA, con registros de auditoría completos." }
@@ -78,16 +78,16 @@
       "layer": "IA y agentes",
       "blurb": "IA en producción que se ejecuta de forma segura junto a los datos gobernados; los modelos nunca ven copias sin gobierno.",
       "products": [
-        { "name": "Cortex AISQL", "status": "GA", "desc": "Invoque LLMs y funciones de ML directamente desde SQL: COMPLETE, SENTIMENT, SUMMARIZE." },
+        { "name": "Cortex AISQL", "status": "GA", "desc": "Invocar LLMs y funciones de ML directamente desde SQL: COMPLETE, SENTIMENT, SUMMARIZE." },
         { "name": "Cortex Analyst", "status": "GA", "desc": "Preguntas en lenguaje natural respondidas frente a modelos semánticos gobernados." },
         { "name": "Snowflake CoWork", "status": "GA", "desc": "Respuestas agénticas y citadas y dashboards gobernados para trabajadores del conocimiento." },
         { "name": "Snowflake CoCo", "status": "GA", "desc": "Agente de programación para el desarrollo de IA empresarial, validado antes de producción." },
-        { "name": "Cortex Training", "status": "Preview", "desc": "Ajuste modelos de pesos abiertos en GPUs gestionadas; los datos nunca se mueven." }
+        { "name": "Cortex Training", "status": "Preview", "desc": "Ajustar modelos de pesos abiertos en GPUs gestionadas; los datos nunca se mueven." }
       ]
     },
     {
       "layer": "Consumo y aplicaciones",
-      "blurb": "Lleve el conocimiento a donde trabajan las personas: sobre datos gobernados, no un stack de BI aparte que haya que asegurar.",
+      "blurb": "Llevar el conocimiento a donde trabajan las personas: sobre datos gobernados, no un stack de BI aparte que haya que asegurar.",
       "products": [
         { "name": "Snowsight", "status": "GA", "desc": "Dashboards gobernados y exploración ad hoc listos para usar." },
         { "name": "Streamlit in Snowflake", "status": "GA", "desc": "Aplicaciones de datos interactivas desplegadas justo junto a los datos." },
@@ -99,7 +99,7 @@
     "title": "Este stack, en producción"
   },
   "cta": {
-    "title": "Ponga la práctica sobre un solo stack gobernado.",
-    "subtitle": "Cuéntenos qué se ejecuta hoy. Trazaremos la ruta más rápida hacia una única base gobernada en Snowflake, qué retirar en el camino y dónde el equipo toma el control."
+    "title": "Poner la práctica sobre un solo stack gobernado.",
+    "subtitle": "Con lo que se ejecuta hoy a la vista, trazamos la ruta más rápida hacia una única base gobernada en Snowflake, qué retirar en el camino y dónde el equipo toma el control."
   }
 }

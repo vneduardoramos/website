@@ -12,7 +12,7 @@ Esto los convierte en algo más parecido a compañeros de trabajo digitales que 
 
 ## Por qué los agentes de datos son clave
 
-La categoría de mayor impacto es la de los agentes de datos. Imagine combinar una tabla de clientes, un PDF de un contrato y una imagen en un solo análisis. Eso es lo que pueden hacer los agentes de datos: combinar datos estructurados y no estructurados para obtener información confiable.
+La categoría de mayor impacto es la de los agentes de datos. Vale la pena imaginar la combinación de una tabla de clientes, un PDF de un contrato y una imagen en un solo análisis. Eso es lo que pueden hacer los agentes de datos: combinar datos estructurados y no estructurados para obtener información confiable.
 
 Snowflake destaca tres cualidades que importan más en este caso: precisión, eficiencia y gobernanza. Sin ellas, la IA rompe la confianza. Con ellas, la IA empieza a generar ROI.
 
@@ -37,7 +37,7 @@ No se trata de otra herramienta para probar. Se trata de escalar la IA de manera
 
 En Viewnear, trabajamos con empresas que quieren convertir los datos en verdadera inteligencia para la toma de decisiones. Lo que veo ahora es el cambio de "lo que es posible" a "lo que es escalable".
 
-Quienes adopten temprano la IA agéntica se moverán más rápido, atenderán mejor a sus clientes y superarán a su competencia. La brecha entre quienes experimentan y quienes ponen en operación estas capacidades solo va a ampliarse.
+Quienes adopten temprano la IA agéntica se moverán más rápido, atenderán mejor a sus clientes y superarán a la competencia. La brecha entre quienes experimentan y quienes ponen en operación estas capacidades solo va a ampliarse.
 
 ## Reflexión final
 

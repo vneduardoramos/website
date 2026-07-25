@@ -1,55 +1,55 @@
 {
   "meta": {
     "title": "Política de privacidad",
-    "description": "Cómo Viewnear recopila, usa y protege su información personal."
+    "description": "Cómo Viewnear recopila, usa y protege la información personal."
   },
   "hero": {
     "eyebrow": "Legal",
     "title": "Política de <hl>privacidad</hl>",
-    "description": "Cómo recopilamos, usamos y protegemos su información personal."
+    "description": "Cómo recopilamos, usamos y protegemos la información personal."
   },
   "lastUpdated": "Última actualización: 6 de junio de 2026",
-  "intro": "Viewnear (“Viewnear”, “nosotros” o “nuestro”) respeta su privacidad. Esta política explica qué información personal recopilamos cuando usa nuestro sitio web y servicios, cómo la usamos y las opciones que tiene. Al usar nuestro sitio web, usted acepta las prácticas que aquí se describen.",
+  "intro": "Viewnear (“Viewnear”, “nosotros” o “nuestro”) respeta la privacidad del usuario. Esta política explica qué información personal recopilamos cuando alguien usa nuestro sitio web y servicios, cómo la usamos y qué opciones existen. Al usar nuestro sitio web, el usuario acepta las prácticas que aquí se describen.",
   "collect": {
     "heading": "Información que recopilamos",
     "intro": "Recopilamos información de las siguientes maneras:",
     "items": [
       {
-        "label": "Información que usted nos proporciona.",
-        "body": "Cuando se comunica con nosotros, solicita una conversación con nuestro equipo, se suscribe a novedades, se postula a un puesto o completa un formulario, recopilamos datos como su nombre, dirección de correo electrónico, empresa y el contenido de su mensaje."
+        "label": "Información que el usuario nos proporciona.",
+        "body": "Cuando el usuario se comunica con nosotros, solicita una conversación con nuestro equipo, se suscribe a novedades, se postula a un puesto o completa un formulario, recopilamos datos como el nombre, la dirección de correo electrónico, la empresa y el contenido del mensaje."
       },
       {
         "label": "Información recopilada automáticamente.",
-        "body": "Cuando visita nuestro sitio, podemos recopilar automáticamente datos técnicos como su dirección IP, tipo de navegador, información del dispositivo, páginas vistas y URL de referencia."
+        "body": "Cuando alguien visita nuestro sitio, podemos recopilar automáticamente datos técnicos como la dirección IP, el tipo de navegador, la información del dispositivo, las páginas vistas y la URL de referencia."
       },
       {
         "label": "Información de terceros.",
-        "body": "Podemos recibir información limitada de proveedores de análisis y redes profesionales donde usted haya interactuado con nosotros."
+        "body": "Podemos recibir información limitada de proveedores de análisis y redes profesionales donde el usuario haya interactuado con nosotros."
       }
     ]
   },
   "use": {
-    "heading": "Cómo usamos su información",
+    "heading": "Cómo usamos la información",
     "intro": "Usamos la información que recopilamos para:",
     "items": [
-      "Responder a sus consultas y prestar los servicios que solicita;",
+      "Responder a las consultas recibidas y prestar los servicios solicitados;",
       "Operar, mantener y mejorar nuestro sitio web y servicios;",
-      "Enviarle novedades, contenido o material de marketing cuando usted haya dado su consentimiento;",
+      "Enviar novedades, contenido o material de marketing cuando exista consentimiento previo;",
       "Evaluar postulaciones de empleo;",
       "Cumplir con obligaciones legales y protegernos contra usos indebidos."
     ]
   },
   "legalBasis": {
     "heading": "Base legal para el tratamiento",
-    "body": "Cuando la ley aplicable lo exige, tratamos los datos personales sobre la base de su consentimiento, la ejecución de un contrato, nuestros intereses comerciales legítimos o el cumplimiento de una obligación legal."
+    "body": "Cuando la ley aplicable lo exige, tratamos los datos personales sobre la base del consentimiento, la ejecución de un contrato, nuestros intereses comerciales legítimos o el cumplimiento de una obligación legal."
   },
   "cookies": {
     "heading": "Cookies y tecnologías similares",
-    "body": "Nuestro sitio web usa cookies y tecnologías similares para que el sitio funcione, para recordar sus preferencias y para entender cómo se usa el sitio. Las cookies esenciales son necesarias para que el sitio funcione; las cookies de análisis nos ayudan a mejorarlo. Puede controlar o deshabilitar las cookies mediante la configuración de su navegador, aunque es posible que algunas funciones no operen como se espera si lo hace. También puede cambiar o retirar su consentimiento en cualquier momento con el enlace Configuración de cookies en el pie de página."
+    "body": "Nuestro sitio web usa cookies y tecnologías similares para que el sitio funcione, para recordar las preferencias y para entender cómo se usa el sitio. Las cookies esenciales son necesarias para que el sitio funcione; las cookies de análisis nos ayudan a mejorarlo. Es posible controlar o deshabilitar las cookies mediante la configuración del navegador, aunque es posible que algunas funciones no operen como se espera si lo hace. El consentimiento también puede cambiarse o retirarse en cualquier momento con el enlace Configuración de cookies en el pie de página."
   },
   "sharing": {
-    "heading": "Cómo compartimos su información",
-    "body": "No vendemos su información personal. Podemos compartirla con proveedores de servicios de confianza que nos ayudan a operar nuestro sitio web y a prestar nuestros servicios (por ejemplo, proveedores de alojamiento y de análisis), todos ellos obligados a protegerla. También podemos divulgar información cuando la ley lo requiera o para proteger nuestros derechos."
+    "heading": "Cómo compartimos la información",
+    "body": "No vendemos la información personal. Podemos compartirla con proveedores de servicios de confianza que nos ayudan a operar nuestro sitio web y a prestar nuestros servicios (por ejemplo, proveedores de alojamiento y de análisis), todos ellos obligados a protegerla. También podemos divulgar información cuando la ley lo requiera o para proteger nuestros derechos."
   },
   "retention": {
     "heading": "Retención de datos",
@@ -57,15 +57,15 @@
   },
   "international": {
     "heading": "Transferencias internacionales",
-    "body": "Viewnear presta servicios a clientes en toda América. Su información puede procesarse en países distintos del suyo. Cuando así sea, tomamos medidas para asegurar que siga protegida conforme a esta política y a la ley aplicable."
+    "body": "Viewnear presta servicios a clientes en toda América. La información puede procesarse en países distintos al de residencia. Cuando así sea, tomamos medidas para asegurar que siga protegida conforme a esta política y a la ley aplicable."
   },
   "rights": {
     "heading": "Sus derechos",
-    "body": "Según el lugar donde viva, es posible que tenga derecho a acceder a su información personal, corregirla, eliminarla o restringir su uso, y a oponerse a ciertos tratamientos o retirar su consentimiento. Para ejercer cualquiera de estos derechos, comuníquese con nosotros usando los datos que aparecen a continuación."
+    "body": "Según el lugar de residencia, el usuario puede tener derecho a acceder a su información personal, corregirla, eliminarla o restringir su uso, y a oponerse a ciertos tratamientos o retirar el consentimiento. Para ejercer cualquiera de estos derechos, basta con escribirnos usando los datos que aparecen a continuación."
   },
   "security": {
     "heading": "Seguridad",
-    "body": "Usamos medidas técnicas y organizativas razonables para proteger su información personal contra pérdida, uso indebido y acceso no autorizado. Sin embargo, ningún método de transmisión o almacenamiento es completamente seguro, y no podemos garantizar una seguridad absoluta."
+    "body": "Usamos medidas técnicas y organizativas razonables para proteger la información personal contra pérdida, uso indebido y acceso no autorizado. Sin embargo, ningún método de transmisión o almacenamiento es completamente seguro, y no podemos garantizar una seguridad absoluta."
   },
   "children": {
     "heading": "Privacidad de los menores",
@@ -76,7 +76,7 @@
     "body": "Podemos actualizar esta política ocasionalmente. Cuando lo hagamos, revisaremos la fecha de “Última actualización” que aparece arriba. Los cambios sustanciales se destacarán en esta página."
   },
   "contact": {
-    "heading": "Contáctenos",
-    "body": "Si tiene alguna pregunta sobre esta política o sobre cómo manejamos su información, comuníquese con nosotros en <link>contact@viewnear.com</link>."
+    "heading": "Contacto",
+    "body": "Ante cualquier pregunta sobre esta política o sobre cómo manejamos la información, basta con escribirnos a <link>contact@viewnear.com</link>."
   }
 }

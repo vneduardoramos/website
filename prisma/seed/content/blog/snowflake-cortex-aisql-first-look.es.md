@@ -22,7 +22,7 @@ La misma interfaz de AI_COMPLETE puede describir imágenes, extraer entidades y 
 
 ## Una demo rápida y práctica
 
-Imagine que almacena capturas de pantalla de reseñas de productos en un stage llamado `@reviews_stage`. Quiere clasificar cada reseña como positiva, neutral o negativa y extraer la calificación por estrellas que se muestra en la imagen.
+Supongamos que se almacenan capturas de pantalla de reseñas de productos en un stage llamado `@reviews_stage`. Quiere clasificar cada reseña como positiva, neutral o negativa y extraer la calificación por estrellas que se muestra en la imagen.
 
 ```sql
 -- Extract review text, classify sentiment, and pull the star rating
@@ -65,7 +65,7 @@ Los tres pasos se ejecutan dentro de Snowflake sin exportaciones por lotes ni en
 ## Notas de gobernanza y costos
 
 - **Privilegios:** Otorgue el rol `CORTEX_USER` más el uso del warehouse. El enmascaramiento granular y la seguridad a nivel de fila siguen aplicándose.
-- **Créditos:** Cada función consume créditos según los tokens de entrada y el modelo elegido. Cree primero un prototipo con datos limitados y luego haga seguimiento del uso mediante las vistas de consumo de créditos para evitar sorpresas.
+- **Créditos:** Cada función consume créditos según los tokens de entrada y el modelo elegido. Conviene crear primero un prototipo con datos limitados y luego dar seguimiento al uso mediante las vistas de consumo de créditos para evitar sorpresas.
 
 ## Primeras lecciones del equipo de Viewnear
 
@@ -76,7 +76,7 @@ Los tres pasos se ejecutan dentro de Snowflake sin exportaciones por lotes ni en
 
 ## Hacia dónde se dirige
 
-- **Agentes en tiempo real:** Combine AISQL con Snowpark Container Services para crear copilotos de IA siempre activos que puedan invocar APIs externas cuando sea necesario.
+- **Agentes en tiempo real:** Combinar AISQL con Snowpark Container Services para crear copilotos de IA siempre activos que puedan invocar APIs externas cuando sea necesario.
 - **Empaquetado y uso compartido más seguros:** El Native App Framework ahora admite restricted-caller rights, lo que hace más seguro empaquetar y compartir modelos de IA personalizados.
 - **Blueprints por industria:** Espere plantillas predefinidas como extracción de facturas, triaje de tickets de soporte y resumen de notas clínicas, que llegarán a través de partners, incluido Viewnear.
 
@@ -84,4 +84,4 @@ Los tres pasos se ejecutan dentro de Snowflake sin exportaciones por lotes ni en
 
 Cortex AISQL difumina la línea entre el data warehousing y la IA generativa. La pregunta ya no es "¿Dónde alojamos el modelo?" sino "¿Qué problema de negocio abordamos primero?" Si está listo para experimentar, la barrera ahora es una sola consulta SQL.
 
-El equipo de Viewnear ya está integrando AISQL en los próximos sprints con clientes. Si desea ver una demo en vivo adaptada a sus datos, póngase en contacto. ¡Felices consultas!
+El equipo de Viewnear ya está integrando AISQL en los próximos sprints con clientes. Para ver una demo en vivo adaptada a los datos de la organización, basta con escribirnos. ¡Felices consultas!

@@ -33,7 +33,7 @@ El modo Import ofrece mejor rendimiento con datasets más pequeños (por lo gene
 
 La integración de Tableau con Snowflake es más profunda y sofisticada de lo que la mayoría imagina. Cuando está bien configurada, se pueden obtener tiempos de respuesta de menos de un segundo para consultas que en otras herramientas tomarían minutos. El secreto está en entender cómo funciona la generación de consultas de Tableau con el motor de optimización de Snowflake.
 
-Use siempre el conector nativo de Snowflake, no ODBC ni algún driver de base de datos genérico. El conector nativo entiende ambas plataformas y optimiza las consultas en consecuencia. Sabe cuándo empujar los cálculos hacia Snowflake y cuándo traer los datos a Tableau para procesarlos.
+Conviene usar siempre el conector nativo de Snowflake, no ODBC ni algún driver de base de datos genérico. El conector nativo entiende ambas plataformas y optimiza las consultas en consecuencia. Sabe cuándo empujar los cálculos hacia Snowflake y cuándo traer los datos a Tableau para procesarlos.
 
 La configuración de seguridad requiere reflexión. Me gusta crear roles dedicados para Tableau que se alineen con la estructura organizacional y no solo con la conveniencia técnica:
 
@@ -86,7 +86,7 @@ El incremental refresh marca una verdadera diferencia con datasets grandes. El i
 
 Hablemos de lo que en realidad preocupa a todos: los costos. Las herramientas de BI pueden generar muchas consultas y, si no se tiene cuidado, su factura de Snowflake puede subir sorprendentemente rápido. Pero con el enfoque correcto, los costos se mantienen predecibles incluso a medida que el uso escala.
 
-El dimensionamiento del warehouse se convierte en un arte. Casi siempre empiezo con warehouses pequeños para las cargas de trabajo de BI, porque se puede escalar hacia arriba al instante si el rendimiento lo exige. Monitoree el rendimiento de las consultas y la experiencia del usuario en lugar de intentar adivinar lo que va a necesitar. El auto-scaling mediante warehouses multi-cluster maneja el uso pico mientras controla los costos.
+El dimensionamiento del warehouse se convierte en un arte. Casi siempre empiezo con warehouses pequeños para las cargas de trabajo de BI, porque se puede escalar hacia arriba al instante si el rendimiento lo exige. Monitorear el rendimiento de las consultas y la experiencia del usuario en lugar de intentar adivinar lo que va a necesitar. El auto-scaling mediante warehouses multi-cluster maneja el uso pico mientras controla los costos.
 
 Los ajustes de auto-suspend pueden marcar una diferencia enorme. He visto que un auto-suspend de 30 segundos le ahorra a las organizaciones miles de dólares al mes sin ningún impacto en la experiencia del usuario. El auto-resume es instantáneo, así que la suspensión agresiva casi siempre es la opción correcta.
 
@@ -115,7 +115,7 @@ Las capacidades de auditoría que rastrean el acceso a los datos en todas las pl
 
 ## Errores que veo todo el tiempo
 
-El error más costoso es usar el modo import para todo por defecto porque parece más seguro. Esto genera problemas de frescura de datos, exceso de almacenamiento y una complejidad de actualización que empeora con el tiempo. Use las conexiones live de forma estratégica para datasets grandes y cambiantes, y reserve el modo import para datos más pequeños y estables.
+El error más costoso es usar el modo import para todo por defecto porque parece más seguro. Esto genera problemas de frescura de datos, exceso de almacenamiento y una complejidad de actualización que empeora con el tiempo. Las conexiones live sirven para datasets grandes y cambiantes, y el modo import queda para datos más pequeños y estables.
 
 Usar un solo warehouse para todas las actividades de BI es otro problema común. Distintas herramientas tienen distintas características de rendimiento, y distintos tipos de análisis necesitan distintos recursos. Siempre recomiendo warehouses dedicados para diferentes herramientas y casos de uso. Esto brinda un rendimiento predecible y una atribución de costos más clara.
 
@@ -133,10 +133,10 @@ La clave está en diseñar integraciones pensando en la flexibilidad y la gobern
 
 ## Mi consejo práctico
 
-Empiece por entender lo que tiene y lo que la gente realmente necesita. No intente resolver todos los escenarios posibles en la primera implementación. Diseñe una arquitectura de integración capaz de crecer en lugar de tratar de predecir cada requisito futuro.
+Conviene empezar por entender lo que hay y lo que la gente realmente necesita, sin intentar resolver todos los escenarios posibles en la primera implementación. Diseñar una arquitectura de integración capaz de crecer en lugar de tratar de predecir cada requisito futuro.
 
-Haga pilotos con casos de uso enfocados para demostrar valor antes de intentar un despliegue integral. El éxito con un scope limitado genera confianza y aporta aprendizajes que informan despliegues más amplios.
+Hacer pilotos con casos de uso enfocados para demostrar valor antes de intentar un despliegue integral. El éxito con un scope limitado genera confianza y aporta aprendizajes que informan despliegues más amplios.
 
-Haga de la optimización un esfuerzo continuo y no algo que se hace una sola vez. Las necesidades de los usuarios cambian, los datos crecen, las capacidades de la plataforma se amplían. Las revisiones periódicas de rendimiento y el feedback de los usuarios aseguran que las integraciones sigan aportando valor a medida que evolucionan los requisitos.
+La optimización es un esfuerzo continuo y no algo que se hace una sola vez. Las necesidades de los usuarios cambian, los datos crecen, las capacidades de la plataforma se amplían. Las revisiones periódicas de rendimiento y el feedback de los usuarios aseguran que las integraciones sigan aportando valor a medida que evolucionan los requisitos.
 
 Cuando se logra bien la integración de BI, transforma la manera en que las organizaciones usan los datos para tomar decisiones. La configuración técnica se vuelve invisible y la gente se enfoca en los insights en lugar de pelear con las herramientas. Ahí es cuando sabe que lo ha logrado.
