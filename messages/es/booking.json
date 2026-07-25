@@ -16,14 +16,14 @@
   },
   "cta": "Elegir un horario",
   "ctaAria": "Elegir un horario para hablar con un arquitecto (abre el calendario)",
-  "embedTitle": "Calendario de agendamiento",
   "fallback": {
     "prefer": "¿Mejor por correo?",
     "cta": "Usar el formulario de contacto"
   },
   "facesLabel": "Las personas que responden por el trabajo",
-  "picker": {
-    "label": "¿Con quién conviene la llamada?"
-  },
-  "teamBook": "Agendar"
+  "teamBook": "Agendar",
+  "pills": {
+    "label": "Agendar con",
+    "aria": "Agendar 30 minutos con {name}"
+  }
 }

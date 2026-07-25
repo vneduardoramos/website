@@ -7,6 +7,7 @@
  */
 interface CalendlyGlobal {
   initInlineWidget?: (opts: { url: string; parentElement: HTMLElement }) => void;
+  initPopupWidget?: (opts: { url: string }) => void;
   initBadgeWidget?: (opts: {
     url: string;
     text: string;

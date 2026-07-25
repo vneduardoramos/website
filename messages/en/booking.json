@@ -16,14 +16,14 @@
   },
   "cta": "Pick a time",
   "ctaAria": "Pick a time to talk to an architect (opens the scheduler)",
-  "embedTitle": "Scheduling calendar",
   "fallback": {
     "prefer": "Prefer email?",
     "cta": "Use the contact form"
   },
   "facesLabel": "The people who answer for the work",
-  "picker": {
-    "label": "Who would you like to meet?"
-  },
-  "teamBook": "Book time"
+  "teamBook": "Book time",
+  "pills": {
+    "label": "Book time with",
+    "aria": "Book 30 minutes with {name}"
+  }
 }

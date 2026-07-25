@@ -1,8 +1,7 @@
 import { getTranslations, getLocale } from "next-intl/server";
 import { Img as Image } from "@/components/marketing/Img";
 import { Link } from "@/i18n/navigation";
-import { BookingEmbed } from "@/components/marketing/BookingEmbed";
-import { BookingPicker, type BookablePerson } from "@/components/marketing/BookingPicker";
+import { BookingPills, type BookablePerson } from "@/components/marketing/BookingPills";
 import { PartnerBadges } from "@/components/marketing/PartnerBadges";
 import { getTeam } from "@/lib/queries";
 import { theme } from "@/config/theme";
@@ -48,6 +47,7 @@ export async function BookACall({
       title: m.title,
       photo: m.photo,
       url: m.bookingUrl as string,
+      ariaLabel: t("pills.aria", { name: m.name }),
     }));
 
   const bookingUrl =
@@ -76,7 +76,7 @@ export async function BookACall({
           {/* The faces, named. An unnamed avatar row proves nothing. Skipped
               when the picker renders below, which shows the same people as
               selectable options. */}
-          {people.length > 0 && bookable.length < 2 && (
+          {people.length > 0 && bookable.length === 0 && (
             <div className="mt-8">
               <p className="font-mono text-[0.66rem] uppercase tracking-[0.14em] text-muted">
                 {t("facesLabel")}
@@ -149,27 +149,15 @@ export async function BookACall({
         </div>
       </div>
 
-      {/* The calendar, in the page flow rather than behind a click. Capped and
-          centered: hide_event_type_details drops Calendly's left pane, so the
-          widget is narrow and would otherwise float in a wide empty container,
-          while still leaving room for the time column once a day is picked. */}
-      <div className="mx-auto mt-10 max-w-3xl">
-        {bookable.length > 1 ? (
-          <BookingPicker
-            people={bookable}
-            label={t("picker.label")}
-            fallbackLabel={t("cta")}
-            ariaLabel={t("ctaAria")}
-            embedTitle={t("embedTitle")}
-          />
-        ) : (
-          <BookingEmbed
-            url={bookingUrl}
-            fallbackLabel={t("cta")}
-            ariaLabel={t("ctaAria")}
-            embedTitle={t("embedTitle")}
-          />
-        )}
+      {/* One pill per bookable person; the calendar opens in Calendly's modal
+          rather than occupying 700px of the section for every visitor. */}
+      <div className="mt-10 border-t border-border pt-8">
+        <BookingPills
+          people={bookable}
+          fallbackUrl={bookingUrl}
+          label={t("pills.label")}
+          fallbackLabel={t("cta")}
+        />
       </div>
     </div>
   );
