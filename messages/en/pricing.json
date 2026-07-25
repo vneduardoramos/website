@@ -81,5 +81,9 @@
   "breadcrumb": {
     "home": "Home",
     "current": "Pricing"
+  },
+  "nearshoreLink": {
+    "title": "Whichever model fits, the team is nearshore and on your hours.",
+    "label": "How delivery works"
   }
 }

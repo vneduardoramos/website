@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "title": "Careers: data & AI engineering jobs in Monterrey and Austin",
+    "description": "Snowflake data engineering, analytics, and AI roles at Viewnear. Work from our Monterrey, Nuevo León delivery center or Austin, Texas, on enterprise data across the Americas."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "current": "Careers"
+  },
+  "hero": {
+    "eyebrow": "Careers",
+    "title": "Build the data and AI work <hl>enterprises keep</hl>",
+    "description": "We hire data engineers, analytics engineers, architects, and AI engineers into real production work on Snowflake, from our delivery center in Monterrey and our Austin office.",
+    "chips": ["Monterrey, Nuevo León", "Austin, Texas", "SnowPro certification paid", "US business hours"]
+  },
+  "whoHeading": {
+    "eyebrow": "Who we hire",
+    "title": "Engineers who want the hard version",
+    "intro": "The work here is enterprise data: real ERP estates, real governance constraints, real production consequences. That shapes who does well."
+  },
+  "who": [
+    {
+      "label": "Depth",
+      "title": "One platform, properly",
+      "body": "We specialize in Snowflake rather than sampling five tools. People who like knowing a platform to its edges, and getting certified to prove it, tend to thrive."
+    },
+    {
+      "label": "Ownership",
+      "title": "You scope what you build",
+      "body": "The people who size an engagement are the people who deliver it. That means talking to clients, defending a design, and standing behind the result."
+    },
+    {
+      "label": "Craft",
+      "title": "Judged on outcomes",
+      "body": "Not on hours logged. We price work on results, which only holds up if the engineering is genuinely good and the handover genuinely lands."
+    },
+    {
+      "label": "Language",
+      "title": "Bilingual by default",
+      "body": "Client sessions run in English and the team works in English and Spanish. Both matter here, and neither has to be perfect on day one."
+    }
+  ],
+  "locations": {
+    "eyebrow": "Where the work happens",
+    "title": "Monterrey and Austin, on <hl>US business hours</hl>",
+    "body": "Most engineering sits in our Monterrey delivery center, in Valle Alto, with leadership in Austin, Texas. The team works US business hours, which means a normal working day here overlaps with clients across the Americas instead of running on a night shift. Onsite client travel happens, and Monterrey makes it short.",
+    "bullets": [
+      "Carr. Nacional 500, Valle Alto, Monterrey, NL 64983, Mexico",
+      "Central Time all year, aligned to the client's working day",
+      "Nonstop flights to major US cities for onsite work when a build needs it"
+    ],
+    "imageAlt": "Viewnear's delivery center in Monterrey, Mexico, at Pueblo Serena",
+    "cta": "See the delivery center"
+  },
+  "growthHeading": {
+    "eyebrow": "How you grow here",
+    "title": "Certification, then real delivery",
+    "intro": "Nobody learns Snowflake from a course alone. The path pairs certification with production work from the first sprint."
+  },
+  "growth": [
+    "SnowPro certification, paid for and expected across the team",
+    "Pairing with architects on live client builds, not sandbox exercises",
+    "Early access to new Snowflake capabilities through our Premier and CoCo Preferred partnership",
+    "AI-native tooling as part of the job, including Claude as an Anthropic partner"
+  ],
+  "openRoles": {
+    "eyebrow": "Open roles",
+    "title": "Current openings",
+    "intro": "Every application gets read. If nothing fits today, the general form still reaches us.",
+    "empty": "No open roles right now, but we are always meeting good engineers. The general application below still reaches us.",
+    "locationLabel": "Location",
+    "viewRole": "View role & apply"
+  },
+  "life": {
+    "eyebrow": "Beyond the role",
+    "title": "What comes with it",
+    "body": "Benefits, how the team actually works, and the offices themselves are laid out on the culture page.",
+    "cta": "See life at Viewnear"
+  },
+  "cta": {
+    "title": "Send it, even if the fit is not obvious.",
+    "subtitle": "Tell us what you have built and where you want to go next. Every application is read by a person on the team."
+  }
+}

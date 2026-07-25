@@ -60,5 +60,9 @@
   ],
   "caseStudies": {
     "title": "How it plays out in practice"
+  },
+  "nearshoreLink": {
+    "title": "This cadence only works in a shared working day.",
+    "label": "The nearshore model"
   }
 }

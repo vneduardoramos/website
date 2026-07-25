@@ -31,7 +31,9 @@
         "street": "Carr. Nacional 500, Valle Alto",
         "cityZip": "Monterrey, MX 64983"
       }
-    ]
+    ],
+    "deliveryCenterTitle": "The Monterrey office is also our nearshore delivery center.",
+    "deliveryCenterLabel": "See the delivery center"
   },
   "whereWeWork": {
     "eyebrow": "Where we work",
@@ -137,7 +139,13 @@
     "items": [
       "Collaboration is real: teams work together in person and remotely, with shared accountability for outcomes."
     ],
-    "flywheel": ["Outcomes", "Higher-value work", "Reinvestment", "Stronger team", "Better outcomes"]
+    "flywheel": [
+      "Outcomes",
+      "Higher-value work",
+      "Reinvestment",
+      "Stronger team",
+      "Better outcomes"
+    ]
   },
   "openRoles": {
     "eyebrow": "Open roles",

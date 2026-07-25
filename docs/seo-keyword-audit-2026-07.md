@@ -245,10 +245,11 @@ Good ones to model on: `/nearshore` (67), `/migrations` (66), `/data-ai` (58), `
 
 ## Prioritized actions
 
-> **Status (2026-07-25): P0 and P1 are shipped.** What remains is P2 (items 11 to 13) and
-> the off-site half in `docs/seo-offsite-checklist.md`. Search Console is still unverified,
-> so none of this is measurable yet: that is the next real blocker, and it needs account
-> access rather than code.
+> **Status (2026-07-25): P0, P1, and P2 items 11 to 12 are shipped.** Item 13 is a
+> positioning decision, not a task, and it is open. What remains beyond it is the off-site
+> half in `docs/seo-offsite-checklist.md`. Search Console is still unverified, so none of
+> this is measurable yet: that is the next real blocker, and it needs account access rather
+> than code.
 
 **P0, this week (copy only, no new routes)** — done
 
@@ -268,9 +269,9 @@ Good ones to model on: `/nearshore` (67), `/migrations` (66), `/data-ai` (58), `
 
 **P2, when there is room**
 
-11. `/careers` hub, in both locales, aimed at Monterrey engineering talent.
-12. Strengthen the internal-link graph into `/nearshore`: 8 inbound links today, and 5 of them are from seed longform rather than navigation.
-13. Decide the software-engineering question in Gap D before writing any of it.
+11. `/careers` hub, in both locales, aimed at Monterrey engineering talent. *Done. Note: `/careers` had a permanent 301 to `/life-at-viewnear` in `next.config.mjs`, which is now removed so the URL serves the hub. Clients that cached the 301 will keep redirecting until that cache expires. The hub is the recruiting-intent page (who we hire, locations, growth, openings) and links out to `/life-at-viewnear` for culture rather than duplicating it; the job detail pages now link back to the hub instead of the culture page.*
+12. Strengthen the internal-link graph into `/nearshore`: 8 inbound links today, and 5 of them are from seed longform rather than navigation. *Done: in-content links went from 3 to 12 references across 9 templates. `/nearshore` is now linked from `/pricing` and `/approach`; `/nearshore/monterrey` from `/about`, `/life-at-viewnear`, `/careers` and the `/nearshore` proximity section. `Careers` also joined the nav and footer Company groups.*
+13. Decide the software-engineering question in Gap D before writing any of it. **Decided 2026-07-25: stay focused.** No software-development page cluster. Generic terms (custom software, application development, full-stack, microservices, DevOps, Kubernetes, QA, test automation, mobile) stay deliberately at zero, and a guard grep for them is a legitimate check on future copy. The adjacent slice we do deliver is now named: "data application development" and "APIs and data services" on `/services/embedded-analytics`, "agent engineering" on `/data-ai`.
 14. Off-site work in `docs/seo-offsite-checklist.md` is still the other half of this. Search Console is unverified, so none of the above is measurable yet. Do that first if you want to track any of it.
 
 ---

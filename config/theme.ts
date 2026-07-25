@@ -119,6 +119,7 @@ export const theme = {
         { key: "partnership", label: "Partnership", href: "/partnership" },
         { key: "nearshore", label: "Nearshore Advantage", href: "/nearshore" },
         { key: "lifeAtViewnear", label: "Life at Viewnear", href: "/life-at-viewnear" },
+        { key: "careers", label: "Careers", href: "/careers" },
         { key: "security", label: "Security & Trust", href: "/security" },
       ],
     },

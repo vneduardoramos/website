@@ -73,7 +73,8 @@
     "caseStudies": "Proof & outcomes",
     "blog": "Field notes",
     "press": "Media coverage",
-    "faq": "Common questions"
+    "faq": "Common questions",
+    "careers": "Open roles in Monterrey & Austin"
   },
   "featured": {
     "company": {
@@ -101,5 +102,6 @@
     "caseCta": "Read the case study",
     "blogEyebrow": "Latest from the blog",
     "blogCta": "Read post"
-  }
+  },
+  "careers": "Careers"
 }

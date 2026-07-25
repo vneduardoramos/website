@@ -4,6 +4,7 @@ import { pageMeta, breadcrumbLd } from "@/lib/seo";
 import { Link } from "@/i18n/navigation";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { LedgerCard } from "@/components/marketing/Cards";
+import { InlineCta } from "@/components/marketing/Blocks";
 import { FeaturedCaseStudies } from "@/components/marketing/FeaturedCaseStudies";
 import { PageHero } from "@/components/marketing/PageHero";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
@@ -71,6 +72,16 @@ export default async function PricingPage({ params }: { params: { locale: string
               {m.body}
             </LedgerCard>
           ))}
+        </div>
+
+        {/* Whichever model is chosen, the team behind it is the nearshore one:
+            link it here rather than leaving /nearshore reachable only from nav. */}
+        <div className="mt-10">
+          <InlineCta
+            title={t("nearshoreLink.title")}
+            href="/nearshore"
+            label={t("nearshoreLink.label")}
+          />
         </div>
 
         {/* Worked example: the shape of a first engagement, no invented prices. */}

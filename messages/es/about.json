@@ -60,10 +60,22 @@
     "intro": "Sin métricas de vanidad: el nivel de partner, la certificación y el alcance regional que cualquiera puede comprobar."
   },
   "trackRecord": [
-    { "value": "Premier", "label": "Snowflake Premier + CoCo Preferred Partner" },
-    { "value": "SnowPro", "label": "Certificación SnowPro en todo el equipo" },
-    { "value": "15+", "label": "Años construyendo datos e IA empresarial" },
-    { "value": "5", "label": "Países en toda América" }
+    {
+      "value": "Premier",
+      "label": "Snowflake Premier + CoCo Preferred Partner"
+    },
+    {
+      "value": "SnowPro",
+      "label": "Certificación SnowPro en todo el equipo"
+    },
+    {
+      "value": "15+",
+      "label": "Años construyendo datos e IA empresarial"
+    },
+    {
+      "value": "5",
+      "label": "Países en toda América"
+    }
   ],
   "operateHeading": {
     "eyebrow": "Cómo operamos",
@@ -117,5 +129,9 @@
     "body": "Sin importar en qué punto esté el trabajo hoy, migrando, escalando o fundamentando la IA, un arquitecto de Snowflake trazará la ruta más rápida hacia el valor.",
     "primaryCta": "Hablar con un arquitecto",
     "secondaryCta": "Conocer nuestra alianza"
+  },
+  "monterreyLink": {
+    "title": "El trabajo sale de Monterrey y Austin.",
+    "label": "Ver el centro de entrega"
   }
 }

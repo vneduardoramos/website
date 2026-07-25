@@ -328,6 +328,14 @@ export default async function LifeAtViewnearPage({ params }: { params: { locale:
               </figure>
             ))}
           </div>
+          {/* The Monterrey office has its own page for delivery-side detail. */}
+          <div className="mt-10">
+            <InlineCta
+              title={t("offices.deliveryCenterTitle")}
+              href="/nearshore/monterrey"
+              label={t("offices.deliveryCenterLabel")}
+            />
+          </div>
         </div>
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>

@@ -73,7 +73,8 @@
     "caseStudies": "Evidencia y resultados",
     "blog": "Apuntes de campo",
     "press": "Cobertura de medios",
-    "faq": "Preguntas comunes"
+    "faq": "Preguntas comunes",
+    "careers": "Vacantes en Monterrey y Austin"
   },
   "featured": {
     "company": {
@@ -101,5 +102,6 @@
     "caseCta": "Leer el caso de éxito",
     "blogEyebrow": "Lo último del blog",
     "blogCta": "Leer artículo"
-  }
+  },
+  "careers": "Carreras"
 }

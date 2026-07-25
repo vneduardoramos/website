@@ -273,12 +273,13 @@ Cortex Analyst is the service that turns a natural language question into govern
 
 ## What we build into your product
 
-Customer-facing analytics is product work, not an internal reporting exercise. Everything we build is designed to live inside your product, carry your brand, and scale with your customer base:
+Customer-facing analytics is data application development, not an internal reporting exercise. Everything we build is designed to live inside your product, carry your brand, and scale with your customer base:
 
 - **Embedded dashboards and reports**, served straight from the governed data already in Snowflake, with no second copy of every table to sync, secure, and pay for.
 - **Multi-tenant analytics architecture** designed for SaaS: tenant isolation, row-level security, and per-tenant cost visibility on Snowflake's consumption model, so the feature scales without billing surprises.
 - **Streamlit in Snowflake data apps**: interactive applications that run where the data lives and inherit Snowflake's security and governance instead of re-implementing them.
 - **Cortex-powered answers inside the product**: Cortex Analyst over governed Semantic Views for natural language questions, and Cortex Search for retrieval, so customers ask and act without leaving your app.
+- **APIs and data services** where the front end is your own: governed data served to your components, so a bespoke interface does not mean a bespoke pipeline behind it.
 - **Governance built in from the first tenant**: access, lineage, and policy managed through Horizon Catalog, with serving layers kept fresh by Dynamic Tables.
 
 For the analytics your own teams use day to day, see [AI Analytics & Agents](/services/data-visualisation); this page is about the analytics your customers see.

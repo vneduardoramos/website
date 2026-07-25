@@ -202,7 +202,7 @@ Cortex Analyst es el servicio que convierte una pregunta en lenguaje natural en 
 
 ## Qué construimos dentro del producto
 
-La analítica de cara al cliente es trabajo de producto, no un ejercicio de reportes internos. Todo lo que construimos está diseñado para vivir dentro del producto, llevar su marca y escalar con su base de clientes:
+La analítica de cara al cliente es desarrollo de aplicaciones de datos, no un ejercicio de reportes internos. Todo lo que construimos está diseñado para vivir dentro del producto, llevar su marca y escalar con su base de clientes:
 
 - **Dashboards y reportes embebidos**, servidos directamente desde los datos gobernados que ya están en Snowflake, sin una segunda copia de cada tabla que sincronizar, asegurar y pagar.
 - **Arquitectura de analítica multi-tenant** diseñada para SaaS: aislamiento por tenant, seguridad a nivel de fila y visibilidad de costos por cliente sobre el modelo de consumo de Snowflake, para que la funcionalidad escale sin sorpresas en la facturación.

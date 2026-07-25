@@ -216,6 +216,7 @@ const NAV_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   "/partnership": LinkRingsIcon,
   "/nearshore": MapPinIcon,
   "/life-at-viewnear": SunIcon,
+  "/careers": UsersIcon,
   "/security": ShieldCheckIcon,
   "/resources": GridIcon,
   "/case-studies": TrendIcon,

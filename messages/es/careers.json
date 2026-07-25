@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "title": "Carreras: empleos de datos e IA en Monterrey y Austin",
+    "description": "Vacantes de ingeniería de datos, analítica e IA sobre Snowflake en Viewnear. Desde el centro de entrega en Monterrey, Nuevo León, o desde Austin, Texas, con clientes en toda América."
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "current": "Carreras"
+  },
+  "hero": {
+    "eyebrow": "Carreras",
+    "title": "Construir el trabajo de datos e IA <hl>que las empresas conservan</hl>",
+    "description": "Contratamos ingenieros de datos, analytics engineers, arquitectos e ingenieros de IA para trabajo real en producción sobre Snowflake, desde el centro de entrega en Monterrey y la oficina de Austin.",
+    "chips": ["Monterrey, Nuevo León", "Austin, Texas", "Certificación SnowPro pagada", "Horario laboral de EE. UU."]
+  },
+  "whoHeading": {
+    "eyebrow": "A quién contratamos",
+    "title": "Ingenieros que quieren la versión difícil",
+    "intro": "El trabajo aquí es datos empresariales: entornos ERP reales, restricciones de gobierno reales, consecuencias reales en producción. Eso define a quién le va bien."
+  },
+  "who": [
+    {
+      "label": "Profundidad",
+      "title": "Una plataforma, bien",
+      "body": "Nos especializamos en Snowflake en lugar de probar cinco herramientas. A quien le gusta conocer una plataforma hasta sus límites, y certificarse para demostrarlo, le va bien aquí."
+    },
+    {
+      "label": "Responsabilidad",
+      "title": "Quien dimensiona, construye",
+      "body": "Las personas que dimensionan un proyecto son las que lo entregan. Eso implica hablar con clientes, defender un diseño y responder por el resultado."
+    },
+    {
+      "label": "Oficio",
+      "title": "Evaluados por resultados",
+      "body": "No por horas registradas. Cobramos por resultados, y eso solo se sostiene si la ingeniería es realmente buena y el traspaso realmente aterriza."
+    },
+    {
+      "label": "Idioma",
+      "title": "Bilingüe por defecto",
+      "body": "Las sesiones con clientes ocurren en inglés y el equipo trabaja en inglés y español. Los dos importan aquí, y ninguno tiene que ser perfecto el primer día."
+    }
+  ],
+  "locations": {
+    "eyebrow": "Dónde ocurre el trabajo",
+    "title": "Monterrey y Austin, en <hl>horario laboral de EE. UU.</hl>",
+    "body": "La mayor parte de la ingeniería está en el centro de entrega de Monterrey, en Valle Alto, con la dirección en Austin, Texas. El equipo trabaja en horario laboral de Estados Unidos, así que una jornada normal aquí se traslapa con clientes de toda América en lugar de correr en turno nocturno. Hay viajes presenciales con clientes, y Monterrey los hace cortos.",
+    "bullets": [
+      "Carr. Nacional 500, Valle Alto, Monterrey, NL 64983, México",
+      "Horario del centro todo el año, alineado a la jornada del cliente",
+      "Vuelos directos a las principales ciudades de Estados Unidos para trabajo presencial cuando un build lo necesita"
+    ],
+    "imageAlt": "El centro de entrega de Viewnear en Monterrey, México, en Pueblo Serena",
+    "cta": "Ver el centro de entrega"
+  },
+  "growthHeading": {
+    "eyebrow": "Cómo se crece aquí",
+    "title": "Certificación y después entrega real",
+    "intro": "Nadie aprende Snowflake solo con un curso. El camino combina certificación con trabajo en producción desde el primer sprint."
+  },
+  "growth": [
+    "Certificación SnowPro, pagada y esperada en todo el equipo",
+    "Trabajo en pareja con arquitectos en builds reales de clientes, no en ejercicios de laboratorio",
+    "Acceso temprano a nuevas capacidades de Snowflake por la alianza Premier y CoCo Preferred",
+    "Herramientas nativas de IA como parte del trabajo, incluido Claude como socio de Anthropic"
+  ],
+  "openRoles": {
+    "eyebrow": "Vacantes abiertas",
+    "title": "Posiciones actuales",
+    "intro": "Cada postulación se lee. Si hoy no encaja ninguna, el formulario general igual llega.",
+    "empty": "No hay vacantes abiertas por ahora, pero siempre estamos conociendo buenos ingenieros. La postulación general de abajo igual llega.",
+    "locationLabel": "Ubicación",
+    "viewRole": "Ver vacante y postularse"
+  },
+  "life": {
+    "eyebrow": "Más allá del puesto",
+    "title": "Lo que viene con el trabajo",
+    "body": "Los beneficios, la forma real de trabajar del equipo y las oficinas están detallados en la página de cultura.",
+    "cta": "Ver la vida en Viewnear"
+  },
+  "cta": {
+    "title": "Enviarla, aunque el encaje no sea obvio.",
+    "subtitle": "Basta con contarnos qué se ha construido y hacia dónde se quiere ir. Cada postulación la lee una persona del equipo."
+  }
+}

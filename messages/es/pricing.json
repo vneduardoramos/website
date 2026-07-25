@@ -81,5 +81,9 @@
   "breadcrumb": {
     "home": "Inicio",
     "current": "Precios"
+  },
+  "nearshoreLink": {
+    "title": "Cualquiera sea el modelo, el equipo es nearshore y en el horario del cliente.",
+    "label": "Cómo funciona la entrega"
   }
 }

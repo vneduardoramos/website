@@ -60,5 +60,9 @@
   ],
   "caseStudies": {
     "title": "Cómo se traduce en la práctica"
+  },
+  "nearshoreLink": {
+    "title": "Esta cadencia solo funciona con una jornada compartida.",
+    "label": "El modelo nearshore"
   }
 }

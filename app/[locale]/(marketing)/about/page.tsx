@@ -5,7 +5,7 @@ import { pageMeta, breadcrumbLd } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { Link } from "@/i18n/navigation";
 import { Section, SectionHeading } from "@/components/marketing/ui";
-import { MetricBand } from "@/components/marketing/Blocks";
+import { MetricBand, InlineCta } from "@/components/marketing/Blocks";
 import { TeamCard } from "@/components/marketing/TeamCard";
 import { PageHero } from "@/components/marketing/PageHero";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
@@ -137,6 +137,14 @@ export default async function AboutPage({ params }: { params: { locale: string }
         />
         <div className="mt-12">
           <MetricBand metrics={trackRecord} />
+        </div>
+        {/* The track record is delivered from two offices; name where. */}
+        <div className="mt-10">
+          <InlineCta
+            title={t("monterreyLink.title")}
+            href="/nearshore/monterrey"
+            label={t("monterreyLink.label")}
+          />
         </div>
       </Section>
 

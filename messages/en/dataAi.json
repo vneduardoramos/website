@@ -17,7 +17,7 @@
   "how": {
     "eyebrow": "How it works",
     "title": "Two planes, one governed loop",
-    "intro": "Agents run in two places. Inside Snowflake, they reason over governed data without moving it. In the flow of work, Claude takes the next action where teams already are. The point is the interplay: a request crosses both and comes back cited, in policy, and logged."
+    "intro": "Agent engineering runs in two places. Inside Snowflake, agents reason over governed data without moving it. In the flow of work, Claude takes the next action where teams already are. The point is the interplay: a request crosses both and comes back cited, in policy, and logged."
   },
   "ship": {
     "eyebrow": "What we ship",

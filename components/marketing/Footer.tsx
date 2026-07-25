@@ -16,6 +16,7 @@ const groups = [
       { linkKey: "about", label: "About", href: "/about" },
       { linkKey: "partnership", label: "Partnership", href: "/partnership" },
       { linkKey: "lifeAtViewnear", label: "Life at Viewnear", href: "/life-at-viewnear" },
+      { linkKey: "careers", label: "Careers", href: "/careers" },
       { linkKey: "security", label: "Security & Trust", href: "/security" },
       { linkKey: "contact", label: "Contact", href: "/contact" },
     ],

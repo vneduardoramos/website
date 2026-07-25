@@ -124,7 +124,7 @@ export default async function CareerDetailPage({
         </div>
         <div className="mt-6">
           <Link
-            href="/life-at-viewnear"
+            href="/careers"
             className="inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep"
           >
             <span aria-hidden="true">&larr;</span> {t("hero.backToRoles")}

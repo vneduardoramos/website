@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMeta } from "@/lib/seo";
+import { InlineCta } from "@/components/marketing/Blocks";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { FeaturedCaseStudies } from "@/components/marketing/FeaturedCaseStudies";
 import { PageHero } from "@/components/marketing/PageHero";
@@ -46,6 +47,14 @@ export default async function ApproachPage({ params }: { params: { locale: strin
           intro={t("experience.intro")}
         />
         <ApproachStory />
+        {/* The cadence this page promises is what the nearshore model buys. */}
+        <div className="mt-12">
+          <InlineCta
+            title={t("nearshoreLink.title")}
+            href="/nearshore"
+            label={t("nearshoreLink.label")}
+          />
+        </div>
       </Section>
 
       {/* The six-step methodology (shared with home) */}

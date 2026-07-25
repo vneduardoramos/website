@@ -61,7 +61,10 @@ const nextConfig = {
   // IA consolidation: pages merged into richer ones. Preserve old links/SEO.
   async redirects() {
     return [
-      { source: "/careers", destination: "/life-at-viewnear", permanent: true },
+      // /careers used to redirect here because there was no careers hub. It has
+      // one now (app/[locale]/(marketing)/careers/page.tsx), so the redirect is
+      // gone and the URL serves real content. The old rule was a 301, so
+      // clients that cached it will keep redirecting until that cache expires.
       { source: "/solutions", destination: "/services", permanent: true },
       { source: "/team", destination: "/about", permanent: true },
       { source: "/why-viewnear", destination: "/partnership", permanent: true },
