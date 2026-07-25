@@ -1,5 +1,5 @@
 {
- "exportedAt": "2026-07-25T17:48:04.400Z",
+ "exportedAt": "2026-07-25T23:02:23.165Z",
  "tables": {
   "tag": [],
   "client": [
@@ -282,23 +282,6 @@
   "media": [],
   "teamMember": [
    {
-    "id": "cmrp8aytc0015ee5k9smmbrs7",
-    "slug": "jc-rodriguez",
-    "name": "JC Rodriguez",
-    "title": "Head of Service Delivery",
-    "bio": null,
-    "photo": "/assets/images/team/jc-rodriguez.png",
-    "headshotId": null,
-    "bookingUrl": null,
-    "linkedinUrl": "https://www.linkedin.com/in/jcrodriguezmiranda/",
-    "titleEs": "Director de Entrega de Servicios",
-    "bioEs": null,
-    "order": 1,
-    "published": true,
-    "createdAt": "2026-07-17T17:45:36.192Z",
-    "updatedAt": "2026-07-25T17:48:03.887Z"
-   },
-   {
     "id": "cmrp8aytd0016ee5ksrwgpe59",
     "slug": "rene-trevino",
     "name": "René Treviño",
@@ -313,7 +296,41 @@
     "order": 2,
     "published": true,
     "createdAt": "2026-07-17T17:45:36.193Z",
-    "updatedAt": "2026-07-25T17:48:03.888Z"
+    "updatedAt": "2026-07-25T22:35:55.495Z"
+   },
+   {
+    "id": "cmrp8aytc0015ee5k9smmbrs7",
+    "slug": "jc-rodriguez",
+    "name": "JC Rodriguez",
+    "title": "Head of Service Delivery",
+    "bio": null,
+    "photo": "/assets/images/team/jc-rodriguez.png",
+    "headshotId": null,
+    "bookingUrl": "https://calendly.com/juan-r-miranda-viewnear/30min",
+    "linkedinUrl": "https://www.linkedin.com/in/jcrodriguezmiranda/",
+    "titleEs": "Director de Entrega de Servicios",
+    "bioEs": null,
+    "order": 1,
+    "published": true,
+    "createdAt": "2026-07-17T17:45:36.192Z",
+    "updatedAt": "2026-07-25T22:59:18.089Z"
+   },
+   {
+    "id": "cmrp8aytf001aee5kkov33gr6",
+    "slug": "eduardo-ramos",
+    "name": "Eduardo Javier Ramos",
+    "title": "CEO",
+    "bio": null,
+    "photo": "/assets/images/team/eduardo-ramos.png",
+    "headshotId": null,
+    "bookingUrl": "https://calendly.com/eduardo-viewnear/30min",
+    "linkedinUrl": "https://www.linkedin.com/in/eduardojramos/",
+    "titleEs": "CEO",
+    "bioEs": null,
+    "order": 6,
+    "published": true,
+    "createdAt": "2026-07-17T17:45:36.195Z",
+    "updatedAt": "2026-07-25T23:01:23.858Z"
    },
    {
     "id": "cmrp8aytd0017ee5kq6ht4rlq",
@@ -365,23 +382,6 @@
     "published": true,
     "createdAt": "2026-07-17T17:45:36.195Z",
     "updatedAt": "2026-07-25T17:48:03.889Z"
-   },
-   {
-    "id": "cmrp8aytf001aee5kkov33gr6",
-    "slug": "eduardo-ramos",
-    "name": "Eduardo Javier Ramos",
-    "title": "CEO",
-    "bio": null,
-    "photo": "/assets/images/team/eduardo-ramos.png",
-    "headshotId": null,
-    "bookingUrl": null,
-    "linkedinUrl": "https://www.linkedin.com/in/eduardojramos/",
-    "titleEs": "CEO",
-    "bioEs": null,
-    "order": 6,
-    "published": true,
-    "createdAt": "2026-07-17T17:45:36.195Z",
-    "updatedAt": "2026-07-25T17:48:03.890Z"
    }
   ],
   "service": [
