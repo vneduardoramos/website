@@ -145,12 +145,12 @@ These tasks bring the rest of the site to the approved Mexican professional regi
 - [ ] **Step 1: approach.json edits.** Read the file, then apply per line against the en source (`messages/en/approach.json`):
   - line 4 (meta): "revisiones de dirección" -> "juntas de seguimiento"; "puntos de control de prueba de concepto" -> "puntos de control de POC".
   - lines 9, 13, 14, 18, 19, 28: every `patrocinador(es)` -> `sponsor(s)` (e.g. line 13 title becomes "Cómo se vive un proyecto desde la perspectiva del sponsor").
-  - line 24: "descubrimiento pagada... fija el alcance" -> "discovery pagado... fija el scope".
+  - line 24: "descubrimiento pagada... fija el alcance" -> "discovery... fija el scope".
   - line 28: align to the en card content ("Regular steering reviews... keep sponsors in control of scope... throughout") in the approved register: "Juntas de seguimiento periódicas, un backlog compartido y puntos de decisión claros mantienen a los sponsors en control del scope, el presupuesto y las prioridades en todo momento."
   - line 32: "prueba de concepto" -> "POC".
   - remaining `alcance` (engagement-scope sense, lines 14, 28) -> `scope`.
 - [ ] **Step 2: approachUi.json edits.** CRITICAL: preserve the `<art>...</art>` ICU rich-text tags exactly around replacements (mismatched tags break next-intl parsing):
-  - line 5: "El patrocinador sale con un `<art>`alcance fijo`</art>`" -> "El sponsor sale con un `<art>`scope fijo`</art>`"; "descubrimiento pagado" -> "discovery pagado".
+  - line 5: "El patrocinador sale con un `<art>`alcance fijo`</art>`" -> "El sponsor sale con un `<art>`scope fijo`</art>`"; "descubrimiento pagado" -> "discovery".
   - line 13: `patrocinador` -> `sponsor`; `alcance` -> `scope`.
   - line 17: "una `<art>`prueba de concepto`</art>` enfocada" -> "un `<art>`POC`</art>` enfocado" (gender: el POC).
   - line 21: both "cifras" -> "números" with agreement ("los números en los que los equipos confían hoy", "Los nuevos números ganan su credibilidad").
@@ -182,7 +182,7 @@ git add messages/es/approach.json messages/es/approachUi.json && git commit -m "
 - [ ] **Step 1: Apply, each against its own en source string in `messages/en/services.json`:**
   - lines 33, 58: `cifras` -> `números` (adjust articles/adjectives for gender).
   - run.phases block (lines 71-92): line 80 becomes "Juntas de seguimiento periódicas, un backlog compartido y puntos de decisión claros mantienen a los sponsors en control del scope, el presupuesto y las prioridades en todo momento."; line 85 `prueba de concepto` -> `POC`; line 75 `descubrimiento` -> `discovery`.
-  - line 114: "Definimos el scope del trabajo en un discovery pagado y breve" (replaces "alcance del trabajo" and "descubrimiento").
+  - line 114: "Definimos el scope del trabajo en un discovery breve" (replaces "alcance del trabajo" and "descubrimiento").
   - line 120: "trabajo guiado por el discovery".
   - line 123: "Discovery, POCs y scope cambiante".
 - [ ] **Step 2: Verify**
@@ -210,10 +210,10 @@ git add messages/es/services.json && git commit -m "feat(i18n): services es voic
   - line 26: "Un alcance, un cronograma..." -> "Un scope, un cronograma..."
   - line 31: "guiado por el descubrimiento" -> "guiado por el discovery"
   - line 32: "Descubrimiento, POCs y alcance cambiante" -> "Discovery, POCs y scope cambiante"
-  - line 42: "un descubrimiento pagado fija el alcance y el precio" -> "un discovery pagado fija el scope y el precio"; "que el patrocinador conoce" -> "que el sponsor conoce"
+  - line 42: "un descubrimiento pagado fija el alcance y el precio" -> "un discovery fija el scope y el precio"; "que el patrocinador conoce" -> "que el sponsor conoce"
   - line 48: "estimado con alcance definido" -> "estimado con scope definido"
   - line 52: "dentro del alcance" -> "dentro del scope"
-  - line 63: "el alcance queda fijado en un descubrimiento pagado" -> "el scope queda fijado en un discovery pagado"
+  - line 63: "el alcance queda fijado en un descubrimiento pagado" -> "el scope queda fijado en el discovery"
 - [ ] **Step 2: Verify**
 
 ```bash

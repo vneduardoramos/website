@@ -38,7 +38,7 @@ The good news is that most of these drivers are movable.
 
 ## The shape of a sensible migration
 
-We almost always start with a paid discovery: a short, fixed engagement that inventories the source system, profiles the data, and produces a real scope and estimate instead of a guess. That discovery is where the range narrows from "somewhere between X and 3X" to a number you can actually plan around.
+We almost always start with a discovery: a short, fixed engagement that inventories the source system, profiles the data, and produces a real scope and estimate instead of a guess. That discovery is where the range narrows from "somewhere between X and 3X" to a number you can actually plan around.
 
 From there, the work runs in phases with validated parity at each step and a handover that leaves your team running the result, not dependent on us to touch it. Time-to-value shows up early because the first workloads reach production in weeks, not at the end of a year-long project.
 

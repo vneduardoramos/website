@@ -79,8 +79,8 @@
   "process": [
     {
       "phase": "Phase 1 · Weeks 1–2",
-      "title": "Paid discovery",
-      "body": "A short, paid engagement that inventories sources, profiles the real state of the data, and fixes scope. It ends in a design, a plan, and a price, which is why we can commit to both instead of guessing at them."
+      "title": "Discovery",
+      "body": "A short, focused engagement that inventories sources, profiles the real state of the data, and fixes scope. It ends in a design, a plan, and a price, which is why we can commit to them instead of guessing."
     },
     {
       "phase": "Phase 2 · Weeks 2–8",
@@ -138,7 +138,7 @@
   "cost": {
     "eyebrow": "What it costs",
     "title": "Priced to the work, agreed up front",
-    "body": "There is no standard price for a Snowflake implementation, and anyone quoting one before seeing the environment is guessing. Cost is driven by a few clear factors, and a paid discovery turns the range into a number that can be planned around.",
+    "body": "There is no standard price for a Snowflake implementation, and anyone quoting one before seeing the environment is guessing. Cost is driven by a few clear factors, and a discovery turns the range into a number that can be planned around.",
     "factors": [
       "Data volume, plus the number and complexity of source systems",
       "How many analytics and AI use cases are in scope",
@@ -174,11 +174,11 @@
     },
     {
       "q": "How much does a Snowflake implementation cost?",
-      "a": "It depends on data volume, the number and complexity of source systems, how many use cases are in scope, and what governance the sector demands. We do not publish a standard price because no two data estates are alike. A paid discovery is the honest first step: it fixes scope and returns a firm price, and it is far cheaper than the rework that follows a guessed quote. Note that Snowflake's consumption cost is separate from the implementation project cost."
+      "a": "It depends on data volume, the number and complexity of source systems, how many use cases are in scope, and what governance the sector demands. We do not publish a standard price because no two data estates are alike. A short discovery is the honest first step: it fixes scope and returns a firm price, and it is far cheaper than the rework that follows a guessed quote. Note that Snowflake's consumption cost is separate from the implementation project cost."
     },
     {
       "q": "How long does a Snowflake implementation take?",
-      "a": "A first production build typically runs 8 to 16 weeks, depending on data volume, source complexity, and the use cases in scope. What keeps that real is the mechanism: a paid discovery fixes scope up front, use-case sprints demo working software from the first weeks, and proof runs in parallel with the build so value shows from sprint one rather than at the end."
+      "a": "A first production build typically runs 8 to 16 weeks, depending on data volume, source complexity, and the use cases in scope. What keeps that real is the mechanism: a discovery fixes scope up front, use-case sprints demo working software from the first weeks, and proof runs in parallel with the build so value shows from sprint one rather than at the end."
     },
     {
       "q": "What Snowflake partner status does Viewnear hold?",
@@ -211,6 +211,6 @@
   ],
   "cta": {
     "title": "Scope the implementation before committing to it.",
-    "subtitle": "Tell us where the organization stands with Snowflake and what the business needs from it. A paid discovery returns a design, a plan, and a firm price, and it is the cheapest part of the whole engagement."
+    "subtitle": "Tell us where the organization stands with Snowflake and what the business needs from it. A discovery returns a design, a plan, and a firm price, and it is the cheapest part of the whole engagement."
   }
 }

@@ -28,7 +28,7 @@ La mejor arquitectura del mundo se construye despacio si el equipo que la entreg
 
 El precio no es solo un número; dice qué está optimizando el partner. Una firma que cobra por hora está, por estructura, premiada por que el trabajo tarde más. Una firma que cobra por resultado está premiada por terminar. Ninguno es automáticamente el correcto, pero conviene saber cuál se está comprando y si el incentivo apunta en la misma dirección que el propio.
 
-Vale la pena preguntar cómo se define el scope del primer proyecto. Un partner serio propondrá un discovery pagado que fija el scope antes del build completo, y sprints por caso de uso que llegan a producción en semanas con evidencia antes de comprometerse a escalar, no una cotización cerrada sobre una especificación que nadie entiende del todo todavía.
+Vale la pena preguntar cómo se define el scope del primer proyecto. Un partner serio propondrá un discovery que fija el scope antes del build completo, y sprints por caso de uso que llegan a producción en semanas con evidencia antes de comprometerse a escalar, no una cotización cerrada sobre una especificación que nadie entiende del todo todavía.
 
 ## Evidencia, no adjetivos
 
@@ -45,7 +45,7 @@ Cualquiera puede decir que tiene experiencia. Lo que cuenta es lo concreto:
 - ¿Construyen con el equipo interno y entregan el trabajo, o construyen y se van?
 - ¿Cuál es el horario de entrega y cuánto se traslapa con el suyo?
 - ¿El precio premia terminar, o premia facturar más horas?
-- ¿Cómo se define el scope del primer proyecto: discovery pagado y sprints, o una cotización cerrada sobre una especificación difusa?
+- ¿Cómo se define el scope del primer proyecto: discovery y sprints, o una cotización cerrada sobre una especificación difusa?
 - ¿Pueden dar referencias y un proyecto real que puedan recorrer a detalle?
 - ¿El gobierno y el control de costo se diseñan desde el inicio?
 

@@ -28,7 +28,7 @@ The best architecture in the world is slow to build if the team delivering it is
 
 Pricing is not just a number; it tells you what the partner is optimizing for. A firm that bills by the hour is, structurally, rewarded for the work taking longer. A firm that prices on the outcome is rewarded for finishing. Neither is automatically right, but you should know which one you are buying, and whether the incentive points the same direction as yours.
 
-Ask how a first engagement is scoped. A serious partner will propose a paid discovery that fixes scope before the full build, and use-case sprints that reach production in weeks with proof before you commit to scale, not a fixed bid on a spec nobody fully understands yet.
+Ask how a first engagement is scoped. A serious partner will propose a discovery that fixes scope before the full build, and use-case sprints that reach production in weeks with proof before you commit to scale, not a fixed bid on a spec nobody fully understands yet.
 
 ## Ask for proof, not adjectives
 
@@ -45,7 +45,7 @@ Anyone can say they are experienced. Ask for the specifics:
 - Do they build with your team and hand the work over, or build and leave?
 - What are the delivery hours, and how much overlaps yours?
 - Does the pricing reward finishing, or reward billing more hours?
-- How is the first engagement scoped: paid discovery and sprints, or a fixed bid on a fuzzy spec?
+- How is the first engagement scoped: discovery and sprints, or a fixed bid on a fuzzy spec?
 - Can they give references and a real project they can walk you through?
 - Is governance and cost control designed in from the start?
 

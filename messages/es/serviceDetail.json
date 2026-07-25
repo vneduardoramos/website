@@ -32,7 +32,7 @@
     "flowTitle": "Cada proyecto se desarrolla igual",
     "flowIntro": "Una cadencia fija que pone software funcionando frente al equipo rápido y toma cada decisión con evidencia, no con una presentación.",
     "steps": [
-      { "label": "01", "title": "Discovery pagado", "body": "Un proyecto corto y pagado que fija el scope y revela el estado real de los datos." },
+      { "label": "01", "title": "Discovery", "body": "Un proyecto corto y pagado que fija el scope y revela el estado real de los datos." },
       { "label": "02", "title": "Sprints por caso de uso", "body": "Incrementos funcionando en el ambiente del cliente, una pieza lista para decidir a la vez." },
       { "label": "03", "title": "Prueba antes de escalar", "body": "Cada pieza se comprueba en producción antes de comprometer la siguiente." },
       { "label": "04", "title": "Una práctica que conserva", "body": "El equipo del cliente construye junto al nuestro, así la capacidad permanece después de nuestra salida." }

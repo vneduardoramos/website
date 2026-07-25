@@ -21,7 +21,7 @@
   "runPhases": [
     {
       "title": "Un arco fijo de 8 a 16 semanas",
-      "body": "La mayoría de los primeros desarrollos llegan a producción en 8 a 16 semanas: una fase de discovery pagado fija el scope y el precio desde el inicio, y cada sprint cierra con software funcional, para que el valor llegue desde el primer sprint."
+      "body": "La mayoría de los primeros desarrollos llegan a producción en 8 a 16 semanas: una fase de discovery fija el scope y el precio desde el inicio, y cada sprint cierra con software funcional, para que el valor llegue desde el primer sprint."
     },
     {
       "title": "Dirección y transparencia",

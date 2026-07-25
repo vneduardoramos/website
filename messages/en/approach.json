@@ -21,7 +21,7 @@
   "runPhases": [
     {
       "title": "A fixed 8–16 week arc",
-      "body": "Most initial builds reach production in 8–16 weeks: a paid discovery fixes scope and price up front, and every sprint closes with working software, so value lands from sprint one."
+      "body": "Most initial builds reach production in 8–16 weeks: a discovery fixes scope and price up front, and every sprint closes with working software, so value lands from sprint one."
     },
     {
       "title": "Steering & transparency",

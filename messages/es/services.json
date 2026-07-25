@@ -81,7 +81,7 @@
       {
         "label": "Plazos",
         "title": "Un arco fijo de 8 a 16 semanas",
-        "body": "La mayoría de los primeros desarrollos llegan a producción en 8 a 16 semanas: una fase de discovery pagado fija el scope y el precio desde el inicio, y cada sprint cierra con software funcional, para que el valor llegue desde el primer sprint."
+        "body": "La mayoría de los primeros desarrollos llegan a producción en 8 a 16 semanas: una fase de discovery fija el scope y el precio desde el inicio, y cada sprint cierra con software funcional, para que el valor llegue desde el primer sprint."
       },
       {
         "label": "Dirección",
@@ -120,7 +120,7 @@
       {
         "title": "Costo fijo",
         "body": "Un scope, un cronograma y un precio definidos y acordados por adelantado. Ideal cuando el resultado es claro y la certeza presupuestaria importa desde el primer día.",
-        "how": "Definimos el scope del trabajo en un discovery pagado y breve, y luego nos comprometemos con un precio y una fecha.",
+        "how": "Definimos el scope del trabajo en un discovery breve, y luego nos comprometemos con un precio y una fecha.",
         "includes": [
           "Enunciado de trabajo con scope definido",
           "Hitos con puntos de decisión",

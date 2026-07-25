@@ -81,7 +81,7 @@
       {
         "label": "Timeline",
         "title": "A fixed 8–16 week arc",
-        "body": "Most initial builds reach production in 8–16 weeks: a paid discovery fixes scope and price up front, and every sprint closes with working software, so value lands from sprint one."
+        "body": "Most initial builds reach production in 8–16 weeks: a discovery fixes scope and price up front, and every sprint closes with working software, so value lands from sprint one."
       },
       {
         "label": "Steering",
@@ -120,7 +120,7 @@
       {
         "title": "Fixed cost",
         "body": "A defined scope, timeline, and price agreed up front: fixed-outcome delivery, priced to the result rather than the hours. Best when the outcome is clear and budget certainty matters from day one.",
-        "how": "We scope the work in a short, paid discovery, then commit to a price and a date.",
+        "how": "We scope the work in a short, discovery, then commit to a price and a date.",
         "includes": [
           "Scoped statement of work",
           "Milestones with decision gates",

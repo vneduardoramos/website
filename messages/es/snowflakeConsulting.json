@@ -79,7 +79,7 @@
   "process": [
     {
       "phase": "Fase 1 · Semanas 1 a 2",
-      "title": "Discovery pagado",
+      "title": "Discovery",
       "body": "Un proyecto corto y pagado que inventaría las fuentes, perfila el estado real de los datos y fija el scope. Termina en un diseño, un plan y un precio, y por eso podemos comprometer ambos en lugar de adivinarlos."
     },
     {
@@ -138,7 +138,7 @@
   "cost": {
     "eyebrow": "Cuánto cuesta",
     "title": "Precio según el trabajo, acordado por adelantado",
-    "body": "No hay un precio estándar para una implementación de Snowflake, y quien cotice uno antes de ver el entorno está adivinando. El costo lo determinan unos cuantos factores claros, y un discovery pagado convierte el rango en un número que se puede planear.",
+    "body": "No hay un precio estándar para una implementación de Snowflake, y quien cotice uno antes de ver el entorno está adivinando. El costo lo determinan unos cuantos factores claros, y un discovery convierte el rango en un número que se puede planear.",
     "factors": [
       "Volumen de datos, más la cantidad y complejidad de los sistemas fuente",
       "Cuántos casos de uso de analítica e IA entran en el scope",
@@ -174,11 +174,11 @@
     },
     {
       "q": "¿Cuánto cuesta una implementación de Snowflake?",
-      "a": "Depende del volumen de datos, la cantidad y complejidad de los sistemas fuente, cuántos casos de uso entran en el scope y qué gobierno exige el sector. No publicamos un precio estándar porque no hay dos entornos de datos iguales. Un discovery pagado es el primer paso honesto: fija el scope y devuelve un precio firme, y sale mucho más barato que el retrabajo que sigue a una cotización adivinada. El costo de consumo de Snowflake es independiente del costo del proyecto."
+      "a": "Depende del volumen de datos, la cantidad y complejidad de los sistemas fuente, cuántos casos de uso entran en el scope y qué gobierno exige el sector. No publicamos un precio estándar porque no hay dos entornos de datos iguales. Un discovery breve es el primer paso honesto: fija el scope y devuelve un precio firme, y sale mucho más barato que el retrabajo que sigue a una cotización adivinada. El costo de consumo de Snowflake es independiente del costo del proyecto."
     },
     {
       "q": "¿Cuánto tarda una implementación de Snowflake?",
-      "a": "Una primera construcción en producción suele tomar de 8 a 16 semanas, según el volumen de datos, la complejidad de las fuentes y los casos de uso en scope. Lo que mantiene ese número real es el mecanismo: un discovery pagado fija el scope desde el inicio, los sprints por caso de uso muestran software funcionando desde las primeras semanas, y la prueba corre en paralelo con la construcción, así que el valor aparece desde el primer sprint y no al final."
+      "a": "Una primera construcción en producción suele tomar de 8 a 16 semanas, según el volumen de datos, la complejidad de las fuentes y los casos de uso en scope. Lo que mantiene ese número real es el mecanismo: un discovery fija el scope desde el inicio, los sprints por caso de uso muestran software funcionando desde las primeras semanas, y la prueba corre en paralelo con la construcción, así que el valor aparece desde el primer sprint y no al final."
     },
     {
       "q": "¿Qué estatus de partner de Snowflake tiene Viewnear?",
@@ -211,6 +211,6 @@
   ],
   "cta": {
     "title": "Dimensionar la implementación antes de comprometerse con ella.",
-    "subtitle": "Basta con contarnos en qué punto está la organización con Snowflake y qué necesita el negocio de eso. Un discovery pagado devuelve un diseño, un plan y un precio firme, y es la parte más barata de todo el proyecto."
+    "subtitle": "Basta con contarnos en qué punto está la organización con Snowflake y qué necesita el negocio de eso. Un discovery devuelve un diseño, un plan y un precio firme, y es la parte más barata de todo el proyecto."
   }
 }

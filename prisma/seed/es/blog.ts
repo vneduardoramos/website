@@ -20,7 +20,7 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
       "El mayor factor del proyecto suele ser los pipelines y las transformaciones, no el volumen de datos en crudo: cada job y cada regla de negocio enterrada hay que reconstruirlos y validarlos.",
       "El sistema de origen importa: salir de Teradata, Oracle o Hadoop carga más equipaje propietario que Redshift o SQL Server.",
       "Puede bajar el número con conversión automatizada de código, retirando pipelines muertos, con paridad validada y un cutover por fases en lugar de uno de un solo golpe.",
-      "El primer paso honesto es un discovery pagado, no una cotización: estrecha el rango de una adivinanza a un número con el que puede planear.",
+      "El primer paso honesto es un discovery, no una cotización: estrecha el rango de una adivinanza a un número con el que puede planear.",
     ],
   },
   "nearshore-vs-offshore-snowflake": {

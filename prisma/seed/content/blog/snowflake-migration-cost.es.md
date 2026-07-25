@@ -38,7 +38,7 @@ La buena noticia es que la mayoría de estos factores se pueden mover.
 
 ## La forma de una migración sensata
 
-Casi siempre empezamos con un discovery pagado: un proyecto corto y cerrado que inventaría el sistema de origen, perfila los datos y produce un scope y un estimado reales en lugar de una adivinanza. Ese discovery es donde el rango se estrecha de "entre X y 3X" a un número con el que de verdad puede planear.
+Casi siempre empezamos con un discovery: un proyecto corto y cerrado que inventaría el sistema de origen, perfila los datos y produce un scope y un estimado reales en lugar de una adivinanza. Ese discovery es donde el rango se estrecha de "entre X y 3X" a un número con el que de verdad puede planear.
 
 De ahí, el trabajo corre por fases con paridad validada en cada paso y una entrega que deja al equipo interno operando el resultado, no dependiendo de nosotros para tocarlo. El tiempo a valor aparece temprano porque los primeros workloads llegan a producción en semanas, no al final de un proyecto de un año.
 

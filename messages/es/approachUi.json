@@ -2,7 +2,7 @@
   "story": {
     "beat1": {
       "title": "Semana 1–2: un scope que vale la pena firmar",
-      "body": "Comienza con un <art>discovery pagado</art>: nuestros arquitectos se sientan con las partes interesadas, recorren las fuentes y priorizan los casos de uso según lo que aportan. El sponsor sale con un <art>scope fijo</art> a un precio fijo, de modo que lo que se presenta al directorio es un compromiso, no una estimación."
+      "body": "Comienza con un <art>discovery</art>: nuestros arquitectos se sientan con las partes interesadas, recorren las fuentes y priorizan los casos de uso según lo que aportan. El sponsor sale con un <art>scope fijo</art> a un precio fijo, de modo que lo que se presenta al directorio es un compromiso, no una estimación."
     },
     "beat2": {
       "title": "El ritmo de los sprints",

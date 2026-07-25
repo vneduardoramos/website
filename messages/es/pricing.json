@@ -39,7 +39,7 @@
   ],
   "workedExample": {
     "eyebrow": "Un ejemplo concreto",
-    "body": "La forma de un primer proyecto típico: un discovery pagado fija el scope y el precio, las demos de cada sprint muestran software funcionando desde las primeras semanas, y una base gobernada llega a producción en 8 a 16 semanas, con un equipo nombrado que el sponsor conoce antes de firmar y con personas internas en el trabajo desde el primer sprint."
+    "body": "La forma de un primer proyecto típico: un discovery fija el scope y el precio, las demos de cada sprint muestran software funcionando desde las primeras semanas, y una base gobernada llega a producción en 8 a 16 semanas, con un equipo nombrado que el sponsor conoce antes de firmar y con personas internas en el trabajo desde el primer sprint."
   },
   "cost": {
     "eyebrow": "Qué determina el costo",
@@ -60,7 +60,7 @@
     {
       "phase": "Primeras 8 a 16 semanas",
       "title": "Bases y primer valor",
-      "body": "La práctica de datos se pone en marcha: el scope queda fijado en un discovery pagado, el gobierno se diseña desde la primera tabla, los datos prioritarios empiezan a fluir y los primeros productos de datos gobernados entran en producción."
+      "body": "La práctica de datos se pone en marcha: el scope queda fijado en el discovery, el gobierno se diseña desde la primera tabla, los datos prioritarios empiezan a fluir y los primeros productos de datos gobernados entran en producción."
     },
     {
       "phase": "6 a 12 meses",

@@ -39,7 +39,7 @@
   ],
   "workedExample": {
     "eyebrow": "A worked example",
-    "body": "The shape of a typical first engagement: a paid discovery fixes scope and price, sprint demos show working software from the first weeks, and a governed foundation reaches production in 8–16 weeks, with a named team the sponsor meets before signing and in-house people in the work from sprint one."
+    "body": "The shape of a typical first engagement: a discovery fixes scope and price, sprint demos show working software from the first weeks, and a governed foundation reaches production in 8–16 weeks, with a named team the sponsor meets before signing and in-house people in the work from sprint one."
   },
   "cost": {
     "eyebrow": "What drives cost",
@@ -60,7 +60,7 @@
     {
       "phase": "First 8–16 weeks",
       "title": "Foundations & first value",
-      "body": "The data practice stands up: scope fixed in a paid discovery, governance designed in from the first table, priority data flowing, and the first governed data products in production."
+      "body": "The data practice stands up: scope fixed in discovery, governance designed in from the first table, priority data flowing, and the first governed data products in production."
     },
     {
       "phase": "6–12 months",

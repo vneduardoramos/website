@@ -32,7 +32,7 @@
     "flowTitle": "Every engagement runs the same way",
     "flowIntro": "A fixed cadence that puts working software in front of you fast and makes each decision on evidence, not a deck.",
     "steps": [
-      { "label": "01", "title": "Paid discovery", "body": "A short, paid engagement that fixes scope and surfaces the real state of your data." },
+      { "label": "01", "title": "Discovery", "body": "A short, focused engagement that fixes scope and surfaces the real state of your data." },
       { "label": "02", "title": "Use-case sprints", "body": "Working increments ship into your environment, one decision-ready slice at a time." },
       { "label": "03", "title": "Proof before scale", "body": "Each slice proves out in production before anyone commits to the next." },
       { "label": "04", "title": "A practice you keep", "body": "Your team builds alongside ours, so the capability stays after we step back." }
