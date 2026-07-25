@@ -9,6 +9,14 @@ Confident, precise, and human: a partner who knows the work, not a vendor readin
 - **Do:** be precise and technical; speak to outcomes; stay warm and human.
 - **Don't:** bury value in jargon; overpromise ("revolutionary", "magic"); sound corporate/cold.
 
+### No caveats, no explaining ourselves (2026-07-25)
+
+Accuracy is required; apologizing for it is not. State a fact and move on. Never frame a detail as a **caveat, disclaimer, admission, or confession**, and never narrate our own honesty.
+
+- Banned framings: "one caveat worth stating", "the honest version", "to be fair", "we should admit", "worth saying plainly rather than claiming...", "full disclosure". In Spanish: "la versión honesta", "una aclaración que vale decir", "vale más decirlo que...".
+- Structure a factual detail as **promise, then mechanism**: lead with what the client gets, state the fact plainly in the middle, close on the benefit. Not: fact, hedge, reassurance.
+- Worked example. The Monterrey time-zone detail (Mexico dropped DST in 2022, so the clock sits an hour behind US Central from March to November) is real and must stay in the copy, because the live `TwoClocks` widget shows it. It reads: *"The team works your business hours year round. Monterrey holds CST all year, so when US Central moves to CDT the clock here sits an hour behind: the working day still overlaps end to end."* It used to read *"Central Time, with one caveat worth stating"*, which was rejected.
+
 ### Spanish (es) voice — Mexican professional register, impersonal (revised 2026-07-25)
 
 The `/es` site is **Mexican business Spanish**: professional and human, NOT a literal translation of the English and NOT casual/slangy. The exemplar is the home page (`messages/es/home.json`, `heroUi.json`, `homeServer.json`, and the `hero` blob in `prisma/seed/es/settings.ts`). Match its register when translating any other page.

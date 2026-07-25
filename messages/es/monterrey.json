@@ -54,9 +54,9 @@
     }
   ],
   "timeZone": {
-    "eyebrow": "La versión honesta del argumento de horario",
-    "title": "Horario del centro, con una aclaración que vale decir",
-    "body": "México dejó de aplicar el horario de verano en 2022, así que Monterrey mantiene el horario estándar del centro (CST) todo el año, mientras que el centro de Estados Unidos cambia a CDT de marzo a noviembre. En esos meses el reloj de Monterrey marca una hora antes que el del cliente. En la operación no cambia nada, porque el equipo trabaja en el horario laboral del cliente de cualquier forma, y vale más decirlo con claridad que presumir un reloj idéntico los doce meses del año.",
+    "eyebrow": "Horario del centro",
+    "title": "Una sola jornada, de principio a fin",
+    "body": "Monterrey mantiene el horario estándar del centro (CST) todo el año, porque México dejó de aplicar el horario de verano en 2022. El centro de Estados Unidos cambia a CDT de marzo a noviembre, lo que deja el reloj de Monterrey una hora menos durante parte del año. El horario del equipo lo absorbe: se trabaja en la jornada laboral del cliente, así que el día se traslapa desde el standup de la mañana hasta el cierre y nada espera una transferencia.",
     "bullets": [
       "Standups, sprint reviews y juntas de seguimiento dentro de la jornada del cliente",
       "Respuestas el mismo día ante un bloqueo, no una cola que se libera al día siguiente",

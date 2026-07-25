@@ -54,9 +54,9 @@
     }
   ],
   "timeZone": {
-    "eyebrow": "The honest version of the time-zone claim",
-    "title": "Central Time, with one caveat worth stating",
-    "body": "Mexico stopped observing daylight saving time in 2022, so Monterrey holds Central Standard Time (CST) all year while US Central switches to CDT from March to November. In those months the Monterrey clock reads an hour earlier than the client's. It changes nothing operationally, because the team works the client's business hours either way, and it is worth saying plainly rather than claiming an identical clock twelve months a year.",
+    "eyebrow": "Central Time",
+    "title": "One working day, start to finish",
+    "body": "Monterrey holds Central Standard Time (CST) year round, since Mexico stopped observing daylight saving time in 2022. US Central moves to CDT from March to November, which puts the Monterrey clock an hour behind for part of the year. The schedule absorbs it: the team works the client's business hours, so the day overlaps from the morning standup to the end of it, and nothing waits for a handoff.",
     "bullets": [
       "Standups, sprint reviews, and steering meetings inside the client's working day",
       "Same-day answers on blockers, not a queue that clears overnight",
