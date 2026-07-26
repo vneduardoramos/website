@@ -234,6 +234,7 @@ export const ADMIN_MODELS: Record<string, AdminModel> = {
       { name: "deliverables", label: "Deliverables", type: "jsonObjects", help: 'JSON: [{"title":"","description":""}]' },
       { name: "tools", label: "Tools", type: "jsonList" },
       { name: "stats", label: "Stats", type: "jsonObjects", help: 'JSON: [{"label":"","value":""}]' },
+      { name: "faq", label: "Sector FAQ", type: "jsonObjects", help: 'JSON: [{"q":"","a":""}] rendered on the page and emitted as FAQPage schema' },
       { name: "order", label: "Order", type: "number" },
       // --- Spanish (es) ---
       { name: "nameEs", label: "Name (ES)", type: "text" },
@@ -243,6 +244,7 @@ export const ADMIN_MODELS: Record<string, AdminModel> = {
       { name: "challengesEs", label: "Challenges (ES)", type: "jsonObjects", help: 'JSON: [{"problem":"","response":""}]' },
       { name: "deliverablesEs", label: "Deliverables (ES)", type: "jsonObjects", help: 'JSON: [{"title":"","description":""}]' },
       { name: "statsEs", label: "Stats (ES)", type: "jsonObjects", help: 'JSON: [{"label":"","value":""}]' },
+      { name: "faqEs", label: "Sector FAQ (ES)", type: "jsonObjects", help: 'JSON: [{"q":"","a":""}]' },
       { name: "seoTitleEs", label: "SEO Title (ES)", type: "text" },
       { name: "seoDescriptionEs", label: "SEO Description (ES)", type: "textarea" },
       statusField,

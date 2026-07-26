@@ -16,13 +16,15 @@ import {
 } from "@/components/marketing/ui";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { ShowcaseBand } from "@/components/marketing/ShowcaseBand";
+import { Faq } from "@/components/marketing/Faq";
+import { JsonLd } from "@/components/JsonLd";
 import { MetricBand } from "@/components/marketing/Blocks";
 import { PlateCard } from "@/components/marketing/Cards";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { HeroBackground } from "@/components/marketing/HeroBackground";
 import { MaskReveal } from "@/components/marketing/Motion";
 import { getFlavor, getFlavorText, INDUSTRY_FLAVOR } from "@/components/marketing/industries/flavor";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, faqLd } from "@/lib/seo";
 
 export const revalidate = 60;
 
@@ -74,6 +76,10 @@ export default async function IndustryDetailPage({
   const deliverables = asObjectArray<{ title: string; description: string }>(
     industry.deliverables
   );
+  // Sector-specific Q&A: distinct per industry, so each page answers the
+  // questions a buyer in THAT sector actually asks instead of repeating the
+  // site-wide FAQ.
+  const faqRows = asObjectArray<{ q: string; a: string }>(industry.faq);
   const tools = asStringArray(industry.tools);
 
   const all = await getIndustries(locale as Locale);
@@ -408,6 +414,22 @@ export default async function IndustryDetailPage({
           </div>
         </Section>
       ) : null}
+
+      {faqRows.length > 0 && (
+        <Section className="section-tint">
+          <SectionHeading align="center" eyebrow={t("faq.eyebrow")} title={t("faq.title")} />
+          <div className="mt-10">
+            <Faq items={faqRows} />
+          </div>
+          <JsonLd
+            data={faqLd(faqRows, {
+              url: `/industries/${slug}`,
+              locale,
+              name: t("faq.title"),
+            })}
+          />
+        </Section>
+      )}
 
       <CtaBand />
     </div>

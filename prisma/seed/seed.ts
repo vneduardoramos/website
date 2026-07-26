@@ -137,6 +137,7 @@ async function main() {
       deliverables: J(i.deliverables),
       tools: J(i.tools),
       stats: J(i.stats),
+      faq: i.faq ? J(i.faq) : null,
       order: i.order,
       status: "PUBLISHED",
       publishedAt: SITE_CONTENT_PUBLISHED_AT,
@@ -151,6 +152,7 @@ async function main() {
       challengesEs: iEs.challenges ? J(iEs.challenges) : null,
       deliverablesEs: iEs.deliverables ? J(iEs.deliverables) : null,
       statsEs: iEs.stats ? J(iEs.stats) : null,
+      faqEs: iEs.faq ? J(iEs.faq) : null,
       seoTitleEs: iEs.seoTitle ?? null,
       seoDescriptionEs: iEs.seoDescription ?? null,
     };

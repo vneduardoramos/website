@@ -13,7 +13,7 @@ export function isLocale(v: unknown): v is Locale {
 // Base field names that have an `${field}Es` counterpart, keyed by Prisma delegate.
 const FIELDS: Record<string, string[]> = {
   service: ["title", "summary", "body", "seoTitle", "seoDescription"],
-  industry: ["name", "headline", "intro", "body", "challenges", "deliverables", "stats", "seoTitle", "seoDescription"],
+  industry: ["name", "headline", "intro", "body", "challenges", "deliverables", "stats", "faq", "seoTitle", "seoDescription"],
   caseStudy: ["title", "summary", "body", "challenge", "solution", "results", "metrics", "quote", "seoTitle", "seoDescription"],
   blogPost: ["title", "excerpt", "body", "keyTakeaways", "seoTitle", "seoDescription"],
   teamMember: ["title", "bio", "bookingTopics"],

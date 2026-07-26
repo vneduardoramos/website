@@ -6,7 +6,7 @@
   "hero": {
     "eyebrow": "Plataforma",
     "title": "Construido <hl>de forma nativa en Snowflake</hl>, no añadido después.",
-    "description": "Una práctica de data & AI necesita un solo hogar, no cinco proveedores que reconciliar. Por eso todo lo que Viewnear construye para ella vive dentro de Snowflake (ingesta, transformación, gobierno, IA): un solo hogar gobernado para los datos, un solo linaje que auditar, un solo contexto que comparten cada equipo y cada agente."
+    "description": "Todo lo que Viewnear construye vive dentro de Snowflake: ingesta con Openflow, transformación en Snowpark y dbt, gobierno en Horizon Catalog e IA en Cortex. Una sola copia gobernada de los datos, un solo linaje y un solo lugar para otorgar acceso."
   },
   "stackStory": {
     "eyebrow": "Cómo se integra todo",

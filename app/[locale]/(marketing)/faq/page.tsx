@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, faqLd } from "@/lib/seo";
 import { Section, CtaBand } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 import { getSetting, safe } from "@/lib/queries";
@@ -38,19 +38,13 @@ export default async function FaqPage({ params }: { params: { locale: string } }
     group.items.push(row);
   }
 
-  const faqLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: rows.map((r) => ({
-      "@type": "Question",
-      name: r.q,
-      acceptedAnswer: { "@type": "Answer", text: r.a },
-    })),
-  };
+  // `name` uses meta.title, not hero.title: hero.title carries <hl> markup for
+  // the gradient span, and a plain t() call would put those tags in the schema.
+  const ld = faqLd(rows, { url: "/faq", locale, name: t("meta.title") });
 
   return (
     <>
-      {rows.length > 0 && <JsonLd data={faqLd} />}
+      {rows.length > 0 && <JsonLd data={ld} />}
       <PageHero
         eyebrow={t("hero.eyebrow")}
         title={t.rich("hero.title", { hl: (c) => <span className="text-gradient">{c}</span> })}

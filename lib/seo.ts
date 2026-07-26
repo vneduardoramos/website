@@ -267,6 +267,41 @@ export function collectionLd(opts: {
   return [collection, breadcrumbLd(crumbs, locale)];
 }
 
+/**
+ * `FAQPage` for a page's visible Q&A.
+ *
+ * The markup must describe what the page actually shows, so pass only the rows
+ * rendered on it. Deliberately NOT applied to pages that repeat the site-wide
+ * FAQ verbatim (/services and the home page both show the same rows as /faq):
+ * marking the identical set up on several URLs is what Google's FAQ guidance
+ * tells you not to do, and it wins nothing, because the underlying
+ * `<details>/<summary>` markup is already extractable.
+ *
+ * Worth knowing: Google withdrew FAQ rich results for most sites in 2023, so
+ * this earns no SERP feature. It stays because answer engines parse it when
+ * deciding which passage answers a question.
+ */
+export function faqLd(
+  rows: { q: string; a: string }[],
+  opts: { url: string; locale?: string; name?: string },
+): Record<string, unknown> {
+  const { url, locale = DEFAULT_LOCALE, name } = opts;
+  const abs = absoluteForLocale(url, locale);
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${abs}#faq`,
+    url: abs,
+    ...(name ? { name } : {}),
+    inLanguage: locale,
+    mainEntity: rows.map((r) => ({
+      "@type": "Question",
+      name: r.q,
+      acceptedAnswer: { "@type": "Answer", text: r.a },
+    })),
+  };
+}
+
 export function breadcrumbLd(
   items: BreadcrumbItem[],
   locale: string = DEFAULT_LOCALE,

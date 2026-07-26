@@ -104,6 +104,7 @@ model Industry {
   deliverables     String? // [{title, description}]
   tools            String? // string[]
   stats            String? // [{label, value}]
+  faq              String? // [{q, a}] sector-specific Q&A, rendered and marked up as FAQPage
   body             String?
   ogImage          String?
   caseStudies      CaseStudy[]
@@ -114,6 +115,7 @@ model Industry {
   challengesEs     String?
   deliverablesEs   String?
   statsEs          String?
+  faqEs            String?
   bodyEs           String?
   seoTitleEs       String?
   seoDescriptionEs String?

@@ -60,5 +60,9 @@
   "other": {
     "eyebrow": "Explore",
     "title": "Other industries"
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "title": "Common questions in this sector"
   }
 }

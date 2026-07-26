@@ -382,6 +382,11 @@ export const industries = [
     ],
     tools: ["Snowflake", "Openflow", "Cortex", "Streamlit"],
     stats: [{ label: "Clients in this industry", value: "6+" }],
+    faq: [
+      { q: "How can a contractor see budget-vs-actual and schedule risk in time to act?", a: "Budget-vs-actual, earned value, and schedule risk sit in one governed view on Snowflake, built from scheduling, cost, and progress data consolidated out of spreadsheets into one governed, trusted source. Viewnear surfaces budget-vs-actual and schedule risk while there is still time to act, on a governed source consolidating ERP, project, and field systems. Cost, contract, and asset data stays auditable, with role-based access across every project." },
+      { q: "Can architectural CAD drawings be used as data in reporting?", a: "CAD drawings can be read into structured, governed tables, so the quantities, areas, and materials that define a building become queryable alongside the business numbers. For a construction and real-estate developer, Viewnear unified four disconnected sources (construction program and scheduling, project cost and finance, land and acquisition records, and architectural CAD drawings) into one governed source of truth on Snowflake: Openflow ingested the business data into a Bronze, Silver, Gold Medallion foundation, and the design data locked in the architectural and engineering drawings was extracted into governed, queryable tables. Snowflake CoWork agents over governed Semantic Views, plus Slack bots, then let teams ask questions and act on that data inside Snowflake and in the tools they already work in." },
+      { q: "What does a property owner or developer get at portfolio level?", a: "Portfolio and asset analytics on Snowflake show occupancy, yield, and performance across every property and project in one place, and forecasting and valuation models feed valuation, capital planning, and bids with trusted, current data. For a construction and real-estate developer, construction programs, individual projects, and land acquisition decisions were all measured against the same governed Gold models, so the business ran from one source instead of hand-stitched spreadsheets." },
+    ],
     order: 1,
   },
   {
@@ -405,6 +410,11 @@ export const industries = [
     ],
     tools: ["Snowflake", "Openflow", "Snowsight", "Streamlit"],
     stats: [{ label: "Clients in this industry", value: "5+" }],
+    faq: [
+      { q: "How long does it take to stand up a student data foundation on Snowflake?", a: "A governed, real-time student data foundation on Snowflake was live in seven weeks for one university group, and a typical first production build runs 8–16 weeks depending on data volume, source complexity, and the use cases in scope. What keeps that timeline real: a discovery that fixes scope up front, two-week agile sprints with a shared backlog and demos, and a joint technical and business committee. That group received a governed Snowflake environment, native Anthology / Blackboard Data Share integration, real-time Caliper event streaming, and documentation plus knowledge transfer so its own team runs and extends it." },
+      { q: "How do institutions bring SIS and LMS data together on Snowflake?", a: "Academic records and learning-activity events reach Snowflake by two paths and are joined in one governed model. For a group of universities serving 20,000+ students across Miami and Latin America, Viewnear connected Anthology / Blackboard Data Share to land academic data in a RAW layer with schema discovery and refresh, volume, and usage validation, and streamed Caliper learning events from the LMS through Azure Event Hub into Snowflake RAW. A documented student analytics model sits on top of those RAW layers, and the governed RAW-to-analytics structure keeps clear lineage back to each source system." },
+      { q: "Can Snowflake flag students at risk of dropping out?", a: "Early-warning analytics on engagement and outcomes is a standard education deliverable on Snowflake, and it depends on learning-activity events streaming as they happen rather than arriving in batch. Viewnear unifies SIS, LMS, and operational data into one governed, trusted source, then delivers student success analytics on engagement, attainment, and retention, with early-warning insight on the students most at risk. Student data is handled FERPA-aware, with roles, RBAC, and network policies defining who can reach what by campus and function." },
+    ],
     order: 2,
   },
   {
@@ -428,6 +438,11 @@ export const industries = [
     ],
     tools: ["Snowflake", "Openflow", "Cortex", "Streamlit"],
     stats: [{ label: "Clients in this industry", value: "12+" }],
+    faq: [
+      { q: "How do banks and insurers make regulatory reporting auditable on Snowflake?", a: "Regulatory reporting becomes auditable on Snowflake when it is generated from one governed source instead of assembled by hand. Viewnear consolidates fragmented banking, insurance, and asset data into a single governed enterprise warehouse, then automates regulatory and structured external reporting from it, with FINRA, SEC, and SOX-aligned reporting, role-based access, and full audit lineage on every reported number. Self-service analytics on the same source keeps teams deciding on current, reliable numbers instead of stale data." },
+      { q: "What can Snowflake Cortex AI do with insurance claim documents?", a: "Snowflake Cortex AI classifies and extracts data from claim documents with the AI functions called directly in SQL, so there is no separate model to host. For a claims processing company that had been sorting documents from many insurance providers by hand, Viewnear built a pipeline where PARSE_DOCUMENT turned each PDF into usable text and layout, AI_CLASSIFY sorted documents into Denials, Verifications, Payments, and Correspondence without rigid templates, and AI_EXTRACT pulled claim numbers, check amounts, dates, and customer details. Classification accuracy rose from 60% to 95%, average per-document classification dropped to 4 seconds, and over 40% of previously discarded documents were recovered." },
+      { q: "Do Snowflake Cortex AI features send sensitive data outside the client's account?", a: "Cortex AI functions run on the data inside the client's own governed Snowflake account, so nothing is copied to an external service. On the claims work Viewnear delivered on Snowflake Cortex AI, sensitive fields are classified and masked by policy, role-based access limits who can see raw documents and extracted data with separation of duties across processing, review, and reporting, and Horizon Catalog makes every document, classification, and extracted field traceable. The build itself runs in the client's Snowflake account, repositories, and CI, under the client's access controls and change process." },
+    ],
     order: 3,
   },
   {
@@ -451,6 +466,11 @@ export const industries = [
     ],
     tools: ["Snowflake", "Openflow", "Cortex", "Streamlit"],
     stats: [{ label: "Clients in this industry", value: "7+" }],
+    faq: [
+      { q: "What data problems do manufacturers usually run into on Snowflake?", a: "Manufacturers usually arrive with three problems: machine and ERP data that do not connect, hidden downtime and quality loss, and supply-chain blind spots. Viewnear unifies shop-floor, sensor, and ERP data into one governed, trusted source on Snowflake, then builds OEE and quality analytics that expose the real cost drivers, with availability, performance, and quality in a single live view. Traceability runs from supplier to shipment, governed at every step for quality and audit." },
+      { q: "How does shop-floor, sensor, and ERP data get into Snowflake?", a: "Shop-floor, sensor, and ERP data is unified into one governed, trusted source on Snowflake, and high-volume machine and sensor data is ingested and governed as part of it. On a Viewnear engagement with a corrugated packaging manufacturer, Openflow ingested SAP Business One and its satellite systems on a batch, incremental schedule, landing raw data in Bronze, conforming it into a Silver enterprise model, and resolving governed Gold analytical models. Every transformation that builds those layers runs in dbt under version control and natively against Snowflake, so each rule is reviewed, tested, and traceable." },
+      { q: "Can Snowflake help fix a product catalog that has grown into thousands of unmanaged SKUs?", a: "A runaway product catalog is fixed with product architecture and governance rules, and Snowflake is where both get enforced. For a corrugated packaging manufacturer whose catalog had exploded into thousands of SKUs and variants with no product architecture, Viewnear built a Standard SKU catalog defining the allowed variants and the rules for combining them, a golden record per domain with versioned rules and accountable owners, and What-if simulation that quantifies SKU-reduction and standardization decisions against demand, capacity, and business constraints before anyone commits to them. A Snowflake CoWork agent over governed Semantic Views lets business users validate SKUs, detect duplicates, and see which variants drive complexity in plain language." },
+    ],
     order: 4,
   },
   {
@@ -474,6 +494,11 @@ export const industries = [
     ],
     tools: ["Snowflake", "Openflow", "Cortex", "Streamlit"],
     stats: [{ label: "Clients in this industry", value: "5+" }],
+    faq: [
+      { q: "How do media companies unify audience data spread across platforms?", a: "Viewing, subscription, and engagement data is unified into one governed source on Snowflake, which is what turns audience data scattered across platforms into a single view of who is watching, reading, and subscribing. Viewnear builds that governed foundation across ad, subscription, and content systems. Audience data is handled consent-aware, governed for privacy across every channel." },
+      { q: "Can Snowflake do cross-channel campaign and ad attribution?", a: "Cross-channel attribution runs on Snowflake once campaign, audience, and spend data share one governed source, and it is delivered near real time rather than arriving too late to act on. Viewnear unifies audience, content, and campaign data so media, entertainment, and advertising teams can measure performance, attribute spend, and act on engagement in near real time, with attribution connecting spend to outcomes across channels." },
+      { q: "What data does a content team need to decide what to commission?", a: "Content performance analytics shows what resonates by title, format, and platform, which is what replaces gut feel in commissioning decisions. Viewnear delivers that analytics on Snowflake from unified audience, content, and campaign data, so engagement can be acted on in near real time." },
+    ],
     order: 5,
   },
   {
@@ -497,6 +522,11 @@ export const industries = [
     ],
     tools: ["Snowflake", "Snowsight", "Streamlit"],
     stats: [{ label: "Clients in this industry", value: "10+" }],
+    faq: [
+      { q: "How does a retailer get one view of demand across online and in-store?", a: "Retail and CPG teams get one demand view by unifying online and physical operations into a single near-real-time governed source on Snowflake, with stock tracked against sales. Viewnear delivers stock-vs-sales visibility that cuts shrink and stockouts, with online and in-store data unified for near-real-time reporting. Payment and customer data is handled PCI-aware and governed end to end." },
+      { q: "Can Snowflake show margin by product and food cost for a food producer?", a: "Margin-by-product insight and food cost sit on the same governed foundation on Snowflake: production performance, logistics, and food cost in one view, tracked alongside loyalty performance. Viewnear works across perishable goods and food production, unifying sales, inventory, production, and customer data into near-real-time analytics that sharpen inventory, margin, and merchandising decisions." },
+      { q: "How does a multi-site sales, service, and parts network get one definition of a customer or a part?", a: "One definition comes from a master data foundation on Snowflake: source data lands in Bronze, is cleaned and conformed in Silver, and resolves into governed Gold golden records, with master keys, matching and merge, survivorship rules, lineage, and audit designed in from the first table. Viewnear built that for a commercial-vehicle dealer group that ran sales, service, parts, and the back office on separate systems, mastering eight business domains from three source systems across three releases in a twelve-month roadmap. Per-domain Snowflake CoWork agents, grounded in each domain's governed golden record, let business users ask questions of master data in plain language." },
+    ],
     order: 6,
   },
   {
@@ -520,6 +550,11 @@ export const industries = [
     ],
     tools: ["Snowflake", "Openflow", "Cortex", "Streamlit"],
     stats: [{ label: "Clients in this industry", value: "8+" }],
+    faq: [
+      { q: "How is high-volume event telemetry handled on Snowflake?", a: "High-volume usage and network telemetry is ingested, governed, and query-ready on Snowflake, unified with product usage and billing data in one governed, trusted source. Viewnear builds those telemetry pipelines for software, platform, and telecommunications businesses, keeping the full volume query-ready. Usage and network data is handled with privacy, consent, and access controls." },
+      { q: "Can Snowflake flag customers at risk of churning before they leave?", a: "Churn and retention analytics on Snowflake flag risk early, instead of surfacing churn only after customers have left. Viewnear builds those early-warning analytics on product usage, billing, and network telemetry unified into one governed, trusted source, and delivers them use case by use case, in sprints with working software at every demo." },
+      { q: "How do product teams connect usage data to revenue?", a: "Product analytics on Snowflake connects event-level usage to activation, growth, and revenue in one governed source, which is how growth levers buried in raw events become visible. Viewnear unifies product usage, billing, and network telemetry into that source, then builds the product analytics on top. Because the metrics are governed and reliable, every team reports from the same numbers." },
+    ],
     order: 7,
   },
 ];
@@ -699,4 +734,8 @@ export const faqs = [
   { category: "Commercials", q: "Do Snowflake partners publish standard pricing?", a: "No. No two data estates are the same, so we price to the work. Share the goals and constraints, and we'll come back with a model, a plan, and a price." },
   { category: "Security & platform", q: "How is data kept secure during a Snowflake engagement?", a: "We build on Snowflake's certified platform and extend it with least-privilege access, Horizon Catalog lineage and PII classification, Horizon Context so every person and AI agent works from the same trusted business context, data residency by region, and audit-ready controls, all configured to the client's sector." },
   { category: "Security & platform", q: "Should a Snowflake build stay native, or add third-party tools?", a: "We lead with the Snowflake-native stack (Openflow, Snowpark, Horizon Catalog, Cortex, Snowsight, Streamlit, plus the Snowflake CoCo coding agent and CoWork AI agent) so governance and AI context (Horizon Context) stay in one place. dbt is the one external framework we run, natively against Snowflake." },
+  { category: "Contracting & vendor review", q: "What agreements govern a Viewnear data and AI engagement?", a: "A separate written agreement governs every Viewnear engagement and sets out scope, fees, timelines, and obligations; where it conflicts with the website terms, the engagement agreement prevails. Fixed-cost work is documented as a scoped statement of work with milestones, decision gates, and change control if scope moves, while time and materials work runs against a prioritized backlog the business controls. A short discovery fixes scope and returns a firm price before a build is committed, and engineers work under signed confidentiality terms." },
+  { category: "Contracting & vendor review", q: "How does Viewnear handle a vendor security review or security questionnaire?", a: "Viewnear answers a vendor security review by walking through how each requirement is met, whether that is a single item such as data residency, certifications, or audit, or a full questionnaire. The published starting point is Viewnear's Security and Trust page, which splits the answer in two: the environment inherits Snowflake's independently audited certifications (SOC 2 Type II, ISO 27001, HIPAA, PCI DSS), and Viewnear applies its own delivery controls on every engagement. Those controls are least-privilege access, lineage and auditability, PII classification, data residency by region, secrets and key management, and secure delivery practices, which mean code review, least-privilege delivery accounts, and environment separation." },
+  { category: "Contracting & vendor review", q: "Does data leave the client's region when Snowflake delivery happens from Mexico?", a: "Data stays in the client's own Snowflake account, in the Snowflake region the client's policy requires: Viewnear deploys in the Snowflake region required across the Americas, and nothing about the delivery model requires data to be copied out of it. Engineers based in Monterrey, Nuevo León and in Austin, Texas reach that account as named identities with least-privilege access, under the client's access controls and change process. Horizon Catalog lineage and access history log every access, and sensitive data is classified and masked with tagging and row and column policies from the first table." },
+  { category: "Contracting & vendor review", q: "What happens at the end of a Viewnear engagement?", a: "A Viewnear engagement ends on a documented handover: runbooks, documentation, and enablement sessions ship with the build, plus a transition plan that names who runs what once Viewnear steps back. The work already sits in the client's own Snowflake account, repositories, and CI, so the in-house team runs and extends it from there. Ongoing optimization, cost tuning, and support stay available for teams that want them." }
 ];

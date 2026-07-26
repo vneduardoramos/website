@@ -6,7 +6,7 @@
   "hero": {
     "eyebrow": "Platform",
     "title": "Built <hl>native on Snowflake</hl>, not bolted on.",
-    "description": "A data & AI practice needs one home, not five vendors to reconcile. So everything Viewnear builds for it lives inside Snowflake (ingestion, transformation, governance, AI): one governed home for the data, one lineage to audit, one context every team and agent shares."
+    "description": "Everything Viewnear builds runs inside Snowflake: ingestion through Openflow, transformation in Snowpark and dbt, governance in Horizon Catalog, and AI in Cortex. One governed copy of the data, one lineage trail, one place to grant access."
   },
   "stackStory": {
     "eyebrow": "How it comes together",
