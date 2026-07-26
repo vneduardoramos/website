@@ -204,11 +204,18 @@ export async function CutoverTimeline({ phases }: { phases: Phase[] }) {
           </div>
         </div>
 
-        {/* phase bodies */}
+        {/* phase bodies
+            Each body repeats its own title in a visually-hidden span. The grid
+            emits all five titles in one run, then the timeline labels, then all
+            five bodies, so anything reading the flat text (a screen reader
+            linearising the page, or a crawler that does not reconstruct the grid)
+            got five headings followed by five unattributed paragraphs with no way
+            to pair them. The visual layout is unchanged. */}
         <RevealGroup className="mt-6 grid grid-cols-[110px_repeat(5,1fr)] gap-x-4" variant="fade-up">
           <span aria-hidden />
           {phases.map((p) => (
             <p key={p.title} className="border-l border-border pl-3 text-xs leading-relaxed text-muted">
+              <span className="sr-only">{p.title}: </span>
               {p.body}
             </p>
           ))}
