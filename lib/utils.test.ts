@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { slugify, parseJson, asObjectArray } from "@/lib/utils";
+import { slugify, parseJson, asObjectArray, formatDate } from "@/lib/utils";
 
 describe("slugify", () => {
   it("kebab-cases and strips punctuation", () => {
@@ -31,5 +31,26 @@ describe("asObjectArray", () => {
   });
   it("returns [] for non-array input", () => {
     expect(asObjectArray("nope")).toEqual([]);
+  });
+});
+
+describe("formatDate timezone", () => {
+  it("renders the calendar date, not the host's local shift", () => {
+    // Authored as a calendar date, stored midnight UTC. Anywhere west of
+    // Greenwich, local formatting would render the previous day.
+    expect(formatDate("2025-06-29", "en")).toBe("June 29, 2025");
+    expect(formatDate(new Date("2025-06-29T00:00:00.000Z"), "en")).toBe("June 29, 2025");
+  });
+
+  it("agrees with the ISO value a <time dateTime> would carry", () => {
+    const iso = "2026-06-06";
+    const d = new Date(iso);
+    expect(d.toISOString().slice(0, 10)).toBe(iso);
+    expect(formatDate(iso, "en")).toBe("June 6, 2026");
+  });
+
+  it("formats Spanish without shifting the day", () => {
+    expect(formatDate("2026-01-13", "es")).toContain("13");
+    expect(formatDate("2026-01-13", "es")).toContain("2026");
   });
 });

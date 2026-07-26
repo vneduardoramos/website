@@ -3,6 +3,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMeta, breadcrumbLd, webPageLd } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { Section } from "@/components/marketing/ui";
+import { FormattedDate } from "@/components/marketing/FormattedDate";
+import { LEGAL_UPDATED } from "@/config/legal";
+import type { Locale } from "@/lib/i18n-content";
 import { PageHero } from "@/components/marketing/PageHero";
 import { SectionDecor } from "@/components/marketing/Decor";
 import { theme } from "@/config/theme";
@@ -51,7 +54,10 @@ export default async function PrivacyPage({ params }: { params: { locale: string
 
       <Section>
         <div className="prose-vn max-w-3xl">
-          <p className="text-muted">{t("lastUpdated")}</p>
+          <p className="text-muted">
+            {t("lastUpdated")}:{" "}
+            <FormattedDate date={LEGAL_UPDATED["/privacy"]} locale={locale as Locale} />
+          </p>
 
           <p>{t("intro")}</p>
 

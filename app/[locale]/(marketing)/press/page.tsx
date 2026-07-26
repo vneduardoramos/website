@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMeta, collectionLd } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
+import { FormattedDate } from "@/components/marketing/FormattedDate";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { RevealGroup } from "@/components/marketing/Motion";
 import { cn, formatDate } from "@/lib/utils";
@@ -62,7 +63,8 @@ export default async function PressPage({ params }: { params: { locale: string }
                 <div className="flex flex-wrap items-center gap-3">
                   {isFeatured && <span className="pill-chip">{t("latest")}</span>}
                   <p className="font-mono text-xs uppercase tracking-widest text-muted">
-                    {getOutlet(item.outlet).name} &middot; {formatDate(item.date, locale as Locale)}
+                    {getOutlet(item.outlet).name} &middot;{" "}
+                    <FormattedDate date={item.date} locale={locale as Locale} />
                   </p>
                 </div>
                 <h3

@@ -17,6 +17,17 @@ export function slugify(input: string): string {
 
 const INTL_LOCALE: Record<Locale, string> = { en: "en-US", es: "es-419" };
 
+/**
+ * A publication date, formatted for display.
+ *
+ * Forced to UTC. Every date on this site is an editorial calendar date rather
+ * than an instant: they are authored as `new Date("2025-06-29")` and stored as
+ * midnight UTC. Formatting those in the host's local time shifts them a day
+ * backwards anywhere west of Greenwich, so a post dated 2025-06-29 rendered
+ * "June 28, 2025" on a machine in America/Denver while its own `<time datetime>`
+ * said the 29th. Production happens to run UTC and was unaffected, which is
+ * exactly why this stayed invisible: the output depended on the host timezone.
+ */
 export function formatDate(
   date: Date | string | null | undefined,
   locale: Locale = "en",
@@ -27,6 +38,7 @@ export function formatDate(
     year: "numeric",
     month: "long",
     day: "numeric",
+    timeZone: "UTC",
   });
 }
 

@@ -12,6 +12,7 @@ import { coverFor } from "@/lib/covers";
 import { SectionDecor } from "@/components/marketing/Decor";
 import { Markdown } from "@/lib/content";
 import { JsonLd } from "@/components/JsonLd";
+import { FormattedDate } from "@/components/marketing/FormattedDate";
 import { theme } from "@/config/theme";
 import { pageMeta, ORG_REF, personId } from "@/lib/seo";
 import { getHeadings } from "@/lib/toc";
@@ -187,7 +188,7 @@ export default async function BlogPostPage({
                     <p className="text-sm text-muted">{author.title}</p>
                   ) : null}
                   <p className="mt-0.5 text-xs text-muted">
-                    {formatDate(post.publishedAt, locale as Locale)} · {t("readTime", { minutes: readingTime })}
+                    <FormattedDate date={post.publishedAt} locale={locale as Locale} /> · {t("readTime", { minutes: readingTime })}
                   </p>
                   {author.linkedinUrl ? (
                     <a
@@ -207,7 +208,7 @@ export default async function BlogPostPage({
                   {post.author?.name ?? "Viewnear"}
                 </span>
                 <span aria-hidden>·</span>
-                <span>{formatDate(post.publishedAt, locale as Locale)}</span>
+                <FormattedDate date={post.publishedAt} locale={locale as Locale} />
                 <span aria-hidden>·</span>
                 <span>{t("readTime", { minutes: readingTime })}</span>
               </div>
