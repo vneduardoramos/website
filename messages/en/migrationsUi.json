@@ -48,7 +48,7 @@
   "cutover": {
     "typicalArc": "Typical arc",
     "weeks": ["wk 0", "wk 2", "wk 5", "wk 8", "wk 12"],
-    "typicalArcNote": "a typical 8–16 week arc",
+    "typicalArcNote": "a scoped 8–16 week arc",
     "legacy": "Legacy",
     "retired": "Retired",
     "thePractice": "The practice",

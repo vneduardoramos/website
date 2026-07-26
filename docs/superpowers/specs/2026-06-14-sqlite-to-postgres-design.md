@@ -1,5 +1,15 @@
 # SQLite → PostgreSQL migration (stay on Prisma)
 
+> **Completed and cleaned up, 2026-07-26.** The migration ran; Postgres is the only
+> database now. `prisma/data-export.json`, `scripts/export-sqlite.ts` and
+> `scripts/import-postgres.ts` have been **deleted**. The dump was the last copy in
+> the repo of the fabricated `newsEvent` rows a claim audit removed (see
+> `docs/CHANGELOG.md`), so keeping it around meant keeping fabricated content
+> committed for a migration that can never run again. Content now moves between
+> environments through `scripts/content-sync.ts` and `prisma/content-snapshot.json`.
+
+
+
 Date: 2026-06-14
 
 ## Goal

@@ -12,7 +12,7 @@ Microsoft and Snowflake have built something really nice together. The native co
 
 I always start with authentication because this sets the foundation for everything else. Don't tie your dashboards to individual user credentials. I've seen too many organizations struggle with this when people change roles or leave the company. Service accounts provide consistency, and key pair authentication eliminates the password headaches that seem to plague every other integration project.
 
-The warehouse configuration for [Power BI](/services/data-visualisation) is where things get interesting. Auto-suspend becomes crucial because Power BI tends to generate queries in bursts, lots of activity when people are refreshing dashboards, then quiet periods. I usually set auto-suspend pretty aggressively (around 60 seconds) because auto-resume is instantaneous. Multi-cluster configurations handle concurrent users beautifully, scaling up when everyone's hitting the dashboards at 9 AM and scaling back down when things quiet down.
+The warehouse configuration for [Power BI](/services/data-visualisation) is where things get interesting. Auto-suspend becomes crucial because Power BI tends to generate queries in bursts, lots of activity when people are refreshing dashboards, then quiet periods. I keep auto-suspend tight, though not below the 60-second minimum billing window, since dropping under it buys nothing. Resume is usually a second or two. Multi-cluster configurations handle concurrent users beautifully, scaling up when everyone's hitting the dashboards at 9 AM and scaling back down when things quiet down.
 
 ```sql
 -- This is my go-to Power BI warehouse setup
@@ -80,7 +80,7 @@ FROM orders
 WHERE created_timestamp >= current_timestamp - interval '24 hours';
 ```
 
-Incremental refresh makes a real difference for large datasets. Power BI's incremental refresh works beautifully with Snowflake's change tracking, you only update the data that actually changed instead of reprocessing everything. Tableau's extract optimization follows similar principles.
+Incremental refresh makes a real difference for large datasets. Power BI's incremental refresh partitions on a date range and folds that filter down into Snowflake, so a refresh reads recent partitions instead of the whole table. Tableau's extract optimization follows similar principles.
 
 ## The cost conversation
 
@@ -88,7 +88,7 @@ Let's talk about what everyone's really worried about: costs. BI tools can gener
 
 Warehouse sizing becomes an art form. I almost always start with small warehouses for BI workloads because you can scale up instantly if performance requires it. Monitor query performance and user experience rather than trying to guess what you'll need. Auto-scaling through multi-cluster warehouses handles peak usage while controlling costs.
 
-The auto-suspend settings can make a huge difference. I've seen 30-second auto-suspend save organizations thousands of dollars monthly without any impact on user experience. Auto-resume is instant, so aggressive suspension is almost always the right choice.
+The auto-suspend settings can make a huge difference. Suspending a BI warehouse after a few minutes of quiet, rather than leaving it running all day, is where the credits come back. Go too tight and the warehouse suspends between query bursts and re-triggers the 60-second minimum charge on every resume, so match the setting to the real gaps between refreshes.
 
 ## Security done right
 

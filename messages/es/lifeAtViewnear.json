@@ -13,13 +13,13 @@
   "offices": {
     "eyebrow": "Nuestras oficinas",
     "title": "Dos sedes. Un solo equipo.",
-    "intro": "Tenemos sede en Austin y Monterrey: dos espacios insignia que dan base a un equipo que trabaja en toda América, de forma presencial y con refuerzo remoto.",
+    "intro": "Trabajamos desde Austin y Monterrey, dos oficinas que dan base a un equipo distribuido en toda América, de forma presencial y con refuerzo remoto.",
     "items": [
       {
         "city": "Austin",
         "region": "Texas, EE. UU.",
         "place": "Quarry Oaks II · Stonelake Office Park",
-        "alt": "La sede de Viewnear en Austin: una torre de oficinas de cristal en Stonelake Office Park, frente al horizonte del centro de Austin",
+        "alt": "Una torre de oficinas de cristal en Austin, Texas, con la ciudad reflejada en su fachada",
         "street": "10900 Stonelake Blvd, Bldg 2, Suite 100",
         "cityZip": "Austin, TX 78759"
       },
@@ -27,9 +27,9 @@
         "city": "Monterrey",
         "region": "Nuevo León, México",
         "place": "Pueblo Serena",
-        "alt": "La sede de Viewnear en Monterrey: un edificio de oficinas moderno en Pueblo Serena, a los pies de la Sierra Madre",
+        "alt": "Un edificio de oficinas moderno en Pueblo Serena, Monterrey, a los pies de la Sierra Madre",
         "street": "Carr. Nacional 500, Valle Alto",
-        "cityZip": "Monterrey, MX 64983"
+        "cityZip": "Monterrey, MX 64989"
       }
     ],
     "deliveryCenterTitle": "La oficina de Monterrey es también nuestro centro de entrega nearshore.",

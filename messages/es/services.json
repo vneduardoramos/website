@@ -81,7 +81,7 @@
       {
         "label": "Plazos",
         "title": "Un arco fijo de 8 a 16 semanas",
-        "body": "La mayoría de los primeros desarrollos llegan a producción en 8 a 16 semanas: una fase de discovery fija el scope y el precio desde el inicio, y cada sprint cierra con software funcional, para que el valor llegue desde el primer sprint."
+        "body": "Un primer desarrollo se dimensiona para llegar a producción en 8 a 16 semanas: una fase de discovery fija el scope y el precio desde el inicio, y cada sprint cierra con software funcional, para que el valor llegue desde el primer sprint."
       },
       {
         "label": "Dirección",
@@ -174,7 +174,7 @@
       },
       {
         "title": "Profundidad verificada en Snowflake",
-        "body": "Un equipo certificado en SnowPro con un historial verificado de entregas en Snowflake detrás de cada decisión, desde la estrategia hasta la producción."
+        "body": "Ingenieros certificados en SnowPro con un historial verificado de entregas en Snowflake detrás de cada decisión, desde la estrategia hasta la producción."
       },
       {
         "title": "Precio orientado a resultados",

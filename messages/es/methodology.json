@@ -21,7 +21,7 @@
     },
     {
       "title": "Gobernar y validar",
-      "desc": "Aplicamos el linaje de Horizon Catalog, los controles de acceso y la clasificación de PII, además de Horizon Context para que cada equipo y agente de IA comparta un único contexto de negocio confiable; probamos para generar confianza."
+      "desc": "Aplicamos el linaje de Horizon Catalog, los controles de acceso y la clasificación de PII, con el contexto de negocio compartido en Semantic Views para que cada equipo y agente de IA lea un solo conjunto de definiciones; probamos para generar confianza."
     },
     {
       "title": "Operar y optimizar",
@@ -34,7 +34,7 @@
     "items": [
       {
         "title": "Todo el stack de datos moderno, no una sola herramienta",
-        "body": "Ingesta (Openflow, Snowpipe Streaming), transformación (dbt, Snowpark, Dynamic Tables), gobierno (Horizon Catalog y Horizon Context), analítica (Snowsight, Streamlit) y agentes de IA (Cortex, Snowflake CoWork), todo centrado en un único núcleo gobernado de Snowflake."
+        "body": "Ingesta (Openflow, Snowpipe Streaming), transformación (dbt, Snowpark, Dynamic Tables), gobierno (Horizon Catalog, y Horizon Context cuando esté disponible de forma general), analítica (Snowsight, Streamlit) y agentes de IA (Cortex, Snowflake CoWork), todo centrado en un único núcleo gobernado de Snowflake."
       },
       {
         "title": "Gobernado y abierto por diseño",
@@ -46,7 +46,7 @@
       },
       {
         "title": "Más allá de los dashboards, hacia agentes de datos",
-        "body": "Anclamos Snowflake CoWork (el agente de IA personal) y Cortex Agents en Semantic Views gobernadas y Horizon Context, para que los usuarios de negocio obtengan respuestas confiables y con citas a partir de las mismas definiciones que usa cada equipo."
+        "body": "Anclamos Snowflake CoWork (el agente de IA personal) y Cortex Agents en Semantic Views gobernadas, para que los usuarios de negocio obtengan respuestas confiables y con citas a partir de las mismas definiciones que usa cada equipo."
       }
     ]
   }

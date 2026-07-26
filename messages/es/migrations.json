@@ -10,14 +10,14 @@
   },
   "heroChips": [
     "Más de 20 plataformas de origen",
-    "Conversión automatizada",
+    "Conversión automatizada donde aplica",
     "Paridad validada",
     "Transición por fases"
   ],
   "sourcesHeading": {
     "eyebrow": "Todas las plataformas de origen",
     "title": "Migramos desde todas ellas",
-    "intro": "Appliances heredados, almacenes de datos en la nube, Hadoop o la base de datos que discretamente cumple funciones de almacén. Si los datos viven ahí hoy, tenemos una ruta para llevarlos a Snowflake, gobernados y en manos del equipo."
+    "intro": "Appliances heredados, almacenes de datos en la nube, Hadoop o la base de datos que discretamente cumple funciones de almacén. Si los datos viven ahí hoy, tenemos una ruta para llevarlos a Snowflake, gobernados y en manos del equipo: conversión automatizada donde Snowflake AIM cubre la fuente, y trabajo manual donde no."
   },
   "sources": [
     {
@@ -158,7 +158,7 @@
   "conviction": {
     "eyebrow": "Nuestra convicción",
     "title": "Las herramientas convierten el código. No responden por el cierre de fin de mes.",
-    "body": "SnowConvert y el Snowpark Migration Accelerator se encargan del trabajo mecánico: el SQL, los procedimientos almacenados y los trabajos de Spark que tomaron años en escribirse se convierten en semanas. Para lo que realmente se nos contrata es para todo lo que las herramientas no pueden dar por válido: los casos límite corregidos a mano, cada objeto revisado antes de que avance, y la reconciliación de fila, agregado y hash que demuestra que los números nuevos coinciden con los anteriores antes de que alguien haga la transición.",
+    "body": "Snowflake AIM se encarga del trabajo mecánico donde cubre la fuente: el SQL, los procedimientos almacenados y los trabajos de Spark que tomaron años en escribirse se convierten en semanas. Para lo que realmente se nos contrata es para todo lo que las herramientas no pueden dar por válido: los casos límite corregidos a mano, cada objeto revisado antes de que avance, y la reconciliación de fila, agregado y hash que demuestra que los números nuevos coinciden con los anteriores antes de que alguien haga la transición.",
     "bullets": [
       "Salida de la conversión revisada objeto por objeto, en Snowflake Workspaces",
       "Verificaciones de fila, agregado y hash que demuestran la paridad contra el origen",
@@ -201,7 +201,7 @@
   "proofHeading": {
     "eyebrow": "Respaldado por Snowflake",
     "title": "Un equipo certificado que ya lo ha hecho antes",
-    "intro": "Las migraciones se ejecutan sobre las propias herramientas de Snowflake, entregadas por un equipo certificado en SnowPro con una trayectoria verificada en toda América."
+    "intro": "Las migraciones se ejecutan sobre las propias herramientas de Snowflake, entregadas por ingenieros certificados en SnowPro con una trayectoria verificada en toda América."
   },
   "metrics": [
     {
@@ -210,7 +210,7 @@
     },
     {
       "value": "Automatizada",
-      "label": "Conversión de código con SnowConvert"
+      "label": "Conversión de código donde Snowflake AIM cubre la fuente"
     },
     {
       "value": "Por fases",

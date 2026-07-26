@@ -50,7 +50,7 @@
     "title": "Monterrey y Austin, en <hl>horario laboral de EE. UU.</hl>",
     "body": "La mayor parte de la ingeniería está en el centro de entrega de Monterrey, en Valle Alto, con la dirección en Austin, Texas. El equipo trabaja en horario laboral de Estados Unidos, así que una jornada normal aquí se traslapa con clientes de toda América en lugar de correr en turno nocturno. Hay viajes presenciales con clientes, y Monterrey los hace cortos.",
     "bullets": [
-      "Carr. Nacional 500, Valle Alto, Monterrey, NL 64983, México",
+      "Carr. Nacional 500, Valle Alto, Monterrey, NL 64989, México",
       "Horario del centro todo el año, alineado a la jornada del cliente",
       "Vuelos directos a las principales ciudades de Estados Unidos para trabajo presencial cuando un build lo necesita"
     ],
@@ -63,9 +63,9 @@
     "intro": "Nadie aprende Snowflake solo con un curso. El camino combina certificación con trabajo en producción desde el primer sprint."
   },
   "growth": [
-    "Certificación SnowPro, pagada y esperada en todo el equipo",
+    "Certificación SnowPro, pagada y parte del plan de crecimiento",
     "Trabajo en pareja con arquitectos en builds reales de clientes, no en ejercicios de laboratorio",
-    "Acceso temprano a nuevas capacidades de Snowflake por la alianza Premier y CoCo Preferred",
+    "Trabajar sobre todo el stack de Snowflake como Premier y CoCo Preferred Partner",
     "Herramientas nativas de IA como parte del trabajo, incluido Claude como socio de Anthropic"
   ],
   "openRoles": {

@@ -42,7 +42,14 @@ export type PressItem = {
   author: string;
   /** ISO date (YYYY-MM-DD). */
   date: string;
-  quote: string;
+  /** Verbatim quotation from the article. Mutually exclusive with `paraphrase`. */
+  quote?: string;
+  /**
+   * A line the article prints as reported speech rather than inside quotation
+   * marks. Rendered without quote marks so the page never presents the
+   * reporter's paraphrase as the speaker's words.
+   */
+  paraphrase?: string;
   quoteBy: string;
 };
 
@@ -67,7 +74,7 @@ export const PRESS: PressItem[] = [
     author: "Wade Tyler Millward",
     date: "2026-06-01T12:00:00Z",
     quote:
-      "Data and AI are coming together. Leaders are understanding now that if they want to do AI, they need to do data first.",
+      "Data and AI are coming together. And people, leaders are understanding now that if they want to do AI, they need to do data first.",
     quoteBy: "Eduardo Ramos",
   },
   {
@@ -103,20 +110,23 @@ export const PRESS: PressItem[] = [
     outlet: "crn",
     author: "Wade Tyler Millward",
     date: "2026-02-18T12:00:00Z",
-    quote:
+    // CRN prints this as reported speech ("... he said"), not inside quotation
+    // marks, so it is stored as a paraphrase and rendered without quote marks.
+    paraphrase:
       "AI holds as much importance to technological innovation as the internet and electricity.",
     quoteBy: "Eduardo Ramos",
   },
 ];
 
 /**
- * The home strip's pull-quote: the outlet's own framing line (its lead-in on
- * the referenced article), the strongest third-party validation line.
- * Attributed to the outlet (not to a person), linking to that source article.
+ * The home strip's pull-quote. CRN's sentence is the reporter relaying Ramos
+ * ("..., Ramos said"), so `attribution` credits him rather than letting the
+ * outlet's byline stand as the source of the assessment. Links to the article.
  */
 export const PRESS_HOME_QUOTE = {
   quote:
     "Viewnear has been building enterprise-grade production AI systems with governed Snowflake data anchored on Anthropic Claude.",
   outlet: "crn",
+  attribution: "Eduardo Ramos, in CRN",
   url: PRESS[1].url,
 } as const;

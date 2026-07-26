@@ -106,11 +106,13 @@ export default async function IndustryDetailPage({
     ? parseJson<{ text?: string; author?: string; role?: string } | null>(story.quote, null)
     : null;
   const storyImage = story?.heroImage || sectorImage;
-  // Render a generic, sector-derived headline rather than the case study's
-  // title so the spotlight focuses on the problem and solution, while client
-  // names stay anonymized.
+  // A generic, sector-derived headline rather than the case study's own title,
+  // so the spotlight stays on the problem and solution and client names stay
+  // anonymized. The sector comes from the CASE, not the page: /industries/retail-cpg
+  // features an automotive engagement, and calling that a retail delivery is false.
+  const storySector = story?.sector?.toLowerCase() ?? "";
   const storyTitle = story
-    ? t("featured.storyTitle", { industry: industry.name.toLowerCase() })
+    ? t("featured.storyTitle", { industry: storySector })
     : "";
 
   return (
@@ -211,7 +213,7 @@ export default async function IndustryDetailPage({
           title={t("foundation.title", { industry: industry.name })}
           intro={
             story
-              ? t("foundation.introWithStory", { industry: industry.name.toLowerCase() })
+              ? t("foundation.introWithStory", { industry: storySector })
               : t("foundation.introNoStory")
           }
         />
@@ -327,7 +329,7 @@ export default async function IndustryDetailPage({
         <Section>
           <SectionHeading
             eyebrow={t("featured.eyebrow")}
-            title={t("featured.title", { industry: industry.name })}
+            title={t("featured.title", { industry: story.sector })}
             intro={t("featured.intro")}
           />
           <div className="mt-12 overflow-hidden rounded-3xl border border-border bg-surface shadow-soft">
@@ -390,7 +392,7 @@ export default async function IndustryDetailPage({
                       &ldquo;{storyQuote.text}&rdquo;
                     </blockquote>
                     <figcaption className="mt-3 text-sm text-muted">
-                      {t("featured.quoteCaption", { industry: industry.name.toLowerCase() })}
+                      {t("featured.quoteCaption", { industry: storySector })}
                     </figcaption>
                   </figure>
                 )}

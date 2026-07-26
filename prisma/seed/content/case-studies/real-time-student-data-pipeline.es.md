@@ -11,7 +11,7 @@ Un grupo de universidades que atiende a más de 20,000 estudiantes en Miami y Am
 Viewnear construyó un pipeline de datos de estudiantes gobernado y en tiempo real sobre Snowflake, en la propia cuenta del grupo:
 
 - **Entorno de Snowflake gobernado.** Warehouses, roles, RBAC, políticas de red y monitores de recursos implementados desde el primer día, con un modelo de gobernanza claro.
-- **Integración nativa con Blackboard.** Una conexión directa a Anthology / Blackboard Data Share deposita los datos académicos en una capa RAW, con discovery de esquema y validación de actualización, volumen y uso.
+- **Integración nativa con Blackboard.** Una conexión directa a Anthology Illuminate Developer (antes Blackboard Data) deposita los datos académicos en una capa RAW, con discovery de esquema y validación de actualización, volumen y uso.
 - **Eventos Caliper en tiempo real.** Los eventos de actividad de aprendizaje se transmiten en streaming desde el LMS a través de Azure Event Hub hacia Snowflake RAW, validados de extremo a extremo desde el LMS hasta Snowflake.
 - **Modelo analítico del estudiante.** Un modelo analítico del estudiante, documentado y alineado con Blackboard, sobre las capas RAW.
 - **Documentación y transferencia de conocimiento.** Documentación técnica y funcional, además de sesiones de transferencia de conocimiento, para que el propio equipo del grupo pueda operarlo y extenderlo.
@@ -30,7 +30,7 @@ Los datos de los estudiantes son sensibles y están distribuidos en muchos campu
 ## Lo que entregamos
 
 - Una **base gobernada en Snowflake**, configurada con RBAC, políticas de red y monitores de recursos.
-- **Datos académicos** desde Anthology / Blackboard Data Share fluyendo hacia una capa RAW estable.
+- **Datos académicos** desde Anthology Illuminate Developer fluyendo hacia una capa RAW estable.
 - **Eventos de aprendizaje Caliper en tiempo real** transmitidos en streaming de extremo a extremo desde el LMS hacia Snowflake.
 - Un **modelo analítico del estudiante documentado**, además de transferencia de conocimiento para que el equipo del grupo pueda operarlo y extenderlo.
 - Una vista única, gobernada y en tiempo real del estudiante, lista para analítica e IA encima.

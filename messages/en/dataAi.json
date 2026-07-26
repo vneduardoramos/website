@@ -91,7 +91,7 @@
   "credentials": {
     "eyebrow": "Credentials",
     "title": "Certified to run AI on enterprise data",
-    "intro": "Every model runs under Snowflake's independently audited controls, delivered by a SnowPro-certified team that does this every day, and, as an Anthropic partner, builds with Claude.",
+    "intro": "Every model runs under Snowflake's independently audited controls, delivered by SnowPro-certified engineers who do this every day, and, as an Anthropic partner, builds with Claude.",
     "anthropicLine": "Anthropic partner, building with Claude"
   },
   "cta": {

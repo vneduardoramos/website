@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 /**
  * Animated count-up for stats. Counts up to a *clean* numeric value (e.g. "50+",
- * "1,300", "2×") when scrolled into view; ranged/worded/text values ("8–16 wks",
+ * "14,000", "2×") when scrolled into view; ranged/worded/text values ("8–16 wks",
  * "Premier", "Americas") display statically so the count is never misleading.
  * `valueClassName` styles the number element (so callers can keep
  * `.text-gradient`). Respects `prefers-reduced-motion`.

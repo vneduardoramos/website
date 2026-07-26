@@ -42,7 +42,7 @@ La detección de anomalías puede ejecutarse de forma continua sobre los flujos 
 
 ## Interfaces de lenguaje natural
 
-La capacidad de consultar datos mediante lenguaje natural elimina las barreras técnicas para los usuarios de negocio. En lugar de aprender SQL o usar herramientas de BI complejas, los usuarios pueden formular preguntas en lenguaje sencillo y obtener respuestas significativas. Con Cortex Analyst y Snowflake CoWork, esa conversación ocurre directamente sobre los datos gobernados.
+La capacidad de consultar datos mediante lenguaje natural elimina las barreras técnicas para los usuarios de negocio. En lugar de aprender SQL o usar herramientas de BI complejas, los usuarios pueden formular preguntas en lenguaje sencillo y obtener respuestas significativas. Con Cortex Analyst y Snowflake Intelligence, esa conversación ocurre directamente sobre los datos gobernados.
 
 Esto democratiza el acceso a los datos de maneras prácticas. Los equipos de marketing pueden analizar el rendimiento de las campañas, los equipos de finanzas pueden explorar las variaciones de presupuesto y los equipos de operaciones pueden investigar las métricas de procesos sin necesitar intermediarios técnicos.
 

@@ -65,7 +65,7 @@
   "inPractice": {
     "eyebrow": "In practice",
     "title": "What it looks like in your stack",
-    "body": "A closer look at what we stand up and how it lands where your team already works. Swap the artwork here for a real screen or diagram when you have one.",
+    "body": "A closer look at what we stand up and how it lands where your team already works.",
     "cta": "Talk to an architect",
     "imageAlt": "{title}: illustrative view"
   },

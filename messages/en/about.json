@@ -10,7 +10,7 @@
   "hero": {
     "eyebrow": "About Viewnear",
     "title": "We build data & AI practices with enterprises across the <hl>Americas</hl>.",
-    "description": "Viewnear is a Snowflake Premier and CoCo Preferred Partner that builds two lasting capabilities with enterprises: a data practice that feeds real decisions and an AI practice that ships use cases into production, both on Snowflake and run by in-house teams, across Canada, the USA, Mexico, LATAM, and the Caribbean."
+    "description": "Viewnear is a Snowflake Premier and CoCo Preferred Partner that builds two lasting capabilities with enterprises: a data practice that feeds real decisions and an AI practice that ships use cases into production, both on Snowflake and run by in-house teams. Delivery runs from Austin, Texas and Monterrey, Mexico."
   },
   "heroChips": [
     "Snowflake Premier Partner",
@@ -41,7 +41,7 @@
     {
       "label": "Footprint",
       "title": "Two hubs",
-      "body": "Austin and Monterrey, one team on the same working hours, delivering across the Americas."
+      "body": "Austin and Monterrey, one team on the client's working hours, delivering across the Americas."
     },
     {
       "label": "Partner tier",
@@ -57,7 +57,7 @@
   "trackRecordHeading": {
     "eyebrow": "Track record",
     "title": "Credentials anyone can verify",
-    "intro": "No vanity numbers: the partner tier, certification, and regional reach anyone can check."
+    "intro": "No vanity numbers: the partner tier, the certification count, and where the team sits, all checkable."
   },
   "trackRecord": [
     {
@@ -73,8 +73,8 @@
       "label": "Years of combined data & AI experience"
     },
     {
-      "value": "5",
-      "label": "Countries across the Americas"
+      "value": "2",
+      "label": "Delivery offices: Austin and Monterrey"
     }
   ],
   "operateHeading": {
@@ -101,7 +101,7 @@
     },
     {
       "title": "The Americas' home team",
-      "body": "Local expertise and time-zone alignment across Canada, the USA, Mexico, LATAM, and the Caribbean."
+      "body": "Two offices, Austin and Monterrey, both on Central Time, for clients across the Americas."
     }
   ],
   "governanceBlock": {
@@ -114,7 +114,7 @@
     "Least-privilege access and role-based controls (RBAC)",
     "Horizon Catalog lineage + Horizon Context across every asset",
     "PII classification and masking, data residency by region",
-    "Built on Snowflake's audited platform: SOC 2 Type II, ISO 27001, HIPAA"
+    "Built on Snowflake's audited platform: SOC 2 Type II and ISO 27001"
   ],
   "team": {
     "eyebrow": "Our team",

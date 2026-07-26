@@ -2,7 +2,7 @@
   "story": {
     "beat1": {
       "title": "Week 1–2: a scope worth signing",
-      "body": "It starts with a <art>discovery</art>: our architects sit with the stakeholders, walk the sources, and rank the use cases by what they return. The sponsor comes out holding a <art>fixed scope</art> at a fixed price, so what goes upstairs to the board is a commitment, not an estimate."
+      "body": "It starts with a <art>discovery</art>: our architects sit with the stakeholders, walk the sources, and rank the use cases by what they return. The sponsor comes out holding a <art>fixed scope</art> and a price for it, so what goes upstairs to the board is specific rather than a range."
     },
     "beat2": {
       "title": "The sprint rhythm",
@@ -22,7 +22,7 @@
     },
     "beat6": {
       "title": "Handover, documented",
-      "body": "The build ships with <art>runbooks</art>, documentation, and <art>enablement</art> sessions, plus a transition plan that names who runs what when we step back. Most engagements reach first value in 8–16 weeks, and from there the team extends the work on its own terms."
+      "body": "The build ships with <art>runbooks</art>, documentation, and <art>enablement</art> sessions, plus a transition plan that names who runs what when we step back. Engagements are scoped to reach first value in 8–16 weeks, and from there the team extends the work on its own terms."
     }
   }
 }

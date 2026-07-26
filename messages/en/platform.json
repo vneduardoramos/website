@@ -106,7 +106,7 @@
         {
           "name": "Open Catalog (Polaris)",
           "status": "GA",
-          "desc": "Bi-directional read/write catalog so Snowflake and external lakes share one source."
+          "desc": "One catalog so Snowflake and external engines read the same Iceberg tables."
         },
         {
           "name": "Snowflake-managed Iceberg",
@@ -131,7 +131,7 @@
         },
         {
           "name": "Cortex Sense",
-          "status": "GA",
+          "status": "Private Preview",
           "desc": "Runtime layer that assembles data + business definitions for AI agents."
         },
         {

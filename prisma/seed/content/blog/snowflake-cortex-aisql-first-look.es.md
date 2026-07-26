@@ -13,7 +13,7 @@ En Snowflake Summit 2025, la compañía presentó [Cortex AISQL](/es/data-ai), u
 - **AI_COMPLETE:** completados de formato libre, resúmenes, preguntas y respuestas
 - **AI_CLASSIFY:** clasificación de texto zero-shot y few-shot
 - **AI_FILTER:** filtrado por políticas o por sentimiento
-- **AI_SIMILARITY:** búsqueda de similitud vectorial sobre texto
+- **AI_SIMILARITY:** un puntaje de similitud coseno entre dos entradas, texto o imagen
 - **PARSE_DOCUMENT:** OCR y análisis estructural de PDFs, imágenes y documentos de Word
 
 ### Funciones con soporte para imágenes
@@ -37,7 +37,7 @@ TEXT AS (
     FILE_NAME,
     -- 1) Extract the visible text from each screenshot
     AI_COMPLETE(
-      'claude-3-5-sonnet',
+      'claude-sonnet-5',
       'Extract the visible product-review text. Respond with raw text only.',
       IMG_FILE
     )::STRING AS REVIEW_TEXT
@@ -53,7 +53,7 @@ SELECT
   )['LABEL']::STRING AS SENTIMENT,
   -- 3) Parse the star rating (1-5) mentioned in the text
   AI_COMPLETE(
-    'claude-3-5-sonnet',
+    'claude-sonnet-5',
     'Return only the star rating (1-5) mentioned in this review.',
     REVIEW_TEXT
   )::STRING AS RATING

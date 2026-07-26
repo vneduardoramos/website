@@ -20,7 +20,7 @@
   "foundation": {
     "eyebrow": "Lo que ponemos en marcha",
     "title": "La base para {industry}",
-    "introWithStory": "Las capacidades que implementamos, y con qué rapidez. Los resultados medidos de un proyecto real de {industry} están en el caso destacado más abajo.",
+    "introWithStory": "Las capacidades que implementamos, y con qué rapidez. El caso destacado más abajo es un proyecto real del sector {industry}, con sus resultados medidos.",
     "introNoStory": "Las capacidades que implementamos, y con qué rapidez alcanzan el primer valor."
   },
   "challenges": {

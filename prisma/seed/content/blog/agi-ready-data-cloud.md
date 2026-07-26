@@ -36,7 +36,7 @@ Repeated successes create a flywheel where each win funds the next exploration.
 
 - **Clarity:** We score critical datasets, map gaps to business risk, and present the summary on one page for the C-suite.
 - **Confidence:** We select a high-visibility use case such as churn prediction or contract review and run a contained pilot. Cost and accuracy are shared in language every stakeholder understands.
-- **Compounding returns:** We convert the pilot into reusable templates so the next team moves twice as fast.
+- **Compounding returns:** We convert the pilot into reusable templates, so the next team starts from working patterns instead of a blank page.
 
 Discipline scales. Improvised heroics do not.
 

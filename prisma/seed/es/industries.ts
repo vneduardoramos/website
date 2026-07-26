@@ -23,12 +23,11 @@ export const industriesEs: Record<string, { name?: string; headline?: string; in
       { title: "Cimiento de datos de proyecto unificado", description: "Una fuente gobernada que consolida los sistemas ERP, de proyecto y de campo." },
       { title: "Modelos de pronóstico y valuación", description: "Insumos basados en datos para valuación, planeación de capital y licitaciones." },
     ],
-    stats: [{ label: "Clientes en esta industria", value: "6+" }],
   },
   "education": {
     faq: [
-      { q: "¿Cuánto tarda en quedar lista una base de datos de estudiantes en Snowflake?", a: "Una base gobernada de datos de estudiantes en tiempo real sobre Snowflake quedó en operación en siete semanas para un grupo universitario, y una primera construcción en producción típica toma de 8 a 16 semanas según el volumen de datos, la complejidad de las fuentes y los casos de uso en scope. Lo que mantiene real ese plazo: un discovery que fija el scope desde el inicio, sprints ágiles de dos semanas con backlog compartido y demos, y un comité conjunto técnico y de negocio. Ese grupo recibió un entorno gobernado de Snowflake, integración nativa con Anthology / Blackboard Data Share, streaming de eventos Caliper en tiempo real, y documentación y transferencia de conocimiento para que su propio equipo lo opere y lo extienda." },
-      { q: "¿Cómo se unen los datos del SIS y del LMS en Snowflake?", a: "Los expedientes académicos y los eventos de actividad de aprendizaje llegan a Snowflake por dos caminos y se unen en un solo modelo gobernado. Para un grupo de universidades que atiende a más de 20,000 estudiantes en Miami y América Latina, Viewnear conectó Anthology / Blackboard Data Share para depositar los datos académicos en una capa RAW, con discovery de esquema y validación de actualización, volumen y uso, y transmitió en streaming los eventos de aprendizaje Caliper del LMS hacia Snowflake RAW a través de Azure Event Hub. Sobre esas capas RAW queda un modelo analítico del estudiante documentado, y la estructura gobernada de RAW a analítica mantiene un linaje claro hacia cada sistema de origen." },
+      { q: "¿Cuánto tarda en quedar lista una base de datos de estudiantes en Snowflake?", a: "Una base gobernada de datos de estudiantes en tiempo real sobre Snowflake quedó en operación en siete semanas para un grupo universitario, y una primera construcción en producción típica toma de 8 a 16 semanas según el volumen de datos, la complejidad de las fuentes y los casos de uso en scope. Lo que mantiene real ese plazo: un discovery que fija el scope desde el inicio, sprints ágiles de dos semanas con backlog compartido y demos, y un comité conjunto técnico y de negocio. Ese grupo recibió un entorno gobernado de Snowflake, integración nativa con Anthology Illuminate Developer, streaming de eventos Caliper en tiempo real, y documentación y transferencia de conocimiento para que su propio equipo lo opere y lo extienda." },
+      { q: "¿Cómo se unen los datos del SIS y del LMS en Snowflake?", a: "Los expedientes académicos y los eventos de actividad de aprendizaje llegan a Snowflake por dos caminos y se unen en un solo modelo gobernado. Para un grupo de universidades que atiende a más de 20,000 estudiantes en Miami y América Latina, Viewnear conectó Anthology Illuminate Developer (antes Blackboard Data) para depositar los datos académicos en una capa RAW, con discovery de esquema y validación de actualización, volumen y uso, y transmitió en streaming los eventos de aprendizaje Caliper del LMS hacia Snowflake RAW a través de Azure Event Hub. Sobre esas capas RAW queda un modelo analítico del estudiante documentado, y la estructura gobernada de RAW a analítica mantiene un linaje claro hacia cada sistema de origen." },
       { q: "¿Snowflake permite detectar a tiempo a los estudiantes en riesgo de abandono?", a: "La analítica de alerta temprana sobre participación y resultados es un entregable estándar de educación en Snowflake, y depende de que los eventos de actividad de aprendizaje se transmitan conforme ocurren en lugar de llegar por lotes. Viewnear unifica los datos de SIS, LMS y operación en una única fuente gobernada y confiable, y entrega analítica de éxito estudiantil sobre participación, logro y retención, con alertas tempranas sobre los estudiantes en mayor riesgo. El manejo de los datos de estudiantes es acorde con FERPA, con roles, RBAC y políticas de red que definen quién puede acceder a qué, por campus y por función." },
     ],
     name: "Educación",
@@ -48,7 +47,6 @@ export const industriesEs: Record<string, { name?: string; headline?: string; in
       { title: "Dashboards de inscripción y operación", description: "Admisiones, capacidad y desempeño operativo de un vistazo." },
       { title: "Cimiento de datos educativo unificado", description: "Una base gobernada que abarca los sistemas académicos y administrativos." },
     ],
-    stats: [{ label: "Clientes en esta industria", value: "5+" }],
   },
   "financial-services": {
     faq: [
@@ -73,7 +71,6 @@ export const industriesEs: Record<string, { name?: string; headline?: string; in
       { title: "Reportes regulatorios", description: "Reportes de cumplimiento automatizados y auditables." },
       { title: "Casos de uso de analítica e IA", description: "Desde la evaluación de productos hasta los casos de uso de IA en todos los departamentos." },
     ],
-    stats: [{ label: "Clientes en esta industria", value: "12+" }],
   },
   "manufacturing": {
     faq: [
@@ -98,7 +95,6 @@ export const industriesEs: Record<string, { name?: string; headline?: string; in
       { title: "Pipelines de datos de IoT y sensores", description: "Datos de máquina y sensores de alto volumen, ingeridos y gobernados." },
       { title: "Modelos de mantenimiento predictivo", description: "Cimientos de datos para pronosticar fallas antes de que ocurran." },
     ],
-    stats: [{ label: "Clientes en esta industria", value: "7+" }],
   },
   "media-entertainment-advertising": {
     faq: [
@@ -123,7 +119,6 @@ export const industriesEs: Record<string, { name?: string; headline?: string; in
       { title: "Analítica de desempeño de contenido", description: "Qué resuena, por título, formato y plataforma." },
       { title: "Cimiento de datos de medios unificado", description: "Una base gobernada que abarca los sistemas de anuncios, suscripción y contenido." },
     ],
-    stats: [{ label: "Clientes en esta industria", value: "5+" }],
   },
   "retail-cpg": {
     faq: [
@@ -148,7 +143,6 @@ export const industriesEs: Record<string, { name?: string; headline?: string; in
       { title: "Analítica de producción y costo de alimentos", description: "Desempeño de producción, logística y costo de alimentos en una sola vista." },
       { title: "Analítica de clientes y lealtad", description: "Información de margen por producto y seguimiento del desempeño de lealtad." },
     ],
-    stats: [{ label: "Clientes en esta industria", value: "10+" }],
   },
   "technology-telco": {
     faq: [
@@ -173,6 +167,5 @@ export const industriesEs: Record<string, { name?: string; headline?: string; in
       { title: "Pipelines de red y telemetría", description: "Telemetría de alto volumen ingerida, gobernada y lista para consultar." },
       { title: "Analítica de autoservicio", description: "Métricas confiables y gobernadas desde las que reporta cada equipo." },
     ],
-    stats: [{ label: "Clientes en esta industria", value: "8+" }],
   },
 };

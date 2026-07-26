@@ -14,7 +14,7 @@
     "decisionsLabel": "Decisiones que salen",
     "generallyAvailable": "Disponible de forma general",
     "wrapsEveryLayer": "Envuelve cada capa",
-    "previewLegend": "Preview: acceso anticipado que nuestro nivel de partner aporta al proyecto"
+    "previewLegend": "Preview: aún sin disponibilidad general, así que se contempla en el plan y no se promete"
   },
   "stackStory": {
     "beats": {
@@ -40,7 +40,7 @@
       },
       "oneTeam": {
         "title": "Un solo equipo responde por todo el arco",
-        "body": "Snowflake opera la plataforma. Nosotros diseñamos, construimos y afinamos lo que corre sobre ella con el equipo en la sala, y luego entregamos las llaves: documentado y listo para que lo amplíen. La mayoría de las bases llegan a producción en 8 a 16 semanas, porque el discovery fija el scope desde el inicio y cada sprint termina con software funcionando en una demo."
+        "body": "Snowflake opera la plataforma. Nosotros diseñamos, construimos y afinamos lo que corre sobre ella con el equipo en la sala, y luego entregamos las llaves: documentado y listo para que lo amplíen. Una base se dimensiona para llegar a producción en 8 a 16 semanas, porque el discovery fija el scope desde el inicio y cada sprint termina con software funcionando en una demo."
       }
     }
   },

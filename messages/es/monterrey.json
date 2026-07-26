@@ -17,10 +17,10 @@
   "office": {
     "eyebrow": "La oficina",
     "title": "Pueblo Serena, al pie de la <hl>Sierra Madre</hl>",
-    "body": "Es una oficina real con un equipo real dentro, no un domicilio de coordinación. Las revisiones de arquitectura ocurren en el pizarrón, los ingenieros trabajan en pareja en la misma mesa, y quienes dimensionan un proyecto son quienes lo construyen. Los clientes son bienvenidos, y las visitas son comunes al inicio de un build.",
+    "body": "El equipo de entrega trabaja desde esta oficina. Las revisiones de arquitectura ocurren en el pizarrón, los ingenieros trabajan en pareja en la misma mesa, y quienes dimensionan un proyecto son quienes lo construyen. Los clientes son bienvenidos, y las visitas son comunes al inicio de un build.",
     "bullets": [
-      "Carr. Nacional 500, Valle Alto, Monterrey, NL 64983, México",
-      "Ingenieros de datos, arquitectos e ingenieros de IA en una misma sala, todos certificados en SnowPro",
+      "Carr. Nacional 500, Valle Alto, Monterrey, NL 64989, México",
+      "Ingenieros de datos, arquitectos e ingenieros de IA en una misma sala, con certificaciones SnowPro en la construcción",
       "La dirección en Austin, Texas, atendiendo clientes en toda América"
     ],
     "imageAlt": "El centro de entrega nearshore de Viewnear en Monterrey, México, en Pueblo Serena",
@@ -60,7 +60,7 @@
     "bullets": [
       "Standups, sprint reviews y juntas de seguimiento dentro de la jornada del cliente",
       "Respuestas el mismo día ante un bloqueo, no una cola que se libera al día siguiente",
-      "Traslape completo con el horario laboral del centro, el este y la montaña de Estados Unidos"
+      "Alineado a la jornada del cliente, sea del centro, el este o la montaña"
     ]
   },
   "talent": {
@@ -68,7 +68,7 @@
     "title": "Por qué la ingeniería está <hl>aquí</hl>",
     "body": "Monterrey es la capital industrial de México y una de las mayores reservas de talento en ingeniería de América Latina. El Tecnológico de Monterrey y la Universidad Autónoma de Nuevo León forman ingenieros en una ciudad que ha operado manufactura, logística y TI empresarial a escala durante décadas. Eso importa en particular para el trabajo de datos: la gente de aquí ha visto entornos ERP reales, sistemas de piso de planta reales y restricciones regulatorias reales, no solo tutoriales.",
     "bullets": [
-      "Un estándar de contratación riguroso y después certificación SnowPro en todo el equipo",
+      "Un estándar de contratación riguroso y después certificación SnowPro pagada y registrada",
       "Profundidad en Snowflake y en el mundo empresarial en cada nivel, no solo arriba",
       "Un equipo comprometido que permanece en el proyecto desde el scope hasta la operación"
     ],

@@ -32,9 +32,6 @@ function splitOnPhrase(text: string, phrase: string): [string, string, string] {
 export async function PressStrip() {
   const t = await getTranslations("press");
   const [before, highlight, after] = splitOnPhrase(PRESS_HOME_QUOTE.quote, HIGHLIGHT_PHRASE);
-  // PRESS_HOME_QUOTE.url === PRESS[1].url (see lib/press.ts); reuse that
-  // article's byline for the credit line under the CRN source chip.
-  const sourceArticle = PRESS.find((item) => item.url === PRESS_HOME_QUOTE.url) ?? PRESS[1];
   const outlet = getOutlet(PRESS_HOME_QUOTE.outlet);
 
   return (
@@ -59,7 +56,7 @@ export async function PressStrip() {
               href={PRESS_HOME_QUOTE.url}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`Read the coverage on ${outlet.name} by ${sourceArticle.author}`}
+              aria-label={`Read the coverage on ${outlet.name}`}
               className={
                 outlet.logo
                   ? "inline-flex items-center rounded-lg border border-border bg-white px-3 py-1.5 shadow-soft transition-shadow hover:shadow-soft-lg"
@@ -80,7 +77,7 @@ export async function PressStrip() {
               )}
             </a>
             <span aria-hidden="true">&middot;</span>
-            <span>{sourceArticle.author}</span>
+            <span>{PRESS_HOME_QUOTE.attribution}</span>
           </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <Link

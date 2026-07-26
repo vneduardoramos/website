@@ -132,24 +132,22 @@ Use these everywhere; never present two as the same metric. Firm-level and deliv
 
 **Firm-level**
 
-Note: the site's stat bands currently lead with credentials (Premier, SnowPro, 15+, 5 countries) rather than volume metrics. The values below stay canonical; if a volume metric returns to a page, use exactly these figures.
+**The firm-level volume metrics that used to live here were invented and have been deleted.** A 2026-07 claim audit found "50+ clients", "120+ engagements", "25+ specialists", "NPS 90+", "5 countries" and the 60% / 3x / 40% delivery band had no source anywhere: they were generated with the site's first content batch. Do not reintroduce any of them, and do not treat this table as a place to park a plausible number until a real one arrives. If a stat band needs a value, it comes from the owner or it does not ship.
 
-| Metric | Value | Shown on |
-|--------|-------|----------|
-| Clients served | **50+** | not currently shown (reserved for stat bands) |
-| Engagements delivered | **120+** | not currently shown (always labeled "engagements", never "clients") |
-| Years | **15** / **15+** | home facts band, nearshore, about (senior experience) |
-| Specialists | **25+** | not currently shown |
-| Countries (Americas) | **5** | home, nearshore credential bands |
-| Time to first value | **8–16 weeks** | home, services, approach, FAQ |
-| NPS | **90+** | not currently shown |
+What is left, and where it comes from:
 
-**Delivery-level (Services "what engagements deliver")**
+| Metric | Value | Basis |
+|--------|-------|-------|
+| Snowflake partner tier | **Premier** (+ CoCo Preferred) | Owner-confirmed; CoCo Global Partner Momentum slide in `public/assets/images/certs/` |
+| SnowPro certifications held | **10** | Owner-confirmed, 2026-07 |
+| Headcount | **20-50** | Owner-confirmed, 2026-07 (schema band) |
+| Founded | **2022**, Austin TX | Owner-confirmed |
+| Delivery offices | **2** (Austin, Monterrey) | `lib/offices.ts` |
+| Years of combined data & AI experience | **15+** | Team experience, not company age |
+| Time to first value | **8-16 weeks** | What engagements are **scoped to**, never "most engagements reach" |
 
-| Metric | Value |
-|--------|-------|
-| Faster time to first insight | **60%** |
-| Pipeline reliability | **3×** |
-| Lower platform run cost | **40%** |
+Rules that follow from the audit:
 
-Per-case-study outcome metrics are **study-specific** and separate from this set ([0015](decisions/0015-outcome-led-case-studies.md)). When real figures are known, update this table, then the few pages that hardcode bands: About `trackRecord`, the Services delivery band, and the home metric band.
+- **Never state a frequency over engagements we do not publish.** "Most builds reach production in X" asserts a distribution; "a build is scoped to reach production in X" is a commitment we control. Use the second form.
+- **Never quantify a team's certification coverage as universal.** "SnowPro-certified engineers" is fine; "SnowPro-certified across the team" is not, at 10 certifications.
+- Per-case-study outcome metrics are **study-specific** ([0015](decisions/0015-outcome-led-case-studies.md)) and come from the engagement, not from this table.

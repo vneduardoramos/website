@@ -18,7 +18,7 @@
     { "value": "Built in", "label": "Security and lineage" },
     { "value": "8–16 wks", "label": "Kickoff to first value, sprint by sprint" }
   ],
-  "leadershipLabel": "Delivered by our team. The client's name is withheld; ours isn't.",
+  "leadershipLabel": "Delivered by Viewnear, and this is who leads the work. The client's name is withheld; ours isn't.",
   "story": {
     "eyebrow": "The engagement",
     "title": "How Viewnear delivered for {clientName}",
@@ -29,7 +29,7 @@
   "result": {
     "eyebrow": "The result",
     "title": "From raw data to <hl>confident decisions</hl>",
-    "body": "With governed, AI-ready data in place, {clientName} unlocked faster reporting, dependable pipelines, and a foundation built to scale across the {region} market.",
+    "body": "Governed, AI-ready data in Snowflake, built to scale across the {region} market. What this engagement put in place for {clientName}:",
     "imageAlt": "{title} results",
     "cta": "Start a conversation"
   },

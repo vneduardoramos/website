@@ -17,7 +17,7 @@
     "title": "Every sector’s data, <hl>regulations, and KPIs</hl>.",
     "body": "Every sector has its own data, regulations, and pressures. We pair specialists who know the industry with SnowPro-certified engineers to map the problem, shape the roadmap, and build the solution alongside in-house teams, so what we deliver speaks the sector's language and moves the metrics that matter.",
     "bullets": [
-      "Sector data patterns and compliance requirements we have delivered against before",
+      "Sector data patterns and compliance requirements the team knows going in",
       "Compliance and governance baked into the architecture",
       "Outcomes mapped to the KPIs leadership tracks"
     ],
@@ -27,7 +27,7 @@
   "sectors": {
     "eyebrow": "Sectors we serve",
     "title": "Find the right industry",
-    "intro": "Seven practices, each with its own data patterns and compliance requirements; explore the one closest to the work at hand."
+    "intro": "Seven sectors, each with its own data patterns and compliance requirements; explore the one closest to the work at hand."
   },
   "grid": {
     "kicker": "Industry",

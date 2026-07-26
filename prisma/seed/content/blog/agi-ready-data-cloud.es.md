@@ -36,7 +36,7 @@ Los éxitos repetidos crean un círculo virtuoso donde cada logro financia la si
 
 - **Claridad:** Evaluamos los conjuntos de datos críticos, vinculamos las brechas con el riesgo de negocio y presentamos el resumen en una sola página para la alta dirección.
 - **Confianza:** Seleccionamos un caso de uso de alta visibilidad, como la predicción de abandono de clientes (churn) o la revisión de contratos, y ejecutamos un piloto acotado. El costo y la precisión se comparten en un lenguaje que todas las partes interesadas entienden.
-- **Retornos compuestos:** Convertimos el piloto en plantillas reutilizables para que el siguiente equipo avance el doble de rápido.
+- **Retornos compuestos:** Convertimos el piloto en plantillas reutilizables, para que el siguiente equipo parta de patrones que ya funcionan y no de una hoja en blanco.
 
 La disciplina escala. El heroísmo improvisado no.
 

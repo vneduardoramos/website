@@ -22,7 +22,7 @@ Copy-paste from here so nothing drifts.
 - **Phone:** _(not published yet — add a real, answerable business line before creating Google Business Profiles; a profile with no phone is weaker, and the number must match everywhere)_
 - **LinkedIn:** https://www.linkedin.com/company/viewnear/
 - **Austin, TX office:** 10900 Stonelake Blvd, Bldg 2, Suite 100, Austin, TX 78759, USA
-- **Monterrey office:** Carr. Nacional 500, Valle Alto, Monterrey, NL 64983, Mexico
+- **Monterrey office:** Carr. Nacional 500, Valle Alto, Monterrey, NL 64989, Mexico
 
 **One-paragraph company blurb** (paste into directory "About" fields; keep it identical):
 

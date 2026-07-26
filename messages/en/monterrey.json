@@ -17,10 +17,10 @@
   "office": {
     "eyebrow": "The office",
     "title": "Pueblo Serena, at the foot of the <hl>Sierra Madre</hl>",
-    "body": "This is a real office with a real team in it, not a coordination address. Architecture reviews happen on the whiteboard, engineers pair at the same table, and the people who scope an engagement are the people who build it. Clients are welcome, and visits are common at the start of a build.",
+    "body": "The delivery team works from this office. Architecture reviews happen on the whiteboard, engineers pair at the same table, and the people who scope an engagement are the people who build it. Clients are welcome, and visits are common at the start of a build.",
     "bullets": [
-      "Carr. Nacional 500, Valle Alto, Monterrey, NL 64983, Mexico",
-      "Data engineers, architects, and AI engineers in one room, all SnowPro-certified",
+      "Carr. Nacional 500, Valle Alto, Monterrey, NL 64989, Mexico",
+      "Data engineers, architects, and AI engineers in one room, with SnowPro certifications on the build",
       "Leadership in Austin, Texas, serving clients across the Americas"
     ],
     "imageAlt": "Viewnear's nearshore delivery center in Monterrey, Mexico, at Pueblo Serena",
@@ -60,7 +60,7 @@
     "bullets": [
       "Standups, sprint reviews, and steering meetings inside the client's working day",
       "Same-day answers on blockers, not a queue that clears overnight",
-      "Full overlap with US Central, Eastern, and Mountain business hours"
+      "Aligned to the client's working day, whether that is Central, Eastern, or Mountain"
     ]
   },
   "talent": {
@@ -68,7 +68,7 @@
     "title": "Why the engineering is <hl>here</hl>",
     "body": "Monterrey is Mexico's industrial capital and one of the largest engineering talent pools in Latin America. Tecnológico de Monterrey and the Universidad Autónoma de Nuevo León graduate engineers into a city that has run manufacturing, logistics, and enterprise IT at scale for decades. That matters for data work specifically: the people here have seen real ERP estates, real shop-floor systems, and real regulatory constraints, not just tutorials.",
     "bullets": [
-      "A rigorous hiring bar, then SnowPro certification across the team",
+      "A rigorous hiring bar, then SnowPro certification paid for and tracked",
       "Snowflake and enterprise depth at every level, not only at the top",
       "A committed team that stays on an engagement from scope through run"
     ],

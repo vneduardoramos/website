@@ -32,7 +32,7 @@
     {
       "label": "Depth",
       "title": "Snowflake depth at every level",
-      "body": "Strategists, architects, and engineers all fluent in Snowflake and SnowPro-certified. The depth that scopes the work is the depth that delivers it."
+      "body": "Strategists, architects, and SnowPro-certified engineers, all fluent in Snowflake. The depth that scopes the work is the depth that delivers it."
     },
     {
       "label": "Language",
@@ -78,16 +78,16 @@
       "label": "Snowflake Premier + CoCo Preferred Partner"
     },
     {
-      "value": "SnowPro",
-      "label": "SnowPro-certified across the team"
+      "value": "10",
+      "label": "SnowPro certifications held"
     },
     {
       "value": "15+",
       "label": "Years of combined data & AI experience"
     },
     {
-      "value": "5",
-      "label": "Countries across the Americas"
+      "value": "2",
+      "label": "Delivery offices: Austin and Monterrey"
     }
   ],
   "deliverHeading": {
@@ -124,7 +124,7 @@
   "team": {
     "eyebrow": "Certified nearshore talent",
     "title": "Nearshore should not mean <hl>junior</hl>",
-    "body": "Our Monterrey team is SnowPro-certified and proven in production. The people who scope the work are the people who build it, and they specialize in exactly one platform: Snowflake, every project, every day.",
+    "body": "The Monterrey team holds SnowPro certifications and is proven in production. The people who scope the work are the people who build it, and they specialize in exactly one platform: Snowflake, every project, every day.",
     "bullets": [
       "SnowPro-certified architects and engineers, proven in production",
       "A rigorous hiring bar for every team member",

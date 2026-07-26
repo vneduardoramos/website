@@ -120,7 +120,7 @@
   "why": [
     {
       "title": "Premier and CoCo Preferred, verified",
-      "body": "Recognized in Snowflake's CoCo Preferred Partner program at Summit 2026 alongside Accenture, Deloitte, IBM, and Capgemini. In practice it means Snowflake's product teams are a call away when a build hits a hard question, and early visibility into what is coming."
+      "body": "Recognized in Snowflake's CoCo Preferred Partner program at Summit 2026 alongside Accenture, Deloitte, IBM, and Capgemini. In practice it means a direct line to Snowflake when a build hits a hard question."
     },
     {
       "title": "The people who scope it are the people who build it",
@@ -159,7 +159,7 @@
   },
   "proof": {
     "eyebrow": "Proof, not promises",
-    "title": "Implementations already in production"
+    "title": "Engagements, and what each one put in place"
   },
   "industries": {
     "eyebrow": "Sector depth",
@@ -190,11 +190,11 @@
     },
     {
       "q": "What Snowflake partner status does Viewnear hold?",
-      "a": "Viewnear is a Snowflake Premier Partner and a Snowflake CoCo Preferred Partner, with SnowPro-certified engineers and a verified delivery track record across the Americas. Premier status reflects certified delivery across the full Snowflake stack and means we work directly with Snowflake's team on architecture and delivery, with early visibility into new capabilities."
+      "a": "Viewnear is a Snowflake Premier Partner and a Snowflake CoCo Preferred Partner, with SnowPro-certified engineers and a verified delivery track record across the Americas. Premier status reflects certified delivery across the full Snowflake stack, and we work alongside the client's own Snowflake account team on architecture and delivery."
     },
     {
       "q": "Can you migrate our existing data warehouse to Snowflake?",
-      "a": "Yes, and it is one of our most common engagements: Teradata, Oracle, Redshift, SQL Server, and Hadoop. We handle automated code conversion, validated parity between old and new, a phased cutover rather than a big bang, and the program governance around it, so reporting does not break during a quarter close."
+      "a": "Yes: Teradata, Oracle, Redshift, SQL Server, and Hadoop. We handle automated code conversion, validated parity between old and new, a phased cutover rather than a big bang, and the program governance around it, so reporting does not break during a quarter close."
     },
     {
       "q": "Do you implement AI and Cortex, or only the data foundation?",

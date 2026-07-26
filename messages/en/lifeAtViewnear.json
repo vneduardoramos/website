@@ -13,13 +13,13 @@
   "offices": {
     "eyebrow": "Our offices",
     "title": "Two homes. One team.",
-    "intro": "We're headquartered in Austin and Monterrey: two flagship spaces that anchor a team working across the Americas, in person and remote-augmented.",
+    "intro": "We work from Austin and Monterrey, two offices that anchor a team spread across the Americas, in person and remote-augmented.",
     "items": [
       {
         "city": "Austin",
         "region": "Texas, USA",
         "place": "Quarry Oaks II · Stonelake Office Park",
-        "alt": "Viewnear's Austin home: a glass office tower in Stonelake Office Park, set against the downtown Austin skyline",
+        "alt": "A glass office tower in Austin, Texas, with the city reflected in its facade",
         "street": "10900 Stonelake Blvd, Bldg 2, Suite 100",
         "cityZip": "Austin, TX 78759"
       },
@@ -27,9 +27,9 @@
         "city": "Monterrey",
         "region": "Nuevo León, México",
         "place": "Pueblo Serena",
-        "alt": "Viewnear's Monterrey home: a modern office building at Pueblo Serena, at the foot of the Sierra Madre",
+        "alt": "A modern office building at Pueblo Serena, Monterrey, at the foot of the Sierra Madre",
         "street": "Carr. Nacional 500, Valle Alto",
-        "cityZip": "Monterrey, MX 64983"
+        "cityZip": "Monterrey, MX 64989"
       }
     ],
     "deliveryCenterTitle": "The Monterrey office is also our nearshore delivery center.",

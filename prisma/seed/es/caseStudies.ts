@@ -35,7 +35,7 @@ export const caseStudiesEs: Record<string, { title?: string; summary?: string; s
     seoDescription: "Expedientes académicos y eventos de aprendizaje de campus en Miami y Latinoamérica, unificados en información en vivo de más de 20,000 estudiantes.",
     title: "Visibilidad en tiempo real de más de 20,000 estudiantes en varios campus, en operación en siete semanas",
     summary:
-      "Un grupo de universidades que atiende a más de 20,000 estudiantes en Miami y América Latina tenía los registros académicos y los eventos de aprendizaje del LMS aislados en silos entre campus. Viewnear construyó un pipeline de datos de estudiantes gobernado y en tiempo real sobre Snowflake: un entorno gobernado, integración nativa con Blackboard Data Share y streaming de eventos Caliper en tiempo real, unificando los datos académicos y de actividad de aprendizaje en una única fuente gobernada.",
+      "Un grupo de universidades que atiende a más de 20,000 estudiantes en Miami y América Latina tenía los registros académicos y los eventos de aprendizaje del LMS aislados en silos entre campus. Viewnear construyó un pipeline de datos de estudiantes gobernado y en tiempo real sobre Snowflake: un entorno gobernado, integración nativa con Anthology Illuminate Developer y streaming de eventos Caliper en tiempo real, unificando los datos académicos y de actividad de aprendizaje en una única fuente gobernada.",
     metrics: [
       { value: "20k+", label: "Estudiantes en Miami y LATAM" },
       { value: "Real-time", label: "Eventos de aprendizaje Caliper, antes por lotes" },
@@ -63,12 +63,12 @@ export const caseStudiesEs: Record<string, { title?: string; summary?: string; s
     seoDescription: "Un grupo distribuidor de vehículos comerciales unificó ventas, servicio, partes y administración en un registro dorado en ocho dominios.",
     title: "Un golden record confiable en ocho dominios de negocio",
     summary:
-      "Un grupo de distribuidores de vehículos comerciales operaba ventas, servicio, refacciones y el back office en sistemas separados, sin una versión única de cada cliente, vehículo, refacción o proveedor. Viewnear construyó una base corporativa de datos maestros sobre Snowflake: un golden record progresivo y multifuente en ocho dominios de negocio, con arquitectura Medallion, ingesta con Openflow, transformaciones con dbt y agentes de Snowflake CoWork por dominio.",
+      "Un grupo de distribuidores de vehículos comerciales operaba ventas, servicio, refacciones y el back office en sistemas separados, sin una versión única de cada cliente, vehículo, refacción o proveedor. Viewnear está construyendo una base corporativa de datos maestros sobre Snowflake, entregada dominio por dominio: un golden record progresivo y multifuente en ocho dominios de negocio, con arquitectura Medallion, ingesta con Openflow, transformaciones con dbt y agentes de Snowflake CoWork por dominio.",
     metrics: [
       { value: "3", label: "Sistemas fuente unificados" },
       { value: "8", label: "Dominios de negocio consolidados" },
       { value: "Medallion", label: "Bronze, Silver, Gold" },
-      { value: "12 mo", label: "Por fases, tres entregas" },
+      { value: "12 mo", label: "Hoja de ruta: tres entregas por fases" },
     ],
   },
 };

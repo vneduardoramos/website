@@ -70,8 +70,8 @@
       }
     ],
     "panel": {
-      "headline": "<weeks>8–16 weeks</weeks> to production, vs. <months>6–12 months</months> building the team in-house.",
-      "body": "A <nearshore>SnowPro-certified nearshore team</nearshore> in Monterrey, Mexico and Austin, Texas, on Central Time and your working day, with enterprise depth at every level: use-case sprints scoped by discovery, no hiring runway, no ramp, no key-person risk.",
+      "headline": "<weeks>8–16 weeks</weeks> to production with the team already in place, instead of <months>hiring and ramping one first</months>.",
+      "body": "A <nearshore>nearshore team with SnowPro-certified engineers</nearshore> in Monterrey, Mexico and Austin, Texas, on Central Time and your working day, with enterprise depth at every level: use-case sprints scoped by discovery, with no hiring runway to fund first.",
       "ctaPrimary": "Talk to an architect",
       "ctaGhost": "See the comparison"
     }
@@ -85,7 +85,7 @@
       "Snowflake CoCo Preferred Partner badge",
       "SnowPro Core certification badge"
     ],
-    "security": "Everything we build inherits Snowflake’s independently audited controls (SOC 2 Type II, ISO 27001, HIPAA), extended by our governed delivery practices. <link>How we secure client data →</link>",
+    "security": "Everything we build inherits Snowflake’s independently audited controls (SOC 2 Type II, ISO 27001), extended by our governed delivery practices. <link>How we secure client data →</link>",
     "figureAlt": "Snowflake's CoCo Global Partner Momentum wall listing Viewnear among Snowflake partners",
     "figcaption": "Snowflake’s CoCo Partner Momentum wall · Summit 2026"
   },

@@ -10,14 +10,14 @@
   },
   "heroChips": [
     "20+ source platforms",
-    "Automated conversion",
+    "Automated conversion where covered",
     "Validated parity",
     "Phased cutover"
   ],
   "sourcesHeading": {
     "eyebrow": "Every source platform",
     "title": "We migrate from all of them",
-    "intro": "Legacy appliances, cloud warehouses, Hadoop, or the database quietly doing warehouse duty. If the data lives there today, we have a path to land it on Snowflake, governed and in the team's hands."
+    "intro": "Legacy appliances, cloud warehouses, Hadoop, or the database quietly doing warehouse duty. If the data lives there today, we have a path to land it on Snowflake, governed and in the team's hands: automated conversion where Snowflake AIM covers the source, hand-built where it doesn't."
   },
   "sources": [
     {
@@ -158,7 +158,7 @@
   "conviction": {
     "eyebrow": "Our conviction",
     "title": "The tools convert the code. They don't answer for the month-end close.",
-    "body": "SnowConvert and the Snowpark Migration Accelerator do the typing: the SQL, stored procedures, and Spark jobs that took years to write convert in weeks. What we're actually hired for is everything the tools can't sign off on: the edge cases remediated by hand, every object reviewed before it moves on, and row, aggregate, and hash reconciliation proving the new numbers match the old ones before anyone cuts over.",
+    "body": "Snowflake AIM does the typing where it covers the source: the SQL, stored procedures, and Spark jobs that took years to write convert in weeks. What we're actually hired for is everything the tools can't sign off on: the edge cases remediated by hand, every object reviewed before it moves on, and row, aggregate, and hash reconciliation proving the new numbers match the old ones before anyone cuts over.",
     "bullets": [
       "Conversion output reviewed object by object, in Snowflake Workspaces",
       "Row, aggregate, and hash checks prove parity against the source",
@@ -201,7 +201,7 @@
   "proofHeading": {
     "eyebrow": "Backed by Snowflake",
     "title": "A certified team that has done this before",
-    "intro": "Migrations run on Snowflake's own tooling, delivered by a SnowPro-certified team with a verified track record across the Americas."
+    "intro": "Migrations run on Snowflake's own tooling, delivered by SnowPro-certified engineers with a verified track record across the Americas."
   },
   "metrics": [
     {
@@ -210,7 +210,7 @@
     },
     {
       "value": "Automated",
-      "label": "Code conversion with SnowConvert"
+      "label": "Code conversion where Snowflake AIM covers the source"
     },
     {
       "value": "Phased",

@@ -70,8 +70,8 @@
       }
     ],
     "panel": {
-      "headline": "<weeks>8 a 16 semanas</weeks> hasta producción, frente a <months>6 a 12 meses</months> construyendo el equipo internamente.",
-      "body": "Un <nearshore>equipo nearshore con certificación SnowPro</nearshore> en Monterrey, México y Austin, Texas, en horario del centro y en la jornada laboral del cliente, con profundidad empresarial en cada nivel: sprints por caso de uso definidos mediante el discovery, sin tiempos de contratación, sin curva de arranque, sin riesgo de persona clave.",
+      "headline": "<weeks>8 a 16 semanas</weeks> hasta producción con el equipo ya formado, en lugar de <months>contratarlo y prepararlo primero</months>.",
+      "body": "Un <nearshore>equipo nearshore con ingenieros certificados en SnowPro</nearshore> en Monterrey, México y Austin, Texas, en horario del centro y en la jornada laboral del cliente, con profundidad empresarial en cada nivel: sprints por caso de uso definidos mediante el discovery, sin tiempos de contratación que financiar primero.",
       "ctaPrimary": "Hablar con un arquitecto",
       "ctaGhost": "Ver la comparación"
     }
@@ -85,7 +85,7 @@
       "Insignia de Snowflake CoCo Preferred Partner",
       "Insignia de certificación SnowPro Core"
     ],
-    "security": "Todo lo que construimos hereda los controles auditados de forma independiente de Snowflake (SOC 2 Type II, ISO 27001, HIPAA), ampliados con nuestras prácticas de entrega gobernadas. <link>Cómo protegemos los datos de los clientes →</link>",
+    "security": "Todo lo que construimos hereda los controles auditados de forma independiente de Snowflake (SOC 2 Type II, ISO 27001), ampliados con nuestras prácticas de entrega gobernadas. <link>Cómo protegemos los datos de los clientes →</link>",
     "figureAlt": "El muro CoCo Global Partner Momentum de Snowflake que incluye a Viewnear entre los partners de Snowflake",
     "figcaption": "El muro CoCo Partner Momentum de Snowflake · Summit 2026"
   },

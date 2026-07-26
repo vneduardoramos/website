@@ -10,7 +10,7 @@
   "hero": {
     "eyebrow": "Acerca de Viewnear",
     "title": "Construimos prácticas de data & AI con empresas en toda <hl>América</hl>.",
-    "description": "Viewnear, Snowflake Premier y CoCo Preferred Partner, construye dos capacidades duraderas con las empresas: una práctica de datos que alimenta decisiones reales y una práctica de IA que lleva casos de uso a producción, sobre Snowflake y operadas por equipos internos, en Canadá, Estados Unidos, México, LATAM y el Caribe."
+    "description": "Viewnear, Snowflake Premier y CoCo Preferred Partner, construye dos capacidades duraderas con las empresas: una práctica de datos que alimenta decisiones reales y una práctica de IA que lleva casos de uso a producción, sobre Snowflake y operadas por equipos internos. La entrega ocurre desde Austin, Texas y Monterrey, México."
   },
   "heroChips": [
     "Snowflake Premier Partner",
@@ -41,7 +41,7 @@
     {
       "label": "Presencia",
       "title": "Dos sedes",
-      "body": "Austin y Monterrey, un solo equipo en el mismo horario laboral, entregando en toda América."
+      "body": "Austin y Monterrey, un solo equipo en el horario laboral del cliente, entregando en toda América."
     },
     {
       "label": "Nivel de partner",
@@ -73,8 +73,8 @@
       "label": "Años de experiencia combinada en datos e IA"
     },
     {
-      "value": "5",
-      "label": "Países en toda América"
+      "value": "2",
+      "label": "Oficinas de entrega: Austin y Monterrey"
     }
   ],
   "operateHeading": {
@@ -101,7 +101,7 @@
     },
     {
       "title": "El equipo local de América",
-      "body": "Experiencia local y alineación de zona horaria en Canadá, Estados Unidos, México, LATAM y el Caribe."
+      "body": "Dos oficinas, Austin y Monterrey, ambas en horario del centro, para clientes en toda América."
     }
   ],
   "governanceBlock": {
@@ -114,7 +114,7 @@
     "Acceso con privilegios mínimos y controles basados en roles (RBAC)",
     "Linaje de Horizon Catalog + Horizon Context en cada activo",
     "Clasificación y enmascaramiento de PII, residencia de datos por región",
-    "Sobre la plataforma auditada de Snowflake: SOC 2 Type II, ISO 27001, HIPAA"
+    "Sobre la plataforma auditada de Snowflake: SOC 2 Type II e ISO 27001"
   ],
   "team": {
     "eyebrow": "Nuestro equipo",

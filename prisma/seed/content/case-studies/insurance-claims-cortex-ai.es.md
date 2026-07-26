@@ -40,7 +40,7 @@ Los documentos de reclamos contienen datos personales y financieros sensibles, p
 - **Un único contexto de negocio confiable.** Horizon Context brinda a cada equipo y función de IA las mismas definiciones para los tipos de documento, los campos de reclamo y los estados, de modo que la clasificación y los reportes posteriores siempre coincidan.
 - **Acceso con privilegios mínimos.** Los controles de acceso basados en roles (RBAC) limitan quién puede ver los documentos en bruto y los datos extraídos, con separación de funciones entre el procesamiento, la revisión y el reporte.
 - **PII protegida en su lugar.** Los campos sensibles se clasifican y enmascaran por política, y las funciones de Cortex AI se ejecutan sobre los datos dentro de la cuenta de Snowflake gobernada del cliente, por lo que nada se copia a un servicio externo.
-- **Listo para auditorías y certificado.** El trabajo hereda los controles de Snowflake auditados de forma independiente (SOC 2 Type II, ISO 27001, HIPAA) y añade un historial completo de accesos para auditorías y respuesta a incidentes.
+- **Listo para auditorías y certificado.** El trabajo hereda los controles de Snowflake auditados de forma independiente (SOC 2 Type II, ISO 27001) y añade un historial completo de accesos para auditorías y respuesta a incidentes.
 
 ## Resultados
 

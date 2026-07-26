@@ -142,7 +142,7 @@ async function main() {
       challenges: J(i.challenges),
       deliverables: J(i.deliverables),
       tools: J(i.tools),
-      stats: J(i.stats),
+      stats: null,
       faq: i.faq ? J(i.faq) : null,
       order: i.order,
       status: "PUBLISHED",

@@ -48,7 +48,7 @@
   "cutover": {
     "typicalArc": "Arco típico",
     "weeks": ["sem 0", "sem 2", "sem 5", "sem 8", "sem 12"],
-    "typicalArcNote": "un arco típico de 8 a 16 semanas",
+    "typicalArcNote": "un arco dimensionado de 8 a 16 semanas",
     "legacy": "Heredado",
     "retired": "Retirado",
     "thePractice": "La práctica",

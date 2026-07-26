@@ -91,7 +91,7 @@
   "credentials": {
     "eyebrow": "Credenciales",
     "title": "Certificados para ejecutar IA sobre datos empresariales",
-    "intro": "Cada modelo se ejecuta bajo los controles auditados de forma independiente de Snowflake, entregado por un equipo certificado en SnowPro que hace esto todos los días y que, como socio de Anthropic, construye con Claude.",
+    "intro": "Cada modelo se ejecuta bajo los controles auditados de forma independiente de Snowflake, entregado por ingenieros certificados en SnowPro que hacen esto todos los días y que, como socio de Anthropic, construye con Claude.",
     "anthropicLine": "Socio de Anthropic, construyendo con Claude"
   },
   "cta": {

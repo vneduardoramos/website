@@ -14,7 +14,7 @@
     "decisionsLabel": "Decisions out",
     "generallyAvailable": "Generally available",
     "wrapsEveryLayer": "Wraps every layer",
-    "previewLegend": "Preview: early access our partner tier brings to the build"
+    "previewLegend": "Preview: not generally available yet, so it gets planned for rather than promised"
   },
   "stackStory": {
     "beats": {
@@ -40,7 +40,7 @@
       },
       "oneTeam": {
         "title": "One team answers for the whole arc",
-        "body": "Snowflake runs the platform. We design, build, and tune what runs on it with the team in the room, then hand over the keys: documented, and theirs to extend. Most foundations reach production in 8–16 weeks, because discovery fixes the scope up front and every sprint ends with working software in a demo."
+        "body": "Snowflake runs the platform. We design, build, and tune what runs on it with the team in the room, then hand over the keys: documented, and theirs to extend. A foundation is scoped to reach production in 8–16 weeks, because discovery fixes the scope up front and every sprint ends with working software in a demo."
       }
     }
   },

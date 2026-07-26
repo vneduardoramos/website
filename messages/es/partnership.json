@@ -6,7 +6,7 @@
   "hero": {
     "eyebrow": "Alianza con Snowflake",
     "title": "Un <hl>Premier Partner</hl> de Snowflake, y CoCo Preferred Partner.",
-    "description": "Viewnear cuenta con dos de los reconocimientos de partner más altos de Snowflake. Juntos significan profundidad certificada, una línea directa con el propio equipo de Snowflake y acceso temprano a lo que viene, todo puesto al servicio de los datos e IA empresariales por un único equipo responsable en toda América."
+    "description": "Viewnear cuenta con dos de los reconocimientos de partner más altos de Snowflake. Juntos significan profundidad certificada y una línea directa con el propio equipo de Snowflake, todo puesto al servicio de los datos e IA empresariales por un único equipo responsable en toda América."
   },
   "highlight": {
     "title": "Dos reconocimientos, con el impulso de CoCo Preferred Partner que los respalda"
@@ -26,8 +26,8 @@
       "body": "Snowflake cobra por el cómputo y el almacenamiento que realmente se consumen. Adquirir esa capacidad a través de Viewnear significa términos comerciales más simples, con la capacidad y la entrega bajo un único partner responsable."
     },
     {
-      "title": "Hoja de ruta prioritaria y acceso anticipado",
-      "body": "Acceso temprano a lo que viene en Snowflake (Cortex, Openflow, Horizon, CoCo), para que los nuevos casos de uso puedan apoyarse en capacidades emergentes antes de que se generalicen."
+      "title": "Construimos con Snowflake CoCo",
+      "body": "Como CoCo Preferred Partner construimos productos de datos y casos de uso de IA con el agente de codificación de Snowflake, revisados objeto por objeto y validados antes de llegar a producción."
     },
     {
       "title": "Entrega certificada en SnowPro",
@@ -36,8 +36,8 @@
   ],
   "comparisonHeading": {
     "eyebrow": "Construir vs. asociarse",
-    "title": "La comparación honesta",
-    "intro": "Todo líder evalúa construir internamente, contratar a un integrador de sistemas global o asociarse con un especialista. Así se comparan realmente las opciones."
+    "title": "Tres caminos para llegar",
+    "intro": "Todo líder evalúa construir internamente, contratar a un integrador de sistemas global o asociarse con un especialista. Aquí es donde difieren los tres modelos."
   },
   "comparisonHeaders": {
     "inhouse": "Construcción interna",
@@ -52,14 +52,14 @@
   "comparison": [
     {
       "dimension": "Tiempo hasta producción",
-      "inhouse": "6 a 12 meses para contratar y preparar un equipo",
-      "big3": "Movilización lenta, procesos pesados",
+      "inhouse": "Contratar y preparar un equipo antes de empezar",
+      "big3": "Movilización a través de un proceso de entrega grande",
       "viewnear": "8 a 16 semanas hasta el primer valor, demos en cada sprint"
     },
     {
       "dimension": "Quién hace el trabajo",
       "inhouse": "Quien se pueda contratar y retener",
-      "big3": "Personal rotativo, pirámides de entrega por capas",
+      "big3": "Personal de una banca amplia, con frecuencia por capas",
       "viewnear": "Certificado y con dominio en cada nivel"
     },
     {
@@ -71,24 +71,24 @@
     {
       "dimension": "Responsabilidad",
       "inhouse": "Repartida entre equipos internos",
-      "big3": "Dispersa entre subcontratistas",
+      "big3": "Con frecuencia repartida entre prácticas y subcontratistas",
       "viewnear": "Un solo equipo, responsable de principio a fin"
     },
     {
       "dimension": "Después de la puesta en marcha",
       "inhouse": "El conocimiento se va con la rotación de personal",
-      "big3": "Continúa la dependencia por tarifa diaria",
+      "big3": "El proyecto continúa con tarifa diaria",
       "viewnear": "Habilitación y traspaso: el equipo lo opera"
     }
   ],
   "certified": {
     "eyebrow": "Certificado vs. generalista",
     "title": "Profundidad que un <hl>generalista no puede igualar</hl>",
-    "body": "A un Premier Partner se le mide por personas certificadas y resultados verificados, no por la cantidad de logos. Conocemos todo el stack de Snowflake y trabajamos codo a codo con el propio equipo de Snowflake en cada proyecto, de modo que la construcción avanza más rápido y con menos riesgo que con un generalista o una preparación interna.",
+    "body": "A un Premier Partner se le mide por personas certificadas y resultados verificados, no por la cantidad de logos. Conocemos todo el stack de Snowflake y trabajamos junto al equipo de cuenta de Snowflake del cliente, de modo que la construcción avanza más rápido y con menos riesgo que con un generalista o una preparación interna.",
     "bullets": [
       "Arquitectos e ingenieros certificados en SnowPro, del diseño a la producción",
       "Trabajo directo con el equipo de cuenta de Snowflake",
-      "Acceso temprano a Cortex, Openflow, Horizon y CoCo",
+      "Construyendo sobre el stack actual de Snowflake: Cortex, Openflow, Horizon, CoCo",
       "Un único equipo responsable: las mismas personas nombradas desde el inicio hasta el traspaso"
     ],
     "imageAlt": "El equipo de Viewnear haciendo una demostración a los asistentes de un evento de Snowflake",

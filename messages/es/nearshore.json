@@ -32,7 +32,7 @@
     {
       "label": "Profundidad",
       "title": "Profundidad en Snowflake en cada nivel",
-      "body": "Estrategas, arquitectos e ingenieros, todos con dominio de Snowflake y certificados en SnowPro. La misma profundidad que dimensiona el trabajo es la que lo entrega."
+      "body": "Estrategas, arquitectos e ingenieros certificados en SnowPro, todos con dominio de Snowflake. La misma profundidad que dimensiona el trabajo es la que lo entrega."
     },
     {
       "label": "Idioma",
@@ -78,16 +78,16 @@
       "label": "Snowflake Premier + CoCo Preferred Partner"
     },
     {
-      "value": "SnowPro",
-      "label": "Certificados en SnowPro en todo el equipo"
+      "value": "10",
+      "label": "Certificaciones SnowPro"
     },
     {
       "value": "15+",
       "label": "Años de experiencia combinada en datos e IA"
     },
     {
-      "value": "5",
-      "label": "Países en toda América"
+      "value": "2",
+      "label": "Oficinas de entrega: Austin y Monterrey"
     }
   ],
   "deliverHeading": {
@@ -124,7 +124,7 @@
   "team": {
     "eyebrow": "Talento nearshore certificado",
     "title": "Nearshore no debería significar <hl>junior</hl>",
-    "body": "Nuestro equipo en Monterrey está certificado en SnowPro y probado en producción. Las personas que dimensionan el trabajo son las que lo construyen, y se especializan en exactamente una plataforma: Snowflake, en cada proyecto, cada día.",
+    "body": "El equipo en Monterrey cuenta con certificaciones SnowPro y trabajo probado en producción. Las personas que dimensionan el trabajo son las que lo construyen, y se especializan en exactamente una plataforma: Snowflake, en cada proyecto, cada día.",
     "bullets": [
       "Arquitectos e ingenieros certificados en SnowPro, probados en producción",
       "Un estándar de contratación riguroso para cada integrante del equipo",

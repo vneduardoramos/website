@@ -7,7 +7,7 @@
         { "value": "Costo + cronograma", "label": "Una vista de proyecto gobernada" },
         { "value": "Portafolio", "label": "Analítica sobre cada activo" },
         { "value": "8–16 sem", "label": "Hasta el primer valor en producción" },
-        { "value": "SnowPro", "label": "Equipo de entrega certificado" }
+        { "value": "SnowPro", "label": "Ingenieros certificados en la entrega" }
       ],
       "bullets": [
         "Datos de costo y cronograma de proyecto consolidados en una vista gobernada",
@@ -23,7 +23,7 @@
         { "value": "SIS + LMS", "label": "Unificados bajo un solo modelo" },
         { "value": "FERPA", "label": "Manejo conforme de datos de estudiantes" },
         { "value": "8–16 sem", "label": "Hasta el primer valor en producción" },
-        { "value": "SnowPro", "label": "Equipo de entrega certificado" }
+        { "value": "SnowPro", "label": "Ingenieros certificados en la entrega" }
       ],
       "bullets": [
         "Datos de SIS, LMS y operativos unificados bajo un solo modelo de gobierno",
@@ -55,7 +55,7 @@
         { "value": "Planta + ERP", "label": "Una sola fuente gobernada" },
         { "value": "Proveedor → embarque", "label": "Trazable y gobernado" },
         { "value": "8–16 sem", "label": "Hasta el primer valor en producción" },
-        { "value": "SnowPro", "label": "Equipo de entrega certificado" }
+        { "value": "SnowPro", "label": "Ingenieros certificados en la entrega" }
       ],
       "bullets": [
         "Datos de planta, sensores y ERP unificados en una sola fuente gobernada y confiable",
@@ -71,7 +71,7 @@
         { "value": "Audiencia", "label": "Una vista unificada con gestión de consentimiento" },
         { "value": "Cada canal", "label": "Atribución en un solo lugar" },
         { "value": "8–16 sem", "label": "Hasta el primer valor en producción" },
-        { "value": "SnowPro", "label": "Equipo de entrega certificado" }
+        { "value": "SnowPro", "label": "Ingenieros certificados en la entrega" }
       ],
       "bullets": [
         "Datos de visualización, suscripción y participación unificados en una sola fuente",
@@ -87,7 +87,7 @@
         { "value": "En línea + en tienda", "label": "Una vista de demanda" },
         { "value": "Acorde con PCI", "label": "Datos de pago y clientes gobernados" },
         { "value": "8–16 sem", "label": "Hasta el primer valor en producción" },
-        { "value": "SnowPro", "label": "Equipo de entrega certificado" }
+        { "value": "SnowPro", "label": "Ingenieros certificados en la entrega" }
       ],
       "bullets": [
         "Datos en línea y en tienda unificados en una base gobernada y casi en tiempo real",
@@ -119,7 +119,7 @@
         { "value": "Gobernado", "label": "Una sola fuente de verdad" },
         { "value": "Incorporado", "label": "Seguridad y linaje" },
         { "value": "8–16 sem", "label": "Hasta el primer valor en producción" },
-        { "value": "SnowPro", "label": "Equipo de entrega certificado" }
+        { "value": "SnowPro", "label": "Ingenieros certificados en la entrega" }
       ],
       "bullets": [
         "Modelos de datos y gobierno específicos del sector, incorporados desde el inicio",

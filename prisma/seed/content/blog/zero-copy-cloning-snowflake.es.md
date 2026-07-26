@@ -1,6 +1,6 @@
-## Una copia de 2TB en diez segundos
+## Una copia de 2TB en segundos
 
-La clonación zero-copy parece compleja hasta que la ve en acción. Hace poco le mostré a un cliente cómo crear una copia completa de su base de datos de producción de 2TB en unos 10 segundos. Sin mover datos, sin costos de almacenamiento, solo un duplicado instantáneo y totalmente funcional.
+La clonación zero-copy parece compleja hasta que la ve en acción. Clonar una base de datos de producción de 2TB toma segundos, porque no se copia nada. Sin mover datos, sin costo de almacenamiento en el momento de clonar, solo un duplicado totalmente funcional.
 
 Esta es una de las ventajas más prácticas de la arquitectura de [Snowflake](/es/services/data-engineering), pero muchos equipos no se dan cuenta de lo útil que puede ser para las operaciones del día a día.
 
@@ -54,10 +54,10 @@ Las políticas de limpieza automática ayudan a gestionar los costos al eliminar
 SELECT
     database_name,
     created,
-    bytes / (1024*1024*1024) as storage_gb
-FROM information_schema.databases
-WHERE origin IS NOT NULL
-ORDER BY bytes DESC;
+    average_database_bytes / POWER(1024, 3) AS storage_gb
+FROM snowflake.account_usage.database_storage_usage_history
+WHERE usage_date = CURRENT_DATE - 1
+ORDER BY average_database_bytes DESC;
 ```
 
 ## Consideraciones de seguridad y gobernanza

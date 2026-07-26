@@ -39,7 +39,7 @@
   ],
   "workedExample": {
     "eyebrow": "Un ejemplo concreto",
-    "body": "La forma de un primer proyecto típico: un discovery fija el scope y el precio, las demos de cada sprint muestran software funcionando desde las primeras semanas, y una base gobernada llega a producción en 8 a 16 semanas, con un equipo nombrado que el sponsor conoce antes de firmar y con personas internas en el trabajo desde el primer sprint."
+    "body": "La forma a la que se dimensiona un primer proyecto: un discovery fija el scope y el precio, las demos de cada sprint muestran software funcionando desde las primeras semanas, y una base gobernada llega a producción en 8 a 16 semanas, con un equipo nombrado que el sponsor conoce antes de firmar y con personas internas en el trabajo desde el primer sprint."
   },
   "cost": {
     "eyebrow": "Qué determina el costo",
@@ -65,7 +65,7 @@
     {
       "phase": "6 a 12 meses",
       "title": "Escala y autoservicio",
-      "body": "La práctica de IA comienza a entregar: los casos de uso se extienden por los equipos y cada nuevo caso llega al primer insight más rápido que el anterior. El autoservicio se afianza; los informes manuales quedan atrás."
+      "body": "La práctica de IA comienza a entregar: los casos de uso se extienden por los equipos y cada nuevo caso parte de la base gobernada que dejó el anterior. El autoservicio se afianza; los informes manuales quedan atrás."
     },
     {
       "phase": "Más de 18 meses",

@@ -39,7 +39,7 @@
   ],
   "workedExample": {
     "eyebrow": "A worked example",
-    "body": "The shape of a typical first engagement: a discovery fixes scope and price, sprint demos show working software from the first weeks, and a governed foundation reaches production in 8–16 weeks, with a named team the sponsor meets before signing and in-house people in the work from sprint one."
+    "body": "The shape a first engagement is scoped to: a discovery fixes scope and price, sprint demos show working software from the first weeks, and a governed foundation reaches production in 8–16 weeks, with a named team the sponsor meets before signing and in-house people in the work from sprint one."
   },
   "cost": {
     "eyebrow": "What drives cost",
@@ -65,7 +65,7 @@
     {
       "phase": "6–12 months",
       "title": "Scale & self-service",
-      "body": "The AI practice ships: use cases spread across teams and each new one reaches first insight faster than the last. Self-service takes hold; manual reporting retires."
+      "body": "The AI practice ships: use cases spread across teams, and each new one starts from the governed foundation the last one built. Self-service takes hold; manual reporting retires."
     },
     {
       "phase": "18+ months",

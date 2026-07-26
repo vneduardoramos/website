@@ -38,9 +38,9 @@ He escrito sobre esto en una publicación anterior. La analítica y la [ingenier
 
 Los analistas y los ingenieros aportan comprensión del dominio, pensamiento crítico y responsabilidad. Ahí es donde reside el valor. Lo que ha resultado costoso es forzar esa experiencia a través de capas de traducción manual, consultas escritas a mano, pipelines frágiles y ciclos de iteración lentos.
 
-Aquí es donde Snowflake CoWork y Cortex AI cambian la ecuación.
+Aquí es donde Snowflake Intelligence y Cortex AI cambian la ecuación.
 
-Con Snowflake CoWork impulsado por Cortex AI, el lenguaje natural se convierte en una interfaz de primera clase para los datos empresariales gobernados. Los usuarios de negocio, los analistas y los líderes pueden interactuar directamente con los datos sin eludir la gobernanza ni esperar una traducción manual.
+Con Snowflake Intelligence impulsado por Cortex AI, el lenguaje natural se convierte en una interfaz de primera clase para los datos empresariales gobernados. Los usuarios de negocio, los analistas y los líderes pueden interactuar directamente con los datos sin eludir la gobernanza ni esperar una traducción manual.
 
 Cortex AI no reemplaza a los analistas ni a los ingenieros. Elimina la fricción entre la intención y la ejecución. Los expertos se mantienen enfocados en definir la lógica, validar los resultados y guiar las decisiones, mientras Snowflake se encarga de la ejecución, la seguridad y la escala directamente donde residen los datos.
 

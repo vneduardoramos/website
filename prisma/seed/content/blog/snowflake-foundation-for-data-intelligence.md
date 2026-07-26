@@ -38,9 +38,9 @@ This is the difference between experimentation and enterprise intelligence.
 
 Analysts and engineers bring domain understanding, critical thinking, and accountability. That is where the value lives. What has been expensive is forcing that expertise through manual translation layers, hand-coded queries, brittle pipelines, and slow iteration cycles.
 
-This is where Snowflake CoWork and Cortex AI change the equation.
+This is where Snowflake Intelligence and Cortex AI change the equation.
 
-With Snowflake CoWork powered by Cortex AI, natural language becomes a first-class interface to governed enterprise data. Business users, analysts, and leaders can engage directly with data without bypassing governance or waiting on manual translation.
+With Snowflake Intelligence powered by Cortex AI, natural language becomes a first-class interface to governed enterprise data. Business users, analysts, and leaders can engage directly with data without bypassing governance or waiting on manual translation.
 
 Cortex AI does not replace analysts or engineers. It removes the friction between intent and execution. Experts stay focused on defining logic, validating results, and guiding decisions, while Snowflake handles execution, security, and scale directly where the data lives.
 

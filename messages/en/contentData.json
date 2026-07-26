@@ -7,7 +7,7 @@
         { "value": "Cost + schedule", "label": "One governed project view" },
         { "value": "Portfolio", "label": "Analytics across every asset" },
         { "value": "8–16 wks", "label": "To first value in production" },
-        { "value": "SnowPro", "label": "Certified delivery team" }
+        { "value": "SnowPro", "label": "Certified engineers on delivery" }
       ],
       "bullets": [
         "Project cost and schedule data consolidated into one governed view",
@@ -23,7 +23,7 @@
         { "value": "SIS + LMS", "label": "Unified under one model" },
         { "value": "FERPA", "label": "Aware handling of student data" },
         { "value": "8–16 wks", "label": "To first value in production" },
-        { "value": "SnowPro", "label": "Certified delivery team" }
+        { "value": "SnowPro", "label": "Certified engineers on delivery" }
       ],
       "bullets": [
         "SIS, LMS, and operational data unified under one governance model",
@@ -55,7 +55,7 @@
         { "value": "Shop-floor + ERP", "label": "One governed source" },
         { "value": "Supplier → shipment", "label": "Traceable, governed" },
         { "value": "8–16 wks", "label": "To first value in production" },
-        { "value": "SnowPro", "label": "Certified delivery team" }
+        { "value": "SnowPro", "label": "Certified engineers on delivery" }
       ],
       "bullets": [
         "Shop-floor, sensor, and ERP data unified into one governed, trusted source",
@@ -71,7 +71,7 @@
         { "value": "Audience", "label": "One unified, consent-aware view" },
         { "value": "Every channel", "label": "Attribution in one place" },
         { "value": "8–16 wks", "label": "To first value in production" },
-        { "value": "SnowPro", "label": "Certified delivery team" }
+        { "value": "SnowPro", "label": "Certified engineers on delivery" }
       ],
       "bullets": [
         "Viewing, subscription, and engagement data unified into one source",
@@ -87,7 +87,7 @@
         { "value": "Online + in-store", "label": "One demand view" },
         { "value": "PCI-aware", "label": "Payment + customer data governed" },
         { "value": "8–16 wks", "label": "To first value in production" },
-        { "value": "SnowPro", "label": "Certified delivery team" }
+        { "value": "SnowPro", "label": "Certified engineers on delivery" }
       ],
       "bullets": [
         "Online and in-store data unified into one near-real-time, governed foundation",
@@ -119,7 +119,7 @@
         { "value": "Governed", "label": "One source of truth" },
         { "value": "Built in", "label": "Security and lineage" },
         { "value": "8–16 wks", "label": "To first value in production" },
-        { "value": "SnowPro", "label": "Certified delivery team" }
+        { "value": "SnowPro", "label": "Certified engineers on delivery" }
       ],
       "bullets": [
         "Sector-specific data models and governance built in from the start",

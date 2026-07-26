@@ -12,7 +12,7 @@ Microsoft y Snowflake han construido algo realmente bueno en conjunto. El conect
 
 Siempre empiezo por la autenticación, porque esto sienta la base de todo lo demás. No ate sus dashboards a las credenciales de usuarios individuales. He visto a demasiadas organizaciones batallar con esto cuando la gente cambia de rol o deja la empresa. Las cuentas de servicio brindan consistencia, y la autenticación por par de claves (key pair) elimina los dolores de cabeza con contraseñas que parecen afectar a todos los demás proyectos de integración.
 
-La configuración del warehouse para Power BI es donde las cosas se ponen interesantes. El auto-suspend se vuelve crucial porque Power BI tiende a generar consultas en ráfagas: mucha actividad cuando la gente actualiza dashboards y luego periodos de calma. Suelo configurar el auto-suspend de forma bastante agresiva (alrededor de 60 segundos) porque el auto-resume es instantáneo. Las configuraciones multi-cluster manejan a los usuarios concurrentes de maravilla, escalando hacia arriba cuando todos entran a los dashboards a las 9 AM y volviendo a bajar cuando las cosas se calman.
+La configuración del warehouse para Power BI es donde las cosas se ponen interesantes. El auto-suspend se vuelve crucial porque Power BI tiende a generar consultas en ráfagas: mucha actividad cuando la gente actualiza dashboards y luego periodos de calma. Mantengo el auto-suspend ajustado, aunque nunca por debajo del mínimo facturable de 60 segundos, porque bajar de ahí no ahorra nada. El resume suele tomar uno o dos segundos. Las configuraciones multi-cluster manejan a los usuarios concurrentes de maravilla, escalando hacia arriba cuando todos entran a los dashboards a las 9 AM y volviendo a bajar cuando las cosas se calman.
 
 ```sql
 -- This is my go-to Power BI warehouse setup
@@ -80,7 +80,7 @@ FROM orders
 WHERE created_timestamp >= current_timestamp - interval '24 hours';
 ```
 
-El incremental refresh marca una verdadera diferencia con datasets grandes. El incremental refresh de Power BI funciona de maravilla con el change tracking de Snowflake: solo actualiza los datos que realmente cambiaron en lugar de reprocesar todo. La optimización de extracts de Tableau sigue principios similares.
+El incremental refresh marca una verdadera diferencia con datasets grandes. El incremental refresh de Power BI particiona por rango de fechas y empuja ese filtro hacia Snowflake, así que una actualización lee las particiones recientes en lugar de la tabla completa. La optimización de extracts de Tableau sigue principios similares.
 
 ## La conversación sobre costos
 
@@ -88,7 +88,7 @@ Hablemos de lo que en realidad preocupa a todos: los costos. Las herramientas de
 
 El dimensionamiento del warehouse se convierte en un arte. Casi siempre empiezo con warehouses pequeños para las cargas de trabajo de BI, porque se puede escalar hacia arriba al instante si el rendimiento lo exige. Monitorear el rendimiento de las consultas y la experiencia del usuario en lugar de intentar adivinar lo que va a necesitar. El auto-scaling mediante warehouses multi-cluster maneja el uso pico mientras controla los costos.
 
-Los ajustes de auto-suspend pueden marcar una diferencia enorme. He visto que un auto-suspend de 30 segundos le ahorra a las organizaciones miles de dólares al mes sin ningún impacto en la experiencia del usuario. El auto-resume es instantáneo, así que la suspensión agresiva casi siempre es la opción correcta.
+Los ajustes de auto-suspend pueden marcar una diferencia enorme. Suspender un warehouse de BI después de unos minutos de calma, en lugar de dejarlo encendido todo el día, es donde regresan los créditos. Si se ajusta demasiado, el warehouse se suspende entre ráfagas de consultas y vuelve a activar el cargo mínimo de 60 segundos en cada resume, así que conviene alinear el ajuste con los huecos reales entre actualizaciones.
 
 ## Seguridad bien hecha
 

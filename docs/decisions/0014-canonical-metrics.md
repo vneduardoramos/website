@@ -13,22 +13,22 @@ Define one reconciled, non-contradictory metric story and use it consistently, w
 
 | Metric | Value |
 |---|---|
-| Clients served | **50+** |
-| Engagements delivered | **120+** (only ever labeled "engagements", never "clients") |
-| Years in business / senior experience | **15** / **15+** |
-| Specialists | **25+** |
-| Countries (Americas) | **5** (Canada, USA, Mexico, LATAM, Caribbean) |
-| Time to first value | **8–16 weeks** |
-| NPS | **90+** |
-| Faster time to first insight | **60%** (Services delivery band) |
-| Pipeline reliability | **3×** (Services delivery band) |
-| Lower platform run cost | **40%** (Services delivery band) |
+| ~~Clients served~~ | ~~50+~~ **withdrawn 2026-07-26, invented** |
+| ~~Engagements delivered~~ | ~~120+~~ **withdrawn 2026-07-26, invented** |
+| Years of combined data & AI experience | **15+** (team experience, not company age) |
+| ~~Specialists~~ | ~~25+~~ **withdrawn 2026-07-26, invented** |
+| ~~Countries (Americas)~~ | ~~5~~ **withdrawn 2026-07-26**; the site publishes 2 delivery offices instead |
+| Time to first value | **8–16 weeks**, as what an engagement is *scoped to* |
+| ~~NPS~~ | ~~90+~~ **withdrawn 2026-07-26, invented** |
+| ~~Faster time to first insight~~ | ~~60%~~ **withdrawn 2026-07-26, invented** |
+| ~~Pipeline reliability~~ | ~~3×~~ **withdrawn 2026-07-26, invented** |
+| ~~Lower platform run cost~~ | ~~40%~~ **withdrawn 2026-07-26, invented** |
 
 Concrete edits: About `9 → 5` countries and the duplicate `40%` slot replaced with **NPS 90+**. The authoritative table lives in [`content-style-guide.md`](../content-style-guide.md); pages and case studies cite it.
 
 ## Consequences
 
-- Pages no longer contradict each other; numbers are placeholders but internally coherent.
+- Pages no longer contradict each other. **Superseded in part on 2026-07-26:** "placeholders but internally coherent" was the mistake. Coherent placeholders read as measured results and got quoted as facts, so a claim audit deleted every invented figure rather than harmonizing it. See the canonical table in [`content-style-guide.md`](../content-style-guide.md).
 - Per-case-study outcome metrics ([0015](0015-outcome-led-case-studies.md)) are separate, study-specific figures and don't feed this firm-level set.
 - When the real numbers are known, update the table in the style guide and the few pages that hardcode bands (About `trackRecord`, Services delivery band, home metric band).
 

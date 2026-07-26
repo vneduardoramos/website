@@ -76,7 +76,7 @@ export async function GET() {
 
   out.push("## Key facts");
   out.push("");
-  out.push("- Snowflake Premier Partner and Snowflake CoCo Preferred Partner, with a SnowPro-certified team.");
+  out.push("- Snowflake Premier Partner and Snowflake CoCo Preferred Partner, with SnowPro-certified engineers.");
   out.push(
     "- Service areas: data and AI strategy, cloud architecture and data foundation, data engineering and pipelines, AI analytics and agents, embedded analytics, capability development.",
   );

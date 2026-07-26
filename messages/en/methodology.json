@@ -21,7 +21,7 @@
     },
     {
       "title": "Govern & Validate",
-      "desc": "Apply Horizon Catalog lineage, access controls, and PII classification, plus Horizon Context so every team and AI agent shares one trusted business context; test for trust."
+      "desc": "Apply Horizon Catalog lineage, access controls, and PII classification, with shared business context in Semantic Views so every team and AI agent reads one set of definitions; test for trust."
     },
     {
       "title": "Run & Optimize",
@@ -34,7 +34,7 @@
     "items": [
       {
         "title": "The whole modern data stack, not one tool",
-        "body": "Ingestion (Openflow, Snowpipe Streaming), transformation (dbt, Snowpark, Dynamic Tables), governance (Horizon Catalog and Horizon Context), analytics (Snowsight, Streamlit), and AI agents (Cortex, Snowflake CoWork), all centered on one governed Snowflake core."
+        "body": "Ingestion (Openflow, Snowpipe Streaming), transformation (dbt, Snowpark, Dynamic Tables), governance (Horizon Catalog, and Horizon Context once it is generally available), analytics (Snowsight, Streamlit), and AI agents (Cortex, Snowflake CoWork), all centered on one governed Snowflake core."
       },
       {
         "title": "Governed and open by design",
@@ -46,7 +46,7 @@
       },
       {
         "title": "Beyond dashboards to data agents",
-        "body": "We ground Snowflake CoWork (the personal AI agent) and Cortex Agents in governed Semantic Views and Horizon Context, so business users get cited, trustworthy answers from the same definitions every team uses."
+        "body": "We ground Snowflake CoWork (the personal AI agent) and Cortex Agents in governed Semantic Views, so business users get cited, trustworthy answers from the same definitions every team uses."
       }
     ]
   }

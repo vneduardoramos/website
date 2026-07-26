@@ -81,7 +81,7 @@
       {
         "label": "Timeline",
         "title": "A fixed 8–16 week arc",
-        "body": "Most initial builds reach production in 8–16 weeks: a discovery fixes scope and price up front, and every sprint closes with working software, so value lands from sprint one."
+        "body": "An initial build is scoped to reach production in 8–16 weeks: a discovery fixes scope and price up front, and every sprint closes with working software, so value lands from sprint one."
       },
       {
         "label": "Steering",
@@ -174,7 +174,7 @@
       },
       {
         "title": "Verified Snowflake depth",
-        "body": "A SnowPro-certified team with a verified Snowflake delivery record behind every decision, from strategy through production."
+        "body": "SnowPro-certified engineers with a verified Snowflake delivery record behind every decision, from strategy through production."
       },
       {
         "title": "Priced to outcomes",

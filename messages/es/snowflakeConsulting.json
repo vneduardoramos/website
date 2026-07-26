@@ -120,7 +120,7 @@
   "why": [
     {
       "title": "Premier y CoCo Preferred, verificado",
-      "body": "Reconocidos en el programa CoCo Preferred Partner de Snowflake en Summit 2026, junto a Accenture, Deloitte, IBM y Capgemini. En la práctica significa que los equipos de producto de Snowflake están a una llamada de distancia cuando un build enfrenta una pregunta difícil, y visibilidad temprana de lo que viene."
+      "body": "Reconocidos en el programa CoCo Preferred Partner de Snowflake en Summit 2026, junto a Accenture, Deloitte, IBM y Capgemini. En la práctica significa que hay una línea directa con Snowflake cuando un build enfrenta una pregunta difícil."
     },
     {
       "title": "Quien dimensiona es quien construye",
@@ -159,7 +159,7 @@
   },
   "proof": {
     "eyebrow": "Pruebas, no promesas",
-    "title": "Implementaciones ya en producción"
+    "title": "Proyectos, y lo que dejó cada uno"
   },
   "industries": {
     "eyebrow": "Profundidad por sector",
@@ -190,11 +190,11 @@
     },
     {
       "q": "¿Qué estatus de partner de Snowflake tiene Viewnear?",
-      "a": "Viewnear es Snowflake Premier Partner y Snowflake CoCo Preferred Partner, con ingenieros certificados en SnowPro y un historial de entrega verificado en las Américas. El estatus Premier refleja entrega certificada en todo el stack de Snowflake y significa que trabajamos directamente con el equipo de Snowflake en arquitectura y entrega, con visibilidad temprana de nuevas capacidades."
+      "a": "Viewnear es Snowflake Premier Partner y Snowflake CoCo Preferred Partner, con ingenieros certificados en SnowPro y un historial de entrega verificado en las Américas. El estatus Premier refleja entrega certificada en todo el stack de Snowflake, y trabajamos junto al equipo de cuenta de Snowflake del cliente en arquitectura y entrega."
     },
     {
       "q": "¿Pueden migrar nuestro data warehouse actual a Snowflake?",
-      "a": "Sí, y es uno de nuestros proyectos más comunes: Teradata, Oracle, Redshift, SQL Server y Hadoop. Nos encargamos de la conversión automatizada de código, la paridad validada entre lo viejo y lo nuevo, un cutover por fases en lugar de un solo golpe, y la gobernanza del programa alrededor, para que los reportes no se rompan durante un cierre trimestral."
+      "a": "Sí: Teradata, Oracle, Redshift, SQL Server y Hadoop. Nos encargamos de la conversión automatizada de código, la paridad validada entre lo viejo y lo nuevo, un cutover por fases en lugar de un solo golpe, y la gobernanza del programa alrededor, para que los reportes no se rompan durante un cierre trimestral."
     },
     {
       "q": "¿Implementan IA y Cortex o solo la base de datos?",

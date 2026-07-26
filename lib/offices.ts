@@ -45,7 +45,7 @@ export const OFFICES: readonly OfficeInput[] = [
     streetAddress: "Carr. Nacional 500, Valle Alto",
     addressLocality: "Monterrey",
     addressRegion: "NL",
-    postalCode: "64983",
+    postalCode: "64989",
     addressCountry: "MX",
     latitude: 25.5563,
     longitude: -100.2417,

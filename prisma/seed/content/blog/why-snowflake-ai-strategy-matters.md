@@ -42,7 +42,7 @@ Anomaly detection can run continuously on incoming data streams, identifying unu
 
 ## Natural language interfaces
 
-The ability to query data using natural language removes technical barriers for business users. Instead of learning SQL or using complex BI tools, users can ask questions in plain English and get meaningful responses. With Cortex Analyst and Snowflake CoWork, that conversation happens right on top of your governed data.
+The ability to query data using natural language removes technical barriers for business users. Instead of learning SQL or using complex BI tools, users can ask questions in plain English and get meaningful responses. With Cortex Analyst, that conversation happens right on top of governed data.
 
 This democratizes data access in practical ways. Marketing teams can analyze campaign performance, finance teams can explore budget variances, and operations teams can investigate process metrics without requiring technical intermediaries.
 

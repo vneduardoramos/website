@@ -5,7 +5,7 @@ import { PartnerBadges } from "@/components/marketing/PartnerBadges";
 import { SnowflakeLockup } from "@/components/marketing/SnowflakeLockup";
 import { SectionDecor } from "@/components/marketing/Decor";
 
-const STAT_VALUES = ["1,300+", "2026", "2"];
+const STAT_VALUES = ["14,000+", "41", "2"];
 
 /**
  * Prominent partnership proof block: the official badges (large), the facts, the

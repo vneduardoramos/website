@@ -1,12 +1,12 @@
 Summit week always packs a lot into a few days, but in June 2025 the signal cut through the noise. The product roadmap was full of exciting updates, yet what stayed with us were the conversations on the floor, the clear direction the platform was heading, and the ways these shifts line up with how we at Viewnear help our clients build smarter, faster, and more future-ready data solutions.
 
-## Snowflake CoWork: natural language with structure behind it
+## Snowflake Intelligence: natural language with structure behind it
 
-A big announcement was Snowflake CoWork, a natural language interface that lets users ask questions of their data in plain English.
+A big announcement was Snowflake Intelligence, a natural language interface that lets users ask questions of their data in plain English.
 
 It's not the first time we've seen this idea, but this version felt solid. It's built on governed, secure data. It respects roles, models, and access levels. That alone gives it a much stronger foundation than most.
 
-Snowflake CoWork stood to streamline how teams interact with data, with real potential to speed up insight and reduce reliance on dashboards. But, as always, the real impact comes from thoughtful implementation. Matching it with the right data models and use cases is key.
+Snowflake Intelligence stood to streamline how teams interact with data, with real potential to speed up insight and reduce reliance on dashboards. But, as always, the real impact comes from thoughtful implementation. Matching it with the right data models and use cases is key.
 
 ## Cortex AISQL: AI where your data already lives
 
@@ -48,7 +48,7 @@ As a firm that spends every day inside Snowflake with clients, that energy hit c
 
 ## What we did next
 
-Back at Viewnear, we acted on what we saw: planning Cortex AISQL pilots, updating our architecture baselines to reflect the Gen 2 warehouse changes, and helping a few clients scope out how Snowflake CoWork could work inside their orgs.
+Back at Viewnear, we acted on what we saw: planning Cortex AISQL pilots, updating our architecture baselines to reflect the Gen 2 warehouse changes, and helping a few clients scope out how Snowflake Intelligence could work inside their orgs.
 
 As always, the goal is not to implement everything at once. It's to make smart, forward-looking moves that set our clients up for what's coming next.
 

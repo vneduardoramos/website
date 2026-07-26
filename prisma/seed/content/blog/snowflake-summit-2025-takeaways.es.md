@@ -1,12 +1,12 @@
 La semana del Summit siempre concentra mucho en pocos días, pero en junio de 2025 la señal se impuso al ruido. La hoja de ruta del producto estuvo llena de novedades interesantes, pero lo que más nos quedó fueron las conversaciones en el recinto, la dirección clara hacia la que avanzaba la plataforma y la manera en que estos cambios se alinean con la forma en que en Viewnear ayudamos a nuestros clientes a construir soluciones de datos más inteligentes, más rápidas y más preparadas para el futuro.
 
-## Snowflake CoWork: lenguaje natural con estructura detrás
+## Snowflake Intelligence: lenguaje natural con estructura detrás
 
-Uno de los grandes anuncios fue Snowflake CoWork, una interfaz de lenguaje natural que permite a los usuarios hacer preguntas a los datos en lenguaje sencillo.
+Uno de los grandes anuncios fue Snowflake Intelligence, una interfaz de lenguaje natural que permite a los usuarios hacer preguntas a los datos en lenguaje sencillo.
 
 No es la primera vez que vemos esta idea, pero esta versión se sintió sólida. Está construida sobre datos gobernados y seguros. Respeta roles, modelos y niveles de acceso. Eso por sí solo le da una base mucho más fuerte que la mayoría.
 
-Snowflake CoWork apuntaba a simplificar la forma en que los equipos interactúan con los datos, con un potencial real para acelerar la generación de insights y reducir la dependencia de los dashboards. Pero, como siempre, el impacto real viene de una implementación bien pensada. Combinarlo con los modelos de datos y los casos de uso adecuados es clave.
+Snowflake Intelligence apuntaba a simplificar la forma en que los equipos interactúan con los datos, con un potencial real para acelerar la generación de insights y reducir la dependencia de los dashboards. Pero, como siempre, el impacto real viene de una implementación bien pensada. Combinarlo con los modelos de datos y los casos de uso adecuados es clave.
 
 ## Cortex AISQL: IA donde ya viven los datos
 
@@ -48,7 +48,7 @@ Como una firma que pasa cada día dentro de Snowflake con clientes, esa energía
 
 ## Lo que hicimos después
 
-De vuelta en Viewnear, actuamos sobre lo que vimos: planificando pilotos de Cortex AISQL, actualizando nuestras líneas base de arquitectura para reflejar los cambios en los warehouses Gen 2 y ayudando a algunos clientes a definir cómo podría funcionar Snowflake CoWork dentro de sus organizaciones.
+De vuelta en Viewnear, actuamos sobre lo que vimos: planificando pilotos de Cortex AISQL, actualizando nuestras líneas base de arquitectura para reflejar los cambios en los warehouses Gen 2 y ayudando a algunos clientes a definir cómo podría funcionar Snowflake Intelligence dentro de sus organizaciones.
 
 Como siempre, el objetivo no es implementar todo a la vez. Es hacer movimientos inteligentes y con visión de futuro que preparen a nuestros clientes para lo que viene.
 

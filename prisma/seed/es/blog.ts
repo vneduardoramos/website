@@ -137,7 +137,7 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
     seoTitle: "Snowflake Summit 2025: conclusiones",
     seoDescription: "Lo que destacó en Snowflake Summit 2025, qué señala para los equipos de datos y qué se lleva a la entrega.",
     keyTakeaways: [
-      "Snowflake CoWork trae consultas en lenguaje natural construidas sobre datos gobernados, seguros y conscientes de roles, pero el impacto real depende de combinarlo con los modelos de datos y los casos de uso adecuados.",
+      "Snowflake Intelligence trae consultas en lenguaje natural construidas sobre datos gobernados, seguros y conscientes de roles, pero el impacto real depende de combinarlo con los modelos de datos y los casos de uso adecuados.",
       "Cortex AISQL aplica IA generativa directamente dentro de SQL, resumiendo, analizando y clasificando datos no estructurados sin sacar nada de Snowflake.",
       "Adaptive Compute, Gen 2 Warehouses y valores de seguridad predeterminados más sólidos (passkeys, MFA, monitoreo de credenciales filtradas) liberan tiempo para el diseño estratégico por encima del ajuste manual.",
       "Los dbt Projects nativos en Snowsight estrechan el ciclo de analytics engineering, y Openflow (mediante la adquisición de Datavolo) apunta hacia un movimiento de datos más rico dentro de la plataforma.",
@@ -244,7 +244,7 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
       "Snowflake cambió la economía de los datos: el desacoplamiento de almacenamiento y cómputo, la escala elástica y la compartición nativa convirtieron el uso de los datos de restringido a omnipresente.",
       "El verdadero valor de Snowflake es como capa de distribución para datos empresariales gobernados, donde los dominios se cruzan sobre una única fuente de verdad sin copias ni fricción.",
       "La IA solo funciona cuando se sustenta en datos gobernados y de alta calidad, así que la inteligencia se ejecuta directamente sobre el sistema de registro en lugar de sobre copias en la sombra.",
-      "Con Snowflake CoWork impulsado por Cortex AI, el lenguaje natural se convierte en una interfaz de primer nivel hacia los datos gobernados sin eludir el gobierno.",
+      "Con Snowflake Intelligence impulsado por Cortex AI, el lenguaje natural se convierte en una interfaz de primer nivel hacia los datos gobernados sin eludir el gobierno.",
       "El cambio va de mejor analítica a inteligencia operativa incorporada en los flujos de trabajo diarios, con Snowflake como capa de ejecución.",
     ],
   },

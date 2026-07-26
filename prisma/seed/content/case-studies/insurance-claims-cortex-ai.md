@@ -40,7 +40,7 @@ Claims documents carry sensitive personal and financial data, so governance was 
 - **One trusted business context.** Horizon Context gives every team and AI function the same definitions for document types, claim fields, and statuses, so classification and downstream reporting always agree.
 - **Least-privilege access.** Role-based access controls (RBAC) limit who can see raw documents and extracted data, with separation of duties across processing, review, and reporting.
 - **PII protected in place.** Sensitive fields are classified and masked by policy, and the Cortex AI functions run on the data inside the client's governed Snowflake account, so nothing is copied to an external service.
-- **Audit-ready and certified.** The work inherits Snowflake's independently audited controls (SOC 2 Type II, ISO 27001, HIPAA) and adds full access history for audits and incident response.
+- **Audit-ready and certified.** The work inherits Snowflake's independently audited controls (SOC 2 Type II, ISO 27001) and adds full access history for audits and incident response.
 
 ## Results
 

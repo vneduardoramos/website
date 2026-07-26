@@ -6,24 +6,24 @@
   "hero": {
     "eyebrow": "Security & Trust",
     "title": "Enterprise data, <hl>governed and secure</hl>.",
-    "description": "Viewnear builds in the client's Snowflake account, on Snowflake's independently audited platform (SOC 2 Type II, ISO 27001, HIPAA, PCI DSS), and applies least-privilege access, PII classification, and Horizon Catalog lineage from the first table."
+    "description": "Viewnear builds in the client's Snowflake account, on Snowflake's independently audited platform (SOC 2 Type II and ISO 27001 across editions), and applies least-privilege access, PII classification, and Horizon Catalog lineage from the first table."
   },
   "compliance": {
     "eyebrow": "Compliance posture",
     "title": "Built on a certified foundation",
-    "intro": "We build on Snowflake's independently audited platform and extend it with our own governed delivery practices. The certifications below are Snowflake's; the data inherits them, and we configure the environment to meet them."
+    "intro": "We build on Snowflake's independently audited platform and extend it with our own governed delivery practices. The certifications below are Snowflake's, not Viewnear's. SOC 2 Type II and ISO 27001 apply across Snowflake editions; PHI and cardholder data need Business Critical or VPS, and PHI additionally needs a signed BAA with Snowflake before it is loaded."
   },
   "platformCompliance": [
     { "name": "SOC 2 Type II", "note": "Inherited from Snowflake" },
     { "name": "ISO 27001", "note": "Inherited from Snowflake" },
-    { "name": "HIPAA", "note": "Inherited from Snowflake (healthcare)" },
-    { "name": "PCI DSS", "note": "Inherited from Snowflake (payments)" },
-    { "name": "FedRAMP", "note": "Held by Snowflake (US gov)" },
-    { "name": "GDPR-ready", "note": "Data residency & controls" }
+    { "name": "HIPAA", "note": "Snowflake Business Critical or VPS, with a BAA in place" },
+    { "name": "PCI DSS", "note": "Snowflake Business Critical or VPS" },
+    { "name": "FedRAMP", "note": "Snowflake Government regions" },
+    { "name": "GDPR-ready", "note": "Regional deployment, access controls, and PII classification" }
   ],
   "inheritedLabel": "Snowflake’s audited controls",
   "ourLabel": "Viewnear delivery practices",
-  "inheritedControls": ["SOC 2 Type II", "ISO 27001", "HIPAA", "PCI DSS"],
+  "inheritedControls": ["SOC 2 Type II", "ISO 27001", "HIPAA (Business Critical or VPS)", "PCI DSS (Business Critical or VPS)"],
   "ourControls": [
     "Least-privilege access",
     "Lineage & auditability",

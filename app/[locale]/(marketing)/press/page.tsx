@@ -88,7 +88,7 @@ export default async function PressPage({ params }: { params: { locale: string }
                     isFeatured ? "max-w-2xl text-base" : "text-sm",
                   )}
                 >
-                  &ldquo;{item.quote}&rdquo;
+                  {item.quote ? `\u201C${item.quote}\u201D` : item.paraphrase}
                   {item.quoteBy !== PRIMARY_SPEAKER && (
                     <cite className="mt-2 block not-italic text-sm font-semibold text-foreground">
                       {item.quoteBy}

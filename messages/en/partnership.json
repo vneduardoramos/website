@@ -6,7 +6,7 @@
   "hero": {
     "eyebrow": "Snowflake Partnership",
     "title": "A Snowflake <hl>Premier Partner</hl>, and CoCo Preferred Partner.",
-    "description": "Viewnear holds two of Snowflake's highest partner recognitions. Together they mean certified depth, a direct line to Snowflake's own team, and early access to what's next, all put to work on enterprise data & AI by one accountable team across the Americas."
+    "description": "Viewnear holds two of Snowflake's highest partner recognitions. Together they mean certified depth and a direct line to Snowflake's own team, all put to work on enterprise data & AI by one accountable team across the Americas."
   },
   "highlight": {
     "title": "Two recognitions, and CoCo Preferred Partner momentum to back them"
@@ -26,8 +26,8 @@
       "body": "Snowflake charges for the compute and storage actually consumed. Procuring that capacity through Viewnear means simpler commercial terms, with capacity and delivery under one accountable partner."
     },
     {
-      "title": "Priority roadmap & preview access",
-      "body": "Early access to what's next on Snowflake (Cortex, Openflow, Horizon, CoCo), so new use cases can build on emerging capabilities before they're mainstream."
+      "title": "Building with Snowflake CoCo",
+      "body": "As a CoCo Preferred Partner we build data products and AI use cases with Snowflake's coding agent, reviewed object by object and validated before anything reaches production."
     },
     {
       "title": "SnowPro-certified delivery",
@@ -36,8 +36,8 @@
   ],
   "comparisonHeading": {
     "eyebrow": "Build vs. partner",
-    "title": "The honest comparison",
-    "intro": "Every leader weighs building in-house, hiring a global systems integrator, or partnering with a specialist. Here's how the options actually stack up."
+    "title": "Three ways to get there",
+    "intro": "Every leader weighs building in-house, hiring a global systems integrator, or partnering with a specialist. Here is where the three models differ."
   },
   "comparisonHeaders": {
     "inhouse": "In-house build",
@@ -52,14 +52,14 @@
   "comparison": [
     {
       "dimension": "Time to production",
-      "inhouse": "6–12 months to hire & ramp a team",
-      "big3": "Slow mobilization, heavy process",
+      "inhouse": "Hiring and ramping a team before the build starts",
+      "big3": "Mobilization through a large delivery process",
       "viewnear": "8–16 weeks to first value, demos every sprint"
     },
     {
       "dimension": "Who does the work",
       "inhouse": "Whoever can be hired and retained",
-      "big3": "Rotating bench, layered delivery pyramids",
+      "big3": "Staffed from a large bench, often in layers",
       "viewnear": "Certified, versed at every level"
     },
     {
@@ -71,24 +71,24 @@
     {
       "dimension": "Accountability",
       "inhouse": "Split across internal teams",
-      "big3": "Spread across sub-contractors",
+      "big3": "Often split across practices and subcontractors",
       "viewnear": "One team, owned start to finish"
     },
     {
       "dimension": "After go-live",
       "inhouse": "Knowledge walks out with attrition",
-      "big3": "Day-rate dependency continues",
+      "big3": "The engagement continues at day rates",
       "viewnear": "Enablement & hand-over, the team runs it"
     }
   ],
   "certified": {
     "eyebrow": "Certified vs. generalist",
     "title": "Depth that a <hl>generalist can’t match</hl>",
-    "body": "A Premier Partner is measured on certified people and verified outcomes, not breadth of logos. We know the full Snowflake stack and work hand in hand with Snowflake's own team on every engagement, so the build moves faster with less risk than a generalist or an in-house ramp.",
+    "body": "A Premier Partner is measured on certified people and verified outcomes, not breadth of logos. We know the full Snowflake stack and work alongside the client's Snowflake account team, so the build moves faster with less risk than a generalist or an in-house ramp.",
     "bullets": [
       "SnowPro-certified architects and engineers, from design to production",
       "Working directly with the Snowflake account team",
-      "Early access to Cortex, Openflow, Horizon, and CoCo",
+      "Building on the current Snowflake stack: Cortex, Openflow, Horizon, CoCo",
       "One accountable team: the same named people from kickoff to handover"
     ],
     "imageAlt": "The Viewnear team demoing to attendees at a Snowflake event",

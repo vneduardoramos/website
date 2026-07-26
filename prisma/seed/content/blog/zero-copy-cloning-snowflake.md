@@ -1,6 +1,6 @@
-## A 2TB copy in ten seconds
+## A 2TB copy in seconds
 
-Zero-copy cloning sounds complex until you see it in action. I recently showed a client how to create a complete copy of their 2TB production database in about 10 seconds. No data movement, no storage costs, just an instant, fully functional duplicate.
+Zero-copy cloning sounds complex until you see it in action. Cloning a 2TB production database takes seconds, because nothing is copied. No data movement, no storage cost at the moment of cloning, just a fully functional duplicate.
 
 This is one of the most practical advantages of Snowflake's architecture, but many teams don't realize how useful it can be for everyday operations.
 
@@ -54,10 +54,10 @@ Automatic cleanup policies help manage costs by removing clones after specific t
 SELECT
     database_name,
     created,
-    bytes / (1024*1024*1024) as storage_gb
-FROM information_schema.databases
-WHERE origin IS NOT NULL
-ORDER BY bytes DESC;
+    average_database_bytes / POWER(1024, 3) AS storage_gb
+FROM snowflake.account_usage.database_storage_usage_history
+WHERE usage_date = CURRENT_DATE - 1
+ORDER BY average_database_bytes DESC;
 ```
 
 ## Security and governance considerations

@@ -18,7 +18,7 @@
     { "value": "Incorporados", "label": "Seguridad y linaje" },
     { "value": "8–16 sem", "label": "Del inicio al primer valor, sprint a sprint" }
   ],
-  "leadershipLabel": "Entregado por nuestro equipo. El nombre del cliente se reserva; el nuestro no.",
+  "leadershipLabel": "Entregado por Viewnear, y este es el equipo que dirige el trabajo. El nombre del cliente se reserva; el nuestro no.",
   "story": {
     "eyebrow": "El proyecto",
     "title": "Lo que Viewnear entregó para {clientName}",
@@ -29,7 +29,7 @@
   "result": {
     "eyebrow": "El resultado",
     "title": "De datos crudos a <hl>decisiones con confianza</hl>",
-    "body": "Con datos gobernados y listos para IA, {clientName} logró informes más rápidos, pipelines confiables y una base preparada para escalar en el mercado de {region}.",
+    "body": "Datos gobernados y listos para IA en Snowflake, con capacidad de escalar en el mercado de {region}. Lo que este proyecto dejó instalado para {clientName}:",
     "imageAlt": "{title}: resultados",
     "cta": "Iniciar una conversación"
   },
