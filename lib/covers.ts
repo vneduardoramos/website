@@ -5,14 +5,14 @@
  */
 
 const PHOTOS = [
-  "/assets/images/photos/dashboard.jpg",
-  "/assets/images/photos/analytics.jpg",
-  "/assets/images/photos/datacenter.jpg",
-  "/assets/images/photos/network.jpg",
-  "/assets/images/photos/code.jpg",
-  "/assets/images/photos/collaboration.jpg",
-  "/assets/images/photos/team-meeting.jpg",
-  "/assets/images/photos/circuit.jpg",
+  "/assets/images/photos/analytics-dashboard-laptop.jpg",
+  "/assets/images/photos/analytics-dashboard-charts.jpg",
+  "/assets/images/photos/data-center-server-racks.jpg",
+  "/assets/images/photos/earth-at-night-from-orbit.jpg",
+  "/assets/images/photos/python-data-code-editor.jpg",
+  "/assets/images/photos/data-team-at-laptop.jpg",
+  "/assets/images/photos/team-meeting-laptops.jpg",
+  "/assets/images/photos/circuit-board-macro.jpg",
 ];
 
 const SECTOR_IMAGE: Record<string, string> = {

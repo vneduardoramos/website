@@ -67,14 +67,14 @@
     "title": "What it looks like in your stack",
     "body": "A closer look at what we stand up and how it lands where your team already works.",
     "cta": "Talk to an architect",
-    "imageAlt": "{title}: illustrative view"
+    "imageAlt": "{title} at Viewnear, shown in a Snowflake environment"
   },
   "showcase": {
     "eyebrow": "Proof",
     "title": "See it running in production",
     "body": "Real, anonymized engagements with measured outcomes, from a Snowflake Premier Partner delivering nearshore across the Americas.",
     "cta": "Explore the case studies",
-    "imageAlt": "{title}: outcomes in production"
+    "imageAlt": "{title} running on Snowflake"
   },
   "faq": {
     "eyebrow": "FAQ"

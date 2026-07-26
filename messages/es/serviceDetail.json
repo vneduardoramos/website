@@ -67,14 +67,14 @@
     "title": "Cómo se ve dentro del stack",
     "body": "Una mirada de cerca a lo que dejamos funcionando y cómo aterriza donde el equipo ya trabaja.",
     "cta": "Hablar con un arquitecto",
-    "imageAlt": "{title}: vista ilustrativa"
+    "imageAlt": "{title} en Viewnear, en un entorno de Snowflake"
   },
   "showcase": {
     "eyebrow": "Prueba",
     "title": "Funcionando en producción",
     "body": "Proyectos reales y anonimizados con resultados medibles, de un Snowflake Premier Partner con entrega nearshore en toda América.",
     "cta": "Explorar los casos de éxito",
-    "imageAlt": "{title}: resultados en producción"
+    "imageAlt": "{title} funcionando sobre Snowflake"
   },
   "faq": {
     "eyebrow": "Preguntas frecuentes"

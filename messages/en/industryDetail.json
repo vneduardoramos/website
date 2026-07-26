@@ -14,7 +14,7 @@
     "eyebrow": "The engagement",
     "title": "A partner who understands <hl>{name}</hl>.",
     "body": "No one spends the first month explaining {industry} to us. The team arrives knowing the sector's systems, regulations, and reporting rhythms, then builds the data models, governance, and dashboards alongside in-house teams, against the metrics they already answer for.",
-    "imageAlt": "{industry} data and AI solutions built on Snowflake",
+    "imageAlt": "A {industry} working environment, the setting this data foundation serves",
     "cta": "Start a conversation"
   },
   "foundation": {
@@ -39,7 +39,7 @@
     "intro": "The Snowflake-first stack we reach for in this sector."
   },
   "showcase": {
-    "imageAlt": "{industry} data and AI on Snowflake",
+    "imageAlt": "{industry} data and AI delivered on Snowflake",
     "title": "Built for <hl>{name}</hl>, on Snowflake.",
     "cta": "Discuss {industry} data"
   },

@@ -70,7 +70,7 @@ export default async function CaseStudyDetailPage({
   // Refer to the client generically to preserve anonymity.
   const article = /^[aeiou]/i.test(cs.sector) ? "an" : "a";
   const clientName = t("clientName", { article, sector: cs.sector.toLowerCase() });
-  const heroImage = cs.heroImage ?? "/assets/images/photos/analytics.jpg";
+  const heroImage = cs.heroImage ?? "/assets/images/photos/analytics-dashboard-charts.jpg";
 
   // DB-driven outcome metrics (fall back to a generic set if empty).
   const dbMetrics = asObjectArray<{ value: string; label: string }>(cs.metrics).filter(

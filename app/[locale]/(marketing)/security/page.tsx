@@ -138,7 +138,7 @@ export default async function SecurityPage({ params }: { params: { locale: strin
             title={t.rich("governance.title", { hl: (c) => <span className="text-gradient">{c}</span> })}
             body={t("governance.body")}
             bullets={t.raw("governance.bullets") as string[]}
-            image="/assets/images/photos/datacenter.jpg"
+            image="/assets/images/photos/data-center-server-racks.jpg"
             imageAlt={t("governance.imageAlt")}
             cta={{ label: t("governance.cta"), href: "/contact" }}
           />

@@ -23,14 +23,14 @@
     "eyebrow": "El proyecto",
     "title": "Lo que Viewnear entregó para {clientName}",
     "fallbackBody": "Viewnear se asoció con {clientName} para diseñar y entregar una base moderna y gobernada para los datos: unificar fuentes, automatizar pipelines y ofrecer información confiable donde el equipo de {sector} trabaja cada día.",
-    "detailImageAlt": "{title}: la solución en acción",
+    "detailImageAlt": "La base de datos construida para este proyecto: {title}",
     "relatedIndustry": "Industria relacionada"
   },
   "result": {
     "eyebrow": "El resultado",
     "title": "De datos crudos a <hl>decisiones con confianza</hl>",
     "body": "Datos gobernados y listos para IA en Snowflake, con capacidad de escalar en el mercado de {region}. Lo que este proyecto dejó instalado para {clientName}:",
-    "imageAlt": "{title}: resultados",
+    "imageAlt": "La base gobernada de Snowflake detrás de este resultado: {title}",
     "cta": "Iniciar una conversación"
   },
   "related": {

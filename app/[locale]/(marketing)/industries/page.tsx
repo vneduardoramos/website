@@ -51,7 +51,7 @@ export default async function IndustriesPage({ params }: { params: { locale: str
           title={t.rich("feature.title", { hl: (c) => <span className="text-gradient">{c}</span> })}
           body={t("feature.body")}
           bullets={t.raw("feature.bullets") as string[]}
-          image="/assets/images/photos/analytics.jpg"
+          image="/assets/images/photos/analytics-dashboard-charts.jpg"
           imageAlt={t("feature.imageAlt")}
           cta={{ label: t("feature.cta"), href: "/contact" }}
         />
@@ -89,7 +89,7 @@ export default async function IndustriesPage({ params }: { params: { locale: str
       </Section>
 
       <ShowcaseBand
-        image="/assets/images/photos/analytics.jpg"
+        image="/assets/images/photos/analytics-dashboard-charts.jpg"
         imageAlt={t("showcase.imageAlt")}
         veil
         eyebrow={t("showcase.eyebrow")}

@@ -74,7 +74,7 @@ export default async function ContactPage({ params }: { params: { locale: string
             <div className="relative mt-10 overflow-hidden rounded-2xl border border-border shadow-soft">
               <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-tr from-primary/25 via-transparent to-accent/15" />
               <Image
-                src="/assets/images/photos/contact-handshake.jpg"
+                src="/assets/images/photos/client-handshake.jpg"
                 alt={t("imageAlt")}
                 width={720}
                 height={480}

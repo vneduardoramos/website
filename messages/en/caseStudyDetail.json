@@ -23,14 +23,14 @@
     "eyebrow": "The engagement",
     "title": "How Viewnear delivered for {clientName}",
     "fallbackBody": "Viewnear partnered with {clientName} to design and deliver a modern, governed data foundation: unifying sources, automating pipelines, and surfacing trusted insight where the {sector} team works every day.",
-    "detailImageAlt": "{title} solution in action",
+    "detailImageAlt": "The data foundation built for this engagement: {title}",
     "relatedIndustry": "Related industry"
   },
   "result": {
     "eyebrow": "The result",
     "title": "From raw data to <hl>confident decisions</hl>",
     "body": "Governed, AI-ready data in Snowflake, built to scale across the {region} market. What this engagement put in place for {clientName}:",
-    "imageAlt": "{title} results",
+    "imageAlt": "The governed Snowflake foundation behind this result: {title}",
     "cta": "Start a conversation"
   },
   "related": {

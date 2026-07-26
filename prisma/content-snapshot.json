@@ -1,5 +1,5 @@
 {
- "exportedAt": "2026-07-26T21:25:03.639Z",
+ "exportedAt": "2026-07-26T21:36:29.233Z",
  "tables": {
   "tag": [],
   "client": [
@@ -1312,9 +1312,9 @@
     "focalX": 50,
     "focalY": 50,
     "zoom": 1.05,
-    "alt": "Cloud Architecture & Data Foundation: illustrative view",
+    "alt": "Snowflake architecture diagram: interoperable storage at the center, ringed by elastic compute, Cortex AI, cloud services, and Snowgrid cross-region and cross-cloud",
     "updatedBy": "admin@viewnear.com",
-    "updatedAt": "2026-07-26T15:19:05.656Z"
+    "updatedAt": "2026-07-26T21:35:50.110Z"
    },
    {
     "id": "cms2ayg22000151yy46fg130o",
@@ -1323,9 +1323,9 @@
     "focalX": 26.29466217330314,
     "focalY": 100,
     "zoom": 1.15,
-    "alt": "AI Analytics & Agents: illustrative view",
+    "alt": "Snowflake CoWork home screen with an ask box and saved analytics artifacts, including sales-by-country and sales-insight charts",
     "updatedBy": "admin@viewnear.com",
-    "updatedAt": "2026-07-26T15:20:22.262Z"
+    "updatedAt": "2026-07-26T21:35:50.113Z"
    },
    {
     "id": "cms2ayg22000251yy9hg6gxhw",
@@ -1334,9 +1334,9 @@
     "focalX": 50,
     "focalY": 50,
     "zoom": 1,
-    "alt": "Data Engineering & Pipelines: illustrative view",
+    "alt": "Snowflake Openflow diagram: OLTP, IoT, Kafka, PDF and SaaS sources extracted and loaded into Snowflake, then served to business applications, dashboards and agentic AI workflows",
     "updatedBy": "admin@viewnear.com",
-    "updatedAt": "2026-07-26T15:21:17.692Z"
+    "updatedAt": "2026-07-26T21:35:50.114Z"
    },
    {
     "id": "cms2ayg23000351yywoh09qpm",
@@ -1345,9 +1345,9 @@
     "focalX": 0,
     "focalY": 50,
     "zoom": 1,
-    "alt": "Embedded Analytics: illustrative view",
+    "alt": "A Streamlit app running in Snowflake: Python code beside a predicted shift sales panel with a map of delivery locations",
     "updatedBy": "admin@viewnear.com",
-    "updatedAt": "2026-07-26T15:22:55.192Z"
+    "updatedAt": "2026-07-26T21:35:50.115Z"
    },
    {
     "id": "cms2ayg23000451yy1b02h1vq",
@@ -1356,9 +1356,9 @@
     "focalX": 50,
     "focalY": 50,
     "zoom": 1.05,
-    "alt": "Data & AI Strategy: illustrative view",
+    "alt": "Two people annotating printed charts on a wall during a data strategy working session",
     "updatedBy": "admin@viewnear.com",
-    "updatedAt": "2026-07-26T15:26:07.359Z"
+    "updatedAt": "2026-07-26T21:35:50.116Z"
    },
    {
     "id": "cms2ayg24000551yysavr326w",
@@ -1367,9 +1367,9 @@
     "focalX": 50,
     "focalY": 50,
     "zoom": 1,
-    "alt": "Capability Development: illustrative view",
+    "alt": "Two colleagues working through a task together at a laptop during a coaching session",
     "updatedBy": "admin@viewnear.com",
-    "updatedAt": "2026-07-26T15:27:33.995Z"
+    "updatedAt": "2026-07-26T21:35:50.116Z"
    }
   ]
  },

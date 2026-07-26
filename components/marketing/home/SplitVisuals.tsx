@@ -55,7 +55,7 @@ export function FoundationPhoto() {
   const t = useTranslations("heroUi");
   return (
     <PhotoFrame
-      src="/assets/images/photos/data-foundation.jpg"
+      src="/assets/images/photos/layered-data-architecture-render.jpg"
       alt={t("split.foundationPhotoAlt")}
     />
   );
