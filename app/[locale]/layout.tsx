@@ -82,17 +82,15 @@ const orgJsonLd = (locale: string) => ({
   // directories publish "Founded 2024, 1-10 employees", which is wrong on both
   // counts, and an assistant asked how old or how large Viewnear is will quote
   // whatever it can find.
+  // The contracting entity. The Mexican entity is deliberately not published:
+  // the owner asked to keep it off the site, and it is not the party that
+  // contracts with clients.
   legalName: "Viewnear LLC",
   foundingDate: "2022",
-  foundingLocation: {
-    "@type": "Place",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Austin",
-      addressRegion: "TX",
-      addressCountry: "US",
-    },
-  },
+  // Both cities: the company started in Austin and Monterrey at once, which is
+  // also why the nearshore model is not something bolted on later. Same source as
+  // `location` and `address`, so the three can never disagree.
+  foundingLocation: officePlaces(),
   numberOfEmployees: { "@type": "QuantitativeValue", minValue: 20, maxValue: 50 },
   slogan: theme.brand.tagline,
   email: theme.brand.email,
