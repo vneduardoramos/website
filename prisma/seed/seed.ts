@@ -210,6 +210,7 @@ async function main() {
       published: true,
       titleEs: teamEs[t.slug]?.title ?? null,
       bioEs: teamEs[t.slug]?.bio ?? null,
+      bookingTopicsEs: teamEs[t.slug]?.bookingTopics ?? null,
     };
     await prisma.teamMember.upsert({
       where: { slug: t.slug },

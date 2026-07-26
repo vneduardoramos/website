@@ -568,12 +568,12 @@ export const caseStudies: CaseStudySeed[] = [
 ];
 
 export const team = [
-  { slug: "jc-rodriguez", name: "JC Rodriguez", title: "Head of Service Delivery", photo: "/assets/images/team/jc-rodriguez.png", linkedinUrl: "https://www.linkedin.com/in/jcrodriguezmiranda/", order: 1 },
-  { slug: "rene-trevino", name: "René Treviño", title: "Head of Document Intelligence", photo: "/assets/images/team/rene-trevino.png", linkedinUrl: "https://www.linkedin.com/in/reneramosdev/", order: 2 },
+  { slug: "jc-rodriguez", name: "JC Rodriguez", title: "Head of Service Delivery", photo: "/assets/images/team/jc-rodriguez.png", linkedinUrl: "https://www.linkedin.com/in/jcrodriguezmiranda/", bookingUrl: "https://calendly.com/juan-r-miranda-viewnear/30min", bookingTopics: "Delivery model, team shape, timelines and migrations", order: 1 },
+  { slug: "rene-trevino", name: "René Treviño", title: "Head of Document Intelligence", photo: "/assets/images/team/rene-trevino.png", linkedinUrl: "https://www.linkedin.com/in/reneramosdev/", bookingUrl: "https://calendly.com/rene-viewnear/30min", bookingTopics: "Unstructured documents, extraction accuracy and Cortex AI", order: 2 },
   { slug: "carlos-egremy", name: "Carlos Egremy", title: "Head of Operations", photo: "/assets/images/team/carlos-egremy.png", linkedinUrl: "https://www.linkedin.com/in/carlosegremy/", order: 3 },
   { slug: "karen-berber", name: "Karen Berber", title: "Head of People & HR", photo: "/assets/images/team/karen-berber.png", linkedinUrl: "https://www.linkedin.com/in/karen-b-b0542a137/", order: 4 },
   { slug: "aydhe-mota", name: "Aydhé Mota", title: "Head of Finance", photo: "/assets/images/team/aydhe-mota.png", linkedinUrl: "https://www.linkedin.com/in/aydhemota/", order: 5 },
-  { slug: "eduardo-ramos", name: "Eduardo Javier Ramos", title: "CEO", photo: "/assets/images/team/eduardo-ramos.png", linkedinUrl: "https://www.linkedin.com/in/eduardojramos/", order: 6 },
+  { slug: "eduardo-ramos", name: "Eduardo Javier Ramos", title: "CEO", photo: "/assets/images/team/eduardo-ramos.png", linkedinUrl: "https://www.linkedin.com/in/eduardojramos/", bookingUrl: "https://calendly.com/eduardo-viewnear/30min", bookingTopics: "Strategy, roadmap sequencing, partnership and commercial terms", order: 6 },
 ];
 
 export const news = [
