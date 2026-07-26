@@ -43,8 +43,7 @@
       "summary": "Sorting documents from many insurance providers by hand caused delays, errors, and lost files. Using Snowflake Cortex AI functions like AI_EXTRACT, Viewnear automated classification and extraction, lifting accuracy from 60% to 95% and cutting per-document handling to four seconds.",
       "metricLabel1": "Classification accuracy",
       "metricLabel2": "Per-document classification"
-    },
-    "logoCaption": "Teams already building on governed data with Viewnear, including {names}."
+    }
   },
   "hero": {
     "ariaLabel": "Intro"

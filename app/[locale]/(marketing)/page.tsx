@@ -51,9 +51,6 @@ export default async function HomePage({ params }: { params: { locale: string } 
   const { locale } = params;
   setRequestLocale(locale);
   const t = await getTranslations("home");
-  // customersFeature lives in the homeServer namespace (shipped to the client for
-  // CustomersFeature), not in "home".
-  const tHome = await getTranslations("homeServer");
 
   const [hero, services, faqs, bands] =
     await Promise.all([
@@ -83,22 +80,13 @@ export default async function HomePage({ params }: { params: { locale: string } 
           their full moment once, in the Proof & Trust band below) */}
       <Hero subhead={hero?.subhead} />
 
-      {/* PROOF EARLY: who already trusts us, right after the hero.
-          The names live in a <figcaption>, not only in each logo's alt text.
-          Alt text is the accessible name of an image, but it is not body copy:
-          anything reading the page as text (an AI crawler, a reader mode) lost
-          all seven client names. The caption is visually quiet and carries them
-          as real text. */}
+      {/* PROOF EARLY: the logo band sits right after the hero. It carries no
+          caption naming the brands as customers: the relationship is not
+          something the site substantiates, so the logos speak for themselves
+          and each one's name stays in its alt text only. */}
       <section className="pt-2 pb-2 md:pt-4 md:pb-3">
         <div className="container-page">
-          <figure className="m-0">
-            <LogoRow logos={bands.top} />
-            <figcaption className="mt-4 text-center text-xs text-muted">
-              {tHome("customersFeature.logoCaption", {
-                names: bands.top.map((l) => l.alt).filter(Boolean).join(", "),
-              })}
-            </figcaption>
-          </figure>
+          <LogoRow logos={bands.top} />
         </div>
       </section>
       <CustomersFeature bottomLogos={bands.bottom} />

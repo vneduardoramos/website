@@ -43,8 +43,7 @@
       "summary": "Clasificar a mano los documentos de numerosas aseguradoras generaba demoras, errores y archivos perdidos. Con funciones de Snowflake Cortex AI como AI_EXTRACT, Viewnear automatizó la clasificación y la extracción: la precisión pasó de 60% a 95% y cada documento se procesa en cuatro segundos.",
       "metricLabel1": "Precisión de clasificación",
       "metricLabel2": "Clasificación por documento"
-    },
-    "logoCaption": "Equipos que ya construyen sobre datos gobernados con Viewnear, entre ellos {names}."
+    }
   },
   "hero": {
     "ariaLabel": "Introducción"
