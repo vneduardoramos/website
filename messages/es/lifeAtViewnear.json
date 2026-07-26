@@ -20,6 +20,7 @@
         "region": "Texas, EE. UU.",
         "place": "Quarry Oaks II · Stonelake Office Park",
         "alt": "La oficina de Viewnear en Austin: el edificio de piedra caliza y cristal en Quarry Oaks II, Stonelake Office Park",
+        "cityAlt": "El horizonte del centro de Austin",
         "street": "10900 Stonelake Blvd, Bldg 2, Suite 100",
         "cityZip": "Austin, TX 78759"
       },
@@ -27,7 +28,8 @@
         "city": "Monterrey",
         "region": "Nuevo León, México",
         "place": "Pueblo Serena",
-        "alt": "Un edificio de oficinas moderno en Pueblo Serena, Monterrey, a los pies de la Sierra Madre",
+        "alt": "Interior de la oficina de Viewnear en Monterrey, en Pueblo Serena: una sala abierta y zona de trabajo con sof\u00e1s, plantas, una barra de caf\u00e9 y salas de juntas revestidas de madera",
+        "cityAlt": "Monterrey con el Cerro de la Silla al fondo",
         "street": "Carr. Nacional 500, Valle Alto",
         "cityZip": "Monterrey, MX 64989"
       }
@@ -44,7 +46,7 @@
       "Colaboración presencial, ampliada con flexibilidad remota",
       "Tiempo juntos con regularidad: retiros, eventos de Snowflake y cenas de equipo"
     ],
-    "imageAlt": "Interior de una oficina de Viewnear: una sala abierta y zona de trabajo con sofás, plantas, una barra de café y salas de juntas revestidas de madera"
+    "imageAlt": "Interior de la oficina de Viewnear en Monterrey: una sala abierta y zona de trabajo con sofás, plantas, una barra de café y salas de juntas revestidas de madera"
   },
   "model": {
     "eyebrow": "El modelo Viewnear",

@@ -108,7 +108,7 @@ export default async function CareersPage({ params }: { params: { locale: string
           title={t.rich("locations.title", { hl: (c) => <span className="text-gradient">{c}</span> })}
           body={t("locations.body")}
           bullets={t.raw("locations.bullets") as string[]}
-          image="/assets/images/life/monterrey-building.jpg"
+          image="/assets/images/life/lounge.jpg"
           imageAlt={t("locations.imageAlt")}
           cta={{ label: t("locations.cta"), href: "/nearshore/monterrey" }}
         />

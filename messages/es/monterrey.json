@@ -11,7 +11,7 @@
   "hero": {
     "eyebrow": "Centro de entrega nearshore",
     "title": "Nuestro centro de entrega nearshore en <hl>Monterrey, México</hl>",
-    "description": "Los ingenieros, arquitectos y estrategas que construyen sobre Snowflake trabajan desde una oficina en Monterrey, Nuevo León, en horario del centro y en la jornada laboral de Estados Unidos, con la dirección en Austin, Texas.",
+    "description": "La mayoría de los ingenieros, arquitectos y estrategas que construyen sobre Snowflake trabajan desde una oficina en Monterrey, Nuevo León, en horario del centro y en la jornada laboral de Estados Unidos, con la dirección en Austin, Texas.",
     "chips": ["Monterrey, Nuevo León", "Horario del centro todo el año", "Certificados en SnowPro", "Equipo bilingüe"]
   },
   "office": {
@@ -23,7 +23,7 @@
       "Ingenieros de datos, arquitectos e ingenieros de IA en una misma sala, con certificaciones SnowPro en la construcción",
       "La dirección en Austin, Texas, atendiendo clientes en toda América"
     ],
-    "imageAlt": "El centro de entrega nearshore de Viewnear en Monterrey, México, en Pueblo Serena",
+    "imageAlt": "Interior del centro de entrega nearshore de Viewnear en Pueblo Serena, Monterrey, México",
     "addressLabel": "Centro de entrega"
   },
   "factsHeading": {

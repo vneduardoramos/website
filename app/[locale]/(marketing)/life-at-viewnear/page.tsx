@@ -153,7 +153,7 @@ const officeAssets = [
   },
   {
     flag: "🇲🇽",
-    building: "/assets/images/life/monterrey-building.jpg",
+    building: "/assets/images/life/lounge.jpg",
     image: "/assets/images/life/monterrey.jpg",
     flip: true,
     cityPosition: "right",
@@ -208,7 +208,10 @@ export default async function LifeAtViewnearPage({ params }: { params: { locale:
       city: string;
       region: string;
       place: string;
+      /** Describes the building/interior half of the split image. */
       alt: string;
+      /** Describes the city half. */
+      cityAlt: string;
       street: string;
       cityZip: string;
     }[]
@@ -275,8 +278,7 @@ export default async function LifeAtViewnearPage({ params }: { params: { locale:
                   {/* office building + its city, split by a diagonal divider (city on the side that shows its best view) */}
                   <Image
                     src={o.building}
-                    alt=""
-                    aria-hidden
+                    alt={o.alt}
                     fill
                     className="object-cover"
                     style={{ clipPath: o.flip ? RIGHT_CLIP : LEFT_CLIP }}
@@ -284,7 +286,7 @@ export default async function LifeAtViewnearPage({ params }: { params: { locale:
                   />
                   <Image
                     src={o.image}
-                    alt={o.alt}
+                    alt={o.cityAlt}
                     fill
                     className="object-cover"
                     style={{ clipPath: o.flip ? LEFT_CLIP : RIGHT_CLIP, objectPosition: o.cityPosition }}
