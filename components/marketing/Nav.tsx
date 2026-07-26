@@ -452,7 +452,15 @@ function ServicesMega({
                     key={s.slug}
                     href={`/services/${s.slug}`}
                     label={s.title}
-                    description={t(`serviceDescriptions.${s.slug}`)}
+                    // Services come from the database, so a slug added in the
+                    // admin may have no message key. An unconditional lookup
+                    // threw MISSING_MESSAGE and took the whole nav down, which is
+                    // what `data-modernization` was doing in production.
+                    description={
+                      t.has(`serviceDescriptions.${s.slug}`)
+                        ? t(`serviceDescriptions.${s.slug}`)
+                        : undefined
+                    }
                     Icon={getServiceFlavor(s.slug).icon}
                     tile={meta.tile}
                     onNav={onNav}
