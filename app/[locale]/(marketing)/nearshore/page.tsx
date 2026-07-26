@@ -111,7 +111,7 @@ export default async function NearshorePage({ params }: { params: { locale: stri
                 beats an icon for proving "nearshore" means a real team here. */}
             <div className="relative min-h-[220px] overflow-hidden rounded-2xl border border-border shadow-soft">
               <Image
-                src="/assets/images/life/lounge.jpg"
+                src="/assets/images/life/monterrey-building.jpg"
                 alt={t("monterrey.imageAlt")}
                 fill
                 sizes="(max-width:768px) 100vw, 33vw"

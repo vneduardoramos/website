@@ -86,7 +86,7 @@ export default async function MonterreyPage({ params }: { params: { locale: stri
           title={t.rich("office.title", { hl: (c) => <span className="text-gradient">{c}</span> })}
           body={t("office.body")}
           bullets={t.raw("office.bullets") as string[]}
-          image="/assets/images/life/lounge.jpg"
+          image="/assets/images/life/monterrey-building.jpg"
           imageAlt={t("office.imageAlt")}
         />
         {/* Machine- and human-readable address block. */}

@@ -153,7 +153,7 @@ const officeAssets = [
   },
   {
     flag: "🇲🇽",
-    building: "/assets/images/life/lounge.jpg",
+    building: "/assets/images/life/monterrey-building.jpg",
     image: "/assets/images/life/monterrey.jpg",
     flip: true,
     cityPosition: "right",
