@@ -23,7 +23,7 @@ La estrategia aquí no es una presentación. Cada proyecto produce decisiones fi
 
 ## Cómo funciona un proyecto de estrategia
 
-Una estrategia de datos e IA vale lo que llega a producción. Por eso cobramos por resultados, no por horas, y acortamos la distancia entre la estrategia y la producción. Un discovery fija el scope y revela el estado real de los datos. Después, los sprints por caso de uso entregan incrementos funcionando, y la prueba llega antes que la escala: la decisión de invertir más se toma con evidencia, no con una presentación. Ese mecanismo es la razón de que el primer valor llegue en 8 a 16 semanas y de que, en el conjunto de proyectos que entregamos, el primer insight llegue 60% más rápido, los pipelines sean 3 veces más confiables y el costo de operación baje 40%.
+Una estrategia de datos e IA vale lo que llega a producción. Por eso cobramos por resultados, no por horas, y acortamos la distancia entre la estrategia y la producción. Un discovery fija el scope y revela el estado real de los datos. Después, los sprints por caso de uso entregan incrementos funcionando, y la prueba llega antes que la escala: la decisión de invertir más se toma con evidencia, no con una presentación. Ese mecanismo es la razón por la que el primer valor llega en 8 a 16 semanas y no al final de un programa.
 
 Las recomendaciones se mantienen concretas porque el mismo equipo las entrega: ingenieros con certificación SnowPro, un Snowflake Premier Partner y Snowflake CoCo Preferred Partner, con un liderazgo que suma más de 15 años de experiencia en datos. Y la hoja de ruta es honesta con la secuencia: si un warehouse legacy se interpone entre la organización y el primer caso de uso, la [migración a Snowflake](/es/migrations) se planea dentro de la secuencia, no se descubre después. Se puede ver cómo se aplica esa secuencia en distintas industrias en nuestros [casos de éxito](/es/case-studies).
 
@@ -67,7 +67,7 @@ La arquitectura es donde se deciden el costo, la seguridad y la confianza, casi 
 - Gobierno de datos desde la primera tabla: Horizon Catalog para linaje y políticas de acceso, y Semantic Views para que las definiciones de negocio vivan junto a los datos, listas para Cortex cuando lleguen los casos de uso de IA.
 - Una revisión de arquitectura de Snowflake para ambientes ya en operación: auditamos diseño, seguridad y gasto, y dejamos una lista priorizada que el equipo interno puede ejecutar.
 
-Esa disciplina es la que produce los números con los que se nos mide: el primer insight llega 60% más rápido, los pipelines son 3 veces más confiables y el costo de operación baja 40%.
+Esa disciplina es la que hace que el primer caso de uso llegue a producción en 8 a 16 semanas y no al final de un programa, y la que mantiene cada caso posterior más económico que el anterior.
 
 ## Cómo se construye la base
 
@@ -126,7 +126,7 @@ Cada pipeline que construimos existe para alimentar una decisión, un reporte o 
 - **Gobierno de datos desde el diseño.** Políticas de acceso y linaje en Horizon Catalog, pruebas de calidad dentro del propio pipeline y alertas que detectan fallas antes que el negocio.
 - **Formatos abiertos donde aportan.** Tablas Apache Iceberg y Open Catalog (Polaris) cuando la interoperabilidad entre motores importa para la arquitectura.
 
-La confiabilidad y el costo de operación también son entregables, no efectos secundarios. En los proyectos de ingeniería de datos en Snowflake, el rango de resultados con el que los clientes pueden planear es: el primer insight 60% más rápido, los pipelines 3 veces más confiables y 40% menos costo de operación.
+La confiabilidad y el costo de operación también son entregables, no efectos secundarios. Los pipelines se entregan con pruebas, alertas y linaje desde la primera tabla, y el dimensionamiento y la programación de los warehouses se ajustan como parte del desarrollo y no después de la primera factura.
 
 ## Cómo se desarrolla el proyecto
 
@@ -177,7 +177,7 @@ Cada proyecto construye la capa donde el negocio realmente trabaja con los datos
 
 La analítica de autoservicio vale lo que valen los datos debajo de ella. Cuando los pipelines necesitan trabajo primero, nuestro equipo de [ingeniería de datos](/es/services/data-engineering) deja los insumos a la altura de las decisiones; a partir de ahí, el trabajo pasa a la capa de analítica y agentes.
 
-El primer valor llega en 8 a 16 semanas, y el mecanismo es lo que hace honesto ese número: un discovery fija el scope, los sprints por caso de uso entregan un conjunto de respuestas gobernadas a la vez, y la decisión de escalar se toma sobre evidencia, no sobre una presentación. Muchos proyectos de agentes de IA se quedan entre el demo y producción; el modelo de sprints existe para cerrar justo esa brecha, y es la razón de que nuestros proyectos lleguen al primer insight 60% más rápido, con una tarifa vinculada a esos resultados, no a horas.
+El primer valor llega en 8 a 16 semanas, y el mecanismo es lo que hace honesto ese número: un discovery fija el scope, los sprints por caso de uso entregan un conjunto de respuestas gobernadas a la vez, y la decisión de escalar se toma sobre evidencia, no sobre una presentación. Muchos proyectos de agentes de IA en Snowflake se detienen entre el demo y la producción; el modelo de sprints existe para cerrar justo esa brecha, con una tarifa vinculada a resultados y no a horas.
 
 Los agentes dentro de Snowflake son la mitad de la historia. Cómo se conectan con agentes que operan fuera de Snowflake, sobre un mismo contexto gobernado, está en nuestro [enfoque de Data + AI](/es/data-ai).
 
@@ -278,7 +278,7 @@ Los cursos enseñan sintaxis. La capacidad se construye entregando. Nuestro acom
 
 ## Cómo funciona el acompañamiento
 
-La capacitación no es una pista paralela al proyecto; es la forma en que entregamos. Un discovery fija el scope y selecciona los primeros casos de uso. Después, los sprints por caso de uso llevan productos de datos funcionando a producción con la gente del cliente participando en el build; así llega el primer valor en 8 a 16 semanas y la prueba antes de escalar. En el camino, los ingenieros del cliente absorben los patrones detrás de los resultados que entregamos de forma consistente: el primer insight 60% más rápido, los pipelines 3 veces más confiables y 40% menos costo de operación.
+La capacitación no es una pista paralela al proyecto; es la forma en que entregamos. Un discovery fija el scope y selecciona los primeros casos de uso. Después, los sprints por caso de uso llevan productos de datos funcionando a producción con la gente del cliente participando en el build; así llega el primer valor en 8 a 16 semanas y la prueba antes de escalar. En el camino, los ingenieros del equipo absorben los patrones detrás de ese ritmo: cómo se fija el scope, cómo se rebana un caso de uso y cómo se hace observable un pipeline antes de entregarlo.
 
 Nuestra tarifa se vincula al resultado, no a las horas, así que no existe incentivo para retener el conocimiento de nuestro lado. Muchos equipos llegan aquí después de un build de [ingeniería de datos](/es/services/data-engineering) o de una migración a Snowflake, cuando la base ya está en producción y la pregunta es quién la opera. Los [casos de éxito](/es/case-studies) muestran lo que los equipos conservaron después de nuestra salida.
 

@@ -78,7 +78,7 @@ Strategy here is not a slide deck. Every data and AI strategy engagement produce
 
 ## How a strategy engagement runs
 
-We price on outcomes, not hours, and we compress the distance between strategy and production. A short discovery fixes scope and surfaces the real state of your data. Use-case sprints then ship working increments, and proof comes before scale: the decision to invest further is made on evidence, not a deck. That mechanism is why first value lands in 8–16 weeks, and why, across the engagements we deliver, teams see 60% faster time to first insight, 3× pipeline reliability, and 40% lower run cost.
+We price on outcomes, not hours, and we compress the distance between strategy and production. A short discovery fixes scope and surfaces the real state of your data. Use-case sprints then ship working increments, and proof comes before scale: the decision to invest further is made on evidence, not a deck. That mechanism is why first value lands in 8 to 16 weeks instead of at the end of a programme.
 
 The advice stays concrete because the same team delivers on it: SnowPro-certified engineers, a Snowflake Premier Partner and Snowflake CoCo Preferred Partner, with leadership carrying 15+ years of data experience. The roadmap also stays honest about sequencing. If a legacy warehouse stands between you and the first use case, [migration to Snowflake](/migrations) is planned into the sequence, not discovered later. You can see how that sequencing plays out across industries in our [case studies](/case-studies).
 
@@ -126,7 +126,7 @@ Architecture is where cost, security, and trust get decided, usually years befor
 - Governance from the first table: Horizon Catalog for lineage and access policy, and Semantic Views so business definitions live with the data, ready for Cortex when the AI use cases arrive.
 - A Snowflake architecture review for environments already running: we audit design, security, and spend, then leave a prioritized fix list your team can execute.
 
-That discipline is what produces the delivery numbers we are measured on: 60% faster time to first insight, 3× more reliable pipelines, and 40% lower run cost.
+That discipline is what makes the first production use case land in 8 to 16 weeks rather than at the end of a programme, and what keeps each later use case cheaper than the one before it.
 
 ## How a foundation build runs
 
@@ -189,7 +189,7 @@ Every pipeline we build exists to feed a decision, a report, or an AI use case s
 - **Governance and data quality built in.** Access policies and lineage in Horizon Catalog, quality tests that run inside the pipeline, and alerting that catches failures before the business does.
 - **Open formats where they earn their place.** Apache Iceberg tables and Open Catalog (Polaris) when interoperability across engines matters to your architecture.
 
-Reliability and run cost are deliverables too, not side effects. Across Snowflake data engineering engagements, the delivery band clients plan around is 60% faster time to first insight, 3× pipeline reliability, and 40% lower run cost.
+Reliability and run cost are deliverables too, not side effects. Pipelines ship with tests, alerting and lineage from the first table, and warehouse sizing and scheduling are tuned as part of the build rather than after the first invoice.
 
 ## How a pipeline build runs
 
@@ -244,7 +244,7 @@ Every engagement builds the layer where the business actually meets its data, na
 
 Self-service analytics is only as good as the data underneath it. When pipelines need hardening first, our [data engineering team](/services/data-engineering) gets the inputs decision-grade; from there the work moves into the analytics and agent layer.
 
-First value lands in 8–16 weeks, and the mechanism is what makes that number honest: a discovery fixes scope, use-case sprints ship one governed answer set at a time, and scaling decisions rest on proof, not a slide. Many AI-agent projects on Snowflake stall between demo and production; the sprint model exists to close exactly that gap, and it is why our engagements show 60% faster time to first insight, with pricing tied to outcomes, not hours.
+First value lands in 8–16 weeks, and the mechanism is what makes that number honest: a discovery fixes scope, use-case sprints ship one governed answer set at a time, and scaling decisions rest on proof, not a slide. Many AI-agent projects on Snowflake stall between demo and production; the sprint model exists to close exactly that gap, with pricing tied to outcomes rather than hours.
 
 Agents inside Snowflake are half the story. How they connect with agents working outside it, over one governed context, is laid out in our [data & AI approach](/data-ai).
 
@@ -354,7 +354,7 @@ Courses teach syntax. Capability comes from shipping. Our enablement work happen
 
 ## How enablement runs
 
-Enablement is not a training track that runs beside the project; it is how we deliver. A discovery fixes scope and picks the first use cases. Then use-case sprints ship working data products with your people pairing on the build, which is how first value lands in 8–16 weeks and proof arrives before scale. Along the way, your engineers absorb the patterns behind our delivery band: 60% faster time to first insight, 3× pipeline reliability, 40% lower run cost.
+Enablement is not a training track that runs beside the project; it is how we deliver. A discovery fixes scope and picks the first use cases. Then use-case sprints ship working data products with your people pairing on the build, which is how first value lands in 8–16 weeks and proof arrives before scale. Along the way, your engineers absorb the patterns behind that pace: how scope gets fixed, how a use case is sliced, and how a pipeline is made observable before it ships.
 
 We price on outcomes, not hours, so there is no incentive to keep knowledge on our side of the table. Teams often start here after a [data engineering](/services/data-engineering) build or a warehouse migration, when the foundation is live and the question becomes who runs it. The [case studies](/case-studies) show what teams kept after we stepped back.
 

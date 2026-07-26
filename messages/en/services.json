@@ -43,16 +43,16 @@
     "intro": "A practical view of the value an engagement returns: by horizon, not by feature list, with the targets we agree up front.",
     "metrics": [
       {
-        "value": "60%",
-        "label": "Faster time to first insight"
+        "value": "8–16",
+        "label": "Weeks to first production value"
       },
       {
-        "value": "3×",
-        "label": "More reliable pipelines"
+        "value": "10",
+        "label": "SnowPro certifications held"
       },
       {
-        "value": "40%",
-        "label": "Lower run cost"
+        "value": "Premier",
+        "label": "Snowflake partner tier"
       }
     ],
     "phases": [

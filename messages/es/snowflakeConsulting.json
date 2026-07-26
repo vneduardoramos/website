@@ -99,10 +99,18 @@
     }
   ],
   "deliveryBand": [
-    { "value": "60%", "label": "Más rápido al primer insight" },
-    { "value": "3×", "label": "Pipelines más confiables" },
-    { "value": "40%", "label": "Menor costo de operación" },
-    { "value": "8-16", "label": "Semanas al primer valor en producción" }
+    {
+      "value": "8-16",
+      "label": "Semanas al primer valor en producción"
+    },
+    {
+      "value": "10",
+      "label": "Certificaciones SnowPro"
+    },
+    {
+      "value": "Premier",
+      "label": "Nivel de partner de Snowflake"
+    }
   ],
   "whyHeading": {
     "eyebrow": "Por qué este partner",

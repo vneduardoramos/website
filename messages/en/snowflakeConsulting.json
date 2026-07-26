@@ -99,10 +99,18 @@
     }
   ],
   "deliveryBand": [
-    { "value": "60%", "label": "Faster time to first insight" },
-    { "value": "3×", "label": "More reliable pipelines" },
-    { "value": "40%", "label": "Lower platform run cost" },
-    { "value": "8–16", "label": "Weeks to first production value" }
+    {
+      "value": "8–16",
+      "label": "Weeks to first production value"
+    },
+    {
+      "value": "10",
+      "label": "SnowPro certifications held"
+    },
+    {
+      "value": "Premier",
+      "label": "Snowflake partner tier"
+    }
   ],
   "whyHeading": {
     "eyebrow": "Why this partner",

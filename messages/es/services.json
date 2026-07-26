@@ -43,16 +43,16 @@
     "intro": "Una visión práctica del valor que devuelve un proyecto: por horizonte, no por lista de funciones, con las metas que acordamos por adelantado.",
     "metrics": [
       {
-        "value": "60%",
-        "label": "Más rápido hasta el primer insight"
+        "value": "8–16",
+        "label": "Semanas al primer valor en producción"
       },
       {
-        "value": "3×",
-        "label": "Canalizaciones más confiables"
+        "value": "10",
+        "label": "Certificaciones SnowPro"
       },
       {
-        "value": "40%",
-        "label": "Menor costo de operación"
+        "value": "Premier",
+        "label": "Nivel de partner de Snowflake"
       }
     ],
     "phases": [

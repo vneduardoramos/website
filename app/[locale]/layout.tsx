@@ -78,6 +78,22 @@ const orgJsonLd = (locale: string) => ({
   // `location` carries both offices.
   address: primaryAddress(),
   location: officePlaces(),
+  // Supplied by the owner, 2026-07-26. These correct the record: third-party
+  // directories publish "Founded 2024, 1-10 employees", which is wrong on both
+  // counts, and an assistant asked how old or how large Viewnear is will quote
+  // whatever it can find.
+  legalName: "Viewnear LLC",
+  foundingDate: "2022",
+  foundingLocation: {
+    "@type": "Place",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Austin",
+      addressRegion: "TX",
+      addressCountry: "US",
+    },
+  },
+  numberOfEmployees: { "@type": "QuantitativeValue", minValue: 20, maxValue: 50 },
   slogan: theme.brand.tagline,
   email: theme.brand.email,
   knowsLanguage: ["en", "es"],
