@@ -1,5 +1,5 @@
 {
- "exportedAt": "2026-07-26T19:13:30.094Z",
+ "exportedAt": "2026-07-26T21:09:02.535Z",
  "tables": {
   "tag": [],
   "client": [
@@ -1304,7 +1304,74 @@
     "tags": []
    }
   ],
-  "imageOverride": []
+  "imageOverride": [
+   {
+    "id": "cms1xt75z0003s8sip7bgr4a3",
+    "key": "/assets/images/services/cloud-architecture-practice.jpg",
+    "mediaUrl": "https://pub-08bb334873584dffb45c9a2f805f56f1.r2.dev/uploads/platform-graphic-ms1y11dk-8521d0.webp",
+    "focalX": 50,
+    "focalY": 50,
+    "zoom": 1.05,
+    "alt": "Cloud Architecture & Data Foundation: illustrative view",
+    "updatedBy": "admin@viewnear.com",
+    "updatedAt": "2026-07-26T15:19:05.656Z"
+   },
+   {
+    "id": "cms1xrt970001s8simfqhnav9",
+    "key": "/assets/images/services/data-visualisation-practice.jpg",
+    "mediaUrl": "https://pub-08bb334873584dffb45c9a2f805f56f1.r2.dev/uploads/sw-ms1y2bdx-74ace3.webp",
+    "focalX": 26.29466217330314,
+    "focalY": 100,
+    "zoom": 1.15,
+    "alt": "AI Analytics & Agents: illustrative view",
+    "updatedBy": "admin@viewnear.com",
+    "updatedAt": "2026-07-26T15:20:22.262Z"
+   },
+   {
+    "id": "cms1y41vf000cs8sixwpm7saj",
+    "key": "/assets/images/services/data-engineering-practice.jpg",
+    "mediaUrl": "https://pub-08bb334873584dffb45c9a2f805f56f1.r2.dev/uploads/ope-ms1y3zaw-8a7639.png",
+    "focalX": 50,
+    "focalY": 50,
+    "zoom": 1,
+    "alt": "Data Engineering & Pipelines: illustrative view",
+    "updatedBy": "admin@viewnear.com",
+    "updatedAt": "2026-07-26T15:21:17.692Z"
+   },
+   {
+    "id": "cms1y5x02000es8sizjtc9ghv",
+    "key": "/assets/images/services/embedded-analytics-practice.jpg",
+    "mediaUrl": "https://pub-08bb334873584dffb45c9a2f805f56f1.r2.dev/uploads/screenshot-2026-07-26-at-9-22-32-am-ms1y5v45-19ea4d.png",
+    "focalX": 0,
+    "focalY": 50,
+    "zoom": 1,
+    "alt": "Embedded Analytics: illustrative view",
+    "updatedBy": "admin@viewnear.com",
+    "updatedAt": "2026-07-26T15:22:55.192Z"
+   },
+   {
+    "id": "cms1y8dz3000js8six8xlj52g",
+    "key": "/assets/images/services/ai-data-strategy-practice.jpg",
+    "mediaUrl": "https://pub-08bb334873584dffb45c9a2f805f56f1.r2.dev/uploads/pexels-1785079562060-1641-ms1ya5ak-ee44df.jpg",
+    "focalX": 50,
+    "focalY": 50,
+    "zoom": 1.05,
+    "alt": "Data & AI Strategy: illustrative view",
+    "updatedBy": "admin@viewnear.com",
+    "updatedAt": "2026-07-26T15:26:07.359Z"
+   },
+   {
+    "id": "cms1yc48a000ts8si7degkney",
+    "key": "/assets/images/services/capability-development-practice.jpg",
+    "mediaUrl": "https://pub-08bb334873584dffb45c9a2f805f56f1.r2.dev/uploads/pexels-1785079651012-321-ms1yc1xg-f82920.jpg",
+    "focalX": 50,
+    "focalY": 50,
+    "zoom": 1,
+    "alt": "Capability Development: illustrative view",
+    "updatedBy": "admin@viewnear.com",
+    "updatedAt": "2026-07-26T15:27:33.995Z"
+   }
+  ]
  },
  "blogPostTags": {
   "cms26enx5001c9d9knzfrv9zb": [],
