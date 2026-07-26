@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbLd, webPageLd } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { InlineCta } from "@/components/marketing/Blocks";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
@@ -37,6 +38,20 @@ export default async function PartnershipPage({ params }: { params: { locale: st
 
   return (
     <>
+      <JsonLd
+        data={[
+          webPageLd({
+            path: "/partnership",
+            name: t("meta.title"),
+            description: t("meta.description"),
+            locale,
+          }),
+          breadcrumbLd(
+            [{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }],
+            locale,
+          ),
+        ]}
+      />
       <div className="relative overflow-hidden">
         <SectionDecor variant="grid" />
         <div className="relative">

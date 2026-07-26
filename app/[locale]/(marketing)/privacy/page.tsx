@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbLd, webPageLd } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 import { Section } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 import { SectionDecor } from "@/components/marketing/Decor";
@@ -23,6 +24,20 @@ export default async function PrivacyPage({ params }: { params: { locale: string
 
   return (
     <>
+      <JsonLd
+        data={[
+          webPageLd({
+            path: "/privacy",
+            name: t("meta.title"),
+            description: t("meta.description"),
+            locale,
+          }),
+          breadcrumbLd(
+            [{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }],
+            locale,
+          ),
+        ]}
+      />
       <div className="relative overflow-hidden">
         <SectionDecor variant="grid" />
         <div className="relative">

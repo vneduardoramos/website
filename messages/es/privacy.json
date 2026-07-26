@@ -78,5 +78,9 @@
   "contact": {
     "heading": "Contacto",
     "body": "Ante cualquier pregunta sobre esta política o sobre cómo manejamos la información, basta con escribirnos a <link>contact@viewnear.com</link>."
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "current": "Privacidad"
   }
 }

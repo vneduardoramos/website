@@ -106,5 +106,9 @@
   "directory": {
     "label": "Verificar el registro",
     "body": "Ambos reconocimientos aparecen en el directorio de partners de Snowflake."
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "current": "Alianza con Snowflake"
   }
 }

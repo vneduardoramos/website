@@ -64,5 +64,9 @@
   "nearshoreLink": {
     "title": "This cadence only works in a shared working day.",
     "label": "The nearshore model"
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "current": "Approach"
   }
 }

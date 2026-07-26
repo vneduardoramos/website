@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbLd, webPageLd, serviceLd } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { FeaturedCaseStudies } from "@/components/marketing/FeaturedCaseStudies";
 import { PageHero } from "@/components/marketing/PageHero";
@@ -36,6 +37,27 @@ export default async function PlatformPage({ params }: { params: { locale: strin
 
   return (
     <>
+      <JsonLd
+        data={[
+          webPageLd({
+            path: "/platform",
+            name: t("meta.title"),
+            description: t("meta.description"),
+            locale,
+          }),
+          breadcrumbLd(
+            [{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }],
+            locale,
+          ),
+          serviceLd({
+            name: t("meta.title"),
+            description: t("meta.description"),
+            path: "/platform",
+            serviceType: 'Snowflake architecture and governance',
+            locale,
+          }),
+        ]}
+      />
       <div className="relative overflow-hidden">
         <SectionDecor variant="grid" />
         <div className="relative">

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { pageMeta, breadcrumbLd, ORG_REF } from "@/lib/seo";
+import { pageMeta, breadcrumbLd } from "@/lib/seo";
 import { Link } from "@/i18n/navigation";
 import {
   Section,
@@ -98,26 +98,32 @@ export default async function ServicesPage({ params }: { params: { locale: strin
   }[];
   const engagementValue = t.raw("engagement.value") as { title: string; body: string }[];
 
-  const provider = ORG_REF;
-  const serviceLd = {
+  const localePath = locale === "es" ? "/es" : "";
+  // An ItemList whose members are ListItems with a position and a URL, each
+  // pointing at the Service node the detail page already mints. Previously the
+  // members were bare Service objects with no url and no position, so a consumer
+  // could not order them or follow them, and `serviceType` leaked the internal
+  // tier name (THINK / BUILD / GROW) as if it described the offering.
+  const serviceItemsLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
+    "@id": `${theme.brand.url}${localePath}/services#services`,
     name: `${theme.brand.name} services`,
-    itemListElement: tiers.flatMap(({ tier, services }) =>
-      services.map((service) => ({
-        "@type": "Service",
+    numberOfItems: tiers.reduce((n, t2) => n + t2.services.length, 0),
+    itemListElement: tiers
+      .flatMap(({ services }) => services)
+      .map((service, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
         name: service.title,
-        ...(service.summary ? { description: service.summary } : {}),
-        serviceType: tier,
-        areaServed: "Americas",
-        provider,
+        url: `${theme.brand.url}${localePath}/services/${service.slug}`,
+        item: { "@id": `${theme.brand.url}${localePath}/services/${service.slug}#service` },
       })),
-    ),
   };
 
   return (
     <>
-      <JsonLd data={[serviceLd, breadcrumbLd([{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }], locale)]} />
+      <JsonLd data={[serviceItemsLd, breadcrumbLd([{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }], locale)]} />
       <PageHero
         eyebrow={t("hero.eyebrow")}
         title={t.rich("hero.title", {

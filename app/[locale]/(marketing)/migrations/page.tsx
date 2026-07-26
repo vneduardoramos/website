@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbLd, webPageLd, serviceLd } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 import { Link } from "@/i18n/navigation";
 import { Section, SectionHeading } from "@/components/marketing/ui";
 import { BookACall } from "@/components/marketing/BookACall";
@@ -45,6 +46,27 @@ export default async function MigrationsPage({ params }: { params: { locale: str
 
   return (
     <>
+      <JsonLd
+        data={[
+          webPageLd({
+            path: "/migrations",
+            name: t("meta.title"),
+            description: t("meta.description"),
+            locale,
+          }),
+          breadcrumbLd(
+            [{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }],
+            locale,
+          ),
+          serviceLd({
+            name: t("meta.title"),
+            description: t("meta.description"),
+            path: "/migrations",
+            serviceType: 'Snowflake migration services',
+            locale,
+          }),
+        ]}
+      />
       {/* Hero */}
       <div className="relative overflow-hidden">
         <SectionDecor variant="grid" />

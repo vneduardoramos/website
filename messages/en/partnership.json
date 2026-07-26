@@ -106,5 +106,9 @@
   "directory": {
     "label": "Verify this listing",
     "body": "Both recognitions are listed on Snowflake's own partner directory."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "current": "Snowflake partnership"
   }
 }

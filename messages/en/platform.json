@@ -205,5 +205,9 @@
   "cta": {
     "title": "Put the practice on one governed stack.",
     "subtitle": "Tell us what runs today. We'll map the fastest path to a single, governed foundation on Snowflake, what to retire along the way, and where the team takes over."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "current": "Platform"
   }
 }

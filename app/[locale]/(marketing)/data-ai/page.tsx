@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Img as Image } from "@/components/marketing/Img";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbLd, webPageLd, serviceLd } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
@@ -41,6 +42,27 @@ export default async function DataAiPage({ params }: { params: { locale: string 
 
   return (
     <>
+      <JsonLd
+        data={[
+          webPageLd({
+            path: "/data-ai",
+            name: t("meta.title"),
+            description: t("meta.description"),
+            locale,
+          }),
+          breadcrumbLd(
+            [{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }],
+            locale,
+          ),
+          serviceLd({
+            name: t("meta.title"),
+            description: t("meta.description"),
+            path: "/data-ai",
+            serviceType: 'AI agents on Snowflake',
+            locale,
+          }),
+        ]}
+      />
       {/* Hero */}
       <div className="relative overflow-hidden">
         <SectionDecor variant="grid" />

@@ -97,5 +97,9 @@
   "cta": {
     "title": "Put the right agent on the work.",
     "subtitle": "Tell us the use case. We'll bring Claude, the governance, and the people to ship it into production with the team, inside Snowflake and in the flow of work."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "current": "Data + AI"
   }
 }

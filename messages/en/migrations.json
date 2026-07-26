@@ -229,5 +229,9 @@
   "consultingCta": {
     "title": "A migration is usually one part of a wider implementation.",
     "label": "Consulting & implementation"
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "current": "Snowflake migrations"
   }
 }

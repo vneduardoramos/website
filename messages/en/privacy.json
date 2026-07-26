@@ -78,5 +78,9 @@
   "contact": {
     "heading": "Contact us",
     "body": "If you have any questions about this policy or how we handle your information, contact us at <link>contact@viewnear.com</link>."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "current": "Privacy"
   }
 }

@@ -30,6 +30,88 @@ export function personId(slug: string): string {
 }
 
 /**
+ * Where the company delivers, as typed nodes.
+ *
+ * `areaServed` was previously asserted three different ways across the site: a
+ * string array on the Organization, the bare string "Americas" on Service and
+ * office nodes, and a translated string on /pricing. A consumer reading those
+ * cannot tell whether they describe the same footprint. Countries are `Country`;
+ * the two regions that are not countries are `AdministrativeArea`, which is what
+ * they actually are.
+ */
+export const AREA_SERVED = [
+  { "@type": "Country", name: "United States" },
+  { "@type": "Country", name: "Canada" },
+  { "@type": "Country", name: "Mexico" },
+  { "@type": "AdministrativeArea", name: "Latin America" },
+  { "@type": "AdministrativeArea", name: "Caribbean" },
+] as const;
+
+/**
+ * A `Service` node for a commercial page that describes an offering.
+ *
+ * Seven substantial pages (/migrations, /data-ai, /platform, /approach,
+ * /partnership and the two legal pages) carried no page-level structured data at
+ * all, so the only thing a consumer learned from them was that the site belongs
+ * to Viewnear. `provider` references the one Organization by id rather than
+ * restating it.
+ */
+export function serviceLd(opts: {
+  name: string;
+  description: string;
+  path: string;
+  serviceType?: string;
+  locale?: string;
+}): Record<string, unknown> {
+  const { name, description, path, serviceType, locale = DEFAULT_LOCALE } = opts;
+  const url = absoluteForLocale(path, locale);
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    url,
+    name,
+    description,
+    ...(serviceType ? { serviceType } : {}),
+    provider: ORG_REF,
+    areaServed: AREA_SERVED,
+    inLanguage: locale,
+  };
+}
+
+/**
+ * A `WebPage` node tying a URL to the site and to its breadcrumb trail.
+ *
+ * Gives every page one node that can carry `inLanguage` and `dateModified`,
+ * which none of the existing per-page types could: FAQPage, CollectionPage and
+ * Service all describe an offering or a list rather than the document.
+ */
+export function webPageLd(opts: {
+  path: string;
+  name: string;
+  description?: string;
+  locale?: string;
+  dateModified?: string;
+  primaryTopicOf?: string;
+}): Record<string, unknown> {
+  const { path, name, description, locale = DEFAULT_LOCALE, dateModified, primaryTopicOf } = opts;
+  const url = absoluteForLocale(path, locale);
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${url}#webpage`,
+    url,
+    name,
+    ...(description ? { description } : {}),
+    isPartOf: { "@id": SITE_ID },
+    inLanguage: locale,
+    publisher: ORG_REF,
+    ...(dateModified ? { dateModified } : {}),
+    ...(primaryTopicOf ? { mainEntity: { "@id": primaryTopicOf } } : {}),
+  };
+}
+
+/**
  * The root layout renders titles through the template `"%s | Viewnear"`, so a
  * page title costs 11 characters more than it looks. Google stops showing a
  * title at roughly 60 characters, which leaves this much for the page's own part.

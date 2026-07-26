@@ -4,7 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { theme } from "@/config/theme";
 import { officePlaces, primaryAddress } from "@/lib/offices";
-import { ORG_ID, SITE_ID, ORG_REF } from "@/lib/seo";
+import { ORG_ID, SITE_ID, ORG_REF, AREA_SERVED } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { Analytics } from "@/components/Analytics";
 import { ConsentBanner } from "@/components/ConsentBanner";
@@ -71,25 +71,59 @@ const ORG_JSONLD = {
     theme.socials.linkedin,
     "https://www.snowflake.com/en/why-snowflake/partners/all-partners/viewnear/",
   ],
-  areaServed: ["United States", "Canada", "Mexico", "Latin America", "Caribbean"],
+  areaServed: AREA_SERVED,
   // The entity needs a postal address, not just a service area: these were
   // previously only on /life-at-viewnear. Austin is the primary (US) address;
   // `location` carries both offices.
   address: primaryAddress(),
   location: officePlaces(),
+  slogan: theme.brand.tagline,
+  email: theme.brand.email,
+  knowsLanguage: ["en", "es"],
+  // The partner status the site asserts on five pages, as a resolvable
+  // membership rather than only as prose. hostingOrganization carries
+  // Snowflake's own Wikidata id so the programme resolves to the real company.
+  memberOf: {
+    "@type": "ProgramMembership",
+    programName: "Snowflake Partner Network",
+    membershipNumber: "Premier Partner, CoCo Preferred Partner",
+    hostingOrganization: {
+      "@type": "Organization",
+      name: "Snowflake Inc.",
+      url: "https://www.snowflake.com",
+      sameAs: "https://www.wikidata.org/wiki/Q65141064",
+    },
+  },
+  // Topics, with a canonical URI wherever one exists. A bare string leaves
+  // "Snowflake" ambiguous between the company, the product and the weather;
+  // sameAs removes the ambiguity. Entries with no stable public entity stay
+  // strings rather than getting a guessed identifier.
   knowsAbout: [
-    "Snowflake",
+    { "@type": "Thing", name: "Snowflake", sameAs: "https://www.wikidata.org/wiki/Q65141064" },
+    {
+      "@type": "Thing",
+      name: "Artificial intelligence",
+      sameAs: "https://www.wikidata.org/wiki/Q11660",
+    },
+    { "@type": "Thing", name: "Data warehouse", sameAs: "https://www.wikidata.org/wiki/Q193351" },
+    {
+      "@type": "Thing",
+      name: "Business intelligence",
+      sameAs: "https://www.wikidata.org/wiki/Q171240",
+    },
+    { "@type": "Thing", name: "Data governance", sameAs: "https://www.wikidata.org/wiki/Q5227230" },
+    {
+      "@type": "Thing",
+      name: "Monterrey",
+      sameAs: "https://www.wikidata.org/wiki/Q81033",
+    },
     "Snowflake data migration",
-    "Data engineering",
     "Snowflake Cortex",
+    "Data engineering",
     "AI agents",
     "Nearshore software delivery",
     "Nearshore delivery center",
-    "Monterrey, Mexico",
     "Data & AI strategy",
-    "Artificial intelligence",
-    "Business intelligence",
-    "Data governance",
     "MLOps",
   ],
   contactPoint: {

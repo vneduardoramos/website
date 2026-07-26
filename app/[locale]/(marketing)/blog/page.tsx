@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getBlogPosts } from "@/lib/queries";
 import type { Locale } from "@/lib/i18n-content";
-import { pageMeta, collectionLd } from "@/lib/seo";
+import { pageMeta, collectionLd, ORG_REF } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { formatDate } from "@/lib/utils";
 import { Section } from "@/components/marketing/ui";
@@ -53,7 +53,21 @@ export default async function BlogPage({ params }: { params: { locale: string } 
 
   return (
     <>
-      <JsonLd data={ld} />
+      <JsonLd
+        data={[
+          ...ld,
+          // The collection every post points at with isPartOf.
+          {
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "@id": `${locale === "es" ? "https://www.viewnear.com/es" : "https://www.viewnear.com"}/blog#blog`,
+            name: t("meta.title"),
+            description: t("meta.description"),
+            publisher: ORG_REF,
+            inLanguage: locale,
+          },
+        ]}
+      />
       <section className="relative overflow-hidden">
         <SectionDecor variant="dots" />
         <div className="relative">

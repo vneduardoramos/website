@@ -120,6 +120,10 @@ export default async function BlogPostPage({
         : `${theme.brand.url}${cover}`
       : `${theme.brand.url}${localePath}/blog/${post.slug}/opengraph-image`,
     mainEntityOfPage: `${theme.brand.url}${localePath}/blog/${post.slug}`,
+    // Ties every post to one Blog collection minted on /blog, so 38 articles read
+    // as one publication rather than 38 unrelated documents.
+    isPartOf: { "@id": `${theme.brand.url}${localePath}/blog#blog` },
+    inLanguage: locale,
   };
 
   return (

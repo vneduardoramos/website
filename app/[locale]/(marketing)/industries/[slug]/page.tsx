@@ -24,7 +24,7 @@ import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { HeroBackground } from "@/components/marketing/HeroBackground";
 import { MaskReveal } from "@/components/marketing/Motion";
 import { getFlavor, getFlavorText, INDUSTRY_FLAVOR } from "@/components/marketing/industries/flavor";
-import { pageMeta, faqLd } from "@/lib/seo";
+import { pageMeta, faqLd, serviceLd, webPageLd, breadcrumbLd } from "@/lib/seo";
 
 export const revalidate = 60;
 
@@ -115,6 +115,24 @@ export default async function IndustryDetailPage({
 
   return (
     <div style={{ "--eyebrow-accent": `var(${flavor.accentVar})` } as CSSProperties}>
+      <JsonLd
+        data={[
+          webPageLd({
+            path: `/industries/${slug}`,
+            name: industry.seoTitle ?? industry.name,
+            description: industry.seoDescription ?? industry.headline ?? undefined,
+            locale,
+          }),
+          serviceLd({
+            name: `${industry.name} data and AI services on Snowflake`,
+            description: industry.seoDescription ?? industry.headline ?? industry.intro,
+            path: `/industries/${slug}`,
+            serviceType: `${industry.name} data and AI services`,
+            locale,
+          }),
+        ]}
+      />
+
       {/* Hero - sector icon + accent glow give each page its own flavor */}
       <section className="relative overflow-hidden">
         <HeroBackground compact />

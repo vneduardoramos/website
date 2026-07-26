@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbLd, webPageLd, serviceLd } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 import { InlineCta } from "@/components/marketing/Blocks";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { FeaturedCaseStudies } from "@/components/marketing/FeaturedCaseStudies";
@@ -28,6 +29,27 @@ export default async function ApproachPage({ params }: { params: { locale: strin
 
   return (
     <>
+      <JsonLd
+        data={[
+          webPageLd({
+            path: "/approach",
+            name: t("meta.title"),
+            description: t("meta.description"),
+            locale,
+          }),
+          breadcrumbLd(
+            [{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }],
+            locale,
+          ),
+          serviceLd({
+            name: t("meta.title"),
+            description: t("meta.description"),
+            path: "/approach",
+            serviceType: 'Snowflake data and AI delivery',
+            locale,
+          }),
+        ]}
+      />
       <div className="relative overflow-hidden">
         <SectionDecor variant="flow" />
         <div className="relative">

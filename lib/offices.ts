@@ -1,5 +1,5 @@
 import { theme } from "@/config/theme";
-import { ORG_REF } from "@/lib/seo";
+import { ORG_REF, AREA_SERVED } from "@/lib/seo";
 
 /**
  * The two real offices, in one place. Previously these addresses existed only
@@ -13,7 +13,20 @@ import { ORG_REF } from "@/lib/seo";
  * Austin is listed first: it is the US-facing address, and the commercial
  * target queries are US ones.
  */
-export const OFFICES = [
+/** One physical office. `url` is its own page on this site, where it has one. */
+type OfficeInput = {
+  key: string;
+  url?: string;
+  streetAddress: string;
+  addressLocality: string;
+  addressRegion: string;
+  postalCode: string;
+  addressCountry: string;
+  latitude: number;
+  longitude: number;
+};
+
+export const OFFICES: readonly OfficeInput[] = [
   {
     key: "austin",
     streetAddress: "10900 Stonelake Blvd, Bldg 2, Suite 100",
@@ -27,6 +40,8 @@ export const OFFICES = [
   },
   {
     key: "monterrey",
+    // Its own page, so the LocalBusiness node points at a document describing it.
+    url: "/nearshore/monterrey",
     streetAddress: "Carr. Nacional 500, Valle Alto",
     addressLocality: "Monterrey",
     addressRegion: "NL",
@@ -35,9 +50,9 @@ export const OFFICES = [
     latitude: 25.5563,
     longitude: -100.2417,
   },
-] as const;
+];
 
-export type Office = (typeof OFFICES)[number];
+export type Office = OfficeInput;
 
 function postalAddress(o: Office) {
   return {
@@ -51,21 +66,27 @@ function postalAddress(o: Office) {
 }
 
 /**
- * `ProfessionalService` per office, for pages with location intent. Emitting
- * these on more than one page is legitimate: each page genuinely describes the
- * same two physical locations.
+ * One `LocalBusiness` per office, for pages with location intent. Emitting these
+ * on more than one page is legitimate: each page genuinely describes the same two
+ * physical locations.
+ *
+ * `LocalBusiness` rather than `ProfessionalService`: schema.org marks the latter
+ * as superseded by LocalBusiness, so a current consumer resolves it less
+ * reliably. Same properties, current type.
  */
 export function officesLd(): Record<string, unknown>[] {
   return OFFICES.map((o) => ({
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": "LocalBusiness",
     // One stable id per office, so the two locations are distinct entities that
     // can be referenced and corroborated rather than two anonymous look-alikes.
     "@id": `${theme.brand.url}/#office-${o.key}`,
     name: `${theme.brand.name} ${o.addressLocality}`,
-    url: theme.brand.url,
+    // The office's own page where it has one, so the node points somewhere that
+    // describes it rather than at the site root twice.
+    url: o.url ? `${theme.brand.url}${o.url}` : theme.brand.url,
     parentOrganization: ORG_REF,
-    areaServed: "Americas",
+    areaServed: AREA_SERVED,
     address: postalAddress(o),
     geo: { "@type": "GeoCoordinates", latitude: o.latitude, longitude: o.longitude },
   }));

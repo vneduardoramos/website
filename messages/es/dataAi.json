@@ -97,5 +97,9 @@
   "cta": {
     "title": "Poner el agente correcto en el trabajo.",
     "subtitle": "Con el caso de uso definido, aportamos Claude, el gobierno y las personas para llevarlo a producción junto con el equipo, dentro de Snowflake y en el flujo de trabajo."
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "current": "Data + AI"
   }
 }

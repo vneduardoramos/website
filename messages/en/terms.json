@@ -47,5 +47,9 @@
       "title": "Contact us",
       "body": "Questions about these Terms? Contact us at <link>contact@viewnear.com</link>."
     }
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "current": "Terms"
   }
 }

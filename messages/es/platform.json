@@ -205,5 +205,9 @@
   "cta": {
     "title": "Poner la práctica sobre un solo stack gobernado.",
     "subtitle": "Con lo que se ejecuta hoy a la vista, trazamos la ruta más rápida hacia una única base gobernada en Snowflake, qué retirar en el camino y dónde el equipo toma el control."
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "current": "Plataforma"
   }
 }

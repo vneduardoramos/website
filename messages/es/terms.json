@@ -47,5 +47,9 @@
       "title": "Contacto",
       "body": "¿Hay preguntas sobre estos Términos? Basta con escribirnos a <link>contact@viewnear.com</link>."
     }
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "current": "Términos"
   }
 }

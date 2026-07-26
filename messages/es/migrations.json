@@ -229,5 +229,9 @@
   "consultingCta": {
     "title": "Una migración suele ser una parte de una implementación más amplia.",
     "label": "Consultoría e implementación"
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "current": "Migraciones a Snowflake"
   }
 }

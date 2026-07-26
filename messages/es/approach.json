@@ -64,5 +64,9 @@
   "nearshoreLink": {
     "title": "Esta cadencia solo funciona con una jornada compartida.",
     "label": "El modelo nearshore"
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "current": "Enfoque"
   }
 }
