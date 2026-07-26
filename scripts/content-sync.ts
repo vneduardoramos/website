@@ -1,11 +1,21 @@
 /**
  * Local-is-truth content publishing.
  *
- * `tsx scripts/content-sync.ts export`
+ * The loop, for editing content locally and publishing it:
+ *
+ *   1. edit at http://localhost:3000/admin
+ *   2. npm run ship          # export + stage the snapshot
+ *   3. git commit && git push
+ *
+ * Render's build imports the snapshot, so whatever the snapshot says is what
+ * production shows. Nothing else needs doing.
+ *
+ * `tsx scripts/content-sync.ts export [--force]`
  *   Snapshots every content table from the CURRENT DATABASE_URL (your local
  *   dev DB) into prisma/content-snapshot.json, which is committed. Media
  *   files themselves live on R2 and are shared across environments; only
- *   their rows travel here.
+ *   their rows travel here. Refuses to write a snapshot that would delete
+ *   rows the committed one has, unless --force: see lostKeysVsSnapshot.
  *
  * `tsx scripts/content-sync.ts import [--force]`
  *   Mirrors the snapshot into the CURRENT DATABASE_URL: upserts every row,
@@ -148,7 +158,41 @@ function unchanged(existing: Row | null, incoming: Row): boolean {
   return true;
 }
 
-async function exportContent() {
+/**
+ * Which keys would this export drop, per table, versus the committed snapshot?
+ *
+ * The import side already refuses to empty a table on a thin snapshot. The
+ * export side had no such guard, and that asymmetry cost real work: a local
+ * `db:reset` wipes admin-authored rows that no seed recreates (image overrides,
+ * `clientBands`), and the next export then wrote that loss over the committed
+ * snapshot. The deploy faithfully published the deletion. Nothing errored, and
+ * the pages fell back to their placeholders, so it looked like nothing had
+ * happened.
+ *
+ * A shrinking table is not always wrong (deleting a blog post is a real edit),
+ * so this reports rather than decides. `--force` proceeds.
+ */
+function lostKeysVsSnapshot(tables: Record<string, Row[]>): Record<string, string[]> {
+  if (!existsSync(SNAPSHOT)) return {};
+  let prev: { tables?: Record<string, Row[]> };
+  try {
+    prev = JSON.parse(readFileSync(SNAPSHOT, "utf8"));
+  } catch {
+    return {};
+  }
+  const lost: Record<string, string[]> = {};
+  for (const t of TABLES) {
+    const before = prev.tables?.[t.name] ?? [];
+    const after = tables[t.name] ?? [];
+    const keyOf = (r: Row) => String(r[t.key] ?? "");
+    const have = new Set(after.map(keyOf));
+    const gone = before.map(keyOf).filter((k) => k && !have.has(k));
+    if (gone.length) lost[t.name] = gone;
+  }
+  return lost;
+}
+
+async function exportContent(force: boolean) {
   const tables: Record<string, Row[]> = {};
   for (const t of TABLES) {
     const rows: Row[] =
@@ -158,6 +202,37 @@ async function exportContent() {
     tables[t.name] = rows;
     console.log(`export ${t.name}: ${rows.length}`);
   }
+
+  const lost = lostKeysVsSnapshot(tables);
+  if (Object.keys(lost).length > 0 && !force) {
+    console.error("");
+    console.error("=".repeat(72));
+    console.error("EXPORT REFUSED: this snapshot would DELETE content in production.");
+    console.error("");
+    console.error("These rows are in the committed snapshot but not in your local");
+    console.error("database, so exporting would publish their deletion:");
+    console.error("");
+    for (const [table, keys] of Object.entries(lost)) {
+      console.error(`  ${table} (${keys.length}):`);
+      for (const k of keys) console.error(`    - ${k}`);
+    }
+    console.error("");
+    console.error("If you just ran db:reset, your local DB lost admin-authored rows");
+    console.error("that no seed file recreates. Restore them before exporting:");
+    console.error("");
+    console.error("  npm run db:reset      # now re-applies the snapshot for you");
+    console.error("");
+    console.error("If these deletions ARE what you want, re-run with --force:");
+    console.error("");
+    console.error("  npx tsx scripts/content-sync.ts export --force");
+    console.error("=".repeat(72));
+    console.error("");
+    process.exit(1);
+  }
+  if (Object.keys(lost).length > 0) {
+    console.warn(`\nexport --force: publishing the deletion of ${Object.values(lost).flat().length} row(s).`);
+  }
+
   // Blog-post tag links, kept separately so rows stay plain scalars.
   const blogPostTags: Record<string, string[]> = {};
   for (const p of tables.blogPost) {
@@ -166,6 +241,7 @@ async function exportContent() {
   const snapshot = { exportedAt: new Date().toISOString(), tables, blogPostTags };
   writeFileSync(SNAPSHOT, JSON.stringify(snapshot, null, 1));
   console.log(`\nWrote ${SNAPSHOT}`);
+  console.log("Commit it to publish: git add prisma/content-snapshot.json");
 }
 
 async function importContent(force: boolean, prune: boolean) {
@@ -352,7 +428,7 @@ async function main() {
   const force = process.argv.includes("--force");
   const prune = !process.argv.includes("--no-prune");
   if (cmd === "export") {
-    await exportContent();
+    await exportContent(force);
     return;
   }
   if (cmd === "import") {

@@ -13,9 +13,11 @@
     "postinstall": "prisma generate",
     "db:push": "prisma db push",
     "db:seed": "prisma db seed",
-    "db:reset": "prisma db push --force-reset && prisma db seed",
+    "db:reset": "prisma db push --force-reset && prisma db seed && tsx scripts/content-sync.ts import --force --no-prune",
     "content:export": "tsx scripts/content-sync.ts export",
     "content:import": "tsx scripts/content-sync.ts import --force",
+    "content:status": "tsx scripts/content-sync.ts verify",
+    "ship": "tsx scripts/content-sync.ts export && git add prisma/content-snapshot.json && git status --short prisma/content-snapshot.json",
     "blur": "node scripts/gen-blur.mjs"
   },
   "prisma": {
