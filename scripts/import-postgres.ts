@@ -44,7 +44,6 @@ async function main() {
     });
   }
 
-  await prisma.newsEvent.createMany({ data: data.newsEvent });
   await prisma.lead.createMany({ data: data.lead });
   await prisma.jobOpening.createMany({ data: data.jobOpening });
   await prisma.jobApplication.createMany({ data: data.jobApplication });
@@ -64,7 +63,6 @@ async function main() {
   await check("service", await prisma.service.count());
   await check("caseStudy", await prisma.caseStudy.count());
   await check("blogPost", await prisma.blogPost.count());
-  await check("newsEvent", await prisma.newsEvent.count());
   await check("lead", await prisma.lead.count());
   await check("jobOpening", await prisma.jobOpening.count());
   await check("jobApplication", await prisma.jobApplication.count());

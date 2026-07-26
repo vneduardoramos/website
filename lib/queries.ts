@@ -168,27 +168,6 @@ export const getBlogPostBySlug = cache(async (
   return row ? localize("blogPost", row, locale) : row;
 });
 
-// ---------- News & events ----------
-export async function getNews(opts?: { take?: number }) {
-  return prisma.newsEvent.findMany({
-    where: PUBLISHED,
-    orderBy: { publishedAt: "desc" },
-    take: opts?.take,
-  });
-}
-
-export async function getNewsSlugs() {
-  const rows = await prisma.newsEvent.findMany({
-    where: PUBLISHED,
-    select: { slug: true },
-  });
-  return rows.map((r) => r.slug);
-}
-
-export async function getNewsBySlug(slug: string) {
-  return prisma.newsEvent.findFirst({ where: { slug, ...PUBLISHED } });
-}
-
 // ---------- Team / clients ----------
 export async function getTeam(locale: Locale = DEFAULT_LOCALE) {
   const rows = await prisma.teamMember.findMany({

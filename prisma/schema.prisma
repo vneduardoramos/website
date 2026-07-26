@@ -199,27 +199,6 @@ model BlogPost {
   updatedAt        DateTime    @updatedAt
 }
 
-model NewsEvent {
-  id             String    @id @default(cuid())
-  slug           String    @unique
-  title          String
-  kind           String    @default("announcement") // announcement | event | press
-  excerpt        String?
-  body           String
-  keyTakeaways   String? // JSON string[]
-  eventDate      DateTime?
-  venue          String?
-  agenda         String? // [{time, item}]
-  readMinutes    Int?
-  coverImage     String?
-  externalUrl    String?
-  status         String    @default("PUBLISHED")
-  publishedAt    DateTime?
-  seoTitle       String?
-  seoDescription String?
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
-}
 
 model Tag {
   id     String     @id @default(cuid())

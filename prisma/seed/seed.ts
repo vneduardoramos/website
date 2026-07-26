@@ -9,7 +9,6 @@ import {
   clients,
   caseStudies,
   team,
-  news,
   blogPosts,
   jobOpenings,
   faqs,
@@ -230,22 +229,6 @@ async function main() {
     });
   }
 
-  // --- News & events ---
-  for (const n of news) {
-    const data = {
-      slug: n.slug,
-      kind: n.kind,
-      title: n.title,
-      excerpt: n.excerpt,
-      body: n.body,
-      venue: (n as { venue?: string }).venue ?? null,
-      agenda: (n as { agenda?: unknown }).agenda ? J((n as { agenda?: unknown }).agenda) : null,
-      status: "PUBLISHED",
-      publishedAt: SITE_CONTENT_PUBLISHED_AT,
-      updatedAt: SITE_CONTENT_PUBLISHED_AT,
-    };
-    await prisma.newsEvent.upsert({ where: { slug: n.slug }, update: data, create: data });
-  }
 
   // --- Blog posts (authored by admin) ---
   for (const b of blogPosts) {
@@ -315,7 +298,6 @@ async function main() {
     services: await prisma.service.count(),
     industries: await prisma.industry.count(),
     caseStudies: await prisma.caseStudy.count(),
-    news: await prisma.newsEvent.count(),
     blog: await prisma.blogPost.count(),
     team: await prisma.teamMember.count(),
     jobs: await prisma.jobOpening.count(),

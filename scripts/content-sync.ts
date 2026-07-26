@@ -100,7 +100,6 @@ const TABLES = [
   // silently dropped the home-page logo bands once before (the UI fell back to
   // DEFAULT_BANDS, so nothing looked broken).
   { name: "siteSetting", key: "key", strip: [], remap: {}, keepKeys: ["clientBands"] },
-  { name: "newsEvent", key: "slug", strip: [], remap: {} },
   { name: "jobOpening", key: "slug", strip: [], remap: {} },
   { name: "caseStudy", key: "slug", strip: [], remap: { clientId: "client", industryId: "industry" } },
   { name: "blogPost", key: "slug", strip: ["tags", "authorId"], remap: { authorTeamId: "teamMember" } },

@@ -24,7 +24,6 @@ async function main() {
     blogPost: await prisma.blogPost.findMany({
       include: { tags: { select: { id: true } } },
     }),
-    newsEvent: await prisma.newsEvent.findMany(),
     lead: await prisma.lead.findMany(),
     jobOpening: await prisma.jobOpening.findMany(),
     jobApplication: await prisma.jobApplication.findMany(),
