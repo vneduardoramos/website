@@ -9,5 +9,9 @@
     "description": "Notas, ideas y reportes de campo sobre datos e IA, directamente desde los proyectos que ejecutamos en Snowflake."
   },
   "featuredKicker": "Destacado",
-  "emptyState": "Aún no hay publicaciones. Pronto habrá más."
+  "emptyState": "Aún no hay publicaciones. Pronto habrá más.",
+  "breadcrumb": {
+    "home": "Inicio",
+    "current": "Blog"
+  }
 }

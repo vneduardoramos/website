@@ -25,6 +25,7 @@ export function SectionHeading({
   center,
   size = "section",
   align,
+  as: Heading = "h2",
 }: {
   eyebrow?: React.ReactNode;
   title: React.ReactNode;
@@ -34,19 +35,25 @@ export function SectionHeading({
   /** "hero" promotes a section opener to the oversized display scale + lede intro. */
   size?: "hero" | "section";
   align?: "left" | "center";
+  /**
+   * Heading level. Defaults to h2, which is right for a section opener. Pass
+   * "h1" when this heading IS the page title and no PageHero precedes it, so the
+   * page does not start its outline at h2 with no h1 at all.
+   */
+  as?: "h1" | "h2";
 }) {
   const isCenter = align === "center" || (align === undefined && center);
   return (
     <div className={cn("max-w-3xl", isCenter && "mx-auto text-center")}>
       {eyebrow && <p className="eyebrow mb-3">{eyebrow}</p>}
-      <h2
+      <Heading
         className={cn(
           "text-balance font-display font-bold tracking-tight text-foreground",
           size === "hero" ? "display-hero" : "text-3xl md:text-[2.6rem] md:leading-[1.1]",
         )}
       >
         {title}
-      </h2>
+      </Heading>
       {intro && (
         <p
           className={cn(

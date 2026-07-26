@@ -1,6 +1,6 @@
 Durante los últimos dos años, muchos de nosotros experimentamos con los large language models. Nos impresionaron, pero también dejaron al descubierto una brecha: estos modelos son pasivos. Pueden responder preguntas, pero no toman decisiones ni actúan.
 
-Eso está cambiando. La aparición de los agentes de IA está transformando la forma en que las empresas usan los datos y la inteligencia. Y con Snowflake Cortex, estamos viendo el primer enfoque a nivel de plataforma para hacer que los agentes sean seguros, escalables y verdaderamente listos para la empresa.
+Eso está cambiando. La aparición de los agentes de IA está transformando la forma en que las empresas usan los datos y la inteligencia. Y con [Snowflake Cortex](/es/data-ai), estamos viendo el primer enfoque a nivel de plataforma para hacer que los agentes sean seguros, escalables y verdaderamente listos para la empresa.
 
 En Viewnear, vemos esto como un momento decisivo.
 

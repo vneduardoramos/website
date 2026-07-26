@@ -23,5 +23,9 @@
     "eyebrow": "Prueba verificable",
     "title": "Prueba que cualquiera puede verificar hoy mismo.",
     "body": "Viewnear es Snowflake Premier Partner y Snowflake CoCo Preferred Partner, con un equipo certificado en SnowPro. Ese reconocimiento se puede verificar hoy mismo, con independencia de cualquier proyecto individual."
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "current": "Casos de éxito"
   }
 }

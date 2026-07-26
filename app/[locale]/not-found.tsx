@@ -1,60 +1,21 @@
-import { getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
-import { Nav } from "@/components/marketing/Nav";
-import { Footer } from "@/components/marketing/Footer";
+import type { Metadata } from "next";
+import { NotFoundView } from "@/components/marketing/NotFoundView";
 
-export async function generateMetadata() {
-  const t = await getTranslations("notFound");
-  return {
-    title: t("metaTitle"),
-    description: t("metaDescription"),
-  };
-}
+/**
+ * Static metadata, deliberately not localized.
+ *
+ * `generateMetadata` here would need `getTranslations()`, which reads
+ * `headers()`, and doing that while rendering a 404 for a prerendered route
+ * turns the page dynamic at runtime and makes Next serve a 500 instead. The page
+ * is `noindex`, so a single-language title costs nothing in search; the visible
+ * copy is fully localized in NotFoundView.
+ */
+export const metadata: Metadata = {
+  title: "Page not found",
+  description: "This page does not exist or has moved.",
+  robots: { index: false, follow: false },
+};
 
-const LINKS: [string, string][] = [
-  ["services", "/services"],
-  ["industries", "/industries"],
-  ["caseStudies", "/case-studies"],
-  ["resources", "/resources"],
-  ["contactChip", "/contact"],
-];
-
-export default async function NotFound() {
-  const t = await getTranslations("notFound");
-  return (
-    <div className="flex min-h-screen flex-col">
-      <Nav />
-      <main className="flex-1">
-        <section className="relative overflow-hidden">
-          <div className="container-page py-24 text-center md:py-32">
-            <div className="flex justify-center">
-              <p className="eyebrow">{t("eyebrow")}</p>
-            </div>
-            <h1 className="mt-6 text-balance font-display text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-              {t("heading")}
-            </h1>
-            <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-muted">
-              {t("body")}
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link href="/" className="btn-primary btn-lg">
-                {t("backHome")}
-              </Link>
-              <Link href="/contact" className="btn-ghost btn-lg">
-                {t("contact")}
-              </Link>
-            </div>
-            <div className="mt-12 flex flex-wrap justify-center gap-3">
-              {LINKS.map(([key, href]) => (
-                <Link key={href} href={href} className="pill-chip">
-                  {t(key)}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
-  );
+export default function NotFound() {
+  return <NotFoundView />;
 }

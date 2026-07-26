@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Data + AI: agents inside Snowflake and in the flow of work",
+    "title": "Data + AI: agents inside and around Snowflake",
     "description": "Agents that reason over governed data inside Snowflake and act in the tools teams already use, and the interplay between them. Built with Claude as an Anthropic partner, in production in 8–16 weeks."
   },
   "hero": {
@@ -32,7 +32,10 @@
       "body": "Claims, invoices, and contracts classified, extracted, and routed in seconds instead of hand-sorted piles. The document backlog becomes a table teams can query.",
       "mech": "AI_CLASSIFY · AI_EXTRACT · PARSE_DOCUMENT",
       "stat": "60→95% accuracy · 4 sec per document",
-      "proof": { "label": "Read the engagement →", "href": "/case-studies/insurance-claims-cortex-ai" }
+      "proof": {
+        "label": "Read the engagement →",
+        "href": "/case-studies/insurance-claims-cortex-ai"
+      }
     },
     {
       "eyebrow": "Answers",
@@ -40,7 +43,10 @@
       "body": "Plain-language questions answered with citations against governed definitions, so the Monday meeting starts from the same number, not three versions of it.",
       "mech": "Cortex Analyst · Semantic Views · CoWork",
       "stat": "Thousands of runaway SKUs, one catalog agent",
-      "proof": { "label": "Read the engagement →", "href": "/case-studies/sku-catalog-governance" }
+      "proof": {
+        "label": "Read the engagement →",
+        "href": "/case-studies/sku-catalog-governance"
+      }
     },
     {
       "eyebrow": "Foresight",

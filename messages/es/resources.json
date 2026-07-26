@@ -29,5 +29,9 @@
   "cta": {
     "title": "Pongamos en marcha una práctica de datos e IA duradera.",
     "subtitle": "Con el punto de partida claro (migrando, escalando o llevando IA a producción), trazamos la vía más rápida hacia casos de uso en producción, operados por equipos internos."
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "current": "Recursos"
   }
 }

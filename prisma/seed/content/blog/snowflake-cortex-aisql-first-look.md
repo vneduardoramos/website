@@ -1,6 +1,6 @@
 ## Why this matters
 
-At Snowflake Summit 2025, the company unveiled Cortex AISQL, a family of built-in functions that embed state-of-the-art LLMs directly inside the Snowflake engine. For teams that already store governed data in Snowflake, this brings three immediate benefits:
+At Snowflake Summit 2025, the company unveiled [Cortex AISQL](/data-ai), a family of built-in functions that embed state-of-the-art LLMs directly inside the Snowflake engine. For teams that already store [governed data in Snowflake](/platform), this brings three immediate benefits:
 
 - **No extra infrastructure:** Everything executes inside the platform, so you avoid spinning up a separate AI service.
 - **Unified security:** Data never leaves Snowflake, and existing roles, masking policies, and row access controls still apply.

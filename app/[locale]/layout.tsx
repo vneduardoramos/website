@@ -109,7 +109,16 @@ export default async function LocaleRootLayout({
   params: { locale: string };
 }) {
   const { locale } = params;
-  if (!routing.locales.includes(locale as "en" | "es")) notFound();
+  // An unknown first segment ("/favicon.ico", "/opensearch.xml", "/PRICING")
+  // lands here as `locale`. Pin the request to the default locale BEFORE
+  // notFound(), because app/[locale]/not-found.tsx reads translations: without a
+  // resolvable locale it threw while rendering the 404, and Next served a bare
+  // 500 instead. Any path containing a dot also bypasses the middleware
+  // (see its matcher), so this is the only place that runs for those URLs.
+  if (!routing.locales.includes(locale as "en" | "es")) {
+    setRequestLocale(routing.defaultLocale);
+    notFound();
+  }
   setRequestLocale(locale);
   const messages = await getMessages();
   // Ship only the namespaces CLIENT components read: shared chrome (nav/footer),
@@ -121,6 +130,9 @@ export default async function LocaleRootLayout({
     "sharedUi", "strips", "homeServer", "partnershipUi", "dataAiUi",
     "platformUi", "approachUi", "migrationsUi", "contentData", "articleUi",
     "heroUi", "methodology", "forms", "misc", "consent", "errorPage",
+    // The 404 body localizes on the client so it can render inside prerendered
+    // routes without reading request headers (see NotFoundView).
+    "notFound",
   ];
   const all = messages as Record<string, unknown>;
   const clientMessages = Object.fromEntries(

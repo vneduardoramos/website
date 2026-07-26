@@ -18,7 +18,7 @@ That sounds subtle, but it changes everything.
 
 What actually needs to be built remains the most important question.
 
-In data and AI, understanding the problem, gathering the right context from customers and internal teams, and shaping the work so it can be acted on effectively matters more than ever. Agents act directly on what they are given. If metrics are unclear, definitions are inconsistent, or assumptions are left implicit, execution will be fast and wrong.
+In data and AI, understanding the problem, gathering the right context from customers and internal teams, and shaping the work so it can be acted on effectively matters more than ever. [Agents act directly on what they are given](/data-ai). If metrics are unclear, definitions are inconsistent, or assumptions are left implicit, execution will be fast and wrong.
 
 In an agent-driven world, ambiguity becomes a multiplier.
 

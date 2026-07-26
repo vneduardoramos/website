@@ -40,8 +40,8 @@ export async function generateMetadata({
     return { title: t("fallbackTitle"), robots: { index: false, follow: false } };
   }
   return pageMeta({
-    title: cs.title,
-    description: cs.summary,
+    title: cs.seoTitle ?? cs.title,
+    description: cs.seoDescription ?? cs.summary,
     path: `/case-studies/${slug}`,
     image: cs.heroImage,
     type: "article",

@@ -6,7 +6,7 @@ Traditional data warehouses were well-designed for their era. When data was meas
 
 ## What's actually changing
 
-This isn't just about moving to the cloud. I've seen plenty of cloud migrations that recreate the same problems in a more expensive location. Platforms like Snowflake represent a fundamental rethinking of data infrastructure design.
+This isn't just about moving to the cloud. I've seen plenty of [cloud migrations](/migrations) that recreate the same problems in a more expensive location. Platforms like Snowflake represent a fundamental rethinking of data infrastructure design.
 
 Traditional systems were built around constraints: limited storage, fixed compute capacity, predictable workloads. Every decision involved managing these limitations. Need more processing power? You had to plan months ahead. Want to keep more historical data? Storage costs became a major consideration.
 
@@ -16,7 +16,7 @@ This changes how you approach data problems. Instead of asking "can we afford to
 
 ## Technical architecture changes
 
-Separating compute and storage is the key insight that enables everything else. In traditional systems, these components are tightly coupled. Scaling one means scaling both, even when you only need additional capacity in one area.
+[Separating compute and storage](/blog/snowflake-compute-storage-architecture) is the key insight that enables everything else. In traditional systems, these components are tightly coupled. Scaling one means scaling both, even when you only need additional capacity in one area.
 
 Snowflake allows these components to scale independently. You can add compute power for complex queries without paying for storage you don't need, or increase storage for archival data without unused processing capacity.
 

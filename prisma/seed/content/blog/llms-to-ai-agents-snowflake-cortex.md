@@ -1,6 +1,6 @@
 Over the last two years, many of us experimented with large language models. They impressed us, but they also exposed a gap: these models are passive. They can answer questions, but they don't make decisions or take action.
 
-That's changing. The emergence of AI agents is transforming how companies use data and intelligence. And with Snowflake Cortex, we're seeing the first platform-level approach to make agents secure, scalable, and truly enterprise-ready.
+That's changing. [The emergence of AI agents](/blog/snowflake-control-plane-agentic-enterprise) is transforming how companies use data and intelligence. And with [Snowflake Cortex](/data-ai), we're seeing the first platform-level approach to make agents secure, scalable, and truly enterprise-ready.
 
 At Viewnear, we see this as a pivotal moment.
 

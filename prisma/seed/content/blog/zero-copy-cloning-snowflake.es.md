@@ -2,7 +2,7 @@
 
 La clonación zero-copy parece compleja hasta que la ve en acción. Hace poco le mostré a un cliente cómo crear una copia completa de su base de datos de producción de 2TB en unos 10 segundos. Sin mover datos, sin costos de almacenamiento, solo un duplicado instantáneo y totalmente funcional.
 
-Esta es una de las ventajas más prácticas de la arquitectura de Snowflake, pero muchos equipos no se dan cuenta de lo útil que puede ser para las operaciones del día a día.
+Esta es una de las ventajas más prácticas de la arquitectura de [Snowflake](/es/services/data-engineering), pero muchos equipos no se dan cuenta de lo útil que puede ser para las operaciones del día a día.
 
 ## Cómo funciona realmente la clonación zero-copy
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, collectionLd } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 import { getCaseStudies } from "@/lib/queries";
 import type { Locale } from "@/lib/i18n-content";
 import { Section, CtaBand, Pill } from "@/components/marketing/ui";
@@ -35,8 +36,21 @@ export default async function CaseStudiesPage({ params }: { params: { locale: st
     Boolean,
   );
 
+  const ld = collectionLd({
+    name: t("meta.title"),
+    description: t("meta.description"),
+    path: "/case-studies",
+    locale,
+    crumbs: [
+      { name: t("breadcrumb.home"), url: "/" },
+      { name: t("breadcrumb.current") },
+    ],
+    items: caseStudies.map((cs) => ({ name: cs.title, url: `/case-studies/${cs.slug}` })),
+  });
+
   return (
     <>
+      <JsonLd data={ld} />
       <PageHero
         eyebrow={t("hero.eyebrow")}
         title={t.rich("hero.title", { hl: (c) => <span className="text-gradient">{c}</span> })}

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Careers: data & AI engineering jobs in Monterrey and Austin",
+    "title": "Data & AI engineering jobs, Monterrey & Austin",
     "description": "Snowflake data engineering, analytics, and AI roles at Viewnear. Work from our Monterrey, Nuevo León delivery center or Austin, Texas, on enterprise data across the Americas."
   },
   "breadcrumb": {
@@ -11,7 +11,12 @@
     "eyebrow": "Careers",
     "title": "Build the data and AI work <hl>enterprises keep</hl>",
     "description": "We hire data engineers, analytics engineers, architects, and AI engineers into real production work on Snowflake, from our delivery center in Monterrey and our Austin office.",
-    "chips": ["Monterrey, Nuevo León", "Austin, Texas", "SnowPro certification paid", "US business hours"]
+    "chips": [
+      "Monterrey, Nuevo León",
+      "Austin, Texas",
+      "SnowPro certification paid",
+      "US business hours"
+    ]
   },
   "whoHeading": {
     "eyebrow": "Who we hire",

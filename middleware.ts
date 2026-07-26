@@ -19,7 +19,24 @@ export default function middleware(req: NextRequest, event: NextFetchEvent) {
   }
 
   // Marketing → locale routing.
-  return intlMiddleware(req);
+  const res = intlMiddleware(req);
+
+  // next-intl redirects the redundant default-locale prefix ("/en/pricing" →
+  // "/pricing") with a 307. Those URLs never exist under
+  // localePrefix: "as-needed", so the honest signal is a permanent redirect;
+  // 307 tells crawlers the original might come back and splits consolidation.
+  // Only the default-locale prefix is upgraded: "/es/..." is a real URL, and
+  // locale-detection redirects (disabled here) would not be permanent.
+  if (res.status === 307) {
+    const location = res.headers.get("location");
+    const { pathname } = req.nextUrl;
+    const prefix = `/${routing.defaultLocale}`;
+    if (location && (pathname === prefix || pathname.startsWith(`${prefix}/`))) {
+      return NextResponse.redirect(new URL(location, req.url), 308);
+    }
+  }
+
+  return res;
 }
 
 export const config = {

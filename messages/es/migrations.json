@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Migraciones a Snowflake: Teradata, Oracle, Redshift, Hadoop y más",
+    "title": "Migraciones a Snowflake: Teradata y Oracle",
     "description": "Viewnear traslada almacenes heredados y Hadoop a Snowflake: conversión automatizada, paridad validada y una transferencia que el equipo interno termina operando."
   },
   "hero": {

@@ -2,7 +2,9 @@
 export const industriesEs: Record<string, { name?: string; headline?: string; intro?: string; body?: string; challenges?: { problem: string; response: string }[]; deliverables?: { title: string; description: string }[]; stats?: { label: string; value: string }[]; seoTitle?: string; seoDescription?: string }> = {
   "construction-real-estate": {
     name: "Construcción y bienes raíces",
-    headline: "Cada proyecto y cada propiedad generan datos. La mayoría nunca llega a una decisión.",
+    headline: "La construcción y los bienes raíces generan datos en cada proyecto. La mayoría nunca llega a una decisión.",
+    seoTitle: "Snowflake para construcción e inmobiliaria",
+    seoDescription: "Datos de construcción e inmobiliaria en Snowflake: datos de proyecto, diseño y propiedad unificados en decisiones medibles.",
     intro:
       "Desde el avance en obra hasta el desempeño del portafolio, unificamos los datos de proyecto, costo y activos en una única fuente gobernada para que desarrolladores, contratistas y propietarios vean el cronograma, el presupuesto y el rendimiento casi en tiempo real.",
     challenges: [
@@ -20,7 +22,9 @@ export const industriesEs: Record<string, { name?: string; headline?: string; in
   },
   "education": {
     name: "Educación",
-    headline: "Las instituciones abundan en datos de estudiantes y carecen de información útil.",
+    headline: "Las instituciones educativas abundan en datos de estudiantes y carecen de información útil.",
+    seoTitle: "Snowflake para datos educativos",
+    seoDescription: "Datos e IA en educación sobre Snowflake: expedientes y eventos de aprendizaje unificados en información accionable.",
     intro:
       "En escuelas, universidades y centros de capacitación, convertimos los datos de inscripción, aprendizaje y operación en una única fuente confiable para el éxito estudiantil, los reportes institucionales y la rendición de cuentas de financiamiento.",
     challenges: [
@@ -39,6 +43,8 @@ export const industriesEs: Record<string, { name?: string; headline?: string; in
   "financial-services": {
     name: "Servicios financieros",
     headline: "En los servicios financieros, los datos valen más que los productos. Deberían tratarse así.",
+    seoTitle: "Snowflake para servicios financieros",
+    seoDescription: "Datos e IA para servicios financieros en Snowflake: datos gobernados y auditables para riesgo, finanzas y decisiones de cliente.",
     intro:
       "En banca, seguros y gestión de activos, las organizaciones que ganan son las que convierten los datos financieros fragmentados en una única fuente gobernada y confiable para reportes, cumplimiento e IA.",
     challenges: [
@@ -56,7 +62,9 @@ export const industriesEs: Record<string, { name?: string; headline?: string; in
   },
   "manufacturing": {
     name: "Manufactura",
-    headline: "El piso de producción genera datos más rápido de lo que la mayoría de los equipos alcanza a usar.",
+    headline: "Datos de manufactura que avanzan al ritmo del piso de producción.",
+    seoTitle: "Snowflake para analítica de manufactura",
+    seoDescription: "Datos e IA de manufactura en Snowflake: datos gobernados de producción, calidad y costos que llegan a las decisiones del piso.",
     intro:
       "Conectamos los datos de producción, cadena de suministro y sensores en una única fuente gobernada y confiable para que los fabricantes eleven el OEE, vean toda la cadena de suministro y actúen sobre los problemas antes de que lleguen al cliente.",
     challenges: [
@@ -74,7 +82,9 @@ export const industriesEs: Record<string, { name?: string; headline?: string; in
   },
   "media-entertainment-advertising": {
     name: "Medios, entretenimiento y publicidad",
-    headline: "Las audiencias se mueven rápido. Los datos que las siguen deberían moverse más rápido.",
+    headline: "Las audiencias de medios, entretenimiento y publicidad se mueven rápido. Los datos que las siguen deberían moverse más rápido.",
+    seoTitle: "Snowflake para medios y publicidad",
+    seoDescription: "Datos de medios, entretenimiento y publicidad en Snowflake: datos de audiencia y campañas gobernados y rápidos.",
     intro:
       "Unificamos los datos de audiencia, contenido y campañas en una única fuente gobernada para que los equipos de medios, entretenimiento y publicidad midan el desempeño, atribuyan la inversión y actúen sobre la participación casi en tiempo real.",
     challenges: [
@@ -92,7 +102,9 @@ export const industriesEs: Record<string, { name?: string; headline?: string; in
   },
   "retail-cpg": {
     name: "Retail y CPG",
-    headline: "El margen en retail es estrecho. Las decisiones basadas en datos son donde se recupera.",
+    headline: "El margen en retail y CPG es estrecho. Las decisiones basadas en datos son donde se recupera.",
+    seoTitle: "Snowflake para datos de retail y CPG",
+    seoDescription: "Analítica de retail y CPG en Snowflake: datos unificados de ventas, inventario y margen, gobernados para actuar a diario.",
     intro:
       "Desde los bienes perecederos y la producción de alimentos hasta el retail omnicanal y la lealtad, unificamos los datos de ventas, inventario, producción y clientes en analítica casi en tiempo real que afina las decisiones de inventario, margen y merchandising.",
     challenges: [
@@ -110,7 +122,9 @@ export const industriesEs: Record<string, { name?: string; headline?: string; in
   },
   "technology-telco": {
     name: "Tecnología y telecomunicaciones",
-    headline: "Las empresas de software y telecomunicaciones cuentan con datos de uso que la mayoría de las compañías envidiaría. La oportunidad está en sacarles más provecho.",
+    headline: "Las empresas de tecnología y telecomunicaciones cuentan con datos de uso que la mayoría envidiaría.",
+    seoTitle: "Snowflake para tecnología y telecom",
+    seoDescription: "Datos de tecnología y telecomunicaciones en Snowflake: uso, facturación y telemetría convertidos en información gobernada.",
     intro:
       "Para negocios de software, plataformas y telecomunicaciones, convertimos el uso del producto y la telemetría de red en una fuente gobernada para el abandono de clientes, el crecimiento y la confiabilidad, de modo que los equipos actúen sobre señales y no sobre anécdotas.",
     challenges: [

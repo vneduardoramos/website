@@ -2,7 +2,7 @@
 
 La ingeniería de datos moderna ya no consiste simplemente en extraer, cargar y transformar datos. Hoy los equipos gestionan pipelines complejos que procesan flujos en tiempo real, archivos no estructurados y transformaciones listas para IA. El reto está en equilibrar velocidad y gobernanza sin saturar la infraestructura.
 
-Snowflake Openflow se creó para esta nueva realidad. Es un servicio de ingesta y orquestación totalmente gestionado que permite a los equipos diseñar, desplegar y observar pipelines de datos directamente en Snowflake. Construido sobre Apache NiFi, Openflow reúne automatización, escalabilidad y seguridad de nivel empresarial: los ingredientes clave de la ingeniería de datos moderna.
+[Snowflake Openflow](/es/services/data-engineering) se creó para esta nueva realidad. Es un servicio de ingesta y orquestación totalmente gestionado que permite a los equipos diseñar, desplegar y observar pipelines de datos directamente en Snowflake. Construido sobre Apache NiFi, Openflow reúne automatización, escalabilidad y seguridad de nivel empresarial: los ingredientes clave de la ingeniería de datos moderna.
 
 ## Dentro de Snowflake Openflow
 

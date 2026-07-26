@@ -1,6 +1,6 @@
 ## La pregunta sobre integración de BI que me hacen cada semana
 
-"Nos encantan nuestros dashboards de Power BI, pero conectarlos a Snowflake nos parece complicado. ¿Pueden ayudarnos a hacerlo bien?"
+"Nos encantan nuestros dashboards de [Power BI](/es/services/data-visualisation), pero conectarlos a Snowflake nos parece complicado. ¿Pueden ayudarnos a hacerlo bien?"
 
 Le juro que tengo esta misma conversación al menos una vez por semana. ¿Y sabe qué? Lo entiendo. Estas integraciones pueden ser increíblemente potentes cuando se hacen bien, pero también pueden convertirse en un desastre lento y costoso si no se tiene cuidado.
 

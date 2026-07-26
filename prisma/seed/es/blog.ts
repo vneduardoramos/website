@@ -4,6 +4,8 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   "how-to-choose-a-snowflake-partner": {
     title: "Cómo elegir un partner de Snowflake: una checklist para el comprador",
     excerpt: "Las certificaciones son el piso, no la respuesta. Lo que separa a un buen partner de Snowflake de uno doloroso casi nunca está en la presentación de ventas: quién construye con el equipo interno, quién sigue siendo responsable después del go-live y quién cobra por terminar en lugar de por facturar. Una checklist práctica para llevar a cada conversación.",
+    seoTitle: "Cómo elegir un socio de Snowflake",
+    seoDescription: "Lista de verificación para evaluar a un socio de Snowflake: certificaciones, modelo de entrega, referencias y qué preguntar antes de firmar.",
     keyTakeaways: [
       "El nivel de partner y la certificación SnowPro son el piso: confírmelos, luego revise si la gente senior de la presentación es la que de verdad va a entregar.",
       "El mejor predictor de estar contento a largo plazo es si un partner construye con el equipo interno y entrega el trabajo, o construye una caja negra y se va.",
@@ -15,6 +17,8 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   "snowflake-migration-cost": {
     title: "Cuánto cuesta de verdad una migración a Snowflake (y qué mueve el número)",
     excerpt: "Quien cotice un precio cerrado de migración antes de ver el entorno está adivinando. Pero el costo no es imposible de conocer: es la suma de unos cuantos factores claros, del sistema de origen al número de pipelines al gobierno. Esto es lo que mueve el número, y cómo bajarlo.",
+    seoTitle: "Cuánto cuesta migrar a Snowflake",
+    seoDescription: "Los factores reales de costo en una migración a Snowflake: volumen de datos, rehacer pipelines, dimensionar cómputo y el equipo que la opera.",
     keyTakeaways: [
       "Conviene separar dos costos: el costo continuo de la plataforma de Snowflake por consumo, y el costo único del proyecto de migración. Confundirlos provoca sustos en ambas direcciones.",
       "El mayor factor del proyecto suele ser los pipelines y las transformaciones, no el volumen de datos en crudo: cada job y cada regla de negocio enterrada hay que reconstruirlos y validarlos.",
@@ -26,6 +30,8 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   "nearshore-vs-offshore-snowflake": {
     title: "Nearshore vs offshore para entregas de Snowflake: cómo decidir",
     excerpt: "La decisión entre nearshore y offshore suele arrancar con las tarifas por hora. Debería arrancar con los relojes. El trabajo de Snowflake e IA es iterativo y denso en decisiones, justo el tipo de trabajo donde el traslape de zona horaria le gana a una tarifa más baja. Un marco para decidir qué modelo conviene a cada proyecto.",
+    seoTitle: "Nearshore u offshore para Snowflake",
+    seoDescription: "Cómo decidir entre nearshore y offshore para entregar Snowflake: traslape de horarios, viajes, equipos bilingües y costo total.",
     keyTakeaways: [
       "Comparar costo por resultado, no costo por hora: una tarifa offshore más baja se borra con el retrabajo que causa la latencia de la noche en trabajo iterativo.",
       "El trabajo de Snowflake e IA es intensivo en discovery y denso en decisiones, y eso premia el traslape de horario: un bloqueo resuelto para la comida frente a un día completo por ida y vuelta.",
@@ -37,6 +43,8 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   "snowflake-control-plane-agentic-enterprise": {
     title: "Snowflake es ahora el plano de control de la empresa agéntica",
     excerpt: "Snowflake nació como plataforma de datos, pero el auge de la IA agéntica exige un plano de control gobernado que unifique datos confiables, contexto de negocio, elección de modelo, seguridad y flujos de trabajo. Este artículo explica por qué Snowflake se posiciona como esa capa operativa para la empresa agéntica.",
+    seoTitle: "Snowflake como plano de control agéntico",
+    seoDescription: "Snowflake se convierte en el plano de control de la empresa agéntica, donde los agentes actúan sobre datos gobernados y no sobre copias.",
     keyTakeaways: [
       "La empresa agéntica necesita un plano de control que coordine datos, contexto, modelos, agentes, gobierno y acción.",
       "Los datos empresariales gobernados son la base desde la que debe partir la IA agéntica, no los agentes en sí.",
@@ -48,6 +56,8 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   "ai-assistant-understands-your-data": {
     title: "El asistente de IA que de verdad entiende los datos (y por qué eso importa)",
     excerpt: "Snowflake Cortex Agents no son solo otra función de chatbot. Tras implementarlos en múltiples entornos de clientes, he visto cómo transforman la manera en que los usuarios de negocio interactúan con los datos, y es más profundo de lo que esperaba en un principio.",
+    seoTitle: "El asistente de IA que entiende datos",
+    seoDescription: "Por qué un asistente de IA anclado en datos gobernados y modelados responde preguntas que un chatbot general no puede.",
     keyTakeaways: [
       "Cortex Agents operan dentro de la plataforma de datos, así que consultan datos en vivo y heredan de forma automática los permisos y el gobierno ya existentes.",
       "El servicio al cliente es el mejor punto de partida porque el valor es inmediato: los agentes dan a los representantes el historial completo de un cliente y la memoria institucional de casos anteriores.",
@@ -59,6 +69,8 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   "data-warehouse-revolution-five-years": {
     title: "La transformación del data warehouse que he visto desarrollarse durante cinco años",
     excerpt: "Cuando empecé a recomendar Snowflake a los clientes, muchos eran escépticos sobre el data warehousing en la nube. Hoy, esas mismas organizaciones no imaginan volver a los sistemas tradicionales, y aquí está por qué esta transformación importa.",
+    seoTitle: "Cinco años de cambio en el warehouse",
+    seoDescription: "Qué cambió en el almacenamiento de datos en cinco años y por qué separar cómputo y almacenamiento importó más que todo.",
     keyTakeaways: [
       "Las plataformas nativas de la nube eliminan las restricciones de almacenamiento y cómputo que definían el diseño tradicional del data warehouse, cambiando las preguntas que los equipos se hacen sobre sus datos.",
       "Separar cómputo y almacenamiento es la clave: cada uno escala de forma independiente, y la arquitectura multiclúster evita que las cargas de trabajo interfieran entre sí.",
@@ -70,6 +82,8 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   "bi-integration-challenge-power-bi-tableau-snowflake": {
     title: "El reto de integración que enfrenta todo equipo de BI (y cómo lo resolvemos)",
     excerpt: "Conectar Snowflake con las herramientas de BI favoritas no debería ser ciencia espacial. Tras decenas de implementaciones, estos son los patrones que funcionan y las trampas que hacen perder tiempo.",
+    seoTitle: "Power BI y Tableau sobre Snowflake",
+    seoDescription: "El problema de integración que enfrenta todo equipo de BI al conectar Power BI y Tableau con Snowflake, y cómo resolverlo.",
     keyTakeaways: [
       "Usar cuentas de servicio con autenticación por par de llaves y warehouses dedicados por herramienta para mantener el rendimiento predecible y los costos claros.",
       "Elegir DirectQuery o conexiones en vivo para datos grandes y cambiantes, e importación o extractos para datos más pequeños y estables, y combinarlos en un modelo híbrido.",
@@ -81,6 +95,8 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   "why-snowflake-ai-strategy-matters": {
     title: "Por qué todo equipo de datos debería prestar atención a la estrategia de IA de Snowflake",
     excerpt: "Desde una posición privilegiada observando la evolución de la IA de Snowflake, esto no es solo otro proveedor agregando funciones de ML. Es un cambio fundamental que transformará cómo construimos e implementamos aplicaciones de IA.",
+    seoTitle: "Por qué importa la estrategia de IA",
+    seoDescription: "Qué significa la estrategia de IA de Snowflake para los equipos de datos, de Cortex al acceso gobernado a modelos.",
     keyTakeaways: [
       "Llevar la IA a la nube de datos elimina la barrera entre el almacenamiento de datos y el procesamiento de IA, de modo que se puede analizar texto y ejecutar modelos donde los datos ya residen.",
       "Las funciones de Cortex permiten combinar la analítica tradicional con hallazgos de IA en una sola consulta, desde el análisis de sentimiento hasta la extracción de documentos y el pronóstico.",
@@ -92,6 +108,8 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   "zero-copy-cloning-snowflake": {
     title: "Entender el Zero-Copy Cloning: la función más subutilizada de Snowflake",
     excerpt: "El Zero-Copy Cloning suena demasiado bueno para ser cierto hasta que se entiende su mecánica. Así funciona esta capacidad y por qué debería formar parte del arsenal de todo equipo de datos.",
+    seoTitle: "Clonación sin copia en Snowflake",
+    seoDescription: "La clonación sin copia es la función más subutilizada de Snowflake. Cómo funciona y dónde ahorra tiempo y dinero reales.",
     keyTakeaways: [
       "El Zero-Copy Cloning crea copias de base de datos instantáneas y totalmente funcionales al compartir los archivos de datos subyacentes, de modo que clonar una base de datos de 100TB toma el mismo tiempo que clonar una de 100GB.",
       "Los costos de almacenamiento parten de cero y solo crecen a medida que el clon y el original divergen por actualizaciones, lo que hace práctica la clonación para el desarrollo, las pruebas y el análisis cotidianos.",
@@ -103,6 +121,8 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   "snowflake-compute-storage-architecture": {
     title: "Por qué la arquitectura de cómputo y almacenamiento de Snowflake sí importa para la estrategia de datos",
     excerpt: "Entender las decisiones arquitectónicas de Snowflake no es mera curiosidad técnica. Es la base para optimizar el rendimiento, controlar los costos y construir soluciones de datos escalables.",
+    seoTitle: "Cómputo y almacenamiento en Snowflake",
+    seoDescription: "Por qué separar cómputo y almacenamiento cambia lo que puede lograr una estrategia de datos, y cómo dimensionar warehouses.",
     keyTakeaways: [
       "Separar cómputo y almacenamiento permite escalar cada uno de forma independiente, así que paga por lo que realmente usa en lugar de aprovisionar para la capacidad máxima las 24 horas.",
       "El multiclúster y el aislamiento de recursos evitan que distintas cargas de trabajo (ETL, consultas de usuarios, desarrollo) interfieran entre sí, a la vez que le dan una visibilidad clara del costo.",
@@ -114,6 +134,8 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   "snowflake-summit-2025-takeaways": {
     title: "De regreso de Snowflake Summit 2025: lo que destacó, lo que nos hizo reflexionar y lo que sigue",
     excerpt: "Acabamos de regresar de Snowflake Summit 2025 en San Francisco, y más allá de un roadmap lleno de novedades emocionantes, lo que destacó fueron las conversaciones reflexivas, la dirección clara hacia la que se encamina la plataforma, y cómo esos cambios se alinean con la forma en que ayudamos a los clientes a construir soluciones de datos más inteligentes, rápidas y preparadas para el futuro.",
+    seoTitle: "Snowflake Summit 2025: conclusiones",
+    seoDescription: "Lo que destacó en Snowflake Summit 2025, qué señala para los equipos de datos y qué se lleva a la entrega.",
     keyTakeaways: [
       "Snowflake CoWork trae consultas en lenguaje natural construidas sobre datos gobernados, seguros y conscientes de roles, pero el impacto real depende de combinarlo con los modelos de datos y los casos de uso adecuados.",
       "Cortex AISQL aplica IA generativa directamente dentro de SQL, resumiendo, analizando y clasificando datos no estructurados sin sacar nada de Snowflake.",
@@ -125,6 +147,8 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   "snowflake-cortex-aisql-first-look": {
     title: "De SQL a IA generativa: un primer vistazo a Snowflake Cortex AISQL",
     excerpt: "Las nuevas funciones Cortex AISQL de Snowflake permiten ejecutar tareas de modelos de lenguaje grandes como clasificación, extracción, traducción e incluso preguntas y respuestas sobre imágenes directamente en SQL. Esto es lo que significa para los equipos de datos, cómo funciona en la práctica y dónde vemos en Viewnear las mayores oportunidades.",
+    seoTitle: "Snowflake Cortex AISQL: primer vistazo",
+    seoDescription: "Un primer vistazo a Snowflake Cortex AISQL: IA generativa desde SQL y dónde encaja en una práctica de datos.",
     keyTakeaways: [
       "Cortex AISQL integra LLMs de última generación directamente dentro del motor de Snowflake, así que no hay infraestructura de IA adicional que levantar y los datos nunca salen de la plataforma.",
       "Los analistas pueden prototipar flujos de trabajo con LLM sin más que una sentencia SELECT, clasificando sentimiento, extrayendo campos y respondiendo preguntas sobre imágenes en una sola consulta.",
@@ -136,6 +160,8 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   "agi-ready-data-cloud": {
     title: "Pasos silenciosos hacia una nube de datos lista para la AGI",
     excerpt: "La inteligencia artificial general ya no se siente como ciencia ficción, pero incluso los modelos más inteligentes tropezarán sin datos disciplinados y confiables. Este artículo describe los cambios de mentalidad que necesitan los líderes de negocio, muestra cómo Snowflake allana el camino con discreción y explica por qué Viewnear prefiere logros pequeños y bien gobernados frente a apuestas grandes y arriesgadas.",
+    seoTitle: "Pasos hacia una nube de datos para AGI",
+    seoDescription: "Incluso los modelos más potentes se limitan por los datos que alcanzan. Qué requiere de verdad una nube de datos lista para AGI.",
     keyTakeaways: [
       "Las ambiciones de AGI viven o mueren según la confianza en los datos, el gobierno adaptativo y la velocidad de entrega, no solo según el tamaño del modelo.",
       "La calidad de los datos se capitaliza como el interés: el linaje explicable, las políticas portables y el conocimiento continuo rinden más cuando llega la primera auditoría de IA.",
@@ -147,6 +173,8 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   "llms-to-ai-agents-snowflake-cortex": {
     title: "De los LLM a los agentes de IA: por qué Snowflake Cortex marca una nueva era para la IA empresarial",
     excerpt: "Como líderes de negocio, todos hemos visto el revuelo alrededor de los modelos de lenguaje grandes. Pero el paso hacia los agentes de IA, impulsados por Snowflake Cortex, es donde comienza el verdadero valor de negocio.",
+    seoTitle: "De los LLM a los agentes de IA",
+    seoDescription: "Por qué Snowflake Cortex marca el paso de consultar LLM a operar agentes de IA sobre datos empresariales gobernados.",
     keyTakeaways: [
       "Los LLM son pasivos; responden preguntas pero no toman decisiones ni ejecutan acciones. Los agentes de IA perciben, razonan, planifican, actúan y aprenden, comportándose más como compañeros de trabajo digitales que como herramientas.",
       "Los agentes de datos son la categoría de mayor impacto, combinando datos estructurados y no estructurados en hallazgos confiables con precisión, eficiencia y gobierno incorporados.",
@@ -158,6 +186,8 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   "viewnear-snowflake-openflow-data-workflows": {
     title: "Cómo Viewnear usa Snowflake Openflow para construir la próxima generación de flujos de trabajo de datos",
     excerpt: "Snowflake Openflow, impulsado por Apache NiFi, le da a Viewnear el control, la flexibilidad y la velocidad para mover y preparar datos para la analítica y la IA. Combina el diseño visual de flujos de trabajo con estándares de ingeniería modernos para que nuestros equipos construyan pipelines escalables y gobernados más rápido que nunca.",
+    seoTitle: "Flujos de datos con Snowflake Openflow",
+    seoDescription: "Cómo Viewnear usa Snowflake Openflow para construir ingesta y flujos de datos que resisten en producción.",
     keyTakeaways: [
       "Snowflake Openflow es un servicio de ingesta y orquestación totalmente administrado, construido sobre Apache NiFi, que permite a los equipos diseñar, implementar y observar pipelines directamente en Snowflake.",
       "Su arquitectura dividida (un plano de control administrado por Snowflake y un plano de datos desplegable en BYOC o Snowpark Container Services) maneja datos estructurados, semiestructurados, en streaming y no estructurados con decenas de conectores.",
@@ -169,6 +199,8 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   "center-of-software-work-moving-data-ai": {
     title: "El centro del trabajo de software se está moviendo, y Data + AI lo hacen evidente",
     excerpt: "A medida que la IA y los agentes asumen más del trabajo mecánico de implementación, la parte intermedia de construir software se adelgaza. El verdadero apalancamiento se traslada a la intención, el contexto, las definiciones y la responsabilidad, porque ejecutar rápido sin claridad solo genera errores rápidos.",
+    seoTitle: "El centro del trabajo de software cambia",
+    seoDescription: "El trabajo de software se desplaza hacia datos e IA. Qué cambia en equipos, presupuestos y dónde se crea el valor.",
     keyTakeaways: [
       "La parte intermedia del trabajo de software, traducir manualmente la intención en implementación, se adelgaza a medida que los agentes producen código funcional y transformaciones a partir de objetivos y contexto.",
       "Qué se necesita construir sigue siendo la pregunta más difícil; los agentes actúan directamente sobre lo que se les da, así que la ambigüedad se convierte en un multiplicador.",
@@ -180,6 +212,8 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   "separation-with-purpose-apps-analytics": {
     title: "Separación con propósito: cómo los equipos modernos mantienen las apps rápidas y la analítica escalable",
     excerpt: "PostgreSQL y Snowflake fueron construidos para tipos de trabajo diferentes. Con Snowflake Postgres, los equipos ahora pueden ejecutar cargas de trabajo transaccionales y analíticas en la misma nube de datos, sin difuminar responsabilidades ni sacrificar el rendimiento.",
+    seoTitle: "Apps rápidas y analítica escalable",
+    seoDescription: "Por qué los equipos modernos separan las apps transaccionales de la analítica, y cómo hacerlo sin perder una fuente de verdad.",
     keyTakeaways: [
       "La mayoría de los problemas de datos provienen de límites poco claros entre sistemas, no de una mala tecnología.",
       "PostgreSQL está optimizado para transacciones rápidas y confiables, mientras que Snowflake está construido para analizar grandes volúmenes de datos a escala.",
@@ -191,6 +225,8 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   "from-hours-to-outcomes-ai-economics-services": {
     title: "De las horas a los resultados: cómo la IA cambió la economía de los servicios",
     excerpt: "En Viewnear no vendemos horas ni personal. Diseñamos resultados. Como socio dedicado exclusivamente a Snowflake, vemos con claridad que la IA ha cambiado dónde se crea el valor, moviendo la experiencia hacia arriba: dirigir soluciones, orquestar agentes y responder por los resultados.",
+    seoTitle: "De horas a resultados: economía de IA",
+    seoDescription: "La IA cambió la economía de los servicios profesionales. Por qué la entrega por resultados sustituye la hora facturable.",
     keyTakeaways: [
       "El precio por hora se alineaba con un mundo donde el valor se creaba mediante la ejecución manual; la IA ha roto ese vínculo al automatizar gran parte del trabajo mecánico.",
       "La experiencia no se ha erosionado, se ha movido hacia arriba: de la ejecución manual al diseño, la supervisión y la orquestación.",
@@ -202,6 +238,8 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   "snowflake-foundation-for-data-intelligence": {
     title: "De lo restringido a lo omnipresente: Snowflake como base para la inteligencia de datos",
     excerpt: "Snowflake cambió la economía de los datos, convirtiendo lo que antes era restringido, lento y limitado en algo elástico, gobernado y accesible en toda la empresa. A medida que la IA reduce la distancia entre las preguntas y las respuestas, Snowflake se convierte en el lugar donde se conversa con los datos y se pasa del conocimiento a la acción más rápido que nunca.",
+    seoTitle: "Snowflake como capa de inteligencia",
+    seoDescription: "Cómo Snowflake pasó de un warehouse restringido a la base de la inteligencia de datos en todo el negocio.",
     keyTakeaways: [
       "Snowflake cambió la economía de los datos: el desacoplamiento de almacenamiento y cómputo, la escala elástica y la compartición nativa convirtieron el uso de los datos de restringido a omnipresente.",
       "El verdadero valor de Snowflake es como capa de distribución para datos empresariales gobernados, donde los dominios se cruzan sobre una única fuente de verdad sin copias ni fricción.",

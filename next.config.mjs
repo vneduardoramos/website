@@ -24,6 +24,13 @@ const nextConfig = {
   images: {
     // Local placeholder assets plus the configured object-storage host (if any).
     remotePatterns,
+    // An optimized image URL is immutable for a given url+w+q, so there is
+    // nothing to revalidate. Next's default is 60 seconds, which made every
+    // repeat visitor re-check every image after a minute
+    // ("cache-control: public, max-age=60, must-revalidate"). One year instead.
+    // Editing an image in place needs a new filename or a cache purge, which is
+    // already true of everything under /public.
+    minimumCacheTTL: 31_536_000,
   },
   eslint: {
     // Lint is clean; enforce it in production builds.

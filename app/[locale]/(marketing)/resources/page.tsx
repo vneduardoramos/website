@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, collectionLd } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 import { Link } from "@/i18n/navigation";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
@@ -45,8 +46,24 @@ export default async function ResourcesPage({ params }: { params: { locale: stri
   const restStudies = caseStudies.slice(1);
   const restPosts = posts.slice(1);
 
+  const ld = collectionLd({
+    name: t("meta.title"),
+    description: t("meta.description"),
+    path: "/resources",
+    locale,
+    crumbs: [
+      { name: t("breadcrumb.home"), url: "/" },
+      { name: t("breadcrumb.current") },
+    ],
+    items: [
+      ...caseStudies.map((cs) => ({ name: cs.title, url: `/case-studies/${cs.slug}` })),
+      ...posts.map((p) => ({ name: p.title, url: `/blog/${p.slug}` })),
+    ],
+  });
+
   return (
     <>
+      <JsonLd data={ld} />
       <PageHero
         eyebrow={t("hero.eyebrow")}
         title={t.rich("hero.title", { hl: (c) => <span className="text-gradient">{c}</span> })}

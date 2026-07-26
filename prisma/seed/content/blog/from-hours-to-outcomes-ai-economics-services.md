@@ -8,7 +8,7 @@ That expertise mattered deeply then, and it matters even more now. Working exclu
 
 We no longer need to spend months writing code by hand to demonstrate skill. AI can generate much of the mechanical execution. Code is still essential, but it is now the mechanism, not the value itself.
 
-Today, the highest leverage comes from steering the solution: understanding what the code is doing, ensuring it reflects business intent, orchestrating and governing AI agents, and taking responsibility for how systems behave in the real world. Expertise has moved upstream, from manual execution to design, oversight, and orchestration.
+Today, the highest leverage comes from steering the solution: understanding what the code is doing, ensuring it reflects business intent, orchestrating and governing AI agents, and taking responsibility for how systems behave in the real world. [Expertise has moved upstream](/blog/center-of-software-work-moving-data-ai), from manual execution to design, oversight, and orchestration.
 
 In the past, value was created by building software over time. Today, value is created by deciding what should be built, how it should behave, and what outcomes it must deliver.
 
@@ -18,7 +18,7 @@ Services are still critical. They are just no longer delivered or priced around 
 
 Hourly pricing was not an accident or a failure of imagination. It emerged because it aligned reasonably well with how value was created.
 
-Software development and data engineering were execution-heavy disciplines. Progress depended on sustained human effort across many roles: architects to design systems, engineers to implement them, QA to validate them, and project managers to coordinate everything. Complexity increased linearly with scope, and time was a fair proxy for cost and value.
+Software development and [data engineering](/services/data-engineering) were execution-heavy disciplines. Progress depended on sustained human effort across many roles: architects to design systems, engineers to implement them, QA to validate them, and project managers to coordinate everything. Complexity increased linearly with scope, and time was a fair proxy for cost and value.
 
 In that environment, paying for hours meant paying for risk reduction. Customers were buying confidence that skilled professionals were applying their judgment carefully, step by step, to systems that mattered.
 

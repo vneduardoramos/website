@@ -41,8 +41,11 @@ export async function generateMetadata({
     return { title: t("fallbackTitle"), robots: { index: false, follow: false } };
   }
   return pageMeta({
-    title: post.title,
-    description: post.excerpt ?? undefined,
+    // seoTitle/seoDescription are the SERP-length versions, editable per post
+    // (and per locale) in the admin; the article title and excerpt are the
+    // on-page copy and run far longer than a result will display.
+    title: post.seoTitle ?? post.title,
+    description: post.seoDescription ?? post.excerpt ?? undefined,
     path: `/blog/${slug}`,
     image: post.coverImageUrl,
     type: "article",
@@ -87,7 +90,9 @@ export default async function BlogPostPage({
 
   const articleLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    // BlogPosting rather than the generic Article: it is the specific type for
+    // posts on a blog, and it inherits every Article property used below.
+    "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt ?? undefined,
     datePublished: post.publishedAt ?? undefined,

@@ -24,7 +24,21 @@ import { siteSettingsEs, faqsEs } from "./es/settings";
 
 const prisma = new PrismaClient();
 const now = new Date();
+/**
+ * Publication date for content that has no editorial date of its own (services,
+ * industries, case studies, job openings). Fixed rather than `now` on purpose:
+ * `publishedAt` feeds `Article.datePublished` and the sitemap's freshness
+ * signal, and seeding with the current time made every case study claim it was
+ * published at the moment of the last deploy. This is the date the content went
+ * live on the site, and it stays put across re-seeds and re-imports.
+ *
+ * Blog posts do not use this: they carry a real `date` in their seed data.
+ */
+const SITE_CONTENT_PUBLISHED_AT = new Date("2026-07-17T00:00:00.000Z");
 const J = (v: unknown) => JSON.stringify(v);
+/** A blog post's own editorial date, falling back to the site content date. */
+const blogDate = (b: { date?: string }) =>
+  b.date ? new Date(b.date) : SITE_CONTENT_PUBLISHED_AT;
 
 /** Load long-form body markdown from prisma/seed/content/<type>/<slug>.md (falls back to inline body). */
 function readBody(type: string, slug: string, locale: "en" | "es" = "en"): string | null {
@@ -96,7 +110,8 @@ async function main() {
       ...s,
       tools: J(s.tools),
       status: "PUBLISHED",
-      publishedAt: now,
+      publishedAt: SITE_CONTENT_PUBLISHED_AT,
+      updatedAt: SITE_CONTENT_PUBLISHED_AT,
       titleEs: servicesEs[s.slug]?.title ?? null,
       summaryEs: servicesEs[s.slug]?.summary ?? null,
       bodyEs: servicesEs[s.slug]?.body ?? null,
@@ -124,7 +139,11 @@ async function main() {
       stats: J(i.stats),
       order: i.order,
       status: "PUBLISHED",
-      publishedAt: now,
+      publishedAt: SITE_CONTENT_PUBLISHED_AT,
+      updatedAt: SITE_CONTENT_PUBLISHED_AT,
+      // SERP-length metadata, distinct from the on-page name/headline.
+      seoTitle: i.seoTitle ?? null,
+      seoDescription: i.seoDescription ?? null,
       nameEs: iEs.name ?? null,
       headlineEs: iEs.headline ?? null,
       introEs: iEs.intro ?? null,
@@ -165,7 +184,10 @@ async function main() {
       clientId: client?.id ?? null,
       industryId: industry?.id ?? null,
       status: "PUBLISHED",
-      publishedAt: now,
+      publishedAt: SITE_CONTENT_PUBLISHED_AT,
+      updatedAt: SITE_CONTENT_PUBLISHED_AT,
+      seoTitle: cs.seoTitle ?? null,
+      seoDescription: cs.seoDescription ?? null,
       titleEs: csEs.title ?? null,
       summaryEs: csEs.summary ?? null,
       bodyEs: readBody("case-studies", cs.slug, "es"),
@@ -207,7 +229,8 @@ async function main() {
       venue: (n as { venue?: string }).venue ?? null,
       agenda: (n as { agenda?: unknown }).agenda ? J((n as { agenda?: unknown }).agenda) : null,
       status: "PUBLISHED",
-      publishedAt: now,
+      publishedAt: SITE_CONTENT_PUBLISHED_AT,
+      updatedAt: SITE_CONTENT_PUBLISHED_AT,
     };
     await prisma.newsEvent.upsert({ where: { slug: n.slug }, update: data, create: data });
   }
@@ -230,7 +253,10 @@ async function main() {
       authorId: admin.id,
       authorTeamId: blogAuthorTeam?.id ?? null,
       status: "PUBLISHED",
-      publishedAt: (b as { date?: string }).date ? new Date((b as { date?: string }).date as string) : now,
+      publishedAt: blogDate(b),
+      updatedAt: blogDate(b),
+      seoTitle: (b as { seoTitle?: string }).seoTitle ?? null,
+      seoDescription: (b as { seoDescription?: string }).seoDescription ?? null,
       titleEs: bEs.title ?? null,
       excerptEs: bEs.excerpt ?? null,
       bodyEs: readBody("blog", b.slug, "es"),
@@ -254,6 +280,10 @@ async function main() {
       skills: J(j.skills),
       order: j.order,
       status: "PUBLISHED",
+      // Feeds JobPosting.datePosted and the sitemap's lastmod for /careers/<slug>.
+      // Stable, so a reseed does not re-date an existing opening.
+      publishedAt: SITE_CONTENT_PUBLISHED_AT,
+      updatedAt: SITE_CONTENT_PUBLISHED_AT,
       titleEs: jEs.title ?? null,
       descriptionEs: jEs.description ?? null,
       employmentEs: jEs.employment ?? null,

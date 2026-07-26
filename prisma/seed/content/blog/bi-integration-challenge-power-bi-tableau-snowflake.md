@@ -12,7 +12,7 @@ Microsoft and Snowflake have built something really nice together. The native co
 
 I always start with authentication because this sets the foundation for everything else. Don't tie your dashboards to individual user credentials. I've seen too many organizations struggle with this when people change roles or leave the company. Service accounts provide consistency, and key pair authentication eliminates the password headaches that seem to plague every other integration project.
 
-The warehouse configuration for Power BI is where things get interesting. Auto-suspend becomes crucial because Power BI tends to generate queries in bursts, lots of activity when people are refreshing dashboards, then quiet periods. I usually set auto-suspend pretty aggressively (around 60 seconds) because auto-resume is instantaneous. Multi-cluster configurations handle concurrent users beautifully, scaling up when everyone's hitting the dashboards at 9 AM and scaling back down when things quiet down.
+The warehouse configuration for [Power BI](/services/data-visualisation) is where things get interesting. Auto-suspend becomes crucial because Power BI tends to generate queries in bursts, lots of activity when people are refreshing dashboards, then quiet periods. I usually set auto-suspend pretty aggressively (around 60 seconds) because auto-resume is instantaneous. Multi-cluster configurations handle concurrent users beautifully, scaling up when everyone's hitting the dashboards at 9 AM and scaling back down when things quiet down.
 
 ```sql
 -- This is my go-to Power BI warehouse setup
@@ -127,7 +127,7 @@ User adoption metrics matter most. Technical performance is important, but if pe
 
 ## Looking forward
 
-The BI landscape keeps evolving with AI-powered insights, natural language queries, and embedded analytics on the horizon. The organizations building solid foundations with current tools are positioning themselves to adopt these new capabilities seamlessly.
+The BI landscape keeps evolving with AI-powered insights, natural language queries, and [embedded analytics](/services/embedded-analytics) on the horizon. The organizations building solid foundations with current tools are positioning themselves to adopt these new capabilities seamlessly.
 
 The key is designing integrations for flexibility and governance rather than optimizing for any specific tool or use case. Platforms change, tools evolve, user needs shift, but solid data foundations and security frameworks provide stability through these transitions.
 

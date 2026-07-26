@@ -29,5 +29,9 @@
   "cta": {
     "title": "Let's stand up a lasting data & AI practice.",
     "subtitle": "Tell us where the organization stands (migrating, scaling, or shipping AI) and we'll map the fastest path to use cases in production, run by in-house teams."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "current": "Resources"
   }
 }

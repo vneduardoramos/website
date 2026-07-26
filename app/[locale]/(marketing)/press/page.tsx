@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, collectionLd } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { RevealGroup } from "@/components/marketing/Motion";
 import { cn, formatDate } from "@/lib/utils";
@@ -19,10 +20,25 @@ export default async function PressPage({ params }: { params: { locale: string }
   setRequestLocale(locale);
   const t = await getTranslations("press");
 
+  const ld = collectionLd({
+    name: t("meta.title"),
+    description: t("meta.description"),
+    path: "/press",
+    locale,
+    crumbs: [
+      { name: t("breadcrumb.home"), url: "/" },
+      { name: t("breadcrumb.current") },
+    ],
+    items: PRESS.map((item) => ({ name: item.title, url: "/press" })),
+  });
+
   return (
     <>
+      <JsonLd data={ld} />
       <Section>
-        <SectionHeading eyebrow={t("eyebrow")} title={t("heading")} intro={t("intro")} />
+        {/* as="h1": this page has no PageHero, so its outline used to start at
+            h2 with no h1 anywhere in the document. */}
+        <SectionHeading as="h1" eyebrow={t("eyebrow")} title={t("heading")} intro={t("intro")} />
         {/* Editorial "dispatches" list: the newest article (index 0) gets a
             wider, larger-type lead treatment; the rest fill an equal-height
             2-column grid. Neutral card hairlines throughout, no colored

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Data + AI: agentes dentro de Snowflake y en el flujo de trabajo",
+    "title": "Data + AI: agentes dentro y fuera de Snowflake",
     "description": "Agentes que razonan sobre datos gobernados en Snowflake y actúan en las herramientas que los equipos ya usan. Con Claude, en producción en 8 a 16 semanas."
   },
   "hero": {
@@ -32,7 +32,10 @@
       "body": "Reclamos, facturas y contratos que se clasifican, extraen y enrutan en segundos, en lugar de pilas ordenadas a mano. El acumulado de documentos se convierte en una tabla que los equipos pueden consultar.",
       "mech": "AI_CLASSIFY · AI_EXTRACT · PARSE_DOCUMENT",
       "stat": "60→95% de precisión · 4 s por documento",
-      "proof": { "label": "Ver el proyecto →", "href": "/case-studies/insurance-claims-cortex-ai" }
+      "proof": {
+        "label": "Ver el proyecto →",
+        "href": "/case-studies/insurance-claims-cortex-ai"
+      }
     },
     {
       "eyebrow": "Respuestas",
@@ -40,7 +43,10 @@
       "body": "Preguntas en lenguaje natural respondidas con citas frente a definiciones gobernadas, para que la junta del lunes empiece desde el mismo número y no desde tres versiones de él.",
       "mech": "Cortex Analyst · Semantic Views · CoWork",
       "stat": "Miles de SKU descontrolados, un solo agente de catálogo",
-      "proof": { "label": "Ver el proyecto →", "href": "/case-studies/sku-catalog-governance" }
+      "proof": {
+        "label": "Ver el proyecto →",
+        "href": "/case-studies/sku-catalog-governance"
+      }
     },
     {
       "eyebrow": "Anticipación",

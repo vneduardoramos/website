@@ -30,7 +30,7 @@ Document processing becomes much more accessible when AI capabilities are built 
 
 This is particularly valuable for organizations dealing with large volumes of documents. Instead of manual processing or expensive third-party services, you can automate document analysis as part of your regular data workflows.
 
-Search capabilities across document collections improve significantly when you can use semantic search rather than just keyword matching. Users can find relevant documents based on meaning and context rather than exact term matches.
+Search capabilities across document collections improve significantly when you can use [semantic search](/services/data-visualisation) rather than just keyword matching. Users can find relevant documents based on meaning and context rather than exact term matches.
 
 ## Predictive analytics integration
 

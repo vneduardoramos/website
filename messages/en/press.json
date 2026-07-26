@@ -1,13 +1,17 @@
 {
   "meta": {
-    "title": "Viewnear in the press: Snowflake, Anthropic & AI delivery",
+    "title": "Viewnear in the press: Snowflake and AI",
     "description": "Viewnear in the technology and channel press: coverage quoting Eduardo Ramos on Snowflake, Anthropic, and outcome-based AI delivery."
   },
   "eyebrow": "In the press",
-  "heading": "Coverage",
+  "heading": "Viewnear in the technology and channel press",
   "intro": "Viewnear's work shows up in the technology and channel press, with Eduardo Ramos quoted on Snowflake, Anthropic, and how outcome-based data and AI delivery is playing out in the field.",
   "homeCta": "Read our coverage",
   "readOn": "Read on {outlet}",
   "latest": "Latest",
-  "storiesCount": "{count} stories"
+  "storiesCount": "{count} stories",
+  "breadcrumb": {
+    "home": "Home",
+    "current": "Press"
+  }
 }

@@ -84,7 +84,7 @@ TRIGGERS
 
 ## Migration considerations
 
-Moving from traditional systems requires rethinking optimization strategies. Techniques like index tuning and partition management become less relevant, while data organization and query patterns become more important.
+[Moving from traditional systems](/migrations) requires rethinking optimization strategies. Techniques like index tuning and partition management become less relevant, while data organization and query patterns become more important.
 
 Workload analysis helps identify optimal compute configurations for different use cases. Understanding current usage patterns enables better resource planning in the new environment.
 
@@ -120,4 +120,4 @@ Separating compute and storage removes artificial constraints that limited tradi
 
 The flexibility enables new use cases that were not economically feasible with traditional architecture. Organizations can keep more data longer, provide more analytical capabilities, and handle variable workloads efficiently.
 
-This foundation enables advanced capabilities like instant scaling, zero-copy cloning, and secure data sharing that depend on the architectural separation to work effectively.
+This foundation enables advanced capabilities like instant scaling, [zero-copy cloning](/blog/zero-copy-cloning-snowflake), and secure data sharing that depend on the architectural separation to work effectively.

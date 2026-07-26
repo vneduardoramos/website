@@ -2,7 +2,7 @@
 
 Modern data engineering is no longer about simply extracting, loading, and transforming data. Teams now manage complex pipelines that handle real-time streams, unstructured files, and AI-ready transformations. The challenge is balancing speed and governance without overwhelming infrastructure.
 
-Snowflake Openflow was built for this new reality. It is a fully managed ingestion and orchestration service that lets teams design, deploy, and observe data pipelines directly in Snowflake. Built on Apache NiFi, Openflow brings together automation, scalability, and enterprise-grade security: the key ingredients of modern data engineering.
+[Snowflake Openflow](/services/data-engineering) was built for this new reality. It is a fully managed ingestion and orchestration service that lets teams design, deploy, and observe data pipelines directly in Snowflake. Built on Apache NiFi, Openflow brings together automation, scalability, and enterprise-grade security: the key ingredients of modern data engineering.
 
 ## Inside Snowflake Openflow
 

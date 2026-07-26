@@ -1,6 +1,6 @@
 ## Por qué esto importa
 
-En Snowflake Summit 2025, la compañía presentó Cortex AISQL, una familia de funciones integradas que incorporan LLMs de última generación directamente dentro del motor de Snowflake. Para los equipos que ya almacenan datos gobernados en Snowflake, esto trae tres beneficios inmediatos:
+En Snowflake Summit 2025, la compañía presentó [Cortex AISQL](/es/data-ai), una familia de funciones integradas que incorporan LLMs de última generación directamente dentro del motor de Snowflake. Para los equipos que ya almacenan datos gobernados en Snowflake, esto trae tres beneficios inmediatos:
 
 - **Sin infraestructura adicional:** Todo se ejecuta dentro de la plataforma, por lo que se evita tener que levantar un servicio de IA aparte.
 - **Seguridad unificada:** Los datos nunca salen de Snowflake, y los roles, las políticas de enmascaramiento y los controles de acceso a nivel de fila existentes siguen aplicándose.

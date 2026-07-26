@@ -44,8 +44,11 @@ export async function generateMetadata({
     return { title: t("fallbackTitle"), robots: { index: false, follow: false } };
   }
   return pageMeta({
-    title: industry.name,
-    description: industry.headline ?? industry.intro,
+    // The bare vertical name ("Manufacturing") wasted the title; seoTitle
+    // carries the qualifier. seoDescription stops the description from being a
+    // verbatim copy of the on-page h1.
+    title: industry.seoTitle ?? industry.name,
+    description: industry.seoDescription ?? industry.headline ?? industry.intro,
     path: `/industries/${slug}`,
     image: `/assets/images/industries/${slug}.jpg`,
     locale,

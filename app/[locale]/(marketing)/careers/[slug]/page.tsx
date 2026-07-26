@@ -13,7 +13,7 @@ import { BenefitsGrid } from "@/components/marketing/BenefitsGrid";
 import { Markdown } from "@/lib/content";
 import { asStringArray } from "@/lib/utils";
 import { theme } from "@/config/theme";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, breadcrumbLd } from "@/lib/seo";
 
 export const revalidate = 60;
 
@@ -43,6 +43,13 @@ export async function generateMetadata({
 
 // Map the human "employment" string (e.g. "Full-time · Hybrid") to a
 // schema.org employmentType token, defaulting to FULL_TIME.
+/**
+ * Countries a remote opening accepts applicants from, for
+ * `JobPosting.applicantLocationRequirements`. Mirrors the delivery footprint the
+ * site claims (Americas, with the two offices in the US and Mexico).
+ */
+const REMOTE_COUNTRIES = ["United States", "Mexico", "Canada"] as const;
+
 function employmentType(employment: string): string {
   const v = employment.toLowerCase();
   if (v.includes("part-time") || v.includes("part time")) return "PART_TIME";
@@ -91,24 +98,42 @@ export default async function CareerDetailPage({
     url: `${theme.brand.url}${localePath}/careers/${job.slug}`,
   };
 
-  if (job.location) {
+  if (isRemote) {
+    // A telecommute posting is described by jobLocationType plus the countries
+    // an applicant may sit in. It deliberately carries no `jobLocation`: the
+    // location string here is "Remote (Americas)", and wrapping that in a
+    // PostalAddress asserted a place that does not exist.
+    jobLd.jobLocationType = "TELECOMMUTE";
+    // Real countries. "Americas" is a region, and `Country.name: "Americas"`
+    // is not a value Google can resolve.
+    jobLd.applicantLocationRequirements = REMOTE_COUNTRIES.map((name) => ({
+      "@type": "Country",
+      name,
+    }));
+  } else if (job.location) {
     jobLd.jobLocation = {
       "@type": "Place",
       address: { "@type": "PostalAddress", addressLocality: job.location },
     };
   }
 
-  if (isRemote) {
-    jobLd.jobLocationType = "TELECOMMUTE";
-    jobLd.applicantLocationRequirements = {
-      "@type": "Country",
-      name: "Americas",
-    };
-  }
-
   return (
     <>
-      <JsonLd data={jobLd} />
+      {/* JobPosting plus a crawlable trail: the detail page had no
+          BreadcrumbList, so /careers/<slug> sat outside the site hierarchy. */}
+      <JsonLd
+        data={[
+          jobLd,
+          breadcrumbLd(
+            [
+              { name: t("breadcrumb.home"), url: "/" },
+              { name: t("breadcrumb.careers"), url: "/careers" },
+              { name: job.title },
+            ],
+            locale,
+          ),
+        ]}
+      />
 
       <PageHero
         align="left"

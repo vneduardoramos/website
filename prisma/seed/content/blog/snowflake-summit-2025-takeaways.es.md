@@ -36,7 +36,7 @@ Es una gran noticia para los equipos que buscan simplificar los flujos de trabaj
 
 ## Una nota rápida sobre Openflow y Datavolo
 
-Algo que estamos observando es Openflow, que está ligado a la reciente adquisición de Datavolo por parte de Snowflake. Señala un movimiento hacia gestionar el movimiento y la orquestación de datos más complejos directamente dentro del ecosistema de Snowflake.
+Algo que estamos observando es [Openflow](/es/services/data-engineering), que está ligado a la reciente adquisición de Datavolo por parte de Snowflake. Señala un movimiento hacia gestionar el movimiento y la orquestación de datos más complejos directamente dentro del ecosistema de Snowflake.
 
 El panorama completo aún se está desarrollando, pero esto podría añadir nuevas opciones para la forma en que los equipos gestionan los pipelines de datos, especialmente a escala. A medida que surjan más detalles, buscaremos maneras de incorporar esto en las arquitecturas de los clientes (ya estamos trabajando activamente en incorporarlo en un proyecto actual) donde tenga sentido.
 

@@ -9,5 +9,9 @@
     "description": "Notes, ideas, and field reports on data & AI, straight from the engagements we run on Snowflake."
   },
   "featuredKicker": "Featured",
-  "emptyState": "No posts yet. Check back soon."
+  "emptyState": "No posts yet. Check back soon.",
+  "breadcrumb": {
+    "home": "Home",
+    "current": "Blog"
+  }
 }

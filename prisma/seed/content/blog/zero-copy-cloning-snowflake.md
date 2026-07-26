@@ -35,7 +35,7 @@ A/B testing scenarios work well with cloned environments. You can test different
 
 ## Backup and recovery benefits
 
-While not a replacement for traditional backups, zero-copy cloning provides additional recovery options. You can create point-in-time snapshots before major system changes or data migrations.
+While not a replacement for traditional backups, zero-copy cloning provides additional recovery options. You can create point-in-time snapshots before major system changes or [data migrations](/migrations).
 
 Quick rollback capabilities mean you can revert to pre-change states if issues arise. Instead of complex rollback procedures, you can switch to a clone created before the problematic change.
 

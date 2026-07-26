@@ -34,7 +34,7 @@ This is the difference between experimentation and enterprise intelligence.
 
 ## Why AI turns data into intelligence
 
-I have written about this in a previous post. Analytics and data engineering have always depended on skilled humans, because the work requires judgment, context, and experience. The real cost has been the time it takes to turn vague business questions into trusted outcomes.
+[I have written about this in a previous post](/blog/from-hours-to-outcomes-ai-economics-services). Analytics and [data engineering](/services/data-engineering) have always depended on skilled humans, because the work requires judgment, context, and experience. The real cost has been the time it takes to turn vague business questions into trusted outcomes.
 
 Analysts and engineers bring domain understanding, critical thinking, and accountability. That is where the value lives. What has been expensive is forcing that expertise through manual translation layers, hand-coded queries, brittle pipelines, and slow iteration cycles.
 

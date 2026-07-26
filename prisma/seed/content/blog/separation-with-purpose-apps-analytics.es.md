@@ -2,7 +2,7 @@ La mayoría de los problemas de datos no se deben a una mala tecnología. Surgen
 
 PostgreSQL ha sido durante mucho tiempo una de las bases de datos más confiables para ejecutar aplicaciones. Da soporte a las interacciones de los usuarios, a las transacciones y a los flujos de trabajo operativos donde la fiabilidad y la consistencia son lo más importante. Snowflake, en cambio, se creó para analizar grandes volúmenes de datos a lo largo del tiempo, entre equipos y casos de uso.
 
-Durante años, los equipos conectaron estos dos mundos con pipelines y réplicas. Postgres ejecutaba la aplicación. Snowflake se encargaba de la analítica. La separación funcionaba, pero implicaba una carga operativa.
+Durante años, los equipos conectaron estos dos mundos con [pipelines](/es/services/data-engineering) y réplicas. Postgres ejecutaba la aplicación. Snowflake se encargaba de la analítica. La separación funcionaba, pero implicaba una carga operativa.
 
 Ahora, el límite es más claro y más cercano.
 

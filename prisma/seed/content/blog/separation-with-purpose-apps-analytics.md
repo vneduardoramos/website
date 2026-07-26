@@ -2,7 +2,7 @@ Most data problems are not caused by bad technology. They come from unclear boun
 
 PostgreSQL has long been one of the most trusted databases for running applications. It powers user interactions, transactions, and operational workflows where reliability and consistency matter most. Snowflake, by contrast, was built to analyze large volumes of data across time, teams, and use cases.
 
-For years, teams connected these two worlds with pipelines and replicas. Postgres ran the application. Snowflake handled analytics. The separation worked, but it came with operational overhead.
+For years, teams connected these two worlds with [pipelines and replicas](/services/data-engineering). Postgres ran the application. Snowflake handled analytics. The separation worked, but it came with operational overhead.
 
 Now, the boundary is clearer, and closer.
 

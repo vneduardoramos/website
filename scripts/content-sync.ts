@@ -105,6 +105,42 @@ const TABLES = [
 type Row = Record<string, unknown>;
 const model = (name: string) => (prisma as any)[name];
 
+/**
+ * Fields never compared when deciding whether a row changed. `updatedAt` is
+ * Prisma-managed (`@updatedAt`), `createdAt` is environment-local, and `id` is
+ * stripped from the payload before it gets here.
+ */
+const TIMESTAMPS = new Set(["id", "createdAt", "updatedAt"]);
+
+/** Normalize for comparison: the snapshot holds ISO strings where the DB returns Date. */
+function comparable(v: unknown): unknown {
+  if (v instanceof Date) return v.toISOString();
+  if (v === undefined) return null;
+  return v;
+}
+
+/**
+ * True when the live row already matches the snapshot payload.
+ *
+ * Why this matters: the import used to upsert every row on every deploy, and
+ * because `updatedAt` is `@updatedAt` Prisma bumped it even when nothing about
+ * the row had changed. `app/sitemap.ts` feeds `updatedAt` to `lastmod`, so all
+ * 76 dynamic URLs ended up sharing one timestamp (the deploy time), which is
+ * exactly the "every URL shares the build time" outcome the sitemap was written
+ * to avoid. Crawlers discount a `lastmod` they learn is meaningless.
+ *
+ * Skipping unchanged rows keeps `updatedAt` honest: it moves only when the
+ * content actually moved.
+ */
+function unchanged(existing: Row | null, incoming: Row): boolean {
+  if (!existing) return false;
+  for (const [k, v] of Object.entries(incoming)) {
+    if (TIMESTAMPS.has(k)) continue;
+    if (JSON.stringify(comparable(v)) !== JSON.stringify(comparable(existing[k]))) return false;
+  }
+  return true;
+}
+
 async function exportContent() {
   const tables: Record<string, Row[]> = {};
   for (const t of TABLES) {
@@ -153,6 +189,9 @@ async function importContent(force: boolean, prune: boolean) {
     );
   }
 
+  // Rows left untouched because they already match the snapshot, per table.
+  const skipped: Record<string, number> = {};
+
   // Upserts, parent-first, matched on the natural key.
   for (const t of TABLES) {
     const rows = snap.tables[t.name] ?? [];
@@ -176,6 +215,16 @@ async function importContent(force: boolean, prune: boolean) {
         }
       }
       const keyValue = row[t.key] as string;
+      // Read first so an unchanged row can be left alone, keeping its updatedAt
+      // (and therefore the sitemap's lastmod) truthful. See unchanged().
+      const existing: Row | null = await model(t.name).findUnique({
+        where: { [t.key]: keyValue },
+      });
+      if (unchanged(existing, row)) {
+        idMap[t.name].set(keyValue, existing!.id as string);
+        skipped[t.name] = (skipped[t.name] ?? 0) + 1;
+        continue;
+      }
       const saved: { id: string } = await model(t.name).upsert({
         where: { [t.key]: keyValue },
         update: row,
@@ -184,10 +233,17 @@ async function importContent(force: boolean, prune: boolean) {
       });
       idMap[t.name].set(keyValue, saved.id);
     }
-    console.log(`upsert ${t.name}: ${rows.length} (by ${t.key})`);
+    const skip = skipped[t.name] ?? 0;
+    console.log(
+      `upsert ${t.name}: ${rows.length - skip} written, ${skip} unchanged (by ${t.key})`,
+    );
   }
 
-  // Blog-post tag links mirror the snapshot, translated through slugs.
+  // Blog-post tag links mirror the snapshot, translated through slugs. Written
+  // only when the link set actually differs: `update` bumps `updatedAt` even
+  // when `set` is a no-op, which on its own was enough to give every blog post
+  // the deploy timestamp in the sitemap.
+  let tagWrites = 0;
   for (const [snapPostId, snapTagIds] of Object.entries(snap.blogPostTags)) {
     const postSlug = snapKeyById.blogPost.get(snapPostId);
     const postId = postSlug ? idMap.blogPost.get(postSlug) : undefined;
@@ -196,11 +252,20 @@ async function importContent(force: boolean, prune: boolean) {
       .map((tid) => snapKeyById.tag.get(tid))
       .map((slug) => (slug ? idMap.tag.get(slug) : undefined))
       .filter((x): x is string => Boolean(x));
+    const current: { tags: { id: string }[] } | null = await model("blogPost").findUnique({
+      where: { id: postId },
+      select: { tags: { select: { id: true } } },
+    });
+    const have = (current?.tags ?? []).map((x) => x.id).sort();
+    const want = [...tagIds].sort();
+    if (JSON.stringify(have) === JSON.stringify(want)) continue;
     await model("blogPost").update({
       where: { id: postId },
       data: { tags: { set: tagIds.map((id) => ({ id })) } },
     });
+    tagWrites += 1;
   }
+  console.log(`blogPost tag links: ${tagWrites} updated, ${Object.keys(snap.blogPostTags).length - tagWrites} unchanged`);
 
   if (!prune) {
     console.log("content-sync import: --no-prune, skipping mirror-deletes (additive only).");

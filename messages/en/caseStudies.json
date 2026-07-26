@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Snowflake data & AI case studies across the Americas",
+    "title": "Snowflake data & AI case studies",
     "description": "Data & AI engagements across the Americas: real, anonymized results from governed data and AI use cases delivered on Snowflake."
   },
   "hero": {
@@ -23,5 +23,9 @@
     "eyebrow": "Verified proof",
     "title": "Proof anyone can verify today.",
     "body": "Viewnear is a Snowflake Premier Partner and a Snowflake CoCo Preferred Partner, with a SnowPro-certified team. That status is verifiable today, independent of any single engagement."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "current": "Case studies"
   }
 }

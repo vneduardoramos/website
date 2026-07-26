@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Equipo nearshore de Snowflake en Monterrey, México: ingenieros de Data & AI",
+    "title": "Ingenieros Snowflake nearshore en Monterrey",
     "description": "Equipo nearshore de Snowflake: ingenieros de datos e IA certificados en SnowPro, en el horario del centro de EE. UU., desde nuestro centro de entrega en Monterrey, México."
   },
   "hero": {
@@ -73,10 +73,22 @@
     "title": "Credenciales, no métricas de vanidad"
   },
   "numbers": [
-    { "value": "Premier", "label": "Snowflake Premier + CoCo Preferred Partner" },
-    { "value": "SnowPro", "label": "Certificados en SnowPro en todo el equipo" },
-    { "value": "15+", "label": "Años construyendo datos e IA empresarial" },
-    { "value": "5", "label": "Países en toda América" }
+    {
+      "value": "Premier",
+      "label": "Snowflake Premier + CoCo Preferred Partner"
+    },
+    {
+      "value": "SnowPro",
+      "label": "Certificados en SnowPro en todo el equipo"
+    },
+    {
+      "value": "15+",
+      "label": "Años construyendo datos e IA empresarial"
+    },
+    {
+      "value": "5",
+      "label": "Países en toda América"
+    }
   ],
   "deliverHeading": {
     "eyebrow": "Lo que entregamos",
@@ -101,7 +113,14 @@
       "body": "Aplicaciones de datos nativas y cargas de trabajo de Snowpark que se ejecutan donde los datos ya residen."
     }
   ],
-  "stack": ["Cortex", "Snowpark", "Iceberg", "dbt", "Openflow", "Horizon"],
+  "stack": [
+    "Cortex",
+    "Snowpark",
+    "Iceberg",
+    "dbt",
+    "Openflow",
+    "Horizon"
+  ],
   "team": {
     "eyebrow": "Talento nearshore certificado",
     "title": "Nearshore no debería significar <hl>junior</hl>",

@@ -1,4 +1,4 @@
-Existe una diferencia significativa entre una herramienta de IA que se ubica junto a los datos y una que realmente opera dentro de ellos. Snowflake Cortex Agents pertenecen con claridad a la segunda categoría y, tras ponerlos a trabajar en distintos entornos de clientes, he visto cómo transforman la manera en que los usuarios de negocio obtienen respuestas. El cambio ha sido más práctico, y más duradero, de lo que esperaba al comenzar.
+Existe una diferencia significativa entre una herramienta de IA que se ubica junto a los datos y una que realmente opera dentro de ellos. [Snowflake Cortex](/es/data-ai) Agents pertenecen con claridad a la segunda categoría y, tras ponerlos a trabajar en distintos entornos de clientes, he visto cómo transforman la manera en que los usuarios de negocio obtienen respuestas. El cambio ha sido más práctico, y más duradero, de lo que esperaba al comenzar.
 
 ## Primeros pasos con Cortex Agents
 

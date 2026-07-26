@@ -1,6 +1,6 @@
 Snowflake nació como una plataforma de datos.
 
-Su valor original era claro: unir los datos de la empresa, hacerlos escalables, gobernarlos y facilitar su uso a los equipos. Durante años, eso significó cargas de trabajo de analítica, generación de reportes, ingeniería de datos, intercambio de datos y machine learning.
+Su valor original era claro: unir los datos de la empresa, hacerlos escalables, gobernarlos y facilitar su uso a los equipos. Durante años, eso significó cargas de trabajo de analítica, generación de reportes, [ingeniería de datos](/es/services/data-engineering), intercambio de datos y machine learning.
 
 Pero el stack tecnológico empresarial está cambiando.
 

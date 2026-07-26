@@ -4,6 +4,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getSetting, getServices, safe } from "@/lib/queries";
 import type { Locale } from "@/lib/i18n-content";
 import { pageMeta } from "@/lib/seo";
+import { officesLd } from "@/lib/offices";
+import { JsonLd } from "@/components/JsonLd";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { Link } from "@/i18n/navigation";
 import { Hero } from "@/components/marketing/home/Hero";
@@ -68,6 +70,12 @@ export default async function HomePage({ params }: { params: { locale: string } 
 
   return (
     <>
+      {/* The home page is the entity's main entry point, so it carries the two
+          physical offices as ProfessionalService alongside the site-wide
+          Organization from the layout. Geography is central to the positioning
+          and this page previously asserted none of it in structured data. */}
+      <JsonLd data={officesLd()} />
+
       {/* 1) HERO (the hero's mono line carries the credential; the badges get
           their full moment once, in the Proof & Trust band below) */}
       <Hero subhead={hero?.subhead} />

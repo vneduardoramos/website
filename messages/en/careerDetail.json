@@ -24,5 +24,9 @@
     "eyebrow": "Apply",
     "title": "Apply for this role",
     "intro": "Share a few details and we will review the application. We read every one."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "careers": "Careers"
   }
 }

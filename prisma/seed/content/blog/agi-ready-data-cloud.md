@@ -20,7 +20,7 @@ The groundwork feels routine until the first AI audit arrives. Then it proves in
 
 ## Snowflake's quiet edge
 
-Snowflake's split of storage and compute creates one space where raw records, governed views, and intelligent agents coexist without data hops. Zero-copy cloning keeps policies intact while information flows, and native Cortex AI services let teams prototype with plain SQL while finance sees every credit consumed. Less time on plumbing means more time on strategy.
+Snowflake's split of storage and compute creates one space where raw records, governed views, and intelligent agents coexist without data hops. [Zero-copy cloning](/blog/zero-copy-cloning-snowflake) keeps policies intact while information flows, and [native Cortex AI services](/data-ai) let teams prototype with plain SQL while finance sees every credit consumed. Less time on plumbing means more time on strategy.
 
 ## Turning hype into value in the C-suite
 

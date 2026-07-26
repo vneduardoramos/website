@@ -5,6 +5,79 @@ import { DEFAULT_LOCALE } from "@/lib/i18n-content";
 const DEFAULT_OG = "/assets/og-default.jpg";
 
 /**
+ * The root layout renders titles through the template `"%s | Viewnear"`, so a
+ * page title costs 11 characters more than it looks. Google stops showing a
+ * title at roughly 60 characters, which leaves this much for the page's own part.
+ */
+const TITLE_BUDGET = 60 - " | Viewnear".length;
+/** Google stops showing a description at roughly 160 characters. */
+const DESCRIPTION_BUDGET = 155;
+
+/**
+ * Trim to `max` characters on a word boundary, preferring a natural break.
+ *
+ * No ellipsis: a hard stop reads better in a SERP than a truncation marker, and
+ * Google appends its own when it shortens further.
+ */
+/**
+ * Words not worth ending on. Truncating mid-phrase used to leave titles like
+ * "About: building data & AI practices across the", so any trailing connector is
+ * dropped after the cut.
+ */
+const DANGLING = new RegExp(
+  "(?:\\s+(?:" +
+    [
+      // English articles, conjunctions and prepositions
+      "the", "a", "an", "and", "or", "of", "for", "to", "in", "on", "at", "by",
+      "with", "from", "as", "into", "onto", "over", "under", "across",
+      "through", "about", "after", "before", "between", "during", "than",
+      "that", "is", "are",
+      // Spanish
+      "y", "e", "o", "u", "de", "del", "la", "el", "los", "las", "un", "una",
+      "en", "con", "para", "por", "sobre", "que", "al", "como", "entre",
+    ].join("|") +
+    "))+$",
+  "i",
+);
+
+function clamp(text: string, max: number): string {
+  const s = text.trim();
+  if (s.length <= max) return s;
+  // Prefer cutting at a clause boundary that still lands inside the budget, so
+  // "Long Title: subtitle that runs on" becomes "Long Title".
+  for (const sep of [": ", " | ", " (", ", "]) {
+    const at = s.lastIndexOf(sep, max);
+    // Only worth it if a useful amount of the string survives.
+    if (at > max * 0.45) return trimDangling(s.slice(0, at));
+  }
+  const space = s.lastIndexOf(" ", max);
+  return trimDangling(s.slice(0, space > max * 0.5 ? space : max));
+}
+
+function trimDangling(s: string): string {
+  return s.trim().replace(DANGLING, "").replace(/[,;:]$/, "").trim();
+}
+
+/**
+ * Safety net for metadata length.
+ *
+ * A production crawl on 2026-07-25 found 66 of 124 titles over 60 characters and
+ * 72 over 160 for the description, the worst being 514 characters, because blog
+ * and case-study pages passed the full article title and the full excerpt
+ * straight through. Hand-written `seoTitle` / `seoDescription` (per record, both
+ * locales) are the real fix; this keeps any future record from regressing past
+ * what a SERP will display.
+ *
+ * Exported for the unit tests.
+ */
+export function clampTitle(title: string): string {
+  return clamp(title, TITLE_BUDGET);
+}
+export function clampDescription(description: string): string {
+  return clamp(description, DESCRIPTION_BUDGET);
+}
+
+/**
  * Build per-page metadata with a canonical URL, Open Graph, and Twitter card.
  * Pass a bare `title` (no " | Viewnear" suffix; the root layout title template
  * adds it). `image` is the page's content image (site-relative or absolute);
@@ -31,8 +104,8 @@ export function pageMeta(opts: {
   ownOgFile?: boolean;
 }): Metadata {
   const {
-    title,
-    description,
+    title: rawTitle,
+    description: rawDescription,
     path,
     image,
     type = "website",
@@ -40,6 +113,9 @@ export function pageMeta(opts: {
     locale = DEFAULT_LOCALE,
     ownOgFile,
   } = opts;
+  // Every caller goes through here, so the length guarantee holds site-wide.
+  const title = rawTitle ? clampTitle(rawTitle) : rawTitle;
+  const description = rawDescription ? clampDescription(rawDescription) : rawDescription;
   const base = theme.brand.url;
   const isHome = path === "/" || path === "";
   const enUrl = isHome ? base : `${base}${path}`;
@@ -97,6 +173,51 @@ function absoluteForLocale(url: string, locale: string): string {
   const base = theme.brand.url;
   const isHome = url === "/" || url === "";
   return isHome ? `${base}/es` : `${base}/es${url}`;
+}
+
+/**
+ * `CollectionPage` for a listing page (blog index, case-study index, press,
+ * resources), with a `BreadcrumbList` and, when entries are passed, an
+ * `ItemList` naming them in display order.
+ *
+ * Listing pages previously emitted no page-level structured data at all: only
+ * the site-wide `Organization` and `WebSite` from the root layout. This gives
+ * each index an explicit type and a crawlable trail back to the home page.
+ *
+ * `items` should carry site-relative paths; they are resolved for `locale` the
+ * same way breadcrumbs are.
+ */
+export function collectionLd(opts: {
+  name: string;
+  description?: string;
+  path: string;
+  locale?: string;
+  crumbs: BreadcrumbItem[];
+  items?: { name: string; url: string }[];
+}): Record<string, unknown>[] {
+  const { name, description, path, locale = DEFAULT_LOCALE, crumbs, items } = opts;
+  const collection: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name,
+    ...(description ? { description } : {}),
+    url: absoluteForLocale(path, locale),
+    ...(items && items.length
+      ? {
+          mainEntity: {
+            "@type": "ItemList",
+            numberOfItems: items.length,
+            itemListElement: items.map((it, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              name: it.name,
+              url: absoluteForLocale(it.url, locale),
+            })),
+          },
+        }
+      : {}),
+  };
+  return [collection, breadcrumbLd(crumbs, locale)];
 }
 
 export function breadcrumbLd(

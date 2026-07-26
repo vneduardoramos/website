@@ -32,7 +32,7 @@ This is the kind of platform-level shift that makes our work more effective. Whe
 
 This was one of those announcements that might sound small at first but has a big impact on how teams work. Snowflake is introducing native support for dbt Projects directly in the Snowsight UI. It will be in public preview soon, and it brings a much tighter development loop to analytics engineering.
 
-This is great news for teams trying to streamline development workflows, reduce tool switching, and make version control more natural. And it gives Viewnear another layer of optimization we can offer when building or modernizing client pipelines.
+This is great news for teams trying to streamline development workflows, reduce tool switching, and make version control more natural. And it gives Viewnear another layer of optimization we can offer when building or modernizing [client pipelines](/services/data-engineering).
 
 ## A quick note on Openflow and Datavolo
 

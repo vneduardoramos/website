@@ -1,6 +1,6 @@
 Snowflake was born as a data platform.
 
-Its original value was clear: bring enterprise data together, make it scalable, make it governed, and make it easier for teams to use. For years, that meant analytics, reporting, data engineering, data sharing, and machine learning workloads.
+Its original value was clear: bring enterprise data together, make it scalable, make it governed, and make it easier for teams to use. For years, that meant analytics, reporting, [data engineering](/services/data-engineering), data sharing, and machine learning workloads.
 
 But the enterprise technology stack is changing.
 
@@ -134,7 +134,7 @@ That context has to be managed.
 
 In the agentic enterprise, business context becomes a core asset. It is what allows agents to reason correctly over enterprise data.
 
-This includes definitions, metrics, semantic models, lineage, policies, ownership, relationships, and domain-specific logic.
+This includes definitions, metrics, [semantic models](/platform), lineage, policies, ownership, relationships, and domain-specific logic.
 
 Without this layer, every AI agent becomes a potential source of inconsistency.
 

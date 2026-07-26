@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getBlogPosts } from "@/lib/queries";
 import type { Locale } from "@/lib/i18n-content";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, collectionLd } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 import { formatDate } from "@/lib/utils";
 import { Section } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
@@ -38,8 +39,21 @@ export default async function BlogPage({ params }: { params: { locale: string } 
   }
   const uniqueTags = Array.from(tagMap.entries());
 
+  const ld = collectionLd({
+    name: t("meta.title"),
+    description: t("meta.description"),
+    path: "/blog",
+    locale,
+    crumbs: [
+      { name: t("breadcrumb.home"), url: "/" },
+      { name: t("breadcrumb.current") },
+    ],
+    items: posts.map((p) => ({ name: p.title, url: `/blog/${p.slug}` })),
+  });
+
   return (
     <>
+      <JsonLd data={ld} />
       <section className="relative overflow-hidden">
         <SectionDecor variant="dots" />
         <div className="relative">

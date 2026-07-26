@@ -34,7 +34,7 @@ Esta es la diferencia entre la experimentación y la inteligencia empresarial.
 
 ## Por qué la IA convierte los datos en inteligencia
 
-He escrito sobre esto en una publicación anterior. La analítica y la ingeniería de datos siempre han dependido de personas capacitadas, porque el trabajo requiere criterio, contexto y experiencia. El verdadero costo ha sido el tiempo que toma convertir preguntas de negocio imprecisas en resultados confiables.
+He escrito sobre esto en una publicación anterior. La analítica y la [ingeniería de datos](/es/services/data-engineering) siempre han dependido de personas capacitadas, porque el trabajo requiere criterio, contexto y experiencia. El verdadero costo ha sido el tiempo que toma convertir preguntas de negocio imprecisas en resultados confiables.
 
 Los analistas y los ingenieros aportan comprensión del dominio, pensamiento crítico y responsabilidad. Ahí es donde reside el valor. Lo que ha resultado costoso es forzar esa experiencia a través de capas de traducción manual, consultas escritas a mano, pipelines frágiles y ciclos de iteración lentos.
 

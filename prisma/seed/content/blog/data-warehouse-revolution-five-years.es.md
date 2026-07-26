@@ -6,7 +6,7 @@ Los data warehouses tradicionales estaban bien diseñados para su época. Cuando
 
 ## Qué está cambiando en realidad
 
-Esto no se trata solo de migrar a la nube. He visto muchas migraciones a la nube que recrean los mismos problemas en un lugar más costoso. Plataformas como Snowflake representan un replanteamiento fundamental del diseño de la infraestructura de datos.
+Esto no se trata solo de migrar a la nube. He visto muchas migraciones a la nube que recrean los mismos problemas en un lugar más costoso. Plataformas como [Snowflake](/es/platform) representan un replanteamiento fundamental del diseño de la infraestructura de datos.
 
 Los sistemas tradicionales se construían en torno a restricciones: almacenamiento limitado, capacidad de cómputo fija, cargas de trabajo predecibles. Cada decisión implicaba gestionar estas limitaciones. ¿Hacía falta más capacidad de procesamiento? Había que planificar con meses de anticipación. ¿Conservar más datos históricos? Los costos de almacenamiento se volvían una consideración importante.
 

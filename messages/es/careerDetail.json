@@ -24,5 +24,9 @@
     "eyebrow": "Postularse",
     "title": "Postularse a esta vacante",
     "intro": "Basta con unos cuantos datos y revisamos la postulación. Leemos cada una."
+  },
+  "breadcrumb": {
+    "home": "Inicio",
+    "careers": "Vacantes"
   }
 }

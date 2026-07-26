@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Migrations to Snowflake: Teradata, Oracle, Redshift, Hadoop & more",
+    "title": "Snowflake migrations: Teradata, Oracle, Hadoop",
     "description": "Viewnear moves legacy warehouses and Hadoop onto one governed foundation on Snowflake: automated code conversion, validated parity, a phased cutover the business never feels, and a handover that leaves the team running it."
   },
   "hero": {

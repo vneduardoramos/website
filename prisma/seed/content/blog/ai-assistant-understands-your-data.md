@@ -1,4 +1,4 @@
-There is a meaningful difference between an AI tool that sits beside your data and one that genuinely operates inside it. Snowflake Cortex Agents fall firmly into the second category, and after putting them to work across a range of client environments, I have watched them reshape how business users get answers. The shift has been more practical, and more lasting, than I expected going in.
+There is a meaningful difference between an AI tool that sits beside your data and one that genuinely operates inside it. [Snowflake Cortex Agents](/blog/llms-to-ai-agents-snowflake-cortex) fall firmly into the second category, and after putting them to work across a range of client environments, I have watched them reshape how business users get answers. The shift has been more practical, and more lasting, than I expected going in.
 
 ## Getting started with Cortex Agents
 
@@ -49,7 +49,7 @@ Document business rules and data lineage so agents can explain where information
 
 Cortex Agents handle multiple data types simultaneously: structured data for analytics, text for sentiment analysis, time series for trends, and spatial data for geographic insights.
 
-They get more useful as you invest in them: refining semantic context and shared definitions helps agents interpret intent, conversation context carries across follow-up questions, and insights one user surfaces can be shared with the entire organization.
+They get more useful as you invest in them: refining [semantic context](/platform) and shared definitions helps agents interpret intent, conversation context carries across follow-up questions, and insights one user surfaces can be shared with the entire organization.
 
 ## Security integration
 

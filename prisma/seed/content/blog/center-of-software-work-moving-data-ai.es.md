@@ -6,7 +6,7 @@ Creo que esa dinámica está cambiando.
 
 ## El medio se está adelgazando
 
-Los flujos de trabajo asistidos por IA y guiados por agentes ya pueden producir código y transformaciones funcionales a partir de objetivos, contexto y tareas estructuradas. Estos sistemas se están volviendo más independientes. Todavía se necesitan ingenieros, pero se toca menos el código en el trabajo mecánico. El IDE empieza a parecerse menos al lugar donde ocurre el pensamiento y más al lugar donde se inspeccionan, revisan y validan los resultados.
+Los flujos de trabajo asistidos por IA y guiados por [agentes](/es/data-ai) ya pueden producir código y transformaciones funcionales a partir de objetivos, contexto y tareas estructuradas. Estos sistemas se están volviendo más independientes. Todavía se necesitan ingenieros, pero se toca menos el código en el trabajo mecánico. El IDE empieza a parecerse menos al lugar donde ocurre el pensamiento y más al lugar donde se inspeccionan, revisan y validan los resultados.
 
 A medida que estos sistemas mejoran, el medio se vuelve más delgado.
 

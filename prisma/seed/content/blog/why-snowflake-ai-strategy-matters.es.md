@@ -26,7 +26,7 @@ WHERE purchase_date >= '2024-01-01';
 
 ## Aplicaciones de inteligencia documental
 
-El procesamiento de documentos se vuelve mucho más accesible cuando las capacidades de IA están integradas en su plataforma de datos. Con funciones de Cortex AI como PARSE_DOCUMENT, AI_EXTRACT y AI_CLASSIFY, puede extraer información de PDFs, analizar los términos de contratos o procesar facturas sin herramientas externas especializadas.
+El procesamiento de documentos se vuelve mucho más accesible cuando las capacidades de IA están integradas en su plataforma de datos. Con funciones de [Cortex](/es/data-ai) AI como PARSE_DOCUMENT, AI_EXTRACT y AI_CLASSIFY, puede extraer información de PDFs, analizar los términos de contratos o procesar facturas sin herramientas externas especializadas.
 
 Esto es particularmente valioso para las organizaciones que manejan grandes volúmenes de documentos. En lugar de procesamiento manual o costosos servicios de terceros, puede automatizar el análisis de documentos como parte de sus flujos de trabajo de datos habituales.
 
