@@ -184,8 +184,9 @@ async function main() {
       clientId: client?.id ?? null,
       industryId: industry?.id ?? null,
       status: "PUBLISHED",
-      publishedAt: SITE_CONTENT_PUBLISHED_AT,
-      updatedAt: SITE_CONTENT_PUBLISHED_AT,
+      // The record's own date when it has one, else the shared launch date.
+      publishedAt: cs.date ? new Date(cs.date) : SITE_CONTENT_PUBLISHED_AT,
+      updatedAt: cs.date ? new Date(cs.date) : SITE_CONTENT_PUBLISHED_AT,
       seoTitle: cs.seoTitle ?? null,
       seoDescription: cs.seoDescription ?? null,
       titleEs: csEs.title ?? null,
