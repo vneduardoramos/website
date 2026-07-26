@@ -33,9 +33,21 @@ export type BookablePerson = {
  * the scheduler in a new tab. Once widget.js is ready the click is intercepted and
  * becomes a modal instead.
  *
- * widget.js loads when the section nears the viewport rather than on click, so the
- * first click opens instantly; a pageview that never reaches the section makes no
- * request to Calendly at all.
+ * widget.js loads when the section nears the viewport rather than on click, and
+ * also on the first hover, touch or focus of a pill, so the first click has the
+ * modal ready. A pageview that never reaches the section makes no request to
+ * Calendly at all.
+ *
+ * Both triggers matter: with only the observer, someone scrolling fast could
+ * click before the script finished, the handler would fall through to the
+ * anchor, and the calendar opened in a new tab instead of the modal. It worked,
+ * but inconsistently, which reads as a bug.
+ *
+ * Note for whoever changes a booking URL: `scripts/check-booking-urls.ts`
+ * verifies each one against Calendly's event lookup. A URL pointing at a deleted
+ * event still serves HTTP 200 with a normal HTML shell, so only that lookup
+ * catches it. One shipped that way and visitors saw "this Calendly URL is not
+ * valid" inside the modal.
  */
 export function BookingPills({
   people,
@@ -74,11 +86,23 @@ export function BookingPills({
           io.disconnect();
         }
       },
-      { rootMargin: "400px" },
+      // Generous margin so the script has time to load before the pills are
+      // reachable. 1200px rather than 400px because at 400px someone scrolling
+      // fast could reach a pill and click it before widget.js finished, and the
+      // click then fell through to the anchor and opened a new tab instead of
+      // the modal. That made the behavior look intermittent.
+      { rootMargin: "1200px" },
     );
     io.observe(el);
     return () => io.disconnect();
   }, []);
+
+  /**
+   * Second chance to start the script: intent signals that precede a click.
+   * Hovering, focusing or touching a pill gives widget.js a head start even if
+   * the observer has not fired, so the first click lands on the modal.
+   */
+  const warm = () => setInView(true);
 
   // widget.js may already be parsed (another instance on the page, or a
   // client-side navigation), in which case next/script will not fire onLoad again.
@@ -113,7 +137,12 @@ export function BookingPills({
   const hasPeople = people.length > 0;
 
   return (
-    <div ref={wrapper}>
+    <div
+      ref={wrapper}
+      onPointerEnter={warm}
+      onTouchStart={warm}
+      onFocusCapture={warm}
+    >
       {inView && (
         <>
           <link href={CALENDLY_CSS} rel="stylesheet" />
