@@ -42,7 +42,22 @@ const getImageOverrides = unstable_cache(
     return map;
   },
   ["image-overrides"],
-  { tags: ["image-overrides"] },
+  // `revalidate` is not optional here, despite the tag.
+  //
+  // Without it this entry is cached indefinitely and the ONLY invalidation is
+  // revalidateTag("image-overrides") from /api/image-overrides. That route sits
+  // behind ADMIN_ENABLED, which is unset in production, so middleware.ts 404s
+  // it: production can never invalidate this cache. Render restores a ~576MB
+  // build cache (including .next/cache) on every deploy, so an entry written
+  // during a build when ImageOverride happened to be empty survives every
+  // subsequent deploy. That is exactly what happened: the snapshot carried six
+  // overrides, the import wrote all six, and the service pages still rendered
+  // their placeholders across three consecutive deploys because the layout was
+  // reading a stale cache entry rather than the database.
+  //
+  // A short TTL means the worst case is five minutes of staleness instead of
+  // forever, and production heals itself without a cache-cleared deploy.
+  { tags: ["image-overrides"], revalidate: 300 },
 );
 
 export default async function MarketingLayout({
