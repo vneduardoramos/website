@@ -17,7 +17,7 @@
     "title": "Los datos de cada sector, <hl>sus regulaciones y KPI</hl>.",
     "body": "Cada sector tiene sus propios datos, regulaciones y presiones. Combinamos a especialistas que conocen la industria con ingenieros certificados en SnowPro para mapear el problema, definir la hoja de ruta y construir la solución junto a los equipos internos, de modo que lo que entregamos hable el lenguaje del sector y mueva las métricas que importan.",
     "bullets": [
-      "Aceleradores prediseñados ajustados a los patrones de datos de cada sector",
+      "Patrones de datos y requisitos de cumplimiento de cada sector, ya entregados antes",
       "Cumplimiento y gobierno integrados en la arquitectura",
       "Resultados alineados con los KPI que sigue la dirección"
     ],
@@ -27,7 +27,7 @@
   "sectors": {
     "eyebrow": "Sectores que atendemos",
     "title": "La industria adecuada",
-    "intro": "Siete prácticas, cada una con sus propios aceleradores y patrones de cumplimiento; la más cercana al trabajo en curso."
+    "intro": "Siete prácticas, cada una con sus propios patrones de datos y requisitos de cumplimiento; la más cercana al trabajo en curso."
   },
   "grid": {
     "kicker": "Industria",
