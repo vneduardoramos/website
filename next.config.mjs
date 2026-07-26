@@ -66,13 +66,6 @@ const nextConfig = {
       // (app/[locale]/(marketing)/careers/page.tsx) so the URL serves real
       // content. That old rule was a 301, so clients which cached it will keep
       // redirecting until their cache expires.
-      //
-      // Retired service, removed from the database. It was PUBLISHED in
-      // production, so the URL may be indexed; /migrations covers the same
-      // Teradata/Oracle/Netezza/Hadoop ground in more depth, so send it there
-      // rather than serving a 404.
-      { source: "/services/data-modernization", destination: "/migrations", permanent: true },
-      { source: "/es/services/data-modernization", destination: "/es/migrations", permanent: true },
       { source: "/solutions", destination: "/services", permanent: true },
       { source: "/team", destination: "/about", permanent: true },
       { source: "/why-viewnear", destination: "/partnership", permanent: true },
