@@ -14,6 +14,9 @@
  *   there automatically); anywhere else it is a NO-OP unless --force is
  *   passed, so a local `npm run build` can never clobber your working DB.
  *
+ * `--no-prune` skips the mirror-deletes, so the import only adds and updates.
+ * Use it when the target environment holds rows the snapshot legitimately lacks.
+ *
  * `tsx scripts/content-sync.ts verify`
  *   Read-only. Compares live row counts against the snapshot and exits non-zero
  *   on drift. Safe to point at production to answer "did my content land?".
@@ -62,22 +65,41 @@ function importDatasource(): { url?: string; how: string } {
 const DATASOURCE = importDatasource();
 const prisma = new PrismaClient(DATASOURCE.url ? { datasourceUrl: DATASOURCE.url } : undefined);
 
-// Parent-first order; deletions run in reverse. `strip` drops relation arrays
-// and columns we intentionally do not carry (BlogPost.authorId points at the
-// unsynced User table; the visible byline is authorTeamId).
+/**
+ * Parent-first order; deletions run in reverse.
+ *
+ * `key` is the NATURAL key used to match rows across environments. Matching on
+ * `id` does not work: local and production were seeded independently, so the same
+ * content carries different cuids. An upsert by id then tries to CREATE a row
+ * whose `slug` already exists, hits the unique constraint, throws, and (because
+ * the import is non-fatal) leaves production content silently stale. Every table
+ * here has a natural key, so that whole class of failure goes away.
+ *
+ * `strip` drops columns we deliberately do not carry across environments:
+ *   - relation arrays (handled separately, e.g. BlogPost.tags)
+ *   - BlogPost.authorId -> User, which is not synced (the visible byline is
+ *     authorTeamId)
+ *   - TeamMember.headshotId -> Media, which is not synced (see below)
+ *
+ * `remap` translates an id-based foreign key from snapshot ids to the target
+ * environment's ids, resolved through the parent's natural key.
+ *
+ * Media is deliberately NOT synced: it is the one table with no natural key, and
+ * its rows are environment-specific (R2 storage keys, per-environment uploads).
+ * Production holds 65 media rows that a local export would otherwise delete.
+ */
 const TABLES = [
-  { name: "tag", strip: [] as string[] },
-  { name: "client", strip: [] },
-  { name: "industry", strip: [] },
-  { name: "media", strip: [] },
-  { name: "teamMember", strip: [] },
-  { name: "service", strip: [] },
-  { name: "siteSetting", strip: [] },
-  { name: "newsEvent", strip: [] },
-  { name: "jobOpening", strip: [] },
-  { name: "caseStudy", strip: [] },
-  { name: "blogPost", strip: ["tags", "authorId"] },
-  { name: "imageOverride", strip: [] },
+  { name: "tag", key: "slug", strip: [] as string[], remap: {} as Record<string, string> },
+  { name: "client", key: "slug", strip: [], remap: {} },
+  { name: "industry", key: "slug", strip: [], remap: {} },
+  { name: "teamMember", key: "slug", strip: ["headshotId"], remap: {} },
+  { name: "service", key: "slug", strip: [], remap: {} },
+  { name: "siteSetting", key: "key", strip: [], remap: {} },
+  { name: "newsEvent", key: "slug", strip: [], remap: {} },
+  { name: "jobOpening", key: "slug", strip: [], remap: {} },
+  { name: "caseStudy", key: "slug", strip: [], remap: { clientId: "client", industryId: "industry" } },
+  { name: "blogPost", key: "slug", strip: ["tags", "authorId"], remap: { authorTeamId: "teamMember" } },
+  { name: "imageOverride", key: "key", strip: [], remap: {} },
 ] as const;
 
 type Row = Record<string, unknown>;
@@ -103,7 +125,7 @@ async function exportContent() {
   console.log(`\nWrote ${SNAPSHOT}`);
 }
 
-async function importContent(force: boolean) {
+async function importContent(force: boolean, prune: boolean) {
   if (!process.env.RENDER && !force) {
     console.log("content-sync import: not on Render and no --force, skipping (local DB untouched).");
     return;
@@ -119,40 +141,91 @@ async function importContent(force: boolean) {
   };
   console.log(`Importing content snapshot from ${snap.exportedAt}`);
 
-  // Upserts, parent-first.
+  // snapshotId -> this environment's id, per table, built as we go so children
+  // can translate their foreign keys. Ids are treated as environment-local;
+  // natural keys are the cross-environment contract.
+  const idMap: Record<string, Map<string, string>> = {};
+  // snapshot id -> natural key, so a child can resolve a parent it references.
+  const snapKeyById: Record<string, Map<string, string>> = {};
   for (const t of TABLES) {
-    const rows = snap.tables[t.name] ?? [];
-    for (const raw of rows) {
-      const row: Row = { ...raw };
-      for (const s of t.strip) delete row[s];
-      const { id, ...data } = row;
-      await model(t.name).upsert({ where: { id }, update: data, create: { id, ...data } });
-    }
-    console.log(`upsert ${t.name}: ${rows.length}`);
+    snapKeyById[t.name] = new Map(
+      (snap.tables[t.name] ?? []).map((r) => [r.id as string, r[t.key] as string]),
+    );
   }
 
-  // Blog-post tag links mirror the snapshot exactly.
-  for (const [postId, tagIds] of Object.entries(snap.blogPostTags)) {
+  // Upserts, parent-first, matched on the natural key.
+  for (const t of TABLES) {
+    const rows = snap.tables[t.name] ?? [];
+    idMap[t.name] = new Map();
+    for (const raw of rows) {
+      const row: Row = { ...raw };
+      for (const f of t.strip) delete row[f];
+      const snapshotId = row.id as string;
+      delete row.id; // ids stay environment-local
+      // Point id-based FKs at this environment's rows.
+      for (const [field, parent] of Object.entries(t.remap as Record<string, string>)) {
+        const ref = row[field] as string | null | undefined;
+        if (!ref) continue;
+        const naturalKey = snapKeyById[parent]?.get(ref);
+        const localId = naturalKey ? idMap[parent]?.get(naturalKey) : undefined;
+        if (!localId) {
+          console.warn(`  ${t.name}.${field}: could not resolve ${ref}, leaving null`);
+          row[field] = null;
+        } else {
+          row[field] = localId;
+        }
+      }
+      const keyValue = row[t.key] as string;
+      const saved: { id: string } = await model(t.name).upsert({
+        where: { [t.key]: keyValue },
+        update: row,
+        create: row,
+        select: { id: true },
+      });
+      idMap[t.name].set(keyValue, saved.id);
+    }
+    console.log(`upsert ${t.name}: ${rows.length} (by ${t.key})`);
+  }
+
+  // Blog-post tag links mirror the snapshot, translated through slugs.
+  for (const [snapPostId, snapTagIds] of Object.entries(snap.blogPostTags)) {
+    const postSlug = snapKeyById.blogPost.get(snapPostId);
+    const postId = postSlug ? idMap.blogPost.get(postSlug) : undefined;
+    if (!postId) continue;
+    const tagIds = snapTagIds
+      .map((tid) => snapKeyById.tag.get(tid))
+      .map((slug) => (slug ? idMap.tag.get(slug) : undefined))
+      .filter((x): x is string => Boolean(x));
     await model("blogPost").update({
       where: { id: postId },
       data: { tags: { set: tagIds.map((id) => ({ id })) } },
     });
   }
 
+  if (!prune) {
+    console.log("content-sync import: --no-prune, skipping mirror-deletes (additive only).");
+    console.log("content-sync import: upserts applied.");
+    return;
+  }
+
   // Mirror-deletes, children-first. A row that cannot be deleted because
   // production data references it (e.g. a JobOpening with applications) is
   // logged and kept rather than failing the deploy.
   for (const t of [...TABLES].reverse()) {
-    const keep = (snap.tables[t.name] ?? []).map((r) => r.id as string);
-    const stale: { id: string }[] = await model(t.name).findMany({
-      where: { id: { notIn: keep } },
-      select: { id: true },
+    const keep = (snap.tables[t.name] ?? []).map((r) => r[t.key] as string);
+    const stale: Row[] = await model(t.name).findMany({
+      where: { [t.key]: { notIn: keep } },
+      select: { id: true, [t.key]: true },
     });
-    for (const s of stale) {
+    if (stale.length > 0) {
+      console.log(`prune ${t.name}: deleting ${stale.length} row(s) absent from the snapshot:`);
+      for (const row of stale) console.log(`    - ${row[t.key]}`);
+    }
+    for (const row of stale) {
       try {
-        await model(t.name).delete({ where: { id: s.id } });
+        await model(t.name).delete({ where: { id: row.id as string } });
       } catch {
-        console.warn(`keep ${t.name} ${s.id}: still referenced, not deleted`);
+        console.warn(`keep ${t.name} ${row[t.key]}: still referenced, not deleted`);
       }
     }
     if (stale.length > 0) console.log(`prune ${t.name}: ${stale.length}`);
@@ -184,6 +257,7 @@ async function verifyAgainstSnapshot(snap: { tables: Record<string, Row[]> }): P
 async function main() {
   const cmd = process.argv[2];
   const force = process.argv.includes("--force");
+  const prune = !process.argv.includes("--no-prune");
   if (cmd === "export") {
     await exportContent();
     return;
@@ -195,7 +269,7 @@ async function main() {
     // production content sit stale across several deploys. The banner below is
     // greppable, and CONTENT_SYNC_STRICT=1 makes it fail the build instead.
     try {
-      await importContent(force);
+      await importContent(force, prune);
     } catch (e) {
       console.error("");
       console.error("=".repeat(72));
@@ -235,7 +309,7 @@ async function main() {
     for (const d of drift) console.error(`  ${d}`);
     process.exit(1);
   }
-  console.error("Usage: tsx scripts/content-sync.ts <export|import|verify> [--force]");
+  console.error("Usage: tsx scripts/content-sync.ts <export|import|verify> [--force] [--no-prune]");
   process.exit(1);
 }
 
