@@ -1,6 +1,6 @@
 ## Understanding compute and storage separation
 
-I recently helped a client optimize their data warehouse costs by 40% simply by understanding how compute and storage work independently in Snowflake. The concept sounds technical, but the practical benefits are significant for any organization managing large datasets.
+We helped a client cut their data warehouse costs by 40% simply by understanding how compute and storage work independently in Snowflake. The concept sounds technical, but the practical benefits are significant for any organization managing large datasets.
 
 Traditional data warehouses bundle compute and storage together. If you need more processing power, you also get more storage whether you need it or not. If you need more storage, you are also paying for additional compute capacity that might sit unused.
 

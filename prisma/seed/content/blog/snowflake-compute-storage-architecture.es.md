@@ -1,6 +1,6 @@
 ## Cómo entender la separación de cómputo y almacenamiento
 
-Recientemente ayudé a un cliente a optimizar los costos de su data warehouse en un 40%, simplemente por entender cómo funcionan de forma independiente el cómputo y el almacenamiento en [Snowflake](/es/platform). El concepto suena técnico, pero los beneficios prácticos son significativos para cualquier organización que gestione grandes conjuntos de datos.
+Ayudamos a un cliente a reducir en un 40% los costos de su data warehouse, simplemente por entender cómo funcionan de forma independiente el cómputo y el almacenamiento en [Snowflake](/es/platform). El concepto suena técnico, pero los beneficios prácticos son significativos para cualquier organización que gestione grandes conjuntos de datos.
 
 Los data warehouses tradicionales agrupan el cómputo y el almacenamiento en un solo bloque. Si se necesita más capacidad de procesamiento, también se obtiene más almacenamiento, se necesite o no. Si se necesita más almacenamiento, también se paga por capacidad de cómputo adicional que podría quedar sin usar.
 
