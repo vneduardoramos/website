@@ -4,7 +4,8 @@ import { pageMeta } from "@/lib/seo";
 import { officesLd } from "@/lib/offices";
 import { JsonLd } from "@/components/JsonLd";
 import { Breadcrumbs } from "@/components/marketing/Breadcrumbs";
-import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
+import { Section, SectionHeading } from "@/components/marketing/ui";
+import { BookACall } from "@/components/marketing/BookACall";
 import { PageHero } from "@/components/marketing/PageHero";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { LedgerCard } from "@/components/marketing/Cards";
@@ -195,7 +196,9 @@ export default async function MonterreyPage({ params }: { params: { locale: stri
         </div>
       </Section>
 
-      <CtaBand title={t("cta.title")} subtitle={t("cta.subtitle")} />
+      {/* Booking replaces the generic CTA here: this page is evaluation-stage,
+          so "talk to the person who would own it" beats "let's talk". */}
+      <BookACall variant="compact" />
     </>
   );
 }

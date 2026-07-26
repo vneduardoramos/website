@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMeta } from "@/lib/seo";
 import { Link } from "@/i18n/navigation";
-import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
+import { Section, SectionHeading } from "@/components/marketing/ui";
+import { BookACall } from "@/components/marketing/BookACall";
 import { InlineCta } from "@/components/marketing/Blocks";
 import { PageHero } from "@/components/marketing/PageHero";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
@@ -230,10 +231,9 @@ export default async function MigrationsPage({ params }: { params: { locale: str
         </div>
       </Section>
 
-      <CtaBand
-        title={t("cta.title")}
-        subtitle={t("cta.subtitle")}
-      />
+      {/* Booking replaces the generic CTA here: this page is evaluation-stage,
+          so "talk to the person who would own it" beats "let's talk". */}
+      <BookACall variant="compact" />
     </>
   );
 }

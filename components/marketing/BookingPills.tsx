@@ -109,7 +109,6 @@ export function BookingPills({
     <div ref={wrapper}>
       {inView && (
         <>
-          {/* eslint-disable-next-line @next/next/no-page-custom-font */}
           <link href={CALENDLY_CSS} rel="stylesheet" />
           <Script src={CALENDLY_JS} strategy="afterInteractive" onLoad={() => setReady(true)} />
         </>

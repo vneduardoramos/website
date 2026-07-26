@@ -26,9 +26,17 @@ import type { Locale } from "@/lib/i18n-content";
 export async function BookACall({
   slugs = ["eduardo-ramos", "jc-rodriguez", "rene-trevino"],
   className = "",
+  variant = "band",
 }: {
   slugs?: string[];
   className?: string;
+  /**
+   * "band" is the full-bleed pitch for the three money pages. "compact" is a
+   * contained card that replaces the generic CtaBand on evaluation-stage pages:
+   * same booking action, a fraction of the height, and it upgrades an existing
+   * slot rather than stacking a second call to action on top of it.
+   */
+  variant?: "band" | "compact";
 }) {
   const locale = (await getLocale()) as Locale;
   const t = await getTranslations("booking");
@@ -63,6 +71,31 @@ export async function BookACall({
   if (!bookingUrl) return null;
 
   const agenda = t.raw("agenda") as string[];
+
+  if (variant === "compact") {
+    return (
+      <section className={`section ${className}`}>
+        <div className="container-page">
+          <div className="panel-warm rounded-3xl p-8 shadow-soft md:p-10">
+            <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+              <div>
+                <h2 className="text-balance font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+                  {t("compact.title")}
+                </h2>
+                <p className="mt-3 leading-relaxed text-muted">{t("compact.body")}</p>
+              </div>
+              <BookingPills
+                people={bookable}
+                fallbackUrl={bookingUrl}
+                label={t("pills.label")}
+                fallbackLabel={t("cta")}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section

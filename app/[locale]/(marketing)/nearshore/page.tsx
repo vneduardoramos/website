@@ -4,7 +4,8 @@ import { Img as Image } from "@/components/marketing/Img";
 import { pageMeta } from "@/lib/seo";
 import { officesLd } from "@/lib/offices";
 import { JsonLd } from "@/components/JsonLd";
-import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
+import { Section, SectionHeading } from "@/components/marketing/ui";
+import { BookACall } from "@/components/marketing/BookACall";
 import { PageHero } from "@/components/marketing/PageHero";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { MetricBand } from "@/components/marketing/Blocks";
@@ -222,10 +223,9 @@ export default async function NearshorePage({ params }: { params: { locale: stri
           above already carries Premier + CoCo Preferred, and the hero chips name
           both. One trust layer fewer, same claims.) */}
 
-      <CtaBand
-        title={t("cta.title")}
-        subtitle={t("cta.subtitle")}
-      />
+      {/* Booking replaces the generic CTA here: this page is evaluation-stage,
+          so "talk to the person who would own it" beats "let's talk". */}
+      <BookACall variant="compact" />
     </>
   );
 }

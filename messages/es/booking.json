@@ -26,5 +26,9 @@
     "label": "Agendar con",
     "aria": "Agendar 30 minutos con {name}"
   },
-  "teamBook": "Agendar"
+  "teamBook": "Agendar",
+  "compact": {
+    "title": "¿Mejor preguntarlo directo?",
+    "body": "Agendar 30 minutos con quien sería responsable del trabajo. Sin presentación, sin compromiso y una respuesta directa sobre si hay encaje."
+  }
 }

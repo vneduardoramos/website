@@ -4,7 +4,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/marketing/Breadcrumbs";
 import { HeroBackground } from "@/components/marketing/HeroBackground";
-import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
+import { Section, SectionHeading } from "@/components/marketing/ui";
+import { BookACall } from "@/components/marketing/BookACall";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { MetricBand } from "@/components/marketing/Blocks";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
@@ -389,7 +390,9 @@ export default async function ServiceDetailPage({
         </Section>
       )}
 
-      <CtaBand title={t("cta.title", { title: service.title })} />
+      {/* Booking replaces the generic CTA here: this page is evaluation-stage,
+          so "talk to the person who would own it" beats "let's talk". */}
+      <BookACall variant="compact" />
     </div>
   );
 }
