@@ -139,9 +139,7 @@ export default async function PricingPage({ params }: { params: { locale: string
       <FeaturedCaseStudies title={t("featuredTitle")} />
 
       {/* People hesitate hardest right after reading about cost. */}
-      <Section>
-        <BookACall />
-      </Section>
+      <BookACall />
 
       <CtaBand
         title={t("cta.title")}

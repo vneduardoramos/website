@@ -262,9 +262,7 @@ export default async function SnowflakeConsultingPage({ params }: { params: { lo
       </Section>
 
       {/* Highest-intent page on the site, so give it the human next step. */}
-      <Section className="section-tint">
-        <BookACall />
-      </Section>
+      <BookACall />
 
       <CtaBand title={t("cta.title")} subtitle={t("cta.subtitle")} />
     </>

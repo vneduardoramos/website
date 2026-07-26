@@ -147,9 +147,7 @@ export default async function ContactPage({ params }: { params: { locale: string
 
       {/* Booking, given the prominence it deserves: this used to be a one-line
           text link under the form. Renders nothing until a bookingUrl exists. */}
-      <Section>
-        <BookACall />
-      </Section>
+      <BookACall />
     </>
   );
 }
