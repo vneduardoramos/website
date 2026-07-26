@@ -29,7 +29,12 @@ export default async function PressPage({ params }: { params: { locale: string }
       { name: t("breadcrumb.home"), url: "/" },
       { name: t("breadcrumb.current") },
     ],
-    items: PRESS.map((item) => ({ name: item.title, url: "/press" })),
+    // Point at the ARTICLES, not back at this page. Pointing them at /press
+    // (as this did) made the site's only genuine third-party corroboration
+    // invisible in structured data: a consumer saw five titles that all resolved
+    // to viewnear.com. absoluteForLocale passes absolute URLs through unchanged,
+    // so the outlet URLs survive.
+    items: PRESS.map((item) => ({ name: item.title, url: item.url })),
   });
 
   return (

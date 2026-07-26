@@ -57,6 +57,28 @@ export default async function PartnershipPage({ params }: { params: { locale: st
       {/* Badges + CoCo Preferred Partner momentum */}
       <PartnershipHighlight title={t("highlight.title")} />
 
+      {/* The claim, and the record that corroborates it.
+          The page asserts two partner recognitions; this is the outbound link to
+          Snowflake's own directory entry, so the claim is checkable by a reader
+          and by a crawler following an anchor, not only via sameAs in JSON-LD.
+          rel keeps the endorsement one-directional without nofollowing it: this
+          is a citation of a primary source, which is exactly what should be
+          followable. */}
+      <div className="container-page -mt-6 md:-mt-8">
+        <p className="text-sm text-muted">
+          {t("directory.body")}{" "}
+          <a
+            href="https://www.snowflake.com/en/why-snowflake/partners/all-partners/viewnear/"
+            target="_blank"
+            rel="noopener"
+            className="font-semibold text-primaryDeep underline-offset-4 hover:underline"
+          >
+            {t("directory.label")}
+          </a>
+          <span aria-hidden="true"> →</span>
+        </p>
+      </div>
+
       {/* What it unlocks */}
       <Section>
         <SectionHeading

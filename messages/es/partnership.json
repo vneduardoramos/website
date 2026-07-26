@@ -102,5 +102,9 @@
   "consultingCta": {
     "title": "El estatus Premier es la credencial. Esto es lo que entrega.",
     "label": "Consultoría e implementación"
+  },
+  "directory": {
+    "label": "Verificar el registro",
+    "body": "Ambos reconocimientos aparecen en el directorio de partners de Snowflake."
   }
 }

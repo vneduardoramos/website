@@ -102,5 +102,9 @@
   "consultingCta": {
     "title": "Premier status is the credential. This is what it delivers.",
     "label": "Consulting & implementation"
+  },
+  "directory": {
+    "label": "Verify this listing",
+    "body": "Both recognitions are listed on Snowflake's own partner directory."
   }
 }
