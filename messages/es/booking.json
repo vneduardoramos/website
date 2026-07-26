@@ -1,14 +1,15 @@
 {
   "eyebrow": "Hablar con una persona",
   "title": "Agendar 30 minutos con quien de verdad puede responder",
-  "body": "No es una llamada de prospección con alguien leyendo un guion. Atiende alguien que sería responsable del trabajo, sea cual sea la parte sobre la que va la pregunta, y la respuesta sobre si hay encaje es directa.",
+  "body": "No es una llamada de calificación con alguien leyendo un guion. Atiende una de las personas que sería responsable del build. Dirá qué es alcanzable y en qué orden, y si Snowflake es la respuesta equivocada para lo que hace falta, también lo dirá.",
+  "takeaway": "De la llamada queda una secuencia sobre la que se puede actuar, con o sin nosotros.",
   "agendaLabel": "Qué cubren los 30 minutos",
   "agenda": [
-    "Dónde están los datos hoy y qué bloquea los casos de uso que se quieren",
-    "Qué es realmente alcanzable sobre Snowflake, y en qué orden",
-    "Una forma y un rango aproximados, o un no honesto si el encaje no está"
+    "Dónde están los datos hoy y qué casos de uso pueden sostener ya",
+    "Qué es alcanzable en las primeras 8 a 16 semanas, y en qué orden",
+    "Un rango aproximado, y lo que con más probabilidad lo descarrila"
   ],
-  "reassure": "Sin presentación, sin compromiso y sin una secuencia de correos de la que haya que darse de baja.",
+  "reassure": "Sin presentación. Sin compromiso. Sin secuencia de correos de la que haya que darse de baja. Si no hay encaje, lo decimos en la llamada.",
   "meta": {
     "duration": "30 minutos",
     "timezone": "Se agenda en la zona horaria del cliente",
@@ -21,9 +22,9 @@
     "cta": "Usar el formulario de contacto"
   },
   "facesLabel": "Las personas que responden por el trabajo",
-  "teamBook": "Agendar",
   "pills": {
     "label": "Agendar con",
     "aria": "Agendar 30 minutos con {name}"
-  }
+  },
+  "teamBook": "Agendar"
 }

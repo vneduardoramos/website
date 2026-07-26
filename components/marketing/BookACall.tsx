@@ -5,7 +5,6 @@ import {
   BookingPills,
   type BookablePerson,
 } from "@/components/marketing/BookingPills";
-import { PartnerBadges } from "@/components/marketing/PartnerBadges";
 import { getTeam } from "@/lib/queries";
 import { theme } from "@/config/theme";
 import type { Locale } from "@/lib/i18n-content";
@@ -89,6 +88,12 @@ export async function BookACall({
               {t("body")}
             </p>
 
+            {/* The strongest line on the block: worth the 30 minutes even if
+                they never buy. Given weight rather than buried in the body. */}
+            <p className="mt-6 border-l-2 border-accentDeep/50 pl-4 font-display text-lg font-semibold leading-snug text-foreground">
+              {t("takeaway")}
+            </p>
+
             {/* The faces, named. An unnamed avatar row proves nothing. Skipped
               when the picker renders below, which shows the same people as
               selectable options. */}
@@ -124,7 +129,6 @@ export async function BookACall({
               </div>
             )}
 
-            <PartnerBadges size="sm" className="mt-8" />
           </div>
 
           <div className="lg:pl-2">
@@ -147,19 +151,19 @@ export async function BookACall({
               ))}
             </ul>
 
-            <dl className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            {/* Plain list, not a <dl>: these are three facts, not term/definition
+                pairs, and the sr-only <dt> was announcing the raw message keys
+                ("duration", "timezone", "who") untranslated in both locales. */}
+            <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-sm">
               {(["duration", "timezone", "who"] as const).map((k) => (
-                <div key={k} className="flex items-center gap-2">
-                  <dt className="sr-only">{k}</dt>
-                  <dd className="text-muted">
-                    <span aria-hidden className="mr-2 text-accentDeep">
-                      ·
-                    </span>
-                    {t(`meta.${k}`)}
-                  </dd>
-                </div>
+                <li key={k} className="text-muted">
+                  <span aria-hidden className="mr-2 text-accentDeep">
+                    ·
+                  </span>
+                  {t(`meta.${k}`)}
+                </li>
               ))}
-            </dl>
+            </ul>
 
             <p className="mt-5 text-sm leading-relaxed text-muted">
               {t("reassure")}

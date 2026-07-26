@@ -1,14 +1,15 @@
 {
   "eyebrow": "Talk to a person",
   "title": "Book 30 minutes with the person who can actually answer",
-  "body": "Not a discovery call with an SDR reading a script. You get someone who would actually own the work, whichever part of it your question is about, and a straight answer on whether we are the right fit.",
+  "body": "Not a qualification call with an SDR working from a script. You get one of the people who would actually own the build. They will tell you what is achievable and in what order, and if Snowflake is the wrong answer for what you need, you will hear that too.",
+  "takeaway": "You leave with a sequence you can act on, whether or not you work with us.",
   "agendaLabel": "What the 30 minutes covers",
   "agenda": [
-    "Where the data sits today and what is blocking the use cases you want",
-    "What is realistically achievable on Snowflake, and in what order",
-    "A rough shape and range, or an honest no if the fit is wrong"
+    "Where the data actually sits today, and which use cases it can carry now",
+    "What is achievable in the first 8 to 16 weeks, and in what order",
+    "A rough range, and the one thing most likely to blow it up"
   ],
-  "reassure": "No deck, no obligation, and no follow-up sequence you have to unsubscribe from.",
+  "reassure": "No deck. No obligation. No follow-up sequence to unsubscribe from. If it is not a fit, we say so on the call.",
   "meta": {
     "duration": "30 minutes",
     "timezone": "Booked in your time zone",
@@ -21,9 +22,9 @@
     "cta": "Use the contact form"
   },
   "facesLabel": "The people who answer for the work",
-  "teamBook": "Book time",
   "pills": {
     "label": "Book time with",
     "aria": "Book 30 minutes with {name}"
-  }
+  },
+  "teamBook": "Book time"
 }
