@@ -211,7 +211,7 @@ The first advantage is onboarding: the team already works your hours, so no ramp
     title: "AI Analytics & Agents",
     summary:
       "Put governed AI to work: Cortex Analyst and Snowflake CoWork agents that turn governed data into cited, decision-ready answers, embedded where leaders already work.",
-    seoTitle: "Self-Service Analytics on Snowflake: Cortex Analyst",
+    seoTitle: "AI Analytics & Agents on Snowflake: Cortex",
     seoDescription:
       "Self-service analytics on Snowflake: Cortex Analyst, Snowsight dashboards, and AI agents that reach production, from a SnowPro-certified nearshore team.",
     tools: ["Cortex Analyst", "Snowflake CoWork", "Snowsight", "Streamlit"],

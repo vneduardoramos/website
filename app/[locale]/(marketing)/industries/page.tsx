@@ -46,6 +46,7 @@ export default async function IndustriesPage({ params }: { params: { locale: str
         <SectionDecor variant="dots" />
         <div className="relative">
         <FeatureSplit
+          as="h2"
           eyebrow={t("feature.eyebrow")}
           title={t.rich("feature.title", { hl: (c) => <span className="text-gradient">{c}</span> })}
           body={t("feature.body")}

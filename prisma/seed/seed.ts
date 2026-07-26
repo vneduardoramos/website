@@ -193,6 +193,7 @@ async function main() {
       seoDescription: cs.seoDescription ?? null,
       titleEs: csEs.title ?? null,
       summaryEs: csEs.summary ?? null,
+      sectorEs: csEs.sector ?? null,
       bodyEs: readBody("case-studies", cs.slug, "es"),
       challengeEs: csEs.challenge ?? null,
       solutionEs: csEs.solution ?? null,

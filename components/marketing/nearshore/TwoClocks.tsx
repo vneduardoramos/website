@@ -6,8 +6,13 @@ import { useLocale, useTranslations } from "next-intl";
 /**
  * Two live clocks, Austin and Monterrey, proving the time-zone claim with the
  * actual time instead of an icon. Quiet inline strip: mono type between
- * hairlines, no card. Renders nothing until mounted (the time is inherently
- * client-side, so this avoids any hydration mismatch), then ticks every 30s.
+ * hairlines, no card.
+ *
+ * The city names and the strip render on the server; only the digits wait for
+ * the client, since the time is inherently client-side. It used to return null
+ * until mounted, which kept the whole strip (both city names included) out of the
+ * server HTML, so the page's proof of the time-zone overlap was invisible to
+ * anything that does not run JavaScript, AI crawlers included.
  */
 
 const CLOCKS = [
@@ -37,14 +42,14 @@ export function TwoClocks() {
     return () => clearInterval(id);
   }, [intlLocale]);
 
-  if (!times) return null;
-
   return (
     <div className="mx-auto mt-8 flex max-w-xl flex-wrap items-center justify-center gap-x-6 gap-y-1.5 border-y border-border py-3 font-mono text-xs tracking-wide text-muted">
       {CLOCKS.map((c, i) => (
         <span key={c.city} className="whitespace-nowrap">
           <span className="font-semibold text-foreground">{c.city}</span>{" "}
-          <time>{times[i]}</time>
+          {/* Blank until the client ticks: a server-rendered time would be
+              wrong for the reader and would trip hydration. */}
+          <time>{times ? times[i] : "\u2014\u2014:\u2014\u2014"}</time>
         </span>
       ))}
       <span className="whitespace-nowrap">{t("twoClocks.tagline")}</span>

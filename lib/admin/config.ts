@@ -132,6 +132,7 @@ export const ADMIN_MODELS: Record<string, AdminModel> = {
       // --- Spanish (es) ---
       { name: "titleEs", label: "Title (ES)", type: "text" },
       { name: "summaryEs", label: "Summary (ES)", type: "textarea" },
+      { name: "sectorEs", label: "Sector (ES)", type: "text" },
       { name: "bodyEs", label: "Body (Markdown) (ES)", type: "markdown" },
       { name: "challengeEs", label: "Challenge (ES)", type: "markdown" },
       { name: "solutionEs", label: "Solution (ES)", type: "markdown" },

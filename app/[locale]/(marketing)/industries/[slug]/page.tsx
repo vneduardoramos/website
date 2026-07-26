@@ -168,6 +168,7 @@ export default async function IndustryDetailPage({
         <SectionDecor variant={flavor.decor} />
         <div className="relative">
           <FeatureSplit
+            as="h2"
             eyebrow={t("engagement.eyebrow")}
             title={t.rich("engagement.title", {
               name: industry.name,
@@ -189,7 +190,7 @@ export default async function IndustryDetailPage({
       <Section>
         <SectionHeading
           eyebrow={t("foundation.eyebrow")}
-          title={t("foundation.title", { industry: industry.name.toLowerCase() })}
+          title={t("foundation.title", { industry: industry.name })}
           intro={
             story
               ? t("foundation.introWithStory", { industry: industry.name.toLowerCase() })
@@ -340,7 +341,10 @@ export default async function IndustryDetailPage({
               <div className="flex flex-col gap-7 p-8 md:p-10 lg:p-12">
                 <div>
                   <p className="font-mono text-xs uppercase tracking-wider text-muted">
-                    {t("featured.orgLabel", { industry: industry.name.toLowerCase() })} · {story.region}
+                    {/* The case study's OWN sector, not this page's industry: the
+                        automotive dealer group featured on /industries/retail-cpg
+                        was being captioned "A retail & cpg organization". */}
+                    {t("featured.orgLabel", { sector: story.sector })} · {story.region}
                   </p>
                   <h3 className="mt-3 font-display text-2xl font-bold leading-tight text-foreground md:text-3xl">
                     {storyTitle}

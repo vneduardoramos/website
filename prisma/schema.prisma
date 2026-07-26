@@ -150,6 +150,7 @@ model CaseStudy {
   // --- Spanish (es) ---
   titleEs          String?
   summaryEs        String?
+  sectorEs         String?
   bodyEs           String?
   metricsEs        String?
   quoteEs          String?

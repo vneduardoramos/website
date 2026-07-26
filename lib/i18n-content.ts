@@ -14,7 +14,7 @@ export function isLocale(v: unknown): v is Locale {
 const FIELDS: Record<string, string[]> = {
   service: ["title", "summary", "body", "seoTitle", "seoDescription"],
   industry: ["name", "headline", "intro", "body", "challenges", "deliverables", "stats", "faq", "seoTitle", "seoDescription"],
-  caseStudy: ["title", "summary", "body", "challenge", "solution", "results", "metrics", "quote", "seoTitle", "seoDescription"],
+  caseStudy: ["title", "summary", "sector", "body", "challenge", "solution", "results", "metrics", "quote", "seoTitle", "seoDescription"],
   blogPost: ["title", "excerpt", "body", "keyTakeaways", "seoTitle", "seoDescription"],
   teamMember: ["title", "bio", "bookingTopics"],
   jobOpening: ["title", "description", "body", "employment"],

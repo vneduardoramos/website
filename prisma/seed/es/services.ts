@@ -146,7 +146,7 @@ La primera ventaja es el arranque: el equipo ya trabaja en horario del cliente, 
     title: "Analítica de IA y Agentes",
     summary:
       "Poner la IA gobernada a trabajar: Cortex Analyst y los agentes de Snowflake CoWork que convierten datos gobernados en respuestas citadas y listas para decidir, integradas donde los líderes ya trabajan.",
-    seoTitle: "Analítica de autoservicio en Snowflake",
+    seoTitle: "Analítica de IA y agentes en Snowflake",
     seoDescription:
       "Analítica de autoservicio en Snowflake: Cortex Analyst, dashboards y agentes de IA que llegan a producción. Snowflake Premier Partner, en horario del cliente.",
     body: `Poner las respuestas en manos de quienes deciden. Construimos analítica de autoservicio y agentes de IA nativos en Snowflake: dashboards de Snowsight y apps de Streamlit, Cortex Analyst respondiendo preguntas en lenguaje natural sobre Semantic Views gobernadas, y Snowflake CoWork para que el negocio explore y actúe. Es la capa de inteligencia de negocio reconstruida para que una pregunta devuelva una respuesta en lugar de un ticket: sin esperar al equipo de datos, sin exportar a hojas de cálculo.

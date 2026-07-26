@@ -19,7 +19,7 @@
   },
   "foundation": {
     "eyebrow": "What we stand up",
-    "title": "The foundation a {industry} practice runs on",
+    "title": "The foundation for {industry}",
     "introWithStory": "The capabilities we put in place, and how fast. Measured results from a real {industry} engagement are in the featured story below.",
     "introNoStory": "The capabilities we put in place, and how fast they reach first value."
   },
@@ -52,7 +52,7 @@
     "eyebrow": "Featured engagement",
     "title": "How we delivered for {industry}",
     "intro": "A real engagement, start to finish: the challenge, the build, and the outcome. Client names are withheld to protect confidentiality.",
-    "orgLabel": "A {industry} organization",
+    "orgLabel": "{sector} organization",
     "storyTitle": "Governed, AI-ready data for {industry} on Snowflake",
     "quoteCaption": "Sponsor quote · {industry} engagement",
     "readCase": "Read the full case study →"

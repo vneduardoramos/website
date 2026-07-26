@@ -1,7 +1,8 @@
 // Spanish (es) overlay. Keyed by slug. Optional: empty means the row falls back to English. Filled by the content-translation phase.
 // Body comes from prisma/seed/content/case-studies/<slug>.es.md, NOT here.
-export const caseStudiesEs: Record<string, { title?: string; summary?: string; challenge?: string; solution?: string; results?: string; metrics?: { value: string; label: string }[]; quote?: { text: string; author: string; role: string }; seoTitle?: string; seoDescription?: string }> = {
+export const caseStudiesEs: Record<string, { title?: string; summary?: string; sector?: string; challenge?: string; solution?: string; results?: string; metrics?: { value: string; label: string }[]; quote?: { text: string; author: string; role: string }; seoTitle?: string; seoDescription?: string }> = {
   "sku-catalog-governance": {
+    sector: "Manufactura",
     seoTitle: "Gobierno de SKU y costos exactos",
     seoDescription: "El catálogo de un fabricante de empaque creció a miles de SKU sin control. Arquitectura de producto y gobierno en Snowflake devolvieron costos exactos.",
     title: "Controlar miles de SKU descontrolados para recuperar la precisión de los costos de producto",
@@ -15,6 +16,7 @@ export const caseStudiesEs: Record<string, { title?: string; summary?: string; c
     ],
   },
   "construction-cad-data-foundation": {
+    sector: "Construcción e inmobiliaria",
     seoTitle: "De planos CAD a datos accionables",
     seoDescription: "Cuatro fuentes desconectadas, entre ellas planos arquitectónicos CAD, unificadas en una sola fuente de verdad gobernada en Snowflake.",
     title: "Convertir planos arquitectónicos CAD en datos medibles y listos para la toma de decisiones",
@@ -28,6 +30,7 @@ export const caseStudiesEs: Record<string, { title?: string; summary?: string; c
     ],
   },
   "real-time-student-data-pipeline": {
+    sector: "Educación",
     seoTitle: "Analítica estudiantil en siete semanas",
     seoDescription: "Expedientes académicos y eventos de aprendizaje de campus en Miami y Latinoamérica, unificados en información en vivo de más de 20,000 estudiantes.",
     title: "Visibilidad en tiempo real de más de 20,000 estudiantes en varios campus, en operación en siete semanas",
@@ -41,6 +44,7 @@ export const caseStudiesEs: Record<string, { title?: string; summary?: string; c
     ],
   },
   "insurance-claims-cortex-ai": {
+    sector: "Seguros",
     seoTitle: "Clasificación de reclamaciones con Cortex",
     seoDescription: "Documentos de seguros clasificados a mano, reemplazados por Snowflake Cortex AI con 95% de precisión en segundos.",
     title: "De documentos clasificados a mano a la clasificación de reclamaciones con 95% de precisión en segundos",
@@ -54,6 +58,7 @@ export const caseStudiesEs: Record<string, { title?: string; summary?: string; c
     ],
   },
   "corporate-mdm-golden-record": {
+    sector: "Automotriz",
     seoTitle: "Datos maestros: un registro dorado",
     seoDescription: "Un grupo distribuidor de vehículos comerciales unificó ventas, servicio, partes y administración en un registro dorado en ocho dominios.",
     title: "Un golden record confiable en ocho dominios de negocio",

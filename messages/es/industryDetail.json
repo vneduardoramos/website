@@ -19,7 +19,7 @@
   },
   "foundation": {
     "eyebrow": "Lo que ponemos en marcha",
-    "title": "La base sobre la que opera una práctica de {industry}",
+    "title": "La base para {industry}",
     "introWithStory": "Las capacidades que implementamos, y con qué rapidez. Los resultados medidos de un proyecto real de {industry} están en el caso destacado más abajo.",
     "introNoStory": "Las capacidades que implementamos, y con qué rapidez alcanzan el primer valor."
   },
@@ -52,7 +52,7 @@
     "eyebrow": "Proyecto destacado",
     "title": "Cómo entregamos para {industry}",
     "intro": "Un proyecto real, de principio a fin: el reto, la construcción y el resultado. Se omiten los nombres de los clientes para proteger su confidencialidad.",
-    "orgLabel": "Una organización de {industry}",
+    "orgLabel": "Organización de {sector}",
     "storyTitle": "Datos gobernados y listos para IA para {industry} en Snowflake",
     "quoteCaption": "Cita del sponsor · proyecto de {industry}",
     "readCase": "Leer el caso completo →"
