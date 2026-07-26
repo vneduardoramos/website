@@ -130,6 +130,11 @@ export default async function BlogPostPage({
     <>
       <JsonLd data={articleLd} />
       <ReadingProgress />
+      {/* <article> wraps the post itself: header, cover and body. The related
+          reading and the CTA below are page furniture, so they stay outside it.
+          This gives a text extractor an explicit boundary for "the article",
+          which is otherwise guesswork on a page of sibling <section>s. */}
+      <article>
       <section className="relative overflow-hidden">
         <SectionDecor variant="dots" />
         <div className="container-page relative pt-12 md:pt-16">
@@ -248,6 +253,7 @@ export default async function BlogPostPage({
 
         <AuthorBio author={author} />
       </Section>
+      </article>
 
       {related.length ? (
         <section className="section relative overflow-hidden">

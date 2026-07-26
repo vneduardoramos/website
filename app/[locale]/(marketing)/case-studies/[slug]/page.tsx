@@ -114,6 +114,9 @@ export default async function CaseStudyDetailPage({
   return (
     <>
       <JsonLd data={caseStudyLd} />
+      {/* <article> wraps the case study itself; the closing CTA stays outside,
+          so a text extractor gets a clean boundary for the piece. */}
+      <article>
       {/* ── Header ──────────────────────────────────────────────── */}
       <Section className="relative overflow-hidden">
         <SectionDecor variant="dots" />
@@ -346,6 +349,7 @@ export default async function CaseStudyDetailPage({
           </Link>
         </div>
       </div>
+      </article>
 
       <CtaBand />
     </>

@@ -3,7 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Img as Image } from "@/components/marketing/Img";
 import { pageMeta } from "@/lib/seo";
 import { BookACall } from "@/components/marketing/BookACall";
-import { officesLd } from "@/lib/offices";
+import { officesLd, OFFICES } from "@/lib/offices";
 import { JsonLd } from "@/components/JsonLd";
 import { Section } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
@@ -41,8 +41,6 @@ export default async function ContactPage({ params }: { params: { locale: string
 
   const steps = t.raw("steps") as { title: string; body: string }[];
   const credentialPills = t.raw("credentials.pills") as string[];
-  // Both offices, exactly as listed on /life-at-viewnear.
-  const offices = t.raw("offices") as string[];
 
   return (
     <>
@@ -128,14 +126,25 @@ export default async function ContactPage({ params }: { params: { locale: string
                 ))}
               </div>
               <SnowflakeLockup variant="default" height={26} className="mt-5" />
-              <div className="mt-5 flex flex-wrap gap-2">
-                {offices.map((o) => (
-                  <span
-                    key={o}
-                    className="inline-flex items-center rounded-full border border-border bg-surface px-3 py-1 font-mono text-[0.66rem] tracking-wide text-muted"
+              {/* Real <address> elements with the complete NAP, from OFFICES.
+                  These were truncated chips ("Austin, TX · 10900 Stonelake
+                  Blvd"), so the page with the strongest location intent showed
+                  no postal code and no country: the full address existed only
+                  inside JSON-LD. Same single source as the schema above, so the
+                  two can never disagree. */}
+              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                {OFFICES.map((o) => (
+                  <address
+                    key={o.key}
+                    className="not-italic font-mono text-[0.66rem] leading-relaxed tracking-wide text-muted"
                   >
-                    {o}
-                  </span>
+                    <span className="block font-semibold text-foreground">
+                      {o.addressLocality}, {o.addressRegion}
+                    </span>
+                    {o.streetAddress}
+                    <br />
+                    {o.postalCode} {o.addressCountry === "MX" ? "México" : o.addressCountry}
+                  </address>
                 ))}
               </div>
             </div>
