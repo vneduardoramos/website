@@ -1,4 +1,4 @@
-Durante los últimos dos años, muchos de nosotros experimentamos con los large language models. Nos impresionaron, pero también dejaron al descubierto una brecha: estos modelos son pasivos. Pueden responder preguntas, pero no toman decisiones ni actúan.
+Entre 2023 y 2025, muchos de nosotros experimentamos con los large language models. Nos impresionaron, pero también dejaron al descubierto una brecha: estos modelos son pasivos. Pueden responder preguntas, pero no toman decisiones ni actúan.
 
 Eso está cambiando. La aparición de los agentes de IA está transformando la forma en que las empresas usan los datos y la inteligencia. Y con [Snowflake Cortex](/es/data-ai), estamos viendo el primer enfoque a nivel de plataforma para hacer que los agentes sean seguros, escalables y verdaderamente listos para la empresa.
 
@@ -16,13 +16,13 @@ La categoría de mayor impacto es la de los agentes de datos. Vale la pena imagi
 
 Snowflake destaca tres cualidades que importan más en este caso: precisión, eficiencia y gobernanza. Sin ellas, la IA rompe la confianza. Con ellas, la IA empieza a generar ROI.
 
-## Los movimientos recientes de Snowflake
+## Los movimientos de Snowflake hasta mediados de 2025
 
-Snowflake lanzó Cortex en 2024. Desde entonces, el ritmo de innovación ha sido notable. En abril de 2025, agregaron soporte multimodal, de modo que los agentes pueden procesar imágenes además de texto. En junio de 2025, lanzaron Cortex AISQL, que permite a cualquier persona consultar datos con lenguaje natural.
+Snowflake lanzó Cortex en 2024. Desde entonces, el ritmo de innovación ha sido notable. En abril de 2025, agregaron soporte multimodal, de modo que los agentes pueden procesar imágenes además de texto. En junio de 2025, lanzaron Cortex AISQL, que lleva las funciones de LLM directamente a SQL.
 
 Estas actualizaciones hacen que la IA dependa menos de la habilidad técnica y más de los resultados de negocio.
 
-## Ejemplos del mundo real que estamos observando
+## Ejemplos del mundo real que observábamos en 2025
 
 - Equipos de servicio al cliente que resuelven 14% más casos por hora.
 - Ciclos de venta más cortos a medida que el tiempo de prospección se reduce en 90%.

@@ -6,7 +6,7 @@
   "hero": {
     "eyebrow": "Seguridad y confianza",
     "title": "Datos empresariales, <hl>gobernados y seguros</hl>.",
-    "description": "La seguridad no es una fase en Viewnear; es la forma en que construimos. Todo lo que entregamos se ejecuta sobre la base certificada de Snowflake, con gobierno, control de acceso y linaje auditable diseñados desde la primera tabla."
+    "description": "Viewnear construye en la cuenta de Snowflake del cliente, sobre una plataforma auditada de forma independiente (SOC 2 Type II, ISO 27001, HIPAA, PCI DSS), y aplica acceso con privilegios mínimos, clasificación de PII y linaje de Horizon Catalog desde la primera tabla."
   },
   "compliance": {
     "eyebrow": "Postura de cumplimiento",
@@ -16,23 +16,23 @@
   "platformCompliance": [
     {
       "name": "SOC 2 Type II",
-      "note": "Plataforma Snowflake"
+      "note": "Heredada de Snowflake"
     },
     {
       "name": "ISO 27001",
-      "note": "Plataforma Snowflake"
+      "note": "Heredada de Snowflake"
     },
     {
       "name": "HIPAA",
-      "note": "Plataforma Snowflake (salud)"
+      "note": "Heredada de Snowflake (salud)"
     },
     {
       "name": "PCI DSS",
-      "note": "Plataforma Snowflake (pagos)"
+      "note": "Heredada de Snowflake (pagos)"
     },
     {
       "name": "FedRAMP",
-      "note": "Plataforma Snowflake (gobierno de EE. UU.)"
+      "note": "En poder de Snowflake (gobierno de EE. UU.)"
     },
     {
       "name": "GDPR-ready",

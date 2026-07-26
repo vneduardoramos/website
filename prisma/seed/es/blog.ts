@@ -133,7 +133,7 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
   },
   "snowflake-summit-2025-takeaways": {
     title: "De regreso de Snowflake Summit 2025: lo que destacó, lo que nos hizo reflexionar y lo que sigue",
-    excerpt: "Acabamos de regresar de Snowflake Summit 2025 en San Francisco, y más allá de un roadmap lleno de novedades emocionantes, lo que destacó fueron las conversaciones reflexivas, la dirección clara hacia la que se encamina la plataforma, y cómo esos cambios se alinean con la forma en que ayudamos a los clientes a construir soluciones de datos más inteligentes, rápidas y preparadas para el futuro.",
+    excerpt: "Viewnear asistió a Snowflake Summit 2025 en San Francisco, y más allá de un roadmap lleno de novedades emocionantes, lo que destacó fueron las conversaciones reflexivas, la dirección clara hacia la que se encaminaba la plataforma, y cómo esos cambios se alinean con la forma en que ayudamos a los clientes a construir soluciones de datos más inteligentes, rápidas y preparadas para el futuro.",
     seoTitle: "Snowflake Summit 2025: conclusiones",
     seoDescription: "Lo que destacó en Snowflake Summit 2025, qué señala para los equipos de datos y qué se lleva a la entrega.",
     keyTakeaways: [
@@ -141,12 +141,12 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
       "Cortex AISQL aplica IA generativa directamente dentro de SQL, resumiendo, analizando y clasificando datos no estructurados sin sacar nada de Snowflake.",
       "Adaptive Compute, Gen 2 Warehouses y valores de seguridad predeterminados más sólidos (passkeys, MFA, monitoreo de credenciales filtradas) liberan tiempo para el diseño estratégico por encima del ajuste manual.",
       "Los dbt Projects nativos en Snowsight estrechan el ciclo de analytics engineering, y Openflow (mediante la adquisición de Datavolo) apunta hacia un movimiento de datos más rico dentro de la plataforma.",
-      "Viewnear ya está actuando: pilotos de Cortex AISQL, líneas base de arquitectura actualizadas para Gen 2, y definición de scope de Snowflake CoWork dentro de las organizaciones de los clientes.",
+      "Viewnear actuó sobre lo que mostró el Summit 2025: pilotos de Cortex AISQL, líneas base de arquitectura actualizadas para Gen 2, y definición de scope de Snowflake CoWork dentro de las organizaciones de los clientes.",
     ],
   },
   "snowflake-cortex-aisql-first-look": {
     title: "De SQL a IA generativa: un primer vistazo a Snowflake Cortex AISQL",
-    excerpt: "Las nuevas funciones Cortex AISQL de Snowflake permiten ejecutar tareas de modelos de lenguaje grandes como clasificación, extracción, traducción e incluso preguntas y respuestas sobre imágenes directamente en SQL. Esto es lo que significa para los equipos de datos, cómo funciona en la práctica y dónde vemos en Viewnear las mayores oportunidades.",
+    excerpt: "Las funciones Cortex AISQL de Snowflake permiten ejecutar tareas de modelos de lenguaje grandes como clasificación, extracción, traducción e incluso preguntas y respuestas sobre imágenes directamente en SQL. Esto es lo que significa para los equipos de datos, cómo funciona en la práctica y dónde vemos en Viewnear las mayores oportunidades.",
     seoTitle: "Snowflake Cortex AISQL: primer vistazo",
     seoDescription: "Un primer vistazo a Snowflake Cortex AISQL: IA generativa desde SQL y dónde encaja en una práctica de datos.",
     keyTakeaways: [
@@ -176,7 +176,7 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
     seoTitle: "De los LLM a los agentes de IA",
     seoDescription: "Por qué Snowflake Cortex marca el paso de consultar LLM a operar agentes de IA sobre datos empresariales gobernados.",
     keyTakeaways: [
-      "Los LLM son pasivos; responden preguntas pero no toman decisiones ni ejecutan acciones. Los agentes de IA perciben, razonan, planifican, actúan y aprenden, comportándose más como compañeros de trabajo digitales que como herramientas.",
+      "Los LLM son pasivos; responden preguntas pero no toman decisiones ni ejecutan acciones. Los agentes de IA perciben, razonan, planifican, actúan y retroalimentan los resultados en la siguiente iteración, comportándose más como compañeros de trabajo digitales que como herramientas.",
       "Los agentes de datos son la categoría de mayor impacto, combinando datos estructurados y no estructurados en hallazgos confiables con precisión, eficiencia y gobierno incorporados.",
       "Snowflake Cortex ha avanzado rápido: el soporte multimodal llegó en abril de 2025 y Cortex AISQL en junio de 2025, haciendo que la IA se trate más de resultados de negocio que de habilidad técnica.",
       "El gobierno y la seguridad deben estar incorporados desde el primer día, que es lo que permite a los líderes pasar de los experimentos a la producción sin comprometer la confianza.",

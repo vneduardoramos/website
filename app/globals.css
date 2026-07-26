@@ -221,6 +221,24 @@ select:focus-visible,
   .prose-vn hr {
     @apply my-10 border-border;
   }
+  /* GFM pipe tables (remark-gfm is enabled in lib/content.tsx): neutral
+     hairlines only, no fills, no colored rails. */
+  .prose-vn table {
+    @apply mb-6 w-full border-collapse text-left text-sm;
+  }
+  .prose-vn thead th {
+    @apply border-b border-border pb-2 align-bottom font-semibold text-foreground;
+  }
+  .prose-vn tbody td {
+    @apply border-b border-border py-3 align-top;
+  }
+  .prose-vn tbody td:first-child {
+    @apply font-semibold text-foreground;
+  }
+  .prose-vn th:not(:last-child),
+  .prose-vn td:not(:last-child) {
+    @apply pr-4;
+  }
   /* Plain blockquote -> pull-quote */
   .prose-vn blockquote {
     @apply my-7 border-l-4 border-primary/50 pl-5 font-display text-lg italic leading-relaxed text-foreground;

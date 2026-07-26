@@ -15,6 +15,17 @@ Confusing the two leads to sticker shock in both directions. Keep them separate 
 
 ## What actually drives the project number
 
+A Snowflake migration project cost is the sum of six drivers: the source system, the volume and shape of the data, the pipelines and transformations, downstream dependencies, governance and compliance, and organizational readiness.
+
+| Cost driver | Why it moves the number |
+| --- | --- |
+| Source system | Moving off Teradata, Oracle, or Hadoop is not the same effort as moving off Redshift or SQL Server: proprietary features, stored procedures, and dialect-specific SQL all have to be translated |
+| Volume and shape of the data | How many distinct sources, tables, and formats you have matters more than raw terabytes; a hundred well-modeled tables move faster than a thousand tangled ones |
+| Pipelines and transformations | Usually the biggest line item: every ETL job, every transformation, and every piece of business logic buried in a legacy tool has to be understood, rebuilt, and validated |
+| Downstream dependencies | Dashboards, reports, extracts, and applications that read from the old system all need to be repointed and re-tested; the more consumers, the more validation |
+| Governance and compliance | Regulated data (financial, healthcare, PII) adds masking, row-level security, lineage, and audit requirements |
+| Organizational readiness | How quickly your team answers questions, approves decisions, and tests results affects the timeline as much as any technical factor |
+
 **The source system.** Moving off [Teradata, Oracle, or Hadoop](/migrations) is not the same effort as moving off Redshift or SQL Server. Proprietary features, stored procedures, and dialect-specific SQL all have to be translated, and some systems have far more of that baggage than others.
 
 **The volume and shape of the data.** Raw terabytes matter less than how many distinct sources, tables, and formats you have, and how clean they are. A hundred well-modeled tables move faster than a thousand tangled ones.

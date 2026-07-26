@@ -131,7 +131,7 @@
   "howHeading": {
     "eyebrow": "How we migrate",
     "title": "Automated, validated, and phased",
-    "intro": "A repeatable arc that de-risks the move. Most of the conversion is automated; the cutover never is."
+    "intro": "A Snowflake migration covers the whole data estate: every table, view, stored procedure, and downstream report is inventoried, converted, validated against the source, and cut over by business unit before the legacy system is retired. A repeatable arc that de-risks the move. Most of the conversion is automated; the cutover never is."
   },
   "phases": [
     {

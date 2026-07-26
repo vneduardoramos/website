@@ -131,7 +131,7 @@
   "howHeading": {
     "eyebrow": "Cómo migramos",
     "title": "Automatizado, validado y por fases",
-    "intro": "Un recorrido repetible que reduce el riesgo del cambio. La mayor parte de la conversión es automática; la transición nunca lo es."
+    "intro": "Una migración a Snowflake abarca todo el panorama de datos: cada tabla, vista, procedimiento almacenado e informe que depende de ellos entra en el inventario, se convierte, se valida contra el origen y pasa a producción por unidad de negocio antes de retirar el sistema heredado. Un recorrido repetible que reduce el riesgo del cambio. La mayor parte de la conversión es automática; la transición nunca lo es."
   },
   "phases": [
     {

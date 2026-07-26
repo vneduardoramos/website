@@ -1,6 +1,6 @@
 ## El auge de la IA en la gestión de datos
 
-He trabajado con plataformas de datos durante años, y la integración de capacidades de IA representa uno de los avances más prácticos que he visto. En lugar de requerir infraestructura de IA independiente o integraciones complejas, estas capacidades se están convirtiendo en parte de la propia plataforma de datos.
+He trabajado con plataformas de datos durante años, y la integración de capacidades de IA representa uno de los avances más prácticos que he visto. En lugar de requerir infraestructura de IA independiente o integraciones complejas, estas capacidades ya son parte de la propia plataforma de datos.
 
 Esta integración importa porque elimina las barreras tradicionales entre el almacenamiento de datos y el procesamiento de IA. Se puede aplicar machine learning directamente a los datos sin moverlos a sistemas externos ni administrar infraestructura adicional.
 

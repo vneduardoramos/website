@@ -74,14 +74,14 @@ All three steps run inside Snowflake with no batch exports or external endpoints
 3. **Hybrid workflows shine.** Pairing PARSE_DOCUMENT with AI_COMPLETE lets us handle PDF contracts and mobile photos in the same pipeline, ideal for mortgage and insurance clients.
 4. **Warehouse sizing affects latency.** LLM calls run in a single thread, so moving from a small to a medium warehouse often halves response time.
 
-## Where it's heading next
+## Where it was heading in mid-2025
 
 - **Real-time agents:** Combine AISQL with Snowpark Container Services to create always-on AI copilots that can invoke external APIs when needed.
-- **Safer packaging and sharing:** The Native App Framework now supports restricted-caller rights, making it safer to package and share custom AI models.
-- **Industry blueprints:** Expect pre-built templates such as invoice extraction, support-ticket triage, and clinical note summarization to arrive via partners, including Viewnear.
+- **Safer packaging and sharing:** As of mid-2025, the Native App Framework supported restricted-caller rights, making it safer to package and share custom AI models.
+- **Industry blueprints:** Pre-built templates such as invoice extraction, support-ticket triage, and clinical note summarization were expected to arrive via partners, including Viewnear.
 
 ## Closing thoughts
 
 Cortex AISQL blurs the line between data warehousing and generative AI. The question is no longer "Where do we host the model?" but "Which business problem do we tackle first?" If you are ready to experiment, the barrier is now a single SQL query.
 
-The Viewnear team is already weaving AISQL into upcoming client sprints. If you would like to see a live demo tailored to your data, get in touch. Happy querying!
+The Viewnear team weaves AISQL into client sprints. If you would like to see a live demo tailored to your data, get in touch. Happy querying!

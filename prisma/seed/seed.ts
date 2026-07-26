@@ -39,6 +39,13 @@ const J = (v: unknown) => JSON.stringify(v);
 /** A blog post's own editorial date, falling back to the site content date. */
 const blogDate = (b: { date?: string }) =>
   b.date ? new Date(b.date) : SITE_CONTENT_PUBLISHED_AT;
+/**
+ * When a post was last revised, if it ever was. Falls back to its publication
+ * date, so dateModified never claims an update that did not happen. Set `updated`
+ * on a seed entry when its content is genuinely rewritten.
+ */
+const blogUpdated = (b: { date?: string; updated?: string }) =>
+  b.updated ? new Date(b.updated) : blogDate(b);
 
 /** Load long-form body markdown from prisma/seed/content/<type>/<slug>.md (falls back to inline body). */
 function readBody(type: string, slug: string, locale: "en" | "es" = "en"): string | null {
@@ -258,8 +265,8 @@ async function main() {
       authorId: admin.id,
       authorTeamId: blogAuthorTeam?.id ?? null,
       status: "PUBLISHED",
-      publishedAt: blogDate(b),
-      updatedAt: blogDate(b),
+      publishedAt: blogDate(b as { date?: string }),
+      updatedAt: blogUpdated(b as { date?: string; updated?: string }),
       seoTitle: (b as { seoTitle?: string }).seoTitle ?? null,
       seoDescription: (b as { seoDescription?: string }).seoDescription ?? null,
       titleEs: bEs.title ?? null,

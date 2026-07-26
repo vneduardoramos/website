@@ -17,7 +17,7 @@
   "how": {
     "eyebrow": "Cómo funciona",
     "title": "Dos planos, un solo ciclo gobernado",
-    "intro": "La ingeniería de agentes opera en dos lugares. Dentro de Snowflake, los agentes razonan sobre datos gobernados sin moverlos. En el flujo de trabajo, Claude ejecuta la siguiente acción donde los equipos ya están. Lo importante es la interacción: una solicitud cruza ambos planos y regresa citada, dentro de las políticas y registrada."
+    "intro": "Un agente de IA es software que razona sobre datos gobernados y luego da el siguiente paso, actuando como una identidad verificable con permisos por agente y con un registro de auditoría completo. La ingeniería de agentes opera en dos lugares. Dentro de Snowflake, los agentes razonan sobre datos gobernados sin moverlos. En el flujo de trabajo, Claude ejecuta la siguiente acción donde los equipos ya están. Lo importante es la interacción: una solicitud cruza ambos planos y regresa citada, dentro de las políticas y registrada."
   },
   "ship": {
     "eyebrow": "Lo que entregamos",

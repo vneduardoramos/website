@@ -6,7 +6,7 @@
   "hero": {
     "eyebrow": "Nuestro enfoque",
     "title": "Los líderes de entrega pueden <hl>gobernar</hl>.",
-    "description": "Viewnear entrega en sprints por caso de uso: un discovery fija el alcance, cada demo muestra software funcionando y una prueba de concepto valida el enfoque antes de escalar."
+    "description": "Viewnear entrega con puntos de control que gestionan los sponsors: un discovery fija el scope y el precio, cada sprint cierra con software funcionando y un POC valida el enfoque antes del desarrollo completo."
   },
   "experience": {
     "eyebrow": "La experiencia",

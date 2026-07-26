@@ -15,7 +15,16 @@ Confundir los dos lleva a sustos en ambas direcciones. Conviene mantenerlos sepa
 
 ## Qué mueve de verdad el número del proyecto
 
-**El sistema de origen.** Salir de [Teradata, Oracle o Hadoop](/es/migrations) no cuesta lo mismo que salir de Redshift o SQL Server. Las funciones propietarias, los stored procedures y el SQL específico de cada dialecto hay que traducirlos, y algunos sistemas cargan mucho más de ese equipaje que otros.
+El costo de un proyecto de migración a Snowflake es la suma de seis factores: el sistema de origen, el volumen y la forma de los datos, los pipelines y las transformaciones, las dependencias río abajo, el gobierno y compliance, y la disponibilidad de la organización.
+
+| Factor de costo | Por qué mueve el número |
+| --- | --- |
+| Sistema de origen | Salir de Teradata, Oracle o Hadoop no cuesta lo mismo que salir de Redshift o SQL Server: las funciones propietarias, los stored procedures y el SQL específico de cada dialecto hay que traducirlos |
+| Volumen y forma de los datos | Cuántas fuentes, tablas y formatos distintos hay importa más que los terabytes en crudo; cien tablas bien modeladas se mueven más rápido que mil enredadas |
+| Pipelines y transformaciones | Suele ser la partida más grande: cada job de ETL, cada transformación y cada regla de negocio enterrada en una herramienta heredada tiene que entenderse, reconstruirse y validarse |
+| Dependencias río abajo | Dashboards, reportes, extractos y aplicaciones que leen del sistema viejo hay que reapuntarlos y volver a probarlos; a más consumidores, más validación |
+| Gobierno y compliance | Los datos regulados (financieros, de salud, PII) agregan enmascaramiento, seguridad a nivel de fila, linaje y requisitos de auditoría |
+| Disponibilidad de la organización | Qué tan rápido el equipo interno responde preguntas, aprueba decisiones y prueba resultados afecta el tiempo tanto como cualquier factor técnico | Salir de [Teradata, Oracle o Hadoop](/es/migrations) no cuesta lo mismo que salir de Redshift o SQL Server. Las funciones propietarias, los stored procedures y el SQL específico de cada dialecto hay que traducirlos, y algunos sistemas cargan mucho más de ese equipaje que otros.
 
 **El volumen y la forma de los datos.** Los terabytes en crudo importan menos que cuántas fuentes, tablas y formatos distintos tiene, y qué tan limpios están. Cien tablas bien modeladas se mueven más rápido que mil enredadas.
 

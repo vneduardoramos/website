@@ -1,4 +1,4 @@
-Over the last two years, many of us experimented with large language models. They impressed us, but they also exposed a gap: these models are passive. They can answer questions, but they don't make decisions or take action.
+Between 2023 and 2025, many of us experimented with large language models. They impressed us, but they also exposed a gap: these models are passive. They can answer questions, but they don't make decisions or take action.
 
 That's changing. [The emergence of AI agents](/blog/snowflake-control-plane-agentic-enterprise) is transforming how companies use data and intelligence. And with [Snowflake Cortex](/data-ai), we're seeing the first platform-level approach to make agents secure, scalable, and truly enterprise-ready.
 
@@ -16,13 +16,13 @@ The most impactful category is data agents. Imagine combining a customer table, 
 
 Snowflake highlights three qualities that matter most here: accuracy, efficiency, and governance. Without those, AI breaks trust. With them, AI starts driving ROI.
 
-## Snowflake's recent moves
+## Snowflake's moves through mid-2025
 
-Snowflake launched Cortex in 2024. Since then, the pace of innovation has been remarkable. In April 2025, they added multimodal support, so agents can process images as well as text. In June 2025, they released Cortex AISQL, which lets anyone query data with natural language.
+Snowflake launched Cortex in 2024. Since then, the pace of innovation has been remarkable. In April 2025, they added multimodal support, so agents can process images as well as text. In June 2025, they released Cortex AISQL, which brings LLM functions directly into SQL.
 
 These updates make AI less about technical skill and more about business outcomes.
 
-## Real-world examples we're watching
+## Real-world examples we were watching in 2025
 
 - Customer service teams resolving 14% more cases per hour.
 - Sales cycles shortened as prospecting time drops by 90%.

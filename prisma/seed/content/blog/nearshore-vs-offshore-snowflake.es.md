@@ -13,6 +13,17 @@ La palabra que importa es *traslape*. En silencio decide qué tan rápido avanza
 
 ## Las dimensiones que de verdad importan
 
+Nearshore y offshore intercambian las mismas dos variables: la tarifa de entrada contra el traslape con la jornada de Estados Unidos.
+
+| Dimensión | Nearshore | Offshore |
+| --- | --- | --- |
+| Distancia y traslape | En la misma zona horaria o cerca (para empresas en Estados Unidos, normalmente América Latina); traslape casi total con la jornada local | A muchas zonas horarias de distancia (comúnmente el sur de Asia o Europa del Este respecto a Estados Unidos), a menudo ocho a doce horas de diferencia; el menor traslape |
+| Tarifa de entrada | Algo más alta | La más baja |
+| Ciclo de iteración | Un bloqueo planteado a las 10am muchas veces se resuelve para la comida | El mismo bloqueo suele costar un día completo por ida y vuelta |
+| Ritmo de trabajo | Pairing en vivo, standups reales y un ritmo compartido en Slack; la cercanía cultural y de idioma reduce los pequeños malentendidos que se acumulan en un proyecto largo | Tareas que se entregan al cierre de la jornada local y se retoman al inicio de la jornada del equipo offshore |
+| Residencia de datos y revisión de accesos | Un equipo en América puede simplificar esas conversaciones para empresas de Estados Unidos | También puede simplificarlas; conviene confirmarlo en lugar de suponerlo |
+| Dónde gana el costo total | Trabajo ambiguo y con muchas decisiones, como la mayoría de los builds de Snowflake e IA: la latencia causa retrabajo y el retrabajo borra la ventaja de la tarifa | Trabajo bien acotado y bien especificado: mantenimiento maduro y documentado o un build grande y claramente especificado |
+
 **Velocidad e iteración.** El trabajo de Snowflake e IA es iterativo: perfilar los datos, modelarlos, probar un caso de uso de Cortex, ver el resultado, ajustar. Ese ciclo es rápido cuando una pregunta se responde en minutos y doloroso cuando espera toda la noche. Con un [equipo nearshore](/es/nearshore) trabajando en horario de Estados Unidos, un bloqueo planteado a las 10am muchas veces se resuelve para la comida. Offshore, el mismo bloqueo suele costar un día completo por ida y vuelta, y un puñado de idas y vueltas convierte una tarea de dos semanas en un mes.
 
 **Costo total frente a tarifa.** Una tarifa por hora más baja no siempre significa un costo de proyecto más bajo. La latencia causa retrabajo, el retrabajo causa horas, y las horas borran la ventaja de la tarifa. La comparación correcta es costo por resultado, no costo por hora. En trabajo bien acotado y bien especificado, la tarifa puede ganar; en trabajo ambiguo y con muchas decisiones, el traslape suele ganar.

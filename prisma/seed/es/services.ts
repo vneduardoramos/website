@@ -93,7 +93,19 @@ Es una auditoría estructurada de un ambiente Snowflake existente: topología de
 
 ### ¿Conviene un lakehouse con Apache Iceberg en Snowflake?
 
-Iceberg tiene sentido cuando otros motores necesitan leer las mismas tablas, cuando el volumen de datos empuja hacia la economía del almacenamiento abierto o cuando la organización adopta formatos abiertos como política. Open Catalog (Polaris) mantiene esas tablas gobernadas en cualquier caso. Si las cargas de trabajo viven de punta a punta en Snowflake, las tablas nativas suelen ser más simples; en el discovery lo decidimos con evidencia, no por default.`,
+Iceberg tiene sentido cuando otros motores necesitan leer las mismas tablas, cuando el volumen de datos empuja hacia la economía del almacenamiento abierto o cuando la organización adopta formatos abiertos como política. Open Catalog (Polaris) mantiene esas tablas gobernadas en cualquier caso. Si las cargas de trabajo viven de punta a punta en Snowflake, las tablas nativas suelen ser más simples; en el discovery lo decidimos con evidencia, no por default.
+
+### ¿Cómo se hace cumplir el gobierno de datos, más allá de documentarlo?
+
+El gobierno de datos en Snowflake se hace cumplir como configuración sobre los datos, no como un documento de políticas. El control de acceso basado en roles se modela según la organización, para que cada persona vea solo los datos que necesita, aplicado en Snowflake y no añadido después, y los datos sensibles se clasifican y enmascaran con etiquetado y políticas de fila y columna desde la primera tabla que se construye. Horizon Catalog lleva el linaje y el historial de accesos, así que cada número es rastreable hasta su origen y cada acceso queda registrado para auditoría. Todo se ejecuta en la cuenta de Snowflake del propio cliente, así que ninguna copia sale de ese perímetro.
+
+### ¿Cómo se construye un golden record a partir de varios sistemas fuente?
+
+Un golden record se construye por capas dentro de la propia cuenta de Snowflake del cliente. Los datos de origen llegan a Bronze, se limpian y conforman en Silver, y se resuelven en registros Gold gobernados, con claves maestras, emparejamiento y fusión, reglas de survivorship, linaje y auditoría diseñados desde la primera tabla. Todo el modelado se ejecuta en dbt bajo Git, de modo que cada regla que decide qué valor sobrevive se revisa, se prueba y es trazable. En un grupo de concesionarios de vehículos comerciales, Openflow carga el ERP, el dealer management system y el sistema de nómina y recursos humanos con una programación incremental nocturna, y produce una sola versión gobernada de cliente, vehículo, repuesto, proveedor y empleado, cada una trazable hasta su origen.
+
+### ¿Hay que consolidar todos los dominios de datos maestros al mismo tiempo?
+
+Los dominios de datos maestros se consolidan de forma secuencial, así que cada uno alcanza un golden record confiable por turno y no todos a la vez. En la base de datos maestros de un grupo de concesionarios de vehículos comerciales, ocho dominios de negocio, desde posventa y catálogos de repuestos hasta finanzas y recursos humanos, se entregan en tres lanzamientos a lo largo de una hoja de ruta de doce meses. Las pruebas de dbt validan el emparejamiento, el survivorship y la conformidad en cada ejecución, de modo que un registro defectuoso se detecta antes de llegar a Gold y cada dominio sigue siendo confiable después del lanzamiento que lo creó.`,
   },
   "data-engineering": {
     title: "Ingeniería de Datos y Pipelines",
@@ -189,7 +201,15 @@ Sí. El text-to-SQL sobre esquemas crudos tiene que adivinar qué significa "ing
 
 ### ¿Cuál es la diferencia entre Cortex Analyst y Snowflake CoWork?
 
-Cortex Analyst es el servicio que convierte una pregunta en lenguaje natural en SQL gobernado, diseñado para integrarse en aplicaciones y flujos de trabajo. Snowflake CoWork es la experiencia de agente que los usuarios de negocio abren directamente para explorar los datos y actuar. La mayoría de los proyectos entrega ambos: CoWork para las personas, Cortex Analyst donde las respuestas deben aparecer dentro de un producto o proceso.`,
+Cortex Analyst es el servicio que convierte una pregunta en lenguaje natural en SQL gobernado, diseñado para integrarse en aplicaciones y flujos de trabajo. Snowflake CoWork es la experiencia de agente que los usuarios de negocio abren directamente para explorar los datos y actuar. La mayoría de los proyectos entrega ambos: CoWork para las personas, Cortex Analyst donde las respuestas deben aparecer dentro de un producto o proceso.
+
+### ¿Las herramientas de BI actuales pueden seguir funcionando después de mover los datos a Snowflake?
+
+Las herramientas de BI actuales siguen funcionando después de mover los datos a Snowflake, con Snowflake como la fuente gobernada que consultan. La seguridad se implementa una sola vez en Snowflake, con políticas a nivel de fila y vistas seguras, de modo que cada herramienta de BI hereda el mismo gobierno de datos en lugar de aplicar el propio, y cada acceso a los datos queda auditable en todas ellas. Lo nuevo se construye nativo en Snowflake: dashboards en Snowsight, apps de Streamlit in Snowflake y Cortex Analyst respondiendo preguntas en lenguaje natural sobre Semantic Views gobernadas que codifican una sola vez las métricas, los joins y los términos de negocio.
+
+### ¿Cuál es la forma correcta de conectar Power BI o Tableau a Snowflake?
+
+Una herramienta de BI conviene conectarla a Snowflake con el conector nativo de Snowflake y no con un driver ODBC genérico, para que los cálculos se empujen hacia Snowflake en lugar de sacar los datos y procesarlos afuera. Cuatro patrones mantienen esa conexión rápida y predecible: una cuenta de servicio con autenticación por par de claves en lugar de credenciales de usuarios individuales, un warehouse dedicado por herramienta para tener rendimiento predecible y atribución de costo clara, auto-suspend agresivo con auto-scaling multi-cluster para absorber la concurrencia sin inflar el costo, y conexiones live para datos grandes y cambiantes, con extracts para datos más pequeños y estables.`,
   },
   "embedded-analytics": {
     title: "Analítica Embebida",

@@ -323,14 +323,23 @@ export function collectionLd(opts: {
   locale?: string;
   crumbs: BreadcrumbItem[];
   items?: { name: string; url: string }[];
+  /**
+   * Newest record in the collection, as an ISO date. A listing page has no
+   * editorial date of its own, but "the most recent thing on it" is a real and
+   * derivable freshness signal, which is what an answer engine wants when it
+   * decides whether an index is current.
+   */
+  dateModified?: string;
 }): Record<string, unknown>[] {
-  const { name, description, path, locale = DEFAULT_LOCALE, crumbs, items } = opts;
+  const { name, description, path, locale = DEFAULT_LOCALE, crumbs, items, dateModified } = opts;
   const collection: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name,
     ...(description ? { description } : {}),
     url: absoluteForLocale(path, locale),
+    inLanguage: locale,
+    ...(dateModified ? { dateModified } : {}),
     ...(items && items.length
       ? {
           mainEntity: {

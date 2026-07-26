@@ -13,6 +13,17 @@ The word that matters is *overlap*. It quietly decides how fast the work moves.
 
 ## The dimensions that actually matter
 
+Nearshore and offshore trade the same two variables: headline rate against overlap with the US workday.
+
+| Dimension | Nearshore | Offshore |
+| --- | --- | --- |
+| Distance and overlap | In or near your time zone (for US companies, usually Latin America); near-total overlap with your workday | Many time zones away (commonly South Asia or Eastern Europe relative to the US), often eight to twelve hours off; least overlap |
+| Headline rate | Slightly higher | Lowest |
+| Iteration loop | A blocker raised at 10am is often resolved by lunch | The same blocker frequently costs a full day per round trip |
+| Working rhythm | Live pairing, real standups, and a shared Slack rhythm; cultural and language alignment reduces the small misreadings that compound over a long engagement | Tasks handed off at the end of your workday and picked up as the offshore team starts theirs |
+| Data residency and access reviews | A team in the Americas can simplify those conversations for US companies | Can simplify them too; worth confirming rather than assuming |
+| Where total cost wins | Ambiguous, decision-heavy work, which most Snowflake and AI builds are: latency causes rework, and rework erases the rate advantage | Tightly-scoped, well-specified work: mature, documented maintenance or a large, clearly-specified build |
+
 **Velocity and iteration.** Snowflake and AI work is iterative: profile the data, model it, test a Cortex use case, look at the result, adjust. That loop is fast when a question gets answered in minutes and painful when it waits overnight. With a [nearshore team](/nearshore) working US hours, a blocker raised at 10am is often resolved by lunch. Offshore, the same blocker frequently costs a full day per round trip, and a handful of round trips turns a two-week task into a month.
 
 **Total cost versus rate.** A lower hourly rate does not always mean a lower project cost. Latency causes rework, rework causes hours, and hours erase the rate advantage. The right comparison is cost-to-outcome, not cost-per-hour. On tightly-scoped, well-specified work the rate can win; on ambiguous, decision-heavy work the overlap usually wins.

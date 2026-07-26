@@ -74,14 +74,14 @@ Los tres pasos se ejecutan dentro de Snowflake sin exportaciones por lotes ni en
 3. **Los flujos de trabajo híbridos destacan.** Combinar PARSE_DOCUMENT con AI_COMPLETE nos permite procesar contratos en PDF y fotos tomadas desde dispositivos móviles en el mismo pipeline, ideal para clientes de hipotecas y seguros.
 4. **El tamaño del warehouse afecta la latencia.** Las llamadas a LLM se ejecutan en un solo hilo, por lo que pasar de un warehouse small a uno medium suele reducir a la mitad el tiempo de respuesta.
 
-## Hacia dónde se dirige
+## Hacia dónde se dirigía a mediados de 2025
 
 - **Agentes en tiempo real:** Combinar AISQL con Snowpark Container Services para crear copilotos de IA siempre activos que puedan invocar APIs externas cuando sea necesario.
-- **Empaquetado y uso compartido más seguros:** El Native App Framework ahora admite restricted-caller rights, lo que hace más seguro empaquetar y compartir modelos de IA personalizados.
-- **Blueprints por industria:** Espere plantillas predefinidas como extracción de facturas, triaje de tickets de soporte y resumen de notas clínicas, que llegarán a través de partners, incluido Viewnear.
+- **Empaquetado y uso compartido más seguros:** A mediados de 2025, el Native App Framework ya admitía restricted-caller rights, lo que hacía más seguro empaquetar y compartir modelos de IA personalizados.
+- **Blueprints por industria:** Se esperaban plantillas predefinidas como extracción de facturas, triaje de tickets de soporte y resumen de notas clínicas, a través de partners, incluido Viewnear.
 
 ## Reflexiones finales
 
 Cortex AISQL difumina la línea entre el data warehousing y la IA generativa. La pregunta ya no es "¿Dónde alojamos el modelo?" sino "¿Qué problema de negocio abordamos primero?" Si está listo para experimentar, la barrera ahora es una sola consulta SQL.
 
-El equipo de Viewnear ya está integrando AISQL en los próximos sprints con clientes. Para ver una demo en vivo adaptada a los datos de la organización, basta con escribirnos. ¡Felices consultas!
+El equipo de Viewnear integra AISQL en los sprints con clientes. Para ver una demo en vivo adaptada a los datos de la organización, basta con escribirnos. ¡Felices consultas!
