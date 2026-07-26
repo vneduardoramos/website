@@ -94,12 +94,20 @@ const TABLES = [
   { name: "industry", key: "slug", strip: [], remap: {} },
   { name: "teamMember", key: "slug", strip: ["headshotId"], remap: {} },
   { name: "service", key: "slug", strip: [], remap: {} },
-  { name: "siteSetting", key: "key", strip: [], remap: {} },
+  // The seed owns hero/stats/partnership/contact/faqs (+ .es), so mirroring
+  // deletions here is right. `clientBands` is the exception: the client-logos
+  // admin page writes it, the seed never does, and a deploy pruning it is what
+  // silently dropped the home-page logo bands once before (the UI fell back to
+  // DEFAULT_BANDS, so nothing looked broken).
+  { name: "siteSetting", key: "key", strip: [], remap: {}, keepKeys: ["clientBands"] },
   { name: "newsEvent", key: "slug", strip: [], remap: {} },
   { name: "jobOpening", key: "slug", strip: [], remap: {} },
   { name: "caseStudy", key: "slug", strip: [], remap: { clientId: "client", industryId: "industry" } },
   { name: "blogPost", key: "slug", strip: ["tags", "authorId"], remap: { authorTeamId: "teamMember" } },
-  { name: "imageOverride", key: "key", strip: [], remap: {} },
+  // Authored in the production admin, not in the seed. The local export is
+  // normally empty, so mirroring deletions here would wipe whatever an editor
+  // set on production. Upserts still apply when the snapshot does carry rows.
+  { name: "imageOverride", key: "key", strip: [], remap: {}, neverPrune: true },
 ] as const;
 
 type Row = Record<string, unknown>;
@@ -277,7 +285,28 @@ async function importContent(force: boolean, prune: boolean) {
   // production data references it (e.g. a JobOpening with applications) is
   // logged and kept rather than failing the deploy.
   for (const t of [...TABLES].reverse()) {
-    const keep = (snap.tables[t.name] ?? []).map((r) => r[t.key] as string);
+    const keep = [
+      ...(snap.tables[t.name] ?? []).map((r) => r[t.key] as string),
+      // Keys owned by the production admin rather than the seed.
+      ...(((t as { keepKeys?: readonly string[] }).keepKeys ?? []) as readonly string[]),
+    ];
+    if ((t as { neverPrune?: boolean }).neverPrune) {
+      console.log(`prune ${t.name}: skipped (admin-authored on production)`);
+      continue;
+    }
+    // A table the snapshot knows nothing about is a missing export, not an
+    // instruction to empty the table. Deleting every row on that signal is how
+    // production lost content once already.
+    if (keep.length === 0) {
+      const count: number = await model(t.name).count();
+      if (count > 0) {
+        console.warn(
+          `prune ${t.name}: SKIPPED. Snapshot has 0 rows but the database has ${count}. ` +
+            `Refusing to delete them all; re-export if the table really is empty.`,
+        );
+      }
+      continue;
+    }
     const stale: Row[] = await model(t.name).findMany({
       where: { [t.key]: { notIn: keep } },
       select: { id: true, [t.key]: true },
