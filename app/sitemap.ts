@@ -1,36 +1,14 @@
 import type { MetadataRoute } from "next";
 import { theme } from "@/config/theme";
 import { prisma } from "@/lib/db";
+import { STATIC_PATHS } from "@/config/routes";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = theme.brand.url;
 
-  const staticPaths = [
-    "",
-    "/about",
-    "/partnership",
-    "/nearshore",
-    "/nearshore/monterrey",
-    "/security",
-    "/life-at-viewnear",
-    "/careers",
-    "/services",
-    "/snowflake-consulting-services",
-    "/migrations",
-    "/data-ai",
-    "/approach",
-    "/pricing",
-    "/platform",
-    "/industries",
-    "/case-studies",
-    "/blog",
-    "/resources",
-    "/press",
-    "/faq",
-    "/contact",
-    "/privacy",
-    "/terms",
-  ];
+  // Single source of truth, shared with app/llms.txt/route.ts so the two
+  // machine-readable indexes cannot disagree again (see config/routes.ts).
+  const staticPaths = STATIC_PATHS;
 
   // Dynamic content carries its real updatedAt so crawlers get an honest
   // per-URL freshness signal (instead of every URL sharing the build time).
