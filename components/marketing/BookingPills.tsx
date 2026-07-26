@@ -42,12 +42,19 @@ export function BookingPills({
   fallbackUrl,
   label,
   fallbackLabel,
+  tone = "light",
 }: {
   people: BookablePerson[];
   /** Used when nobody shown has a calendar of their own. */
   fallbackUrl: string;
   label: string;
   fallbackLabel: string;
+  /**
+   * "dark" is for placement on a dark scrim (the service closing plate): only
+   * the label above the pills changes, since the pills themselves are light
+   * cards either way and read as the brightest thing on a dark background.
+   */
+  tone?: "light" | "dark";
 }) {
   const wrapper = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
@@ -114,7 +121,14 @@ export function BookingPills({
         </>
       )}
 
-      <p className="font-mono text-[0.66rem] uppercase tracking-[0.14em] text-muted">{label}</p>
+      <p
+        className={[
+          "font-mono text-[0.66rem] uppercase tracking-[0.14em]",
+          tone === "dark" ? "text-white/70" : "text-muted",
+        ].join(" ")}
+      >
+        {label}
+      </p>
 
       <div className="mt-4 flex flex-wrap gap-3">
         {hasPeople ? (

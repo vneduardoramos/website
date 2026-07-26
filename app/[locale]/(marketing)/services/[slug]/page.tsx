@@ -5,11 +5,9 @@ import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/marketing/Breadcrumbs";
 import { HeroBackground } from "@/components/marketing/HeroBackground";
 import { Section, SectionHeading } from "@/components/marketing/ui";
-import { BookACall } from "@/components/marketing/BookACall";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { MetricBand } from "@/components/marketing/Blocks";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
-import { ShowcaseBand } from "@/components/marketing/ShowcaseBand";
 import {
   AtAGlance,
   DeliverableGrid,
@@ -27,6 +25,7 @@ import { parseServiceBody, stripMd } from "@/lib/service-content";
 import { JsonLd } from "@/components/JsonLd";
 import { theme } from "@/config/theme";
 import { pageMeta } from "@/lib/seo";
+import { ServiceClose } from "@/components/marketing/service/ServiceClose";
 
 export const revalidate = 60;
 
@@ -103,9 +102,10 @@ export default async function ServiceDetailPage({
     { label: t("atAGlance.modelLabel"), value: t("atAGlance.modelValue") },
   ].filter((f) => f.value);
 
-  // Sibling services, for the cross-link mesh at the bottom of the page.
+  // Every service, for the closing plate's wayfinding rail: it lists the whole
+  // set and marks the current one, so the row shows position rather than just
+  // offering siblings.
   const all = await getServices(locale as Locale);
-  const others = all.filter((s) => s.slug !== service.slug);
 
   const localePath = locale === "es" ? "/es" : "";
   const serviceLd = {
@@ -313,18 +313,6 @@ export default async function ServiceDetailPage({
             </Section>
           )}
 
-          {/* SHOWCASE - second image slot: the one immersive, full-bleed beat,
-              tinted to the service hue, closing on a proof CTA. Placeholder
-              art for now. */}
-          <ShowcaseBand
-            image={showcaseImg}
-            imageAlt={t("showcase.imageAlt", { title: service.title })}
-            eyebrow={t("showcase.eyebrow")}
-            title={t("showcase.title")}
-            body={t("showcase.body")}
-            cta={{ label: t("showcase.cta"), href: "/case-studies" }}
-            tintClass={flavor.glow}
-          />
         </>
       ) : (
         service.body && (
@@ -341,58 +329,31 @@ export default async function ServiceDetailPage({
         )
       )}
 
-      {/* Cross-links into the wider practice. */}
-      <Section>
-        <SectionHeading eyebrow={t("related.eyebrow")} title={t("related.title")} />
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
-          {t.rich("related.body", {
-            migrations: (c) => (
-              <Link href="/migrations" className="font-semibold text-primaryDeep link-underline">
-                {c}
-              </Link>
-            ),
-            nearshore: (c) => (
-              <Link href="/nearshore" className="font-semibold text-primaryDeep link-underline">
-                {c}
-              </Link>
-            ),
-            dataai: (c) => (
-              <Link href="/data-ai" className="font-semibold text-primaryDeep link-underline">
-                {c}
-              </Link>
-            ),
-          })}{" "}
-          <Link href="/industries" className="font-semibold text-primaryDeep link-underline">
-            {t("related.industries")}
-          </Link>
-          .
-        </p>
-      </Section>
-
-      {/* Other services - chip mesh linking every service page to its siblings. */}
-      {others.length > 0 && (
-        <Section className="bg-surface">
-          <SectionHeading eyebrow={t("other.eyebrow")} title={t("other.title")} />
-          <div className="mt-8 flex flex-wrap gap-3">
-            {others.map((s) => (
-              <Link
-                key={s.slug}
-                href={`/services/${s.slug}`}
-                className="group inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-primary/40 hover:text-primaryDeep"
-              >
-                {s.title}
-                <span className="text-muted transition-transform group-hover:translate-x-0.5">
-                  →
-                </span>
-              </Link>
-            ))}
-          </div>
-        </Section>
-      )}
-
-      {/* Booking replaces the generic CTA here: this page is evaluation-stage,
-          so "talk to the person who would own it" beats "let's talk". */}
-      <BookACall variant="compact" />
+      {/* One closing plate instead of four stacked sections (proof band,
+          "wider practice" paragraph, "other services" chips, booking card).
+          See ServiceClose for the reasoning. */}
+      <ServiceClose
+        image={showcaseImg}
+        imageAlt={t("showcase.imageAlt", { title: service.title })}
+        tintClass={flavor.glow}
+        eyebrow={t("showcase.eyebrow")}
+        title={t("showcase.title")}
+        body={t("showcase.body")}
+        cta={{ label: t("showcase.cta"), href: "/case-studies" }}
+        practiceLabel={t("close.practiceLabel")}
+        practice={[
+          { label: t("close.links.migrations"), href: "/migrations" },
+          { label: t("close.links.nearshore"), href: "/nearshore" },
+          { label: t("close.links.dataai"), href: "/data-ai" },
+          { label: t("close.links.industries"), href: "/industries" },
+        ]}
+        servicesLabel={t("close.servicesLabel", { count: all.length })}
+        services={all.map((s) => ({
+          slug: s.slug,
+          title: s.title,
+          current: s.slug === service.slug,
+        }))}
+      />
     </div>
   );
 }

@@ -27,6 +27,7 @@ export async function BookACall({
   slugs = ["eduardo-ramos", "jc-rodriguez", "rene-trevino"],
   className = "",
   variant = "band",
+  tone = "light",
 }: {
   slugs?: string[];
   className?: string;
@@ -35,8 +36,14 @@ export async function BookACall({
    * contained card that replaces the generic CtaBand on evaluation-stage pages:
    * same booking action, a fraction of the height, and it upgrades an existing
    * slot rather than stacking a second call to action on top of it.
+   * "inline" renders the heading, body and pills with NO section or panel of its
+   * own, for composing into a section that already has a background (see
+   * ServiceClose). Keeps the booking-URL resolution and the render-nothing
+   * guard below in one place instead of copying them per host.
    */
-  variant?: "band" | "compact";
+  variant?: "band" | "compact" | "inline";
+  /** Text colors for placement on a dark scrim. Applies to "inline" only. */
+  tone?: "light" | "dark";
 }) {
   const locale = (await getLocale()) as Locale;
   const t = await getTranslations("booking");
@@ -71,6 +78,33 @@ export async function BookACall({
   if (!bookingUrl) return null;
 
   const agenda = t.raw("agenda") as string[];
+
+  if (variant === "inline") {
+    const dark = tone === "dark";
+    return (
+      <div className={className}>
+        <h2
+          className={`text-balance font-display text-2xl font-bold tracking-tight md:text-[1.75rem] ${
+            dark ? "text-white" : "text-foreground"
+          }`}
+        >
+          {t("compact.title")}
+        </h2>
+        <p className={`mt-3 leading-relaxed ${dark ? "text-white/75" : "text-muted"}`}>
+          {t("compact.body")}
+        </p>
+        <div className="mt-6">
+          <BookingPills
+            people={bookable}
+            fallbackUrl={bookingUrl}
+            label={t("pills.label")}
+            fallbackLabel={t("cta")}
+            tone={tone}
+          />
+        </div>
+      </div>
+    );
+  }
 
   if (variant === "compact") {
     return (
