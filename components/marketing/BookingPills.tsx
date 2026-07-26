@@ -115,7 +115,7 @@ export function BookingPills({
         </>
       )}
 
-      <p className="font-mono text-[0.66rem] uppercase tracking-[0.14em] text-muted">{label}</p>
+      <p className="font-mono text-[0.66rem] uppercase tracking-[0.14em] text-white/60">{label}</p>
 
       <div className="mt-4 flex flex-wrap gap-3">
         {hasPeople ? (
@@ -128,7 +128,7 @@ export function BookingPills({
               onClick={open(p.url)}
               aria-label={p.ariaLabel}
               className={[
-                "group flex items-center gap-3 border border-border bg-surface py-2 pl-2 pr-5 text-left shadow-soft transition hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-soft-lg",
+                "group flex items-center gap-3 border border-white/20 bg-white/95 py-2 pl-2 pr-5 text-left shadow-soft-lg transition hover:-translate-y-0.5 hover:bg-white hover:border-white/40",
                 // A topics line makes the pill two lines taller, so soften the
                 // radius rather than keeping a full pill shape.
                 p.topics ? "max-w-sm rounded-2xl" : "rounded-full",
