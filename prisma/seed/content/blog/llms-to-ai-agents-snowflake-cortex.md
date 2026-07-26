@@ -24,8 +24,6 @@ These updates make AI less about technical skill and more about business outcome
 
 ## Real-world examples we were watching in 2025
 
-- Customer service teams resolving 14% more cases per hour.
-- Sales cycles shortened as prospecting time drops by 90%.
 - Finance teams automating forecasts by blending real-time data with market intelligence.
 - Insurance firms using AI agents to review claims, recommend payout decisions, and draft personalized customer letters.
 

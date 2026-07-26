@@ -24,8 +24,6 @@ Estas actualizaciones hacen que la IA dependa menos de la habilidad técnica y m
 
 ## Ejemplos del mundo real que observábamos en 2025
 
-- Equipos de servicio al cliente que resuelven 14% más casos por hora.
-- Ciclos de venta más cortos a medida que el tiempo de prospección se reduce en 90%.
 - Equipos de finanzas que automatizan pronósticos combinando datos en tiempo real con inteligencia de mercado.
 - Aseguradoras que usan agentes de IA para revisar reclamos, recomendar decisiones de pago y redactar cartas personalizadas para los clientes.
 
