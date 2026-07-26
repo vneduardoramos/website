@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { theme } from "@/config/theme";
 import { prisma } from "@/lib/db";
 import { STATIC_PATHS } from "@/config/routes";
+import { PAGE_UPDATED } from "@/config/reviewed";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = theme.brand.url;
@@ -37,8 +38,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     es: `${base}/es${p}`,
     "x-default": p ? `${base}${p}` : base,
   });
-  // Static paths carry no lastModified (there is no real per-page freshness
-  // signal for them); dynamic entries carry their record's honest updatedAt.
+  // Static paths now carry a real lastModified too: the date their own component
+  // or message catalogs last changed in git, generated into config/reviewed.ts by
+  // scripts/update-reviewed-dates.ts. Before this, 48 of the 124 URLs (24 static
+  // pages in two locales) published no freshness signal at all. A build-time
+  // stamp was deliberately not used: a lastmod that moves on every deploy is the
+  // signal crawlers learn to discount.
   function entry(p: string, lastModified?: Date): MetadataRoute.Sitemap {
     return [
       { url: p ? `${base}${p}` : base, alternates: { languages: langs(p) }, ...(lastModified ? { lastModified } : {}) },
@@ -47,7 +52,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   return [
-    ...staticPaths.flatMap((path) => entry(path)),
+    ...staticPaths.flatMap((path) =>
+      entry(path, PAGE_UPDATED[path] ? new Date(PAGE_UPDATED[path]) : undefined),
+    ),
     ...dynamic.flatMap((e) => entry(e.path, e.lastModified)),
   ];
 }
