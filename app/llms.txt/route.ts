@@ -1,6 +1,7 @@
 import { theme } from "@/config/theme";
 import { prisma } from "@/lib/db";
 import { STATIC_ROUTES, type StaticRoute } from "@/config/routes";
+import { PRESS, getOutlet } from "@/lib/press";
 
 /**
  * `/llms.txt`, generated rather than hand-maintained.
@@ -43,7 +44,7 @@ export async function GET() {
   const base = theme.brand.url;
 
   const published = { where: { status: "PUBLISHED" } } as const;
-  const [services, industries, caseStudies, posts, jobs] = await Promise.all([
+  const [services, industries, caseStudies, posts, jobs, team] = await Promise.all([
     prisma.service.findMany({ ...published, select: { slug: true, title: true, summary: true }, orderBy: { order: "asc" } }),
     prisma.industry.findMany({ ...published, select: { slug: true, name: true, headline: true }, orderBy: { order: "asc" } }),
     prisma.caseStudy.findMany({
@@ -57,6 +58,11 @@ export async function GET() {
       orderBy: { publishedAt: "desc" },
     }),
     prisma.jobOpening.findMany({ ...published, select: { slug: true, title: true, location: true }, orderBy: { order: "asc" } }),
+    prisma.teamMember.findMany({
+      where: { published: true },
+      select: { name: true, title: true, linkedinUrl: true },
+      orderBy: { order: "asc" },
+    }),
   ]);
 
   const out: string[] = [];
@@ -82,7 +88,31 @@ export async function GET() {
   out.push("- Delivery region: United States, Canada, Mexico, Latin America and the Caribbean.");
   out.push(`- Contact: ${theme.brand.email}`);
   out.push(`- Partner listing: https://www.snowflake.com/en/why-snowflake/partners/all-partners/viewnear/`);
+  out.push(`- LinkedIn: ${theme.socials.linkedin}`);
   out.push("");
+
+  // Who is behind it, and who has written about it. An agent asked "who runs
+  // Viewnear" or "has anyone covered them" had nothing to go on here.
+  if (team.length) {
+    out.push("## Leadership");
+    out.push("");
+    for (const m of team) {
+      const li = m.linkedinUrl ? ` (${m.linkedinUrl})` : "";
+      out.push(`- ${m.name}, ${m.title}${li}`);
+    }
+    out.push("");
+  }
+
+  if (PRESS.length) {
+    out.push("## Press coverage");
+    out.push("");
+    out.push("Third-party articles quoting Viewnear. Titles and URLs are the outlets' own.");
+    out.push("");
+    for (const item of PRESS) {
+      out.push(`- [${item.title}](${item.url}): ${getOutlet(item.outlet).name}, ${item.date}`);
+    }
+    out.push("");
+  }
 
   // Static pages, grouped.
   for (const group of ORDER) {

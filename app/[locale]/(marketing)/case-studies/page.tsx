@@ -36,7 +36,14 @@ export default async function CaseStudiesPage({ params }: { params: { locale: st
     Boolean,
   );
 
-  const ld = collectionLd({
+    // The newest thing on the page is a real, derivable freshness signal for a
+  // listing that has no editorial date of its own.
+  const newest = caseStudies.reduce<Date | null>(
+    (acc, r) => (r.updatedAt && (!acc || r.updatedAt > acc) ? r.updatedAt : acc),
+    null,
+  );
+const ld = collectionLd({
+    dateModified: newest ? newest.toISOString() : undefined,
     name: t("meta.title"),
     description: t("meta.description"),
     path: "/case-studies",

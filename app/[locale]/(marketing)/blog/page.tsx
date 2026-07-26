@@ -39,7 +39,14 @@ export default async function BlogPage({ params }: { params: { locale: string } 
   }
   const uniqueTags = Array.from(tagMap.entries());
 
-  const ld = collectionLd({
+    // The newest thing on the page is a real, derivable freshness signal for a
+  // listing that has no editorial date of its own.
+  const newest = posts.reduce<Date | null>(
+    (acc, r) => (r.updatedAt && (!acc || r.updatedAt > acc) ? r.updatedAt : acc),
+    null,
+  );
+const ld = collectionLd({
+    dateModified: newest ? newest.toISOString() : undefined,
     name: t("meta.title"),
     description: t("meta.description"),
     path: "/blog",

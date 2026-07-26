@@ -49,7 +49,7 @@ export const viewport: Viewport = {
   themeColor: "#29B5E8",
 };
 
-const ORG_JSONLD = {
+const orgJsonLd = (locale: string) => ({
   "@context": "https://schema.org",
   // Organization rather than a narrower type: the company also has two
   // ProfessionalService locations, emitted separately via officesLd().
@@ -59,7 +59,8 @@ const ORG_JSONLD = {
   name: theme.brand.name,
   url: theme.brand.url,
   logo: `${theme.brand.url}/assets/viewnear-logo.png`,
-  description: theme.brand.description,
+  description: locale === "es" ? theme.brand.descriptionEs : theme.brand.description,
+  inLanguage: locale,
   // Off-site profiles that let a consumer confirm two mentions are this same
   // company. The Snowflake listing is the one that corroborates the Premier and
   // CoCo Preferred claims the site makes on five pages, and it is verified live:
@@ -134,7 +135,7 @@ const ORG_JSONLD = {
     areaServed: "Americas",
     availableLanguage: ["en", "es"],
   },
-};
+});
 
 const WEBSITE_JSONLD = {
   "@context": "https://schema.org",
@@ -192,7 +193,7 @@ export default async function LocaleRootLayout({
   return (
     <html lang={locale} className={fontVariables}>
       <body className="font-sans">
-        <JsonLd data={[ORG_JSONLD, WEBSITE_JSONLD]} />
+        <JsonLd data={[orgJsonLd(locale), WEBSITE_JSONLD]} />
         <NextIntlClientProvider locale={locale} messages={clientMessages}>
           {children}
           <ConsentBanner />

@@ -28,6 +28,10 @@ export const theme = {
     tagline: "Data & AI practice, up and running.",
     description:
       "Viewnear helps enterprises stand up two capabilities they keep: a data practice that feeds real decisions with governed, trusted data, and an AI practice that ships use cases into production. Built on Snowflake, run by in-house teams, across the Americas.",
+    // Spanish twin of `description`, for the Organization JSON-LD on /es URLs:
+    // the entity was describing itself in English on all 62 Spanish pages.
+    descriptionEs:
+      "Viewnear ayuda a las empresas a poner en marcha dos capacidades que conservan: una práctica de datos que alimenta decisiones reales con datos gobernados y confiables, y una práctica de IA que lleva casos de uso a producción. Construida sobre Snowflake, operada por equipos internos, en toda América.",
     // Region positioning for the Americas.
     region: "the Americas",
     regions: ["Canada", "USA", "Mexico", "LATAM", "Caribbean"],
