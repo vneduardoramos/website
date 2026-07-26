@@ -5,6 +5,31 @@ import { DEFAULT_LOCALE } from "@/lib/i18n-content";
 const DEFAULT_OG = "/assets/og-default.jpg";
 
 /**
+ * Stable node identifiers for the site's structured data.
+ *
+ * Every page used to declare its own anonymous `{"@type":"Organization", name,
+ * url}` stub for `publisher`, `provider` and `parentOrganization`. A consumer
+ * reading those has no way to know they are the same company as the
+ * `Organization` in the layout, so instead of one entity described by 124 pages
+ * the graph held one entity plus a crowd of look-alike stubs.
+ *
+ * With a stable `@id`, the layout declares the company once and every other node
+ * points at it. That is what lets an answer engine fuse the mentions into a
+ * single entity it can name and cite, and it is the same mechanism `sameAs` uses
+ * to tie the entity to its off-site profiles.
+ */
+export const ORG_ID = `${theme.brand.url}/#organization`;
+export const SITE_ID = `${theme.brand.url}/#website`;
+
+/** Reference to the company, for `publisher` / `provider` / `parentOrganization`. */
+export const ORG_REF = { "@id": ORG_ID } as const;
+
+/** Stable id for a team member's Person node, so bylines resolve to one human. */
+export function personId(slug: string): string {
+  return `${theme.brand.url}/about#${slug}`;
+}
+
+/**
  * The root layout renders titles through the template `"%s | Viewnear"`, so a
  * page title costs 11 characters more than it looks. Google stops showing a
  * title at roughly 60 characters, which leaves this much for the page's own part.
@@ -133,7 +158,29 @@ export function pageMeta(opts: {
       canonical: url,
       languages: { en: enUrl, es: esUrl, "x-default": enUrl },
     },
-    ...(noindex ? { robots: { index: false, follow: false } } : {}),
+    // Snippet permissions, stated rather than left to each engine's default.
+    //
+    // These are the same controls that govern how much of a page may be lifted
+    // into an AI Overview, AI Mode, or a Copilot answer: `max-snippet` caps the
+    // text an engine may quote, and with nothing declared the engine picks its
+    // own ceiling. `-1` removes the cap, which is the point when the goal is to
+    // have a long self-contained passage quoted verbatim with attribution.
+    // `max-image-preview: large` makes the case-study and industry photography
+    // eligible for a large preview alongside a citation.
+    //
+    // This grants permission, it does not request ranking. Dormant routes keep
+    // their noindex, so the branch stays conditional.
+    ...(noindex
+      ? { robots: { index: false, follow: false } }
+      : {
+          robots: {
+            index: true,
+            follow: true,
+            "max-snippet": -1,
+            "max-image-preview": "large",
+            "max-video-preview": -1,
+          },
+        }),
     openGraph: {
       ...(title ? { title } : {}),
       ...(description ? { description } : {}),

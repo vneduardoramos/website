@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Img as Image } from "@/components/marketing/Img";
-import { pageMeta, breadcrumbLd } from "@/lib/seo";
+import { pageMeta, breadcrumbLd, personId, ORG_REF, ORG_ID } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
+import { theme } from "@/config/theme";
 import { Link } from "@/i18n/navigation";
 import { Section, SectionHeading } from "@/components/marketing/ui";
 import { MetricBand, InlineCta } from "@/components/marketing/Blocks";
@@ -64,7 +65,38 @@ export default async function AboutPage({ params }: { params: { locale: string }
 
   return (
     <>
-      <JsonLd data={breadcrumbLd([{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }], locale)} />
+      {/* Breadcrumbs, plus one Person node per leader.
+          These carry the stable @id that blog bylines point at, so a byline
+          resolves to a described human with a role and a LinkedIn profile
+          instead of a bare name string. `employee` on the Organization closes
+          the loop in the other direction. */}
+      <JsonLd
+        data={[
+          breadcrumbLd([{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }], locale),
+          ...team.map((member) => ({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "@id": personId(member.slug),
+            name: member.name,
+            ...(member.title ? { jobTitle: member.title } : {}),
+            worksFor: ORG_REF,
+            ...(member.bio ? { description: member.bio } : {}),
+            ...(member.linkedinUrl ? { sameAs: [member.linkedinUrl] } : {}),
+            ...(member.photo
+              ? { image: /^https?:\/\//i.test(member.photo) ? member.photo : `${theme.brand.url}${member.photo}` }
+              : {}),
+          })),
+          {
+            "@context": "https://schema.org",
+            // Same node as the layout's Organization, identified by @id: a
+            // consumer merges the two. @type is repeated so a parser that does
+            // not merge still sees a typed node rather than a bare reference.
+            "@type": "Organization",
+            "@id": ORG_ID,
+            employee: team.map((member) => ({ "@id": personId(member.slug) })),
+          },
+        ]}
+      />
       <PageHero
         eyebrow={t("hero.eyebrow")}
         title={t.rich("hero.title", {

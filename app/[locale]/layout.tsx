@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { theme } from "@/config/theme";
 import { officePlaces, primaryAddress } from "@/lib/offices";
+import { ORG_ID, SITE_ID, ORG_REF } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { Analytics } from "@/components/Analytics";
 import { ConsentBanner } from "@/components/ConsentBanner";
@@ -50,15 +51,26 @@ export const viewport: Viewport = {
 
 const ORG_JSONLD = {
   "@context": "https://schema.org",
+  // Organization rather than a narrower type: the company also has two
+  // ProfessionalService locations, emitted separately via officesLd().
   "@type": "Organization",
+  // Stable identity every other node on the site points at. See lib/seo.ts.
+  "@id": ORG_ID,
   name: theme.brand.name,
   url: theme.brand.url,
   logo: `${theme.brand.url}/assets/viewnear-logo.png`,
   description: theme.brand.description,
-  // Append the off-site profile URLs here once they exist (Snowflake Partner
-  // Network listing, Clutch, G2, GoodFirms, Google Business Profile) so the
-  // entity graph links them back to viewnear.com.
-  sameAs: [theme.socials.linkedin],
+  // Off-site profiles that let a consumer confirm two mentions are this same
+  // company. The Snowflake listing is the one that corroborates the Premier and
+  // CoCo Preferred claims the site makes on five pages, and it is verified live:
+  // it returns "Viewnear - Partner | Snowflake Partners" and names the tier,
+  // while an unknown slug on that path returns a 404 page.
+  // Add Crunchbase, a Google Business Profile and any review-directory listing
+  // here as they come into existence. Do not add a profile that does not exist.
+  sameAs: [
+    theme.socials.linkedin,
+    "https://www.snowflake.com/en/why-snowflake/partners/all-partners/viewnear/",
+  ],
   areaServed: ["United States", "Canada", "Mexico", "Latin America", "Caribbean"],
   // The entity needs a postal address, not just a service area: these were
   // previously only on /life-at-viewnear. Austin is the primary (US) address;
@@ -93,8 +105,13 @@ const ORG_JSONLD = {
 const WEBSITE_JSONLD = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": SITE_ID,
   name: theme.brand.name,
   url: theme.brand.url,
+  publisher: ORG_REF,
+  inLanguage: ["en", "es"],
+  // No potentialAction/SearchAction: the site has no search feature, and
+  // declaring one would describe a capability that does not exist.
 };
 
 export function generateStaticParams() {

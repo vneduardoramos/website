@@ -13,7 +13,7 @@ import { BenefitsGrid } from "@/components/marketing/BenefitsGrid";
 import { Markdown } from "@/lib/content";
 import { asStringArray } from "@/lib/utils";
 import { theme } from "@/config/theme";
-import { pageMeta, breadcrumbLd } from "@/lib/seo";
+import { pageMeta, breadcrumbLd, ORG_REF } from "@/lib/seo";
 
 export const revalidate = 60;
 
@@ -88,12 +88,7 @@ export default async function CareerDetailPage({
     validThrough: new Date(
       (job.publishedAt ?? job.createdAt).getTime() + 90 * 24 * 60 * 60 * 1000,
     ).toISOString(),
-    hiringOrganization: {
-      "@type": "Organization",
-      name: theme.brand.name,
-      sameAs: theme.brand.url,
-      logo: `${theme.brand.url}/assets/viewnear-logo.png`,
-    },
+    hiringOrganization: ORG_REF,
     directApply: true,
     url: `${theme.brand.url}${localePath}/careers/${job.slug}`,
   };

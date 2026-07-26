@@ -24,7 +24,7 @@ import { asStringArray, cn } from "@/lib/utils";
 import { parseServiceBody, stripMd } from "@/lib/service-content";
 import { JsonLd } from "@/components/JsonLd";
 import { theme } from "@/config/theme";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, ORG_REF } from "@/lib/seo";
 import { ServiceClose } from "@/components/marketing/service/ServiceClose";
 
 export const revalidate = 60;
@@ -115,11 +115,7 @@ export default async function ServiceDetailPage({
     description: service.summary,
     serviceType: "Snowflake data and AI services",
     areaServed: "Americas",
-    provider: {
-      "@type": "Organization",
-      name: theme.brand.name,
-      url: theme.brand.url,
-    },
+    provider: ORG_REF,
     url: `${theme.brand.url}${localePath}/services/${slug}`,
   };
   const faqLd =

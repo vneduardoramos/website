@@ -1,4 +1,5 @@
 import { theme } from "@/config/theme";
+import { ORG_REF } from "@/lib/seo";
 
 /**
  * The two real offices, in one place. Previously these addresses existed only
@@ -58,9 +59,12 @@ export function officesLd(): Record<string, unknown>[] {
   return OFFICES.map((o) => ({
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: theme.brand.name,
+    // One stable id per office, so the two locations are distinct entities that
+    // can be referenced and corroborated rather than two anonymous look-alikes.
+    "@id": `${theme.brand.url}/#office-${o.key}`,
+    name: `${theme.brand.name} ${o.addressLocality}`,
     url: theme.brand.url,
-    parentOrganization: { "@type": "Organization", name: theme.brand.name, url: theme.brand.url },
+    parentOrganization: ORG_REF,
     areaServed: "Americas",
     address: postalAddress(o),
     geo: { "@type": "GeoCoordinates", latitude: o.latitude, longitude: o.longitude },

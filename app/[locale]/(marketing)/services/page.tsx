@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { pageMeta, breadcrumbLd } from "@/lib/seo";
+import { pageMeta, breadcrumbLd, ORG_REF } from "@/lib/seo";
 import { Link } from "@/i18n/navigation";
 import {
   Section,
@@ -98,11 +98,7 @@ export default async function ServicesPage({ params }: { params: { locale: strin
   }[];
   const engagementValue = t.raw("engagement.value") as { title: string; body: string }[];
 
-  const provider = {
-    "@type": "Organization",
-    name: theme.brand.name,
-    url: theme.brand.url,
-  };
+  const provider = ORG_REF;
   const serviceLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",

@@ -13,7 +13,7 @@ import { SectionDecor } from "@/components/marketing/Decor";
 import { Markdown } from "@/lib/content";
 import { JsonLd } from "@/components/JsonLd";
 import { theme } from "@/config/theme";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, ORG_REF, personId } from "@/lib/seo";
 import { getHeadings } from "@/lib/toc";
 import { asStringArray } from "@/lib/utils";
 import { ReadingProgress } from "@/components/marketing/article/ReadingProgress";
@@ -97,21 +97,23 @@ export default async function BlogPostPage({
     description: post.excerpt ?? undefined,
     datePublished: post.publishedAt ?? undefined,
     dateModified: post.updatedAt ?? post.publishedAt ?? undefined,
+    // The byline resolves to the Person node published on /about, so the author
+    // is one described human across every post rather than a name string
+    // repeated per article.
     author: author
       ? {
           "@type": "Person",
+          "@id": personId(author.slug),
           name: author.name,
+          ...(author.title ? { jobTitle: author.title } : {}),
+          worksFor: ORG_REF,
           ...(author.linkedinUrl ? { sameAs: [author.linkedinUrl] } : {}),
         }
       : {
           "@type": post.author?.name ? "Person" : "Organization",
           name: post.author?.name ?? theme.brand.name,
         },
-    publisher: {
-      "@type": "Organization",
-      name: theme.brand.name,
-      logo: { "@type": "ImageObject", url: `${theme.brand.url}/assets/viewnear-logo.png` },
-    },
+    publisher: ORG_REF,
     image: post.coverImageUrl
       ? coverIsRemote
         ? cover

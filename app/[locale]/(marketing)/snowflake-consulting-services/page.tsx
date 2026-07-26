@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, ORG_REF } from "@/lib/seo";
 import { theme } from "@/config/theme";
 import { JsonLd } from "@/components/JsonLd";
 import { Link } from "@/i18n/navigation";
@@ -71,11 +71,7 @@ export default async function SnowflakeConsultingPage({ params }: { params: { lo
     description: t("meta.description"),
     serviceType: "Snowflake consulting and implementation services",
     areaServed: ["United States", "Canada", "Mexico", "Latin America", "Caribbean"],
-    provider: {
-      "@type": "Organization",
-      name: theme.brand.name,
-      url: theme.brand.url,
-    },
+    provider: ORG_REF,
     url,
     hasOfferCatalog: {
       "@type": "OfferCatalog",

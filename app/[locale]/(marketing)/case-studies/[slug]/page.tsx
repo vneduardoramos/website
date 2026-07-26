@@ -18,7 +18,7 @@ import { asObjectArray, parseJson } from "@/lib/utils";
 import { JsonLd } from "@/components/JsonLd";
 import { MaskReveal } from "@/components/marketing/Motion";
 import { theme } from "@/config/theme";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, ORG_REF } from "@/lib/seo";
 
 export const revalidate = 60;
 
@@ -105,12 +105,8 @@ export default async function CaseStudyDetailPage({
     articleSection: cs.sector,
     datePublished: cs.publishedAt ?? undefined,
     dateModified: cs.updatedAt ?? cs.publishedAt ?? undefined,
-    author: { "@type": "Organization", name: theme.brand.name },
-    publisher: {
-      "@type": "Organization",
-      name: theme.brand.name,
-      logo: { "@type": "ImageObject", url: `${theme.brand.url}/assets/viewnear-logo.png` },
-    },
+    author: ORG_REF,
+    publisher: ORG_REF,
     image: /^https?:\/\//i.test(heroImage) ? heroImage : `${theme.brand.url}${heroImage}`,
     mainEntityOfPage: `${theme.brand.url}${localePath}/case-studies/${cs.slug}`,
   };

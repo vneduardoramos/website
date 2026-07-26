@@ -10,7 +10,7 @@ import { SectionDecor } from "@/components/marketing/Decor";
 import { Markdown } from "@/lib/content";
 import { JsonLd } from "@/components/JsonLd";
 import { theme } from "@/config/theme";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, ORG_REF } from "@/lib/seo";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getHeadings } from "@/lib/toc";
 import { asStringArray } from "@/lib/utils";
@@ -81,11 +81,7 @@ export default async function NewsDetailPage({
     description: item.excerpt ?? undefined,
     datePublished: item.publishedAt ?? undefined,
     dateModified: item.updatedAt ?? item.publishedAt ?? undefined,
-    publisher: {
-      "@type": "Organization",
-      name: theme.brand.name,
-      logo: { "@type": "ImageObject", url: `${theme.brand.url}/assets/viewnear-logo.png` },
-    },
+    publisher: ORG_REF,
     image: `${theme.brand.url}/news/${item.slug}/opengraph-image`,
     mainEntityOfPage: `${theme.brand.url}/news/${item.slug}`,
   };
