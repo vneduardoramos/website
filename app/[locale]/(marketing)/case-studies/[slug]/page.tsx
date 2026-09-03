@@ -67,9 +67,15 @@ export default async function CaseStudyDetailPage({
   // per-case-study outcomes study-specific; the band is not one client's result).
   const FALLBACK_METRICS = t.raw("fallbackMetrics") as { value: string; label: string }[];
 
-  // Refer to the client generically to preserve anonymity.
+  // Anonymity is the default: refer to the client as "a <sector> organization"
+  // and say so. A customer who approved being named (clientNamed) has to opt out
+  // of BOTH, otherwise the chrome insists the name is withheld while the body
+  // copy uses it in every paragraph.
   const article = /^[aeiou]/i.test(cs.sector) ? "an" : "a";
-  const clientName = t("clientName", { article, sector: cs.sector.toLowerCase() });
+  const named = cs.clientNamed && Boolean(cs.client?.name);
+  const clientName = named
+    ? cs.client!.name
+    : t("clientName", { article, sector: cs.sector.toLowerCase() });
   const heroImage = cs.heroImage ?? "/assets/images/photos/analytics-dashboard-charts.jpg";
 
   // DB-driven outcome metrics (fall back to a generic set if empty).
@@ -137,7 +143,7 @@ export default async function CaseStudyDetailPage({
             {cs.title}
           </h1>
           <p className="mt-6 text-lg text-muted">{cs.summary}</p>
-          <p className="mt-4 text-sm text-muted">{t("anonNote")}</p>
+          <p className="mt-4 text-sm text-muted">{named ? t("namedNote", { clientName }) : t("anonNote")}</p>
         </div>
       </Section>
 
@@ -169,9 +175,10 @@ export default async function CaseStudyDetailPage({
           </div>
         </div>
         {/* Anonymization flipped into a strength: the client stays unnamed,
-            the people who delivered don't. */}
+            the people who delivered don't. When the customer IS named, that
+            framing makes no sense, so the label just credits the team. */}
         <LeadershipStrip
-          label={t("leadershipLabel")}
+          label={named ? t("leadershipLabelNamed") : t("leadershipLabel")}
           className="mt-8 justify-center"
         />
       </Section>

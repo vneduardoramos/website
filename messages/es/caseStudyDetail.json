@@ -8,6 +8,7 @@
   },
   "eyebrow": "Caso de éxito",
   "anonNote": "Un proyecto real; el nombre del cliente se reserva a petición suya.",
+  "namedNote": "Un proyecto real, publicado con autorización de {clientName}.",
   "clientName": "una organización de {sector}",
   "metrics": {
     "eyebrow": "Lo que cambió"
@@ -19,6 +20,7 @@
     { "value": "8–16 sem", "label": "Del inicio al primer valor, sprint a sprint" }
   ],
   "leadershipLabel": "Entregado por Viewnear, y este es el equipo que dirige el trabajo. El nombre del cliente se reserva; el nuestro no.",
+  "leadershipLabelNamed": "Entregado por Viewnear, y este es el equipo que dirige el trabajo.",
   "story": {
     "eyebrow": "El proyecto",
     "title": "Lo que Viewnear entregó para {clientName}",
@@ -29,8 +31,8 @@
   "result": {
     "eyebrow": "El resultado",
     "title": "De datos crudos a <hl>decisiones con confianza</hl>",
-    "body": "Datos gobernados y listos para IA en Snowflake, con capacidad de escalar en el mercado de {region}. Lo que este proyecto dejó instalado para {clientName}:",
-    "imageAlt": "La base gobernada de Snowflake detrás de este resultado: {title}",
+    "body": "Lo que este proyecto dejó instalado para {clientName}:",
+    "imageAlt": "El trabajo detrás de este resultado: {title}",
     "cta": "Iniciar una conversación"
   },
   "related": {

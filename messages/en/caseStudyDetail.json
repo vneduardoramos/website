@@ -8,6 +8,7 @@
   },
   "eyebrow": "Case study",
   "anonNote": "A real engagement; the client's name is withheld at their request.",
+  "namedNote": "A real engagement, published with permission from {clientName}.",
   "clientName": "{article} {sector} organization",
   "metrics": {
     "eyebrow": "What changed"
@@ -19,6 +20,7 @@
     { "value": "8–16 wks", "label": "Kickoff to first value, sprint by sprint" }
   ],
   "leadershipLabel": "Delivered by Viewnear, and this is who leads the work. The client's name is withheld; ours isn't.",
+  "leadershipLabelNamed": "Delivered by Viewnear, and this is who leads the work.",
   "story": {
     "eyebrow": "The engagement",
     "title": "How Viewnear delivered for {clientName}",
@@ -29,8 +31,8 @@
   "result": {
     "eyebrow": "The result",
     "title": "From raw data to <hl>confident decisions</hl>",
-    "body": "Governed, AI-ready data in Snowflake, built to scale across the {region} market. What this engagement put in place for {clientName}:",
-    "imageAlt": "The governed Snowflake foundation behind this result: {title}",
+    "body": "What this engagement put in place for {clientName}:",
+    "imageAlt": "The work behind this result: {title}",
     "cta": "Start a conversation"
   },
   "related": {

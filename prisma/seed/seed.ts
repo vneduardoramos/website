@@ -186,6 +186,7 @@ async function main() {
       heroImage: cs.heroImage ?? null,
       featured: cs.featured,
       order: cs.order,
+      clientNamed: cs.clientNamed ?? false,
       body: readBody("case-studies", cs.slug) ?? cs.body ?? null,
       metrics: cs.metrics ? J(cs.metrics) : null,
       quote: cs.quote ? J(cs.quote) : null,

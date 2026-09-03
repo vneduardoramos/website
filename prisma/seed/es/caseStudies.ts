@@ -71,4 +71,18 @@ export const caseStudiesEs: Record<string, { title?: string; summary?: string; s
       { value: "12 mo", label: "Hoja de ruta: tres entregas por fases" },
     ],
   },
+  "magnolia-doors-installation-scheduling": {
+    sector: "Manufactura",
+    seoTitle: "Programación 91% más rápida con Claude",
+    seoDescription: "Magnolia Doors bajó la programación de instalaciones de 23-35 minutos a unos 3 minutos con Claude y un conector MCP a la medida para Odoo.",
+    title: "Programación de instalaciones hasta 91% más rápida, con una persona aprobando cada escritura",
+    summary:
+      "Magnolia Doors fabrica e instala herrería arquitectónica a medida en hierro y aluminio, y dedicaba de 13 a 17 horas por semana a poner entre 30 y 40 instalaciones en el calendario. Viewnear rediseñó el proceso como un flujo de cinco etapas sobre Claude y un conector Model Context Protocol a la medida para Odoo 18/19: reglas deterministas deciden qué es elegible, Claude lee el contexto y explica las excepciones, y ningún registro de producción cambia sin aprobación humana.",
+    metrics: [
+      { value: "87–91%", label: "Menos tiempo de programación por evento" },
+      { value: "3 min", label: "Por evento, antes de 23 a 35 minutos" },
+      { value: "15–19 hrs", label: "Trabajo administrativo recuperado por semana" },
+      { value: "30–40", label: "Eventos de instalación por semana" },
+    ],
+  },
 };

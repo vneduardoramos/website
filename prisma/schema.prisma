@@ -143,6 +143,11 @@ model CaseStudy {
   heroImage        String?
   metrics          String? // JSON [{value,label}]
   quote            String? // JSON {text,author,role}
+  // Whether the customer agreed to be named. The detail template defaults to
+  // anonymity: it renders "a <sector> organization" and states the name is
+  // withheld at the client's request. A story the customer approved by name has
+  // to switch both off, or the page contradicts its own body copy.
+  clientNamed      Boolean   @default(false)
   challenge        String?
   solution         String?
   results          String?
