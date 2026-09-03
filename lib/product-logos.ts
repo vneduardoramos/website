@@ -10,9 +10,10 @@
  * The background was keyed out and, on the Claude Code lockup, the cream
  * asterisk recolored to the same clay used in the light-background Claude mark,
  * so both read on this site's light surfaces. Both are normalized so the
- * "Claude" wordmark is optically the same size (64px cap on a shared 160px
- * canvas), which is why a single `h-7 w-auto` renders them at matching weight
- * despite one being a horizontal lockup and the other stacked.
+ * "Claude" wordmark is both the same size AND on the same baseline: a 64px cap
+ * whose top sits at y=8 on a shared 180px canvas. Matching the cap alone was not
+ * enough, because centring two canvases only aligns the words if each wordmark
+ * occupies the same position within its own canvas.
  */
 export type ProductLogo = { src: string; alt: string; w: number; h: number };
 
@@ -21,13 +22,13 @@ export const PRODUCT_LOGOS: Record<string, ProductLogo> = {
     src: "/assets/images/products/claude-code.png",
     alt: "Claude Code",
     w: 579,
-    h: 160,
+    h: 180,
   },
   "Claude for Teams": {
     src: "/assets/images/products/claude-for-teams.png",
     alt: "Claude for Teams",
     w: 367,
-    h: 160,
+    h: 180,
   },
 };
 

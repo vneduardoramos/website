@@ -204,7 +204,7 @@ export default async function CaseStudyDetailPage({
                         alt={logo.alt}
                         width={logo.w}
                         height={logo.h}
-                        className="h-7 w-auto md:h-8"
+                        className="h-10 w-auto md:h-12"
                       />
                     ) : (
                       <span
