@@ -14,6 +14,16 @@ El asistente valida la solicitud contra la lista de intake y contra Odoo, compru
 
 Esa línea no es una nota de política añadida al final. Es la arquitectura. Cuatro de las cinco etapas no tienen herramienta de escritura alguna, así que no podrían agendar un trabajo aunque se les indicara. La quinta escribe, y sus barreras son estructurales: allowlists cargadas al arranque, un token de aprobación firmado y atado a la operación exacta, a los ids y a los valores, y una confirmación que se vuelve a pedir en el momento de ejecutar. Una instrucción en un prompt se puede rodear. Ninguna de esas tres.
 
+## La compuerta de escritura
+
+Cada escritura al calendario pasa por dos fases y tres barreras que no dependen entre sí. Quitar cualquiera deja las otras dos en pie.
+
+1. **Gobierno**, verificado en memoria antes de cualquier llamada de red. Modelo no listado, campo no listado o archivo ausente significa denegado. Todo lo que no esté permitido explícitamente se rechaza, así que una configuración faltante falla cerrada y no abierta. Esta barrera nunca llega a la red, así que nada del lado de Odoo puede vencerla.
+2. **La propuesta y su token.** El conector vuelve a leer los registros y devuelve qué cambiaría, campo por campo, valor actual contra valor nuevo. El token de aprobación va firmado y atado a la operación, el modelo, los ids y un hash de los valores, y expira en 15 minutos. Una aprobación emitida para crear no se puede gastar en modificar, y una emitida para el registro siete no se puede gastar en el ocho.
+3. **Confirmación en el momento de ejecutar.** La pregunta se repite justo antes de escribir. Si no vuelve aceptada, no pasa nada.
+
+Modificar y eliminar operan solo por ids explícitos, nunca por criterios de búsqueda, porque una sola operación filtrada podría alcanzar cientos de registros desde una propuesta que parecía pequeña. Una serie recurrente se rechaza en lugar de adivinarse, porque en esta instancia no está verificado a qué ocurrencia alcanzaría una escritura.
+
 ## Tres capas, con un contrato estrecho entre ellas
 
 - **El conector** es lo único que toca Odoo: seis herramientas, el motor de gobierno y la compuerta de aprobación en dos fases. Es agnóstico al cliente y a la instancia, así que nada de Magnolia está escrito en su código.
@@ -35,16 +45,6 @@ Magnolia opera Odoo 18 Enterprise, on-premise y muy personalizado, así que la s
 Nada de eso salió de preguntar. Todo salió de leer la instancia, y la distinción vale la pena: una junta de arranque da el proceso como fue diseñado, los datos dan el proceso como funciona.
 
 Un hallazgo mató una funcionalidad, y con razón. La promesa obvia es ofrecer sacar a la luz los trabajos que se cayeron entre las grietas, así que los buscamos dos veces: una por pedidos con material listo y sin evento, otra por primeras visitas hechas con el cristal puesto y sin retorno agendado. Ambas búsquedas volvieron vacías. No están atrasados. Eso sustituyó la promesa por velocidad y consolidación, que es la oferta honesta.
-
-## La compuerta de escritura
-
-Cada escritura al calendario pasa por dos fases y tres barreras que no dependen entre sí. Quitar cualquiera deja las otras dos en pie.
-
-1. **Gobierno**, verificado en memoria antes de cualquier llamada de red. Modelo no listado, campo no listado o archivo ausente significa denegado. Todo lo que no esté permitido explícitamente se rechaza, así que una configuración faltante falla cerrada y no abierta. Esta barrera nunca llega a la red, así que nada del lado de Odoo puede vencerla.
-2. **La propuesta y su token.** El conector vuelve a leer los registros y devuelve qué cambiaría, campo por campo, valor actual contra valor nuevo. El token de aprobación va firmado y atado a la operación, el modelo, los ids y un hash de los valores, y expira en 15 minutos. Una aprobación emitida para crear no se puede gastar en modificar, y una emitida para el registro siete no se puede gastar en el ocho.
-3. **Confirmación en el momento de ejecutar.** La pregunta se repite justo antes de escribir. Si no vuelve aceptada, no pasa nada.
-
-Modificar y eliminar operan solo por ids explícitos, nunca por criterios de búsqueda, porque una sola operación filtrada podría alcanzar cientos de registros desde una propuesta que parecía pequeña. Una serie recurrente se rechaza en lugar de adivinarse, porque en esta instancia no está verificado a qué ocurrencia alcanzaría una escritura.
 
 ## Resultados
 

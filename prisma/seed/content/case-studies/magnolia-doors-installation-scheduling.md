@@ -14,6 +14,16 @@ The assistant validates the request against the intake checklist and against Odo
 
 That line is not a policy note bolted on at the end. It is the architecture. Four of the five stages hold no write tool at all, so they could not book a job if instructed to. The fifth writes, and its barriers are structural: allowlists loaded at boot, a signed approval token bound to the exact operation, ids and values, and a confirmation asked again at the moment of execution. An instruction in a prompt can be talked around. None of those three can.
 
+## The write gate
+
+Every calendar write passes through two phases and three barriers that do not depend on each other. Removing any one still leaves the other two standing.
+
+1. **Governance**, checked in memory before any network call. Model not listed, field not listed, or file absent means denied. Anything not explicitly permitted is refused, so missing configuration fails closed rather than open. This barrier never reaches the network, so nothing on the Odoo side can defeat it.
+2. **The proposal and its token.** The connector reads the records back and returns what would change, field by field, current value against new one. The approval token is signed and bound to the exact operation, model, ids and a hash of the values, and it expires in 15 minutes. An approval issued to create cannot be spent to modify, and one issued for record seven cannot be spent on record eight.
+3. **Confirmation at the moment of execution.** The question is asked again immediately before the write. If it does not come back accepted, nothing happens.
+
+Update and delete work by explicit ids only, never by search criteria, because one filtered operation could reach hundreds of records from a proposal that looked small. A repeating series is refused rather than guessed at, because which occurrence a write would reach is unverified on this instance.
+
 ## Three layers, with a narrow contract between them
 
 - **The connector** is the only thing that touches Odoo: six tools, the governance engine, the two-phase approval gate. It is customer-agnostic and instance-agnostic, so nothing about Magnolia is written into its source.
@@ -35,16 +45,6 @@ Magnolia runs Odoo 18 Enterprise, on-premise and heavily customized, so the solu
 None of that came from asking. All of it came from reading the instance, and the distinction is worth carrying forward: a kickoff meeting gives you the process as designed, the data gives you the process as it runs.
 
 One finding killed a feature, and should have. The obvious pitch is to promise you will surface the jobs that fell through the cracks, so we looked for those twice: once for orders with material ready and no event, once for first visits done with the glass in and no return booked. Both came back empty. They are not behind on their work. That replaced the pitch with speed and consolidation, which is the honest offer.
-
-## The write gate
-
-Every calendar write passes through two phases and three barriers that do not depend on each other. Removing any one still leaves the other two standing.
-
-1. **Governance**, checked in memory before any network call. Model not listed, field not listed, or file absent means denied. Anything not explicitly permitted is refused, so missing configuration fails closed rather than open. This barrier never reaches the network, so nothing on the Odoo side can defeat it.
-2. **The proposal and its token.** The connector reads the records back and returns what would change, field by field, current value against new one. The approval token is signed and bound to the exact operation, model, ids and a hash of the values, and it expires in 15 minutes. An approval issued to create cannot be spent to modify, and one issued for record seven cannot be spent on record eight.
-3. **Confirmation at the moment of execution.** The question is asked again immediately before the write. If it does not come back accepted, nothing happens.
-
-Update and delete work by explicit ids only, never by search criteria, because one filtered operation could reach hundreds of records from a proposal that looked small. A repeating series is refused rather than guessed at, because which occurrence a write would reach is unverified on this instance.
 
 ## Results
 

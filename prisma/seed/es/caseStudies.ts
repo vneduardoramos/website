@@ -73,11 +73,11 @@ export const caseStudiesEs: Record<string, { title?: string; summary?: string; s
   },
   "magnolia-doors-installation-scheduling": {
     sector: "Manufactura",
-    seoTitle: "Agendamiento gobernado con Claude y Odoo",
-    seoDescription: "Magnolia Doors agenda instalaciones con Claude y un conector MCP a la medida para Odoo 18, con cada escritura al ERP detrás de una aprobación humana.",
-    title: "Agendar en unos tres minutos, y que nada llegue al ERP sin aprobación",
+    seoTitle: "Un agendador de IA que no escribe solo",
+    seoDescription: "Un conector MCP en producción para Odoo 18: cuatro de cinco etapas no tienen herramienta de escritura, y la quinta escribe tras tres barreras independientes.",
+    title: "Un asistente que planea 40 instalaciones por semana y no puede agendar ninguna solo",
     summary:
-      "Magnolia Doors fabrica herrería a medida en hierro y aluminio para casas de alto nivel en la zona de San Antonio, y sus propias cuadrillas la instalan. Agendar una cuadrilla implicaba cinco preguntas en cinco sistemas, y el calendario no respondía ninguna. Viewnear lo rediseñó como un flujo de cinco etapas sobre Claude y un conector Model Context Protocol a la medida para Odoo 18 Enterprise: cuatro etapas no tienen herramienta de escritura alguna, y la quinta escribe solo detrás de una allowlist, un token de aprobación firmado y una confirmación en el momento de ejecutar.",
+      "Viewnear rediseñó el agendamiento de instalaciones para Magnolia Doors, un fabricante de herrería en San Antonio cuyas propias cuadrillas instalan todo lo que fabrica, como un flujo de cinco etapas sobre Claude y un conector Model Context Protocol a la medida para Odoo 18 Enterprise. Cuatro de las cinco etapas no tienen herramienta de escritura alguna, así que no podrían agendar un trabajo aunque se les indicara. La quinta escribe solo detrás de tres barreras independientes: una allowlist verificada antes de cualquier llamada de red, un token de aprobación firmado y atado a la operación y a los ids exactos, y una confirmación que se repite en el momento de ejecutar.",
     metrics: [
       { value: "0", label: "Registros escritos en el ERP sin aprobación humana" },
       { value: "20", label: "Eventos por propuesta, creados de forma atómica" },
