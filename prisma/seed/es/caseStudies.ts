@@ -73,11 +73,11 @@ export const caseStudiesEs: Record<string, { title?: string; summary?: string; s
   },
   "magnolia-doors-installation-scheduling": {
     sector: "Manufactura",
-    seoTitle: "Un agendador de IA que no escribe solo",
-    seoDescription: "Un conector MCP en producción para Odoo 18: cuatro de cinco etapas no tienen herramienta de escritura, y la quinta escribe tras tres barreras independientes.",
-    title: "Un asistente que planea 40 instalaciones por semana y no puede agendar ninguna solo",
+    seoTitle: "Claude planea 40 instalaciones y no agenda ninguna",
+    seoDescription: "Claude y un conector MCP en producción para Odoo 18. Las reglas deciden lo que debe ser exacto, Claude lo que exige criterio, y nada se escribe sin aprobación.",
+    title: "Claude planea 40 instalaciones por semana y no puede agendar ni una sola por su cuenta",
     summary:
-      "Viewnear rediseñó el agendamiento de instalaciones para Magnolia Doors, un fabricante de herrería en San Antonio cuyas propias cuadrillas instalan todo lo que fabrica, como un flujo de cinco etapas sobre Claude y un conector Model Context Protocol a la medida para Odoo 18 Enterprise. Cuatro de las cinco etapas no tienen herramienta de escritura alguna, así que no podrían agendar un trabajo aunque se les indicara. La quinta escribe solo detrás de tres barreras independientes: una allowlist verificada antes de cualquier llamada de red, un token de aprobación firmado y atado a la operación y a los ids exactos, y una confirmación que se repite en el momento de ejecutar.",
+      "Viewnear rediseñó el agendamiento de instalaciones para Magnolia Doors, un fabricante de herrería en San Antonio cuyas propias cuadrillas instalan todo lo que fabrica, en torno a Claude y un conector Model Context Protocol a la medida para Odoo 18 Enterprise. Las reglas deterministas son dueñas de lo que debe ser exacto; Claude se encarga de lo que las reglas hacen mal: leer el alcance escrito en vez de las casillas, explicar por qué un trabajo no puede avanzar y nombrar la base de cada inferencia. Cuatro de las cinco etapas no tienen herramienta de escritura, y la quinta escribe solo detrás de una allowlist, un token de aprobación firmado y una confirmación al ejecutar.",
     metrics: [
       { value: "0", label: "Registros escritos en el ERP sin aprobación humana" },
       { value: "20", label: "Eventos por propuesta, creados de forma atómica" },

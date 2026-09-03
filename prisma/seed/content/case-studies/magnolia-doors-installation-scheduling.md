@@ -10,9 +10,27 @@ The company runs 30 to 40 installation events a week, and 157 in its busiest mon
 
 The solution automates everything except the booking.
 
-The assistant validates the request against the intake checklist and against Odoo, proves the material is in the shop trip by trip, reads the live calendar for occupancy and time off, works out the trip plan, the arrival window, the crew and the priority, groups the jobs geographically, and writes the event exactly as their calendar expects to receive it. Then it stops and shows its work. A person approves, and only then does anything change in the ERP.
+Claude validates the request against the intake checklist and against Odoo, proves the material is in the shop trip by trip, reads the live calendar for occupancy and time off, works out the trip plan, the arrival window, the crew and the priority, groups the jobs geographically, and writes the event exactly as their calendar expects to receive it. Then it stops and shows its work. A person approves, and only then does anything change in the ERP.
 
 That line is not a policy note bolted on at the end. It is the architecture. Four of the five stages hold no write tool at all, so they could not book a job if instructed to. The fifth writes, and its barriers are structural: allowlists loaded at boot, a signed approval token bound to the exact operation, ids and values, and a confirmation asked again at the moment of execution. An instruction in a prompt can be talked around. None of those three can.
+
+## Where Claude earns its place, and where it is not trusted
+
+The design draws a hard line between what is settled by rule and what needs judgment, and Claude sits on only one side of it.
+
+Deterministic rules own everything that has to be exact: required fields, material readiness, the trip count for each product and job type, the arrival window for each client type, the postal code tables. Those are enforced as written rules, and the model is never asked to weigh them.
+
+Claude owns what rules are bad at.
+
+- **Reading the scope rather than the checkboxes.** The job type comes from the written scope on the request, because the form frequently has several boxes marked at once and the prose is the reliable half. Ten job types are read that way.
+- **Explaining why a job cannot proceed.** A blocked job is listed with its reason and its owner rather than quietly dropped from the plan, and priority always arrives carrying its reason instead of as a bare number.
+- **Naming the basis for an inference.** Crew choice states what it was inferred from, because "no booking that day and no time off event" is a basis and silence is not. A coordinator can overrule a stated basis; they cannot overrule a silent one.
+- **Reconciling records that disagree.** The same builder is spelled three different ways across the workbook, the request and Odoo. When a match is approximate the rule still applies, and the approximation is stated so a person can check it.
+- **Writing the weekly operations summary**, a five-point agenda in Spanish, from Magnolia's own guide.
+
+And one thing it is deliberately not trusted with. Claude never marks a job confirmed, because that is a claim about a conversation with a client and it has no way to verify one. An email that reads like a confirmation, a builder saying they are good, the date simply arriving: none of those are the instruction. Only the coordinator sets that word, for a named event, in that run. The same rule has a subtler edge now that events can be edited: the status word carries through untouched when a title is corrected for any other reason, because dropping or upgrading it while tidying a title is the likeliest way this goes wrong.
+
+The verdicts follow the same instinct. Ready to schedule, incomplete, needs review and cannot complete are four rather than two, because "I looked and it is not there" and "I could not look" are different statements, and collapsing them is how a system starts lying quietly. A tool outage is reported as an outage; it never becomes a missing document sent back to sales, because sales did attach the file.
 
 ## The write gate
 
@@ -29,8 +47,8 @@ Update and delete work by explicit ids only, never by search criteria, because o
 ## Three layers, with a narrow contract between them
 
 - **The connector** is the only thing that touches Odoo: six tools, the governance engine, the two-phase approval gate. It is customer-agnostic and instance-agnostic, so nothing about Magnolia is written into its source.
-- **The skills** carry Magnolia's operations knowledge: the intake checklist, the readiness tests, the trip rules, the arrival windows, the crew roster, the title convention, the postal code tables. No credentials, no Odoo access of their own, no write tool.
-- **The client** is where the person sits, in Claude on the desktop or the web, with the same tools and the same governance either way.
+- **Five Claude skills** carry Magnolia's operations knowledge: the intake checklist, the readiness tests, the trip rules, the arrival windows, the crew roster, the title convention, the postal code tables. They hold no credentials, no Odoo access of their own and no write tool, and they reach the team through a private plugin marketplace synced from git rather than archives each person installs by hand.
+- **Claude on the desktop or the web** is where the person sits. An owner connects the organization once and the whole team inherits the same tools and the same governance, with nothing installed on anybody's machine.
 
 The connector exposes no general method-call tool. It cannot confirm a quotation or post an invoice, and anything it creates sits in draft for a person to finish inside Odoo. On the calendar side the scoping is harder still: creating, modifying and deleting all point at one model, `calendar.event`, and at eight fields. Nothing else in the instance can be changed by this system at all.
 

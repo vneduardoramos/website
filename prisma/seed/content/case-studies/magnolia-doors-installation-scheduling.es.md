@@ -10,9 +10,27 @@ La empresa maneja de 30 a 40 eventos de instalación por semana, y 157 en su mes
 
 La solución automatiza todo excepto la reserva.
 
-El asistente valida la solicitud contra la lista de intake y contra Odoo, comprueba viaje por viaje que el material está en el taller, lee el calendario en vivo para ocupación y ausencias, determina el plan de viajes, la ventana de llegada, la cuadrilla y la prioridad, agrupa los trabajos geográficamente y redacta el evento tal como su calendario espera recibirlo. Después se detiene y muestra su trabajo. Una persona aprueba, y solo entonces cambia algo en el ERP.
+Claude valida la solicitud contra la lista de intake y contra Odoo, comprueba viaje por viaje que el material está en el taller, lee el calendario en vivo para ocupación y ausencias, determina el plan de viajes, la ventana de llegada, la cuadrilla y la prioridad, agrupa los trabajos geográficamente y redacta el evento tal como su calendario espera recibirlo. Después se detiene y muestra su trabajo. Una persona aprueba, y solo entonces cambia algo en el ERP.
 
 Esa línea no es una nota de política añadida al final. Es la arquitectura. Cuatro de las cinco etapas no tienen herramienta de escritura alguna, así que no podrían agendar un trabajo aunque se les indicara. La quinta escribe, y sus barreras son estructurales: allowlists cargadas al arranque, un token de aprobación firmado y atado a la operación exacta, a los ids y a los valores, y una confirmación que se vuelve a pedir en el momento de ejecutar. Una instrucción en un prompt se puede rodear. Ninguna de esas tres.
+
+## Dónde aporta Claude, y dónde no se le confía
+
+El diseño traza una línea dura entre lo que se resuelve por regla y lo que exige criterio, y Claude está de un solo lado de esa línea.
+
+Las reglas deterministas son dueñas de todo lo que debe ser exacto: campos obligatorios, disponibilidad de materiales, el número de viajes según producto y tipo de trabajo, la ventana de llegada según tipo de cliente, las tablas de códigos postales. Eso se aplica como reglas escritas, y al modelo nunca se le pide ponderarlas.
+
+Claude se encarga de lo que las reglas hacen mal.
+
+- **Leer el alcance y no las casillas.** El tipo de trabajo sale del alcance escrito en la solicitud, porque el formato suele traer varias casillas marcadas a la vez y la prosa es la mitad confiable. Diez tipos de trabajo se leen así.
+- **Explicar por qué un trabajo no puede avanzar.** Un trabajo bloqueado se lista con su motivo y su responsable en lugar de desaparecer del plan, y la prioridad siempre llega con su razón y no como un número suelto.
+- **Nombrar la base de una inferencia.** La elección de cuadrilla declara de qué se infirió, porque "sin agenda ese día y sin evento de ausencia" es una base y el silencio no lo es. Un coordinador puede contradecir una base declarada; no puede contradecir una silenciosa.
+- **Reconciliar registros que no coinciden.** El mismo constructor aparece escrito de tres formas distintas entre el libro de producción, la solicitud y Odoo. Cuando la coincidencia es aproximada la regla se aplica igual, y se declara que fue aproximada para que una persona lo revise.
+- **Redactar el resumen semanal de operaciones**, una agenda de cinco puntos en español, a partir de la guía de Magnolia.
+
+Y hay algo con lo que deliberadamente no se le confía. Claude nunca marca un trabajo como confirmado, porque eso es una afirmación sobre una conversación con un cliente y no tiene forma de verificarla. Un correo que suena a confirmación, un constructor que dice que todo bien, la fecha que simplemente llega: ninguna de esas cosas es la instrucción. Solo el coordinador escribe esa palabra, para un evento nombrado, en esa corrida. La regla tiene un filo más sutil ahora que los eventos se pueden editar: la palabra de estado se conserva intacta cuando un título se corrige por cualquier otro motivo, porque quitarla o subirla mientras se ordena un título es la forma más probable de equivocarse.
+
+Los veredictos siguen el mismo instinto. Listo para agendar, incompleto, requiere revisión y no se puede completar son cuatro y no dos, porque "busqué y no está" y "no pude buscar" son afirmaciones distintas, y juntarlas es como un sistema empieza a mentir en silencio. Una falla de herramienta se reporta como falla; nunca se convierte en un documento faltante devuelto a ventas, porque ventas sí adjuntó el archivo.
 
 ## La compuerta de escritura
 
@@ -29,8 +47,8 @@ Modificar y eliminar operan solo por ids explícitos, nunca por criterios de bú
 ## Tres capas, con un contrato estrecho entre ellas
 
 - **El conector** es lo único que toca Odoo: seis herramientas, el motor de gobierno y la compuerta de aprobación en dos fases. Es agnóstico al cliente y a la instancia, así que nada de Magnolia está escrito en su código.
-- **Las skills** llevan el conocimiento operativo de Magnolia: la lista de intake, las pruebas de disponibilidad, las reglas de viajes, las ventanas de llegada, el roster de cuadrillas, la convención de títulos y las tablas de códigos postales. Sin credenciales, sin acceso propio a Odoo, sin herramienta de escritura.
-- **El cliente** es donde está la persona, en Claude de escritorio o en la web, con las mismas herramientas y el mismo gobierno en ambos casos.
+- **Cinco skills de Claude** llevan el conocimiento operativo de Magnolia: la lista de intake, las pruebas de disponibilidad, las reglas de viajes, las ventanas de llegada, el roster de cuadrillas, la convención de títulos y las tablas de códigos postales. No tienen credenciales, ni acceso propio a Odoo, ni herramienta de escritura, y llegan al equipo por un marketplace privado de plugins sincronizado desde git, en lugar de archivos que cada persona instala a mano.
+- **Claude de escritorio o en la web** es donde está la persona. Un owner conecta la organización una vez y todo el equipo hereda las mismas herramientas y el mismo gobierno, sin instalar nada en ninguna máquina.
 
 El conector no expone ninguna herramienta genérica de llamada a métodos. No puede confirmar una cotización ni registrar una factura, y todo lo que crea queda en borrador para que una persona lo termine dentro de Odoo. Del lado del calendario el alcance es aún más estrecho: crear, modificar y eliminar apuntan a un solo modelo, `calendar.event`, y a ocho campos. Nada más en la instancia puede ser modificado por este sistema.
 
