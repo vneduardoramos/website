@@ -1,58 +1,83 @@
 ## Challenge
 
-Magnolia Doors designs, manufactures, installs, and services custom iron and aluminum doors, windows, gates, railings, and architectural metalwork.
+Magnolia Doors builds custom iron and aluminum doors, gates, railings and glass for high-end homes and builders around San Antonio, and its own crews install everything it makes. Getting a crew to a house is the bottleneck of the whole business, and it was done by hand.
 
-Scheduling a custom installation is not a standard service appointment. Before a date can be assigned, the team has to confirm that the request is complete, that the correct job has been identified, that the physical materials are ready, that the installation information is accurate, and that the appointment fits the operational schedule.
+A request arrives from sales as a PDF. Someone then works out whether the paperwork is complete, whether the unit and the glass are physically in the shop, who is already booked that day and where, what trip plan the job needs, and what arrival window to promise. Five questions, five places to look, and no single screen answers any of them.
 
-The company runs roughly 30 to 40 installation events a week. Preparing each one took 23 to 35 minutes of administrative work across request validation, material checks, scheduling, calendar creation, and reporting: 13 to 17 hours every week spent getting jobs onto a calendar.
+The company runs 30 to 40 installation events a week, and 157 in its busiest month on record.
 
-Data quality made it riskier than it was slow. Contradictory ZIP codes, incorrect addresses, and information read from the wrong title all affect routing and scheduling. In one representative case, a misread title would have placed an installation about 175 miles off the correct route.
+## The line we drew
 
-A faster process alone would not have solved it. Magnolia Doors also needed a guarantee that incomplete jobs could not be scheduled, and that an AI assistant could not change production data without a person authorizing it.
+The solution automates everything except the booking.
 
-## Solution: five stages, with Odoo as the system of record
+The assistant validates the request against the intake checklist and against Odoo, proves the material is in the shop trip by trip, reads the live calendar for occupancy and time off, works out the trip plan, the arrival window, the crew and the priority, groups the jobs geographically, and writes the event exactly as their calendar expects to receive it. Then it stops and shows its work. A person approves, and only then does anything change in the ERP.
 
-Viewnear rebuilt the process as a controlled five-stage workflow around Claude and Odoo 18/19.
+That line is not a policy note bolted on at the end. It is the architecture. Four of the five stages hold no write tool at all, so they could not book a job if instructed to. The fifth writes, and its barriers are structural: allowlists loaded at boot, a signed approval token bound to the exact operation, ids and values, and a confirmation asked again at the moment of execution. An instruction in a prompt can be talked around. None of those three can.
 
-A custom Model Context Protocol connector gives Claude structured access to the operational data and actions that installation scheduling needs. Odoo stays the system of record. Claude coordinates retrieval, applies the workflow, explains exceptions, and prepares the actions it recommends.
+## Three layers, with a narrow contract between them
 
-1. **Request validation.** Claude checks that the service request carries the required customer, project, address, and installation information. Contradictory or incomplete records are flagged before scheduling continues.
-2. **Material-readiness verification.** The workflow reads the related Odoo records to confirm the physical materials are ready. Jobs that fail the readiness rules are excluded and reported with the reason.
-3. **Batched schedule generation.** Eligible jobs are processed together. Claude prepares one consolidated proposal for the whole group rather than making the team schedule each job separately.
-4. **Human approval and execution.** Claude presents the proposed calendar actions for review. Only after an authorized user approves does a separate execution call create or update the records in Odoo.
-5. **Weekly management reporting.** Claude produces an operational summary of scheduled installations, blocked requests, material issues, exceptions, and follow-ups.
+- **The connector** is the only thing that touches Odoo: six tools, the governance engine, the two-phase approval gate. It is customer-agnostic and instance-agnostic, so nothing about Magnolia is written into its source.
+- **The skills** carry Magnolia's operations knowledge: the intake checklist, the readiness tests, the trip rules, the arrival windows, the crew roster, the title convention, the postal code tables. No credentials, no Odoo access of their own, no write tool.
+- **The client** is where the person sits, in Claude on the desktop or the web, with the same tools and the same governance either way.
 
-## Deterministic rules, and where the model actually helps
+The connector exposes no general method-call tool. It cannot confirm a quotation or post an invoice, and anything it creates sits in draft for a person to finish inside Odoo. On the calendar side the scoping is harder still: creating, modifying and deleting all point at one model, `calendar.event`, and at eight fields. Nothing else in the instance can be changed by this system at all.
 
-The design separates business rules from the model's reasoning. Required fields and material-readiness conditions are enforced as defined rules, not left to interpretation. Claude handles what rules are bad at: reading operational context, organizing results, spotting contradictions, and explaining why a job can or cannot proceed.
+## What the instance actually was
 
-The connector draws the same line between reading and writing. Claude can retrieve everything it needs to build a recommendation without holding authority to change Odoo records.
+Magnolia runs Odoo 18 Enterprise, on-premise and heavily customized, so the solution discovers the instance at runtime rather than assuming its shape. We measured the live instance before designing anything, and almost everything a reasonable person would assume about a scheduling calendar turned out to be false here. Each false assumption carried a concrete cost.
 
-## Delivery to production
+- **The event does not carry the address.** The location field is empty on every one of the last 500 events, and no address carries coordinates. Geography takes three hops through the order.
+- **The stored time is not the arrival time.** The window lives in the title text, and of 166 titles carrying one, only 11 agreed with the stored hour. Hour-level conflict checks against their data are meaningless, so occupancy is checked by day.
+- **An order is not found by searching a prefix plus digits.** 256 of 3,380 events carry more than one order and only the first takes the prefix. That pattern missed 132 of 954 order numbers, one job in seven.
+- **A cancelled event is not archived.** Cancelled work is marked in the title, so an archive filter reads dropped jobs as live.
+- **Time off lives in no HR record.** It exists only as all-day calendar events, which makes the calendar the single source for availability.
 
-Viewnear delivered in phases through August 2026.
+None of that came from asking. All of it came from reading the instance, and the distinction is worth carrying forward: a kickoff meeting gives you the process as designed, the data gives you the process as it runs.
 
-The first phase established the read-only connector, the business rules engine, and the approval-gate architecture. Claude could retrieve and evaluate live Odoo data and could not modify production records.
+One finding killed a feature, and should have. The obvious pitch is to promise you will surface the jobs that fell through the cracks, so we looked for those twice: once for orders with material ready and no event, once for first visits done with the glass in and no return booked. Both came back empty. They are not behind on their work. That replaced the pitch with speed and consolidation, which is the honest offer.
 
-Internal testing surfaced a scalability problem. Jobs were being processed one at a time, which produced a 20-minute run and one duplicate action in a representative test. The workflow was redesigned around batch processing so multiple requests are evaluated together, grouped into one proposal, and submitted through a single approval, with additional checks against duplicate execution.
+## The write gate
 
-For the customer demonstration, Claude read live data from the production environment while every write was directed into an isolated sandbox, so the workflow could be exercised against realistic records without touching production calendars.
+Every calendar write passes through two phases and three barriers that do not depend on each other. Removing any one still leaves the other two standing.
 
-After the customer validated it, Viewnear deployed a hosted connector with the required authentication and environment controls. The first production release deliberately created approved records only. Modification and deletion came later, once the creation path had proven itself, because those actions carry more operational risk.
+1. **Governance**, checked in memory before any network call. Model not listed, field not listed, or file absent means denied. Anything not explicitly permitted is refused, so missing configuration fails closed rather than open. This barrier never reaches the network, so nothing on the Odoo side can defeat it.
+2. **The proposal and its token.** The connector reads the records back and returns what would change, field by field, current value against new one. The approval token is signed and bound to the exact operation, model, ids and a hash of the values, and it expires in 15 minutes. An approval issued to create cannot be spent to modify, and one issued for record seven cannot be spent on record eight.
+3. **Confirmation at the moment of execution.** The question is asked again immediately before the write. If it does not come back accepted, nothing happens.
+
+Update and delete work by explicit ids only, never by search criteria, because one filtered operation could reach hundreds of records from a proposal that looked small. A repeating series is refused rather than guessed at, because which occurrence a write would reach is unverified on this instance.
 
 ## Results
 
-- Scheduling dropped from **23 to 35 minutes** per event to **about 3 minutes**, a reduction of **87% to 91%**.
-- Weekly scheduling workload fell from **13 to 17 hours** to roughly **1.5 to 2 hours**.
-- Around **15 to 19 administrative hours** are returned each week, about 3 to 4 hours per business day.
-- **30 to 40 installation events** a week run through one governed workflow instead of an independent sequence of manual checks per job.
+Batch scheduling is where it multiplies. An internal rehearsal, before the customer saw it, took **21 minutes and 20 separate steps** to schedule several jobs, and the second event came out as a duplicate of the first. That was not a connector fault; the connector did exactly what it was asked, twice. Today up to **20 events travel in a single proposal under one approval, created atomically**, so it is all of them or none. A full day is approved in about a minute and a week fits in two or three proposals. The duplicate problem is gone by design rather than by being careful.
 
-Error reduction has not been measured as a percentage yet, so there is no figure to publish. What the workflow does do is catch contradictory operational data before anything reaches the calendar: the validation logic surfaced the conflicting ZIP code and title that would have sent an installation 175 miles off route, and it surfaced it for review rather than acting on it.
+Measured against production:
 
-Every state-changing operation stays behind the approval gate. Claude evaluates records and recommends actions; it cannot create, modify, or delete production data without explicit authorization.
+- **28.5 fewer miles** over a real week from ordering the day properly. On one Hill Country spread, evaluating every possible order including the drive home produced 137.3 miles against 153.4 for the greedy route: 16 miles on a single day, from sequencing alone.
+- **8 of 8** material readiness cases agreed with the production workbook.
+- **6 of 344** delivery addresses carry a postal code that contradicts its own city by more than 25 miles. That data is confidently wrong, which is worse than missing.
+- **343 tests passing**, with Odoo mocked, so the suite runs without a live instance.
+- **Zero** ERP records written without an explicit human approval.
+
+The title-reading rule prevents something that already happened during development: a street number read as an order number put a job 175 miles off route into the day. Order numbers in titles are free text written by a person in a hurry, and 440 are written glued against 139 spaced, so the obvious pattern silently loses three quarters of them.
+
+### What is estimated, and what that means
+
+The per-event minutes are an estimate. Scheduling by hand is put at 23 to 35 minutes and roughly 3 minutes with the connector, which is where the weekly figure of 15 to 19 hours comes from. Those minutes were built by listing the work the data proves has to happen, not by timing a person doing it, so they are a reasoned estimate rather than a measurement, and we are not going to present them as one.
+
+Turning that into hard data is cheap: time 10 jobs before and 10 after, from the request arriving to the event landing on the calendar. Then the number belongs to Magnolia rather than to our assumption.
+
+## What is not built
+
+The solution is in production against the live instance, and three things are deliberately incomplete.
+
+- **Intake is still manual.** The skill accepts a mailbox source, but the mailbox is not connected, so somebody still carries the PDF across by hand.
+- **Crew matching is partial.** The roster is readable and availability is checked, but who is qualified for what exists in no system.
+- **The 45-minute travel rule is answered only where real routing data covers the pair of postal codes.** Everywhere else the time is reported as unconfirmed and never estimated from the distance. In the Hill Country the two genuinely diverge: postal codes twelve miles apart on a map can be fifty minutes apart by road.
+
+Of the twelve constraints the owner called the most important part of scheduling, three are covered by data that exists somewhere and seven exist in no system at all. Those live in a PDF and in one person's head, and automating them means capturing them somewhere first, which is a business change before it is a software one.
 
 ## Business impact
 
-Magnolia Doors turned up to 17 hours of weekly scheduling into a workflow that handles each event in about three minutes, and the team still works inside Odoo rather than maintaining a second scheduling system.
+What a run delivers are proposals, not bookings. Missing is missing: a trip count, an address, an access detail, a drive time or a crew's availability is never invented, and a job whose facts are not there is blocked and named rather than quietly scheduled. Zero rows is not zero work, because "no events match the filter" and "I could not read" are different statements and are never collapsed.
 
-The value is not only speed. The workflow verifies whether an installation is genuinely ready, detects contradictory information, explains exceptions, consolidates eligible jobs into one schedule, and leaves a person in control of every production action. That combination is what makes it safe to extend the same pattern to the next process.
+That is what makes the rest of it trustworthy against a live ERP, and it is what makes the same pattern safe to extend to the next process.

@@ -73,16 +73,16 @@ export const caseStudiesEs: Record<string, { title?: string; summary?: string; s
   },
   "magnolia-doors-installation-scheduling": {
     sector: "Manufactura",
-    seoTitle: "Programación 91% más rápida con Claude",
-    seoDescription: "Magnolia Doors bajó la programación de instalaciones de 23-35 minutos a unos 3 minutos con Claude y un conector MCP a la medida para Odoo.",
-    title: "Programación de instalaciones hasta 91% más rápida, con una persona aprobando cada escritura",
+    seoTitle: "Agendamiento gobernado con Claude y Odoo",
+    seoDescription: "Magnolia Doors agenda instalaciones con Claude y un conector MCP a la medida para Odoo 18, con cada escritura al ERP detrás de una aprobación humana.",
+    title: "Agendar en unos tres minutos, y que nada llegue al ERP sin aprobación",
     summary:
-      "Magnolia Doors fabrica e instala herrería arquitectónica a medida en hierro y aluminio, y dedicaba de 13 a 17 horas por semana a poner entre 30 y 40 instalaciones en el calendario. Viewnear rediseñó el proceso como un flujo de cinco etapas sobre Claude y un conector Model Context Protocol a la medida para Odoo 18/19: reglas deterministas deciden qué es elegible, Claude lee el contexto y explica las excepciones, y ningún registro de producción cambia sin aprobación humana.",
+      "Magnolia Doors fabrica herrería a medida en hierro y aluminio para casas de alto nivel en la zona de San Antonio, y sus propias cuadrillas la instalan. Agendar una cuadrilla implicaba cinco preguntas en cinco sistemas, y el calendario no respondía ninguna. Viewnear lo rediseñó como un flujo de cinco etapas sobre Claude y un conector Model Context Protocol a la medida para Odoo 18 Enterprise: cuatro etapas no tienen herramienta de escritura alguna, y la quinta escribe solo detrás de una allowlist, un token de aprobación firmado y una confirmación en el momento de ejecutar.",
     metrics: [
-      { value: "87–91%", label: "Menos tiempo de programación por evento" },
-      { value: "3 min", label: "Por evento, antes de 23 a 35 minutos" },
-      { value: "15–19 hrs", label: "Trabajo administrativo recuperado por semana" },
-      { value: "30–40", label: "Eventos de instalación por semana" },
+      { value: "0", label: "Registros escritos en el ERP sin aprobación humana" },
+      { value: "20", label: "Eventos por propuesta, creados de forma atómica" },
+      { value: "30–40", label: "Eventos de instalación por semana, 157 en el pico" },
+      { value: "~3 min", label: "Por evento, desde un estimado de 23 a 35 a mano" },
     ],
   },
 };
