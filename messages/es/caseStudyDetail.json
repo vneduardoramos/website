@@ -21,6 +21,7 @@
   ],
   "leadershipLabel": "Entregado por Viewnear, y este es el equipo que dirige el trabajo. El nombre del cliente se reserva; el nuestro no.",
   "leadershipLabelNamed": "Entregado por Viewnear, y este es el equipo que dirige el trabajo.",
+  "stackLabel": "Construido con",
   "story": {
     "eyebrow": "El proyecto",
     "title": "Lo que Viewnear entregó para {clientName}",

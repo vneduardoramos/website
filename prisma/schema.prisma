@@ -148,6 +148,9 @@ model CaseStudy {
   // withheld at the client's request. A story the customer approved by name has
   // to switch both off, or the page contradicts its own body copy.
   clientNamed      Boolean   @default(false)
+  // JSON string[]: the named products/platforms the engagement was built on,
+  // e.g. ["Claude for Teams","Claude Code","Model Context Protocol","Odoo 18/19"].
+  stack            String?
   challenge        String?
   solution         String?
   results          String?

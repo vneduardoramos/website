@@ -14,7 +14,7 @@ import { CoverCard } from "@/components/marketing/CoverCard";
 import { coverForSector } from "@/lib/covers";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { Markdown } from "@/lib/content";
-import { asObjectArray, parseJson } from "@/lib/utils";
+import { asObjectArray, asStringArray, parseJson } from "@/lib/utils";
 import { JsonLd } from "@/components/JsonLd";
 import { MaskReveal } from "@/components/marketing/Motion";
 import { theme } from "@/config/theme";
@@ -84,6 +84,12 @@ export default async function CaseStudyDetailPage({
   );
   const metrics = dbMetrics.length > 0 ? dbMetrics : FALLBACK_METRICS;
 
+  // The named products this engagement was built on. Only rendered when the
+  // record carries them, so the five Snowflake studies are untouched.
+  const stack = asStringArray(cs.stack);
+  // A named customer can show their mark; an anonymized one obviously cannot.
+  const clientLogo = named ? cs.client?.logoColor : null;
+
   // DB-driven pull quote.
   const quote = parseJson<{ text?: string; author?: string; role?: string } | null>(
     cs.quote,
@@ -144,6 +150,15 @@ export default async function CaseStudyDetailPage({
           </h1>
           <p className="mt-6 text-lg text-muted">{cs.summary}</p>
           <p className="mt-4 text-sm text-muted">{named ? t("namedNote", { clientName }) : t("anonNote")}</p>
+          {clientLogo && (
+            <Image
+              src={clientLogo}
+              alt={clientName}
+              width={813}
+              height={115}
+              className="mt-6 h-8 w-auto md:h-9"
+            />
+          )}
         </div>
       </Section>
 
@@ -172,6 +187,19 @@ export default async function CaseStudyDetailPage({
           <div className="relative">
             <p className="eyebrow mb-8 text-center">{t("metrics.eyebrow")}</p>
             <MetricBand metrics={metrics} />
+            {stack.length > 0 && (
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
+                <span className="eyebrow">{t("stackLabel")}</span>
+                {stack.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-border bg-background px-3 py-1 text-sm text-foreground"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         </div>
         {/* Anonymization flipped into a strength: the client stays unnamed,

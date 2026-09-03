@@ -187,6 +187,7 @@ async function main() {
       featured: cs.featured,
       order: cs.order,
       clientNamed: cs.clientNamed ?? false,
+      stack: cs.stack ? J(cs.stack) : null,
       body: readBody("case-studies", cs.slug) ?? cs.body ?? null,
       metrics: cs.metrics ? J(cs.metrics) : null,
       quote: cs.quote ? J(cs.quote) : null,

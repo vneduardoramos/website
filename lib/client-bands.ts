@@ -29,6 +29,9 @@ export const LOGO_CATALOG: { key: string; src: string; alt: string; w: number; h
   { key: "hussmann", src: "/assets/images/clients/hussmann.png", alt: "Hussmann", w: 586, h: 115 },
   { key: "lendz", src: "/assets/images/clients/lendz.png", alt: "Lendz", w: 353, h: 115 },
   { key: "difrenosa", src: "/assets/images/clients/difrenosa.png", alt: "Difrenosa", w: 675, h: 115 },
+  // Recolored from the customer's white knockout asset to the site's ink so it
+  // reads on a light surface; alpha (and therefore the artwork) is unchanged.
+  { key: "magnolia-doors", src: "/assets/images/clients/magnolia-doors.png", alt: "Magnolia Doors", w: 813, h: 115 },
 ];
 
 function fromCatalog(key: string): BandLogo {

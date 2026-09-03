@@ -21,6 +21,7 @@
   ],
   "leadershipLabel": "Delivered by Viewnear, and this is who leads the work. The client's name is withheld; ours isn't.",
   "leadershipLabelNamed": "Delivered by Viewnear, and this is who leads the work.",
+  "stackLabel": "Built with",
   "story": {
     "eyebrow": "The engagement",
     "title": "How Viewnear delivered for {clientName}",
