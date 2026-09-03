@@ -18,6 +18,8 @@ That line is not a policy note bolted on at the end. It is the architecture. Fou
 
 Every calendar write passes through two phases and three barriers that do not depend on each other. Removing any one still leaves the other two standing.
 
+![Propose, then commit. The assistant calls the tool with no approval token. Barrier one is the allowlist, checked in memory before any network call. The connector reads the records back from Odoo and returns a proposal with a signed token that expires in 15 minutes. A person approves. Barrier two verifies the signature, expiry, operation, model, ids and values. Barrier three asks for confirmation again at the moment of execution. Any barrier failing means nothing is written.](/assets/images/cases/magnolia-doors-write-gate.svg)
+
 1. **Governance**, checked in memory before any network call. Model not listed, field not listed, or file absent means denied. Anything not explicitly permitted is refused, so missing configuration fails closed rather than open. This barrier never reaches the network, so nothing on the Odoo side can defeat it.
 2. **The proposal and its token.** The connector reads the records back and returns what would change, field by field, current value against new one. The approval token is signed and bound to the exact operation, model, ids and a hash of the values, and it expires in 15 minutes. An approval issued to create cannot be spent to modify, and one issued for record seven cannot be spent on record eight.
 3. **Confirmation at the moment of execution.** The question is asked again immediately before the write. If it does not come back accepted, nothing happens.

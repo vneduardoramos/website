@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 762" width="720" height="762" role="img" aria-labelledby="wg-title wg-desc" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <title id="wg-title">Proponer y luego ejecutar: las tres barreras de cada escritura al calendario</title>
+  <desc id="wg-desc">Una escritura empieza cuando el asistente llama a la herramienta sin token de aprobación. La barrera uno es la allowlist, verificada en memoria antes de cualquier llamada de red. El conector vuelve a leer los registros de Odoo y devuelve una propuesta con un token firmado que expira en quince minutos. Un coordinador aprueba. La barrera dos verifica la firma, la expiración y que la operación, el modelo, los ids y los valores coincidan con el token. La barrera tres pide confirmación otra vez en el momento de ejecutar. Solo entonces la escritura llega a Odoo. Si falla cualquier barrera, no se escribe nada.</desc>
+  <defs><marker id="wg-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#546C7E"/></marker></defs>
+  <rect width="720" height="762" fill="#FFFFFF"/>
+  <text x="34" y="30" font-size="11" font-weight="700" letter-spacing="1.6" fill="#0B6E99">FASE 1 · PROPONER</text>
+  <rect x="34" y="46" width="652" height="63" rx="10" fill="#F6FAFD" stroke="#E0EBF4" stroke-width="1"/>
+  <text x="58" y="70" font-size="14" font-weight="600" fill="#0F2530">El asistente llama a la herramienta</text>
+  <text x="58" y="89" font-size="12.5" fill="#546C7E">Aún sin token de aprobación. Cuatro de las cinco etapas no tienen herramienta de escritura.</text>
+  <line x1="360" y1="111" x2="360" y2="127" stroke="#546C7E" stroke-width="1.5" marker-end="url(#wg-arrow)"/>
+  <rect x="34" y="129" width="652" height="82" rx="10" fill="#FFFFFF" stroke="#2C53C8" stroke-width="2"/>
+  <rect x="34" y="129" width="6" height="82" rx="3" fill="#2C53C8"/>
+  <text x="58" y="153" font-size="11" font-weight="700" letter-spacing="1.2" fill="#2C53C8">BARRERA 1 · GOBIERNO</text>
+  <text x="58" y="172" font-size="13.5" font-weight="600" fill="#0F2530">La allowlist, verificada en memoria. Modelo, campo o archivo ausente significa denegado.</text>
+  <text x="58" y="191" font-size="12.5" fill="#546C7E">Nunca llega a la red, así que nada del lado de Odoo puede vencerla.</text>
+  <line x1="360" y1="213" x2="360" y2="229" stroke="#546C7E" stroke-width="1.5" marker-end="url(#wg-arrow)"/>
+  <rect x="34" y="231" width="652" height="63" rx="10" fill="#F6FAFD" stroke="#E0EBF4" stroke-width="1"/>
+  <text x="58" y="255" font-size="14" font-weight="600" fill="#0F2530">El conector vuelve a leer los registros de Odoo</text>
+  <text x="58" y="274" font-size="12.5" fill="#546C7E">Título, inicio, fin y asistentes actuales, para que la propuesta muestre valores reales.</text>
+  <line x1="360" y1="296" x2="360" y2="312" stroke="#546C7E" stroke-width="1.5" marker-end="url(#wg-arrow)"/>
+  <rect x="34" y="314" width="652" height="82" rx="10" fill="#F6FAFD" stroke="#E0EBF4" stroke-width="1"/>
+  <text x="58" y="338" font-size="14" font-weight="600" fill="#0F2530">Una propuesta, más un token firmado que expira en 15 minutos</text>
+  <text x="58" y="357" font-size="12.5" fill="#546C7E">Cada campo como está frente a lo que sería, los ids y a quién se notifica.</text>
+  <text x="58" y="376" font-size="12.5" fill="#546C7E">Todavía no se ha escrito nada.</text>
+  <line x1="360" y1="398" x2="360" y2="414" stroke="#546C7E" stroke-width="1.5" marker-end="url(#wg-arrow)"/>
+  <text x="34" y="440" font-size="11" font-weight="700" letter-spacing="1.6" fill="#0B6E99">FASE 2 · EJECUTAR</text>
+  <line x1="34" y1="450" x2="686" y2="450" stroke="#E0EBF4" stroke-width="1" stroke-dasharray="4 4"/>
+  <rect x="34" y="468" width="652" height="63" rx="10" fill="#FFFFFF" stroke="#B45309" stroke-width="2"/>
+  <rect x="34" y="468" width="6" height="63" rx="3" fill="#B45309"/>
+  <text x="58" y="492" font-size="14" font-weight="700" fill="#B45309">Una persona aprueba</text>
+  <text x="58" y="511" font-size="12.5" fill="#546C7E">La misma llamada, ahora con el token. Es la única forma de pasar esta línea.</text>
+  <line x1="360" y1="533" x2="360" y2="549" stroke="#546C7E" stroke-width="1.5" marker-end="url(#wg-arrow)"/>
+  <rect x="34" y="551" width="652" height="82" rx="10" fill="#FFFFFF" stroke="#2C53C8" stroke-width="2"/>
+  <rect x="34" y="551" width="6" height="82" rx="3" fill="#2C53C8"/>
+  <text x="58" y="575" font-size="11" font-weight="700" letter-spacing="1.2" fill="#2C53C8">BARRERA 2 · TOKEN</text>
+  <text x="58" y="594" font-size="13.5" font-weight="600" fill="#0F2530">Firma, expiración, operación, modelo, ids y un hash de los valores.</text>
+  <text x="58" y="613" font-size="12.5" fill="#546C7E">Una aprobación para crear no se gasta en modificar, ni la del registro siete en el ocho.</text>
+  <line x1="360" y1="635" x2="360" y2="651" stroke="#546C7E" stroke-width="1.5" marker-end="url(#wg-arrow)"/>
+  <rect x="34" y="653" width="652" height="63" rx="10" fill="#FFFFFF" stroke="#2C53C8" stroke-width="2"/>
+  <rect x="34" y="653" width="6" height="63" rx="3" fill="#2C53C8"/>
+  <text x="58" y="677" font-size="11" font-weight="700" letter-spacing="1.2" fill="#2C53C8">BARRERA 3 · CONFIRMACIÓN</text>
+  <text x="58" y="696" font-size="12.5" fill="#546C7E">Se pide otra vez al ejecutar. Si no se acepta, no pasa nada.</text>
+  <text x="360" y="742" font-size="12.5" font-weight="600" fill="#0F2530" text-anchor="middle">Solo ahora la escritura llega a Odoo. Si falla cualquier barrera, no se escribe nada.</text>
+</svg>

@@ -18,6 +18,8 @@ Esa línea no es una nota de política añadida al final. Es la arquitectura. Cu
 
 Cada escritura al calendario pasa por dos fases y tres barreras que no dependen entre sí. Quitar cualquiera deja las otras dos en pie.
 
+![Proponer y luego ejecutar. El asistente llama a la herramienta sin token de aprobación. La barrera uno es la allowlist, verificada en memoria antes de cualquier llamada de red. El conector vuelve a leer los registros de Odoo y devuelve una propuesta con un token firmado que expira en 15 minutos. Una persona aprueba. La barrera dos verifica firma, expiración, operación, modelo, ids y valores. La barrera tres pide confirmación al ejecutar. Si falla cualquier barrera, no se escribe nada.](/assets/images/cases/magnolia-doors-write-gate.es.svg)
+
 1. **Gobierno**, verificado en memoria antes de cualquier llamada de red. Modelo no listado, campo no listado o archivo ausente significa denegado. Todo lo que no esté permitido explícitamente se rechaza, así que una configuración faltante falla cerrada y no abierta. Esta barrera nunca llega a la red, así que nada del lado de Odoo puede vencerla.
 2. **La propuesta y su token.** El conector vuelve a leer los registros y devuelve qué cambiaría, campo por campo, valor actual contra valor nuevo. El token de aprobación va firmado y atado a la operación, el modelo, los ids y un hash de los valores, y expira en 15 minutos. Una aprobación emitida para crear no se puede gastar en modificar, y una emitida para el registro siete no se puede gastar en el ocho.
 3. **Confirmación en el momento de ejecutar.** La pregunta se repite justo antes de escribir. Si no vuelve aceptada, no pasa nada.
