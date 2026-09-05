@@ -12,31 +12,31 @@ The solution automates everything except the booking.
 
 Claude validates the request against the intake checklist and against Odoo, proves the material is in the shop trip by trip, reads the live calendar for occupancy and time off, works out the trip plan, the arrival window, the crew and the priority, groups the jobs geographically, and writes the event exactly as their calendar expects to receive it. Then it stops and shows its work. A person approves, and only then does anything change in the ERP.
 
-That line is not a policy note bolted on at the end. It is the architecture. Four of the five stages hold no write tool at all, so they could not book a job if instructed to. The fifth writes, and its barriers are structural: allowlists loaded at boot, a signed approval token bound to the exact operation, ids and values, and a confirmation asked again at the moment of execution. An instruction in a prompt can be talked around. None of those three can.
+Keeping a person in the loop is not a policy note bolted on at the end. It is the architecture. Four of the five stages are read-only by construction, so planning stays planning and booking is always a separate, approved step. The fifth stage writes, and its safeguards are structural: allowlists loaded at boot, a signed approval token bound to the exact operation, ids and values, and a confirmation asked again at the moment of execution. Guardrails written into the architecture hold every run, whatever any single instruction happens to say.
 
-## Where Claude earns its place, and where it is not trusted
+## Claude proposes, people decide
 
-The design draws a hard line between what is settled by rule and what needs judgment, and Claude sits on only one side of it.
+The design gives each half of the problem to whatever handles it best, and puts a person on the decision.
 
-Deterministic rules own everything that has to be exact: required fields, material readiness, the trip count for each product and job type, the arrival window for each client type, the postal code tables. Those are enforced as written rules, and the model is never asked to weigh them.
+Deterministic rules own everything that has to be exact: required fields, material readiness, the trip count for each product and job type, the arrival window for each client type, the postal code tables. Those stay as written rules, so they behave identically on every run and Claude's judgment goes where judgment is actually needed.
 
-Claude owns what rules are bad at.
+Claude takes on the reading and reasoning that rules handle poorly.
 
 - **Reading the scope rather than the checkboxes.** The job type comes from the written scope on the request, because the form frequently has several boxes marked at once and the prose is the reliable half. Ten job types are read that way.
-- **Explaining why a job cannot proceed.** A blocked job is listed with its reason and its owner rather than quietly dropped from the plan, and priority always arrives carrying its reason instead of as a bare number.
-- **Naming the basis for an inference.** Crew choice states what it was inferred from, because "no booking that day and no time off event" is a basis and silence is not. A coordinator can overrule a stated basis; they cannot overrule a silent one.
+- **Explaining the hold-ups in plain terms.** A job waiting on something is listed with its reason and its owner rather than quietly dropped from the plan, and priority always arrives carrying its reason instead of as a bare number.
+- **Showing its reasoning.** Crew choice states what it was inferred from, because "no booking that day and no time off event" is a basis a person can act on. A coordinator can weigh a stated basis, which is exactly what keeps them in control of the outcome.
 - **Reconciling records that disagree.** The same builder is spelled three different ways across the workbook, the request and Odoo. When a match is approximate the rule still applies, and the approximation is stated so a person can check it.
 - **Writing the weekly operations summary**, a five-point agenda in Spanish, from Magnolia's own guide.
 
-And one thing it is deliberately not trusted with. Claude never marks a job confirmed, because that is a claim about a conversation with a client and it has no way to verify one. An email that reads like a confirmation, a builder saying they are good, the date simply arriving: none of those are the instruction. Only the coordinator sets that word, for a named event, in that run. The same rule has a subtler edge now that events can be edited: the status word carries through untouched when a title is corrected for any other reason, because dropping or upgrading it while tidying a title is the likeliest way this goes wrong.
+And one decision stays with a person by design. Marking a job confirmed is a claim about a conversation with a client, so it belongs to whoever had that conversation. Claude assembles everything needed to make the call and hands it over: only the coordinator sets that word, for a named event, in that run. The rule holds through edits too, so the status word carries through untouched when a title is corrected for any other reason and a person's confirmation is never overwritten by routine tidying.
 
-The verdicts follow the same instinct. Ready to schedule, incomplete, needs review and cannot complete are four rather than two, because "I looked and it is not there" and "I could not look" are different statements, and collapsing them is how a system starts lying quietly. A tool outage is reported as an outage; it never becomes a missing document sent back to sales, because sales did attach the file.
+The verdicts follow the same instinct. Ready to schedule, incomplete, needs review and cannot complete are four rather than two, because "I looked and it is not there" and "I could not look" are genuinely different answers, and telling them apart is what lets a coordinator trust the ones that come back clean. A tool outage is reported as an outage rather than becoming a missing document sent back to sales, because sales did attach the file.
 
 ## The write gate
 
 Every calendar write passes through two phases and three barriers that do not depend on each other. Removing any one still leaves the other two standing.
 
-![Propose, then commit. The assistant calls the tool with no approval token. Barrier one is the allowlist, checked in memory before any network call. The connector reads the records back from Odoo and returns a proposal with a signed token that expires in 15 minutes. A person approves. Barrier two verifies the signature, expiry, operation, model, ids and values. Barrier three asks for confirmation again at the moment of execution. Any barrier failing means nothing is written.](/assets/images/cases/magnolia-doors-write-gate.svg)
+![Propose, then commit. Claude calls the tool, the allowlist is checked before anything leaves the process, and the connector reads the records back from Odoo and returns a proposal with a signed token that expires in 15 minutes. The coordinator reviews and approves. The token is verified against the operation, model, ids and values it was issued for, and confirmation is asked again at the moment of execution. The write reaches Odoo once a person has approved it, and only then.](/assets/images/cases/magnolia-doors-write-gate.svg)
 
 1. **Governance**, checked in memory before any network call. Model not listed, field not listed, or file absent means denied. Anything not explicitly permitted is refused, so missing configuration fails closed rather than open. This barrier never reaches the network, so nothing on the Odoo side can defeat it.
 2. **The proposal and its token.** The connector reads the records back and returns what would change, field by field, current value against new one. The approval token is signed and bound to the exact operation, model, ids and a hash of the values, and it expires in 15 minutes. An approval issued to create cannot be spent to modify, and one issued for record seven cannot be spent on record eight.
@@ -98,6 +98,6 @@ Of the twelve constraints the owner called the most important part of scheduling
 
 ## Business impact
 
-What a run delivers are proposals, not bookings. Missing is missing: a trip count, an address, an access detail, a drive time or a crew's availability is never invented, and a job whose facts are not there is blocked and named rather than quietly scheduled. Zero rows is not zero work, because "no events match the filter" and "I could not read" are different statements and are never collapsed.
+What a run delivers are proposals, and a person turns them into bookings. Claude reports what it knows and flags what it does not: a trip count, an address, an access detail, a drive time or a crew's availability is stated when it is known and named as open when it is not, so a job with a gap arrives labelled rather than quietly scheduled. Zero rows is not zero work, because "no events match the filter" and "I could not read" are different statements and are never collapsed.
 
 That is what makes the rest of it trustworthy against a live ERP, and it is what makes the same pattern safe to extend to the next process.

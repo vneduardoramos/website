@@ -5,14 +5,14 @@
   <rect width="720" height="762" fill="#FFFFFF"/>
   <text x="34" y="30" font-size="11" font-weight="700" letter-spacing="1.6" fill="#0B6E99">PHASE 1 · PROPOSE</text>
   <rect x="34" y="46" width="652" height="63" rx="10" fill="#F6FAFD" stroke="#E0EBF4" stroke-width="1"/>
-  <text x="58" y="70" font-size="14" font-weight="600" fill="#0F2530">The assistant calls the tool</text>
-  <text x="58" y="89" font-size="12.5" fill="#546C7E">No approval token yet. Four of the five stages hold no write tool at all.</text>
+  <text x="58" y="70" font-size="14" font-weight="600" fill="#0F2530">Claude calls the tool</text>
+  <text x="58" y="89" font-size="12.5" fill="#546C7E">Planning stages are read-only, so a write always starts a separate, approved step.</text>
   <line x1="360" y1="111" x2="360" y2="127" stroke="#546C7E" stroke-width="1.5" marker-end="url(#wg-arrow)"/>
   <rect x="34" y="129" width="652" height="82" rx="10" fill="#FFFFFF" stroke="#2C53C8" stroke-width="2"/>
   <rect x="34" y="129" width="6" height="82" rx="3" fill="#2C53C8"/>
   <text x="58" y="153" font-size="11" font-weight="700" letter-spacing="1.2" fill="#2C53C8">BARRIER 1 · GOVERNANCE</text>
   <text x="58" y="172" font-size="13.5" font-weight="600" fill="#0F2530">The allowlist, checked in memory. Model, field or file absent means denied.</text>
-  <text x="58" y="191" font-size="12.5" fill="#546C7E">Never reaches the network, so nothing on the Odoo side can defeat it.</text>
+  <text x="58" y="191" font-size="12.5" fill="#546C7E">Checked before anything leaves the process, so it holds on every run.</text>
   <line x1="360" y1="213" x2="360" y2="229" stroke="#546C7E" stroke-width="1.5" marker-end="url(#wg-arrow)"/>
   <rect x="34" y="231" width="652" height="63" rx="10" fill="#F6FAFD" stroke="#E0EBF4" stroke-width="1"/>
   <text x="58" y="255" font-size="14" font-weight="600" fill="#0F2530">The connector reads the records back from Odoo</text>
@@ -28,17 +28,17 @@
   <rect x="34" y="468" width="652" height="63" rx="10" fill="#FFFFFF" stroke="#B45309" stroke-width="2"/>
   <rect x="34" y="468" width="6" height="63" rx="3" fill="#B45309"/>
   <text x="58" y="492" font-size="14" font-weight="700" fill="#B45309">A person approves</text>
-  <text x="58" y="511" font-size="12.5" fill="#546C7E">The same call, now carrying the token. This is the only way past this line.</text>
+  <text x="58" y="511" font-size="12.5" fill="#546C7E">The coordinator reviews the proposal and approves. Every write passes through here.</text>
   <line x1="360" y1="533" x2="360" y2="549" stroke="#546C7E" stroke-width="1.5" marker-end="url(#wg-arrow)"/>
   <rect x="34" y="551" width="652" height="82" rx="10" fill="#FFFFFF" stroke="#2C53C8" stroke-width="2"/>
   <rect x="34" y="551" width="6" height="82" rx="3" fill="#2C53C8"/>
   <text x="58" y="575" font-size="11" font-weight="700" letter-spacing="1.2" fill="#2C53C8">BARRIER 2 · TOKEN</text>
   <text x="58" y="594" font-size="13.5" font-weight="600" fill="#0F2530">Signature, expiry, operation, model, ids and a hash of the values.</text>
-  <text x="58" y="613" font-size="12.5" fill="#546C7E">An approval to create cannot be spent to modify, nor record seven on record eight.</text>
+  <text x="58" y="613" font-size="12.5" fill="#546C7E">An approval covers exactly the operation and records it was given for.</text>
   <line x1="360" y1="635" x2="360" y2="651" stroke="#546C7E" stroke-width="1.5" marker-end="url(#wg-arrow)"/>
   <rect x="34" y="653" width="652" height="63" rx="10" fill="#FFFFFF" stroke="#2C53C8" stroke-width="2"/>
   <rect x="34" y="653" width="6" height="63" rx="3" fill="#2C53C8"/>
   <text x="58" y="677" font-size="11" font-weight="700" letter-spacing="1.2" fill="#2C53C8">BARRIER 3 · CONFIRMATION</text>
-  <text x="58" y="696" font-size="12.5" fill="#546C7E">Asked again at the moment of execution. Not accepted means nothing happens.</text>
-  <text x="360" y="742" font-size="12.5" font-weight="600" fill="#0F2530" text-anchor="middle">Only now does the write reach Odoo. Any barrier failing means nothing is written.</text>
+  <text x="58" y="696" font-size="12.5" fill="#546C7E">Asked again at the moment of execution, so the person stays in control to the last step.</text>
+  <text x="360" y="742" font-size="12.5" font-weight="600" fill="#0F2530" text-anchor="middle">The write reaches Odoo once a person has approved it, and only then.</text>
 </svg>

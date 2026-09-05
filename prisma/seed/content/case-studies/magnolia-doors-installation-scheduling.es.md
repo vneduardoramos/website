@@ -12,31 +12,31 @@ La solución automatiza todo excepto la reserva.
 
 Claude valida la solicitud contra la lista de intake y contra Odoo, comprueba viaje por viaje que el material está en el taller, lee el calendario en vivo para ocupación y ausencias, determina el plan de viajes, la ventana de llegada, la cuadrilla y la prioridad, agrupa los trabajos geográficamente y redacta el evento tal como su calendario espera recibirlo. Después se detiene y muestra su trabajo. Una persona aprueba, y solo entonces cambia algo en el ERP.
 
-Esa línea no es una nota de política añadida al final. Es la arquitectura. Cuatro de las cinco etapas no tienen herramienta de escritura alguna, así que no podrían agendar un trabajo aunque se les indicara. La quinta escribe, y sus barreras son estructurales: allowlists cargadas al arranque, un token de aprobación firmado y atado a la operación exacta, a los ids y a los valores, y una confirmación que se vuelve a pedir en el momento de ejecutar. Una instrucción en un prompt se puede rodear. Ninguna de esas tres.
+Mantener a una persona en el circuito no es una nota de política añadida al final. Es la arquitectura. Cuatro de las cinco etapas son de solo lectura por construcción, así que planear se queda en planear y agendar es siempre un paso aparte y aprobado. La quinta escribe, y sus salvaguardas son estructurales: allowlists cargadas al arranque, un token de aprobación firmado y atado a la operación exacta, a los ids y a los valores, y una confirmación que se vuelve a pedir al ejecutar. Las salvaguardas escritas en la arquitectura se sostienen en cada corrida, diga lo que diga cualquier instrucción suelta.
 
-## Dónde aporta Claude, y dónde no se le confía
+## Claude propone, las personas deciden
 
-El diseño traza una línea dura entre lo que se resuelve por regla y lo que exige criterio, y Claude está de un solo lado de esa línea.
+El diseño le da cada mitad del problema a lo que mejor la resuelve, y deja la decisión en manos de una persona.
 
-Las reglas deterministas son dueñas de todo lo que debe ser exacto: campos obligatorios, disponibilidad de materiales, el número de viajes según producto y tipo de trabajo, la ventana de llegada según tipo de cliente, las tablas de códigos postales. Eso se aplica como reglas escritas, y al modelo nunca se le pide ponderarlas.
+Las reglas deterministas son dueñas de todo lo que debe ser exacto: campos obligatorios, disponibilidad de materiales, el número de viajes según producto y tipo de trabajo, la ventana de llegada según tipo de cliente, las tablas de códigos postales. Eso queda como reglas escritas, así que se comportan igual en cada corrida y el criterio de Claude va donde de verdad hace falta criterio.
 
-Claude se encarga de lo que las reglas hacen mal.
+Claude se encarga de la lectura y el razonamiento que las reglas resuelven mal.
 
 - **Leer el alcance y no las casillas.** El tipo de trabajo sale del alcance escrito en la solicitud, porque el formato suele traer varias casillas marcadas a la vez y la prosa es la mitad confiable. Diez tipos de trabajo se leen así.
-- **Explicar por qué un trabajo no puede avanzar.** Un trabajo bloqueado se lista con su motivo y su responsable en lugar de desaparecer del plan, y la prioridad siempre llega con su razón y no como un número suelto.
-- **Nombrar la base de una inferencia.** La elección de cuadrilla declara de qué se infirió, porque "sin agenda ese día y sin evento de ausencia" es una base y el silencio no lo es. Un coordinador puede contradecir una base declarada; no puede contradecir una silenciosa.
+- **Explicar los pendientes en términos claros.** Un trabajo a la espera de algo se lista con su motivo y su responsable en lugar de desaparecer del plan, y la prioridad siempre llega con su razón y no como un número suelto.
+- **Mostrar su razonamiento.** La elección de cuadrilla declara de qué se infirió, porque "sin agenda ese día y sin evento de ausencia" es una base sobre la que una persona puede actuar. El coordinador puede ponderar una base declarada, que es justo lo que lo mantiene al mando del resultado.
 - **Reconciliar registros que no coinciden.** El mismo constructor aparece escrito de tres formas distintas entre el libro de producción, la solicitud y Odoo. Cuando la coincidencia es aproximada la regla se aplica igual, y se declara que fue aproximada para que una persona lo revise.
 - **Redactar el resumen semanal de operaciones**, una agenda de cinco puntos en español, a partir de la guía de Magnolia.
 
-Y hay algo con lo que deliberadamente no se le confía. Claude nunca marca un trabajo como confirmado, porque eso es una afirmación sobre una conversación con un cliente y no tiene forma de verificarla. Un correo que suena a confirmación, un constructor que dice que todo bien, la fecha que simplemente llega: ninguna de esas cosas es la instrucción. Solo el coordinador escribe esa palabra, para un evento nombrado, en esa corrida. La regla tiene un filo más sutil ahora que los eventos se pueden editar: la palabra de estado se conserva intacta cuando un título se corrige por cualquier otro motivo, porque quitarla o subirla mientras se ordena un título es la forma más probable de equivocarse.
+Y una decisión queda con una persona por diseño. Marcar un trabajo como confirmado es una afirmación sobre una conversación con un cliente, así que le corresponde a quien tuvo esa conversación. Claude reúne todo lo necesario para tomar la decisión y la entrega: solo el coordinador escribe esa palabra, para un evento nombrado, en esa corrida. La regla también se sostiene en las ediciones, así que la palabra de estado se conserva intacta cuando un título se corrige por cualquier otro motivo y la confirmación de una persona nunca se sobrescribe al ordenar un título.
 
-Los veredictos siguen el mismo instinto. Listo para agendar, incompleto, requiere revisión y no se puede completar son cuatro y no dos, porque "busqué y no está" y "no pude buscar" son afirmaciones distintas, y juntarlas es como un sistema empieza a mentir en silencio. Una falla de herramienta se reporta como falla; nunca se convierte en un documento faltante devuelto a ventas, porque ventas sí adjuntó el archivo.
+Los veredictos siguen el mismo instinto. Listo para agendar, incompleto, requiere revisión y no se puede completar son cuatro y no dos, porque "busqué y no está" y "no pude buscar" son respuestas genuinamente distintas, y distinguirlas es lo que permite al coordinador confiar en las que vuelven limpias. Una falla de herramienta se reporta como falla, en lugar de convertirse en un documento faltante devuelto a ventas, porque ventas sí adjuntó el archivo.
 
 ## La compuerta de escritura
 
 Cada escritura al calendario pasa por dos fases y tres barreras que no dependen entre sí. Quitar cualquiera deja las otras dos en pie.
 
-![Proponer y luego ejecutar. El asistente llama a la herramienta sin token de aprobación. La barrera uno es la allowlist, verificada en memoria antes de cualquier llamada de red. El conector vuelve a leer los registros de Odoo y devuelve una propuesta con un token firmado que expira en 15 minutos. Una persona aprueba. La barrera dos verifica firma, expiración, operación, modelo, ids y valores. La barrera tres pide confirmación al ejecutar. Si falla cualquier barrera, no se escribe nada.](/assets/images/cases/magnolia-doors-write-gate.es.svg)
+![Proponer y luego ejecutar. Claude llama a la herramienta, la allowlist se verifica antes de que algo salga del proceso, y el conector vuelve a leer los registros de Odoo y devuelve una propuesta con un token firmado que expira en 15 minutos. El coordinador revisa y aprueba. El token se verifica contra la operación, el modelo, los ids y los valores para los que se emitió, y se pide confirmación otra vez al ejecutar. La escritura llega a Odoo una vez que una persona la aprobó, y solo entonces.](/assets/images/cases/magnolia-doors-write-gate.es.svg)
 
 1. **Gobierno**, verificado en memoria antes de cualquier llamada de red. Modelo no listado, campo no listado o archivo ausente significa denegado. Todo lo que no esté permitido explícitamente se rechaza, así que una configuración faltante falla cerrada y no abierta. Esta barrera nunca llega a la red, así que nada del lado de Odoo puede vencerla.
 2. **La propuesta y su token.** El conector vuelve a leer los registros y devuelve qué cambiaría, campo por campo, valor actual contra valor nuevo. El token de aprobación va firmado y atado a la operación, el modelo, los ids y un hash de los valores, y expira en 15 minutos. Una aprobación emitida para crear no se puede gastar en modificar, y una emitida para el registro siete no se puede gastar en el ocho.
@@ -98,6 +98,6 @@ De las doce restricciones que el dueño calificó como la parte más importante 
 
 ## Impacto de negocio
 
-Lo que entrega una corrida son propuestas, no reservas. Lo que falta, falta: un conteo de viajes, una dirección, un dato de acceso, un tiempo de traslado o la disponibilidad de una cuadrilla nunca se inventan, y un trabajo cuyos datos no están se bloquea y se nombra en lugar de agendarse en silencio. Cero filas no es cero trabajo, porque "ningún evento coincide con el filtro" y "no pude leer" son afirmaciones distintas y nunca se juntan.
+Lo que entrega una corrida son propuestas, y una persona las convierte en reservas. Claude reporta lo que sabe y señala lo que no: un conteo de viajes, una dirección, un dato de acceso, un tiempo de traslado o la disponibilidad de una cuadrilla se declaran cuando se conocen y se nombran como abiertos cuando no, así que un trabajo con un hueco llega etiquetado en lugar de agendado en silencio. Cero filas no es cero trabajo, porque "ningún evento coincide con el filtro" y "no pude leer" son afirmaciones distintas y nunca se juntan.
 
 Eso es lo que hace confiable al resto frente a un ERP en vivo, y es lo que hace seguro extender el mismo patrón al siguiente proceso.

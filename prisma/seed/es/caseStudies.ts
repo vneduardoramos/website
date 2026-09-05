@@ -73,13 +73,13 @@ export const caseStudiesEs: Record<string, { title?: string; summary?: string; s
   },
   "magnolia-doors-installation-scheduling": {
     sector: "Manufactura",
-    seoTitle: "Claude planea 40 instalaciones y no agenda ninguna",
-    seoDescription: "Claude y un conector MCP en producción para Odoo 18. Las reglas deciden lo que debe ser exacto, Claude lo que exige criterio, y nada se escribe sin aprobación.",
-    title: "Claude planea 40 instalaciones por semana y no puede agendar ni una sola por su cuenta",
+    seoTitle: "Claude planea 40 instalaciones, la gente aprueba",
+    seoDescription: "Claude y un conector MCP en producción para Odoo 18: las reglas resuelven lo exacto, Claude el criterio, y una persona aprueba cada escritura.",
+    title: "Claude planea 40 instalaciones por semana, y una persona aprueba cada una",
     summary:
-      "Viewnear rediseñó el agendamiento de instalaciones para Magnolia Doors, un fabricante de herrería en San Antonio cuyas propias cuadrillas instalan todo lo que fabrica, en torno a Claude y un conector Model Context Protocol a la medida para Odoo 18 Enterprise. Las reglas deterministas son dueñas de lo que debe ser exacto; Claude se encarga de lo que las reglas hacen mal: leer el alcance escrito en vez de las casillas, explicar por qué un trabajo no puede avanzar y nombrar la base de cada inferencia. Cuatro de las cinco etapas no tienen herramienta de escritura, y la quinta escribe solo detrás de una allowlist, un token de aprobación firmado y una confirmación al ejecutar.",
+      "Viewnear rediseñó el agendamiento de instalaciones para Magnolia Doors, un fabricante de herrería en San Antonio cuyas propias cuadrillas instalan todo lo que fabrica, en torno a Claude y un conector Model Context Protocol a la medida para Odoo 18 Enterprise. Las reglas deterministas resuelven lo que debe ser exacto; Claude resuelve el criterio: lee el alcance escrito en vez de las casillas, explica los pendientes en términos claros y muestra su razonamiento en cada inferencia. Cuatro de las cinco etapas son de solo lectura por construcción, y el coordinador aprueba cada escritura antes de que llegue al ERP.",
     metrics: [
-      { value: "0", label: "Registros escritos en el ERP sin aprobación humana" },
+      { value: "0", label: "Escrituras al ERP sin que una persona las apruebe" },
       { value: "20", label: "Eventos por propuesta, creados de forma atómica" },
       { value: "30–40", label: "Eventos de instalación por semana, 157 en el pico" },
       { value: "~3 min", label: "Por evento, desde un estimado de 23 a 35 a mano" },
