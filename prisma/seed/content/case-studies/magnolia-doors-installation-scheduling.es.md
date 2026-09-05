@@ -2,11 +2,9 @@
 
 Magnolia Doors fabrica puertas, portones, barandales y cristal a medida en hierro y aluminio para casas de alto nivel y constructores en la zona de San Antonio, y sus propias cuadrillas instalan todo lo que fabrica. Llevar una cuadrilla a una casa es el cuello de botella de todo el negocio.
 
-Una solicitud llegaba de ventas como PDF. Alguien determinaba entonces si el papeleo estaba completo, si la unidad y el cristal estaban físicamente en el taller, quién ya estaba agendado ese día y dónde, qué plan de viajes requería el trabajo y qué ventana de llegada prometer. Cinco preguntas, cinco lugares donde buscar, y ninguna pantalla que respondiera a ninguna de ellas.
+Una solicitud llegaba de ventas como PDF. Alguien determinaba entonces si el papeleo estaba completo, si los materiales estaban listos en el taller, quién ya estaba agendado ese día y dónde, qué requería realmente el trabajo y qué ventana de llegada prometerle al cliente. Cinco preguntas, respondidas en cinco lugares distintos, y ninguna pantalla que resolviera ninguna de ellas.
 
-Con 30 a 40 instalaciones por semana, y 157 en el mes más cargado registrado, eso sumaba de 13 a 17 horas semanales dedicadas a poner trabajos en un calendario. Entre un tercio y la mitad de una posición de tiempo completo, dedicada solo a reunir información que ya existía en algún lugar del negocio.
-
-Los errores costaban más que las horas. Códigos postales contradictorios, direcciones incorrectas y datos leídos del título equivocado cambian a dónde se envía una cuadrilla. Durante el trabajo, un título mal interpretado habría puesto una instalación a 175 millas de la ruta.
+Con 30 a 40 instalaciones por semana, eso sumaba de 13 a 17 horas semanales dedicadas a poner trabajos en un calendario. Entre un tercio y la mitad de una posición de tiempo completo, dedicada a reunir información que el negocio ya tenía.
 
 ## Qué cambió
 
@@ -14,72 +12,41 @@ Los errores costaban más que las horas. Códigos postales contradictorios, dire
 
 **Regresan de 15 a 19 horas administrativas cada semana**, cerca de 3 a 4 horas por día hábil, sin sumar una persona.
 
-**Un día completo de instalaciones se aprueba en cerca de un minuto.** Hasta 20 trabajos viajan en una sola propuesta y se crean juntos, donde antes cada uno pasaba por su propia secuencia de revisiones. Un ensayo interno del método trabajo por trabajo tomó 21 minutos y 20 pasos separados, y produjo una reserva duplicada en el camino. Una semana entera cabe ahora en dos o tres propuestas.
+**Un día completo de instalaciones se aprueba en cerca de un minuto.** Hasta 20 trabajos viajan en una sola propuesta y se crean juntos, donde antes cada uno pasaba por su propia secuencia de revisiones. Una semana entera cabe ahora en dos o tres propuestas.
 
-**28.5 millas menos en una semana medida**, por ordenar bien cada día. En un recorrido por Hill Country entre Fredericksburg, Bandera, Boerne y Kerrville, secuenciar las paradas y el regreso dio 137.3 millas frente a 153.4 de la ruta obvia de lo más cercano primero: 16 millas en un solo día.
+**28.5 millas menos en una semana medida**, por secuenciar bien cada día en lugar de tomar primero el trabajo más cercano.
 
-**Los datos malos se detectan antes de despachar una cuadrilla.** Las verificaciones marcan 6 de 344 direcciones de entrega cuyo código postal contradice a su propia ciudad por más de 25 millas, algo peor que una dirección faltante porque está equivocada con confianza. La disponibilidad de material coincidió con el libro de producción en 8 de 8 casos probados.
+**Los trabajos llegan al calendario ya verificados.** Papeleo, materiales, dirección y disponibilidad de cuadrilla se comprueban antes de proponer cualquier ventana, así que un problema aparece cuando todavía es una cuestión de agenda y no después de que una cuadrilla ya salió.
 
-**Nada llega al ERP sin que una persona lo apruebe.** Cada reserva se propone, se revisa y la confirma el coordinador, así que la velocidad nunca se pagó con el control.
+**Nada llega al ERP sin que una persona lo apruebe.** La velocidad nunca se pagó con el control del calendario.
 
-## Cómo lo hace Claude
+## Cómo ayuda Claude
 
-Claude recorre cinco etapas por cada solicitud, y el conocimiento operativo de Magnolia vive en cinco skills de Claude que todo el equipo alcanza desde su propia organización de Claude, sin instalar nada en ninguna máquina.
+Claude lleva la solicitud desde que llega hasta una reserva propuesta, y ahí se detiene.
 
-1. **Validar la solicitud.** Claude revisa el papeleo contra la lista de intake y confirma cada pedido en Odoo, el sistema de registro, donde la hoja de solicitud es solo una afirmación que alguien escribió.
-2. **Comprobar que el material está en el taller.** Viaje por viaje, contra el libro de producción y las compras en Odoo, nunca contra una fecha estimada de llegada.
-3. **Planear el día.** Una sola lectura del calendario cubre quién está agendado, quién está ausente, qué está cancelado y si el trabajo ya tiene evento. Claude determina entonces el plan de viajes, la ventana de llegada, la cuadrilla y la prioridad, y agrupa los trabajos geográficamente.
-4. **Proponer y esperar.** El coordinador ve las entradas de calendario propuestas y las aprueba. Solo entonces cambian los registros en Odoo.
-5. **Reportar el miércoles.** Un resumen operativo de cinco puntos en español, a partir de la guía de Magnolia, que confirma lo que realmente se visitó contra las horas de cuadrilla en timesheets, en lugar de suponer que una entrada de calendario significa trabajo hecho.
+Lee la solicitud y confirma el pedido en el sistema de registro, comprueba que los materiales estén realmente listos, lee el calendario para ver quién está disponible, determina el plan y la ventana de llegada, agrupa el día geográficamente y presenta la programación propuesta para revisión. El coordinador aprueba, y solo entonces cambian los registros. Cada miércoles Claude produce el resumen semanal de operaciones en español, con el formato propio de Magnolia.
 
-Las reglas deterministas resuelven todo lo que debe ser exacto: campos obligatorios, disponibilidad de material, número de viajes por producto y tipo de trabajo, ventanas de llegada por tipo de cliente. Claude resuelve el criterio que esas reglas no alcanzan:
+La división del trabajo es la parte que vale la pena copiar. Las reglas de negocio fijas resuelven todo lo que debe ser exacto, así que esas decisiones salen idénticas en cada corrida. Claude resuelve el criterio que las reglas no alcanzan:
 
-- **Leer el alcance escrito en vez de las casillas**, porque el formato suele traer varias casillas marcadas a la vez y la prosa es la mitad confiable. Diez tipos de trabajo se leen así.
-- **Explicar los pendientes en términos claros**, para que un trabajo a la espera de algo llegue con su motivo y su responsable en lugar de desaparecer del plan, y la prioridad siempre traiga la razón detrás.
-- **Mostrar su razonamiento**, para que la elección de cuadrilla declare de qué se infirió y el coordinador pueda ponderarla.
-- **Reconciliar registros que no coinciden**, donde el mismo constructor aparece escrito de tres formas distintas entre el libro de producción, la solicitud y Odoo.
+- **Leer lo que un trabajo realmente implica** a partir del alcance escrito en la solicitud, en lugar de depender solo de las casillas del formato.
+- **Explicar qué está esperando un trabajo**, y quién es responsable, para que nada desaparezca del plan en silencio y cada prioridad llegue con la razón detrás.
+- **Mostrar su razonamiento**, para que el coordinador vea en qué se basó una recomendación y pueda ponderarla en lugar de aceptarla a ciegas.
+- **Reconciliar registros que no coinciden** entre los sistemas con los que opera el negocio.
 
-Y la decisión que queda con una persona por diseño: marcar un trabajo como confirmado es una afirmación sobre una conversación con un cliente, así que le corresponde a quien tuvo esa conversación.
+Y la única decisión que queda con una persona por diseño: confirmar un trabajo con el cliente es una afirmación sobre una conversación, así que le corresponde a quien la tuvo.
 
-## Por qué el proceso anterior era tan lento
+## Mantener al coordinador al mando
 
-Magnolia opera Odoo 18 Enterprise, on-premise y muy personalizado. Leer la instancia en vivo antes de diseñar nada explicó a dónde se iban los 23 a 35 minutos, porque casi nada del calendario estaba donde uno esperaría.
+Cada reserva se propone antes de hacerse. El coordinador ve exactamente qué cambiaría, campo por campo, valor actual contra valor nuevo, y lo aprueba. Las etapas de planeación no tienen forma de escribir en el ERP, y el paso que sí puede está limitado al calendario de instalaciones y a nada más del negocio.
 
-- **El evento no lleva la dirección.** El campo de ubicación está vacío en los últimos 500 eventos, así que saber dónde es un trabajo requiere tres saltos a través del pedido.
-- **La hora almacenada no es la hora de llegada.** La ventana vive en el texto del título, y de 166 títulos que la llevan, solo 11 coincidían con la hora almacenada.
-- **Un pedido no se encuentra buscando prefijo más dígitos.** 256 de 3,380 eventos llevan más de un pedido, y el patrón de búsqueda obvio perdía 132 de 954 números de pedido: uno de cada siete trabajos.
-- **Las ausencias existen solo como eventos de día completo**, así que el calendario es la única fuente de disponibilidad.
+Eso es lo que hace utilizable la velocidad. Una programación que se resuelve en una sola aprobación solo es una mejora si quien aprueba puede ver a qué está diciendo que sí.
 
-Nada de eso salió de preguntar. Salió de leer la instancia, y es la razón de que las mismas cinco preguntas costaran media hora cada vez.
+## Sobre estas cifras
 
-Una verificación se corrió dos veces y volvió vacía las dos: no había pedidos con material listo y sin evento, ni primeras visitas hechas con el cristal puesto y sin retorno agendado. Magnolia no está atrasada, así que las ganancias aquí son velocidad y consolidación, no rezago recuperado.
-
-## Cómo funciona la aprobación
-
-La velocidad solo cuenta si el coordinador mantiene el control del calendario, así que cada escritura se propone primero y se ejecuta después.
-
-![Proponer y luego ejecutar. Claude llama a la herramienta, la allowlist se verifica antes de que algo salga del proceso, y el conector vuelve a leer los registros de Odoo y devuelve una propuesta con un token firmado que expira en 15 minutos. El coordinador revisa y aprueba. El token se verifica contra la operación, el modelo, los ids y los valores para los que se emitió, y se pide confirmación otra vez al ejecutar. La escritura llega a Odoo una vez que una persona la aprobó, y solo entonces.](/assets/images/cases/magnolia-doors-write-gate.es.svg)
-
-La propuesta muestra cada campo como está frente a lo que sería, así que un cambio se revisa por sus méritos y no se aprueba a ciegas. Cuatro de las cinco etapas son de solo lectura por construcción, así que planear se queda en planear. El conector alcanza un modelo y ocho campos del calendario y nada más en la instancia, y viene con 343 pruebas pasando.
-
-## Qué está medido y qué está estimado
-
-Medido contra producción: el volumen de eventos, los pasos que el proceso anterior obligaba a recorrer, los 21 minutos y el duplicado del ensayo por lotes, las 28.5 millas, los 8 de 8 en disponibilidad de material y los 6 códigos postales malos.
-
-Los minutos por evento son una estimación razonada. Se construyeron enumerando el trabajo que los datos prueban que hay que hacer, no cronometrando a una persona haciéndolo, y de ahí salen los 23 a 35 minutos y las 15 a 19 horas semanales. Convertirlo en dato duro es barato y vale la pena: cronometrar 10 trabajos antes y 10 después, desde que llega la solicitud hasta que el evento queda en el calendario, y el número pasa a ser de Magnolia.
-
-## Lo que todavía no está construido
-
-Tres cosas están deliberadamente incompletas, y cada una es el siguiente incremento más que una limitación que defender.
-
-- **El intake sigue siendo manual.** El buzón no está conectado, así que alguien traslada el PDF a mano. Conectarlo es el siguiente paso obvio.
-- **La asignación de cuadrilla es parcial.** La disponibilidad se verifica, pero quién está calificado para qué todavía no existe en ningún sistema.
-- **Los tiempos de traslado se responden donde hay datos reales de ruteo para el par de códigos postales**, y se reportan como no confirmados en el resto, en lugar de estimarse por distancia. En Hill Country ambas cosas divergen de verdad: códigos postales a doce millas pueden estar a cincuenta minutos por carretera.
-
-De las doce restricciones que el dueño calificó como la parte más importante del agendamiento, tres están cubiertas por datos que existen en algún lado y siete no existen en ningún sistema. Capturarlas es un cambio de negocio antes que de software, y es de donde sale el siguiente tramo de tiempo.
+Los volúmenes, el comportamiento por lotes, el kilometraje y los resultados de verificación están medidos contra el sistema en producción de Magnolia. Los minutos por evento son una estimación razonada, construida a partir del trabajo que el proceso demostrablemente exige y no cronometrando a una persona haciéndolo, y las horas semanales se derivan de ellos. Un estudio corto de tiempos antes y después convertiría esa estimación en una cifra dura propia de Magnolia, y vale la pena hacerlo.
 
 ## Impacto de negocio
 
-Magnolia Doors convirtió hasta 17 horas semanales de agendamiento en un flujo que resuelve cada instalación en unos tres minutos, y recuperó el equivalente a entre un tercio y la mitad de una posición sin contratar. El equipo sigue trabajando dentro de Odoo en lugar de mantener un segundo sistema de agendamiento.
+Magnolia Doors convirtió hasta 17 horas semanales de agendamiento en un flujo que resuelve cada instalación en unos tres minutos, y recuperó el equivalente a entre un tercio y la mitad de una posición sin contratar. El equipo sigue trabajando dentro del ERP que ya tenía, en lugar de mantener un segundo sistema de agendamiento en paralelo.
 
-El valor no son solo las horas. Los trabajos llegan ahora al calendario con su material comprobado, su dirección resuelta, su día secuenciado y sus excepciones nombradas, y el coordinador aprueba cada uno. Esa combinación es lo que hace que valga la pena extender el mismo patrón al siguiente proceso.
+El valor no son solo las horas. Los trabajos llegan ahora al calendario con sus materiales confirmados, su dirección resuelta, su día secuenciado y sus excepciones nombradas, y el coordinador aprueba cada uno. Esa combinación es lo que hace que valga la pena extender el mismo enfoque al siguiente proceso.
