@@ -73,16 +73,16 @@ export const caseStudiesEs: Record<string, { title?: string; summary?: string; s
   },
   "magnolia-doors-installation-scheduling": {
     sector: "Manufactura",
-    seoTitle: "Claude planea 40 instalaciones, la gente aprueba",
-    seoDescription: "Claude y un conector MCP en producción para Odoo 18: las reglas resuelven lo exacto, Claude el criterio, y una persona aprueba cada escritura.",
-    title: "Claude planea 40 instalaciones por semana, y una persona aprueba cada una",
+    seoTitle: "De 17 horas semanales de agendamiento a dos",
+    seoDescription: "Magnolia Doors recuperó de 15 a 19 horas administrativas por semana después de que Claude tomó el agendamiento de instalaciones sobre Odoo 18 Enterprise.",
+    title: "El agendamiento de instalaciones, de 17 horas por semana a menos de dos",
     summary:
-      "Viewnear rediseñó el agendamiento de instalaciones para Magnolia Doors, un fabricante de herrería en San Antonio cuyas propias cuadrillas instalan todo lo que fabrica, en torno a Claude y un conector Model Context Protocol a la medida para Odoo 18 Enterprise. Las reglas deterministas resuelven lo que debe ser exacto; Claude resuelve el criterio: lee el alcance escrito en vez de las casillas, explica los pendientes en términos claros y muestra su razonamiento en cada inferencia. Cuatro de las cinco etapas son de solo lectura por construcción, y el coordinador aprueba cada escritura antes de que llegue al ERP.",
+      "Magnolia Doors fabrica herrería a medida para casas de alto nivel en la zona de San Antonio y la instala con sus propias cuadrillas, y agendar esas cuadrillas costaba de 13 a 17 horas por semana entre cinco sistemas desconectados. Viewnear puso a Claude en el trabajo mediante un conector Model Context Protocol a la medida para Odoo 18 Enterprise. Agendar una instalación toma ahora unos tres minutos en vez de 23 a 35, un día completo se aprueba en cerca de un minuto, y regresan de 15 a 19 horas administrativas cada semana sin sumar una persona.",
     metrics: [
-      { value: "0", label: "Escrituras al ERP sin que una persona las apruebe" },
-      { value: "20", label: "Eventos por propuesta, creados de forma atómica" },
-      { value: "30–40", label: "Eventos de instalación por semana, 157 en el pico" },
-      { value: "~3 min", label: "Por evento, desde un estimado de 23 a 35 a mano" },
+      { value: "15–19 hrs", label: "Horas administrativas recuperadas por semana" },
+      { value: "~3 min", label: "Para agendar una instalación, antes 23 a 35" },
+      { value: "20", label: "Trabajos por aprobación, antes uno por uno" },
+      { value: "28.5 mi", label: "Millas menos en una semana medida" },
     ],
   },
 };
