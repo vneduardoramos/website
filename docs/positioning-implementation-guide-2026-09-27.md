@@ -12,6 +12,8 @@ Make viewnear.com read as a professional data + AI company that builds on Snowfl
 
 This is the second attempt. The first (2026-09-16 to 09-19, 70 commits) was reverted in full on 2026-09-27 because the owner disliked much of the execution, not the strategy. Section 2 lists what was rejected. Do not rebuild it.
 
+**Tier correction (owner, 2026-09-27):** Viewnear is **not** a Select Services Partner. It is a **Claude Partner Network Member**, the tier before Select (the owner's phrase: "Claude certified partner"). Every file on the parked branch says "Select Services Partner"; every lift must be rewritten to the Member tier. The badge is `public/assets/images/certs/claude-partner-network-member.png` (already on `main`). When Select arrives the owner will say so.
+
 ---
 
 ## 1. Where things stand
@@ -111,6 +113,7 @@ Process
 | Snowflake Partner Network: **Premier Services Partner** | badge `public/assets/images/certs/premier.webp`; directory listing `https://www.snowflake.com/en/why-snowflake/partners/all-partners/viewnear/` |
 | **CoCo Preferred Partner**; named in Snowflake's CoCo Global Partner Momentum lineup at Summit 2026 (41 partners of 14,000+) | `coco-preferred.png`, `coco-momentum-summit-2026.png`, `PartnershipHighlight.tsx` |
 | **SnowPro-certified** team | `snowpro-core.png` |
+| Claude Partner Network: **Member** (the tier before Select; owner calls it "Claude certified partner") | badge `public/assets/images/certs/claude-partner-network-member.png` (1021x546, transparent outside the card; original `-original.png`), owner 2026-09-27 |
 | Offices: **Austin, TX** and **Monterrey, MX**, both Central Time (Monterrey has no DST, so the clock differs from US Central March to November; don't write "same clock") | `lib/offices.ts` |
 | First production value in **8 to 16 weeks** | site-wide, `home.json` |
 | Magnolia Doors: 13 to 17 hrs/week → **15 to 19 hrs/week back**; scheduling 23 to 35 min → **~3 min**; **20 jobs per approval**; five disconnected systems; San Antonio, TX; built with Claude + Claude Code + a custom MCP connector | seed `caseStudies`, slug `magnolia-doors-installation-scheduling` |
@@ -123,8 +126,7 @@ Process
 
 | Claim | Status | If unconfirmed |
 |---|---|---|
-| **Claude Partner Network: Select Services Partner** | Owner said on 09-16 the badge "comes Monday" (09-21). Not verified since. | Ask before step 1. If not yet official, the credential line carries Snowflake only and step 5's Claude page says "Anthropic partner" without a tier. |
-| The Claude badge artwork with the cream card keyed out (`claude-partner-network-select.png` on the parked branch; original preserved as `-original.png`) | Brand-guideline question never answered. | Prefer the original artwork unless the owner confirms the keyed version is acceptable. |
+| Exact wording of the Claude tier in copy: **"Claude Partner Network Member"** (what the badge says) or **"Claude Certified Partner"** (the owner's phrase) | Open as of 2026-09-27. | Ask before step 1. Default to the badge wording, "Claude Partner Network Member", and use "Claude certified" only for the team's certification. Never "Select". |
 | An Anthropic partner directory URL | None known. | Omit the "Verify listing" link on the Claude side. |
 | "Claude Certified Architects" on the team | Owner supplied this wording on 09-17. | Use as given; don't quantify. |
 
@@ -164,13 +166,13 @@ Each step: goal, files, what to lift, acceptance, verification, commit. Stop aft
 EN
 - title: `AI on the work your team still does by hand.`
 - subhead: `We build the trusted data it runs on, with Snowflake, and the agents that do the work, with Claude, with a person approving what matters. Austin and Monterrey, first production value in 8 to 16 weeks.`
-- credential: `Snowflake Partner Network Premier Services Partner · Claude Partner Network Select Services Partner · SnowPro-certified and Claude Certified team` (if the Select tier is confirmed; otherwise drop the Claude clause and keep "SnowPro-certified team").
+- credential: `Snowflake Partner Network Premier Services Partner · Claude Partner Network Member · SnowPro-certified and Claude Certified team`
 - pills: keep the current three or retire them; if kept, the third becomes `Put agents on the work`.
 
 ES (impersonal, Mexican professional register)
 - title: `IA en el trabajo que el equipo todavía hace a mano.`
 - subhead: `Construimos los datos confiables sobre los que corre, con Snowflake, y los agentes que hacen el trabajo, con Claude, con una persona aprobando lo que importa. Austin y Monterrey, primer valor en producción en 8 a 16 semanas.`
-- credential: `Snowflake Partner Network Premier Services Partner · Claude Partner Network Select Services Partner · Equipo certificado SnowPro y Claude`
+- credential: `Snowflake Partner Network Premier Services Partner · Claude Partner Network Member · Equipo certificado SnowPro y Claude`
 
 **Lift from the parked branch.** Nothing wholesale. `git show pre-revert-2026-09-27:messages/en/heroUi.json` shows the last accepted shape (`credentialCert` key) for reference.
 
@@ -205,9 +207,8 @@ ES (impersonal, Mexican professional register)
 ```bash
 git show pre-revert-2026-09-27:config/partners.ts > config/partners.ts
 git show pre-revert-2026-09-27:components/marketing/PartnerBadgeRow.tsx > components/marketing/PartnerBadgeRow.tsx
-git show pre-revert-2026-09-27:public/assets/images/certs/claude-partner-network-select-original.png > public/assets/images/certs/claude-partner-network-select.png
 ```
-`config/partners.ts` exports `SNOWFLAKE`, `ANTHROPIC`, `PARTNERS`, `credentialLine()`. Check `ANTHROPIC.badge.src` points at the file you just wrote and adjust `displayScale` (the keyed version used `0.78`; the original card artwork is a different shape, re-measure). `PartnerBadgeRow.tsx` imports `AnthropicMark` from `components/marketing/ProviderMark`; that file exists at `d0cbced`. `PartnerBadgeMark` sizes: `sm 80 / md 104 / lg 128` px base × `displayScale`.
+Then edit `config/partners.ts` before anything imports it. It exports `SNOWFLAKE`, `ANTHROPIC`, `PARTNERS`, `credentialLine()`. In `ANTHROPIC` set `level: "Member"`, `label: "Claude Partner Network Member"`, and `badge: { src: "/assets/images/certs/claude-partner-network-member.png", alt: "Claude Partner Network Member badge", w: 1021, h: 546, displayScale: ... }`. The badge is already on `main` (do not lift the `-select` files). Re-measure `displayScale`: this card is 1.87:1, the old lockup was 2.67:1, so start near `0.9` and check that the Member card and the Snowflake seal read as equals at `size="md"`. `PartnerBadgeRow.tsx` imports `AnthropicMark` from `components/marketing/ProviderMark`; that file exists at `d0cbced`. `PartnerBadgeMark` sizes: `sm 80 / md 104 / lg 128` px base × `displayScale`.
 
 **Copy.** Points must be matched in length across the two columns (owner: "make bullet points the same length for symmetry"). Snowflake side: migration off the legacy warehouse; pipelines kept fresh, tested and traceable; Horizon governance and one shared business context; Cortex AI, Cortex Agents and Snowflake Intelligence on top. Claude side: MCP connectors into the systems the work lives in; a person approves before anything is written back; built with Claude and Claude Code; measured against the baseline it was meant to beat. Closing line: `Snowflake is the agentic control plane. Claude is the model that runs inside it and around it. One team builds both.`
 
@@ -236,7 +237,7 @@ components/marketing/partnership/PartnerPageBlocks.tsx
 messages/en/partnershipSnowflake.json  messages/es/partnershipSnowflake.json
 messages/en/partnershipClaude.json     messages/es/partnershipClaude.json
 ```
-Then read them. `PartnerPageBlocks.tsx` imports `RailGrid` from `components/marketing/Rails` (the rejected refactor). Either lift `Rails.tsx` too and use it **only** inside these pages, or replace `RailGrid` there with a plain ruled two/three-column list. Do not use `Rails` anywhere else. The Claude page passes no `partner` to `PartnerHero` (owner: "this page doesn't need the Claude badge"); the Snowflake page's proof block shows Snowflake credentials only (`badges="snowflake"` on `PartnershipHighlight`, which needs the `only` prop from `git diff d0cbced pre-revert-2026-09-27 -- components/marketing/PartnerBadges.tsx components/marketing/PartnershipHighlight.tsx`).
+Then read them, and **replace every "Select Services Partner" with the Member tier** in both locales (`grep -rn "Select" messages/*/partnershipClaude.json` must come back empty; the Snowflake page and hub mention it too). Also rewrite anything the Claude page claims that only a Select partner could (dedicated Anthropic team access, for example), unless the owner confirms it applies. `PartnerPageBlocks.tsx` imports `RailGrid` from `components/marketing/Rails` (the rejected refactor). Either lift `Rails.tsx` too and use it **only** inside these pages, or replace `RailGrid` there with a plain ruled two/three-column list. Do not use `Rails` anywhere else. The Claude page passes no `partner` to `PartnerHero` (owner: "this page doesn't need the Claude badge"); the Snowflake page's proof block shows Snowflake credentials only (`badges="snowflake"` on `PartnershipHighlight`, which needs the `only` prop from `git diff d0cbced pre-revert-2026-09-27 -- components/marketing/PartnerBadges.tsx components/marketing/PartnershipHighlight.tsx`).
 
 Also lift the last accepted `components/marketing/Footer.tsx` badge block (uses `PartnerBadgeRow size="sm"`), the `messages/*/nav.json` entries that add both partnership pages under Company, and the two new routes in `config/routes.ts` (the sitemap derives from it): `git diff d0cbced pre-revert-2026-09-27 -- components/marketing/Footer.tsx messages/en/nav.json messages/es/nav.json config/routes.ts`.
 
@@ -256,7 +257,7 @@ public/assets/images/blog/snowflake-claude-enterprise-ai-stack.jpg
 ```
 plus the `blogPosts` entry from `prisma/seed/data.ts` and the `blogPostsEs` entry from `prisma/seed/es/blog.ts` (`git diff d0cbced pre-revert-2026-09-27 -- prisma/seed/data.ts prisma/seed/es/blog.ts`, take only the new blog entries). Date it the day you publish. Author `eduardo-ramos`.
 
-The post's body states the Select tier and links to `/partnership/snowflake` and `/partnership/claude`, so it depends on steps 1 and 5.
+The post's body (both locales, "Why Viewnear" section) states the Select tier: rewrite it to the Member tier. It links to `/partnership/snowflake` and `/partnership/claude`, so it depends on steps 1 and 5.
 
 **Verify.** `npx prisma db seed && npm run ship && npm run content:status`. `/blog` lists it first; the GFM table renders; all internal links 200 in both locales; no em dashes (`grep -n "—" prisma/seed/content/blog/snowflake-claude*`).
 
@@ -271,6 +272,7 @@ The post's body states the Select tier and links to `/partnership/snowflake` and
 - [ ] `grep -rn "—" messages prisma/seed/content` returns nothing you wrote
 - [ ] `grep -rniE "hand over|handover|hands? the work over" messages prisma/seed/data.ts` returns only the pre-existing lines outside your steps (list them for the owner; retiring them site-wide is `da9b71b` on the parked branch, 34 files, do it only if asked)
 - [ ] The word "Snowflake" does not appear in the H1; "Claude" does not appear in the H1
+- [ ] `grep -rni "select services partner\|select partner" messages prisma app components config` returns nothing
 - [ ] No new card grids, plates, tints, gradients, orbs, carousels
 - [ ] Screenshots at 1440 and 390 of `/`, `/partnership`, `/partnership/snowflake`, `/partnership/claude`, `/case-studies`, viewed by eye, not just measured
 - [ ] Nothing pushed; `git log origin/main..main` lists exactly your step commits
@@ -288,7 +290,7 @@ Reference for `git show` and `git diff`. **Lift** = safe to copy from. **Ref** =
 | `3aec099`, `6918979` | two-pillar copy rebalance across messages + seed (Snowflake counts went up, Claude from 0) | Ref for wording; do not apply wholesale |
 | `d24b4e1` | FAQ: attribute the training-data statement to the vendors | Lift (3 files, safe) |
 | `da9b71b` | retire the handover promise site-wide (34 files) | Lift only if the owner asks for site-wide |
-| `f225ab8`, `4b8bdf9`, `53753d8` | `config/partners.ts`, Select tier as fact, credential on every surface | Lift `config/partners.ts`; Ref the rest |
+| `f225ab8`, `4b8bdf9`, `53753d8` | `config/partners.ts`, Select tier as fact, credential on every surface | Lift `config/partners.ts` and rewrite the tier to Member; Ref the rest |
 | `32b37ff` | "class of company, not the companies" (Big Four wording) | Lift |
 | `749688e`, `314c0f1` | partnership hub + two pages | Lift (step 5) |
 | `75b9d3f`, `df9877d` | badges bare, sized legible | Lift `PartnerBadgeRow.tsx` |
