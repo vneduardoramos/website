@@ -94,8 +94,8 @@
     },
     {
       "phase": "Phase 4 · Ongoing",
-      "title": "Handover and run",
-      "body": "Enablement, runbooks, and a transition plan that names who operates what. The in-house team can run and extend the work; managed support stays optional, not a dependency we engineer in."
+      "title": "Run and improve",
+      "body": "Enablement and runbooks ship with the build. The in-house team can run and extend the work, or Viewnear runs, tunes and improves it as a managed service."
     }
   ],
   "deliveryBand": [
@@ -124,7 +124,7 @@
     },
     {
       "title": "The people who scope it are the people who build it",
-      "body": "No pitch team handing off to a delivery pyramid. SnowPro-certified architects and engineers stay on from discovery through handover, so the depth that sized the work is the depth that delivers it."
+      "body": "No pitch team handing off to a delivery pyramid. SnowPro-certified architects and engineers stay on from discovery through production, so the depth that sized the work is the depth that delivers it."
     },
     {
       "title": "Nearshore, inside your working day",
@@ -139,8 +139,8 @@
       "body": "Openflow, Snowpark, Horizon Catalog, Cortex, Snowsight, and Streamlit, so governance and AI context stay in one place. dbt is the one external framework we run, natively against Snowflake."
     },
     {
-      "title": "Built to hand over",
-      "body": "Every engagement includes documentation, enablement, and a transition plan. Success is measured by how little the team needs us afterward, which is the opposite of how most implementations are staffed."
+      "title": "Documented, then kept improving",
+      "body": "Every engagement includes documentation, runbooks and enablement. From there the team runs it, or Viewnear keeps running and improving the estate as a managed service."
     }
   ],
   "cost": {
@@ -174,7 +174,7 @@
   "faq": [
     {
       "q": "What do Snowflake consultants actually do?",
-      "a": "Three things, in order: decide what to build, build it, and make sure the in-house team can run it. In practice that means assessing the current data estate, designing the target architecture on Snowflake, implementing ingestion, modeling and governance, delivering the analytics and AI use cases that justify the work, and handing over documentation and skills. A partner who only does the middle step leaves the hardest parts with the client."
+      "a": "Three things, in order: decide what to build, build it, and make sure the in-house team can run it. In practice that means assessing the current data estate, designing the target architecture on Snowflake, implementing ingestion, modeling and governance, delivering the analytics and AI use cases that justify the work, and shipping the documentation and enablement with it. A partner who only does the middle step leaves the hardest parts with the client."
     },
     {
       "q": "What is included in Snowflake implementation services?",
@@ -214,7 +214,7 @@
     },
     {
       "q": "What happens after go-live?",
-      "a": "Every engagement includes documentation, runbooks, enablement, and a transition plan naming who operates what. The in-house team can run and extend the work without us. Ongoing optimization, cost tuning, and support are available when a team wants them, not engineered in as a dependency."
+      "a": "Every engagement includes documentation, runbooks and enablement, so the in-house team can run and extend the work. Teams that would rather not staff the run keep Viewnear on as a managed service: monitoring, cost tuning, and a roadmap of enhancements to the Snowflake estate and the agents on it."
     }
   ],
   "cta": {

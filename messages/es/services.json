@@ -94,9 +94,9 @@
         "body": "Probamos el enfoque con un POC acotado antes del desarrollo completo, para que el compromiso de escalar se base en evidencia y no en una presentación de diapositivas."
       },
       {
-        "label": "Traspaso",
-        "title": "Construido para entregarse",
-        "body": "Documentación, habilitación y un plan de transición en cada proyecto, para que el equipo opere y amplíe el trabajo con confianza."
+        "label": "Operación",
+        "title": "Documentado, y en mejora continua",
+        "body": "La documentación y los runbooks se entregan con el desarrollo. A partir de ahí, el equipo lo opera, o Viewnear lo sigue operando y mejorando como servicio gestionado."
       }
     ],
     "securityLine": "La seguridad y el gobierno están integrados en cada fase: <link>vea cómo mantenemos seguros los datos empresariales</link>."
@@ -185,8 +185,8 @@
         "body": "Seguridad, linaje y control de acceso diseñados desde la primera tabla, no añadidos después."
       },
       {
-        "title": "Traspaso y habilitación",
-        "body": "Traspaso completo, documentación y habilitación para que el equipo lo opere con confianza."
+        "title": "Documentado y en mejora continua",
+        "body": "La documentación y la habilitación se entregan con el desarrollo, y Viewnear puede seguir operándolo y mejorándolo como servicio gestionado."
       },
       {
         "title": "Integrado con la empresa",

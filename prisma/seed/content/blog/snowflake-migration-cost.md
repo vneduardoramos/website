@@ -51,10 +51,10 @@ The good news is that most of these drivers are movable.
 
 We almost always start with a discovery: a short, fixed engagement that inventories the source system, profiles the data, and produces a real scope and estimate instead of a guess. That discovery is where the range narrows from "somewhere between X and 3X" to a number you can actually plan around.
 
-From there, the work runs in phases with validated parity at each step and a handover that leaves your team running the result, not dependent on us to touch it. Time-to-value shows up early because the first workloads reach production in weeks, not at the end of a year-long project.
+From there, the work runs in phases with validated parity at each step and documentation that ships with every phase, so your team runs the result, or Viewnear keeps running and tuning it as a managed service. Time-to-value shows up early because the first workloads reach production in weeks, not at the end of a year-long project.
 
 ## The number that matters more than the number
 
-The real cost of a migration is not just the invoice. It is the risk of getting it wrong: a cutover that breaks reporting during quarter close, a rebuild that quietly changes numbers the business trusts, a partner who disappears once the contract ends. A slightly higher project cost that buys validated parity, a phased cutover, and a team that hands over the keys is almost always cheaper than the alternative.
+The real cost of a migration is not just the invoice. It is the risk of getting it wrong: a cutover that breaks reporting during quarter close, a rebuild that quietly changes numbers the business trusts, a partner who disappears once the contract ends. A slightly higher project cost that buys validated parity, a phased cutover, and an estate documented as it is built is almost always cheaper than the alternative.
 
 If you want a real estimate for your environment, the honest first step is a discovery, not a quote. Our [migrations page](/migrations) explains how we approach it, and we are happy to walk through what the drivers above look like for your specific stack.

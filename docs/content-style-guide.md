@@ -39,7 +39,7 @@ The `/es` site is **Mexican business Spanish**: professional and human, NOT a li
 **Statement (internal north star, revised 2026-07-06):** Viewnear helps enterprises stand up two capabilities they keep: a **data practice** (governed, trusted data feeding real decisions) and an **AI practice** (use cases shipping into production), built on Snowflake, run by the client's own team, guided and accelerated by ours. Operational data flows in (ERP, CRM, core systems via Openflow and Zero-Copy Integrations); decisions, answers, and AI agents flow back out to the apps and workflows where work happens.
 
 **Three pillars, named consistently:**
-1. **A practice you keep** (built with your team, handed over documented, extended without us).
+1. **A practice you keep** (built with your team, documented as it is built; the team runs it, or Viewnear keeps running and improving it as a managed service). Do NOT promise a "handover", "transition plan" or that we "step back": the owner removed that claim on 2026-09-16 in favor of the managed-services proposition.
 2. **Data & AI that reaches production** (governed foundation, then Cortex analytics and agents).
 3. **Time-to-value made real** (use-case sprints, proof before scale, 8–16 weeks with the how attached).
 

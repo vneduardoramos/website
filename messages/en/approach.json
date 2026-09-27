@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "How we deliver: use-case sprints, then scale",
-    "description": "How Viewnear delivers on Snowflake: use-case-driven sprints, proof before scale, and engagement governance, with fixed timelines, steering reviews, POC gates, and a clean handover."
+    "description": "How Viewnear delivers on Snowflake: use-case-driven sprints, proof before scale, and engagement governance, with fixed timelines, steering reviews, POC gates, and documentation that ships with every build."
   },
   "hero": {
     "eyebrow": "Our approach",
@@ -11,12 +11,12 @@
   "experience": {
     "eyebrow": "The experience",
     "title": "What an engagement feels like from the sponsor's seat",
-    "intro": "The reviews the sponsor runs, the demos the team watches, and the decisions that stay in-house: one engagement, from the first scoping session to handover."
+    "intro": "The reviews the sponsor runs, the demos the team watches, and the decisions that stay in-house: one engagement, from the first scoping session to production."
   },
   "run": {
     "eyebrow": "How engagements run",
     "title": "Checkpoints sponsors control",
-    "intro": "Clear timelines, steering, and a clean handover: the questions every sponsor asks, answered up front."
+    "intro": "Clear timelines, steering, and documentation that ships with the build: the questions every sponsor asks, answered up front."
   },
   "runPhases": [
     {
@@ -32,8 +32,8 @@
       "body": "We prove the approach with a focused proof of concept before the full build, so the commitment to scale rests on evidence, not a slide deck."
     },
     {
-      "title": "Built to hand over",
-      "body": "Runbooks, documentation, and enablement sessions ship with the build, plus a transition plan that names who runs what when we step back."
+      "title": "Documented, then kept improving",
+      "body": "Documentation and runbooks ship with the build. From there the team runs it, or Viewnear keeps running and improving it as a managed service."
     }
   ],
   "impact": {

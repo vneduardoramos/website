@@ -20,7 +20,7 @@
   ],
   "whoWeAre": {
     "eyebrow": "Who we are",
-    "title": "We build it alongside the team, then hand over the keys",
+    "title": "We build it alongside the team, and keep improving it with them",
     "body": "Viewnear helps enterprises stand up two capabilities they keep: a data practice and an AI practice, built on Snowflake and run by in-house teams. We work alongside those teams from first workshop to production, across strategy, architecture, engineering, analytics, and governed AI, and we integrate what we build both ways: operational data flows in, and decisions, answers, and AI agents flow back into the systems where work happens. We grew from a specialist practice into a Snowflake Premier Partner by going deep on one platform, and that focus shapes how we hire, train, and deliver.",
     "cta": "How we deliver",
     "imageAlt": "A collage of the Viewnear team across Snowflake events: the data + ai booth, Data for Breakfast, Snowflake Summit, and team meals"
@@ -97,7 +97,7 @@
     },
     {
       "title": "We leave teams stronger",
-      "body": "Documentation, enablement, and a transition plan in every engagement, so the team runs and extends the work confidently."
+      "body": "Documentation and runbooks ship with the build. From there the team runs it, or Viewnear keeps running and improving it as a managed service."
     },
     {
       "title": "The Americas' home team",

@@ -94,8 +94,8 @@
     },
     {
       "phase": "Fase 4 · Continuo",
-      "title": "Traspaso y operación",
-      "body": "Habilitación, runbooks y un plan de transición que define quién opera qué. El equipo interno puede operar y extender el trabajo; el soporte gestionado es opcional, no una dependencia diseñada a propósito."
+      "title": "Operar y mejorar",
+      "body": "La habilitación y los runbooks se entregan con el desarrollo. El equipo interno puede operar y extender el trabajo, o Viewnear lo opera, lo afina y lo mejora como servicio gestionado."
     }
   ],
   "deliveryBand": [
@@ -124,7 +124,7 @@
     },
     {
       "title": "Quien dimensiona es quien construye",
-      "body": "Sin un equipo de preventa que entrega a una pirámide de delivery. Los arquitectos e ingenieros certificados en SnowPro permanecen desde el discovery hasta el traspaso, así que la profundidad que dimensionó el trabajo es la que lo entrega."
+      "body": "Sin un equipo de preventa que entrega a una pirámide de delivery. Los arquitectos e ingenieros certificados en SnowPro permanecen desde el discovery hasta producción, así que la profundidad que dimensionó el trabajo es la que lo entrega."
     },
     {
       "title": "Nearshore, dentro de la jornada del cliente",
@@ -139,8 +139,8 @@
       "body": "Openflow, Snowpark, Horizon Catalog, Cortex, Snowsight y Streamlit, para que el gobierno y el contexto de IA se mantengan en un solo lugar en vez de repartidos entre proveedores. dbt es el único framework externo que operamos, de forma nativa contra Snowflake."
     },
     {
-      "title": "Construido para entregarse",
-      "body": "Cada proyecto incluye documentación, habilitación y un plan de transición. El éxito se mide por lo poco que el equipo nos necesita después, que es lo contrario de cómo se dimensiona la mayoría de las implementaciones."
+      "title": "Documentado, y en mejora continua",
+      "body": "Cada proyecto incluye documentación, runbooks y habilitación. A partir de ahí el equipo lo opera, o Viewnear sigue operando y mejorando el entorno como servicio gestionado."
     }
   ],
   "cost": {
@@ -174,7 +174,7 @@
   "faq": [
     {
       "q": "¿Qué hace en realidad un consultor de Snowflake?",
-      "a": "Tres cosas, en orden: decidir qué construir, construirlo y asegurar que el equipo interno pueda operarlo. En la práctica implica evaluar el estado actual de los datos, diseñar la arquitectura objetivo sobre Snowflake, implementar ingesta, modelado y gobierno, entregar los casos de uso de analítica e IA que justifican el trabajo, y traspasar documentación y habilidades. Un partner que solo hace el paso intermedio deja las partes más difíciles del lado del cliente."
+      "a": "Tres cosas, en orden: decidir qué construir, construirlo y asegurar que el equipo interno pueda operarlo. En la práctica implica evaluar el estado actual de los datos, diseñar la arquitectura objetivo sobre Snowflake, implementar ingesta, modelado y gobierno, entregar los casos de uso de analítica e IA que justifican el trabajo, y dejar documentado y habilitado al equipo. Un partner que solo hace el paso intermedio deja las partes más difíciles del lado del cliente."
     },
     {
       "q": "¿Qué incluye un servicio de implementación de Snowflake?",
@@ -214,7 +214,7 @@
     },
     {
       "q": "¿Qué pasa después del go-live?",
-      "a": "Cada proyecto incluye documentación, runbooks, habilitación y un plan de transición que define quién opera qué. El equipo interno puede operar y extender el trabajo sin nosotros. La optimización continua, el ajuste de costos y el soporte están disponibles cuando un equipo los quiere, no integrados como dependencia."
+      "a": "Cada proyecto incluye documentación, runbooks y habilitación, para que el equipo interno pueda operar y extender el trabajo. Los equipos que prefieren no dotar la operación mantienen a Viewnear como servicio gestionado: monitoreo, ajuste de costos y un roadmap de mejoras al entorno Snowflake y a los agentes que corren sobre él."
     }
   ],
   "cta": {

@@ -40,7 +40,7 @@
       },
       "oneTeam": {
         "title": "One team answers for the whole arc",
-        "body": "Snowflake runs the platform. We design, build, and tune what runs on it with the team in the room, then hand over the keys: documented, and theirs to extend. A foundation is scoped to reach production in 8–16 weeks, because discovery fixes the scope up front and every sprint ends with working software in a demo."
+        "body": "Snowflake runs the platform. We design, build, and tune what runs on it with the team in the room, documented as it goes, and either theirs to extend or ours to keep running and improving as a managed service. A foundation is scoped to reach production in 8–16 weeks, because discovery fixes the scope up front and every sprint ends with working software in a demo."
       }
     }
   },

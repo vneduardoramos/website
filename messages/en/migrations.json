@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Snowflake migrations: Teradata, Oracle, Hadoop",
-    "description": "Viewnear moves legacy warehouses and Hadoop onto one governed foundation on Snowflake: automated code conversion, validated parity, a phased cutover the business never feels, and a handover that leaves the team running it."
+    "description": "Viewnear moves legacy warehouses and Hadoop onto one governed foundation on Snowflake: automated code conversion, validated parity, a phased cutover the business never feels, and a documented estate the team runs, or Viewnear runs and tunes as a managed service."
   },
   "hero": {
     "eyebrow": "Migrations",
@@ -152,7 +152,7 @@
     },
     {
       "title": "Optimize & decommission",
-      "body": "We tune warehouses and pipelines on real usage, retire the legacy system, and hand over documentation and runbooks so the team runs it without us."
+      "body": "We tune warehouses and pipelines on real usage, retire the legacy system, and ship the documentation and runbooks. From there the team runs it, or Viewnear keeps tuning and running it as a managed service."
     }
   ],
   "conviction": {

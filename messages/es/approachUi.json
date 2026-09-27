@@ -21,8 +21,8 @@
       "body": "Cuando los primeros dashboards entran en producción, una <art>ejecución en paralelo</art> los contrasta con los números en los que los equipos confían hoy, y cada discrepancia se rastrea y se explica. Los nuevos números ganan su credibilidad al reconciliar, no porque nosotros respondamos por ellos."
     },
     "beat6": {
-      "title": "Traspaso, documentado",
-      "body": "La entrega incluye <art>runbooks</art>, documentación y sesiones de <art>habilitación</art>, además de un plan de transición que define quién opera qué cuando nos hacemos a un lado. Los proyectos se dimensionan para alcanzar el primer valor en 8–16 semanas, y a partir de ahí el equipo amplía el trabajo en sus propios términos."
+      "title": "Documentado, y en mejora continua",
+      "body": "La entrega incluye <art>runbooks</art>, documentación y sesiones de <art>habilitación</art>. Los proyectos se dimensionan para alcanzar el primer valor en 8–16 semanas, y a partir de ahí el equipo opera y amplía el trabajo, o Viewnear lo sigue operando y mejorando como servicio gestionado."
     }
   }
 }

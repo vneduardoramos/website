@@ -3,7 +3,7 @@ import { RevealGroup } from "@/components/marketing/Motion";
 
 /**
  * The engagement narrated from the sponsor's seat: six story beats walk
- * one engagement from the first scoping session to handover, in the third
+ * one engagement from the first scoping session to production, in the third
  * person (the sponsor, the team), with the governance artifacts woven into
  * the prose as mono mentions. Same quiet spine as the platform StackStory (neutral hairline
  * + dots, per the no-colored-rails rule); typography does the rest.

@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 
 /**
  * The stack narrated as an engagement instead of drawn as an infographic:
- * six story beats walk one build from first sprint to handover, with our
+ * six story beats walk one build from first sprint to production, with our
  * role and the Snowflake product names woven into the prose.
  * A quiet spine (neutral hairline + dots, per the no-colored-rails rule)
  * carries the sequence; typography does the rest.

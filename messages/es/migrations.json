@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Migraciones a Snowflake: Teradata y Oracle",
-    "description": "Viewnear traslada almacenes heredados y Hadoop a Snowflake: conversión automatizada, paridad validada y una transferencia que el equipo interno termina operando."
+    "description": "Viewnear traslada almacenes heredados y Hadoop a Snowflake: conversión automatizada, paridad validada y un entorno documentado que el equipo interno opera, o que Viewnear opera y afina como servicio gestionado."
   },
   "hero": {
     "eyebrow": "Migraciones",
@@ -152,7 +152,7 @@
     },
     {
       "title": "Optimizar y desmantelar",
-      "body": "Ajustamos los almacenes y las canalizaciones según el uso real, retiramos el sistema heredado y entregamos documentación y runbooks para que el equipo lo opere sin nosotros."
+      "body": "Ajustamos los almacenes y las canalizaciones según el uso real, retiramos el sistema heredado y entregamos la documentación y los runbooks. A partir de ahí el equipo lo opera, o Viewnear lo sigue afinando y operando como servicio gestionado."
     }
   ],
   "conviction": {

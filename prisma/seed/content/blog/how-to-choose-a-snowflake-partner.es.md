@@ -18,7 +18,7 @@ El nivel le dice que superaron una barra. No le dice si la gente senior que cono
 
 Este es el mejor predictor de la satisfacción dentro de un año. Algunas firmas construyen una solución *para* el cliente y se van. Cuando algo se rompe o el negocio cambia, hay que volver a llamarlas y el taxímetro arranca otra vez.
 
-La alternativa es un partner que construye *con* el equipo interno: su gente en la sala, las decisiones documentadas, el trabajo entregado para que ese equipo lo opere y lo extienda sin ellos. Ese es el modelo al que nos apegamos, y vale la pena pedirle a cualquier partner que describa el suyo de forma concreta. ¿Qué incluye realmente la transición? ¿Documentación, capacitación, un plan de traspaso? ¿O una página de wiki y una despedida?
+La alternativa es un partner que construye *con* el equipo interno: su gente en la sala, las decisiones documentadas, el trabajo documentado para que ese equipo lo opere y lo extienda, con el partner disponible para seguir operándolo y mejorándolo si eso es lo que conviene. Ese es el modelo al que nos apegamos, y vale la pena pedirle a cualquier partner que describa el suyo de forma concreta. ¿Qué se entrega con el desarrollo? ¿Documentación, runbooks, habilitación y una opción real de mantenerlo como servicio gestionado? ¿O una página de wiki y una despedida?
 
 ## El modelo de entrega debe ajustarse a la forma de trabajar
 

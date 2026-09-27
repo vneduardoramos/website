@@ -20,7 +20,7 @@
   ],
   "whoWeAre": {
     "eyebrow": "Quiénes somos",
-    "title": "Lo construimos junto al equipo y luego entregamos las llaves",
+    "title": "Lo construimos junto al equipo, y lo seguimos mejorando con él",
     "body": "Viewnear ayuda a las empresas a establecer dos capacidades que conservan: una práctica de datos y una práctica de IA, construidas sobre Snowflake y operadas por equipos internos. Trabajamos junto a esos equipos desde el primer taller hasta la producción, en estrategia, arquitectura, ingeniería, analítica e IA gobernada, e integramos lo que construimos en ambos sentidos: los datos operativos entran, y las decisiones, respuestas y agentes de IA regresan a los sistemas donde ocurre el trabajo. Pasamos de ser una práctica especializada a un Snowflake Premier Partner al profundizar en una sola plataforma, y ese enfoque define cómo contratamos, capacitamos y entregamos.",
     "cta": "Cómo entregamos",
     "imageAlt": "Un collage del equipo de Viewnear en eventos de Snowflake: el stand de data + ai, Data for Breakfast, Snowflake Summit y comidas del equipo"
@@ -97,7 +97,7 @@
     },
     {
       "title": "Dejamos equipos más fuertes",
-      "body": "Documentación, habilitación y un plan de transición en cada proyecto, para que el equipo opere y amplíe el trabajo con confianza."
+      "body": "La documentación y los runbooks se entregan con el desarrollo. A partir de ahí, el equipo lo opera, o Viewnear lo sigue operando y mejorando como servicio gestionado."
     },
     {
       "title": "El equipo local de América",

@@ -32,8 +32,8 @@
       "body": "Probamos el enfoque con un POC acotado antes del desarrollo completo, para que el compromiso de escalar se base en evidencia y no en una presentación de diapositivas."
     },
     {
-      "title": "Construido para entregarse",
-      "body": "Los runbooks, la documentación y las sesiones de capacitación se entregan junto con el desarrollo, además de un plan de transición que define quién opera qué cuando nos retiramos."
+      "title": "Documentado, y en mejora continua",
+      "body": "La documentación y los runbooks se entregan con el desarrollo. A partir de ahí, el equipo lo opera, o Viewnear lo sigue operando y mejorando como servicio gestionado."
     }
   ],
   "impact": {

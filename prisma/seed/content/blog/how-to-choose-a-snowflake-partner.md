@@ -18,7 +18,7 @@ The tier tells you they have cleared a bar. It does not tell you whether the sen
 
 This is the single biggest predictor of whether you will be happy in a year. Some firms build a solution *for* you and leave. When something breaks or the business changes, you call them back, and the meter starts again.
 
-The alternative is a partner who builds *with* your team: your people in the room, decisions documented, the work handed over so your team can run and extend it without them. That is the model we hold to, and it is worth asking any partner to describe theirs concretely. What does handover actually include? Documentation, enablement, a transition plan? Or a wiki page and a goodbye?
+The alternative is a partner who builds *with* your team: your people in the room, decisions documented, the work documented so your team can run and extend it, with the partner staying on to run and improve it if that is what you want. That is the model we hold to, and it is worth asking any partner to describe theirs concretely. What ships with the build? Documentation, runbooks, enablement, and a real option to keep them on as a managed service? Or a wiki page and a goodbye?
 
 ## Match the delivery model to how you work
 

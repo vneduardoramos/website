@@ -49,10 +49,10 @@ La buena noticia es que la mayoría de estos factores se pueden mover.
 
 Casi siempre empezamos con un discovery: un proyecto corto y cerrado que inventaría el sistema de origen, perfila los datos y produce un scope y un estimado reales en lugar de una adivinanza. Ese discovery es donde el rango se estrecha de "entre X y 3X" a un número con el que de verdad puede planear.
 
-De ahí, el trabajo corre por fases con paridad validada en cada paso y una entrega que deja al equipo interno operando el resultado, no dependiendo de nosotros para tocarlo. El tiempo a valor aparece temprano porque los primeros workloads llegan a producción en semanas, no al final de un proyecto de un año.
+De ahí, el trabajo corre por fases con paridad validada en cada paso y documentación que se entrega en cada fase, para que el equipo interno opere el resultado, o Viewnear lo siga operando y afinando como servicio gestionado. El tiempo a valor aparece temprano porque los primeros workloads llegan a producción en semanas, no al final de un proyecto de un año.
 
 ## El número que importa más que el número
 
-El costo real de una migración no es solo la factura. Es el riesgo de equivocarse: un cutover que rompe los reportes durante el cierre trimestral, una reconstrucción que cambia en silencio números en los que el negocio confía, un partner que desaparece cuando termina el contrato. Un costo de proyecto un poco más alto que compra paridad validada, un cutover por fases y un equipo que entrega las llaves casi siempre sale más barato que la alternativa.
+El costo real de una migración no es solo la factura. Es el riesgo de equivocarse: un cutover que rompe los reportes durante el cierre trimestral, una reconstrucción que cambia en silencio números en los que el negocio confía, un partner que desaparece cuando termina el contrato. Un costo de proyecto un poco más alto que compra paridad validada, un cutover por fases y un estado documentado conforme se construye casi siempre sale más barato que la alternativa.
 
 Para un estimado real de un entorno específico, el primer paso honesto es un discovery, no una cotización. Nuestra [página de migraciones](/es/migrations) explica cómo lo abordamos, y con gusto recorremos cómo se ven los factores de arriba para un stack específico.

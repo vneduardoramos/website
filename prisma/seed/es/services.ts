@@ -187,7 +187,7 @@ Afinar analítica y agentes es trabajo de retroalimentación constante. Un model
 
 Nuestros ingenieros trabajan desde Monterrey y Austin, en horario del cliente. El desarrollo nearshore de IA desde Latinoamérica suele implicar el modelo clásico de outsourcing, con entregas sin contexto; este modelo es lo contrario. Ingenieros con certificación SnowPro se sientan en las mismas juntas de revisión que los analistas del cliente, escuchan las objeciones de primera mano y las convierten en Semantic Views más precisas y agentes mejor calibrados en días, no en ciclos de release. El modelo completo está en nuestra [página de nearshore](/es/nearshore).
 
-Y la práctica queda del lado del equipo interno: su gente aprende el modelo semántico y la configuración de los agentes mientras construimos, para que los dashboards y agentes sigan mejorando después del traspaso. Así se concreta en nuestros [casos de éxito](/es/case-studies).
+Y la práctica queda del lado del equipo interno: su gente aprende el modelo semántico y la configuración de los agentes mientras construimos, para que los dashboards y agentes sigan mejorando, ya sea que los opere el equipo o Viewnear como servicio gestionado. Así se concreta en nuestros [casos de éxito](/es/case-studies).
 
 ## Lo que los equipos preguntan antes de implementar analítica con IA
 
@@ -300,6 +300,6 @@ Conviene partir de los casos de uso, no de las descripciones de puesto. Un disco
 
 ### ¿La capacitación Snowflake es staff augmentation u outsourcing?
 
-Ninguno de los dos en el sentido tradicional. El staff augmentation renta capacidad y se la lleva cuando termina el contrato; el outsourcing saca el trabajo, y el aprendizaje, fuera de la organización. Nosotros trabajamos dentro del equipo, con una tarifa vinculada a resultados, y medimos el éxito por lo poco que nos necesite el próximo trimestre. Nuestra [práctica como Snowflake Premier Partner](/es/partnership) está construida alrededor de ese traspaso.`,
+Ninguno de los dos en el sentido tradicional. El staff augmentation renta capacidad y se la lleva cuando termina el contrato; el outsourcing saca el trabajo, y el aprendizaje, fuera de la organización. Nosotros trabajamos dentro del equipo, con una tarifa vinculada a resultados, y medimos el éxito por lo que el equipo puede operar por sí mismo el próximo trimestre. Cuando un equipo prefiere no dotar la operación, Viewnear la sigue operando y mejorando como servicio gestionado, sobre la misma [práctica como Snowflake Premier Partner](/es/partnership).`,
   },
 };

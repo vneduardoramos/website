@@ -21,8 +21,8 @@
       "body": "When the first dashboards go live, a <art>parallel run</art> checks them against the numbers teams trust today, and every mismatch gets chased down and explained. The new figures earn their standing by reconciling, not because we vouched for them."
     },
     "beat6": {
-      "title": "Handover, documented",
-      "body": "The build ships with <art>runbooks</art>, documentation, and <art>enablement</art> sessions, plus a transition plan that names who runs what when we step back. Engagements are scoped to reach first value in 8–16 weeks, and from there the team extends the work on its own terms."
+      "title": "Documented, and kept improving",
+      "body": "The build ships with <art>runbooks</art>, documentation, and <art>enablement</art> sessions. Engagements are scoped to reach first value in 8–16 weeks, and from there the team runs and extends the work, or Viewnear keeps running and improving it as a managed service."
     }
   }
 }

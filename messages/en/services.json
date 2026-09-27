@@ -23,7 +23,7 @@
     },
     "GROW": {
       "eyebrow": "Enablement",
-      "intro": "Compound the value. The team scales AI use cases and agents into production with our people alongside, and keeps improving them long after we step back."
+      "intro": "Compound the value. The team scales AI use cases and agents into production with our people alongside, and keeps improving them, with Viewnear on hand for as long as that is useful, including as a managed service."
     }
   },
   "toolsLabel": "Tools",
@@ -76,7 +76,7 @@
   "run": {
     "eyebrow": "How engagements run",
     "title": "Delivery leaders can govern",
-    "intro": "We de-risk the engagement itself (clear timelines, steering, and a clean handover) so the buy is as low-risk as the outcome is valuable.",
+    "intro": "We de-risk the engagement itself (clear timelines, steering, and documentation that ships with the build) so the buy is as low-risk as the outcome is valuable.",
     "phases": [
       {
         "label": "Timeline",
@@ -94,9 +94,9 @@
         "body": "We prove the approach with a focused proof of concept before the full build, so the commitment to scale rests on evidence, not a slide deck."
       },
       {
-        "label": "Handover",
-        "title": "Built to hand over",
-        "body": "Documentation, enablement, and a transition plan in every engagement, so the team runs and extends the work confidently."
+        "label": "Run",
+        "title": "Documented, then kept improving",
+        "body": "Documentation and runbooks ship with the build. From there the team runs it, or Viewnear keeps running and improving it as a managed service."
       }
     ],
     "securityLine": "Security and governance are built into every phase: <link>see how we keep enterprise data safe</link>."
@@ -185,8 +185,8 @@
         "body": "Security, lineage, and access control designed in from the first table, not bolted on."
       },
       {
-        "title": "Handover and enablement",
-        "body": "Full handover, documentation, and enablement so the team runs it confidently."
+        "title": "Documented and kept improving",
+        "body": "Documentation and enablement ship with the build, and Viewnear can keep running and improving it as a managed service."
       },
       {
         "title": "Integrated with the enterprise",
