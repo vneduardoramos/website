@@ -7,7 +7,7 @@ import { consentIsCurrent, readConsent } from "@/lib/consent";
 import { cn } from "@/lib/utils";
 
 /**
- * Nova: the site's chat agent, mounted once in the marketing layout so it
+ * Vista: the site's chat agent, mounted once in the marketing layout so it
  * survives client-side navigation between pages. The conversation is also
  * mirrored to localStorage (capped, with a freshness window) so it survives
  * a hard reload or a closed tab, not just an in-app route change.
