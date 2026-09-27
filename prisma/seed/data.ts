@@ -10,7 +10,7 @@ export const siteSettings: Record<string, unknown> = {
     // headline mirrors the hero H1 rendered in MeshHeroSlide (kept in sync for reference).
     headline: "The hard part of AI is the data. We build both.",
     subhead:
-      "We architect the foundation, govern what moves through it, and put agents on the work that still runs by hand. More than fifteen years of enterprise data engineering, with AI in production.",
+      "We architect the foundation, govern what moves through it, and put AI to work on the processes a business still runs by hand. More than fifteen years of enterprise data engineering, with AI in production.",
   },
   stats: [
     { label: "Snowflake partner tier", value: "Premier" },
@@ -107,7 +107,7 @@ The readiness assessment and roadmap take shape during discovery in the opening 
     tier: "BUILD",
     title: "Cloud Architecture & Data Foundation",
     summary:
-      "The AI-ready foundation: governed, built on Snowflake, and ready to scale, the single source of truth every model and agent depends on.",
+      "The AI-ready foundation: governed, built on Snowflake, and ready to scale, the single source of truth every model and AI workload depends on.",
     seoTitle: "Snowflake Data Foundation & Cloud Architecture",
     seoDescription:
       "Governed, AI-ready Snowflake data foundation and cloud architecture from a Snowflake Premier Partner, built with your team in US time zones.",
@@ -220,10 +220,10 @@ The first advantage is onboarding: the team already works your hours, so no ramp
   {
     slug: "data-visualisation",
     tier: "BUILD",
-    title: "AI Analytics & Agents",
+    title: "AI Analytics on Snowflake",
     summary:
-      "Put governed AI to work: Cortex Analyst and Snowflake CoWork agents that turn governed data into cited, decision-ready answers, embedded where leaders already work.",
-    seoTitle: "AI Analytics & Agents on Snowflake: Cortex",
+      "Put governed AI to work: Cortex Analyst and Snowflake CoWork turning governed data into cited, decision-ready answers, embedded where leaders already work.",
+    seoTitle: "AI Analytics on Snowflake: Cortex Analyst and CoWork",
     seoDescription:
       "Self-service analytics on Snowflake: Cortex Analyst, Snowsight dashboards, and AI agents that reach production, from a SnowPro-certified nearshore team.",
     tools: ["Cortex Analyst", "Snowflake CoWork", "Snowsight", "Streamlit"],
@@ -302,7 +302,7 @@ Customer-facing analytics is data application development, not an internal repor
 - **APIs and data services** where the front end is your own: governed data served to your components, so a bespoke interface does not mean a bespoke pipeline behind it.
 - **Governance built in from the first tenant**: access, lineage, and policy managed through Horizon Catalog, with serving layers kept fresh by Dynamic Tables.
 
-For the analytics your own teams use day to day, see [AI Analytics & Agents](/services/data-visualisation); this page is about the analytics your customers see.
+For the analytics your own teams use day to day, see [AI Analytics on Snowflake](/services/data-visualisation); this page is about the analytics your customers see.
 
 ## From roadmap item to revenue feature
 

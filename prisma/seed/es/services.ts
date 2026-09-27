@@ -50,7 +50,7 @@ Cuatro cosas como mínimo: casos de uso priorizados por valor de negocio y facti
   "cloud-architecture": {
     title: "Arquitectura en la Nube y Base Gobernada",
     summary:
-      "La base lista para IA: gobernada, construida sobre Snowflake y preparada para escalar, la única fuente de verdad de la que dependen todos los modelos y agentes.",
+      "La base lista para IA: gobernada, construida sobre Snowflake y preparada para escalar, la única fuente de verdad de la que dependen todos los modelos y las cargas de IA.",
     seoTitle: "Arquitectura cloud y base gobernada en Snowflake",
     seoDescription:
       "Arquitectura cloud y base gobernada en Snowflake, lista para IA y construida para escalar. Snowflake Premier Partner, entrega nearshore.",
@@ -155,10 +155,10 @@ Lo es cuando el trabajo nunca sale del ambiente del cliente. Nuestros ingenieros
 La primera ventaja es el arranque: el equipo ya trabaja en horario del cliente, así que no se pierde tiempo de arranque por la zona horaria ni meses de reclutamiento. A partir de ahí opera el mecanismo de sprints: un discovery fija el scope desde el inicio, los sprints por caso de uso entregan pipelines funcionando desde las primeras semanas y la prueba llega antes de escalar, así el primer valor llega en 8 a 16 semanas y el calendario se cumple.`,
   },
   "data-visualisation": {
-    title: "Analítica de IA y Agentes",
+    title: "Analítica con IA sobre Snowflake",
     summary:
-      "Poner la IA gobernada a trabajar: Cortex Analyst y los agentes de Snowflake CoWork que convierten datos gobernados en respuestas citadas y listas para decidir, integradas donde los líderes ya trabajan.",
-    seoTitle: "Analítica de IA y agentes en Snowflake",
+      "Poner la IA gobernada a trabajar: Cortex Analyst y Snowflake CoWork convierten datos gobernados en respuestas citadas y listas para decidir, integradas donde los líderes ya trabajan.",
+    seoTitle: "Analítica con IA en Snowflake: Cortex Analyst y CoWork",
     seoDescription:
       "Analítica de autoservicio en Snowflake: Cortex Analyst, dashboards y agentes de IA que llegan a producción. Snowflake Premier Partner, en horario del cliente.",
     body: `Poner las respuestas en manos de quienes deciden. Construimos analítica de autoservicio y agentes de IA nativos en Snowflake: dashboards de Snowsight y apps de Streamlit, Cortex Analyst respondiendo preguntas en lenguaje natural sobre Semantic Views gobernadas, y Snowflake CoWork para que el negocio explore y actúe. Es la capa de inteligencia de negocio reconstruida para que una pregunta devuelva una respuesta en lugar de un ticket: sin esperar al equipo de datos, sin exportar a hojas de cálculo.

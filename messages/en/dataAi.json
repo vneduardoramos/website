@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "Data + AI: agents inside and around Snowflake",
-    "description": "Agents that reason over governed data inside Snowflake and act in the tools teams already use, and the interplay between them. Built with Claude as an Anthropic partner, in production in 8–16 weeks."
+    "title": "Data + AI: put AI to work inside and around Snowflake",
+    "description": "AI that reasons over governed data inside Snowflake and acts in the tools teams already use, with a person deciding what matters. Built with Claude as an Anthropic partner, in production in 8-16 weeks."
   },
   "hero": {
     "eyebrow": "Data + AI",
-    "title": "Agents that act where work happens, <hl>on data teams can trust.</hl>",
-    "description": "The value of artificial intelligence shows up when agents reason over governed data inside Snowflake and take the next action in the tools teams already use. We build both, and the interplay between them, with Claude as an Anthropic partner. Proven small first, in production in 8–16 weeks."
+    "title": "AI put to work where the work happens, <hl>on data teams can trust.</hl>",
+    "description": "Artificial intelligence earns its place when it reasons over governed data inside Snowflake and takes the next action in the tools teams already use, with a person deciding what matters. We build both, and the interplay between them, with Claude as an Anthropic partner. Proven small first, in production in 8-16 weeks."
   },
   "heroChips": [
     "Inside Snowflake + in the field",
@@ -95,7 +95,7 @@
     "anthropicLine": "Anthropic partner, building with Claude"
   },
   "cta": {
-    "title": "Put the right agent on the work.",
+    "title": "Put AI to work where the manual work is.",
     "subtitle": "Tell us the use case. We'll bring Claude, the governance, and the people to ship it into production with the team, inside Snowflake and in the flow of work."
   },
   "breadcrumb": {

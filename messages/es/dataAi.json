@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "Data + AI: agentes dentro y fuera de Snowflake",
-    "description": "Agentes que razonan sobre datos gobernados en Snowflake y actúan en las herramientas que los equipos ya usan. Con Claude, en producción en 8 a 16 semanas."
+    "title": "Datos + IA: poner la IA a trabajar dentro y alrededor de Snowflake",
+    "description": "IA que razona sobre datos gobernados dentro de Snowflake y actúa en las herramientas que los equipos ya usan, con una persona decidiendo lo que importa. Construido con Claude como partner de Anthropic, en producción en 8 a 16 semanas."
   },
   "hero": {
     "eyebrow": "Data + AI",
-    "title": "Agentes que actúan donde ocurre el trabajo, <hl>sobre datos en los que los equipos pueden confiar.</hl>",
-    "description": "El valor de la inteligencia artificial aparece cuando los agentes razonan sobre datos gobernados dentro de Snowflake y ejecutan la siguiente acción en las herramientas que los equipos ya usan. Construimos ambos, y la interacción entre ellos, con Claude como socio de Anthropic. Probado primero a pequeña escala, en producción en 8 a 16 semanas."
+    "title": "IA puesta a trabajar donde ocurre el trabajo, <hl>sobre datos confiables.</hl>",
+    "description": "La inteligencia artificial se gana su lugar cuando razona sobre datos gobernados dentro de Snowflake y ejecuta el siguiente paso en las herramientas que los equipos ya usan, con una persona decidiendo lo que importa. Construimos ambas cosas, y la relación entre ellas, con Claude como partner de Anthropic. Se comprueba en pequeño primero, en producción en 8 a 16 semanas."
   },
   "heroChips": [
     "Dentro de Snowflake + en el campo",
@@ -95,7 +95,7 @@
     "anthropicLine": "Socio de Anthropic, construyendo con Claude"
   },
   "cta": {
-    "title": "Poner el agente correcto en el trabajo.",
+    "title": "Poner la IA a trabajar donde está el trabajo manual.",
     "subtitle": "Con el caso de uso definido, aportamos Claude, el gobierno y las personas para llevarlo a producción junto con el equipo, dentro de Snowflake y en el flujo de trabajo."
   },
   "breadcrumb": {

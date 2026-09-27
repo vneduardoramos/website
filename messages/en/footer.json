@@ -17,7 +17,7 @@
     "aiDataStrategy": "Data & AI Strategy",
     "cloudArchitecture": "Cloud Architecture & Data Foundation",
     "dataEngineering": "Data Engineering & Pipelines",
-    "aiAnalytics": "AI Analytics & Agents",
+    "aiAnalytics": "AI Analytics on Snowflake",
     "embeddedAnalytics": "Embedded Analytics",
     "capabilityDevelopment": "Capability Development",
     "migrations": "Migrations",
