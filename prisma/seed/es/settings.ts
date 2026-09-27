@@ -3,7 +3,7 @@ export const siteSettingsEs: Record<string, unknown> = {
   hero: {
     headline: "Lo difícil de la IA son los datos. Construimos ambas cosas.",
     subhead:
-      "Diseñamos la base, gobernamos lo que circula por ella y ponemos la IA a trabajar a escala empresarial: las decisiones, las operaciones y los sistemas que las ejecutan.",
+      "Diseñamos los cimientos de datos, gobernamos lo que circula por ellos y ponemos la IA a trabajar a escala empresarial: las decisiones, las operaciones y los sistemas que las ejecutan.",
   },
   stats: [
     { label: "Nivel de partner de Snowflake", value: "Premier" },
