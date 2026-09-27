@@ -30,6 +30,34 @@
       }
     ]
   },
+  "gate": {
+    "eyebrow": "Cómo funciona la aprobación",
+    "title": "Nada llega a un registro hasta que una persona lo autoriza",
+    "intro": "La secuencia que corre cada build con Claude en Viewnear. Es el diseño, no una advertencia: el agente hace la recopilación, la persona conserva la decisión.",
+    "steps": [
+      {
+        "title": "Leer la solicitud",
+        "body": "El agente toma la solicitud tal como llega, en las palabras que el negocio ya usa."
+      },
+      {
+        "title": "Consultar el registro",
+        "body": "Lee el sistema de registro por un conector MCP limitado a los objetos que ese proceso necesita, y nada más."
+      },
+      {
+        "title": "Resolver el paso",
+        "body": "Propone la siguiente acción mostrando su razonamiento, para que la propuesta se juzgue en lugar de creerse."
+      },
+      {
+        "title": "Una persona aprueba",
+        "body": "El responsable ve exactamente qué cambiaría, campo por campo, y lo aprueba o no."
+      },
+      {
+        "title": "Escribir de vuelta",
+        "body": "Solo se escribe el paso aprobado, con una identidad nombrada y cada llamada registrada."
+      }
+    ],
+    "note": "Las etapas de planeación no pueden escribir. El único paso que sí puede queda confinado a un solo objeto, y por eso este diseño sobrevive una revisión de seguridad."
+  },
   "practice": {
     "eyebrow": "Cómo se ve en la práctica",
     "title": "Un proyecto con nombre, y el servicio que nació de él",

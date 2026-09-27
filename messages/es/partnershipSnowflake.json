@@ -3,7 +3,11 @@
     "title": "Snowflake Premier Partner: Snowflake y Viewnear",
     "description": "Viewnear es Snowflake Premier Partner y CoCo Preferred Partner: bases de datos gobernadas, migraciones y la capa de IA sobre Snowflake, de Cortex AI a Cortex AI Gateway, con entrega nearshore en toda América."
   },
-  "breadcrumb": { "home": "Inicio", "partnership": "Alianzas", "current": "Snowflake" },
+  "breadcrumb": {
+    "home": "Inicio",
+    "partnership": "Alianzas",
+    "current": "Snowflake"
+  },
   "hero": {
     "eyebrow": "Snowflake y Viewnear",
     "kicker": "Premier Partner en la Snowflake Partner Network",
@@ -26,9 +30,43 @@
       }
     ]
   },
+  "stack": {
+    "eyebrow": "La superficie sobre la que construimos",
+    "title": "Todo el stack de Snowflake, no una esquina",
+    "intro": "Lo que aterriza los datos, lo que los gobierna y lo que corre encima. Viewnear entrega las tres capas, que es lo que el nivel Premier debería significar.",
+    "groups": [
+      {
+        "label": "Base",
+        "items": [
+          "Ingesta con Openflow y Snowpipe Streaming",
+          "Modelado con dbt, Snowpark y Dynamic Tables",
+          "Apache Iceberg y Open Catalog",
+          "Migraciones desde Teradata, Oracle, Hadoop y SQL Server"
+        ]
+      },
+      {
+        "label": "Gobierno",
+        "items": [
+          "Linaje y políticas de acceso con Horizon Catalog",
+          "Clasificación y enmascaramiento de PII",
+          "Semantic Views como contexto de negocio común",
+          "Dimensionamiento y control de consumo"
+        ]
+      },
+      {
+        "label": "La capa de IA",
+        "items": [
+          "Cortex AISQL y Cortex Analyst",
+          "Cortex Agents sobre datos y documentos",
+          "Cortex AI Gateway gobernando el acceso a modelos",
+          "Snowflake Intelligence y CoWork"
+        ]
+      }
+    ]
+  },
   "practice": {
     "eyebrow": "Cómo se ve en la práctica",
-    "title": "Dos proyectos, medidos sobre Snowflake"
+    "title": "Tres proyectos, medidos sobre Snowflake"
   },
   "around": {
     "eyebrow": "La alianza en acción",
@@ -57,7 +95,9 @@
       }
     ]
   },
-  "highlight": { "title": "Reconocidos entre los mejores partners de Snowflake" },
+  "highlight": {
+    "title": "Reconocidos entre los mejores partners de Snowflake"
+  },
   "directory": {
     "body": "Ambos reconocimientos aparecen en el directorio de partners de Snowflake.",
     "label": "Verificar el registro"

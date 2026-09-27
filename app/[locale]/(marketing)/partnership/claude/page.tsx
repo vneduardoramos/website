@@ -8,6 +8,7 @@ import { PRESS_HOME_QUOTE, PRIMARY_SPEAKER, getOutlet } from "@/lib/press";
 import {
   PartnerHero,
   TwoWays,
+  Sequence,
   InPractice,
   AroundIt,
   Leaders,
@@ -56,6 +57,15 @@ export default async function ClaudePartnershipPage({ params }: { params: { loca
       />
 
       <TwoWays eyebrow={t("ways.eyebrow")} title={t("ways.title")} items={t.raw("ways.items") as { title: string; body: string }[]} />
+
+      <Sequence
+        eyebrow={t("gate.eyebrow")}
+        title={t("gate.title")}
+        intro={t("gate.intro")}
+        steps={t.raw("gate.steps") as { title: string; body: string }[]}
+        note={t("gate.note")}
+        className="section-warm"
+      />
 
       {/* Proof discipline: Magnolia is the one published agentic engagement, so
           the second card is the service built from it, labeled as a service. */}

@@ -125,8 +125,6 @@ export const theme = {
       children: [
         { key: "about", label: "About", href: "/about" },
         { key: "partnership", label: "Partnerships", href: "/partnership" },
-        { key: "partnershipSnowflake", label: "Snowflake partnership", href: "/partnership/snowflake" },
-        { key: "partnershipClaude", label: "Claude partnership", href: "/partnership/claude" },
         { key: "nearshore", label: "Nearshore Advantage", href: "/nearshore" },
         { key: "lifeAtViewnear", label: "Life at Viewnear", href: "/life-at-viewnear" },
         { key: "careers", label: "Careers", href: "/careers" },

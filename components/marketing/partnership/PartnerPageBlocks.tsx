@@ -195,7 +195,13 @@ export async function InPractice({
       <SectionDecor variant="dots" />
       <div className="relative">
         <SectionHeading eyebrow={eyebrow} title={title} />
-        <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2" variant="pop">
+        <RevealGroup
+          className={cn(
+            "mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2",
+            cases.length + (extra ? 1 : 0) >= 3 && "lg:grid-cols-3",
+          )}
+          variant="pop"
+        >
           {cases.map((cs) => (
             <CaseStudyCard key={cs.slug} cs={cs} />
           ))}
@@ -233,6 +239,97 @@ export function AroundIt({
     <Section className={className}>
       <SectionHeading eyebrow={eyebrow} title={title} intro={intro} />
       <PointGrid items={items} cols={3} className="mt-12" />
+    </Section>
+  );
+}
+
+/**
+ * The Snowflake product surface, grouped the way an architect thinks about it:
+ * what lands the data, what governs it, what runs on top. Specific to this
+ * partnership, and the reason the page is not a mirror of the Claude one.
+ *
+ * Ruled columns, not tiles: the value is the list itself.
+ */
+export function StackGroups({
+  eyebrow,
+  title,
+  intro,
+  groups,
+  className,
+}: {
+  eyebrow: string;
+  title: React.ReactNode;
+  intro?: string;
+  groups: { label: string; items: string[] }[];
+  className?: string;
+}) {
+  return (
+    <Section className={className}>
+      <SectionHeading eyebrow={eyebrow} title={title} intro={intro} />
+      <div className="mt-12 grid gap-10 border-t border-border md:grid-cols-3 md:gap-x-12">
+        {groups.map((g) => (
+          <div key={g.label} className="pt-6">
+            <p className="font-mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-primaryDeep">
+              {g.label}
+            </p>
+            <ul className="mt-4 divide-y divide-border border-t border-border">
+              {g.items.map((it) => (
+                <li key={it} className="py-3 leading-relaxed text-foreground">
+                  {it}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/**
+ * The write gate, step by step: the sequence a Claude agent runs before
+ * anything reaches a record. Human-in-the-loop stated as the design it is,
+ * and the one block on the site that shows how the approval actually works.
+ */
+export function Sequence({
+  eyebrow,
+  title,
+  intro,
+  steps,
+  note,
+  className,
+}: {
+  eyebrow: string;
+  title: React.ReactNode;
+  intro?: string;
+  steps: { title: string; body: string }[];
+  note?: string;
+  className?: string;
+}) {
+  return (
+    <Section className={className}>
+      <SectionHeading eyebrow={eyebrow} title={title} intro={intro} />
+      <ol className="mt-12 grid gap-y-8 border-t border-border sm:grid-cols-2 lg:grid-cols-5 lg:gap-x-8">
+        {steps.map((step, i) => (
+          <li key={step.title} className="relative pt-6 lg:pr-4">
+            <span
+              className="font-mono text-sm font-semibold tracking-widest text-primaryDeep"
+              aria-hidden="true"
+            >
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <h3 className="mt-2 font-display text-lg font-bold leading-snug text-foreground">
+              {step.title}
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted">{step.body}</p>
+          </li>
+        ))}
+      </ol>
+      {note && (
+        <p className="mt-10 max-w-3xl border-t border-border pt-6 font-display text-lg font-medium leading-snug text-foreground md:text-xl">
+          {note}
+        </p>
+      )}
     </Section>
   );
 }

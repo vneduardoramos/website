@@ -9,6 +9,7 @@ import { SNOWFLAKE } from "@/config/partners";
 import {
   PartnerHero,
   TwoWays,
+  StackGroups,
   InPractice,
   AroundIt,
   Leaders,
@@ -60,10 +61,18 @@ export default async function SnowflakePartnershipPage({ params }: { params: { l
 
       <TwoWays eyebrow={t("ways.eyebrow")} title={t("ways.title")} items={t.raw("ways.items") as { title: string; body: string }[]} />
 
+      <StackGroups
+        eyebrow={t("stack.eyebrow")}
+        title={t("stack.title")}
+        intro={t("stack.intro")}
+        groups={t.raw("stack.groups") as { label: string; items: string[] }[]}
+        className="section-warm"
+      />
+
       <InPractice
         eyebrow={t("practice.eyebrow")}
         title={t("practice.title")}
-        slugs={["insurance-claims-cortex-ai", "sku-catalog-governance"]}
+        slugs={["insurance-claims-cortex-ai", "sku-catalog-governance", "real-time-student-data-pipeline"]}
         locale={locale}
       />
 

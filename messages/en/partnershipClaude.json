@@ -30,6 +30,34 @@
       }
     ]
   },
+  "gate": {
+    "eyebrow": "How the approval works",
+    "title": "Nothing reaches a record until a person says so",
+    "intro": "The sequence every Claude build at Viewnear runs. It is the design, not a safety disclaimer: the agent does the gathering, the person keeps the decision.",
+    "steps": [
+      {
+        "title": "Read the request",
+        "body": "The agent takes the request as it arrives, in the words the business already uses."
+      },
+      {
+        "title": "Check the record",
+        "body": "It reads the system of record through an MCP connector scoped to the objects that process needs, and nothing else."
+      },
+      {
+        "title": "Work out the step",
+        "body": "It proposes the next action with its reasoning shown, so the proposal can be judged rather than trusted."
+      },
+      {
+        "title": "A person approves",
+        "body": "The owner sees exactly what would change, field by field, and approves it or does not."
+      },
+      {
+        "title": "Write it back",
+        "body": "Only the approved step is written, as a named identity, with every call logged."
+      }
+    ],
+    "note": "Planning stages cannot write. The one step that can is confined to a single object, which is why this design survives a security review."
+  },
   "practice": {
     "eyebrow": "What this looks like in practice",
     "title": "One named engagement, and the service built from it",

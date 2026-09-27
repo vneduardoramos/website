@@ -3,7 +3,11 @@
     "title": "Snowflake Premier Partner: Snowflake and Viewnear",
     "description": "Viewnear is a Snowflake Premier Partner and CoCo Preferred Partner: governed data foundations, migrations, and the AI layer on Snowflake, from Cortex AI to Cortex AI Gateway, delivered nearshore across the Americas."
   },
-  "breadcrumb": { "home": "Home", "partnership": "Partnerships", "current": "Snowflake" },
+  "breadcrumb": {
+    "home": "Home",
+    "partnership": "Partnerships",
+    "current": "Snowflake"
+  },
   "hero": {
     "eyebrow": "Snowflake and Viewnear",
     "kicker": "Premier Partner in the Snowflake Partner Network",
@@ -26,9 +30,43 @@
       }
     ]
   },
+  "stack": {
+    "eyebrow": "The surface we build on",
+    "title": "The whole Snowflake stack, not a corner of it",
+    "intro": "What lands the data, what governs it, and what runs on top. Viewnear delivers all three, which is what Premier tier is meant to mean.",
+    "groups": [
+      {
+        "label": "Foundation",
+        "items": [
+          "Openflow and Snowpipe Streaming ingestion",
+          "dbt, Snowpark and Dynamic Tables modeling",
+          "Apache Iceberg and Open Catalog",
+          "Migrations off Teradata, Oracle, Hadoop and SQL Server"
+        ]
+      },
+      {
+        "label": "Governance",
+        "items": [
+          "Horizon Catalog lineage and access policies",
+          "PII classification and masking",
+          "Semantic Views as one shared business context",
+          "Warehouse sizing and consumption control"
+        ]
+      },
+      {
+        "label": "The AI layer",
+        "items": [
+          "Cortex AISQL and Cortex Analyst",
+          "Cortex Agents across data and documents",
+          "Cortex AI Gateway governing model access",
+          "Snowflake Intelligence and CoWork"
+        ]
+      }
+    ]
+  },
   "practice": {
     "eyebrow": "What this looks like in practice",
-    "title": "Two engagements, measured on Snowflake"
+    "title": "Three engagements, measured on Snowflake"
   },
   "around": {
     "eyebrow": "The partnership at work",
@@ -57,7 +95,9 @@
       }
     ]
   },
-  "highlight": { "title": "Recognized among Snowflake's top partners" },
+  "highlight": {
+    "title": "Recognized among Snowflake's top partners"
+  },
   "directory": {
     "body": "Both recognitions are listed on Snowflake's own partner directory.",
     "label": "Verify this listing"
