@@ -1,14 +1,14 @@
 {
-  "launcherLabel": "Chatear con Vista",
-  "title": "Vista",
+  "launcherLabel": "Chatear con Viewnie",
+  "title": "Viewnie",
   "subtitle": "Preguntas sobre servicios, industrias o el equipo.",
   "placeholder": "Escribir una pregunta…",
   "send": "Enviar",
   "close": "Cerrar el chat",
-  "typing": "Vista está escribiendo…",
-  "greeting": "Hola, soy Vista. Se puede preguntar por los servicios, las industrias o el modelo de precios de Viewnear, o encontrar a la persona indicada del equipo.",
+  "typing": "Viewnie está escribiendo…",
+  "greeting": "Hola, soy Viewnie. Se puede preguntar por los servicios, las industrias o el modelo de precios de Viewnear, o encontrar a la persona indicada del equipo.",
   "bookCta": "Agendar con {name}",
   "error": "Algo salió mal. Intentar de nuevo, o agendar directamente.",
   "rateLimited": "Demasiados mensajes, un momento y volver a intentar.",
-  "disclaimer": "Vista responde solo con el contenido del sitio de Viewnear."
+  "disclaimer": "Viewnie responde solo con el contenido del sitio de Viewnear."
 }

@@ -1,14 +1,14 @@
 {
-  "launcherLabel": "Chat with Vista",
-  "title": "Vista",
+  "launcherLabel": "Chat with Viewnie",
+  "title": "Viewnie",
   "subtitle": "Ask about services, industries, or the team.",
   "placeholder": "Ask a question…",
   "send": "Send",
   "close": "Close chat",
-  "typing": "Vista is typing…",
-  "greeting": "Hi, I'm Vista. Ask me about Viewnear's services, industries, or pricing model, or I can point you to the right person on the team.",
+  "typing": "Viewnie is typing…",
+  "greeting": "Hi, I'm Viewnie. Ask me about Viewnear's services, industries, or pricing model, or I can point you to the right person on the team.",
   "bookCta": "Book time with {name}",
   "error": "Something went wrong. Try again, or book time directly.",
   "rateLimited": "Too many messages, one moment and try again.",
-  "disclaimer": "Vista only answers from Viewnear's own site."
+  "disclaimer": "Viewnie only answers from Viewnear's own site."
 }

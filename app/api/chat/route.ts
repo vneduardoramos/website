@@ -5,7 +5,7 @@ import type { Locale } from "@/lib/i18n-content";
 import { theme } from "@/config/theme";
 
 /**
- * Viewnear's site chat agent, "Vista": answers only from the site's own
+ * Viewnear's site chat agent, "Viewnie": answers only from the site's own
  * content (services, industries, pricing model, FAQs, team), and hands a
  * visitor off to a real person's Calendly when that's what they're after.
  *
@@ -25,7 +25,7 @@ import { theme } from "@/config/theme";
 
 const ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages";
 const MODEL = "claude-haiku-4-5-20251001";
-const AGENT_NAME = "Vista";
+const AGENT_NAME = "Viewnie";
 
 const MAX_MESSAGES = 12; // conversation turns kept, oldest dropped first
 const MAX_MESSAGE_CHARS = 600; // per message, truncated beyond this

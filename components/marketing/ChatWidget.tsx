@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Script from "next/script";
 import { useEffect, useId, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
@@ -7,7 +8,7 @@ import { consentIsCurrent, readConsent } from "@/lib/consent";
 import { cn } from "@/lib/utils";
 
 /**
- * Vista: the site's chat agent, mounted once in the marketing layout so it
+ * Viewnie: the site's chat agent, mounted once in the marketing layout so it
  * survives client-side navigation between pages. The conversation is also
  * mirrored to localStorage (capped, with a freshness window) so it survives
  * a hard reload or a closed tab, not just an in-app route change.
@@ -204,11 +205,19 @@ export function ChatWidget() {
         aria-expanded={open}
         aria-controls={panelId}
         className={cn(
-          "fixed right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-primaryDeep text-white shadow-soft-lg transition-transform hover:-translate-y-0.5",
-          bannerVisible ? "bottom-24" : "bottom-6",
+          "fixed right-5 z-40 flex h-16 w-16 items-center justify-center rounded-full text-white shadow-soft-lg transition-transform hover:-translate-y-0.5",
+          // The logo's own four hues (royal, sky, orange, vermilion), not a
+          // single brand blue: the button reads as the mark, not a generic
+          // support-chat bubble.
+          "bg-gradient-to-br from-royal via-primary to-accent",
+          bannerVisible ? "bottom-36 sm:bottom-24" : "bottom-6",
         )}
       >
-        {open ? <CloseIcon /> : <ChatIcon />}
+        {open ? (
+          <CloseIcon />
+        ) : (
+          <Image src="/icon-192.png" alt="" width={40} height={40} sizes="40px" className="h-10 w-10 rounded-full" />
+        )}
       </button>
 
       {open && (
@@ -217,21 +226,31 @@ export function ChatWidget() {
           role="dialog"
           aria-label={t("title")}
           className={cn(
-            "fixed right-5 z-40 flex w-[min(22rem,calc(100vw-2.5rem))] flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-soft-lg",
-            bannerVisible ? "bottom-[8.5rem]" : "bottom-24",
+            "fixed right-5 z-40 flex w-[min(28rem,calc(100vw-2.5rem))] flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-soft-lg",
+            bannerVisible ? "bottom-[11.5rem] sm:bottom-[8.5rem]" : "bottom-24",
           )}
-          style={{ maxHeight: "min(32rem, calc(100vh - 8rem))" }}
+          style={{ maxHeight: "min(42rem, calc(100vh - 6rem))" }}
         >
-          <div className="flex items-center justify-between border-b border-border bg-surface2 px-4 py-3">
-            <div>
-              <p className="font-display text-sm font-bold text-foreground">{t("title")}</p>
-              <p className="text-xs text-muted">{t("subtitle")}</p>
+          <div className="flex items-center justify-between bg-gradient-to-r from-royal via-primary to-accent px-4 py-3.5">
+            <div className="flex items-center gap-3">
+              <Image
+                src="/icon-192.png"
+                alt=""
+                width={36}
+                height={36}
+                sizes="36px"
+                className="h-9 w-9 shrink-0 rounded-full ring-2 ring-white/70"
+              />
+              <div>
+                <p className="font-display text-sm font-bold text-white">{t("title")}</p>
+                <p className="text-xs text-white/80">{t("subtitle")}</p>
+              </div>
             </div>
             <button
               type="button"
               onClick={() => setOpen(false)}
               aria-label={t("close")}
-              className="rounded-full p-1.5 text-muted transition-colors hover:bg-surface hover:text-foreground"
+              className="rounded-full p-1.5 text-white/80 transition-colors hover:bg-white/15 hover:text-white"
             >
               <CloseIcon small />
             </button>
@@ -318,14 +337,6 @@ function ChatBubble({
         {children}
       </p>
     </div>
-  );
-}
-
-function ChatIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-    </svg>
   );
 }
 
