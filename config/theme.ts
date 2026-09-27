@@ -71,8 +71,8 @@ export const theme = {
   },
 
   fonts: {
-    sans: "var(--font-jakarta)",
-    display: "var(--font-jakarta)",
+    sans: "var(--font-dm-sans)",
+    display: "var(--font-dm-sans)",
     mono: "var(--font-jetbrains)",
   },
 
