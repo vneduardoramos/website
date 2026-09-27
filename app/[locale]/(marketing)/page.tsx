@@ -15,6 +15,7 @@ import { LogoRow } from "@/components/marketing/home/ClientLogos";
 import { getClientBands } from "@/lib/client-bands";
 import { PlateCard } from "@/components/marketing/Cards";
 import { FaceStack } from "@/components/marketing/LeadershipStrip";
+import { Recognition } from "@/components/marketing/home/Recognition";
 
 export const revalidate = 60;
 
@@ -69,6 +70,12 @@ export default async function HomePage({ params }: { params: { locale: string } 
         </div>
       </section>
       <CustomersFeature bottomLogos={bands.bottom} />
+
+      {/* RECOGNITION: the two pieces of third-party proof, side by side. The
+          Summit wall with Viewnear's logo on it, and the one press line that
+          names both halves of the offer. A plain band between the customers
+          block and the warm services grid. */}
+      <Recognition />
 
       {/* 2) WHAT WE DO */}
       <ServicesGrid services={services} />

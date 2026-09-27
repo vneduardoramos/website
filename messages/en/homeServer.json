@@ -63,6 +63,12 @@
       "metricValue2": "~3 min"
     }
   },
+  "recognition": {
+    "eyebrow": "Recognition",
+    "title": "41 partners were named at Snowflake Summit. <hl>Viewnear was one.</hl>",
+    "caption": "CoCo Global Partner Momentum, Snowflake Summit 2026. Viewnear among the 41 named, from a network of more than 14,000.",
+    "imageAlt": "Snowflake's CoCo Global Partner Momentum wall at Summit 2026, listing 41 partner logos including Viewnear, in front of a keynote audience"
+  },
   "hero": {
     "ariaLabel": "Intro"
   }

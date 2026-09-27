@@ -25,11 +25,6 @@ type Service = { slug: string; title: string; summary: string };
  *
  * Each card carries the service's own mark, inline and untinted, over a
  * hairline: enough to tell the six apart at a glance, no icon tiles.
- *
- * The section sits on the page background. It used to be warm, which was fine
- * while the press quote separated it from the warm Customers band; with that
- * gone the two ran together as one long cream field. The menu on white lets
- * the outlined cards do the work and keeps the page alternating.
  */
 
 const MARKS: Record<string, (p: IconProps) => JSX.Element> = {
@@ -50,7 +45,7 @@ export async function ServicesGrid({ services }: { services: Service[] }) {
   if (cards.length === 0) return null;
 
   return (
-    <section className="section">
+    <section className="section section-warm">
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
           <span className="chip">{t("servicesGrid.chip")}</span>
