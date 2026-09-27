@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { Img as Image } from "@/components/marketing/Img";
 import { Link } from "@/i18n/navigation";
 import { PartnerBadges } from "@/components/marketing/PartnerBadges";
+import type { PartnerNetwork } from "@/config/partners";
 import { SnowflakeLockup } from "@/components/marketing/SnowflakeLockup";
 import { SectionDecor } from "@/components/marketing/Decor";
 
@@ -11,13 +12,17 @@ const STAT_VALUES = ["14,000+", "41", "2"];
  * Prominent partnership proof block: the official badges (large), the facts, the
  * CoCo Preferred Partner keynote slide, and stat tiles. Reused on home,
  * About, and the Partnership page (`showCta` adds a link to /partnership).
+ * `badges` narrows the artwork to one network, for the Snowflake partnership
+ * page, where the block is Snowflake's alone.
  */
 export async function PartnershipHighlight({
   title,
   showCta = false,
+  badges,
 }: {
   title?: string;
   showCta?: boolean;
+  badges?: PartnerNetwork["key"];
 }) {
   const t = await getTranslations("partnershipUi");
   const heading = title ?? t("highlight.title");
@@ -40,7 +45,7 @@ export async function PartnershipHighlight({
           <SnowflakeLockup variant="default" height={30} className="mt-8" />
 
           <div className="mt-6">
-            <PartnerBadges variant="logos" />
+            <PartnerBadges variant="logos" only={badges} />
           </div>
 
           <dl className="mt-8 grid grid-cols-3 gap-4">

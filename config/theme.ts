@@ -27,11 +27,11 @@ export const theme = {
     bookingUrl: "https://calendly.com/eduardo-viewnear/30min",
     tagline: "Data & AI practice, up and running.",
     description:
-      "Viewnear helps enterprises stand up two capabilities they keep: a data practice that feeds real decisions with governed, trusted data, and an AI practice that ships use cases into production. Built on Snowflake, run by in-house teams, across the Americas.",
+      "Viewnear helps enterprises stand up two capabilities they keep: a data practice that feeds real decisions with governed, trusted data on Snowflake, and an agentic practice that puts Claude to work in the systems the business already runs, with a person approving what matters. A Snowflake Premier Partner and a Claude Certified Partner, working US hours from Austin and Monterrey, across the Americas.",
     // Spanish twin of `description`, for the Organization JSON-LD on /es URLs:
     // the entity was describing itself in English on all 62 Spanish pages.
     descriptionEs:
-      "Viewnear ayuda a las empresas a poner en marcha dos capacidades que conservan: una práctica de datos que alimenta decisiones reales con datos gobernados y confiables, y una práctica de IA que lleva casos de uso a producción. Construida sobre Snowflake, operada por equipos internos, en toda América.",
+      "Viewnear ayuda a las empresas a poner en marcha dos capacidades que conservan: una práctica de datos que alimenta decisiones reales con datos gobernados y confiables sobre Snowflake, y una práctica agéntica que pone a Claude a trabajar en los sistemas que el negocio ya opera, con una persona que aprueba lo que importa. Snowflake Premier Partner y Claude Certified Partner, en horario de Estados Unidos desde Austin y Monterrey, en toda América.",
     // Region positioning for the Americas.
     region: "the Americas",
     regions: ["Canada", "USA", "Mexico", "LATAM", "Caribbean"],
@@ -124,7 +124,9 @@ export const theme = {
       label: "Company",
       children: [
         { key: "about", label: "About", href: "/about" },
-        { key: "partnership", label: "Partnership", href: "/partnership" },
+        { key: "partnership", label: "Partnerships", href: "/partnership" },
+        { key: "partnershipSnowflake", label: "Snowflake partnership", href: "/partnership/snowflake" },
+        { key: "partnershipClaude", label: "Claude partnership", href: "/partnership/claude" },
         { key: "nearshore", label: "Nearshore Advantage", href: "/nearshore" },
         { key: "lifeAtViewnear", label: "Life at Viewnear", href: "/life-at-viewnear" },
         { key: "careers", label: "Careers", href: "/careers" },

@@ -18,9 +18,8 @@ import { SNOWFLAKE, ANTHROPIC, type PartnerNetwork } from "@/config/partners";
  */
 
 const HALVES: { partner: PartnerNetwork; href: string }[] = [
-  // Both point at the hub until the per-network pages exist; see step 5.
-  { partner: SNOWFLAKE, href: "/partnership" },
-  { partner: ANTHROPIC, href: "/partnership" },
+  { partner: SNOWFLAKE, href: "/partnership/snowflake" },
+  { partner: ANTHROPIC, href: "/partnership/claude" },
 ];
 
 export async function HowWeBuild() {

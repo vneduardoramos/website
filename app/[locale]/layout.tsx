@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { theme } from "@/config/theme";
+import { PARTNERS, SNOWFLAKE, ANTHROPIC } from "@/config/partners";
 import { officePlaces, primaryAddress } from "@/lib/offices";
 import { ORG_ID, SITE_ID, ORG_REF, AREA_SERVED } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
@@ -15,7 +16,7 @@ import "../globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(theme.brand.url),
   title: {
-    default: `${theme.brand.name} | Data & AI Practices | Snowflake Partner`,
+    default: `${theme.brand.name} | Data & AI Practices | Snowflake & Anthropic Partner`,
     template: `%s | ${theme.brand.name}`,
   },
   description: theme.brand.description,
@@ -68,10 +69,9 @@ const orgJsonLd = (locale: string) => ({
   // while an unknown slug on that path returns a 404 page.
   // Add Crunchbase, a Google Business Profile and any review-directory listing
   // here as they come into existence. Do not add a profile that does not exist.
-  sameAs: [
-    theme.socials.linkedin,
-    "https://www.snowflake.com/en/why-snowflake/partners/all-partners/viewnear/",
-  ],
+  // No Anthropic partner listing is published for Viewnear, so there is nothing
+  // to add here for that partnership: the membership below carries it instead.
+  sameAs: [theme.socials.linkedin, SNOWFLAKE.directoryUrl, ANTHROPIC.directoryUrl].filter(Boolean),
   areaServed: AREA_SERVED,
   // The entity needs a postal address, not just a service area: these were
   // previously only on /life-at-viewnear. Austin is the primary (US) address;
@@ -95,31 +95,44 @@ const orgJsonLd = (locale: string) => ({
   slogan: theme.brand.tagline,
   email: theme.brand.email,
   knowsLanguage: ["en", "es"],
-  // The partner status the site asserts on five pages, as a resolvable
-  // membership rather than only as prose. hostingOrganization carries
-  // Snowflake's own Wikidata id so the programme resolves to the real company.
-  memberOf: {
+  // Both partner statuses the site asserts, as resolvable memberships rather
+  // than only as prose, built from config/partners.ts so a change of tier is
+  // one edit. hostingOrganization carries each company's own Wikidata id, so
+  // the programme resolves to the real company. Verified against the Wikidata
+  // API on 2026-09-27: Snowflake Inc. is Q22078063, not Q65141064, which the
+  // site asserted until today and which is a granitic complex in Australia.
+  memberOf: PARTNERS.map((p) => ({
     "@type": "ProgramMembership",
-    programName: "Snowflake Partner Network",
-    membershipNumber: "Premier Partner, CoCo Preferred Partner",
+    programName: p.network,
+    ...(p.level ? { membershipNumber: p.level } : {}),
     hostingOrganization: {
       "@type": "Organization",
-      name: "Snowflake Inc.",
-      url: "https://www.snowflake.com",
-      sameAs: "https://www.wikidata.org/wiki/Q65141064",
+      name: p.org.name,
+      url: p.org.url,
+      sameAs: p.org.wikidata,
     },
-  },
+  })),
   // Topics, with a canonical URI wherever one exists. A bare string leaves
   // "Snowflake" ambiguous between the company, the product and the weather;
   // sameAs removes the ambiguity. Entries with no stable public entity stay
   // strings rather than getting a guessed identifier.
   knowsAbout: [
-    { "@type": "Thing", name: "Snowflake", sameAs: "https://www.wikidata.org/wiki/Q65141064" },
+    { "@type": "Thing", name: "Snowflake", sameAs: "https://www.wikidata.org/wiki/Q22078063" },
     {
       "@type": "Thing",
       name: "Artificial intelligence",
       sameAs: "https://www.wikidata.org/wiki/Q11660",
     },
+    // The agentic half of the offer. Every id here was resolved against the
+    // Wikidata API on 2026-09-27 and returns the intended entity.
+    { "@type": "Thing", name: "Anthropic", sameAs: "https://www.wikidata.org/wiki/Q116758847" },
+    { "@type": "Thing", name: "Claude", sameAs: "https://www.wikidata.org/wiki/Q118876059" },
+    {
+      "@type": "Thing",
+      name: "Model Context Protocol",
+      sameAs: "https://www.wikidata.org/wiki/Q133436854",
+    },
+    { "@type": "Thing", name: "AI agents", sameAs: "https://www.wikidata.org/wiki/Q132451509" },
     { "@type": "Thing", name: "Data warehouse", sameAs: "https://www.wikidata.org/wiki/Q193351" },
     {
       "@type": "Thing",
@@ -135,7 +148,12 @@ const orgJsonLd = (locale: string) => ({
     "Snowflake data migration",
     "Snowflake Cortex",
     "Data engineering",
-    "AI agents",
+    // No canonical public entity for these, so they stay strings. "Claude Code"
+    // is a product name rather than a Wikidata topic, and "agentic AI" has no
+    // distinct item (the closest is the AI agents entity used above).
+    "Claude Code",
+    "Agentic AI",
+    "Human in the loop AI",
     "Nearshore software delivery",
     "Nearshore delivery center",
     "Data & AI strategy",

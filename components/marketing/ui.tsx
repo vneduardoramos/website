@@ -150,13 +150,20 @@ export async function IndustryCard({
 export async function CtaBand({
   title,
   subtitle,
+  primary,
+  secondary,
 }: {
   title?: string;
   subtitle?: string;
+  /** Override the default buttons when a page's close needs its own verbs. */
+  primary?: { label: string; href: string };
+  secondary?: { label: string; href: string };
 }) {
   const t = await getTranslations("sharedUi");
   const resolvedTitle = title ?? t("ctaBand.title");
   const resolvedSubtitle = subtitle ?? t("ctaBand.subtitle");
+  const p = primary ?? { label: t("ctaBand.primaryCta"), href: "/contact" };
+  const sec = secondary ?? { label: t("ctaBand.secondaryCta"), href: "/services" };
   return (
     <section className="section">
       <div className="container-page">
@@ -170,11 +177,11 @@ export async function CtaBand({
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-muted">{resolvedSubtitle}</p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className="btn-primary btn-lg hover-sheen">
-                {t("ctaBand.primaryCta")}
+              <Link href={p.href} className="btn-primary btn-lg hover-sheen">
+                {p.label}
               </Link>
-              <Link href="/services" className="btn-ghost btn-lg">
-                {t("ctaBand.secondaryCta")}
+              <Link href={sec.href} className="btn-ghost btn-lg">
+                {sec.label}
               </Link>
             </div>
           </div>

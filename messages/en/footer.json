@@ -7,7 +7,9 @@
   },
   "links": {
     "about": "About",
-    "partnership": "Partnership",
+    "partnership": "Partnerships",
+    "partnershipSnowflake": "Snowflake partnership",
+    "partnershipClaude": "Claude partnership",
     "lifeAtViewnear": "Life at Viewnear",
     "security": "Security & Trust",
     "contact": "Contact",

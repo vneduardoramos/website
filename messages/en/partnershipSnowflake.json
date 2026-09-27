@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "title": "Snowflake Premier Partner: Snowflake and Viewnear",
+    "description": "Viewnear is a Snowflake Premier Partner and CoCo Preferred Partner: governed data foundations, migrations, and the AI layer on Snowflake, from Cortex AI to Cortex AI Gateway, delivered nearshore across the Americas."
+  },
+  "breadcrumb": { "home": "Home", "partnership": "Partnerships", "current": "Snowflake" },
+  "hero": {
+    "eyebrow": "Snowflake and Viewnear",
+    "kicker": "Premier Partner in the Snowflake Partner Network",
+    "title": "Governed data. The agentic control plane. <hl>One team that ships on Snowflake.</hl>",
+    "description": "Viewnear is a Snowflake Premier Partner and CoCo Preferred Partner, one of the specialist teams that takes an enterprise from a legacy warehouse to governed data on Snowflake and on to the AI layer above it: Cortex AI, Cortex Agents and Cortex AI Gateway. SnowPro-certified architects and engineers, working US hours from Austin and Monterrey, priced to the result.",
+    "ctaPrimary": "Talk to a Snowflake architect",
+    "ctaSecondary": "See the work"
+  },
+  "ways": {
+    "eyebrow": "Two ways we put Snowflake to work",
+    "title": "The data foundation, and the AI that runs where the data already is",
+    "items": [
+      {
+        "title": "Stand up the governed data foundation",
+        "body": "Off Teradata, Oracle or Hadoop and onto one governed copy of the data: Openflow ingestion from the ERP, CRM and SaaS systems already in place, dbt and Snowpark modeling next to the data, Horizon Catalog lineage and access from the first table, Apache Iceberg so the foundation stays open. Live in 8 to 16 weeks, with working software at every sprint demo."
+      },
+      {
+        "title": "Run AI where the data already is",
+        "body": "Cortex AISQL and Cortex Analyst over governed Semantic Views, Cortex Agents that plan across structured data and documents, Snowflake CoWork for the people who ask the questions, and Cortex AI Gateway governing which agents reach which data, models and tools. Claude is callable inside it as a Cortex model, so the reasoning happens next to the data and nothing is copied out."
+      }
+    ]
+  },
+  "practice": {
+    "eyebrow": "What this looks like in practice",
+    "title": "Two engagements, measured on Snowflake"
+  },
+  "around": {
+    "eyebrow": "The partnership at work",
+    "title": "Snowflake runs the platform. <hl>Viewnear engineers the practice around it.</hl>",
+    "intro": "The recognition is the credential. This is what it changes for a client.",
+    "items": [
+      {
+        "title": "One plan with the Snowflake team",
+        "body": "We work alongside the client's Snowflake account team on architecture, funding and delivery: aligned incentives and one plan, not a vendor bolted on after the fact."
+      },
+      {
+        "title": "Snowflake procurement, simplified",
+        "body": "Snowflake charges for the compute and storage actually consumed. Procuring that capacity through Viewnear means simpler commercial terms, with capacity and delivery under one accountable partner."
+      },
+      {
+        "title": "Building with Snowflake CoCo",
+        "body": "As a CoCo Preferred Partner we build data products and AI use cases with Snowflake's coding agent, reviewed object by object and validated before anything reaches production."
+      },
+      {
+        "title": "SnowPro-certified delivery",
+        "body": "Certified architects and engineers on every engagement, from the first design session to production, with Snowflake's product teams a call away when a build hits a hard question."
+      },
+      {
+        "title": "Documented, then kept improving",
+        "body": "Documentation and runbooks ship with every build. From there the team runs it, or Viewnear keeps running, tuning and improving the Snowflake estate as a managed service."
+      }
+    ]
+  },
+  "highlight": { "title": "Recognized among Snowflake's top partners" },
+  "directory": {
+    "body": "Both recognitions are listed on Snowflake's own partner directory.",
+    "label": "Verify this listing"
+  },
+  "leaders": {
+    "eyebrow": "The people",
+    "title": "Meet the team behind the Snowflake practice",
+    "body": "A practice of SnowPro-certified architects, data engineers and analytics engineers, led by people who have taken enterprises from a legacy warehouse to governed data and AI in production."
+  },
+  "claudeLink": {
+    "title": "Claude runs inside Snowflake and around it. The other half of the story is the Claude Partner Network.",
+    "label": "About the Claude partnership"
+  },
+  "cta": {
+    "title": "Put a Premier Partner on the Snowflake work.",
+    "subtitle": "Tell us where the organization stands with Snowflake, whether that is procurement, a migration or the AI layer, and we'll bring the certified team, with Snowflake at the table."
+  }
+}

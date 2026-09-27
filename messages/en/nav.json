@@ -18,7 +18,9 @@
   "technologyTelco": "Technology & Telco",
   "mediaEntertainmentAdvertising": "Media, Entertainment & Advertising",
   "about": "About",
-  "partnership": "Partnership",
+  "partnership": "Partnerships",
+  "partnershipSnowflake": "Snowflake partnership",
+  "partnershipClaude": "Claude partnership",
   "nearshore": "Nearshore Advantage",
   "lifeAtViewnear": "Life at Viewnear",
   "security": "Security & Trust",
@@ -52,7 +54,9 @@
   },
   "descriptions": {
     "about": "Who we are",
-    "partnership": "Premier & CoCo Preferred, verified",
+    "partnership": "Two networks, one team",
+    "partnershipSnowflake": "Premier Partner, Snowflake Partner Network",
+    "partnershipClaude": "Claude Certified Partner, Claude Partner Network",
     "nearshore": "In-time-zone Snowflake delivery",
     "security": "Governance & compliance",
     "lifeAtViewnear": "Culture, roles & benefits",
@@ -79,9 +83,9 @@
   },
   "featured": {
     "company": {
-      "eyebrow": "Partnership",
-      "title": "Snowflake Premier Partner",
-      "pitch": "Premier & CoCo Preferred: certified depth on the full Snowflake stack, working alongside the client's Snowflake account team."
+      "eyebrow": "Partnerships",
+      "title": "Two partner networks, one team",
+      "pitch": "Snowflake Premier Partner for the governed data, Claude Certified Partner for the agents that act on it."
     },
     "industries": {
       "eyebrow": "Financial Services",

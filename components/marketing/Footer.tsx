@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { theme } from "@/config/theme";
 import { Logo } from "@/components/marketing/Logo";
-import { PartnerBadges } from "@/components/marketing/PartnerBadges";
+import { PartnerBadgeRow } from "@/components/marketing/PartnerBadgeRow";
 import { SnowflakeLockup } from "@/components/marketing/SnowflakeLockup";
 import { CookieSettingsButton } from "@/components/marketing/CookieSettingsButton";
 
@@ -14,7 +14,9 @@ const groups = [
     title: "Company",
     links: [
       { linkKey: "about", label: "About", href: "/about" },
-      { linkKey: "partnership", label: "Partnership", href: "/partnership" },
+      { linkKey: "partnership", label: "Partnerships", href: "/partnership" },
+      { linkKey: "partnershipSnowflake", label: "Snowflake partnership", href: "/partnership/snowflake" },
+      { linkKey: "partnershipClaude", label: "Claude partnership", href: "/partnership/claude" },
       { linkKey: "lifeAtViewnear", label: "Life at Viewnear", href: "/life-at-viewnear" },
       { linkKey: "careers", label: "Careers", href: "/careers" },
       { linkKey: "security", label: "Security & Trust", href: "/security" },
@@ -93,7 +95,7 @@ export async function Footer() {
                 </>
               )}
             </p>
-            <PartnerBadges variant="logos" size="sm" className="mt-6" />
+            <PartnerBadgeRow size="sm" className="mt-6" />
             <SnowflakeLockup variant="default" height={24} className="mt-6" />
           </div>
           {groups.map((g) => (

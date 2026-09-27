@@ -3,53 +3,97 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMeta, breadcrumbLd, webPageLd } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
-import { InlineCta } from "@/components/marketing/Blocks";
-import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { FieldStrip } from "@/components/marketing/FieldStrip";
-import { LeadershipStrip } from "@/components/marketing/LeadershipStrip";
 import { PageHero } from "@/components/marketing/PageHero";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
-import { PartnershipHighlight } from "@/components/marketing/PartnershipHighlight";
+import { PartnerBadgeMark } from "@/components/marketing/PartnerBadgeRow";
+import { SNOWFLAKE, ANTHROPIC, type PartnerNetwork } from "@/config/partners";
+import { Link } from "@/i18n/navigation";
+import { Img as Image } from "@/components/marketing/Img";
+import { cn } from "@/lib/utils";
 
+/**
+ * The partnerships hub: both networks as equals, each handing off to its own
+ * page, then the build-vs-partner comparison that applies to both.
+ */
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "partnership.meta" });
-  return pageMeta({
-    title: t("title"),
-    description: t("description"),
-    path: "/partnership",
-    locale,
-    ownOgFile: true,
-  });
+  return pageMeta({ title: t("title"), description: t("description"), path: "/partnership", locale, ownOgFile: true });
 }
 
-// Build-vs-partner comparison: the question every leader weighs.
 type Row = { dimension: string; inhouse: string; big3: string; viewnear: string };
+
+// Not a card: a column. A photograph carries the surface, the plate and the
+// level sit under it in a row, then the heading, the body and a text link.
+// Two of these split by one rule read as an editorial spread, not two boxes.
+const PHOTO: Record<PartnerNetwork["key"], { src: string; alt: string }> = {
+  snowflake: { src: "/assets/images/life/partner-momentum.jpg", alt: "Snowflake's CoCo Global Partner Momentum wall at Summit 2026" },
+  anthropic: { src: "/assets/images/cases/magnolia-doors-installation-scheduling-detail.jpg", alt: "A craftsman measuring metalwork at Magnolia Doors" },
+};
+
+function NetworkColumn({
+  partner,
+  title,
+  body,
+  cta,
+  href,
+  verify,
+  className,
+}: {
+  partner: PartnerNetwork;
+  title: string;
+  body: string;
+  cta: string;
+  href: string;
+  verify: string;
+  className?: string;
+}) {
+  const photo = PHOTO[partner.key];
+  return (
+    <div className={cn("flex flex-col", className)}>
+      <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
+        <Image src={photo.src} alt={photo.alt} fill sizes="(min-width: 768px) 45vw, 100vw" className="object-cover" />
+      </div>
+      <div className="mt-6 flex items-center gap-5">
+        <PartnerBadgeMark partner={partner} size="md" className="shrink-0" />
+        <div className="min-w-0">
+          <p className="font-mono text-[0.66rem] uppercase tracking-[0.14em] text-muted">{partner.network}</p>
+          <p className="mt-1 font-mono text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-foreground">{partner.level}</p>
+          {partner.directoryUrl && (
+            <a href={partner.directoryUrl} target="_blank" rel="noopener" className="mt-1 inline-flex items-center gap-1 text-xs font-semibold text-primaryDeep underline-offset-4 hover:underline">
+              {verify}
+              <span aria-hidden="true">↗</span>
+            </a>
+          )}
+        </div>
+      </div>
+      <h3 className="mt-6 font-display text-2xl font-bold leading-tight text-foreground md:text-[1.75rem]">{title}</h3>
+      <p className="mt-3 leading-relaxed text-muted">{body}</p>
+      <Link href={href} className="group mt-auto inline-flex items-center gap-1.5 pt-6 font-semibold text-primaryDeep">
+        <span className="link-underline">{cta}</span>
+        <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
+      </Link>
+    </div>
+  );
+}
 
 export default async function PartnershipPage({ params }: { params: { locale: string } }) {
   const { locale } = params;
   setRequestLocale(locale);
   const t = await getTranslations("partnership");
-
-  const unlocks = t.raw("unlocks") as { title: string; body: string }[];
+  const u = await getTranslations("sharedUi");
   const comparison = t.raw("comparison") as Row[];
+  const verify = u("partnerPlates.verify");
 
   return (
     <>
       <JsonLd
         data={[
-          webPageLd({
-            path: "/partnership",
-            name: t("meta.title"),
-            description: t("meta.description"),
-            locale,
-          }),
-          breadcrumbLd(
-            [{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }],
-            locale,
-          ),
+          webPageLd({ path: "/partnership", name: t("meta.title"), description: t("meta.description"), locale }),
+          breadcrumbLd([{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }], locale),
         ]}
       />
       <div className="relative overflow-hidden">
@@ -69,59 +113,38 @@ export default async function PartnershipPage({ params }: { params: { locale: st
         </div>
       </div>
 
-      {/* Badges + CoCo Preferred Partner momentum */}
-      <PartnershipHighlight title={t("highlight.title")} />
-
-      {/* The claim, and the record that corroborates it.
-          The page asserts two partner recognitions; this is the outbound link to
-          Snowflake's own directory entry, so the claim is checkable by a reader
-          and by a crawler following an anchor, not only via sameAs in JSON-LD.
-          rel keeps the endorsement one-directional without nofollowing it: this
-          is a citation of a primary source, which is exactly what should be
-          followable. */}
-      <div className="container-page -mt-6 md:-mt-8">
-        <p className="text-sm text-muted">
-          {t("directory.body")}{" "}
-          <a
-            href="https://www.snowflake.com/en/why-snowflake/partners/all-partners/viewnear/"
-            target="_blank"
-            rel="noopener"
-            className="font-semibold text-primaryDeep underline-offset-4 hover:underline"
-          >
-            {t("directory.label")}
-          </a>
-          <span aria-hidden="true"> →</span>
-        </p>
-      </div>
-
-      {/* What it unlocks */}
+      {/* The two networks, as equals, each with its own page. */}
       <Section>
-        <SectionHeading
-          eyebrow={t("unlocksHeading.eyebrow")}
-          title={t("unlocksHeading.title")}
-          intro={t("unlocksHeading.intro")}
-        />
-        <RevealGroup className="mt-12 grid gap-6 md:auto-rows-fr md:grid-cols-2" variant="pop">
-          {unlocks.map((u) => (
-            <div key={u.title} className="card card-hover flex h-full flex-col">
-              <h3 className="font-display text-xl font-bold text-foreground">{u.title}</h3>
-              <p className="mt-3 text-muted">{u.body}</p>
-            </div>
-          ))}
+        <RevealGroup className="grid gap-12 md:grid-cols-2 md:gap-0 md:divide-x md:divide-border" variant="fade-up">
+          <NetworkColumn
+            partner={SNOWFLAKE}
+            title={t("networks.snowflake.title")}
+            body={t("networks.snowflake.body")}
+            cta={t("networks.snowflake.cta")}
+            href="/partnership/snowflake"
+            verify={verify}
+            className="md:pr-12"
+          />
+          <NetworkColumn
+            partner={ANTHROPIC}
+            title={t("networks.claude.title")}
+            body={t("networks.claude.body")}
+            cta={t("networks.claude.cta")}
+            href="/partnership/claude"
+            verify={verify}
+            className="md:pl-12"
+          />
         </RevealGroup>
+        <p className="mx-auto mt-10 max-w-3xl text-center font-display text-xl font-medium leading-snug text-foreground md:text-2xl">
+          {t("networks.together")}
+        </p>
       </Section>
 
       {/* Build vs partner comparison */}
       <Section id="comparison" className="section-warm relative overflow-hidden">
         <SectionDecor variant="grid" />
         <div className="relative">
-          <SectionHeading
-            eyebrow={t("comparisonHeading.eyebrow")}
-            title={t("comparisonHeading.title")}
-            intro={t("comparisonHeading.intro")}
-          />
-
-          {/* Desktop table */}
+          <SectionHeading eyebrow={t("comparisonHeading.eyebrow")} title={t("comparisonHeading.title")} intro={t("comparisonHeading.intro")} />
           <div className="mt-12 hidden overflow-hidden rounded-2xl border border-border bg-background md:block">
             <table className="w-full text-sm">
               <thead>
@@ -144,8 +167,6 @@ export default async function PartnershipPage({ params }: { params: { locale: st
               </tbody>
             </table>
           </div>
-
-          {/* Mobile stacked cards */}
           <div className="mt-10 space-y-4 md:hidden">
             {comparison.map((r) => (
               <div key={r.dimension} className="card bg-background">
@@ -171,45 +192,9 @@ export default async function PartnershipPage({ params }: { params: { locale: st
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
 
-      {/* Certified vs generalist */}
-      <Section className="relative overflow-hidden">
-        <SectionDecor variant="flow" />
-        <div className="relative">
-          <FeatureSplit
-            eyebrow={t("certified.eyebrow")}
-            title={t.rich("certified.title", { hl: (c) => <span className="text-gradient">{c}</span> })}
-            body={t("certified.body")}
-            bullets={t.raw("certified.bullets") as string[]}
-            image="/assets/images/life/team-booth.jpg"
-            imageAlt={t("certified.imageAlt")}
-            reverse
-            cta={{ label: t("certified.cta"), href: "/services" }}
-          />
-          <LeadershipStrip label={t("certified.leadershipLabel")} className="mt-10" />
-        </div>
-        <WaveDivider position="bottom" fill="fill-background" />
-      </Section>
-
-      {/* Real event photography: partner-ecosystem presence, made visible.
-          team-booth is excluded here since the FeatureSplit above already uses
-          it, and partner-momentum since it now anchors the inset up top. */}
       <FieldStrip items={["team-group", "team-stage", "team-dinner"]} />
 
-      {/* Partner status is the credential; this is what it buys. */}
-      <Section>
-        <div className="mx-auto max-w-3xl">
-          <InlineCta
-            title={t("consultingCta.title")}
-            href="/snowflake-consulting-services"
-            label={t("consultingCta.label")}
-          />
-        </div>
-      </Section>
-
-      <CtaBand
-        title={t("cta.title")}
-        subtitle={t("cta.subtitle")}
-      />
+      <CtaBand title={t("cta.title")} subtitle={t("cta.subtitle")} />
     </>
   );
 }

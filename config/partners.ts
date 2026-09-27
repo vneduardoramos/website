@@ -58,7 +58,7 @@ export const SNOWFLAKE: PartnerNetwork = {
     { src: "/assets/images/certs/snowpro-core.png", alt: "SnowPro Core certification badge", w: 487, h: 402 },
   ],
   directoryUrl: "https://www.snowflake.com/en/why-snowflake/partners/all-partners/viewnear/",
-  org: { name: "Snowflake Inc.", url: "https://www.snowflake.com", wikidata: "https://www.wikidata.org/wiki/Q65141064" },
+  org: { name: "Snowflake Inc.", url: "https://www.snowflake.com", wikidata: "https://www.wikidata.org/wiki/Q22078063" },
 };
 
 export const ANTHROPIC: PartnerNetwork = {

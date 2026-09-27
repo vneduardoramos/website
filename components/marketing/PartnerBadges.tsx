@@ -1,22 +1,40 @@
 /**
- * Snowflake certification badges: the single source for Viewnear's partner
- * status. Used on home, About, the Partnership page, and the footer.
+ * Partner credentials as chips, cards or a logo row. Reads everything from
+ * config/partners.ts, so this file holds no partner facts of its own: when the
+ * Anthropic tier is published there, the chips and cards pick up the level and
+ * the logo row picks up the badge with no change here.
+ *
+ * `chips`: compact pill row (default). `logos`: the official artwork.
+ * All variants show artwork bare: no plate, no frame. For the two networks
+ * with their network and level beneath, use PartnerBadgeRow.
  */
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { PARTNERS, SNOWFLAKE, type PartnerBadge, type PartnerNetwork } from "@/config/partners";
 import { cn } from "@/lib/utils";
 
-export const CERTIFICATIONS = [
-  "Snowflake Premier Partner",
-  "Snowflake CoCo Preferred Partner",
-] as const;
+type Credential = { label: string; partner: PartnerNetwork["key"] };
 
-// Official Snowflake partner + certification badge artwork.
-const BADGE_IMAGES = [
-  { src: "/assets/images/certs/premier.webp", alt: "Snowflake Premier Partner badge", w: 460, h: 460 },
-  { src: "/assets/images/certs/coco-preferred.png", alt: "Snowflake CoCo Preferred Partner badge", w: 900, h: 741 },
-  { src: "/assets/images/certs/snowpro-core.png", alt: "SnowPro Core certification badge", w: 487, h: 402 },
+// Snowflake's two recognitions, then the Anthropic partnership: the site's order.
+const CREDENTIALS: readonly Credential[] = [
+  { label: SNOWFLAKE.label, partner: "snowflake" },
+  { label: "Snowflake CoCo Preferred Partner", partner: "snowflake" },
+  ...PARTNERS.filter((p) => p.key !== "snowflake").map((p) => ({ label: p.label, partner: p.key })),
 ];
+
+/** Flat labels, for callers that only need the text. */
+export const CERTIFICATIONS: readonly string[] = CREDENTIALS.map((c) => c.label);
+
+/**
+ * The official artwork that may be shown, primary badges first. `only` narrows
+ * it to one network, for blocks that are about that network alone and where the
+ * other partner's badge would read as a stray credential.
+ */
+function badgeImages(only?: PartnerNetwork["key"]): PartnerBadge[] {
+  return [
+    ...PARTNERS.filter((p) => !only || p.key === only).flatMap((p) => (p.badge ? [p.badge] : [])),
+    ...(only && only !== "snowflake" ? [] : SNOWFLAKE.secondary),
+  ];
+}
 
 function SnowflakeMark({ className = "h-4 w-4" }: { className?: string }) {
   return (
@@ -27,69 +45,64 @@ function SnowflakeMark({ className = "h-4 w-4" }: { className?: string }) {
   );
 }
 
-/**
- * `chips`: compact pill row (default). `cards`: larger badge cards for the
- * Partnership page. `logos`: the official badge artwork.
- */
-export async function PartnerBadges({
+/** Four-point spark, the same icon family as the mega-menu: the agentic pillar. */
+function AgentMark({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 3c.6 3.6 1.8 4.8 5.4 5.4-3.6.6-4.8 1.8-5.4 5.4-.6-3.6-1.8-4.8-5.4-5.4 3.6-.6 4.8-1.8 5.4-5.4z" />
+      <path d="M18.5 14.5c.3 1.6.8 2.1 2.4 2.4-1.6.3-2.1.8-2.4 2.4-.3-1.6-.8-2.1-2.4-2.4 1.6-.3 2.1-.8 2.4-2.4z" />
+    </svg>
+  );
+}
+
+function CredentialMark({ partner, className }: { partner: PartnerNetwork["key"]; className?: string }) {
+  return partner === "anthropic" ? <AgentMark className={className} /> : <SnowflakeMark className={className} />;
+}
+
+export function PartnerBadges({
   variant = "chips",
   size = "lg",
+  only,
   className = "",
 }: {
-  variant?: "chips" | "cards" | "logos";
+  variant?: "chips" | "logos";
   size?: "sm" | "lg";
+  /** Show one network's credentials only. Omit for both. */
+  only?: PartnerNetwork["key"];
   className?: string;
 }) {
-  const t = await getTranslations("sharedUi");
-  const items = [...CERTIFICATIONS];
-
-  // Real Snowflake badge artwork (Premier circle + CoCo shield), at a fixed height.
+  const credentials = CREDENTIALS.filter((c) => !only || c.partner === only);
   if (variant === "logos") {
-    const h = size === "sm" ? "h-14" : "h-28";
+    // Bare artwork, no frame. Each badge's displayScale keeps a wide lockup
+    // from dominating the circles beside it.
+    const base = size === "sm" ? 80 : 128;
     return (
       <div className={cn("flex flex-wrap items-center gap-x-8 gap-y-5", className)}>
-        {BADGE_IMAGES.map((b) => (
+        {badgeImages(only).map((b) => (
           <Image
             key={b.src}
             src={b.src}
             alt={b.alt}
             width={b.w}
             height={b.h}
-            sizes={size === "sm" ? "70px" : "140px"}
-            className={cn(h, "w-auto")}
+            sizes={size === "sm" ? "160px" : "320px"}
+            style={{ height: Math.round(base * (b.displayScale ?? 1)) }}
+            className="w-auto object-contain"
           />
         ))}
       </div>
     );
   }
 
-  if (variant === "cards") {
-    return (
-      <div className={`grid gap-4 sm:grid-cols-2 ${className}`}>
-        {CERTIFICATIONS.map((c) => (
-          <div key={c} className="card flex items-center gap-4">
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/15 text-primaryDeep">
-              <SnowflakeMark className="h-6 w-6" />
-            </span>
-            <div>
-              <p className="font-display text-lg font-bold text-foreground">{c}</p>
-              <p className="mt-0.5 text-sm text-muted">{t("partnerBadges.verifiedStatus")}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    );
-  }
-
   return (
-    <div className={`flex flex-wrap gap-3 ${className}`}>
-      {items.map((c) => (
+    <div className={cn("flex flex-wrap gap-3", className)}>
+      {credentials.map((c) => (
         <span
-          key={c}
+          key={c.label}
           className="inline-flex items-center gap-2 rounded-full border border-border bg-surface2 px-4 py-1.5 text-sm font-medium text-primaryDeep"
         >
-          <SnowflakeMark />
-          {c}
+          <CredentialMark partner={c.partner} />
+          {c.label}
         </span>
       ))}
     </div>

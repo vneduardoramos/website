@@ -1,39 +1,13 @@
 {
   "meta": {
-    "title": "Snowflake Premier y CoCo Preferred Partner",
-    "description": "Snowflake Premier Partner y CoCo Preferred Partner: profundidad certificada, acceso directo a Snowflake y entrega nearshore de datos e IA en toda América."
+    "title": "Snowflake Premier Partner y Claude Certified Partner",
+    "description": "Snowflake Premier Partner, CoCo Preferred Partner y Claude Certified Partner: profundidad certificada en datos gobernados, agentes de Claude que actúan sobre ellos y entrega en toda América."
   },
   "hero": {
-    "eyebrow": "Alianza con Snowflake",
-    "title": "Un <hl>Premier Partner</hl> de Snowflake, y CoCo Preferred Partner.",
-    "description": "Viewnear cuenta con dos de los reconocimientos de partner más altos de Snowflake. Juntos significan profundidad certificada y una línea directa con el propio equipo de Snowflake, todo puesto al servicio de los datos e IA empresariales por un único equipo responsable en toda América."
+    "eyebrow": "Alianzas",
+    "title": "Dos redes de partners. <hl>Un solo equipo</hl> que responde por el proyecto.",
+    "description": "Snowflake es el plano de control agéntico: datos gobernados, Cortex AI y Cortex AI Gateway. Claude es el modelo que corre dentro de él y a su alrededor. Viewnear cuenta con un reconocimiento en ambas redes y construye soluciones agénticas que empiezan con los datos correctos."
   },
-  "highlight": {
-    "title": "Dos reconocimientos, con el impulso de CoCo Preferred Partner que los respalda"
-  },
-  "unlocksHeading": {
-    "eyebrow": "Lo que habilita",
-    "title": "Más rápido al valor, con menos riesgo y menor costo",
-    "intro": "La certificación no es un logo en una diapositiva; cambia qué tan rápido, qué tan seguro y a qué costo el negocio llega al valor."
-  },
-  "unlocks": [
-    {
-      "title": "Un solo plan con el equipo de Snowflake",
-      "body": "Trabajamos junto al equipo de cuenta de Snowflake en la arquitectura, el financiamiento y la entrega: incentivos alineados y un solo plan, no un proveedor añadido después."
-    },
-    {
-      "title": "Adquisición de Snowflake, simplificada",
-      "body": "Snowflake cobra por el cómputo y el almacenamiento que realmente se consumen. Adquirir esa capacidad a través de Viewnear significa términos comerciales más simples, con la capacidad y la entrega bajo un único partner responsable."
-    },
-    {
-      "title": "Construimos con Snowflake CoCo",
-      "body": "Como CoCo Preferred Partner construimos productos de datos y casos de uso de IA con el agente de codificación de Snowflake, revisados objeto por objeto y validados antes de llegar a producción."
-    },
-    {
-      "title": "Entrega certificada en SnowPro",
-      "body": "Arquitectos e ingenieros certificados en cada proyecto. Snowflake es lo que hacemos, no uno de diez stacks en los que incursionamos, así que cada proyecto recibe profundidad, no conjeturas."
-    }
-  ],
   "comparisonHeading": {
     "eyebrow": "Construir vs. asociarse",
     "title": "Tres caminos para llegar",
@@ -69,6 +43,12 @@
       "viewnear": "Especialistas Premier Partner, de extremo a extremo"
     },
     {
+      "dimension": "Experiencia en IA agéntica",
+      "inhouse": "Pruebas con el modelo que el equipo ya conoce",
+      "big3": "Una de varias prácticas de IA, asignada por cuenta",
+      "viewnear": "Claude Certified Partner, agentes de Claude en producción"
+    },
+    {
       "dimension": "Responsabilidad",
       "inhouse": "Repartida entre equipos internos",
       "big3": "Con frecuencia repartida entre prácticas y subcontratistas",
@@ -78,37 +58,28 @@
       "dimension": "Después de la puesta en marcha",
       "inhouse": "El conocimiento se va con la rotación de personal",
       "big3": "El proyecto continúa con tarifa diaria",
-      "viewnear": "Habilitación y traspaso: el equipo lo opera"
+      "viewnear": "Documentado y en operación: por el equipo, o por Viewnear como servicio gestionado"
     }
   ],
-  "certified": {
-    "eyebrow": "Certificado vs. generalista",
-    "title": "Profundidad que un <hl>generalista no puede igualar</hl>",
-    "body": "A un Premier Partner se le mide por personas certificadas y resultados verificados, no por la cantidad de logos. Conocemos todo el stack de Snowflake y trabajamos junto al equipo de cuenta de Snowflake del cliente, de modo que la construcción avanza más rápido y con menos riesgo que con un generalista o una preparación interna.",
-    "bullets": [
-      "Arquitectos e ingenieros certificados en SnowPro, del diseño a la producción",
-      "Trabajo directo con el equipo de cuenta de Snowflake",
-      "Construyendo sobre el stack actual de Snowflake: Cortex, Openflow, Horizon, CoCo",
-      "Un único equipo responsable: las mismas personas nombradas desde el inicio hasta el traspaso"
-    ],
-    "imageAlt": "El equipo de Viewnear haciendo una demostración a los asistentes de un evento de Snowflake",
-    "cta": "Explorar servicios",
-    "leadershipLabel": "Las personas en la mesa son las personas que entregan."
-  },
   "cta": {
     "title": "Poner un partner certificado a cargo.",
-    "subtitle": "Con saber en qué punto está la organización con Snowflake (adquisición, migración o IA), llevamos al equipo certificado, con Snowflake en la mesa, para hacerlo avanzar."
-  },
-  "consultingCta": {
-    "title": "El estatus Premier es la credencial. Esto es lo que entrega.",
-    "label": "Consultoría e implementación"
-  },
-  "directory": {
-    "label": "Verificar el registro",
-    "body": "Ambos reconocimientos aparecen en el directorio de partners de Snowflake."
+    "subtitle": "Con saber en qué punto está la organización, ya sea en la adquisición de Snowflake, una migración o un proceso que debería correr con un agente, llevamos al equipo certificado para hacerlo avanzar."
   },
   "breadcrumb": {
     "home": "Inicio",
-    "current": "Alianza con Snowflake"
+    "current": "Alianzas"
+  },
+  "networks": {
+    "snowflake": {
+      "title": "Datos gobernados y la capa de IA, en Snowflake",
+      "body": "Premier Partner y CoCo Preferred Partner. Migraciones, bases gobernadas y Cortex AI a través de Cortex AI Gateway, entregadas por arquitectos e ingenieros con certificación SnowPro.",
+      "cta": "La alianza con Snowflake"
+    },
+    "claude": {
+      "title": "Soluciones agénticas, construidas con Claude",
+      "body": "Claude Certified Partner en la Claude Partner Network. Arquitectos con certificación Claude Certified Architect que ponen a Claude en el trabajo que todavía se hace a mano, con conectores MCP hacia el sistema de registro y una persona que aprueba lo que importa.",
+      "cta": "La alianza con Claude"
+    },
+    "together": "Construido en conjunto: soluciones agénticas que empiezan con los datos correctos, gobernados en Snowflake y razonando con Claude."
   }
 }

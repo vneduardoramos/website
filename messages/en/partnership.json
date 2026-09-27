@@ -1,39 +1,13 @@
 {
   "meta": {
-    "title": "Snowflake Premier & CoCo Preferred Partner",
-    "description": "Snowflake Premier and CoCo Preferred Partner: certified depth, direct access to Snowflake's team, and nearshore data and AI delivery across the Americas."
+    "title": "Snowflake Premier Partner and Claude Certified Partner",
+    "description": "A Snowflake Premier and CoCo Preferred Partner, and a Claude Certified Partner: certified depth on governed data, Claude agents that act on it, delivered across the Americas."
   },
   "hero": {
-    "eyebrow": "Snowflake Partnership",
-    "title": "A Snowflake <hl>Premier Partner</hl>, and CoCo Preferred Partner.",
-    "description": "Viewnear holds two of Snowflake's highest partner recognitions. Together they mean certified depth and a direct line to Snowflake's own team, all put to work on enterprise data & AI by one accountable team across the Americas."
+    "eyebrow": "Partnerships",
+    "title": "Two partner networks. <hl>One team</hl> that answers for the build.",
+    "description": "Snowflake is the agentic control plane: governed data, Cortex AI and Cortex AI Gateway. Claude is the model that runs inside it and around it. Viewnear holds a recognized standing in both networks and builds agentic solutions that start with the right data."
   },
-  "highlight": {
-    "title": "Two recognitions, and CoCo Preferred Partner momentum to back them"
-  },
-  "unlocksHeading": {
-    "eyebrow": "What it unlocks",
-    "title": "Faster to value, with less risk and lower cost",
-    "intro": "Certification isn't a logo on a slide; it changes how fast, how safely, and how affordably the business gets to value."
-  },
-  "unlocks": [
-    {
-      "title": "One plan with the Snowflake team",
-      "body": "We work alongside the Snowflake account team on architecture, funding, and delivery: aligned incentives and one plan, not a vendor bolted on after the fact."
-    },
-    {
-      "title": "Snowflake procurement, simplified",
-      "body": "Snowflake charges for the compute and storage actually consumed. Procuring that capacity through Viewnear means simpler commercial terms, with capacity and delivery under one accountable partner."
-    },
-    {
-      "title": "Building with Snowflake CoCo",
-      "body": "As a CoCo Preferred Partner we build data products and AI use cases with Snowflake's coding agent, reviewed object by object and validated before anything reaches production."
-    },
-    {
-      "title": "SnowPro-certified delivery",
-      "body": "Certified architects and engineers on every engagement. Snowflake is what we do, not one of ten stacks we dabble in, so every engagement gets depth, not guesswork."
-    }
-  ],
   "comparisonHeading": {
     "eyebrow": "Build vs. partner",
     "title": "Three ways to get there",
@@ -69,6 +43,12 @@
       "viewnear": "Premier Partner specialists, end to end"
     },
     {
+      "dimension": "Agentic AI expertise",
+      "inhouse": "Pilots on whichever model the team already knows",
+      "big3": "One of several AI practices, staffed per account",
+      "viewnear": "Claude Certified Partner, Claude agents in production"
+    },
+    {
       "dimension": "Accountability",
       "inhouse": "Split across internal teams",
       "big3": "Often split across practices and subcontractors",
@@ -78,37 +58,28 @@
       "dimension": "After go-live",
       "inhouse": "Knowledge walks out with attrition",
       "big3": "The engagement continues at day rates",
-      "viewnear": "Enablement & hand-over, the team runs it"
+      "viewnear": "Documented and run: by the team, or by Viewnear as a managed service"
     }
   ],
-  "certified": {
-    "eyebrow": "Certified vs. generalist",
-    "title": "Depth that a <hl>generalist can’t match</hl>",
-    "body": "A Premier Partner is measured on certified people and verified outcomes, not breadth of logos. We know the full Snowflake stack and work alongside the client's Snowflake account team, so the build moves faster with less risk than a generalist or an in-house ramp.",
-    "bullets": [
-      "SnowPro-certified architects and engineers, from design to production",
-      "Working directly with the Snowflake account team",
-      "Building on the current Snowflake stack: Cortex, Openflow, Horizon, CoCo",
-      "One accountable team: the same named people from kickoff to handover"
-    ],
-    "imageAlt": "The Viewnear team demoing to attendees at a Snowflake event",
-    "cta": "Explore services",
-    "leadershipLabel": "The people at the table are the people who deliver."
-  },
   "cta": {
     "title": "Put a certified partner on it.",
-    "subtitle": "Tell us where the organization stands with Snowflake (procurement, migration, or AI) and we'll bring the certified team, with Snowflake at the table, to move it forward."
-  },
-  "consultingCta": {
-    "title": "Premier status is the credential. This is what it delivers.",
-    "label": "Consulting & implementation"
-  },
-  "directory": {
-    "label": "Verify this listing",
-    "body": "Both recognitions are listed on Snowflake's own partner directory."
+    "subtitle": "Tell us where the organization stands, whether that is Snowflake procurement, a migration, or a process that should be running with an agent, and we'll bring the certified team to move it forward."
   },
   "breadcrumb": {
     "home": "Home",
-    "current": "Snowflake partnership"
+    "current": "Partnerships"
+  },
+  "networks": {
+    "snowflake": {
+      "title": "Governed data and the AI layer, on Snowflake",
+      "body": "Premier Partner and CoCo Preferred Partner. Migrations, governed foundations, and Cortex AI through Cortex AI Gateway, delivered by SnowPro-certified architects and engineers.",
+      "cta": "The Snowflake partnership"
+    },
+    "claude": {
+      "title": "Agentic solutions, built with Claude",
+      "body": "A Claude Certified Partner in the Claude Partner Network. Claude Certified Architects putting Claude on the work still done by hand, with MCP connectors into the system of record and a person approving what matters.",
+      "cta": "The Claude partnership"
+    },
+    "together": "Built together: agentic solutions that start with the right data, governed on Snowflake and reasoning with Claude."
   }
 }
