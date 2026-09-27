@@ -52,7 +52,7 @@ export const caseStudiesEs: Record<string, { title?: string; summary?: string; s
       "Una empresa de procesamiento de reclamaciones clasificaba a mano los documentos de numerosas aseguradoras, lo que causaba demoras, errores y archivos extraviados. Con funciones de Snowflake Cortex AI como AI_EXTRACT, Viewnear automatizó la clasificación y la extracción de datos, elevando la precisión del 60% al 95% y reduciendo el procesamiento por documento a cuatro segundos.",
     metrics: [
       { value: "60→95%", label: "Precisión de clasificación" },
-      { value: "4 sec", label: "Clasificación por documento" },
+      { value: "4 seg", label: "Clasificación por documento" },
       { value: "40%", label: "Documentos descartados recuperados" },
       { value: "88%", label: "Menos errores de clasificación" },
     ],
