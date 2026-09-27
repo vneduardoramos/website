@@ -45,7 +45,7 @@ export function MeshHeroSlide({ subhead }: { subhead?: string }) {
               claim, this says what Viewnear actually does. Each word rises out
               of a blur in sequence, which makes the sentence read as it
               arrives rather than appearing all at once. */}
-          <p className="mx-auto mt-7 max-w-4xl text-pretty text-xl font-medium leading-relaxed text-muted md:text-[1.65rem] md:leading-[1.5]">
+          <p className="mx-auto mt-7 max-w-4xl text-pretty text-lg font-medium leading-relaxed text-muted md:text-xl">
             {sub.split(" ").map((word, i, all) => (
               <Fragment key={`${word}-${i}`}>
                 <span className="hero-word" style={{ animationDelay: `${140 + i * 28}ms` }}>
