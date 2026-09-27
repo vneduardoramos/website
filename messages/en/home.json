@@ -100,9 +100,9 @@
         "body": "Use-case-driven sprints reach production in 8–16 weeks, with working software demoed from the very first sprint."
       },
       {
-        "label": "Handover",
-        "title": "Built to hand over",
-        "body": "Documentation, enablement, and a transition plan in every engagement, so in-house teams run and extend the work confidently."
+        "label": "Run",
+        "title": "Documented, then kept improving",
+        "body": "Documentation and runbooks ship with the build. From there the team runs it, or Viewnear keeps running and improving it as a managed service."
       }
     ],
     "panel": {

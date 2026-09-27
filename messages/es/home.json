@@ -100,9 +100,9 @@
         "body": "Los sprints por caso de uso llegan a producción en 8 a 16 semanas, con software funcionando desde el primer sprint."
       },
       {
-        "label": "Traspaso",
-        "title": "Construido para entregarse",
-        "body": "Documentación, capacitación y un plan de transición en cada proyecto, para que el equipo interno opere y amplíe el trabajo con autonomía."
+        "label": "Operación",
+        "title": "Documentado, y después mejorado",
+        "body": "La documentación y los runbooks se entregan con el build. A partir de ahí lo opera el equipo interno, o Viewnear lo sigue operando y mejorando como servicio administrado."
       }
     ],
     "panel": {
