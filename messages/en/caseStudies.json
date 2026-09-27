@@ -1,12 +1,12 @@
 {
   "meta": {
     "title": "Snowflake data & AI case studies",
-    "description": "Data & AI engagements across the Americas: real, anonymized results from governed data and AI use cases delivered on Snowflake."
+    "description": "Six real Viewnear engagements across manufacturing, construction and real estate, education, insurance, and automotive: governed data on Snowflake, and agents built with Claude, in production."
   },
   "hero": {
     "eyebrow": "Our work",
     "title": "Case <hl>studies</hl>.",
-    "description": "Five real Viewnear engagements, anonymized, across manufacturing, construction and real estate, education, insurance, and automotive. Each follows the same arc: scattered sources to governed data to a use case in production."
+    "description": "Six real Viewnear engagements, across manufacturing, construction and real estate, education, insurance, and automotive. Anonymized except where a client is named with permission. Each starts with data a business can trust and ends with something running in production."
   },
   "featured": {
     "eyebrow": "Featured work",

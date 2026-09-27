@@ -1,6 +1,8 @@
 import { getTranslations } from "next-intl/server";
+import { Img } from "@/components/marketing/Img";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
+import { caseStackKey } from "@/lib/case-stack";
 
 export function Section({
   children,
@@ -72,58 +74,57 @@ export function Pill({ children }: { children: React.ReactNode }) {
   return <span className="pill-chip">{children}</span>;
 }
 
-// Deterministic per-sector visual coding for the otherwise text-only cards: a
-// stable hash picks one of a few sparkline shapes + a Glacier hue, so each card
-// reads as a distinct "data outcome" without any photo/asset pipeline.
-const SPARK_HUES = ["--color-primary", "--color-secondary", "--color-primary-deep"];
-const SPARK_PATHS = [
-  "M0,38 L40,32 L80,36 L120,20 L160,26 L200,10 L240,5",
-  "M0,30 L40,34 L80,22 L120,26 L160,14 L200,18 L240,4",
-  "M0,40 L40,28 L80,31 L120,16 L160,22 L200,9 L240,12",
-];
-function hashIndex(s: string, mod: number) {
-  let h = 0;
-  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
-  return h % mod;
-}
-
 export async function CaseStudyCard({
   cs,
 }: {
-  cs: { slug: string; title: string; summary: string; sector: string; region: string };
+  cs: {
+    slug: string;
+    title: string;
+    summary: string;
+    sector: string;
+    region: string;
+    heroImage?: string | null;
+    stack?: unknown;
+  };
 }) {
   const t = await getTranslations("sharedUi");
-  const key = `${cs.sector}${cs.region}`;
-  const hue = SPARK_HUES[hashIndex(key, SPARK_HUES.length)];
-  const spark = SPARK_PATHS[hashIndex(cs.slug, SPARK_PATHS.length)];
+  const stackKey = caseStackKey(cs.stack);
   return (
     <Link
       href={`/case-studies/${cs.slug}`}
-      className="card card-hover group flex h-full flex-col overflow-hidden"
+      className="card card-hover group flex h-full flex-col overflow-hidden p-0"
     >
-      {/* data-spark: a per-sector tinted outcome curve, bled to the card edges */}
-      <div className="-mx-6 -mt-6 mb-5 h-16 bg-gradient-to-b from-surface2/70 to-transparent px-6 pt-5">
-        <svg viewBox="0 0 240 48" preserveAspectRatio="none" className="h-full w-full" aria-hidden="true">
-          <path d={`${spark} L240,48 L0,48 Z`} style={{ fill: `rgb(var(${hue}) / 0.20)` }} />
-          <path
-            d={spark}
-            fill="none"
-            style={{ stroke: `rgb(var(${hue}))` }}
-            strokeWidth={2}
-            strokeLinecap="round"
-            strokeLinejoin="round"
+      {/* The engagement's own photograph. This used to be a decorative curve
+          whose shape was picked by hashing the slug and whose color came from
+          hashing the sector, which is to say the artwork was arbitrary. Every
+          case study ships a hero image; show it. */}
+      {cs.heroImage && (
+        <div className="relative aspect-[16/10] w-full overflow-hidden">
+          <Img
+            src={cs.heroImage}
+            alt={`${cs.sector}: ${cs.title}`}
+            fill
+            sizes="(min-width: 768px) 45vw, 100vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
-        </svg>
+        </div>
+      )}
+      <div className="flex flex-1 flex-col p-6">
+        <span className="pill-chip self-start">
+          {cs.sector} · {cs.region}
+        </span>
+        <h3 className="mt-4 font-display text-lg font-bold text-foreground">{cs.title}</h3>
+        <p className="mt-2 line-clamp-4 text-sm leading-relaxed text-muted">{cs.summary}</p>
+        {stackKey && (
+          <span className="mt-4 font-mono text-xs uppercase tracking-widest text-muted">
+            {stackKey === "claude" ? t("caseStudyCard.builtWithClaude") : t("caseStudyCard.builtOnSnowflake")}
+          </span>
+        )}
+        <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-primaryDeep">
+          <span className="link-underline">{t("caseStudyCard.readMore")}</span>
+          <span className="transition-transform group-hover:translate-x-0.5">→</span>
+        </span>
       </div>
-      <span className="pill-chip self-start">
-        {cs.sector} · {cs.region}
-      </span>
-      <h3 className="mt-4 font-display text-lg font-bold text-foreground">{cs.title}</h3>
-      <p className="mt-2 line-clamp-4 text-sm leading-relaxed text-muted">{cs.summary}</p>
-      <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-primaryDeep">
-        <span className="link-underline">{t("caseStudyCard.readMore")}</span>
-        <span className="transition-transform group-hover:translate-x-0.5">→</span>
-      </span>
     </Link>
   );
 }

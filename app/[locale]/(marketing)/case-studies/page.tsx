@@ -10,6 +10,7 @@ import { CoverCard } from "@/components/marketing/CoverCard";
 import { coverForSector } from "@/lib/covers";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { PartnerBadges } from "@/components/marketing/PartnerBadges";
+import { caseStackKey } from "@/lib/case-stack";
 
 export const revalidate = 60;
 
@@ -26,6 +27,16 @@ export default async function CaseStudiesPage({ params }: { params: { locale: st
   const t = await getTranslations("caseStudies");
 
   const caseStudies = await getCaseStudies({}, locale as Locale);
+  const shared = await getTranslations("sharedUi");
+
+  // The quiet line under each card naming which half of the practice built it.
+  const stackChip = (stack: unknown) => {
+    const key = caseStackKey(stack);
+    if (!key) return undefined;
+    return key === "claude"
+      ? shared("caseStudyCard.builtWithClaude")
+      : shared("caseStudyCard.builtOnSnowflake");
+  };
 
   // Feature the strongest as one full-width card, the rest in a uniform grid.
   const featured = caseStudies[0];
@@ -93,6 +104,7 @@ const ld = collectionLd({
                   kicker={`${featured.sector} · ${featured.region}`}
                   title={featured.title}
                   excerpt={featured.summary}
+                  chip={stackChip(featured.stack)}
                   featured
                 />
               )}
@@ -117,6 +129,7 @@ const ld = collectionLd({
                         kicker={`${cs.sector} · ${cs.region}`}
                         title={cs.title}
                         excerpt={cs.summary}
+                        chip={stackChip(cs.stack)}
                       />
                     ))}
                   </div>

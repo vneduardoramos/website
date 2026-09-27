@@ -1,12 +1,12 @@
 {
   "meta": {
     "title": "Casos de éxito de datos e IA en Snowflake",
-    "description": "Proyectos de data & AI en las Américas: resultados reales y anonimizados de datos gobernados y casos de uso de IA entregados sobre Snowflake."
+    "description": "Seis proyectos reales de Viewnear en manufactura, construcción e inmobiliaria, educación, seguros y automotriz: datos gobernados sobre Snowflake y agentes construidos con Claude, en producción."
   },
   "hero": {
     "eyebrow": "Nuestro trabajo",
     "title": "Casos de <hl>éxito</hl>.",
-    "description": "Cinco proyectos reales de Viewnear, anonimizados, en manufactura, construcción e inmobiliaria, educación, seguros y automotriz. Todos siguen el mismo arco: de fuentes dispersas a datos gobernados y a un caso de uso en producción."
+    "description": "Seis proyectos reales de Viewnear, en manufactura, construcción e inmobiliaria, educación, seguros y automotriz. Anonimizados, salvo cuando un cliente se nombra con su permiso. Cada uno arranca con datos confiables y termina con algo corriendo en producción."
   },
   "featured": {
     "eyebrow": "Trabajo destacado",

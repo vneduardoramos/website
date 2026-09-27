@@ -51,6 +51,7 @@ export async function CoverCard({
   excerpt,
   meta,
   author,
+  chip,
   featured = false,
 }: {
   href: string;
@@ -61,6 +62,12 @@ export async function CoverCard({
   excerpt?: string | null;
   meta?: string;
   author?: { name: string; photo?: string | null };
+  /**
+   * A quiet line naming what the work was built on, for case studies. One of
+   * the low-weight places the two partners are stated; it sits below the
+   * excerpt so it never competes with the kicker.
+   */
+  chip?: string;
   featured?: boolean;
 }) {
   const t = await getTranslations("sharedUi");
@@ -133,6 +140,9 @@ export async function CoverCard({
         </div>
       ) : (
         meta && <p className="mt-4 text-xs text-muted">{meta}</p>
+      )}
+      {chip && (
+        <span className="mt-4 font-mono text-xs uppercase tracking-widest text-muted">{chip}</span>
       )}
       <span className="mt-auto pt-4 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep">
         {t("coverCard.readMore")}
