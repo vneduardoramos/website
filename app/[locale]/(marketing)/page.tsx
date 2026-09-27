@@ -15,7 +15,6 @@ import { LogoRow } from "@/components/marketing/home/ClientLogos";
 import { getClientBands } from "@/lib/client-bands";
 import { PlateCard } from "@/components/marketing/Cards";
 import { FaceStack } from "@/components/marketing/LeadershipStrip";
-import { PressStrip } from "@/components/marketing/PressStrip";
 
 export const revalidate = 60;
 
@@ -70,10 +69,6 @@ export default async function HomePage({ params }: { params: { locale: string } 
         </div>
       </section>
       <CustomersFeature bottomLogos={bands.bottom} />
-
-      {/* IN THE PRESS: third-party validation, a plain band between the
-          customers block and the warm services grid. */}
-      <PressStrip />
 
       {/* 2) WHAT WE DO */}
       <ServicesGrid services={services} />
