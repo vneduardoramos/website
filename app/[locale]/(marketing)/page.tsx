@@ -9,6 +9,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { Link } from "@/i18n/navigation";
 import { Hero } from "@/components/marketing/home/Hero";
+import { ProofBand } from "@/components/marketing/home/ProofBand";
 import { ServicesGrid } from "@/components/marketing/home/ServicesGrid";
 import { FoundationPhoto } from "@/components/marketing/home/SplitVisuals";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
@@ -79,6 +80,11 @@ export default async function HomePage({ params }: { params: { locale: string } 
       {/* 1) HERO (the hero's mono line carries the credential; the badges get
           their full moment once, in the Proof & Trust band below) */}
       <Hero subhead={hero?.subhead} />
+
+      {/* 2) THE EVIDENCE: three measured results, before the reader has to
+          scroll for them. The hero makes a claim about work done by hand; this
+          is what happened the last three times. */}
+      <ProofBand />
 
       {/* PROOF EARLY: the logo band sits right after the hero. It carries no
           caption naming the brands as customers: the relationship is not

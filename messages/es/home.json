@@ -3,6 +3,23 @@
     "title": "Viewnear: datos e IA en producción",
     "description": "Viewnear ayuda a las empresas a establecer dos capacidades que permanecen: datos confiables y una práctica de IA en producción, sobre Snowflake, con equipos internos."
   },
+  "results": {
+    "cta": "Ver el caso",
+    "items": [
+      {
+        "label": "Horas administrativas recuperadas cada semana",
+        "source": "Magnolia Doors, programación de instalaciones"
+      },
+      {
+        "label": "Precisión en la clasificación de reclamaciones",
+        "source": "Una procesadora de reclamaciones de seguros"
+      },
+      {
+        "label": "Para una vista viva de más de 20,000 estudiantes",
+        "source": "Un grupo universitario multicampus"
+      }
+    ]
+  },
   "foundation": {
     "eyebrow": "La base",
     "title": "Datos en los que todo el negocio puede confiar",

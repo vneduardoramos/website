@@ -3,6 +3,23 @@
     "title": "Viewnear: Data & AI practice, up and running.",
     "description": "Viewnear stands up two capabilities enterprises keep: governed data for real decisions, and an AI practice shipping to production, on Snowflake, run in-house."
   },
+  "results": {
+    "cta": "Read the case study",
+    "items": [
+      {
+        "label": "Administrative hours back every week",
+        "source": "Magnolia Doors, installation scheduling"
+      },
+      {
+        "label": "Claims classification accuracy",
+        "source": "An insurance claims processor"
+      },
+      {
+        "label": "To one live view of 20,000+ students",
+        "source": "A multi-campus university group"
+      }
+    ]
+  },
   "foundation": {
     "eyebrow": "The foundation",
     "title": "Data the whole business can trust",
