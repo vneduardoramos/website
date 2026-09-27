@@ -42,6 +42,21 @@
       "summary": "Sorting documents from many insurance providers by hand caused delays, errors, and lost files. Using Snowflake Cortex AI functions like AI_EXTRACT, Viewnear automated classification and extraction, lifting accuracy from 60% to 95% and cutting per-document handling to four seconds.",
       "metricLabel1": "Classification accuracy",
       "metricLabel2": "Per-document classification"
+    },
+    "carousel": {
+      "prev": "Previous story",
+      "next": "Next story",
+      "counter": "Story {i} of {n}"
+    },
+    "badgeAgentic": "Built with Claude",
+    "agentic": {
+      "client": "Magnolia Doors",
+      "sector": "Manufacturing",
+      "region": "San Antonio, TX",
+      "title": "Installation scheduling from 17 hours a week to under two",
+      "summary": "Getting install crews scheduled ran across five disconnected systems and cost 13 to 17 hours a week. Claude now does the gathering through a connector into the system of record, and a coordinator approves the day.",
+      "metricLabel1": "Administrative time back every week",
+      "metricLabel2": "To schedule an installation, was 23–35"
     }
   },
   "hero": {

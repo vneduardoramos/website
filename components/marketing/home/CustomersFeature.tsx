@@ -1,52 +1,97 @@
 import { getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
-import { Img as Image } from "@/components/marketing/Img";
-import { Reveal } from "@/components/marketing/Motion";
 import { LogoRow } from "@/components/marketing/home/ClientLogos";
 import type { BandLogo } from "@/lib/client-bands";
+import { LOGO_CATALOG } from "@/lib/client-bands";
+import {
+  CustomerStories,
+  type CustomerStoriesLabels,
+  type CustomerStory,
+} from "@/components/marketing/home/CustomerStories";
 
 /**
- * "Customers" feature: a featured case-study card.
+ * "Customers": one proof engagement per half of the practice, in a card the
+ * reader pages through.
  *
- * NOTE: real, permissioned client logos now ship in <ClientLogos /> (a trust
- * strip under the hero), backed by files in /public/assets/images/clients/.
- * Case-study CLIENTS, however, remain anonymized by agreement, so this featured
- * card and the case-study grid name the sector and region, not the company.
+ * The hero claims Viewnear builds both the data foundation and the AI that runs
+ * on it. Showing one engagement proved one half and asserted the other, so both
+ * are here: Magnolia Doors, the named agentic engagement, and the claims
+ * processor, the governed-data one.
+ *
+ * Magnolia leads. It is the only customer the site may name, it carries the
+ * strongest measured result, and it evidences the half a visitor would
+ * otherwise have to take on trust.
+ *
+ * NOTE: real, permissioned client logos ship in the <LogoRow /> bands framing
+ * this section, backed by files in /public/assets/images/clients/. Most
+ * case-study CLIENTS stay anonymized by agreement, so their card names the
+ * sector and region; Magnolia Doors is named with permission and shows its logo.
  */
 
-// Featured case study: insurance claims processing, financial services.
-// Exported so the case-studies grid can exclude it (no duplicate).
+// The two engagements, exported so the case-studies grid can exclude them.
 export const FEATURED_CASE_SLUG = "insurance-claims-cortex-ai";
+export const AGENTIC_CASE_SLUG = "magnolia-doors-installation-scheduling";
+
+const AGENTIC = {
+  slug: AGENTIC_CASE_SLUG,
+  metricValues: ["15–19 hrs", "~3 min"],
+  image: "/assets/images/cases/magnolia-doors-installation-scheduling-hero.jpg",
+};
+
 const FEATURED = {
-  client: "A claims processing company",
-  sector: "Insurance",
-  region: "Americas",
   slug: FEATURED_CASE_SLUG,
-  title: "From hand-sorted documents to 95% accurate claims classification in seconds",
-  summary:
-    "Sorting documents from many insurance providers by hand caused delays, errors, and lost files. Using Snowflake Cortex AI functions like AI_EXTRACT, Viewnear automated classification and extraction, lifting accuracy from 60% to 95% and cutting per-document handling to four seconds.",
-  metrics: [
-    { value: "60→95%", label: "Classification accuracy" },
-    { value: "4 sec", label: "Per-document classification" },
-  ],
+  metricValues: ["60→95%", "4 sec"],
   image: "/assets/images/industries/financial-services.jpg",
 };
 
-/** Bold cyan brand swoosh that cuts into the featured photo from the left. */
-function BrandSwoosh({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 120 120" fill="none" aria-hidden="true" className={className}>
-      <path d="M16 12 L74 60 L16 108 L48 108 L106 60 L48 12 Z" fill="rgb(var(--color-secondary))" />
-    </svg>
-  );
-}
-
 export async function CustomersFeature({ bottomLogos }: { bottomLogos: BandLogo[] }) {
   const t = await getTranslations("homeServer");
-  const metrics = [
-    { value: FEATURED.metrics[0].value, label: t("customersFeature.featured.metricLabel1") },
-    { value: FEATURED.metrics[1].value, label: t("customersFeature.featured.metricLabel2") },
+  const carousel = t.raw("customersFeature.carousel") as { prev: string; next: string; counter: string };
+  const labels: CustomerStoriesLabels = {
+    ...carousel,
+    readCaseStudy: t("customersFeature.readCaseStudy"),
+    viewAll: t("customersFeature.viewCaseStudies"),
+  };
+
+  // The one named customer shows its logo; the catalog already holds the
+  // normalized artwork used in the bands above and below.
+  const magnolia = LOGO_CATALOG.find((c) => c.key === "magnolia-doors");
+
+  const stories: CustomerStory[] = [
+    {
+      client: t("customersFeature.agentic.client"),
+      logo: magnolia
+        ? { src: magnolia.src, alt: magnolia.alt, w: magnolia.w, h: magnolia.h }
+        : undefined,
+      badge: t("customersFeature.badgeAgentic"),
+      sector: t("customersFeature.agentic.sector"),
+      region: t("customersFeature.agentic.region"),
+      title: t("customersFeature.agentic.title"),
+      summary: t("customersFeature.agentic.summary"),
+      href: `/case-studies/${AGENTIC.slug}`,
+      image: AGENTIC.image,
+      imageAlt: `${t("customersFeature.agentic.sector")}: ${t("customersFeature.agentic.title")}`,
+      metrics: [
+        { value: AGENTIC.metricValues[0], label: t("customersFeature.agentic.metricLabel1") },
+        { value: AGENTIC.metricValues[1], label: t("customersFeature.agentic.metricLabel2") },
+      ],
+    },
+    {
+      client: t("customersFeature.featured.client"),
+      badge: t("customersFeature.badge"),
+      sector: t("customersFeature.featured.sector"),
+      region: t("customersFeature.featured.region"),
+      title: t("customersFeature.featured.title"),
+      summary: t("customersFeature.featured.summary"),
+      href: `/case-studies/${FEATURED.slug}`,
+      image: FEATURED.image,
+      imageAlt: `${t("customersFeature.featured.sector")}: ${t("customersFeature.featured.title")}`,
+      metrics: [
+        { value: FEATURED.metricValues[0], label: t("customersFeature.featured.metricLabel1") },
+        { value: FEATURED.metricValues[1], label: t("customersFeature.featured.metricLabel2") },
+      ],
+    },
   ];
+
   // The heading sits 35% nearer the top edge of the warm band than
   // `.section` would put it: 56/80/96px of top padding become 36/52/62.
   // The band then closes on the same gap the logo row opens with: its
@@ -55,73 +100,14 @@ export async function CustomersFeature({ bottomLogos }: { bottomLogos: BandLogo[
   return (
     <section className="section section-warm relative overflow-hidden pb-12 pt-9 md:pb-14 md:pt-[52px] lg:pt-[62px]">
       <div className="container-page">
-        {/* heading row */}
-        <div className="flex flex-wrap items-end justify-between gap-5">
-          <div>
-            <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-[2.9rem] md:leading-[1.04]">
-              {t.rich("customersFeature.title", {
-                br: () => <br />,
-                hl: (c) => <span className="text-gradient">{c}</span>,
-              })}
-            </h2>
-          </div>
-          <Link href="/case-studies" className="btn-ghost group">
-            {t("customersFeature.viewCaseStudies")}
-            <span className="transition-transform group-hover:translate-x-0.5">→</span>
-          </Link>
-        </div>
-
-        {/* featured case-study card */}
-        <Reveal className="mt-10">
-          <article className="relative overflow-hidden rounded-3xl border border-border bg-background shadow-soft-lg">
-            <div className="grid items-stretch lg:grid-cols-[1.08fr_0.92fr]">
-              {/* text */}
-              <div className="p-8 md:p-10 lg:p-12">
-                <div className="flex flex-wrap items-center gap-3">
-                  <span className="font-display text-xl font-bold text-foreground">{t("customersFeature.featured.client")}</span>
-                  <span className="rounded-full bg-surface2 px-2.5 py-1 font-mono text-[0.6rem] uppercase tracking-wider text-muted">
-                    {t("customersFeature.badge")}
-                  </span>
-                </div>
-                <p className="mt-5 font-mono text-xs uppercase tracking-wider text-primaryDeep">
-                  {t("customersFeature.featured.sector")} · {t("customersFeature.featured.region")}
-                </p>
-                <h3 className="mt-2 text-balance font-display text-2xl font-bold leading-tight text-foreground md:text-[1.8rem]">
-                  {t("customersFeature.featured.title")}
-                </h3>
-                <p className="mt-3 max-w-xl leading-relaxed text-muted">{t("customersFeature.featured.summary")}</p>
-                <Link
-                  href={`/case-studies/${FEATURED.slug}`}
-                  className="group mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep"
-                >
-                  <span className="link-underline">{t("customersFeature.readCaseStudy")}</span>
-                  <span className="transition-transform group-hover:translate-x-0.5">→</span>
-                </Link>
-                <div className="mt-8 grid max-w-md grid-cols-2 gap-6">
-                  {metrics.map((m) => (
-                    <div key={m.label} className="border-l border-border pl-4">
-                      <div className="text-gradient-bold font-display text-2xl font-bold sm:text-3xl md:text-4xl">{m.value}</div>
-                      <div className="mt-1 text-xs leading-snug text-muted">{m.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              {/* image + brand swoosh */}
-              <div className="relative min-h-[260px] lg:min-h-full">
-                <BrandSwoosh className="pointer-events-none absolute -left-7 top-10 z-10 hidden h-28 w-28 lg:block" />
-                <Image
-                  src={FEATURED.image}
-                  alt={`${t("customersFeature.featured.sector")}: ${t("customersFeature.featured.title")}`}
-                  fill
-                  sizes="(min-width: 1024px) 45vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </article>
-        </Reveal>
-
-        {/* Bottom frame: client logos below the featured card (admin-configurable) */}
+        <CustomerStories
+          title={t.rich("customersFeature.title", {
+            br: () => <br />,
+            hl: (c) => <span className="text-gradient">{c}</span>,
+          })}
+          stories={stories}
+          labels={labels}
+        />
         <LogoRow logos={bottomLogos} className="mt-12 md:mt-14" />
       </div>
     </section>

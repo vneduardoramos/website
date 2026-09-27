@@ -84,7 +84,10 @@ export async function ServicesGrid({ services }: { services: Service[] }) {
                 <h3 className="mt-4 font-display text-xl font-bold leading-snug text-foreground">
                   {svc.title}
                 </h3>
-                <p className="mt-2.5 line-clamp-3 flex-1 text-sm leading-relaxed text-muted">
+                {/* Four lines, not three: at lg the cards are a third of the
+                    container and every summary needs a fourth. The cards are
+                    equal-height anyway, so the extra line costs no layout. */}
+                <p className="mt-2.5 line-clamp-4 flex-1 text-sm leading-relaxed text-muted">
                   {svc.summary}
                 </p>
                 <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep">

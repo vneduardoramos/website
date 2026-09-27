@@ -56,7 +56,7 @@ export const services = [
     tier: "THINK",
     title: "Data & AI Strategy",
     summary:
-      "Turn AI ambition into a board-ready roadmap: where data and AI create measurable ROI, sequenced by value and grounded in what the data can actually support, on a clear path to the agentic enterprise.",
+      "A board-ready roadmap for the agentic enterprise: where data and AI create measurable ROI, sequenced by value and grounded in what the data supports.",
     seoTitle: "Data & AI Strategy Services: Roadmap on Snowflake",
     seoDescription:
       "Data and AI strategy services: an AI readiness assessment and a roadmap sequenced by ROI, from a Snowflake Premier Partner. Start with a discovery.",
@@ -171,7 +171,7 @@ Master data domains are mastered in sequence, so each one reaches a trusted gold
     tier: "BUILD",
     title: "Data Engineering & Pipelines",
     summary:
-      "Always-current, trusted data: governed pipelines that unify every source (ERP, CRM, SaaS, and files) so analytics and AI run on inputs worth staking decisions on.",
+      "Always-current, trusted data: governed pipelines that unify every source, so analytics and AI run on inputs worth staking decisions on.",
     seoTitle: "Snowflake Data Engineering Services, Nearshore",
     seoDescription:
       "Snowflake data engineering services: governed ELT pipelines with dbt, built nearshore in US time zones. Snowflake Premier Partner. Get a scoped plan.",
@@ -222,7 +222,7 @@ The first advantage is onboarding: the team already works your hours, so no ramp
     tier: "BUILD",
     title: "AI Analytics on Snowflake",
     summary:
-      "Put governed AI to work: Cortex Analyst, Cortex Agents and Snowflake CoWork turning governed data into cited, decision-ready answers and the next action, embedded where leaders already work.",
+      "Put governed AI to work: Cortex Analyst, Cortex Agents and CoWork turn governed data into cited answers, and into the next action.",
     seoTitle: "AI Analytics on Snowflake: Cortex Analyst and CoWork",
     seoDescription:
       "Self-service analytics on Snowflake: Cortex Analyst, Snowsight dashboards, and AI agents that reach production, from a SnowPro-certified nearshore team.",
