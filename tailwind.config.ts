@@ -49,8 +49,8 @@ const config: Config = {
         deep: withVar("--color-deep"),
       },
       fontFamily: {
-        sans: ["var(--font-montserrat)", "system-ui", "sans-serif"],
-        display: ["var(--font-montserrat)", "system-ui", "sans-serif"],
+        sans: ["var(--font-jakarta)", "system-ui", "sans-serif"],
+        display: ["var(--font-jakarta)", "system-ui", "sans-serif"],
         mono: ["var(--font-jetbrains)", "monospace"],
       },
       boxShadow: {
