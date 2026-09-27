@@ -1,41 +1,47 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { CheckIcon } from "./Icons";
+import {
+  CheckIcon,
+  ChartIcon,
+  CompassIcon,
+  CpuIcon,
+  DataStackIcon,
+  PipelineIcon,
+  RocketIcon,
+  type IconProps,
+} from "./Icons";
 import { RevealGroup } from "@/components/marketing/Motion";
 
 type Service = { slug: string; title: string; summary: string };
 
+/**
+ * The offer, as a list a reader can scan.
+ *
+ * It used to interleave a double-width lead tile, a no-card facts block and
+ * four smaller tiles in one grid, which read as a mixed content section rather
+ * than a menu. Six equal cards in a regular grid say "these are the services"
+ * without a word, and the engagement models move below the grid where they
+ * stop interrupting the scan.
+ *
+ * Each card carries the service's own mark, inline and untinted, over a
+ * hairline: enough to tell the six apart at a glance, no icon tiles.
+ */
+
+const MARKS: Record<string, (p: IconProps) => JSX.Element> = {
+  "ai-data-strategy": CompassIcon,
+  "cloud-architecture": DataStackIcon,
+  "data-engineering": PipelineIcon,
+  "data-visualisation": CpuIcon,
+  "embedded-analytics": ChartIcon,
+  "capability-development": RocketIcon,
+};
+
 export async function ServicesGrid({ services }: { services: Service[] }) {
   const t = await getTranslations("homeServer");
-  // No-card tile (left column, row 2): the engagement models, the one commercial
-  // fact the home page doesn't state anywhere else. Mirrors /pricing.
   const engagePoints = t.raw("servicesGrid.engagePoints") as string[];
+  // Six, and the heading says six: keep the cap and the copy in step.
   const cards = services.slice(0, 6);
-  const [lead, ...rest] = cards;
-  if (!lead) return null;
-
-  // Ledger-language service card: eyebrow + № index over a dotted rule, no
-  // icon tiles, no lift-on-hover. Restyled in place (not LedgerCard itself)
-  // so the whole card stays one clickable link.
-  const renderCard = (svc: Service, index: number) => (
-    <Link
-      key={svc.slug}
-      href="/services"
-      className="group flex h-full flex-col rounded-[10px] border border-border bg-background px-5 pb-5 pt-4 transition-colors hover:border-primary/50"
-    >
-      <div className="border-b border-dotted border-primary/40 pb-3">
-        <span className="font-mono text-xs tracking-wider text-muted">
-          № {String(index).padStart(2, "0")}
-        </span>
-      </div>
-      <h3 className="mt-3.5 font-display text-lg font-bold text-foreground">{svc.title}</h3>
-      <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-muted">{svc.summary}</p>
-      <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep">
-        <span className="link-underline">{t("servicesGrid.learnMore")}</span>
-        <span className="transition-transform group-hover:translate-x-0.5">→</span>
-      </span>
-    </Link>
-  );
+  if (cards.length === 0) return null;
 
   return (
     <section className="section section-warm">
@@ -56,37 +62,59 @@ export async function ServicesGrid({ services }: { services: Service[] }) {
           </p>
         </div>
 
-        {/* Folding "deck": cards stand up in a staggered 3D fold-in (degrades to
-            a fade below lg / under reduced-motion via the primitive).
-            DOM order is interleaved so the grid lands: row1 [lead | Data Eng],
-            row2 [no-card facts | Analytics], row3 [the remaining three]. */}
-        <RevealGroup variant="fold" className="mt-14 grid gap-5 lg:auto-rows-fr lg:grid-cols-3">
-          {/* Lead / anchor tile: same ledger language at a larger scale */}
-          <Link
-            href="/services"
-            className="group flex h-full flex-col rounded-[10px] border border-border bg-background px-6 pb-6 pt-5 transition-colors hover:border-primary/50 lg:col-span-2"
-          >
-            <div className="border-b border-dotted border-primary/40 pb-3">
-              <span className="font-mono text-xs tracking-wider text-muted">№ 01</span>
+        <RevealGroup
+          variant="fold"
+          className="mt-14 grid gap-5 sm:grid-cols-2 lg:auto-rows-fr lg:grid-cols-3"
+        >
+          {cards.map((svc, i) => {
+            const Mark = MARKS[svc.slug];
+            return (
+              <Link
+                key={svc.slug}
+                href={`/services/${svc.slug}`}
+                className="group flex h-full flex-col rounded-[10px] border border-border bg-background px-5 pb-5 pt-4 transition-colors hover:border-primary/50"
+              >
+                <div className="flex items-center justify-between border-b border-dotted border-primary/40 pb-3 text-primaryDeep">
+                  {Mark ? <Mark className="h-6 w-6" /> : <span className="h-6 w-6" />}
+                  <span className="font-mono text-xs tracking-wider text-muted">
+                    № {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <h3 className="mt-4 font-display text-xl font-bold leading-snug text-foreground">
+                  {svc.title}
+                </h3>
+                <p className="mt-2.5 line-clamp-3 flex-1 text-sm leading-relaxed text-muted">
+                  {svc.summary}
+                </p>
+                <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep">
+                  <span className="link-underline">{t("servicesGrid.learnMore")}</span>
+                  <span className="transition-transform group-hover:translate-x-0.5">→</span>
+                </span>
+              </Link>
+            );
+          })}
+        </RevealGroup>
+
+        {/* The engagement models: the one commercial fact the home page does not
+            state anywhere else. Below the grid, so the six cards read as one set. */}
+        <div className="mt-12 border-t border-border pt-8">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between lg:gap-12">
+            <div className="lg:max-w-sm">
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+                {t("servicesGrid.engageEyebrow")}
+              </p>
+              <h3 className="mt-3 text-balance font-display text-lg font-semibold leading-snug text-foreground md:text-xl">
+                {t("servicesGrid.engageTitle")}
+              </h3>
+              <Link
+                href="/pricing"
+                className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-muted transition-colors hover:text-primaryDeep"
+              >
+                <span className="link-underline">{t("servicesGrid.pricingLink")}</span>
+                <span className="transition-transform group-hover:translate-x-0.5">→</span>
+              </Link>
             </div>
-            <h3 className="mt-4 font-display text-2xl font-bold text-foreground">{lead.title}</h3>
-            <p className="mt-3 max-w-lg flex-1 text-base leading-relaxed text-muted">{lead.summary}</p>
-            <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep">
-              <span className="link-underline">{t("servicesGrid.learnMore")}</span>
-              <span className="transition-transform group-hover:translate-x-0.5">→</span>
-            </span>
-          </Link>
-
-          {/* Top-right tile (Data Engineering) */}
-          {rest[0] && renderCard(rest[0], 2)}
-
-          {/* No-card tile: how to engage (left column, row 2) */}
-          <div className="flex flex-col justify-center py-2 lg:col-span-2 lg:pr-6">
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">{t("servicesGrid.engageEyebrow")}</p>
-            <h3 className="mt-3 max-w-xl text-balance font-display text-lg font-semibold leading-snug text-foreground/70 md:text-xl">
-              {t("servicesGrid.engageTitle")}
-            </h3>
-            <ul className="mt-5 grid max-w-xl gap-x-8 gap-y-3 sm:grid-cols-2">
+            <ul className="grid flex-1 gap-x-10 gap-y-3 sm:grid-cols-2">
               {engagePoints.map((p) => (
                 <li key={p} className="flex items-start gap-2.5 text-sm leading-snug text-muted">
                   <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary/40" />
@@ -94,18 +122,8 @@ export async function ServicesGrid({ services }: { services: Service[] }) {
                 </li>
               ))}
             </ul>
-            <Link
-              href="/pricing"
-              className="group mt-6 inline-flex items-center gap-1 text-sm font-medium text-muted transition-colors hover:text-primaryDeep"
-            >
-              <span className="link-underline">{t("servicesGrid.pricingLink")}</span>
-              <span className="transition-transform group-hover:translate-x-0.5">→</span>
-            </Link>
           </div>
-
-          {/* Right tile (Analytics) + the remaining three tiles */}
-          {rest.slice(1).map((svc, i) => renderCard(svc, i + 3))}
-        </RevealGroup>
+        </div>
       </div>
     </section>
   );

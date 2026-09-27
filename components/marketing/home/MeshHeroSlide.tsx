@@ -12,10 +12,9 @@ import { credentialLine } from "@/config/partners";
  * subhead, as the how, and again in the mono credential line, as the proof.
  * The badges themselves get their showing further down the page.
  *
- * The headline is set in one weight and one color. It used to carry a gradient
- * span, which reads as the house style of every AI landing page; size and the
- * line itself do the work instead. The `hl` handler stays registered so a
- * translated string carrying the tag renders rather than throwing.
+ * The second sentence of the headline carries the site's display gradient, the
+ * same on-brand teal to indigo sweep the Customers and partnership headings
+ * use. It is the punch line, and the contrast is what makes the eye land on it.
  */
 export function MeshHeroSlide({ subhead }: { subhead?: string }) {
   const t = useTranslations("heroUi");
@@ -38,7 +37,7 @@ export function MeshHeroSlide({ subhead }: { subhead?: string }) {
       <div className="container-page relative z-10 py-24 md:py-28">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-balance font-display text-4xl font-bold leading-[1.04] tracking-tight text-foreground md:text-[3.6rem]">
-            {t.rich("hero.title", { hl: (c) => <span className="text-primaryDeep">{c}</span> })}
+            {t.rich("hero.title", { hl: (c) => <span className="text-gradient-accent">{c}</span> })}
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-muted md:text-xl">{sub}</p>

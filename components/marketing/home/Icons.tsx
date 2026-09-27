@@ -2,7 +2,7 @@ import type { SVGProps } from "react";
 
 /** Shared inline SVG icons (no icon lib installed). viewBox 0 0 24 24.
  *  Default stroke style; pass className to color/size. */
-type IconProps = SVGProps<SVGSVGElement>;
+export type IconProps = SVGProps<SVGSVGElement>;
 
 const base = {
   viewBox: "0 0 24 24",
