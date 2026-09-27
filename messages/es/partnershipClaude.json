@@ -22,7 +22,7 @@
     "items": [
       {
         "title": "Poner a Claude en el trabajo que todavía se hace a mano",
-        "body": "En todo negocio hay procesos que todavía dependen de alguien que lee, revisa y captura. Ahí ponemos a Claude: el agente lee la solicitud, consulta el sistema de registro mediante un conector MCP limitado a los objetos que el proceso necesita, propone el siguiente paso mostrando su razonamiento, y una persona aprueba antes de que algo cambie. Las reglas de negocio fijas resuelven lo que debe ser exacto; Claude resuelve el criterio que las reglas no alcanzan."
+        "body": "En todo negocio hay procesos que todavía dependen de alguien que lee, revisa y captura. Ahí ponemos a Claude: el agente lee la solicitud, consulta el sistema de registro por un conector MCP limitado a los objetos que ese proceso necesita, resuelve el siguiente paso y califica su confianza. Por encima del umbral actúa; por debajo, el caso pasa a una persona con el razonamiento a la vista. Las reglas de negocio fijas resuelven lo que debe ser exacto; Claude resuelve el criterio que las reglas no alcanzan."
       },
       {
         "title": "Correr Claude dentro de los datos",
@@ -31,9 +31,9 @@
     ]
   },
   "gate": {
-    "eyebrow": "Cómo funciona la aprobación",
-    "title": "Nada llega a un registro hasta que una persona lo autoriza",
-    "intro": "La secuencia que corre cada build con Claude en Viewnear. Es el diseño, no una advertencia: el agente hace la recopilación, la persona conserva la decisión.",
+    "eyebrow": "Autonomía calibrada",
+    "title": "Autónoma donde hay confianza, revisada donde no la hay",
+    "intro": "El umbral es el diseño. Cada paso propuesto lleva una señal de confianza, y un número ajustado por proceso decide si se ejecuta solo o pasa a una persona. El human-in-the-loop es lo que ocurre por debajo de la línea, no una fila donde espera cada acción.",
     "steps": [
       {
         "title": "Leer la solicitud",
@@ -44,19 +44,19 @@
         "body": "Lee el sistema de registro por un conector MCP limitado a los objetos que ese proceso necesita, y nada más."
       },
       {
-        "title": "Resolver el paso",
-        "body": "Propone la siguiente acción mostrando su razonamiento, para que la propuesta se juzgue en lugar de creerse."
+        "title": "Calificar el paso",
+        "body": "Resuelve la siguiente acción y califica su propia confianza contra la evidencia que encontró."
       },
       {
-        "title": "Una persona aprueba",
-        "body": "El responsable ve exactamente qué cambiaría, campo por campo, y lo aprueba o no."
+        "title": "Superar el umbral",
+        "body": "Por encima de la línea, el paso se ejecuta solo. Por debajo, el caso pasa a quien es responsable del proceso, con el razonamiento a la vista."
       },
       {
         "title": "Escribir de vuelta",
-        "body": "Solo se escribe el paso aprobado, con una identidad nombrada y cada llamada registrada."
+        "body": "El paso se escribe con una identidad nombrada, autónomo o aprobado, y con cada llamada registrada en ambos casos."
       }
     ],
-    "note": "Las etapas de planeación no pueden escribir. El único paso que sí puede queda confinado a un solo objeto, y por eso este diseño sobrevive una revisión de seguridad."
+    "note": "El umbral empieza conservador y se mueve con evidencia: conforme las evaluaciones se sostienen, más volumen corre sin supervisión y las excepciones son donde las personas ponen su tiempo."
   },
   "practice": {
     "eyebrow": "Cómo se ve en la práctica",
@@ -82,8 +82,8 @@
         "body": "Conectores Model Context Protocol (MCP) construidos con Claude Code, con acceso a los objetos que el proceso necesita y a nada más, corriendo como una identidad nombrada que el cliente puede revocar, con cada llamada registrada."
       },
       {
-        "title": "Aprobación por diseño",
-        "body": "Cada cambio se propone antes de hacerse. La persona responsable ve exactamente qué cambiaría, campo por campo, y lo aprueba. Las etapas de planeación no pueden escribir; el paso que sí puede está limitado a un solo objeto."
+        "title": "Un umbral, no un trámite",
+        "body": "Cada proceso recibe una línea de confianza ajustada a lo que puede tolerar. Por encima, el agente actúa; por debajo, decide una persona, viendo exactamente qué cambiaría, campo por campo. Las etapas de planeación no pueden escribir; el paso que sí puede queda confinado a un solo objeto."
       },
       {
         "title": "Evaluado antes de escalar",

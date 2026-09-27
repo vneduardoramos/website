@@ -22,7 +22,7 @@
     "items": [
       {
         "title": "Put Claude on the work still done by hand",
-        "body": "Every business has processes that still run on someone reading, checking and typing. We put Claude on them: the agent reads the request, checks the system of record through an MCP connector scoped to the objects the process needs, proposes the next step with its reasoning shown, and a person approves before anything changes. Fixed business rules handle what has to be exact; Claude handles the judgment rules cannot."
+        "body": "Every business has processes that still run on someone reading, checking and typing. We put Claude on them: the agent reads the request, checks the system of record through an MCP connector scoped to the objects the process needs, works out the next step and scores its confidence. Above the threshold it acts; below it, the case goes to a person with the reasoning shown. Fixed business rules handle what has to be exact; Claude handles the judgment rules cannot."
       },
       {
         "title": "Run Claude inside the data",
@@ -31,9 +31,9 @@
     ]
   },
   "gate": {
-    "eyebrow": "How the approval works",
-    "title": "Nothing reaches a record until a person says so",
-    "intro": "The sequence every Claude build at Viewnear runs. It is the design, not a safety disclaimer: the agent does the gathering, the person keeps the decision.",
+    "eyebrow": "Autonomy, calibrated",
+    "title": "Autonomous where it is confident, reviewed where it is not",
+    "intro": "The threshold is the design. Every proposed step carries a confidence signal, and a number tuned per process decides whether it executes on its own or goes to a person. Human-in-the-loop is what happens below the line, not a queue every action waits in.",
     "steps": [
       {
         "title": "Read the request",
@@ -44,19 +44,19 @@
         "body": "It reads the system of record through an MCP connector scoped to the objects that process needs, and nothing else."
       },
       {
-        "title": "Work out the step",
-        "body": "It proposes the next action with its reasoning shown, so the proposal can be judged rather than trusted."
+        "title": "Score the step",
+        "body": "It works out the next action and scores its own confidence against the evidence it found."
       },
       {
-        "title": "A person approves",
-        "body": "The owner sees exactly what would change, field by field, and approves it or does not."
+        "title": "Clear the threshold",
+        "body": "Above the line the step runs on its own. Below it, the case goes to the person who owns the process, with the reasoning shown."
       },
       {
         "title": "Write it back",
-        "body": "Only the approved step is written, as a named identity, with every call logged."
+        "body": "The step is written as a named identity, autonomous or approved, with every call logged either way."
       }
     ],
-    "note": "Planning stages cannot write. The one step that can is confined to a single object, which is why this design survives a security review."
+    "note": "The threshold starts conservative and moves on evidence: as the evals hold, more of the volume runs unattended and the exceptions are what people spend their time on."
   },
   "practice": {
     "eyebrow": "What this looks like in practice",
@@ -82,8 +82,8 @@
         "body": "Model Context Protocol (MCP) connectors built with Claude Code, granted the specific objects a process needs and nothing else, running as a named identity the client can revoke, with every call logged."
       },
       {
-        "title": "Approval by design",
-        "body": "Every change is proposed before it is made. The person in charge sees exactly what would change, field by field, and approves it. Planning stages cannot write; the step that does is confined to one object."
+        "title": "A threshold, not a rubber stamp",
+        "body": "Each process gets a confidence line tuned to what it can tolerate. Above it the agent acts; below it a person decides, seeing exactly what would change, field by field. Planning stages cannot write at all; the step that can is confined to one object."
       },
       {
         "title": "Evaluated before it scales",
