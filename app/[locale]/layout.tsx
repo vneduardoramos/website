@@ -213,7 +213,7 @@ export default async function LocaleRootLayout({
     "nav", "common", "footer",
     "sharedUi", "strips", "homeServer", "partnershipUi", "dataAiUi",
     "platformUi", "approachUi", "migrationsUi", "contentData", "articleUi",
-    "heroUi", "methodology", "forms", "misc", "consent", "errorPage",
+    "heroUi", "methodology", "forms", "misc", "consent", "errorPage", "chatUi",
     // The 404 body localizes on the client so it can render inside prerendered
     // routes without reading request headers (see NotFoundView).
     "notFound",

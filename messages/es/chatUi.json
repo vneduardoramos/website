@@ -1,0 +1,14 @@
+{
+  "launcherLabel": "Chatear con Nova",
+  "title": "Nova",
+  "subtitle": "Preguntas sobre servicios, industrias o el equipo.",
+  "placeholder": "Escribir una pregunta…",
+  "send": "Enviar",
+  "close": "Cerrar el chat",
+  "typing": "Nova está escribiendo…",
+  "greeting": "Hola, soy Nova. Se puede preguntar por los servicios, las industrias o el modelo de precios de Viewnear, o encontrar a la persona indicada del equipo.",
+  "bookCta": "Agendar con {name}",
+  "error": "Algo salió mal. Intentar de nuevo, o agendar directamente.",
+  "rateLimited": "Demasiados mensajes, un momento y volver a intentar.",
+  "disclaimer": "Nova responde solo con el contenido del sitio de Viewnear."
+}

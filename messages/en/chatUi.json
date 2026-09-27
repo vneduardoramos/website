@@ -1,0 +1,14 @@
+{
+  "launcherLabel": "Chat with Nova",
+  "title": "Nova",
+  "subtitle": "Ask about services, industries, or the team.",
+  "placeholder": "Ask a question…",
+  "send": "Send",
+  "close": "Close chat",
+  "typing": "Nova is typing…",
+  "greeting": "Hi, I'm Nova. Ask me about Viewnear's services, industries, or pricing model, or I can point you to the right person on the team.",
+  "bookCta": "Book time with {name}",
+  "error": "Something went wrong. Try again, or book time directly.",
+  "rateLimited": "Too many messages, one moment and try again.",
+  "disclaimer": "Nova only answers from Viewnear's own site."
+}
