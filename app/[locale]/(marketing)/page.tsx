@@ -9,8 +9,8 @@ import { JsonLd } from "@/components/JsonLd";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { Link } from "@/i18n/navigation";
 import { Hero } from "@/components/marketing/home/Hero";
-import { ProofBand } from "@/components/marketing/home/ProofBand";
-import { HowWeBuild } from "@/components/marketing/home/HowWeBuild";
+import { FoundationPhoto } from "@/components/marketing/home/SplitVisuals";
+import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { ServicesGrid } from "@/components/marketing/home/ServicesGrid";
 import { Faq } from "@/components/marketing/Faq";
 import { RevealGroup, ScrollHighlight, SectionFold } from "@/components/marketing/Motion";
@@ -80,11 +80,6 @@ export default async function HomePage({ params }: { params: { locale: string } 
           their full moment once, in the Proof & Trust band below) */}
       <Hero subhead={hero?.subhead} />
 
-      {/* 2) THE EVIDENCE: three measured results, before the reader has to
-          scroll for them. The hero makes a claim about work done by hand; this
-          is what happened the last three times. */}
-      <ProofBand />
-
       {/* PROOF EARLY: the logo band sits right after the hero. It carries no
           caption naming the brands as customers: the relationship is not
           something the site substantiates, so the logos speak for themselves
@@ -96,10 +91,18 @@ export default async function HomePage({ params }: { params: { locale: string } 
       </section>
       <CustomersFeature bottomLogos={bands.bottom} />
 
-      {/* 3) WHAT WE BUILD: the one place the two partners are prominent, a
-          column each with their badge. This replaces the foundation split,
-          which told the data half of the same story on its own. */}
-      <HowWeBuild />
+      {/* 3) THE PATH: customer-first foundation + AI */}
+      <Section className="section-tint">
+        <FeatureSplit
+          eyebrow={t("foundation.eyebrow")}
+          title={t("foundation.title")}
+          body={t("foundation.body")}
+          bullets={t.raw("foundation.bullets") as string[]}
+          visual={<FoundationPhoto />}
+          ratio="wide-visual"
+          cta={{ label: t("foundation.cta"), href: "/services" }}
+        />
+      </Section>
 
       {/* IN THE PRESS: third-party validation follows the foundation split,
           a plain band between the cool foundation and the warm services grid. */}

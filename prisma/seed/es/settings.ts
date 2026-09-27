@@ -1,9 +1,9 @@
 // Spanish (es) overlay. Keyed by slug. Optional: empty means the row falls back to English. Filled by the content-translation phase.
 export const siteSettingsEs: Record<string, unknown> = {
   hero: {
-    headline: "IA en el trabajo que el equipo todavía hace a mano.",
+    headline: "Lo difícil de la IA son los datos. Construimos ambas cosas.",
     subhead:
-      "Construimos los datos confiables sobre los que corre, con Snowflake, y los agentes que hacen el trabajo, con Claude. Una persona aprueba lo que importa. Austin y Monterrey, primer valor en producción en 8 a 16 semanas.",
+      "Diseñamos la base, gobernamos lo que circula por ella y ponemos agentes en el trabajo que todavía se hace a mano. Más de quince años de ingeniería de datos empresarial, con IA en producción sobre ella.",
   },
   stats: [
     { label: "Nivel de partner de Snowflake", value: "Premier" },

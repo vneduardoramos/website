@@ -3,52 +3,16 @@
     "title": "Viewnear: datos e IA en producción",
     "description": "Viewnear ayuda a las empresas a establecer dos capacidades que permanecen: datos confiables y una práctica de IA en producción, sobre Snowflake, con equipos internos."
   },
-  "results": {
-    "cta": "Ver el caso",
-    "items": [
-      {
-        "label": "Horas administrativas recuperadas cada semana",
-        "source": "Magnolia Doors, programación de instalaciones"
-      },
-      {
-        "label": "Precisión en la clasificación de reclamaciones",
-        "source": "Una procesadora de reclamaciones de seguros"
-      },
-      {
-        "label": "Para una vista viva de más de 20,000 estudiantes",
-        "source": "Un grupo universitario multicampus"
-      }
-    ]
-  },
-  "build": {
-    "eyebrow": "Cómo construimos",
-    "title": "Dos mitades del mismo proyecto",
-    "intro": "Un agente vale lo que valen los datos debajo de él, y gobernar los datos solo tiene sentido si algo actúa sobre ellos. Las dos mitades las construye el mismo equipo, con el mismo estándar.",
-    "columns": [
-      {
-        "title": "Datos gobernados, sobre Snowflake",
-        "body": "Una sola fuente de verdad alimentada por el ERP, el CRM y los sistemas SaaS que ya están en operación, con las definiciones, los permisos y el linaje que permiten que un reporte y un agente coincidan en el número.",
-        "points": [
-          "Migración desde el warehouse heredado",
-          "Pipelines frescos, probados y trazables",
-          "Gobierno con Horizon, un contexto de negocio común",
-          "Cortex AI y Snowflake Intelligence por encima"
-        ],
-        "link": "Cómo trabajamos con Snowflake"
-      },
-      {
-        "title": "Agentes que alcanzan el trabajo, con Claude",
-        "body": "El agente lee la solicitud, consulta el sistema de registro, resuelve el siguiente paso y lo presenta para aprobación. Dentro de Snowflake, donde viven los datos, y junto a él, donde vive el trabajo.",
-        "points": [
-          "Conectores hacia los sistemas donde vive el trabajo",
-          "Una persona aprueba antes de escribir en un registro",
-          "Construido con Claude y Claude Code",
-          "Medido contra la línea base que debía superar"
-        ],
-        "link": "Cómo trabajamos con Anthropic"
-      }
+  "foundation": {
+    "eyebrow": "La base",
+    "title": "Datos en los que todo el negocio puede confiar",
+    "body": "Construimos la base gobernada en Snowflake sobre la que se apoya todo lo demás, para que cada área trabaje con los mismos números, actualizados y confiables, en lugar de varias hojas de cálculo que se contradicen entre sí.",
+    "bullets": [
+      "Una sola fuente de verdad gobernada, alimentada por los sistemas ERP, CRM y SaaS que ya utilizan",
+      "Pipelines que la mantienen al día, probada y confiable",
+      "Gobierno y linaje con Horizon Catalog, más Horizon Context: un mismo contexto de negocio para todos los equipos y agentes de IA"
     ],
-    "closing": "Snowflake es el plano de control agéntico. Claude es el modelo que corre dentro y alrededor de él. Un mismo equipo construye las dos mitades."
+    "cta": "Ver servicios"
   },
   "outcomes": {
     "heading": "La hora nunca fue lo importante. <hl>El resultado siempre lo fue.</hl>",

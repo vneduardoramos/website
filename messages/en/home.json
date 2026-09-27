@@ -3,52 +3,16 @@
     "title": "Viewnear: Data & AI practice, up and running.",
     "description": "Viewnear stands up two capabilities enterprises keep: governed data for real decisions, and an AI practice shipping to production, on Snowflake, run in-house."
   },
-  "results": {
-    "cta": "Read the case study",
-    "items": [
-      {
-        "label": "Administrative hours back every week",
-        "source": "Magnolia Doors, installation scheduling"
-      },
-      {
-        "label": "Claims classification accuracy",
-        "source": "An insurance claims processor"
-      },
-      {
-        "label": "To one live view of 20,000+ students",
-        "source": "A multi-campus university group"
-      }
-    ]
-  },
-  "build": {
-    "eyebrow": "How we build",
-    "title": "Two halves of the same engagement",
-    "intro": "An agent is only as good as the data under it, and data is only worth governing if something acts on it. Both halves are built by the same team, to the same standard.",
-    "columns": [
-      {
-        "title": "Governed data, on Snowflake",
-        "body": "One source of truth fed by the ERP, CRM and SaaS systems already in place, with the definitions, permissions and lineage that let a report and an agent agree about the number.",
-        "points": [
-          "Migration off the legacy warehouse",
-          "Pipelines kept fresh, tested and traceable",
-          "Horizon governance, one shared business context",
-          "Cortex AI and Snowflake Intelligence on top"
-        ],
-        "link": "How we work with Snowflake"
-      },
-      {
-        "title": "Agents that reach the work, built with Claude",
-        "body": "The agent reads the request, checks the system of record, works out the next step and presents it for approval. Inside Snowflake where the data lives, and alongside it where the work does.",
-        "points": [
-          "Connectors into the systems the work lives in",
-          "A person approves before anything is written back",
-          "Built with Claude and Claude Code",
-          "Measured against the baseline it was set to beat"
-        ],
-        "link": "How we work with Anthropic"
-      }
+  "foundation": {
+    "eyebrow": "The foundation",
+    "title": "Data the whole business can trust",
+    "body": "We stand up the governed Snowflake foundation everything else depends on, so every team works from one current, reliable source instead of five conflicting spreadsheets.",
+    "bullets": [
+      "One governed source of truth, fed by the ERP, CRM, and SaaS systems already in place",
+      "Pipelines that keep it fresh, tested, and trustworthy",
+      "Horizon Catalog governance and lineage, plus Horizon Context: one trusted business context every team and AI agent shares"
     ],
-    "closing": "Snowflake is the agentic control plane. Claude is the model that runs inside it and around it. One team builds both."
+    "cta": "Explore services"
   },
   "outcomes": {
     "heading": "The hour was never the point. <hl>The result always was.</hl>",
