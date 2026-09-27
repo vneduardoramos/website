@@ -3,13 +3,13 @@
     "pills": [
       "Migrar y modernizar",
       "Datos en los que confiar",
-      "IA en producción"
+      "Agentes sobre el trabajo"
     ],
-    "subhead": "Escoger Snowflake es lo fácil. Lo difícil es lo que se construye encima: una práctica de datos que entrega números confiables para decidir y una práctica de IA que llega a producción. Nuestro equipo arma ambas prácticas, junto con el suyo, y las deja funcionando en un nivel productivo, en toda América.",
-    "title": "De la estrategia de datos a la <hl>IA en producción</hl>, sobre Snowflake.",
+    "subhead": "Construimos los datos confiables sobre los que corre, con Snowflake, y los agentes que hacen el trabajo, con Claude. Una persona aprueba lo que importa. Austin y Monterrey, primer valor en producción en 8 a 16 semanas.",
+    "title": "IA en el trabajo que el equipo todavía hace a mano.",
     "ctaPrimary": "Hablar con un arquitecto",
     "ctaSecondary": "Ver servicios",
-    "credential": "Snowflake Premier & CoCo Preferred Partner · Certificación SnowPro · América"
+    "credential": "Snowflake Partner Network Premier Services Partner · Claude Certified Partner · Equipo certificado SnowPro"
   },
   "split": {
     "foundationPhotoAlt": "Un equipo revisando en conjunto dashboards, reportes y gráficas en torno a un mismo conjunto de datos compartido y gobernado.",

@@ -8,9 +8,9 @@
 export const siteSettings: Record<string, unknown> = {
   hero: {
     // headline mirrors the hero H1 rendered in MeshHeroSlide (kept in sync for reference).
-    headline: "From data strategy to AI in production, on Snowflake.",
+    headline: "AI on the work your team still does by hand.",
     subhead:
-      "Choosing Snowflake is the easy part. The harder part is what an organization stands up on it: a data practice that feeds real decisions with numbers people trust, and an AI practice that ships use cases into production. We build both inside the team, then hand over the keys.",
+      "We build the trusted data it runs on, with Snowflake, and the agents that do the work, with Claude. A person approves what matters. Austin and Monterrey, first production value in 8 to 16 weeks.",
   },
   stats: [
     { label: "Snowflake partner tier", value: "Premier" },

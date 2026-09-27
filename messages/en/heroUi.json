@@ -3,13 +3,13 @@
     "pills": [
       "Migrate & modernize",
       "Govern data people trust",
-      "Ship AI into production"
+      "Put agents on the work"
     ],
-    "subhead": "We help enterprises stand up two lasting capabilities: a data practice the whole company trusts and an AI practice that ships use cases into production. Built alongside in-house teams and run by them, guided and accelerated by ours, across the Americas.",
-    "title": "From data strategy to <hl>AI in production</hl>, on Snowflake.",
+    "subhead": "We build the trusted data it runs on, with Snowflake, and the agents that do the work, with Claude. A person approves what matters. Austin and Monterrey, first production value in 8 to 16 weeks.",
+    "title": "AI on the work your team still does by hand.",
     "ctaPrimary": "Talk to an architect",
     "ctaSecondary": "Explore services",
-    "credential": "Snowflake Premier & CoCo Preferred Partner · SnowPro-certified · The Americas"
+    "credential": "Snowflake Partner Network Premier Services Partner · Claude Certified Partner · SnowPro-certified team"
   },
   "split": {
     "foundationPhotoAlt": "A team reviewing dashboards, reports, and charts together around one shared, governed set of data.",

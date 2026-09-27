@@ -6,11 +6,15 @@ import { HeroBackground } from "@/components/marketing/HeroBackground";
 import { HeroAurora } from "@/components/marketing/home/HeroAurora";
 
 /**
- * Home hero, "the governed data engine": a centered headline + CTAs over an
- * ambient aurora (soft, slowly drifting color fields in the Glacier palette).
- * Proof reads as a single mono credential line; the certification badges get
- * their one full showing in the Proof & Trust band further down. Calm,
- * on-palette, and consistent with the centered hero language of the content pages.
+ * Home hero. The headline names the problem the business recognizes, not the
+ * vendors behind the answer: Snowflake and Claude appear once each in the
+ * subhead, as the how, and again in the mono credential line, as the proof.
+ * The badges themselves get their showing further down the page.
+ *
+ * The headline is set in one weight and one color. It used to carry a gradient
+ * span, which reads as the house style of every AI landing page; size and the
+ * line itself do the work instead. The `hl` handler stays registered so a
+ * translated string carrying the tag renders rather than throwing.
  */
 export function MeshHeroSlide({ subhead }: { subhead?: string }) {
   const t = useTranslations("heroUi");
@@ -33,7 +37,7 @@ export function MeshHeroSlide({ subhead }: { subhead?: string }) {
       <div className="container-page relative z-10 py-24 md:py-28">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-balance font-display text-4xl font-bold leading-[1.04] tracking-tight text-foreground md:text-[3.6rem]">
-            {t.rich("hero.title", { hl: (c) => <span className="text-gradient-accent">{c}</span> })}
+            {t.rich("hero.title", { hl: (c) => <span className="text-primaryDeep">{c}</span> })}
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">{sub}</p>
@@ -56,10 +60,24 @@ export function MeshHeroSlide({ subhead }: { subhead?: string }) {
             </Link>
           </div>
 
-          <p className="mt-8 font-mono text-xs uppercase tracking-widest text-muted">
-            {t("hero.credential")}
-          </p>
         </div>
+
+        {/* The credential sits outside the headline column: it is one long mono
+            line, and at 3xl it wrapped mid-word ("SNOWPRO- / CERTIFIED"). Each
+            segment between the separators is kept whole, so the line breaks
+            only where a reader would break it. */}
+        <p className="mx-auto mt-8 flex max-w-5xl flex-wrap items-center justify-center gap-x-2 gap-y-1 font-mono text-xs uppercase tracking-widest text-muted">
+          {t("hero.credential")
+            .split("·")
+            .map((part) => part.trim())
+            .filter(Boolean)
+            .map((part, i) => (
+              <span key={part} className="whitespace-nowrap">
+                {i > 0 && <span aria-hidden="true" className="mr-2">·</span>}
+                {part}
+              </span>
+            ))}
+        </p>
       </div>
     </div>
   );
