@@ -107,7 +107,7 @@ The readiness assessment and roadmap take shape during discovery in the opening 
     tier: "BUILD",
     title: "Cloud Architecture & Data Foundation",
     summary:
-      "The AI-ready foundation: governed, built on Snowflake, and ready to scale, the single source of truth every model and AI workload depends on.",
+      "The AI-ready foundation: governed, built on Snowflake, and ready to scale, the single source of truth every model and agent depends on.",
     seoTitle: "Snowflake Data Foundation & Cloud Architecture",
     seoDescription:
       "Governed, AI-ready Snowflake data foundation and cloud architecture from a Snowflake Premier Partner, built with your team in US time zones.",
@@ -222,7 +222,7 @@ The first advantage is onboarding: the team already works your hours, so no ramp
     tier: "BUILD",
     title: "AI Analytics on Snowflake",
     summary:
-      "Put governed AI to work: Cortex Analyst and Snowflake CoWork turning governed data into cited, decision-ready answers, embedded where leaders already work.",
+      "Put governed AI to work: Cortex Analyst, Cortex Agents and Snowflake CoWork turning governed data into cited, decision-ready answers and the next action, embedded where leaders already work.",
     seoTitle: "AI Analytics on Snowflake: Cortex Analyst and CoWork",
     seoDescription:
       "Self-service analytics on Snowflake: Cortex Analyst, Snowsight dashboards, and AI agents that reach production, from a SnowPro-certified nearshore team.",

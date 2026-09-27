@@ -50,7 +50,7 @@ Cuatro cosas como mínimo: casos de uso priorizados por valor de negocio y facti
   "cloud-architecture": {
     title: "Arquitectura en la Nube y Base Gobernada",
     summary:
-      "La base lista para IA: gobernada, construida sobre Snowflake y preparada para escalar, la única fuente de verdad de la que dependen todos los modelos y las cargas de IA.",
+      "La base lista para IA: gobernada, construida sobre Snowflake y preparada para escalar, la única fuente de verdad de la que dependen todos los modelos y agentes.",
     seoTitle: "Arquitectura cloud y base gobernada en Snowflake",
     seoDescription:
       "Arquitectura cloud y base gobernada en Snowflake, lista para IA y construida para escalar. Snowflake Premier Partner, entrega nearshore.",
@@ -157,7 +157,7 @@ La primera ventaja es el arranque: el equipo ya trabaja en horario del cliente, 
   "data-visualisation": {
     title: "Analítica con IA sobre Snowflake",
     summary:
-      "Poner la IA gobernada a trabajar: Cortex Analyst y Snowflake CoWork convierten datos gobernados en respuestas citadas y listas para decidir, integradas donde los líderes ya trabajan.",
+      "Poner la IA gobernada a trabajar: Cortex Analyst, Cortex Agents y Snowflake CoWork convierten datos gobernados en respuestas citadas, listas para decidir y en el siguiente paso, integradas donde los líderes ya trabajan.",
     seoTitle: "Analítica con IA en Snowflake: Cortex Analyst y CoWork",
     seoDescription:
       "Analítica de autoservicio en Snowflake: Cortex Analyst, dashboards y agentes de IA que llegan a producción. Snowflake Premier Partner, en horario del cliente.",
