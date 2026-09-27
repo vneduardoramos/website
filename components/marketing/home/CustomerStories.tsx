@@ -18,7 +18,9 @@ import { cn } from "@/lib/utils";
  * carousel complaint, so a story stays up until the reader asks for the next
  * one, by arrow, arrow key or swipe. Slides share one grid cell and crossfade
  * in place, so the card never changes height between stories and the same
- * code behaves identically in WebKit.
+ * code behaves identically in WebKit. The fade is short: a crossfade shows
+ * both stories at once for half its length, and 300ms keeps that under the
+ * threshold where two headlines read as a double exposure.
  *
  * Keyboard and assistive tech. The region is named by the section heading.
  * Both arrow pairs live outside the slides, so activating one never unmounts
@@ -152,7 +154,10 @@ export function CustomerStories({
       {belowHeader && <div className="mt-14 md:mt-16">{belowHeader}</div>}
 
       {/* The card, with the arrows on its left and right edges at mid-height.
-          One grid cell shared by every story; the active one is opaque. */}
+          One grid cell shared by every story; the active one is opaque. The
+          container is px-6 and caps at 1280px, so from lg to ~1300px the card
+          edge is 24px from the window: an arrow 24px outside it touched the
+          edge and clipped. It sits 12px out until the container has margin. */}
       <div className="relative mt-14 md:mt-16">
         <div
           ref={regionRef}
@@ -180,7 +185,7 @@ export function CustomerStories({
                 aria-label={fill(labels.counter, { i: i + 1, n })}
                 aria-hidden={!active}
                 className={cn(
-                  "grid min-w-0 grid-cols-[minmax(0,1fr)] [grid-area:1/1] transition-opacity duration-500 ease-out motion-reduce:transition-none lg:grid-cols-2",
+                  "grid min-w-0 grid-cols-[minmax(0,1fr)] [grid-area:1/1] transition-opacity duration-300 ease-in-out motion-reduce:transition-none lg:grid-cols-2",
                   active ? "opacity-100" : "pointer-events-none opacity-0",
                 )}
               >
@@ -273,7 +278,7 @@ export function CustomerStories({
               onClick={() => go(index - 1)}
               aria-label={labels.prev}
               aria-controls={regionId}
-              className={cn(arrowLight, "absolute -left-6 top-1/2 z-10 hidden -translate-y-1/2 lg:inline-flex")}
+              className={cn(arrowLight, "absolute -left-3 top-1/2 z-10 hidden -translate-y-1/2 lg:inline-flex min-[1360px]:-left-6")}
             >
               <span aria-hidden="true">←</span>
             </button>
@@ -282,7 +287,7 @@ export function CustomerStories({
               onClick={() => go(index + 1)}
               aria-label={labels.next}
               aria-controls={regionId}
-              className={cn(arrowLight, "absolute -right-6 top-1/2 z-10 hidden -translate-y-1/2 lg:inline-flex")}
+              className={cn(arrowLight, "absolute -right-3 top-1/2 z-10 hidden -translate-y-1/2 lg:inline-flex min-[1360px]:-right-6")}
             >
               <span aria-hidden="true">→</span>
             </button>
