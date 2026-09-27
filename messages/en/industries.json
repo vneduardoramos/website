@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Industries: data & AI by sector, on Snowflake",
-    "description": "Data & AI practices shaped to each sector's rules, KPIs, and systems: governed data and use cases in production, on Snowflake, across the Americas."
+    "description": "Data & AI practices shaped to each sector's rules, KPIs, and systems: governed data and use cases in production, on Snowflake, across the USA and LATAM."
   },
   "breadcrumb": {
     "home": "Home",
@@ -36,10 +36,10 @@
   "endCap": {
     "kicker": "Get in touch",
     "title": "Don't see a sector here?",
-    "excerpt": "We work across the Americas. Share the data challenge and we'll map the fastest path to value."
+    "excerpt": "We work across the USA and LATAM. Share the data challenge and we'll map the fastest path to value."
   },
   "showcase": {
-    "eyebrow": "Across the Americas",
+    "eyebrow": "Across the USA and LATAM",
     "title": "Sector depth, on <hl>one governed foundation</hl>.",
     "body": "Whatever the industry, the foundation is the same: trusted, governed data on Snowflake. What changes is everything on top: the sources, the compliance obligations, and the decisions it has to carry.",
     "imageAlt": "Industry analytics on a governed Snowflake foundation",

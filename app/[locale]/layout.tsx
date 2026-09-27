@@ -164,7 +164,7 @@ const orgJsonLd = (locale: string) => ({
     contactType: "sales",
     email: theme.brand.email,
     ...(theme.brand.phone ? { telephone: theme.brand.phone } : {}),
-    areaServed: "Americas",
+    areaServed: AREA_SERVED,
     availableLanguage: ["en", "es"],
   },
 });

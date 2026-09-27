@@ -46,7 +46,7 @@ export async function generateMetadata({
 /**
  * Countries a remote opening accepts applicants from, for
  * `JobPosting.applicantLocationRequirements`. Mirrors the delivery footprint the
- * site claims (Americas, with the two offices in the US and Mexico).
+ * site claims (USA and LATAM, with the two offices in the US and Mexico).
  */
 const REMOTE_COUNTRIES = ["United States", "Mexico", "Canada"] as const;
 
@@ -96,11 +96,11 @@ export default async function CareerDetailPage({
   if (isRemote) {
     // A telecommute posting is described by jobLocationType plus the countries
     // an applicant may sit in. It deliberately carries no `jobLocation`: the
-    // location string here is "Remote (Americas)", and wrapping that in a
+    // location string here is "Remote (USA, LATAM)", and wrapping that in a
     // PostalAddress asserted a place that does not exist.
     jobLd.jobLocationType = "TELECOMMUTE";
-    // Real countries. "Americas" is a region, and `Country.name: "Americas"`
-    // is not a value Google can resolve.
+    // Real countries. "USA, LATAM" is a region label, not a value Google can
+    // resolve as a `Country.name`.
     jobLd.applicantLocationRequirements = REMOTE_COUNTRIES.map((name) => ({
       "@type": "Country",
       name,

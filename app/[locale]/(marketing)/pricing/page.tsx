@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { pageMeta, breadcrumbLd, ORG_REF } from "@/lib/seo";
+import { pageMeta, breadcrumbLd, ORG_REF, AREA_SERVED } from "@/lib/seo";
 import { Link } from "@/i18n/navigation";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { LedgerCard } from "@/components/marketing/Cards";
@@ -35,7 +35,7 @@ export default async function PricingPage({ params }: { params: { locale: string
     name: t("ld.name"),
     serviceType: t("ld.serviceType"),
     provider: ORG_REF,
-    areaServed: t("ld.areaServed"),
+    areaServed: AREA_SERVED,
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: t("ld.offerCatalogName"),

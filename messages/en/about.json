@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "About Viewnear: data & AI across the Americas",
+    "title": "About Viewnear: data & AI across the USA and LATAM",
     "description": "Viewnear helps enterprises stand up data & AI practices they keep: governed data feeding real decisions and AI use cases in production, built on Snowflake and run by their own teams."
   },
   "breadcrumb": {
@@ -9,14 +9,14 @@
   },
   "hero": {
     "eyebrow": "About Viewnear",
-    "title": "We build data & AI practices with enterprises across the <hl>Americas</hl>.",
+    "title": "We build data & AI practices with enterprises across the <hl>USA and LATAM</hl>.",
     "description": "Viewnear is a Snowflake Premier and CoCo Preferred Partner that builds two lasting capabilities with enterprises: a data practice that feeds real decisions and an AI practice that ships use cases into production, both on Snowflake and run by in-house teams. Delivery runs from Austin, Texas and Monterrey, Mexico."
   },
   "heroChips": [
     "Snowflake Premier Partner",
     "CoCo Preferred Partner",
     "SnowPro-certified",
-    "Americas-focused delivery"
+    "USA and LATAM delivery"
   ],
   "whoWeAre": {
     "eyebrow": "Who we are",
@@ -41,7 +41,7 @@
     {
       "label": "Footprint",
       "title": "Two hubs",
-      "body": "Austin and Monterrey, one team on the client's working hours, delivering across the Americas."
+      "body": "Austin and Monterrey, one team on the client's working hours, delivering across the USA and LATAM."
     },
     {
       "label": "Partner tier",
@@ -100,8 +100,8 @@
       "body": "Documentation and runbooks ship with the build. From there the team runs it, or Viewnear keeps running and improving it as a managed service."
     },
     {
-      "title": "The Americas' home team",
-      "body": "Two offices, Austin and Monterrey, both on Central Time, for clients across the Americas."
+      "title": "The USA and LATAM home team",
+      "body": "Two offices, Austin and Monterrey, both on Central Time, for clients across the USA and LATAM."
     }
   ],
   "governanceBlock": {

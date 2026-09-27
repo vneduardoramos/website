@@ -54,7 +54,7 @@
     {
       "label": "Residency",
       "title": "Data residency by region",
-      "body": "We deploy in the Snowflake region required across the Americas, so data stays where policy and regulators need it."
+      "body": "We deploy in the Snowflake region required across the USA and LATAM, so data stays where policy and regulators need it."
     },
     {
       "label": "Secrets",

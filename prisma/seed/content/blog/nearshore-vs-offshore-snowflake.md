@@ -21,7 +21,7 @@ Nearshore and offshore trade the same two variables: headline rate against overl
 | Headline rate | Slightly higher | Lowest |
 | Iteration loop | A blocker raised at 10am is often resolved by lunch | The same blocker frequently costs a full day per round trip |
 | Working rhythm | Live pairing, real standups, and a shared Slack rhythm; cultural and language alignment reduces the small misreadings that compound over a long engagement | Tasks handed off at the end of your workday and picked up as the offshore team starts theirs |
-| Data residency and access reviews | A team in the Americas can simplify those conversations for US companies | Can simplify them too; worth confirming rather than assuming |
+| Data residency and access reviews | A team in the USA and LATAM can simplify those conversations for US companies | Can simplify them too; worth confirming rather than assuming |
 | Where total cost wins | Ambiguous, decision-heavy work, which most Snowflake and AI builds are: latency causes rework, and rework erases the rate advantage | Tightly-scoped, well-specified work: mature, documented maintenance or a large, clearly-specified build |
 
 **Velocity and iteration.** Snowflake and AI work is iterative: profile the data, model it, test a Cortex use case, look at the result, adjust. That loop is fast when a question gets answered in minutes and painful when it waits overnight. With a [nearshore team](/nearshore) working US hours, a blocker raised at 10am is often resolved by lunch. Offshore, the same blocker frequently costs a full day per round trip, and a handful of round trips turns a two-week task into a month.
@@ -32,7 +32,7 @@ Nearshore and offshore trade the same two variables: headline rate against overl
 
 **Accountability and retention.** Ask who owns the outcome and how stable the team is. High churn means you re-explain your business every few months regardless of location, but the cost of that re-explanation is higher when the overlap to do it is thin.
 
-**Security, compliance, and data residency.** For regulated data, where the team sits and how data is accessed can carry real compliance weight. Nearshore-in-the-Americas can simplify data-residency and access-review conversations for US companies; offshore can too, but it is worth confirming rather than assuming.
+**Security, compliance, and data residency.** For regulated data, where the team sits and how data is accessed can carry real compliance weight. A nearshore team in the USA and LATAM can simplify data-residency and access-review conversations for US companies; offshore can too, but it is worth confirming rather than assuming.
 
 ## When offshore is the right call
 
