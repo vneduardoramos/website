@@ -46,7 +46,9 @@ export async function IndustryTiles({ className }: { className?: string }) {
             >
               <Icon className="h-5 w-5" />
             </span>
-            <span className="font-display text-sm font-bold leading-tight text-foreground">{names[i]}</span>
+            {/* min-w-0 so a long sector name wraps inside the card instead of
+                pushing the arrow past its edge. */}
+            <span className="min-w-0 font-display text-sm font-bold leading-tight text-foreground">{names[i]}</span>
             <span className="ml-auto text-muted transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
           </Link>
         );

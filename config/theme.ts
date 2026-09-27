@@ -71,8 +71,8 @@ export const theme = {
   },
 
   fonts: {
-    sans: "var(--font-inter)",
-    display: "var(--font-space-grotesk)",
+    sans: "var(--font-montserrat)",
+    display: "var(--font-montserrat)",
     mono: "var(--font-jetbrains)",
   },
 

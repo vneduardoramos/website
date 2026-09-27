@@ -41,7 +41,7 @@ export function MeshHeroSlide({ subhead }: { subhead?: string }) {
             {t.rich("hero.title", { hl: (c) => <span className="text-primaryDeep">{c}</span> })}
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">{sub}</p>
+          <p className="mx-auto mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-muted md:text-xl">{sub}</p>
 
           <div className="mt-7 flex flex-wrap justify-center gap-2.5">
             {pills.map((p) => (
@@ -68,6 +68,9 @@ export function MeshHeroSlide({ subhead }: { subhead?: string }) {
             segment between the separators is kept whole, so the line breaks
             only where a reader would break it.
 
+            Below sm a single credential is wider than the screen, so the
+            segments wrap normally there and hold together from sm up.
+
             The tiers themselves come from config/partners.ts, so a change of
             level is one edit there and every surface follows. Only the team's
             certifications are translated. */}
@@ -77,7 +80,7 @@ export function MeshHeroSlide({ subhead }: { subhead?: string }) {
             .map((part) => part.trim())
             .filter(Boolean)
             .map((part, i) => (
-              <span key={part} className="whitespace-nowrap">
+              <span key={part} className="whitespace-normal sm:whitespace-nowrap">
                 {i > 0 && <span aria-hidden="true" className="mr-2">·</span>}
                 {part}
               </span>
