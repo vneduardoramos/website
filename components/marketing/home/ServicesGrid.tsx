@@ -39,7 +39,8 @@ const MARKS: Record<string, (p: IconProps) => JSX.Element> = {
 export async function ServicesGrid({ services }: { services: Service[] }) {
   const t = await getTranslations("homeServer");
   const engagePoints = t.raw("servicesGrid.engagePoints") as string[];
-  // Six, and the heading says six: keep the cap and the copy in step.
+  // The grid holds six; the heading no longer counts them, so adding a
+  // seventh service is a change here alone.
   const cards = services.slice(0, 6);
   if (cards.length === 0) return null;
 
