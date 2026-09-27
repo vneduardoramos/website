@@ -47,8 +47,11 @@ export async function CustomersFeature({ bottomLogos }: { bottomLogos: BandLogo[
     { value: FEATURED.metrics[0].value, label: t("customersFeature.featured.metricLabel1") },
     { value: FEATURED.metrics[1].value, label: t("customersFeature.featured.metricLabel2") },
   ];
+  // The heading sits 35% nearer the top edge of the warm band than
+  // `.section` would put it: 56/80/96px of top padding become 36/52/62.
+  // The bottom padding is left where it is.
   return (
-    <section className="section section-warm relative overflow-hidden">
+    <section className="section section-warm relative overflow-hidden pt-9 md:pt-[52px] lg:pt-[62px]">
       <div className="container-page">
         {/* heading row */}
         <div className="flex flex-wrap items-end justify-between gap-5">
