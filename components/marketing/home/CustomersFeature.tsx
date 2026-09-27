@@ -31,17 +31,10 @@ import {
 export const FEATURED_CASE_SLUG = "insurance-claims-cortex-ai";
 export const AGENTIC_CASE_SLUG = "magnolia-doors-installation-scheduling";
 
-const AGENTIC = {
-  slug: AGENTIC_CASE_SLUG,
-  metricValues: ["15–19 hrs", "~3 min"],
-  image: "/assets/images/cases/magnolia-doors-installation-scheduling-hero.jpg",
-};
-
-const FEATURED = {
-  slug: FEATURED_CASE_SLUG,
-  metricValues: ["60→95%", "4 sec"],
-  image: "/assets/images/cases/insurance-claims-cortex-ai-hero.jpg",
-};
+// Metric values live in the catalogs with their labels: a unit reads
+// differently in each language ("4 sec" is "4 seg" in Spanish).
+const AGENTIC = { slug: AGENTIC_CASE_SLUG, image: "/assets/images/cases/magnolia-doors-installation-scheduling-hero.jpg" };
+const FEATURED = { slug: FEATURED_CASE_SLUG, image: "/assets/images/cases/insurance-claims-cortex-ai-hero.jpg" };
 
 export async function CustomersFeature({ bottomLogos }: { bottomLogos: BandLogo[] }) {
   const t = await getTranslations("homeServer");
@@ -71,8 +64,8 @@ export async function CustomersFeature({ bottomLogos }: { bottomLogos: BandLogo[
       image: AGENTIC.image,
       imageAlt: `${t("customersFeature.agentic.sector")}: ${t("customersFeature.agentic.title")}`,
       metrics: [
-        { value: AGENTIC.metricValues[0], label: t("customersFeature.agentic.metricLabel1") },
-        { value: AGENTIC.metricValues[1], label: t("customersFeature.agentic.metricLabel2") },
+        { value: t("customersFeature.agentic.metricValue1"), label: t("customersFeature.agentic.metricLabel1") },
+        { value: t("customersFeature.agentic.metricValue2"), label: t("customersFeature.agentic.metricLabel2") },
       ],
     },
     {
@@ -86,8 +79,8 @@ export async function CustomersFeature({ bottomLogos }: { bottomLogos: BandLogo[
       image: FEATURED.image,
       imageAlt: `${t("customersFeature.featured.sector")}: ${t("customersFeature.featured.title")}`,
       metrics: [
-        { value: FEATURED.metricValues[0], label: t("customersFeature.featured.metricLabel1") },
-        { value: FEATURED.metricValues[1], label: t("customersFeature.featured.metricLabel2") },
+        { value: t("customersFeature.featured.metricValue1"), label: t("customersFeature.featured.metricLabel1") },
+        { value: t("customersFeature.featured.metricValue2"), label: t("customersFeature.featured.metricLabel2") },
       ],
     },
   ];

@@ -65,7 +65,7 @@ export async function ServicesGrid({ services }: { services: Service[] }) {
 
         <RevealGroup
           variant="fold"
-          className="mt-14 grid gap-5 sm:grid-cols-2 lg:auto-rows-fr lg:grid-cols-3"
+          className="mt-14 grid gap-5 md:grid-cols-2 lg:auto-rows-fr lg:grid-cols-3"
         >
           {cards.map((svc, i) => {
             const Mark = MARKS[svc.slug];
@@ -86,7 +86,9 @@ export async function ServicesGrid({ services }: { services: Service[] }) {
                 </h3>
                 {/* Four lines, not three: at lg the cards are a third of the
                     container and every summary needs a fourth. The cards are
-                    equal-height anyway, so the extra line costs no layout. */}
+                    equal-height anyway, so the extra line costs no layout. The
+                    grid goes two-up at md rather than sm: between 640 and 767px
+                    two columns left ~300px per card, and Spanish cut again. */}
                 <p className="mt-2.5 line-clamp-4 flex-1 text-sm leading-relaxed text-muted">
                   {svc.summary}
                 </p>

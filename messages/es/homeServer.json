@@ -41,12 +41,14 @@
       "title": "De clasificar documentos a mano a clasificar reclamos con 95% de precisión en segundos",
       "summary": "Clasificar a mano los documentos de numerosas aseguradoras generaba demoras, errores y archivos perdidos. Con funciones de Snowflake Cortex AI como AI_EXTRACT, Viewnear automatizó la clasificación y la extracción: la precisión pasó de 60% a 95% y cada documento se procesa en cuatro segundos.",
       "metricLabel1": "Precisión de clasificación",
-      "metricLabel2": "Clasificación por documento"
+      "metricLabel2": "Clasificación por documento",
+      "metricValue1": "60→95%",
+      "metricValue2": "4 seg"
     },
     "carousel": {
-      "prev": "Historia anterior",
-      "next": "Historia siguiente",
-      "counter": "Historia {i} de {n}"
+      "prev": "Caso anterior",
+      "next": "Caso siguiente",
+      "counter": "Caso {i} de {n}"
     },
     "badgeAgentic": "Construido con Claude",
     "agentic": {
@@ -54,9 +56,11 @@
       "sector": "Manufactura",
       "region": "San Antonio, TX",
       "title": "El agendamiento de instalaciones, de 17 horas por semana a menos de dos",
-      "summary": "Agendar a las cuadrillas exigía trabajo en cinco sistemas desconectados y costaba de 13 a 17 horas por semana. Claude hace la recopilación por un conector al sistema de registro, y un día completo de instalaciones se aprueba en cerca de un minuto.",
+      "summary": "Agendar las cuadrillas exigía trabajo en cinco sistemas desconectados y costaba de 13 a 17 horas por semana. Claude recopila la información desde el sistema de registro a través de un conector, y un día completo de instalaciones se aprueba en cerca de un minuto.",
       "metricLabel1": "Horas administrativas recuperadas por semana",
-      "metricLabel2": "Para agendar una instalación, antes 23 a 35"
+      "metricLabel2": "Para agendar una instalación, antes 23 a 35",
+      "metricValue1": "15–19 h",
+      "metricValue2": "~3 min"
     }
   },
   "hero": {

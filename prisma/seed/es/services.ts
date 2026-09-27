@@ -5,7 +5,7 @@ export const servicesEs: Record<string, { title?: string; summary?: string; body
   "ai-data-strategy": {
     title: "Estrategia de Data & AI",
     summary:
-      "Hoja de ruta hacia la empresa agéntica, lista para el directorio: dónde los datos y la IA generan un ROI medible, anclada en lo que los datos sustentan.",
+      "Hoja de ruta para el consejo directivo: dónde los datos y la IA generan un ROI medible, secuenciada por valor y anclada en lo que los datos sustentan.",
     seoTitle: "Estrategia de datos e IA en Snowflake",
     seoDescription:
       "Estrategia de datos e IA en Snowflake: roadmap priorizado por ROI y evaluación de preparación. Snowflake Premier Partner, nearshore. Hablemos.",
@@ -50,7 +50,7 @@ Cuatro cosas como mínimo: casos de uso priorizados por valor de negocio y facti
   "cloud-architecture": {
     title: "Arquitectura en la Nube y Base Gobernada",
     summary:
-      "La base lista para IA: gobernada sobre Snowflake y preparada para escalar, la fuente de verdad de la que dependen modelos y agentes.",
+      "La base lista para IA, construida sobre Snowflake y lista para escalar: la única fuente de verdad de la que dependen todos los modelos y agentes.",
     seoTitle: "Arquitectura cloud y base gobernada en Snowflake",
     seoDescription:
       "Arquitectura cloud y base gobernada en Snowflake, lista para IA y construida para escalar. Snowflake Premier Partner, entrega nearshore.",
@@ -110,7 +110,7 @@ Los dominios de datos maestros se consolidan de forma secuencial, así que cada 
   "data-engineering": {
     title: "Ingeniería de Datos y Pipelines",
     summary:
-      "Datos confiables y siempre actualizados: pipelines gobernados que unifican todas las fuentes, para que la analítica y la IA operen sobre insumos confiables.",
+      "Datos confiables y siempre actualizados: pipelines gobernados que unifican todas las fuentes, para que la analítica y la IA operen sobre insumos verificados.",
     seoTitle: "Ingeniería de datos en Snowflake, nearshore",
     seoDescription:
       "Servicios de ingeniería de datos en Snowflake: pipelines ELT gobernados, equipo nearshore en horario del cliente. Snowflake Premier Partner. Hablemos del caso.",
@@ -157,7 +157,7 @@ La primera ventaja es el arranque: el equipo ya trabaja en horario del cliente, 
   "data-visualisation": {
     title: "Analítica con IA sobre Snowflake",
     summary:
-      "Poner la IA gobernada a trabajar: Cortex Analyst, Cortex Agents y CoWork convierten datos gobernados en respuestas citadas, y en el siguiente paso.",
+      "Poner a trabajar la IA gobernada: Cortex Analyst, Cortex Agents y Snowflake CoWork convierten datos gobernados en respuestas citadas, y en el siguiente paso.",
     seoTitle: "Analítica con IA en Snowflake: Cortex Analyst y CoWork",
     seoDescription:
       "Analítica de autoservicio en Snowflake: Cortex Analyst, dashboards y agentes de IA que llegan a producción. Snowflake Premier Partner, en horario del cliente.",
@@ -214,7 +214,7 @@ Una herramienta de BI conviene conectarla a Snowflake con el conector nativo de 
   "embedded-analytics": {
     title: "Analítica Embebida",
     summary:
-      "Diferenciar el producto: productos de datos con Cortex, embebidos en las aplicaciones y flujos de los clientes, como ventaja competitiva.",
+      "Diferenciar el producto: productos de datos con Cortex, embebidos en las aplicaciones y flujos de trabajo de los clientes, como ventaja competitiva.",
     seoTitle: "Analítica embebida en Snowflake para SaaS",
     seoDescription:
       "Analítica embebida en Snowflake: dashboards, apps con Streamlit y respuestas de Cortex dentro del producto. Snowflake Premier Partner, nearshore.",
