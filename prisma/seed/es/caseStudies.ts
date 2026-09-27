@@ -7,7 +7,7 @@ export const caseStudiesEs: Record<string, { title?: string; summary?: string; s
     seoDescription: "El catálogo de un fabricante de empaque creció a miles de SKU sin control. Arquitectura de producto y gobierno en Snowflake devolvieron costos exactos.",
     title: "Controlar miles de SKU descontrolados para recuperar la precisión de los costos de producto",
     summary:
-      "El catálogo de productos de un fabricante de empaques de cartón corrugado se disparó hasta miles de SKU y variantes, sin una arquitectura de producto, lo que distorsionaba los costos y ralentizaba la producción. Viewnear diseñó una base gobernada en Snowflake: un almacén de datos Medallion alimentado desde SAP Business One mediante Openflow, reglas de gobierno para datos maestros y SKU, un catálogo de SKU estándar, simulación What-if y un agente de catálogo en Snowflake CoWork sobre Semantic Views gobernadas.",
+      "El catálogo de productos de un fabricante de empaques de cartón corrugado se disparó hasta miles de SKU y variantes, sin una arquitectura de producto, lo que distorsionaba los costos y ralentizaba la producción. Viewnear diseñó una base gobernada en Snowflake: un almacén de datos Medallion alimentado desde el ERP mediante Openflow, reglas de gobierno para datos maestros y SKU, un catálogo de SKU estándar, simulación What-if y un agente de catálogo en Snowflake CoWork sobre Semantic Views gobernadas.",
     metrics: [
       { value: "Medallion", label: "Almacén Bronze, Silver, Gold" },
       { value: "3–5", label: "Catálogos críticos en la primera fase" },

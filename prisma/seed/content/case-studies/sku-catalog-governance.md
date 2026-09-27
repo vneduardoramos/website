@@ -4,14 +4,14 @@ A corrugated packaging manufacturer makes cardboard boxes, manages cutting dies 
 
 - **Variant explosion with no product architecture.** New SKUs are created ad hoc, with no allowed-variant rules and no standard way to combine attributes, so near-duplicate products multiply unchecked.
 - **Decisions on tribal knowledge and Excel.** Critical calls about production, paper, and cutting dies depend on individual expertise and one-off spreadsheet analysis, not on a trusted, shared source.
-- **Scattered, unstandardized data and distorted costs.** Information sits across SAP Business One and satellite systems with low standardization, so real cost per SKU is unclear and production planning, paper, and cutting-die management all suffer.
+- **Scattered, unstandardized data and distorted costs.** Information sits across the ERP and satellite systems with low standardization, so real cost per SKU is unclear and production planning, paper, and cutting-die management all suffer.
 - **No traceability, and an open security gap.** It is hard to trace how SKUs are created and modified or to measure the impact of a catalog change, and sensitive information moves by flat file and email with no access control or audit.
 
 ## Solution: a governed SKU and catalog data foundation on Snowflake
 
 Viewnear designed and built a governed Snowflake foundation in the manufacturer's own account, turning a sprawling, ungoverned catalog into golden records and a Standard SKU catalog the business can trust.
 
-- **Medallion warehouse from SAP Business One and satellites.** Openflow ingests SAP Business One and the satellite systems on a batch, incremental schedule, landing raw data in Bronze, conforming it into a Silver enterprise model, and resolving it into governed Gold analytical models.
+- **Medallion warehouse from the ERP and satellites.** Openflow ingests the ERP and the satellite systems on a batch, incremental schedule, landing raw data in Bronze, conforming it into a Silver enterprise model, and resolving it into governed Gold analytical models.
 - **Data dictionary and SKU governance rules.** An enterprise data dictionary fixes the official definition, owner, and mandatory flags per attribute, and a master-data model produces a golden record per domain with versioned, owned rules for creating, modifying, and standardizing variants, each carrying a severity and an accountable owner under a RACI.
 - **Standard SKU catalog and product architecture.** A product base architecture and a Standard SKU catalog define the allowed variants and the rules for combining them, so SKUs are created to a standard instead of by improvisation, with the first wave reengineering three to five critical satellite catalogs onto it.
 - **Multidimensional SKU analysis and What-if simulation.** A multidimensional model in Gold gives KPIs by SKU across dimensions and facts, and What-if simulation quantifies SKU-reduction, standardization, and production-configuration decisions against demand, capacity, and business constraints before anyone commits to them.

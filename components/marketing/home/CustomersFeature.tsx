@@ -27,7 +27,7 @@ import {
  * sector and region; Magnolia Doors is named with permission and shows its logo.
  */
 
-// The two engagements, exported so the case-studies grid can exclude them.
+// The two engagements. Exported for any grid that wants to avoid repeating them.
 export const FEATURED_CASE_SLUG = "insurance-claims-cortex-ai";
 export const AGENTIC_CASE_SLUG = "magnolia-doors-installation-scheduling";
 
@@ -40,7 +40,7 @@ const AGENTIC = {
 const FEATURED = {
   slug: FEATURED_CASE_SLUG,
   metricValues: ["60→95%", "4 sec"],
-  image: "/assets/images/industries/financial-services.jpg",
+  image: "/assets/images/cases/insurance-claims-cortex-ai-hero.jpg",
 };
 
 export async function CustomersFeature({ bottomLogos }: { bottomLogos: BandLogo[] }) {

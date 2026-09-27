@@ -54,7 +54,7 @@
       "sector": "Manufacturing",
       "region": "San Antonio, TX",
       "title": "Installation scheduling from 17 hours a week to under two",
-      "summary": "Getting install crews scheduled ran across five disconnected systems and cost 13 to 17 hours a week. Claude now does the gathering through a connector into the system of record, and a coordinator approves the day.",
+      "summary": "Getting install crews scheduled ran across five disconnected systems and cost 13 to 17 hours a week. Claude does the gathering through a connector into the system of record, and a full day of installs is signed off in about a minute.",
       "metricLabel1": "Administrative time back every week",
       "metricLabel2": "To schedule an installation, was 23–35"
     }

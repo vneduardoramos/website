@@ -53,9 +53,9 @@
       "client": "Magnolia Doors",
       "sector": "Manufactura",
       "region": "San Antonio, TX",
-      "title": "Programar instalaciones pasó de 17 horas por semana a menos de dos",
-      "summary": "Agendar a las cuadrillas exigía trabajo en cinco sistemas desconectados y costaba de 13 a 17 horas por semana. Ahora Claude hace la recopilación por un conector al sistema de registro, y un coordinador aprueba el día.",
-      "metricLabel1": "Tiempo administrativo recuperado cada semana",
+      "title": "El agendamiento de instalaciones, de 17 horas por semana a menos de dos",
+      "summary": "Agendar a las cuadrillas exigía trabajo en cinco sistemas desconectados y costaba de 13 a 17 horas por semana. Claude hace la recopilación por un conector al sistema de registro, y un día completo de instalaciones se aprueba en cerca de un minuto.",
+      "metricLabel1": "Horas administrativas recuperadas por semana",
       "metricLabel2": "Para agendar una instalación, antes 23 a 35"
     }
   },

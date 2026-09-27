@@ -214,7 +214,7 @@ Una herramienta de BI conviene conectarla a Snowflake con el conector nativo de 
   "embedded-analytics": {
     title: "Analítica Embebida",
     summary:
-      "Diferenciar el producto: datos impulsados por Cortex, embebidos en las aplicaciones y flujos de los clientes, como ventaja competitiva.",
+      "Diferenciar el producto: productos de datos con Cortex, embebidos en las aplicaciones y flujos de los clientes, como ventaja competitiva.",
     seoTitle: "Analítica embebida en Snowflake para SaaS",
     seoDescription:
       "Analítica embebida en Snowflake: dashboards, apps con Streamlit y respuestas de Cortex dentro del producto. Snowflake Premier Partner, nearshore.",
