@@ -248,4 +248,17 @@ export const blogPostsEs: Record<string, { title?: string; excerpt?: string; key
       "El cambio va de mejor analítica a inteligencia operativa incorporada en los flujos de trabajo diarios, con Snowflake como capa de ejecución.",
     ],
   },
+  "snowflake-claude-enterprise-ai-stack": {
+    title: "Por qué Snowflake y Claude se están convirtiendo en el stack de IA empresarial",
+    excerpt: "El valor de negocio de la IA depende de datos confiables, razonamiento capaz y la posibilidad de actuar dentro de los flujos de trabajo reales de la operación. Snowflake sostiene el contexto de negocio gobernado, Claude se encarga del razonamiento y el trabajo sucede donde la empresa ya lo opera.",
+    seoTitle: "Snowflake y Claude: el stack de IA empresarial",
+    seoDescription: "Por qué la IA empresarial necesita datos gobernados, razonamiento y acción controlada en un solo modelo operativo, y cómo se ve eso en producción.",
+    keyTakeaways: [
+      "La mayoría de los pilotos se frena por razones que no tienen que ver con la calidad del modelo: el contexto está disperso, los permisos no son claros y la respuesta llega a un lugar distinto de donde se hace el trabajo.",
+      "Cada lado tiene un rol claro. Snowflake controla los datos, las definiciones de negocio, los permisos, el historial y el costo; Claude se encarga de la interpretación y el razonamiento sobre documentos y solicitudes.",
+      "Cortex Agents, Snowflake Intelligence y Snowflake CoWork llevan al ecosistema más allá de la pregunta y la respuesta, hacia trabajo que se puede programar, aprobar, rastrear y costear.",
+      "La evidencia es operativa: de 15 a 19 horas por semana recuperadas en Magnolia Doors, clasificación de reclamaciones de 60 a 95 por ciento de precisión y una vista viva de más de 20,000 estudiantes en siete semanas.",
+      "Conviene elegir el primer flujo de trabajo por su fricción y su valor medible, y fijar la línea base antes de diseñar nada, para que el primer caso de uso compruebe la economía del siguiente.",
+    ],
+  },
 };
