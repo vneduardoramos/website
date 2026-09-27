@@ -1,5 +1,6 @@
 "use client";
 
+import { Fragment } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { HeroBackground } from "@/components/marketing/HeroBackground";
@@ -35,12 +36,25 @@ export function MeshHeroSlide({ subhead }: { subhead?: string }) {
       />
 
       <div className="container-page relative z-10 py-24 md:py-28">
-        <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-balance font-display text-4xl font-bold leading-[1.04] tracking-tight text-foreground md:text-[3.6rem]">
+        <div className="mx-auto max-w-4xl text-center">
+          <h1 className="mx-auto max-w-3xl text-balance font-display text-4xl font-bold leading-[1.04] tracking-tight text-foreground md:text-[3.6rem]">
             {t.rich("hero.title", { hl: (c) => <span className="text-gradient-accent">{c}</span> })}
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-muted md:text-xl">{sub}</p>
+          {/* The hero's second voice, set wide and large: the headline makes the
+              claim, this says what Viewnear actually does. Each word rises out
+              of a blur in sequence, which makes the sentence read as it
+              arrives rather than appearing all at once. */}
+          <p className="mx-auto mt-7 max-w-4xl text-pretty text-xl font-medium leading-relaxed text-muted md:text-[1.65rem] md:leading-[1.5]">
+            {sub.split(" ").map((word, i, all) => (
+              <Fragment key={`${word}-${i}`}>
+                <span className="hero-word" style={{ animationDelay: `${140 + i * 28}ms` }}>
+                  {word}
+                </span>
+                {i < all.length - 1 ? " " : null}
+              </Fragment>
+            ))}
+          </p>
 
           <div className="mt-7 flex flex-wrap justify-center gap-2.5">
             {pills.map((p) => (

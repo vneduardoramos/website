@@ -10,7 +10,7 @@ export const siteSettings: Record<string, unknown> = {
     // headline mirrors the hero H1 rendered in MeshHeroSlide (kept in sync for reference).
     headline: "The hard part of AI is the data. We build both.",
     subhead:
-      "We architect the foundation, govern what moves through it, and put AI to work on the processes a business still runs by hand. More than fifteen years of enterprise data engineering, with AI in production.",
+      "We architect the foundation, govern what moves through it, and put AI to work on the processes a business still runs by hand.",
   },
   stats: [
     { label: "Snowflake partner tier", value: "Premier" },
