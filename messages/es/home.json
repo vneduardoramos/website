@@ -97,5 +97,22 @@
   "cta": {
     "title": "¿Por dónde empezar con la IA?",
     "subtitle": "Con saber en qué punto está hoy la organización, definimos los datos que harían falta, el flujo que cambiaría y lo que debería devolver, antes de comprometer un build."
+  },
+  "insights": {
+    "eyebrow": "Ideas",
+    "title": "Pensamiento reciente, y la evidencia detrás.",
+    "kickerBlog": "Artículo",
+    "kickerCase": "Caso de éxito",
+    "viewBlog": "Todos los artículos",
+    "viewCases": "Todos los casos de éxito"
+  },
+  "careers": {
+    "eyebrow": "Únete al equipo",
+    "title": "Gente certificada, haciendo crecer esta práctica.",
+    "body": "Arquitectos, ingenieros y líderes de entrega certificados en Snowflake y Claude, trabajando las Américas desde Austin y Monterrey.",
+    "viewAll": "Ver todas las vacantes",
+    "viewRole": "Ver vacante",
+    "empty": "No hay vacantes abiertas por el momento. Las postulaciones espontáneas llegan al equipo para cuando se abra una.",
+    "emptyCta": "Enviar currículum"
   }
 }

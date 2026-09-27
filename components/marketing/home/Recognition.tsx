@@ -4,6 +4,8 @@ import { Link } from "@/i18n/navigation";
 import { Reveal, ScrollHighlight } from "@/components/marketing/Motion";
 import { SectionDecor } from "@/components/marketing/Decor";
 import { PRESS, PRESS_HOME_QUOTE, getOutlet } from "@/lib/press";
+import { PartnerBadgeMark } from "@/components/marketing/PartnerBadgeRow";
+import { SNOWFLAKE, ANTHROPIC, type PartnerNetwork } from "@/config/partners";
 
 /**
  * Recognition: the two pieces of third-party proof the site owns, side by side.
@@ -17,12 +19,51 @@ import { PRESS, PRESS_HOME_QUOTE, getOutlet } from "@/lib/press";
  * verbatim and untranslated, credited to the speaker and the outlet.
  *
  * The photograph is 1600x1200 and the frame is 4:3, so `object-cover` crops
- * nothing and the marker below can be positioned as a percentage of the image
- * and stay on Viewnear's logo at every width. Measured from the source file:
- * the logo sits at x 696-808, y 673-698 of 1600x1200.
+ * nothing and a hover zoom can center on Viewnear's logo as a percentage of
+ * the image and stay put at every width, rather than a ring calling it out
+ * permanently. Measured from the source file: the logo sits at x 696-808,
+ * y 673-698 of 1600x1200, so its center is 47.25%/56.9%.
+ *
+ * Below both, the two credentials the photograph and the quote each named:
+ * a bare badge, one line on what the network is for, and the way to the
+ * partnership page that goes deep on it. Not a repeat of the hero's
+ * credential line; a reader who scrolled this far gets the "so what."
  */
 
-const MARKER = { left: "42.5%", top: "54.3%", width: "9.5%", height: "5.2%" } as const;
+const LOGO_CENTER = { left: "47.25%", top: "56.9%" } as const;
+
+function PartnerCard({
+  partner,
+  title,
+  body,
+  href,
+  cta,
+}: {
+  partner: PartnerNetwork;
+  title: string;
+  body: string;
+  href: string;
+  cta: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="group flex items-start gap-5 rounded-2xl border border-border bg-background p-6 transition-colors hover:border-primary/50"
+    >
+      <PartnerBadgeMark partner={partner} size="sm" className="mt-0.5 shrink-0" />
+      <div className="min-w-0">
+        <h3 className="font-display text-lg font-bold leading-snug text-foreground">{title}</h3>
+        <p className="mt-2 text-sm leading-relaxed text-muted">{body}</p>
+        <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep">
+          <span className="link-underline">{cta}</span>
+          <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+            &rarr;
+          </span>
+        </span>
+      </div>
+    </Link>
+  );
+}
 
 // The phrase in the quote worth a subtle accent: the substrate and the partner
 // in one clause. Split at render time so the surrounding text is never
@@ -56,18 +97,14 @@ export async function Recognition() {
           <div className="mt-12 grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             {/* The photograph, uncropped, with Viewnear ringed on the wall. */}
             <figure className="m-0">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-border shadow-soft-lg">
+              <div className="group relative aspect-[4/3] w-full cursor-zoom-in overflow-hidden rounded-2xl border border-border shadow-soft-lg">
                 <Image
                   src="/assets/images/life/partner-momentum.jpg"
                   alt={t("imageAlt")}
                   fill
                   sizes="(min-width: 1024px) 52vw, 100vw"
-                  className="object-cover"
-                />
-                <span
-                  aria-hidden="true"
-                  style={MARKER}
-                  className="pointer-events-none absolute rounded-md ring-2 ring-secondary ring-offset-0"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[2.2] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                  style={{ transformOrigin: `${LOGO_CENTER.left} ${LOGO_CENTER.top}` }}
                 />
               </div>
               <figcaption className="mt-3 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-muted">
@@ -130,6 +167,27 @@ export async function Recognition() {
                   {p("storiesCount", { count: PRESS.length })}
                 </span>
               </div>
+            </div>
+          </div>
+
+          {/* The two credentials, as a summary a reader can act on right here. */}
+          <div className="mt-16 border-t border-border pt-12 md:mt-20 md:pt-14">
+            <p className="eyebrow mb-6">{t("partners.eyebrow")}</p>
+            <div className="grid gap-5 sm:grid-cols-2">
+              <PartnerCard
+                partner={SNOWFLAKE}
+                title={t("partners.snowflake.title")}
+                body={t("partners.snowflake.body")}
+                href="/partnership/snowflake"
+                cta={t("partners.cta")}
+              />
+              <PartnerCard
+                partner={ANTHROPIC}
+                title={t("partners.anthropic.title")}
+                body={t("partners.anthropic.body")}
+                href="/partnership/claude"
+                cta={t("partners.cta")}
+              />
             </div>
           </div>
         </Reveal>

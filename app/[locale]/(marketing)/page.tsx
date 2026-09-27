@@ -5,7 +5,7 @@ import type { Locale } from "@/lib/i18n-content";
 import { pageMeta } from "@/lib/seo";
 import { officesLd } from "@/lib/offices";
 import { JsonLd } from "@/components/JsonLd";
-import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
+import { Section, SectionHeading } from "@/components/marketing/ui";
 import { Link } from "@/i18n/navigation";
 import { Hero } from "@/components/marketing/home/Hero";
 import { ServicesGrid } from "@/components/marketing/home/ServicesGrid";
@@ -16,6 +16,9 @@ import { getClientBands } from "@/lib/client-bands";
 import { PlateCard } from "@/components/marketing/Cards";
 import { FaceStack } from "@/components/marketing/LeadershipStrip";
 import { Recognition } from "@/components/marketing/home/Recognition";
+import { Insights } from "@/components/marketing/home/Insights";
+import { CareersTeaser } from "@/components/marketing/home/CareersTeaser";
+import { BookACall } from "@/components/marketing/BookACall";
 
 export const revalidate = 60;
 
@@ -54,9 +57,11 @@ export default async function HomePage({ params }: { params: { locale: string } 
       <JsonLd data={officesLd()} />
 
       {/* The page in five beats: the promise, the proof, what we do, how to
-          buy it, the ask. Seven blocks. Everything cut from here on 2026-09-27
-          (the foundation split, industries, the pricing essay, the partner
-          band, the FAQ) exists in full on its own page. */}
+          buy it, the ask. Everything cut from here on 2026-09-27 (the
+          foundation split, industries, the pricing essay, the partner band,
+          the FAQ) exists in full on its own page. The ask itself is three
+          sections rather than one generic CTA panel: Insights, Careers, and
+          BookACall, added 2026-09-27. */}
       {/* 1) HERO: the mono line under it carries both credentials. */}
       <Hero subhead={hero?.subhead} />
 
@@ -127,11 +132,12 @@ export default async function HomePage({ params }: { params: { locale: string } 
         </div>
       </Section>
 
-      {/* CTA: restate the stakes, confident close */}
-      <CtaBand
-        title={t("cta.title")}
-        subtitle={t("cta.subtitle")}
-      />
+      {/* 4) THE ASK, in three parts, instead of one generic CTA panel: the
+          proof archive a reader can browse (random each visit), the team a
+          reader could join, and the actual way to reach a person. */}
+      <Insights locale={locale as Locale} />
+      <CareersTeaser locale={locale as Locale} />
+      <BookACall variant="compact" />
     </>
   );
 }

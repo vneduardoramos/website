@@ -2,7 +2,7 @@
   "servicesGrid": {
     "chip": "What we offer",
     "title": "Every layer of the stack, one accountable team",
-    "body": "From <migrations>migrations off legacy warehouses</migrations> to governed foundations and trusted pipelines, to AI that runs whole processes with a person deciding what matters: advisory through delivery through enablement, on Snowflake.",
+    "body": "From <migrations>migrations off legacy systems</migrations> to governed data to AI in production, one team end to end on Snowflake.",
     "learnMore": "Learn more",
     "engageEyebrow": "How we engage",
     "engageTitle": "Three ways to buy the same accountable delivery.",
@@ -67,7 +67,19 @@
     "eyebrow": "Recognition",
     "title": "41 partners were named at Snowflake Summit. <hl>Viewnear was one.</hl>",
     "caption": "CoCo Global Partner Momentum, Snowflake Summit 2026. Viewnear among the 41 named, from a network of more than 14,000.",
-    "imageAlt": "Snowflake's CoCo Global Partner Momentum wall at Summit 2026, listing 41 partner logos including Viewnear, in front of a keynote audience"
+    "imageAlt": "Snowflake's CoCo Global Partner Momentum wall at Summit 2026, listing 41 partner logos including Viewnear, in front of a keynote audience",
+    "partners": {
+      "eyebrow": "Certified in both networks",
+      "cta": "See the partnership",
+      "snowflake": {
+        "title": "Snowflake Premier Partner",
+        "body": "Governed data foundations and the Cortex AI layer above them, delivered end to end."
+      },
+      "anthropic": {
+        "title": "Claude Certified Partner",
+        "body": "Agentic solutions built with Claude, on data Snowflake already governs."
+      }
+    }
   },
   "hero": {
     "ariaLabel": "Intro"

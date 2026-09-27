@@ -97,5 +97,22 @@
   "cta": {
     "title": "Where should AI go first?",
     "subtitle": "Tell us where the organization stands today. We map the data it would need, the workflow it would change, and what it should return, before anyone commits to a build."
+  },
+  "insights": {
+    "eyebrow": "Insights",
+    "title": "Recent thinking, and the proof behind it.",
+    "kickerBlog": "Article",
+    "kickerCase": "Case study",
+    "viewBlog": "All articles",
+    "viewCases": "All case studies"
+  },
+  "careers": {
+    "eyebrow": "Join the team",
+    "title": "Certified people, growing this practice.",
+    "body": "Snowflake and Claude architects, engineers and delivery leads, working the Americas from Austin and Monterrey.",
+    "viewAll": "See all open roles",
+    "viewRole": "View role",
+    "empty": "No open roles right now. Open applications reach the team when one does.",
+    "emptyCta": "Send a resume"
   }
 }
