@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { HeroBackground } from "@/components/marketing/HeroBackground";
 import { HeroAurora } from "@/components/marketing/home/HeroAurora";
+import { credentialLine } from "@/config/partners";
 
 /**
  * Home hero. The headline names the problem the business recognizes, not the
@@ -65,9 +66,13 @@ export function MeshHeroSlide({ subhead }: { subhead?: string }) {
         {/* The credential sits outside the headline column: it is one long mono
             line, and at 3xl it wrapped mid-word ("SNOWPRO- / CERTIFIED"). Each
             segment between the separators is kept whole, so the line breaks
-            only where a reader would break it. */}
+            only where a reader would break it.
+
+            The tiers themselves come from config/partners.ts, so a change of
+            level is one edit there and every surface follows. Only the team's
+            certifications are translated. */}
         <p className="mx-auto mt-8 flex max-w-5xl flex-wrap items-center justify-center gap-x-2 gap-y-1 font-mono text-xs uppercase tracking-widest text-muted">
-          {t("hero.credential")
+          {credentialLine([t("hero.credentialCert")], { withNetwork: true })
             .split("·")
             .map((part) => part.trim())
             .filter(Boolean)

@@ -26,5 +26,8 @@
   "trustLogos": {
     "label": "Trusted by teams across the Americas"
   },
-  "breadcrumbAria": "Breadcrumb"
+  "breadcrumbAria": "Breadcrumb",
+  "partnerPlates": {
+    "verify": "Verify listing"
+  }
 }

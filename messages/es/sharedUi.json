@@ -26,5 +26,8 @@
   "trustLogos": {
     "label": "La confianza de equipos en toda América"
   },
-  "breadcrumbAria": "Ruta de navegación"
+  "breadcrumbAria": "Ruta de navegación",
+  "partnerPlates": {
+    "verify": "Verificar registro"
+  }
 }

@@ -10,9 +10,8 @@ import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { Link } from "@/i18n/navigation";
 import { Hero } from "@/components/marketing/home/Hero";
 import { ProofBand } from "@/components/marketing/home/ProofBand";
+import { HowWeBuild } from "@/components/marketing/home/HowWeBuild";
 import { ServicesGrid } from "@/components/marketing/home/ServicesGrid";
-import { FoundationPhoto } from "@/components/marketing/home/SplitVisuals";
-import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { Faq } from "@/components/marketing/Faq";
 import { RevealGroup, ScrollHighlight, SectionFold } from "@/components/marketing/Motion";
 import { IndustriesStrip } from "@/components/marketing/home/IndustriesStrip";
@@ -97,18 +96,10 @@ export default async function HomePage({ params }: { params: { locale: string } 
       </section>
       <CustomersFeature bottomLogos={bands.bottom} />
 
-      {/* 3) THE PATH: customer-first foundation + AI */}
-      <Section className="section-tint">
-        <FeatureSplit
-          eyebrow={t("foundation.eyebrow")}
-          title={t("foundation.title")}
-          body={t("foundation.body")}
-          bullets={t.raw("foundation.bullets") as string[]}
-          visual={<FoundationPhoto />}
-          ratio="wide-visual"
-          cta={{ label: t("foundation.cta"), href: "/services" }}
-        />
-      </Section>
+      {/* 3) WHAT WE BUILD: the one place the two partners are prominent, a
+          column each with their badge. This replaces the foundation split,
+          which told the data half of the same story on its own. */}
+      <HowWeBuild />
 
       {/* IN THE PRESS: third-party validation follows the foundation split,
           a plain band between the cool foundation and the warm services grid. */}

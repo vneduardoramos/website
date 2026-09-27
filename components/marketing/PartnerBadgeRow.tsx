@@ -1,0 +1,122 @@
+import Image from "next/image";
+import { getTranslations } from "next-intl/server";
+import { PARTNERS, SNOWFLAKE, type PartnerNetwork } from "@/config/partners";
+import { AnthropicMark } from "@/components/marketing/ProviderMark";
+import { cn } from "@/lib/utils";
+
+/**
+ * Partner badges, shown bare.
+ *
+ * Everywhere except the home page's partner band, a badge sits directly on the
+ * page: no plate, no tint, no frame. Official artwork is already a designed
+ * object, and putting one inside another rounded box makes it read as a card
+ * about a card. The one exception is the home band, where both badges share a
+ * single white rectangle laid across the indigo panel, because there the page
+ * behind them is dark.
+ *
+ * Sizing. The badges cannot share a height and look equal: Snowflake's is a
+ * circle and the Claude Partner Network's is a wide lockup, which reads much
+ * heavier at the same height. Each badge carries a `displayScale` in
+ * config/partners.ts, and everything here multiplies the base height by it, so
+ * the pair stays in proportion wherever it appears.
+ */
+// Floors, not decoration. Both badges carry type inside them, so a size is
+// only valid if the smallest words in it can be read: the Snowflake seal's
+// "AI DATA CLOUD SERVICES PARTNER" ring and the lockup's "Claude Partner
+// Network" line. Below roughly 80px neither survives.
+// xl is the partnership hero, where the badge is the page's credential and
+// carries real weight beside the headline.
+const BASE_PX = { sm: 80, md: 104, lg: 128, xl: 170 } as const;
+type Size = keyof typeof BASE_PX;
+
+export function PartnerBadgeMark({
+  partner,
+  size = "md",
+  className,
+}: {
+  partner: PartnerNetwork;
+  size?: Size;
+  className?: string;
+}) {
+  const h = Math.round(BASE_PX[size] * (partner.badge?.displayScale ?? 1));
+  if (!partner.badge) {
+    return (
+      <span className={cn("inline-flex items-center gap-2 font-display font-bold text-foreground", className)}>
+        {partner.key === "anthropic" && <AnthropicMark size={Math.round(h * 0.55)} />}
+        {partner.label}
+      </span>
+    );
+  }
+  return (
+    <Image
+      src={partner.badge.src}
+      alt={partner.badge.alt}
+      width={partner.badge.w}
+      height={partner.badge.h}
+      sizes={`${BASE_PX[size] * 4}px`}
+      style={{ height: h }}
+      className={cn("w-auto object-contain", className)}
+    />
+  );
+}
+
+export async function PartnerBadgeRow({
+  size = "md",
+  captions = false,
+  secondary = false,
+  className,
+}: {
+  size?: Size;
+  /** Network and level under each badge, plus a verify link where one exists. */
+  captions?: boolean;
+  /** Also show the further Snowflake recognitions (CoCo, SnowPro), smaller. */
+  secondary?: boolean;
+  className?: string;
+}) {
+  const t = await getTranslations("sharedUi");
+  return (
+    <div className={className}>
+      <div className={cn("flex flex-wrap items-center", captions ? "gap-x-14 gap-y-8" : "gap-x-10 gap-y-6")}>
+        {PARTNERS.map((p) => (
+          <div key={p.key} className={cn(captions && "min-w-0")}>
+            <PartnerBadgeMark partner={p} size={size} />
+            {captions && (
+              <div className="mt-3 flex flex-col gap-0.5 font-mono text-[0.66rem] uppercase tracking-[0.14em] text-muted">
+                <span>{p.network}</span>
+                <span className="font-semibold text-foreground">{p.level}</span>
+                {p.directoryUrl && (
+                  <a
+                    href={p.directoryUrl}
+                    target="_blank"
+                    rel="noopener"
+                    className="mt-1 inline-flex w-fit items-center gap-1 font-semibold normal-case tracking-normal text-primaryDeep underline-offset-4 hover:underline"
+                  >
+                    {t("partnerPlates.verify")}
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {secondary && SNOWFLAKE.secondary.length > 0 && (
+        <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-5">
+          {SNOWFLAKE.secondary.map((b) => (
+            <Image
+              key={b.src}
+              src={b.src}
+              alt={b.alt}
+              width={b.w}
+              height={b.h}
+              sizes="160px"
+              style={{ height: Math.round(BASE_PX[size] * 0.7) }}
+              className="w-auto object-contain"
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
