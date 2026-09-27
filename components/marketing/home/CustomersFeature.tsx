@@ -53,7 +53,6 @@ export async function CustomersFeature({ bottomLogos }: { bottomLogos: BandLogo[
         {/* heading row */}
         <div className="flex flex-wrap items-end justify-between gap-5">
           <div>
-            <p className="eyebrow mb-3">{t("customersFeature.eyebrow")}</p>
             <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-[2.9rem] md:leading-[1.04]">
               {t.rich("customersFeature.title", {
                 br: () => <br />,
