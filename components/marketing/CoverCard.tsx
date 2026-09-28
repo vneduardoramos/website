@@ -123,6 +123,7 @@ export async function CoverCard({
               width={24}
               height={24}
               sizes="24px"
+              placeholder="empty"
               className="h-6 w-6 shrink-0 rounded-full object-cover"
             />
           ) : (

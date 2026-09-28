@@ -43,6 +43,9 @@ export async function LeadershipStrip({
               width={36}
               height={36}
               sizes="36px"
+              // A blur placeholder is imperceptible at 36px and next/image's
+              // own dev warning says so; the Img wrapper defaults it on.
+              placeholder="empty"
               className="h-9 w-9 rounded-full object-cover ring-2 ring-background"
             />
           ) : (
@@ -100,6 +103,7 @@ export async function FaceStack({
             width={40}
             height={40}
             sizes="40px"
+            placeholder="empty"
             className="h-10 w-10 rounded-full object-cover ring-2 ring-background"
           />
         ) : (

@@ -17,6 +17,11 @@ export function Logo({
   height?: number;
   className?: string;
 }) {
+  // No style override: the width/height props already encode the exact
+  // rendered size (width derived from RATIO), so next/image needs nothing
+  // else to preserve the aspect ratio. A style that pins one dimension
+  // (height) while leaving the other "auto" is exactly the pattern
+  // next/image's own dev warning flags, even though the math here was fine.
   return (
     <Image
       src="/assets/viewnear-logo.png"
@@ -25,7 +30,6 @@ export function Logo({
       height={height}
       priority
       className={className}
-      style={{ height, width: "auto" }}
     />
   );
 }
