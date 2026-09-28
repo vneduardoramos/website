@@ -4,7 +4,6 @@ import { pageMeta, ORG_REF } from "@/lib/seo";
 import { theme } from "@/config/theme";
 import { JsonLd } from "@/components/JsonLd";
 import { Link } from "@/i18n/navigation";
-import { Breadcrumbs } from "@/components/marketing/Breadcrumbs";
 import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 import { LedgerCard, PlateCard } from "@/components/marketing/Cards";
@@ -97,19 +96,14 @@ export default async function SnowflakeConsultingPage({ params }: { params: { lo
     <>
       <JsonLd data={[serviceLd, faqLd]} />
 
-      {/* Hero: the head term as the H1, credentials as chips. */}
+      {/* Hero: the head term as the H1, credentials as chips. No breadcrumb:
+          this page isn't nested under /services (it's a standalone landing
+          page for a search term, not one of the six real offerings), and a
+          "Home > Services > ..." trail asserted a parent it doesn't have.
+          /nearshore, the same kind of page, carries none either. */}
       <div className="relative overflow-hidden">
         <SectionDecor variant="grid" />
         <div className="relative">
-          <div className="container-page pt-10">
-            <Breadcrumbs
-              items={[
-                { label: t("breadcrumb.home"), href: "/" },
-                { label: t("breadcrumb.services"), href: "/services" },
-                { label: t("breadcrumb.current") },
-              ]}
-            />
-          </div>
           <PageHero
             eyebrow={t("hero.eyebrow")}
             title={t.rich("hero.title", {
