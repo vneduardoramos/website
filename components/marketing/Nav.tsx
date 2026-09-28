@@ -800,7 +800,11 @@ export function Nav({ navData }: { navData?: NavData }) {
 
         <div className="hidden items-center gap-3 lg:flex">
           <LocaleSwitcher />
-          <Link href="/contact" onClick={onCtaClick} className="btn-primary group">
+          {/* Fixed width: "Hablemos" and "Let's talk" aren't the same length,
+              and this sits right after the locale toggle, so letting the
+              button's own width follow its label shifted the toggle
+              sideways on every language switch. */}
+          <Link href="/contact" onClick={onCtaClick} className="btn-primary group w-40">
             {t("cta")}
             <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
           </Link>
