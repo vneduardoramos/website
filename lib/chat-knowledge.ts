@@ -1,4 +1,4 @@
-import { getServices, getIndustries, getTeam, getSetting, safe } from "@/lib/queries";
+import { getServices, getIndustries, getTeam, getSetting, getCaseStudies, getBlogPosts, safe } from "@/lib/queries";
 import { theme } from "@/config/theme";
 import { credentialLine } from "@/config/partners";
 import type { Locale } from "@/lib/i18n-content";
@@ -34,11 +34,13 @@ const clip = (s: string, max = MAX_LINE) => (s.length > max ? `${s.slice(0, max 
 type FaqRow = { category?: string; q: string; a: string };
 
 export async function getChatKnowledge(locale: Locale): Promise<ChatKnowledge> {
-  const [services, industries, team, faqs] = await Promise.all([
+  const [services, industries, team, faqs, caseStudies, blogPosts] = await Promise.all([
     safe(getServices(locale), []),
     safe(getIndustries(locale), []),
     safe(getTeam(locale), []),
     safe(getSetting<FaqRow[]>("faqs", locale), []),
+    safe(getCaseStudies({}, locale), []),
+    safe(getBlogPosts({ take: 12 }, locale), []),
   ]);
 
   const roster: BookableTeamMember[] = team
@@ -61,6 +63,19 @@ export async function getChatKnowledge(locale: Locale): Promise<ChatKnowledge> {
 
   const rosterLines = roster
     .map((p) => `- ${p.slug}: ${p.name}, ${p.title}. Talks about: ${clip(p.topics, 90)}`)
+    .join("\n");
+
+  // Named only where the customer agreed to it; every other case study stays
+  // by sector, matching what the page itself shows.
+  const caseStudyLines = caseStudies
+    .map((c) => {
+      const who = c.clientNamed && c.client?.name ? c.client.name : c.sector;
+      return `- ${c.title} (/case-studies/${c.slug}): ${who} · ${c.region}. ${clip(c.summary, 140)}`;
+    })
+    .join("\n");
+
+  const blogLines = blogPosts
+    .map((b) => `- ${b.title} (/blog/${b.slug}): ${clip(b.excerpt ?? "", 120)}`)
     .join("\n");
 
   // Trimmed to question + one clause of the answer: enough for the model to
@@ -88,6 +103,12 @@ ENGAGEMENT MODELS (pricing is scoped per engagement, never a published rate)
 - Fixed cost: a defined scope, timeline and price agreed up front.
 - Time & materials: flexible, iterative delivery for evolving scope.
 - Dedicated team / staff augmentation: embedded practitioners alongside the in-house team.
+
+CASE STUDIES (real, anonymized unless a client is named)
+${caseStudyLines || "(none published)"}
+
+RECENT BLOG POSTS
+${blogLines || "(none published)"}
 
 FAQ
 ${faqLines || "(none published)"}
