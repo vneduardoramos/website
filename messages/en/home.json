@@ -113,7 +113,6 @@
     "viewAll": "See all open roles",
     "viewRole": "View role",
     "empty": "No open roles right now. Open applications reach the team when one does.",
-    "emptyCta": "Send a resume",
-    "bookingEyebrow": "Talk to the team"
+    "emptyCta": "Send a resume"
   }
 }
