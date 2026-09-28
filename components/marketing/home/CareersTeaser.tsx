@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getJobOpenings } from "@/lib/queries";
 import { Reveal } from "@/components/marketing/Motion";
+import { BookACall } from "@/components/marketing/BookACall";
 import type { Locale } from "@/lib/i18n-content";
 
 /**
@@ -10,6 +11,11 @@ import type { Locale } from "@/lib/i18n-content";
  * open roles as plain tiles, or a quiet invitation to apply anyway when the
  * board is empty, which happens: certified people don't rotate through a big
  * pipeline.
+ *
+ * Closes the page: a visitor not hiring and not ready to talk gets nothing
+ * further to do, so the booking card (BookACall, "inline") lives in this same
+ * section rather than a separate one after it. Two asks, one background, one
+ * scroll stop, the way ServiceClose composes the same block on service pages.
  */
 export async function CareersTeaser({ locale }: { locale: Locale }) {
   const t = await getTranslations("home.careers");
@@ -69,6 +75,10 @@ export async function CareersTeaser({ locale }: { locale: Locale }) {
             </div>
           )}
         </Reveal>
+
+        <div className="mt-14 border-t border-border pt-10 md:mt-16 md:pt-12">
+          <BookACall variant="inline" />
+        </div>
       </div>
     </section>
   );

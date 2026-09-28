@@ -18,7 +18,6 @@ import { FaceStack } from "@/components/marketing/LeadershipStrip";
 import { Recognition } from "@/components/marketing/home/Recognition";
 import { Insights } from "@/components/marketing/home/Insights";
 import { CareersTeaser } from "@/components/marketing/home/CareersTeaser";
-import { BookACall } from "@/components/marketing/BookACall";
 
 export const revalidate = 60;
 
@@ -59,9 +58,10 @@ export default async function HomePage({ params }: { params: { locale: string } 
       {/* The page in five beats: the promise, the proof, what we do, how to
           buy it, the ask. Everything cut from here on 2026-09-27 (the
           foundation split, industries, the pricing essay, the partner band,
-          the FAQ) exists in full on its own page. The ask itself is three
-          sections rather than one generic CTA panel: Insights, Careers, and
-          BookACall, added 2026-09-27. */}
+          the FAQ) exists in full on its own page. The ask itself is two
+          sections rather than one generic CTA panel: Insights (the proof
+          archive), then Careers, which closes with the booking card in the
+          same section (2026-09-28) rather than as a third section after it. */}
       {/* 1) HERO: the mono line under it carries both credentials. */}
       <Hero subhead={hero?.subhead} />
 
@@ -137,7 +137,6 @@ export default async function HomePage({ params }: { params: { locale: string } 
           reader could join, and the actual way to reach a person. */}
       <Insights locale={locale as Locale} />
       <CareersTeaser locale={locale as Locale} />
-      <BookACall variant="compact" />
     </>
   );
 }
