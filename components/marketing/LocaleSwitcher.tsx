@@ -40,7 +40,7 @@ export function LocaleSwitcher({ className = "" }: { className?: string }) {
           <span
             key={l.code}
             aria-current="true"
-            className="rounded-full bg-primary px-2.5 py-1 font-mono text-[0.7rem] font-bold tracking-wider text-foreground"
+            className="rounded-full bg-primary px-2.5 py-1 font-mono text-[0.7rem] font-bold tracking-wider text-white"
           >
             {l.label}
           </span>
