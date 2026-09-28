@@ -32,7 +32,11 @@ type ChatMessage = {
 
 const STORAGE_KEY = "vn-chat-v1";
 const MAX_STORED = 20;
-const MAX_AGE_MS = 24 * 60 * 60 * 1000; // a day: old chats start fresh rather than resurface stale context
+// An hour of inactivity, not a day: `ts` is rewritten on every message and
+// every open/close, so it tracks last activity, not session creation. A
+// conversation left untouched this long starts fresh rather than resurfacing
+// stale context to whoever opens it next.
+const MAX_AGE_MS = 60 * 60 * 1000;
 
 type StoredSession = { ts: number; open: boolean; messages: ChatMessage[] };
 
@@ -126,6 +130,16 @@ export function ChatWidget() {
     if (!hydrated) return;
     saveSession({ ts: Date.now(), open, messages });
   }, [hydrated, open, messages]);
+
+  // Clears the conversation after an hour with no new message, without
+  // waiting for a reload to notice: the timer restarts on every message, so
+  // it only ever fires after a real idle gap. Covers the tab-left-open case;
+  // loadSession's own check on mount covers a reload after the same gap.
+  useEffect(() => {
+    if (!hydrated || messages.length === 0) return;
+    const timer = setTimeout(() => setMessages([]), MAX_AGE_MS);
+    return () => clearTimeout(timer);
+  }, [hydrated, messages]);
 
   useEffect(() => {
     listRef.current?.scrollTo({ top: listRef.current.scrollHeight });
