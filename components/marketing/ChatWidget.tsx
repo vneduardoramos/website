@@ -4,6 +4,7 @@ import Image from "next/image";
 import Script from "next/script";
 import { useEffect, useId, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { consentIsCurrent, readConsent } from "@/lib/consent";
 import { CALENDLY_CSS, CALENDLY_JS, popupUrl } from "@/lib/calendly";
 import { cn } from "@/lib/utils";
@@ -61,6 +62,34 @@ function saveSession(session: StoredSession) {
 
 let idCounter = 0;
 const nextId = () => `m${Date.now()}-${idCounter++}`;
+
+// The one exception to "no markdown" in the system prompt: a reply that
+// points at a real page on the site does it as [text](/path), and this turns
+// that into an actual link instead of a raw path the visitor has to copy.
+const LINK_PATTERN = /\[([^[\]]+)\]\((\/[^\s()]+)\)/g;
+
+function renderMessageContent(text: string): React.ReactNode[] {
+  const nodes: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let key = 0;
+  for (const match of text.matchAll(LINK_PATTERN)) {
+    const index = match.index ?? 0;
+    if (index > lastIndex) nodes.push(text.slice(lastIndex, index));
+    const [, label, href] = match;
+    nodes.push(
+      <Link
+        key={key++}
+        href={href!}
+        className="font-semibold text-primaryDeep underline underline-offset-2 hover:no-underline"
+      >
+        {label}
+      </Link>,
+    );
+    lastIndex = index + match[0].length;
+  }
+  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
+  return nodes;
+}
 
 export function ChatWidget() {
   const t = useTranslations("chatUi");
@@ -248,7 +277,9 @@ export function ChatWidget() {
             )}
             {messages.map((m) => (
               <div key={m.id}>
-                <ChatBubble role={m.role}>{m.content}</ChatBubble>
+                <ChatBubble role={m.role}>
+                  {m.role === "assistant" ? renderMessageContent(m.content) : m.content}
+                </ChatBubble>
                 {m.booking && (
                   <button
                     type="button"
