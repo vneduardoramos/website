@@ -55,7 +55,7 @@ function NetworkColumn({
   return (
     <div className={cn("flex flex-col", className)}>
       <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
-        <Image src={photo.src} alt={photo.alt} fill sizes="(min-width: 768px) 45vw, 100vw" className="object-cover" />
+        <Image src={photo.src} alt={photo.alt} fill sizes="(min-width: 768px) 45vw, 100vw" className="aspect-[16/10] object-cover" />
       </div>
       <div className="mt-6 flex items-center gap-5">
         <PartnerBadgeMark partner={partner} size="md" className="shrink-0" />

@@ -227,7 +227,7 @@ export default async function BlogPostPage({
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 1024px"
-              className="object-cover"
+              className="aspect-[2/1] object-cover md:aspect-[21/9]"
             />
           </div>
         </div>

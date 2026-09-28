@@ -49,7 +49,7 @@ export function TeamCard({
             alt={member.name}
             fill
             sizes="160px"
-            className="object-cover object-center transition duration-[600ms] ease-out group-hover:scale-[1.06]"
+            className="aspect-square object-cover object-center transition duration-[600ms] ease-out group-hover:scale-[1.06]"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center font-display text-4xl font-bold text-primary/30">

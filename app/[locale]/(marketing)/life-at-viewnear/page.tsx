@@ -280,7 +280,7 @@ export default async function LifeAtViewnearPage({ params }: { params: { locale:
                     src={o.building}
                     alt={o.alt}
                     fill
-                    className="object-cover"
+                    className="aspect-[3/2] object-cover"
                     style={{ clipPath: o.flip ? RIGHT_CLIP : LEFT_CLIP }}
                     sizes="(min-width: 768px) 25vw, 50vw"
                   />
@@ -288,7 +288,7 @@ export default async function LifeAtViewnearPage({ params }: { params: { locale:
                     src={o.image}
                     alt={o.cityAlt}
                     fill
-                    className="object-cover"
+                    className="aspect-[3/2] object-cover"
                     style={{ clipPath: o.flip ? LEFT_CLIP : RIGHT_CLIP, objectPosition: o.cityPosition }}
                     sizes="(min-width: 768px) 25vw, 50vw"
                   />

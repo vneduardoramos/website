@@ -87,7 +87,11 @@ export async function CoverCard({
           alt={alt}
           fill
           sizes={featured ? "(max-width:768px) 100vw, 50vw" : "(max-width:768px) 100vw, 33vw"}
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          // Mirrors the wrapper's own aspect-[16/10] (only set when not
+          // featured; the featured layout stretches to its grid row instead,
+          // already reserved by min-h-[260px]) so the lazy-loaded img itself
+          // carries a resolvable box, not just its ancestor.
+          className={`object-cover transition-transform duration-500 group-hover:scale-105 ${featured ? "" : "aspect-[16/10]"}`}
         />
       ) : (
         <Placeholder kicker={kicker} seed={title} />

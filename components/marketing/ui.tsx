@@ -105,7 +105,7 @@ export async function CaseStudyCard({
             alt={`${cs.sector}: ${cs.title}`}
             fill
             sizes="(min-width: 768px) 45vw, 100vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            className="aspect-[16/10] object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
         </div>
       )}

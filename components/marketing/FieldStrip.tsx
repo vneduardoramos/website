@@ -62,7 +62,7 @@ export async function FieldStrip({
                   alt={m.alt}
                   fill
                   sizes="(max-width:768px) 50vw, 25vw"
-                  className="object-cover"
+                  className="aspect-[4/3] object-cover"
                 />
               </div>
               <figcaption className="mt-2 font-mono text-[0.62rem] uppercase tracking-[0.12em] text-muted">

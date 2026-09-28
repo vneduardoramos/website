@@ -236,7 +236,7 @@ export function CustomerStories({
                     fill
                     priority={i === 0}
                     sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover"
+                    className="aspect-[16/10] object-cover"
                   />
                 </div>
               </article>

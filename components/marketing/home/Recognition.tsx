@@ -103,7 +103,7 @@ export async function Recognition() {
                   alt={t("imageAlt")}
                   fill
                   sizes="(min-width: 1024px) 52vw, 100vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[2.2] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                  className="aspect-[4/3] object-cover transition-transform duration-700 ease-out group-hover:scale-[2.2] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                   style={{ transformOrigin: `${LOGO_CENTER.left} ${LOGO_CENTER.top}` }}
                 />
               </div>

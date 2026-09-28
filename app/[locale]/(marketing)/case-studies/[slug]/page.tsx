@@ -174,7 +174,7 @@ export default async function CaseStudyDetailPage({
               fill
               priority
               sizes="(min-width: 1024px) 1024px, 100vw"
-              className="object-cover"
+              className="aspect-[21/9] object-cover"
             />
           </div>
         </MaskReveal>
