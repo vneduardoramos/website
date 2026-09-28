@@ -30,5 +30,6 @@
   "compact": {
     "title": "¿Mejor preguntarlo directo?",
     "body": "Agendar 30 minutos con quien sería responsable del trabajo. Sin presentación, sin compromiso y una respuesta directa sobre si hay encaje."
-  }
+  },
+  "closeModal": "Cerrar"
 }

@@ -2,7 +2,7 @@ import { unstable_cache } from "next/cache";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Nav, type NavData } from "@/components/marketing/Nav";
 import { Footer } from "@/components/marketing/Footer";
-import { safe, getBlogPosts, getCaseStudies, getServices } from "@/lib/queries";
+import { safe, getBlogPosts, getCaseStudies, getServices, getTeam } from "@/lib/queries";
 import type { Locale } from "@/lib/i18n-content";
 import { prisma } from "@/lib/db";
 import type { OverrideMap } from "@/lib/image-overrides";
@@ -10,14 +10,17 @@ import { AuthProvider } from "@/components/admin/SessionProvider";
 import { ImageOverrideProvider } from "@/components/marketing/ImageOverrideProvider";
 import { EditModeProvider } from "@/components/marketing/EditModeProvider";
 import { ChatWidget } from "@/components/marketing/ChatWidget";
+import { theme } from "@/config/theme";
 
 // Small content-aware bits surfaced in the mega-menu featured tiles. Fetched
 // here (server) and passed to the client <Nav>; each falls back gracefully.
 async function getNavData(locale: Locale): Promise<NavData> {
-  const [posts, cases, services] = await Promise.all([
+  const [posts, cases, services, team, bookingT] = await Promise.all([
     safe(getBlogPosts({ take: 1 }, locale), []),
     safe(getCaseStudies({ featured: true, take: 1 }, locale), []),
     safe(getServices(locale), []),
+    safe(getTeam(locale), []),
+    getTranslations("booking"),
   ]);
   const fmtDate = (d: Date | null) =>
     d
@@ -25,11 +28,44 @@ async function getNavData(locale: Locale): Promise<NavData> {
       : "";
   const post = posts[0];
   const cs = cases[0];
+
+  // The same roster BookACall assembles on the money pages, resolved here
+  // once so every "Let's talk" button in the nav (there is no other kind:
+  // it is the one CTA the header carries) can open the same booking modal
+  // without each caller re-deriving it.
+  const bookable = ["eduardo-ramos", "jc-rodriguez", "rene-trevino"]
+    .map((slug) => team.find((m) => m.slug === slug))
+    .filter((m): m is NonNullable<typeof m> => Boolean(m) && Boolean(m!.bookingUrl))
+    .map((m) => ({
+      slug: m.slug,
+      name: m.name,
+      title: m.title,
+      photo: m.photo,
+      url: m.bookingUrl as string,
+      topics: m.bookingTopics,
+      ariaLabel: bookingT("pills.aria", { name: m.name }),
+    }));
+  const bookingFallbackUrl =
+    bookable[0]?.url ??
+    team.find((m) => m.bookingUrl)?.bookingUrl ??
+    process.env.NEXT_PUBLIC_BOOKING_URL ??
+    theme.brand.bookingUrl ??
+    "";
+
   return {
     latestPost: post ? { title: post.title, slug: post.slug, date: fmtDate(post.publishedAt) } : null,
     featuredCase: cs ? { title: cs.title, slug: cs.slug, sector: cs.sector } : null,
     // The 6 services, laid out by tier in the Services mega-menu.
     services: services.map((s) => ({ slug: s.slug, title: s.title, tier: s.tier })),
+    booking: {
+      people: bookable,
+      fallbackUrl: bookingFallbackUrl,
+      title: bookingT("compact.title"),
+      body: bookingT("compact.body"),
+      pillsLabel: bookingT("pills.label"),
+      fallbackCta: bookingT("cta"),
+      closeLabel: bookingT("closeModal"),
+    },
   };
 }
 

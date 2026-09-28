@@ -3,9 +3,7 @@
 import Image from "next/image";
 import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
-
-const CALENDLY_CSS = "https://assets.calendly.com/assets/external/widget.css";
-const CALENDLY_JS = "https://assets.calendly.com/assets/external/widget.js";
+import { CALENDLY_CSS, CALENDLY_JS, popupUrl } from "@/lib/calendly";
 
 export type BookablePerson = {
   slug: string;
@@ -232,25 +230,4 @@ function CalendarIcon() {
       <path d="M8 2v4M16 2v4M3 10h18" />
     </svg>
   );
-}
-
-/**
- * `hide_gdpr_banner=1` suppresses Calendly's own cookie banner: the site runs its
- * own consent banner and the privacy policy names the scheduler, so a second
- * banner inside the modal only covers the date picker.
- *
- * `hide_event_type_details=1` drops the left pane, which the pill already states
- * (name) and the surrounding copy states (30 minutes), keeping the modal compact.
- */
-function popupUrl(raw: string): string {
-  try {
-    const u = new URL(raw);
-    if (u.hostname === "calendly.com" || u.hostname.endsWith(".calendly.com")) {
-      u.searchParams.set("hide_event_type_details", "1");
-      u.searchParams.set("hide_gdpr_banner", "1");
-    }
-    return u.toString();
-  } catch {
-    return raw;
-  }
 }

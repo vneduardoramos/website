@@ -30,5 +30,6 @@
   "compact": {
     "title": "Rather just ask someone?",
     "body": "Book 30 minutes with the person who would own the work. No deck, no obligation, and a straight answer on whether we are the right fit."
-  }
+  },
+  "closeModal": "Close"
 }

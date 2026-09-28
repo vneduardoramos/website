@@ -11,6 +11,8 @@ import { LocaleSwitcher } from "@/components/marketing/LocaleSwitcher";
 import { getFlavor } from "@/components/marketing/industries/flavor";
 import { getServiceFlavor } from "@/components/marketing/service/flavor";
 import { MODEL_PROVIDERS } from "@/lib/model-providers";
+import { BookingModal } from "@/components/marketing/BookingModal";
+import type { BookablePerson } from "@/components/marketing/BookingPills";
 
 type NavChild = { key: string; label: string; href: string; group?: string };
 type NavItem = {
@@ -247,6 +249,22 @@ export type NavData = {
   featuredCase?: { title: string; slug: string; sector: string } | null;
   /** The published services, for the tier-organized Services mega-menu. */
   services?: { slug: string; title: string; tier: string }[];
+  /**
+   * The booking modal every "Let's talk" button opens, pre-resolved
+   * server-side (roster, fallback URL, already-localized copy) so the
+   * client component only ever renders it. Optional because `<Nav />` also
+   * renders with no navData at all on the 404 page; without it, "Let's
+   * talk" falls back to its plain /contact link.
+   */
+  booking?: {
+    people: BookablePerson[];
+    fallbackUrl: string;
+    title: string;
+    body: string;
+    pillsLabel: string;
+    fallbackCta: string;
+    closeLabel: string;
+  };
 };
 
 function Chevron({ className }: { className?: string }) {
@@ -506,9 +524,21 @@ export function Nav({ navData }: { navData?: NavData }) {
   const [open, setOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [bookingOpen, setBookingOpen] = useState(false);
   const items = theme.nav as unknown as NavItem[];
   const pathname = usePathname();
   const t = useTranslations("nav");
+
+  const booking = navData?.booking;
+  // A real link to /contact underneath, so no-JS or a missing roster still
+  // gets a working destination; onClick only intercepts when the modal has
+  // somewhere real to send the click.
+  const onCtaClick = booking?.fallbackUrl
+    ? (e: React.MouseEvent) => {
+        e.preventDefault();
+        setBookingOpen(true);
+      }
+    : undefined;
 
   // A nav target is "current" when the path matches exactly, or (for section
   // roots) when the path is nested under it. Home only matches exactly so it
@@ -554,6 +584,7 @@ export function Nav({ navData }: { navData?: NavData }) {
   );
 
   return (
+    <>
     <header
       className={cn(
         "sticky top-0 z-50 font-display transition-all duration-300",
@@ -769,7 +800,7 @@ export function Nav({ navData }: { navData?: NavData }) {
 
         <div className="hidden items-center gap-3 lg:flex">
           <LocaleSwitcher />
-          <Link href="/contact" className="btn-primary group">
+          <Link href="/contact" onClick={onCtaClick} className="btn-primary group">
             {t("cta")}
             <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
           </Link>
@@ -891,7 +922,10 @@ export function Nav({ navData }: { navData?: NavData }) {
             <div className="mt-3 flex items-center gap-3 border-t border-border pt-3">
               <Link
                 href="/contact"
-                onClick={() => setOpen(false)}
+                onClick={(e) => {
+                  setOpen(false);
+                  onCtaClick?.(e);
+                }}
                 className={cn("btn-primary", "flex-1")}
               >
                 {t("cta")}
@@ -902,5 +936,19 @@ export function Nav({ navData }: { navData?: NavData }) {
         </div>
       )}
     </header>
+    {booking && (
+      <BookingModal
+        open={bookingOpen}
+        onClose={() => setBookingOpen(false)}
+        people={booking.people}
+        fallbackUrl={booking.fallbackUrl}
+        title={booking.title}
+        body={booking.body}
+        pillsLabel={booking.pillsLabel}
+        fallbackCta={booking.fallbackCta}
+        closeLabel={booking.closeLabel}
+      />
+    )}
+    </>
   );
 }

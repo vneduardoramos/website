@@ -5,6 +5,7 @@ import Script from "next/script";
 import { useEffect, useId, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { consentIsCurrent, readConsent } from "@/lib/consent";
+import { CALENDLY_CSS, CALENDLY_JS, popupUrl } from "@/lib/calendly";
 import { cn } from "@/lib/utils";
 
 /**
@@ -31,8 +32,6 @@ type ChatMessage = {
 const STORAGE_KEY = "vn-chat-v1";
 const MAX_STORED = 20;
 const MAX_AGE_MS = 24 * 60 * 60 * 1000; // a day: old chats start fresh rather than resurface stale context
-const CALENDLY_CSS = "https://assets.calendly.com/assets/external/widget.css";
-const CALENDLY_JS = "https://assets.calendly.com/assets/external/widget.js";
 
 type StoredSession = { ts: number; open: boolean; messages: ChatMessage[] };
 
@@ -57,19 +56,6 @@ function saveSession(session: StoredSession) {
   } catch {
     // Storage-hostile environment (private mode, quota): the chat still
     // works for this pageview, it just won't survive a reload.
-  }
-}
-
-function popupUrl(raw: string): string {
-  try {
-    const u = new URL(raw);
-    if (u.hostname === "calendly.com" || u.hostname.endsWith(".calendly.com")) {
-      u.searchParams.set("hide_event_type_details", "1");
-      u.searchParams.set("hide_gdpr_banner", "1");
-    }
-    return u.toString();
-  } catch {
-    return raw;
   }
 }
 
