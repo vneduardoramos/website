@@ -3,14 +3,19 @@ import { Link } from "@/i18n/navigation";
 import { getJobOpenings } from "@/lib/queries";
 import { Reveal } from "@/components/marketing/Motion";
 import { BookACall } from "@/components/marketing/BookACall";
+import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n-content";
 
 /**
  * "Join the team": the home page's one nod at hiring, closer to the ask than
  * a footer link deserves but well short of the full /careers hub. Up to three
- * open roles as plain tiles, or a quiet invitation to apply anyway when the
- * board is empty, which happens: certified people don't rotate through a big
- * pipeline.
+ * open roles, or a quiet invitation to apply anyway when the board is empty,
+ * which happens: certified people don't rotate through a big pipeline.
+ *
+ * The layout scales to the count rather than always assuming three: a single
+ * opening in a 3-column grid left two empty slots and read like a mistake,
+ * not a real listing, so one role gets a single wide featured card and two
+ * get a 2-column grid; only three fills the original 3-up grid.
  *
  * Closes the page: a visitor not hiring and not ready to talk gets nothing
  * further to do, so the booking card (BookACall, "inline") lives in this same
@@ -45,8 +50,35 @@ export async function CareersTeaser({ locale }: { locale: Locale }) {
             )}
           </div>
 
-          {roles.length > 0 ? (
-            <div className="mt-12 grid gap-5 md:auto-rows-fr md:grid-cols-3">
+          {roles.length === 0 ? (
+            <div className="mt-12 flex flex-col items-start gap-5 rounded-2xl border border-border bg-background p-8 md:flex-row md:items-center md:justify-between">
+              <p className="max-w-xl leading-relaxed text-muted">{t("empty")}</p>
+              <Link href="/careers" className="btn-ghost shrink-0">
+                {t("emptyCta")}
+              </Link>
+            </div>
+          ) : roles.length === 1 ? (
+            // One opening: a wide featured card rather than one tile adrift
+            // in a grid built for three, with room for the full description
+            // and a real button in place of the text link the grid uses.
+            <div className="mt-12 flex flex-col gap-6 rounded-2xl border border-border bg-background p-8 md:flex-row md:items-center md:justify-between md:gap-10">
+              <div className="min-w-0">
+                <span className="font-mono text-xs uppercase tracking-[0.14em] text-muted">
+                  {roles[0]!.employment}
+                  {roles[0]!.location ? ` · ${roles[0]!.location}` : ""}
+                </span>
+                <h3 className="mt-3 font-display text-xl font-bold leading-snug text-foreground md:text-2xl">
+                  {roles[0]!.title}
+                </h3>
+                <p className="mt-3 max-w-xl leading-relaxed text-muted">{roles[0]!.description}</p>
+              </div>
+              <Link href={`/careers/${roles[0]!.slug}`} className="btn-primary group shrink-0">
+                {t("viewRole")}
+                <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
+              </Link>
+            </div>
+          ) : (
+            <div className={cn("mt-12 grid gap-5 md:auto-rows-fr", roles.length === 2 ? "sm:grid-cols-2" : "md:grid-cols-3")}>
               {roles.map((job) => (
                 <Link
                   key={job.slug}
@@ -65,13 +97,6 @@ export async function CareersTeaser({ locale }: { locale: Locale }) {
                   </span>
                 </Link>
               ))}
-            </div>
-          ) : (
-            <div className="mt-12 flex flex-col items-start gap-5 rounded-2xl border border-border bg-background p-8 md:flex-row md:items-center md:justify-between">
-              <p className="max-w-xl leading-relaxed text-muted">{t("empty")}</p>
-              <Link href="/careers" className="btn-ghost shrink-0">
-                {t("emptyCta")}
-              </Link>
             </div>
           )}
         </Reveal>
