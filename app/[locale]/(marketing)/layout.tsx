@@ -10,6 +10,7 @@ import { AuthProvider } from "@/components/admin/SessionProvider";
 import { ImageOverrideProvider } from "@/components/marketing/ImageOverrideProvider";
 import { EditModeProvider } from "@/components/marketing/EditModeProvider";
 import { ChatWidget } from "@/components/marketing/ChatWidget";
+import { RetroEasterEgg } from "@/components/marketing/RetroEasterEgg";
 import { theme } from "@/config/theme";
 
 // Small content-aware bits surfaced in the mega-menu featured tiles. Fetched
@@ -123,6 +124,7 @@ export default async function MarketingLayout({
       <main id="main-content" className="flex-1">{children}</main>
       <Footer />
       <ChatWidget />
+      <RetroEasterEgg />
     </div>
   );
   return (
