@@ -930,7 +930,7 @@ export function Nav({ navData }: { navData?: NavData }) {
               >
                 {t("cta")}
               </Link>
-              <LocaleSwitcher className="rounded-lg border border-border px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-primaryDeep" />
+              <LocaleSwitcher />
             </div>
           </div>
         </div>

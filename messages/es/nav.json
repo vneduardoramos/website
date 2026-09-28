@@ -32,7 +32,8 @@
   "cta": "Hablemos",
   "toggleMenu": "Abrir menú",
   "homeAriaLabel": "Inicio de {brand}",
-  "switchToTarget": "Switch to English",
+  "languageLabel": "Idioma",
+  "switchTo": "Cambiar a {language}",
   "groups": {
     "whatWeDo": "Qué hacemos",
     "howWeWork": "Cómo trabajamos",
