@@ -102,6 +102,10 @@ export async function CareersTeaser({ locale }: { locale: Locale }) {
         </Reveal>
 
         <div className="mt-14 border-t border-border pt-10 md:mt-16 md:pt-12">
+          {/* Its own eyebrow, parallel to "Join the team" above: without one,
+              this read as a sub-item of hiring rather than the section's
+              second, unrelated ask (anyone who wants to talk business). */}
+          <p className="eyebrow mb-3">{t("bookingEyebrow")}</p>
           <BookACall variant="inline" />
         </div>
       </div>
