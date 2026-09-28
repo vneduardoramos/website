@@ -75,38 +75,53 @@ export function BookingModal({
         aria-labelledby={titleId}
         tabIndex={-1}
         onClick={(e) => e.stopPropagation()}
-        className="max-h-[85vh] w-full max-w-lg overflow-y-auto rounded-t-3xl border border-border bg-background p-6 shadow-soft-lg outline-none sm:rounded-3xl sm:p-8"
+        className="flex max-h-[88vh] w-full max-w-lg flex-col overflow-hidden rounded-t-3xl border border-border bg-background shadow-soft-lg outline-none sm:rounded-3xl"
       >
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <h2 id={titleId} className="font-display text-xl font-bold text-foreground md:text-2xl">
-              {title}
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-muted">{body}</p>
-          </div>
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label={closeLabel}
-            className="shrink-0 rounded-full p-1.5 text-muted transition-colors hover:bg-surface2 hover:text-foreground"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
+        {/* The panel's one warm moment: the same sunset treatment CtaBand
+            closes the page with, here opening the conversation instead.
+            The roster below stays on a plain surface, so the cards (the
+            actual decision) read as calm and legible against it. */}
+        <div className="panel-sunset panel-editorial relative shrink-0 overflow-hidden p-6 sm:p-8">
+          <div className="bg-grid pointer-events-none absolute inset-0 opacity-50" />
+          <div className="pointer-events-none absolute -right-10 -top-14 h-40 w-40 rounded-full bg-gold/30 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-16 -left-10 h-40 w-40 rounded-full bg-red/15 blur-3xl" />
+          <div className="relative flex items-start justify-between gap-4">
+            <div>
+              <h2 id={titleId} className="text-balance font-display text-xl font-bold text-foreground md:text-2xl">
+                {title}
+              </h2>
+              <p className="mt-2 max-w-sm text-sm leading-relaxed text-foreground/70">{body}</p>
+            </div>
+            <button
+              type="button"
+              onClick={onClose}
+              aria-label={closeLabel}
+              className="shrink-0 rounded-full p-1.5 text-foreground/60 transition-colors hover:bg-white/40 hover:text-foreground"
             >
-              <path d="M18 6 6 18M6 6l12 12" />
-            </svg>
-          </button>
+              <svg
+                viewBox="0 0 24 24"
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M18 6 6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
         </div>
 
-        <div className="mt-6">
-          <BookingPills people={people} fallbackUrl={fallbackUrl} label={pillsLabel} fallbackLabel={fallbackCta} />
+        <div className="overflow-y-auto p-6 sm:p-8">
+          <BookingPills
+            people={people}
+            fallbackUrl={fallbackUrl}
+            label={pillsLabel}
+            fallbackLabel={fallbackCta}
+            size="lg"
+          />
         </div>
       </div>
     </div>

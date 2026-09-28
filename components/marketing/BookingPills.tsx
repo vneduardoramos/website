@@ -53,6 +53,7 @@ export function BookingPills({
   label,
   fallbackLabel,
   tone = "light",
+  size = "sm",
 }: {
   people: BookablePerson[];
   /** Used when nobody shown has a calendar of their own. */
@@ -65,6 +66,13 @@ export function BookingPills({
    * cards either way and read as the brightest thing on a dark background.
    */
   tone?: "light" | "dark";
+  /**
+   * "sm" is the original compact pill, sized to sit inline beside other
+   * copy. "lg" is for a surface that is only this (the booking modal): a
+   * bigger photo and more room for the topics line, so the roster reads as
+   * the point of the screen rather than a footer widget.
+   */
+  size?: "sm" | "lg";
 }) {
   const wrapper = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
@@ -157,9 +165,9 @@ export function BookingPills({
         {label}
       </p>
 
-      <div className="mt-4 flex flex-wrap gap-3">
+      <div className={size === "lg" ? "mt-5 flex flex-col gap-3" : "mt-4 flex flex-wrap gap-3"}>
         {hasPeople ? (
-          people.map((p) => (
+          people.map((p, i) => (
             <a
               key={p.slug}
               href={p.url}
@@ -167,33 +175,61 @@ export function BookingPills({
               rel="noopener noreferrer"
               onClick={open(p.url)}
               aria-label={p.ariaLabel}
-              className={[
-                "group flex items-center gap-3 border border-border bg-surface py-2 pl-2 pr-5 text-left shadow-soft transition hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-soft-lg",
-                // A topics line makes the pill two lines taller, so soften the
-                // radius rather than keeping a full pill shape.
-                p.topics ? "max-w-sm rounded-2xl" : "rounded-full",
-              ].join(" ")}
+              className={
+                size === "lg"
+                  ? "group flex items-center gap-4 rounded-2xl border border-border bg-surface p-4 text-left shadow-soft transition hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-soft-lg"
+                  : [
+                      "group flex items-center gap-3 border border-border bg-surface py-2 pl-2 pr-5 text-left shadow-soft transition hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-soft-lg",
+                      // A topics line makes the pill two lines taller, so soften the
+                      // radius rather than keeping a full pill shape.
+                      p.topics ? "max-w-sm rounded-2xl" : "rounded-full",
+                    ].join(" ")
+              }
             >
               {p.photo ? (
                 <Image
                   src={p.photo}
                   alt=""
-                  width={36}
-                  height={36}
-                  sizes="36px"
-                  className="h-9 w-9 rounded-full object-cover"
+                  width={size === "lg" ? 56 : 36}
+                  height={size === "lg" ? 56 : 36}
+                  sizes={size === "lg" ? "56px" : "36px"}
+                  className={
+                    size === "lg"
+                      ? // The logo's own hues, one per card, round-robin: a small,
+                        // repeated brand touch rather than a flat gray avatar ring.
+                        `h-14 w-14 shrink-0 rounded-full object-cover ring-2 ring-offset-2 ring-offset-surface ${
+                          ["ring-royal/50", "ring-primary/60", "ring-accent/60"][i % 3]
+                        }`
+                      : "h-9 w-9 rounded-full object-cover"
+                  }
                 />
               ) : null}
-              <span className="leading-tight">
-                <span className="block text-sm font-semibold text-foreground group-hover:text-primaryDeep">
+              <span className="min-w-0 flex-1 leading-tight">
+                <span
+                  className={
+                    size === "lg"
+                      ? "block font-display text-base font-bold text-foreground group-hover:text-primaryDeep"
+                      : "block text-sm font-semibold text-foreground group-hover:text-primaryDeep"
+                  }
+                >
                   {p.name}
                 </span>
-                <span className="block text-xs text-muted">{p.title}</span>
+                <span className={size === "lg" ? "block text-sm text-muted" : "block text-xs text-muted"}>
+                  {p.title}
+                </span>
                 {p.topics && (
-                  <span className="mt-1 block text-xs leading-snug text-muted/90">{p.topics}</span>
+                  <span
+                    className={
+                      size === "lg"
+                        ? "mt-1.5 block text-sm leading-snug text-muted/90"
+                        : "mt-1 block text-xs leading-snug text-muted/90"
+                    }
+                  >
+                    {p.topics}
+                  </span>
                 )}
               </span>
-              <CalendarIcon />
+              <CalendarIcon large={size === "lg"} />
             </a>
           ))
         ) : (
@@ -215,11 +251,15 @@ export function BookingPills({
   );
 }
 
-function CalendarIcon() {
+function CalendarIcon({ large }: { large?: boolean }) {
   return (
     <svg
       viewBox="0 0 24 24"
-      className="ml-1 h-4 w-4 shrink-0 text-muted transition-colors group-hover:text-primaryDeep"
+      className={
+        large
+          ? "ml-1 h-5 w-5 shrink-0 text-muted transition-colors group-hover:text-primaryDeep"
+          : "ml-1 h-4 w-4 shrink-0 text-muted transition-colors group-hover:text-primaryDeep"
+      }
       fill="none"
       stroke="currentColor"
       strokeWidth={2}
