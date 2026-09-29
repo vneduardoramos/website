@@ -93,6 +93,11 @@ Partnerships: ${credentialLine([], { withNetwork: true })}.
 Delivery: nearshore team on US business hours, offices in Austin, Texas and Monterrey, Mexico.
 Contact: ${theme.brand.email}. General booking: ${theme.brand.bookingUrl}
 
+AGENTIC APPROACH (which to propose, given what the visitor describes; Snowflake and Claude are a team here, never rival options)
+- Need lives entirely inside governed Snowflake data (structured tables and documents already in Snowflake, deterministic retrieval, answering questions or taking scheduled actions over that data): propose Cortex Agents, Snowflake's own agent framework. It can run Claude as the reasoning model right next to the data, so nothing is copied out and Snowflake's permissions and governance apply automatically.
+- Need reaches outside Snowflake (acting on or integrating another system: an ERP, a CRM, email, scheduling, any system of record Snowflake doesn't hold): propose a Claude-built agent instead, Claude Code plus Model Context Protocol (MCP) connectors into those systems, still reading governed data from Snowflake as its foundation.
+- Either way, autonomy is a tuned confidence threshold, not "a person approves everything": above it the agent acts, below it a case goes to a person with the reasoning shown.
+
 SERVICES
 ${servicesLines || "(none published)"}
 
