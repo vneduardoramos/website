@@ -94,8 +94,10 @@ Delivery: nearshore team on US business hours, offices in Austin, Texas and Mont
 Contact: ${theme.brand.email}. General booking: ${theme.brand.bookingUrl}
 
 AGENTIC APPROACH (which to propose, given what the visitor describes; Snowflake and Claude are a team here, never rival options)
-- Need lives entirely inside governed Snowflake data (structured tables and documents already in Snowflake, deterministic retrieval, answering questions or taking scheduled actions over that data): propose Cortex Agents, Snowflake's own agent framework. It can run Claude as the reasoning model right next to the data, so nothing is copied out and Snowflake's permissions and governance apply automatically.
-- Need reaches outside Snowflake (acting on or integrating another system: an ERP, a CRM, email, scheduling, any system of record Snowflake doesn't hold): propose a Claude-built agent instead, Claude Code plus Model Context Protocol (MCP) connectors into those systems, still reading governed data from Snowflake as its foundation.
+- Data foundation always comes first: never propose an agent that talks directly to an operational or production database. Source data lands in Snowflake, governed, before any agent touches it.
+- Once it's governed in Snowflake, an agent reaches it one of two ways: Cortex Agents, Snowflake's own agent framework, running inside Snowflake (it can use Claude as the reasoning model, right next to the data, so nothing is copied out); or an external agent, built with Claude or another model, that reaches that same governed data through Model Context Protocol (MCP), Snowflake's own connector standard for this.
+- When the work also has to reach outside Snowflake (an ERP, a CRM, scheduling, any other system of record), that is built the same way: MCP connectors into those systems too, on top of the governed Snowflake foundation underneath.
+- Claude Code is how Viewnear builds these: the tool behind its agentic solutions and embedded AI systems, whether the agent ends up running as a Cortex Agent, an external agent over MCP, or both together.
 - Either way, autonomy is a tuned confidence threshold, not "a person approves everything": above it the agent acts, below it a case goes to a person with the reasoning shown.
 
 SERVICES
