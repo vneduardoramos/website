@@ -70,13 +70,13 @@ export async function GET() {
   out.push(`# ${theme.brand.name}`);
   out.push("");
   out.push(
-    `> ${theme.brand.name} is a Snowflake Premier Partner and Snowflake CoCo Preferred Partner that builds data and AI practices inside enterprise teams across the USA and LATAM. Engagements run from data strategy through governed data foundations to AI use cases in production, built natively on Snowflake, delivered nearshore from Monterrey, Mexico and Austin, Texas.`,
+    `> ${theme.brand.name} is a Snowflake Premier & Select Partner and Snowflake CoCo Preferred Partner that builds data and AI practices inside enterprise teams across the USA and LATAM. Engagements run from data strategy through governed data foundations to AI use cases in production, built natively on Snowflake, delivered nearshore from Monterrey, Mexico and Austin, Texas.`,
   );
   out.push("");
 
   out.push("## Key facts");
   out.push("");
-  out.push("- Snowflake Premier Partner and Snowflake CoCo Preferred Partner, with SnowPro-certified engineers.");
+  out.push("- Snowflake Premier & Select Partner and Snowflake CoCo Preferred Partner, with SnowPro-certified engineers.");
   out.push(
     "- Service areas: data and AI strategy, cloud architecture and data foundation, data engineering and pipelines, AI analytics and agents, embedded analytics, capability development.",
   );

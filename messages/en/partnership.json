@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Snowflake Premier Partner and Claude Certified Partner",
-    "description": "A Snowflake Premier and CoCo Preferred Partner, and a Claude Certified Partner: certified depth on governed data, Claude agents that act on it, delivered across the USA and LATAM."
+    "title": "Snowflake Premier & Select Partner and Claude Certified Partner",
+    "description": "A Snowflake Premier & Select Partner, and CoCo Preferred Partner, and a Claude Certified Partner: certified depth on governed data, Claude agents that act on it, delivered across the USA and LATAM."
   },
   "hero": {
     "eyebrow": "Partnerships",
@@ -40,7 +40,7 @@
       "dimension": "Snowflake expertise",
       "inhouse": "Learned on the job, funded in-house",
       "big3": "One of many platforms they cover",
-      "viewnear": "Premier Partner specialists, end to end"
+      "viewnear": "Premier & Select Partner specialists, end to end"
     },
     {
       "dimension": "Agentic AI expertise",
@@ -72,7 +72,7 @@
   "networks": {
     "snowflake": {
       "title": "Governed data and the AI layer, on Snowflake",
-      "body": "Premier Partner and CoCo Preferred Partner. Migrations, governed foundations, and Cortex AI through Cortex AI Gateway, delivered by SnowPro-certified architects and engineers.",
+      "body": "Premier & Select Partner and CoCo Preferred Partner. Migrations, governed foundations, and Cortex AI through Cortex AI Gateway, delivered by SnowPro-certified architects and engineers.",
       "cta": "The Snowflake partnership"
     },
     "claude": {

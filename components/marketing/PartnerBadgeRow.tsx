@@ -29,6 +29,10 @@ import { cn } from "@/lib/utils";
 const BASE_PX = { sm: 80, md: 104, lg: 128, xl: 170 } as const;
 type Size = keyof typeof BASE_PX;
 
+// How much of the back badge peeks out from behind the front one, as a
+// fraction of the front badge's own size, on both axes (bottom-right).
+const STACK_PEEK = 0.25;
+
 export function PartnerBadgeMark({
   partner,
   size = "md",
@@ -47,6 +51,42 @@ export function PartnerBadgeMark({
       </span>
     );
   }
+
+  if (partner.stackedBadge) {
+    // Two tiers, one credential: the back badge (Select) sits behind and
+    // down-right of the front one (Premier), peeking out by STACK_PEEK of
+    // its own size, rather than two badges shown side by side to parse
+    // independently. Both are the same seal artwork (same w/h), so a plain
+    // height swap keeps them round; no separate width math needed.
+    const peek = Math.round(h * STACK_PEEK);
+    return (
+      <span
+        className={cn("relative inline-block", className)}
+        style={{ width: h + peek, height: h + peek }}
+      >
+        <Image
+          src={partner.stackedBadge.src}
+          alt=""
+          aria-hidden="true"
+          width={partner.stackedBadge.w}
+          height={partner.stackedBadge.h}
+          sizes={`${h}px`}
+          style={{ height: h, width: h }}
+          className="absolute bottom-0 right-0 rounded-full object-contain"
+        />
+        <Image
+          src={partner.badge.src}
+          alt={`${partner.badge.alt} and ${partner.stackedBadge.alt}`}
+          width={partner.badge.w}
+          height={partner.badge.h}
+          sizes={`${h}px`}
+          style={{ height: h, width: h }}
+          className="absolute left-0 top-0 rounded-full object-contain ring-4 ring-background"
+        />
+      </span>
+    );
+  }
+
   return (
     <Image
       src={partner.badge.src}

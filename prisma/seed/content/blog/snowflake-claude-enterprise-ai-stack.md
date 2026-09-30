@@ -63,7 +63,7 @@ This approach keeps the investment tied to an operating result. The first use ca
 
 ## Why Viewnear
 
-Viewnear is a [Snowflake Premier Partner](/partnership/snowflake) and CoCo Preferred Partner, and a [Claude Certified Partner in the Claude Partner Network](/partnership/claude). We bring data engineering, AI engineering, governance and business process design into one engagement, because a client should not have to coordinate several vendors to deliver one outcome.
+Viewnear is a [Snowflake Premier & Select Partner](/partnership/snowflake) and CoCo Preferred Partner, and a [Claude Certified Partner in the Claude Partner Network](/partnership/claude). We bring data engineering, AI engineering, governance and business process design into one engagement, because a client should not have to coordinate several vendors to deliver one outcome.
 
 Our work starts with the business process and the economics behind it. We then build the Snowflake foundation, connect the required systems and documents, deploy the [agent](/data-ai) and measure the result against the original baseline. The solution runs in the client's own environment and is documented as it is built, and the same team can keep operating and improving it once it is live.
 

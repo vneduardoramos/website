@@ -10,7 +10,7 @@
     "chips": [
       "Horario del centro de EE. UU.",
       "Certificados en SnowPro",
-      "Snowflake Premier Partner",
+      "Snowflake Premier & Select Partner",
       "CoCo Preferred Partner"
     ],
     "clocksNote": "El equipo trabaja en el horario laboral del cliente todo el año. Monterrey mantiene el horario estándar del centro (CST), así que cuando el centro de Estados Unidos cambia a CDT de marzo a noviembre el reloj de aquí marca una hora menos: la jornada se traslapa por completo y nada espera hasta el día siguiente."
@@ -74,8 +74,8 @@
   },
   "numbers": [
     {
-      "value": "Premier",
-      "label": "Snowflake Premier + CoCo Preferred Partner"
+      "value": "Premier + Select",
+      "label": "Snowflake Premier & Select + CoCo Preferred Partner"
     },
     {
       "value": "10",

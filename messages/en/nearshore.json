@@ -10,7 +10,7 @@
     "chips": [
       "US Central working hours",
       "SnowPro-certified",
-      "Snowflake Premier Partner",
+      "Snowflake Premier & Select Partner",
       "CoCo Preferred Partner"
     ],
     "clocksNote": "The team works your business hours year round. Monterrey holds Central Standard Time (CST) all year, so when US Central moves to CDT from March to November the clock here sits an hour behind: the working day still overlaps end to end and nothing waits overnight."
@@ -74,8 +74,8 @@
   },
   "numbers": [
     {
-      "value": "Premier",
-      "label": "Snowflake Premier + CoCo Preferred Partner"
+      "value": "Premier + Select",
+      "label": "Snowflake Premier & Select + CoCo Preferred Partner"
     },
     {
       "value": "10",

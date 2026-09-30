@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "Consultoría e implementación de Snowflake",
-    "description": "Servicios de consultoría e implementación de Snowflake de un Snowflake Premier y CoCo Preferred Partner. Consultores certificados en SnowPro, entrega nearshore en horario de EE. UU., primer valor en producción en 8 a 16 semanas."
+    "description": "Servicios de consultoría e implementación de Snowflake de un Snowflake Premier & Select Partner, y CoCo Preferred Partner. Consultores certificados en SnowPro, entrega nearshore en horario de EE. UU., primer valor en producción en 8 a 16 semanas."
   },
   "hero": {
     "eyebrow": "Consultoría e implementación de Snowflake",
     "title": "Consultoría e <hl>implementación de Snowflake</hl>",
-    "description": "Un Snowflake Premier y CoCo Preferred Partner que dimensiona, diseña e implementa todo: base de datos gobernada, migración, analítica e IA en producción. Consultores certificados en SnowPro en horario laboral de Estados Unidos, con precio atado al resultado y no a la hora.",
+    "description": "Un Snowflake Premier & Select Partner, y CoCo Preferred Partner, que dimensiona, diseña e implementa todo: base de datos gobernada, migración, analítica e IA en producción. Consultores certificados en SnowPro en horario laboral de Estados Unidos, con precio atado al resultado y no a la hora.",
     "chips": [
-      "Snowflake Premier Partner",
+      "Snowflake Premier & Select Partner",
       "CoCo Preferred Partner",
       "Consultores certificados en SnowPro",
       "Primer valor en 8 a 16 semanas"
@@ -103,7 +103,7 @@
       "label": "Certificaciones SnowPro"
     },
     {
-      "value": "Premier",
+      "value": "Premier + Select",
       "label": "Nivel de partner de Snowflake"
     }
   ],
@@ -114,7 +114,7 @@
   },
   "why": [
     {
-      "title": "Premier y CoCo Preferred, verificado",
+      "title": "Premier, Select y CoCo Preferred, verificado",
       "body": "Reconocidos en el programa CoCo Preferred Partner de Snowflake en Summit 2026, junto a los grandes integradores globales de sistemas y las firmas Big Four. En la práctica significa que hay una línea directa con Snowflake cuando un build enfrenta una pregunta difícil."
     },
     {
@@ -185,7 +185,7 @@
     },
     {
       "q": "¿Qué estatus de partner de Snowflake tiene Viewnear?",
-      "a": "Viewnear es Snowflake Premier Partner y Snowflake CoCo Preferred Partner, con ingenieros certificados en SnowPro y un historial de entrega verificado en Estados Unidos y LATAM. El estatus Premier refleja entrega certificada en todo el stack de Snowflake, y trabajamos junto al equipo de cuenta de Snowflake del cliente en arquitectura y entrega."
+      "a": "Viewnear es Snowflake Premier & Select Partner y Snowflake CoCo Preferred Partner, con ingenieros certificados en SnowPro y un historial de entrega verificado en Estados Unidos y LATAM. Los estatus Premier y Select reflejan entrega certificada en todo el stack de Snowflake, y trabajamos junto al equipo de cuenta de Snowflake del cliente en arquitectura y entrega."
     },
     {
       "q": "¿Pueden migrar nuestro data warehouse actual a Snowflake?",

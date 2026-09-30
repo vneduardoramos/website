@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Snowflake Premier Partner: Snowflake y Viewnear",
-    "description": "Viewnear es Snowflake Premier Partner y CoCo Preferred Partner: bases de datos gobernadas, migraciones y la capa de IA sobre Snowflake, de Cortex AI a Cortex AI Gateway, con entrega nearshore en toda América."
+    "title": "Snowflake Premier & Select Partner: Snowflake y Viewnear",
+    "description": "Viewnear es Snowflake Premier & Select Partner y CoCo Preferred Partner: bases de datos gobernadas, migraciones y la capa de IA sobre Snowflake, de Cortex AI a Cortex AI Gateway, con entrega nearshore en toda América."
   },
   "breadcrumb": {
     "home": "Inicio",
@@ -10,9 +10,9 @@
   },
   "hero": {
     "eyebrow": "Snowflake y Viewnear",
-    "kicker": "Premier Partner en la Snowflake Partner Network",
+    "kicker": "Premier & Select Partner en la Snowflake Partner Network",
     "title": "Datos gobernados. El plano de control agéntico. <hl>Un solo equipo que entrega sobre Snowflake.</hl>",
-    "description": "Viewnear es Snowflake Premier Partner y CoCo Preferred Partner, uno de los equipos especializados que lleva a una empresa de un almacén heredado a datos gobernados en Snowflake y de ahí a la capa de IA encima: Cortex AI, Cortex Agents y Cortex AI Gateway. Arquitectos e ingenieros con certificación SnowPro, en horario de Estados Unidos desde Austin y Monterrey, con el precio ligado al resultado.",
+    "description": "Viewnear es Snowflake Premier & Select Partner y CoCo Preferred Partner, uno de los equipos especializados que lleva a una empresa de un almacén heredado a datos gobernados en Snowflake y de ahí a la capa de IA encima: Cortex AI, Cortex Agents y Cortex AI Gateway. Arquitectos e ingenieros con certificación SnowPro, en horario de Estados Unidos desde Austin y Monterrey, con el precio ligado al resultado.",
     "ctaPrimary": "Hablar con un arquitecto de Snowflake",
     "ctaSecondary": "Ver el trabajo"
   },
@@ -33,7 +33,7 @@
   "stack": {
     "eyebrow": "La superficie sobre la que construimos",
     "title": "Todo el stack de Snowflake, no una esquina",
-    "intro": "Lo que aterriza los datos, lo que los gobierna y lo que corre encima. Viewnear entrega las tres capas, que es lo que el nivel Premier debería significar.",
+    "intro": "Lo que aterriza los datos, lo que los gobierna y lo que corre encima. Viewnear entrega las tres capas, que es lo que los niveles Premier y Select deberían significar.",
     "groups": [
       {
         "label": "Base",
@@ -112,7 +112,7 @@
     "label": "Sobre la alianza con Claude"
   },
   "cta": {
-    "title": "Un Premier Partner para el trabajo en Snowflake.",
+    "title": "Un Premier & Select Partner para el trabajo en Snowflake.",
     "subtitle": "Con saber en qué punto está la organización con Snowflake, ya sea la compra, una migración o la capa de IA, traemos al equipo certificado, con Snowflake en la mesa."
   }
 }

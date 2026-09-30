@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Servicios de Data & AI en Snowflake",
-    "description": "Servicios de datos e IA en Snowflake: estrategia, migración, ingeniería, analítica y agentes de IA. Snowflake Premier Partner, entrega nearshore en América."
+    "description": "Servicios de datos e IA en Snowflake: estrategia, migración, ingeniería, analítica y agentes de IA. Snowflake Premier & Select Partner, entrega nearshore en América."
   },
   "breadcrumb": {
     "home": "Inicio",
@@ -51,7 +51,7 @@
         "label": "Certificaciones SnowPro"
       },
       {
-        "value": "Premier",
+        "value": "Premier + Select",
         "label": "Nivel de partner de Snowflake"
       }
     ],

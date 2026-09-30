@@ -5,8 +5,8 @@ export const contentType = OG_CONTENT_TYPE;
 export const alt = "Viewnear, Snowflake partnership";
 
 const COPY = {
-  en: { eyebrow: "Partnership", title: "A Snowflake Premier Partner" },
-  es: { eyebrow: "Alianza", title: "Snowflake Premier Partner" },
+  en: { eyebrow: "Partnership", title: "A Snowflake Premier & Select Partner" },
+  es: { eyebrow: "Alianza", title: "Snowflake Premier & Select Partner" },
 } as const;
 
 export default function Image({ params }: { params: { locale: string } }) {

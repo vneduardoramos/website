@@ -9,7 +9,8 @@
  * with their network and level beneath, use PartnerBadgeRow.
  */
 import Image from "next/image";
-import { PARTNERS, SNOWFLAKE, type PartnerBadge, type PartnerNetwork } from "@/config/partners";
+import { PARTNERS, SNOWFLAKE, type PartnerNetwork } from "@/config/partners";
+import { PartnerBadgeMark } from "@/components/marketing/PartnerBadgeRow";
 import { cn } from "@/lib/utils";
 
 type Credential = { label: string; partner: PartnerNetwork["key"] };
@@ -23,18 +24,6 @@ const CREDENTIALS: readonly Credential[] = [
 
 /** Flat labels, for callers that only need the text. */
 export const CERTIFICATIONS: readonly string[] = CREDENTIALS.map((c) => c.label);
-
-/**
- * The official artwork that may be shown, primary badges first. `only` narrows
- * it to one network, for blocks that are about that network alone and where the
- * other partner's badge would read as a stray credential.
- */
-function badgeImages(only?: PartnerNetwork["key"]): PartnerBadge[] {
-  return [
-    ...PARTNERS.filter((p) => !only || p.key === only).flatMap((p) => (p.badge ? [p.badge] : [])),
-    ...(only && only !== "snowflake" ? [] : SNOWFLAKE.secondary),
-  ];
-}
 
 function SnowflakeMark({ className = "h-4 w-4" }: { className?: string }) {
   return (
@@ -73,12 +62,19 @@ export function PartnerBadges({
 }) {
   const credentials = CREDENTIALS.filter((c) => !only || c.partner === only);
   if (variant === "logos") {
-    // Bare artwork, no frame. Each badge's displayScale keeps a wide lockup
-    // from dominating the circles beside it.
+    // Bare artwork, no frame. Routed through PartnerBadgeMark (not a plain
+    // <Image> per badge) so Snowflake's Premier/Select stack renders here
+    // exactly as it does everywhere else the primary badge shows, with one
+    // definition of what "the Snowflake badge" looks like.
     const base = size === "sm" ? 80 : 128;
+    const mainPartners = PARTNERS.filter((p) => !only || p.key === only);
+    const secondaryBadges = !only || only === "snowflake" ? SNOWFLAKE.secondary : [];
     return (
       <div className={cn("flex flex-wrap items-center gap-x-8 gap-y-5", className)}>
-        {badgeImages(only).map((b) => (
+        {mainPartners.map((p) => (
+          <PartnerBadgeMark key={p.key} partner={p} size={size} />
+        ))}
+        {secondaryBadges.map((b) => (
           <Image
             key={b.src}
             src={b.src}
@@ -86,7 +82,7 @@ export function PartnerBadges({
             width={b.w}
             height={b.h}
             sizes={size === "sm" ? "160px" : "320px"}
-            style={{ height: Math.round(base * (b.displayScale ?? 1)) }}
+            style={{ height: Math.round(base * 0.7) }}
             className="w-auto object-contain"
           />
         ))}

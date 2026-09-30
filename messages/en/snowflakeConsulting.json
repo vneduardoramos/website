@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "Snowflake Consulting & Implementation Services",
-    "description": "Snowflake consulting and implementation services from a Snowflake Premier and CoCo Preferred Partner. SnowPro-certified consultants, nearshore delivery in US hours, first production value in 8–16 weeks."
+    "description": "Snowflake consulting and implementation services from a Snowflake Premier & Select Partner, and CoCo Preferred Partner. SnowPro-certified consultants, nearshore delivery in US hours, first production value in 8–16 weeks."
   },
   "hero": {
     "eyebrow": "Snowflake consulting & implementation",
     "title": "Snowflake consulting and <hl>implementation services</hl>",
-    "description": "A Snowflake Premier and CoCo Preferred Partner that scopes, designs, and implements the whole thing: governed data foundation, migration, analytics, and AI in production. SnowPro-certified consultants working US business hours, priced on the outcome rather than the hour.",
+    "description": "A Snowflake Premier & Select Partner, and CoCo Preferred Partner, that scopes, designs, and implements the whole thing: governed data foundation, migration, analytics, and AI in production. SnowPro-certified consultants working US business hours, priced on the outcome rather than the hour.",
     "chips": [
-      "Snowflake Premier Partner",
+      "Snowflake Premier & Select Partner",
       "CoCo Preferred Partner",
       "SnowPro-certified consultants",
       "First value in 8–16 weeks"
@@ -103,7 +103,7 @@
       "label": "SnowPro certifications held"
     },
     {
-      "value": "Premier",
+      "value": "Premier + Select",
       "label": "Snowflake partner tier"
     }
   ],
@@ -114,7 +114,7 @@
   },
   "why": [
     {
-      "title": "Premier and CoCo Preferred, verified",
+      "title": "Premier, Select and CoCo Preferred, verified",
       "body": "Recognized in Snowflake's CoCo Preferred Partner program at Summit 2026 alongside the global systems integrators and Big Four firms. In practice it means a direct line to Snowflake when a build hits a hard question."
     },
     {
@@ -185,7 +185,7 @@
     },
     {
       "q": "What Snowflake partner status does Viewnear hold?",
-      "a": "Viewnear is a Snowflake Premier Partner and a Snowflake CoCo Preferred Partner, with SnowPro-certified engineers and a verified delivery track record across the USA and LATAM. Premier status reflects certified delivery across the full Snowflake stack, and we work alongside the client's own Snowflake account team on architecture and delivery."
+      "a": "Viewnear is a Snowflake Premier & Select Partner and a Snowflake CoCo Preferred Partner, with SnowPro-certified engineers and a verified delivery track record across the USA and LATAM. Premier and Select status reflect certified delivery across the full Snowflake stack, and we work alongside the client's own Snowflake account team on architecture and delivery."
     },
     {
       "q": "Can you migrate our existing data warehouse to Snowflake?",

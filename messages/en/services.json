@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Snowflake Data & AI Services",
-    "description": "Snowflake data and AI services: strategy, migration, engineering, analytics, and AI agents. Snowflake Premier Partner, nearshore delivery across the USA and LATAM."
+    "description": "Snowflake data and AI services: strategy, migration, engineering, analytics, and AI agents. Snowflake Premier & Select Partner, nearshore delivery across the USA and LATAM."
   },
   "breadcrumb": {
     "home": "Home",
@@ -51,7 +51,7 @@
         "label": "SnowPro certifications held"
       },
       {
-        "value": "Premier",
+        "value": "Premier + Select",
         "label": "Snowflake partner tier"
       }
     ],

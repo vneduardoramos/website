@@ -63,7 +63,7 @@ Este enfoque mantiene la inversión atada a un resultado operativo. El primer ca
 
 ## Por qué Viewnear
 
-Viewnear es Snowflake Premier Partner y [CoCo Preferred Partner](/es/partnership/snowflake), y [Claude Certified Partner en el Claude Partner Network](/es/partnership/claude). Reunimos ingeniería de datos, ingeniería de IA, gobierno y diseño de procesos de negocio en un mismo proyecto, porque un cliente no debería tener que coordinar a varios proveedores para obtener un solo resultado.
+Viewnear es Snowflake Premier & Select Partner y [CoCo Preferred Partner](/es/partnership/snowflake), y [Claude Certified Partner en el Claude Partner Network](/es/partnership/claude). Reunimos ingeniería de datos, ingeniería de IA, gobierno y diseño de procesos de negocio en un mismo proyecto, porque un cliente no debería tener que coordinar a varios proveedores para obtener un solo resultado.
 
 El trabajo empieza por el proceso de negocio y la economía detrás de él. Después se construye la base en Snowflake, se conectan los sistemas y documentos necesarios, se despliega el [agente](/es/data-ai) y se mide el resultado contra la línea base original. La solución corre en el entorno del propio cliente y se documenta conforme se construye, y el mismo equipo puede seguir operándola y mejorándola una vez en producción.
 

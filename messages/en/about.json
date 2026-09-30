@@ -10,10 +10,10 @@
   "hero": {
     "eyebrow": "About Viewnear",
     "title": "We build data & AI practices with enterprises across the <hl>USA and LATAM</hl>.",
-    "description": "Viewnear is a Snowflake Premier and CoCo Preferred Partner that builds two lasting capabilities with enterprises: a data practice that feeds real decisions and an AI practice that ships use cases into production, both on Snowflake and run by in-house teams. Delivery runs from Austin, Texas and Monterrey, Mexico."
+    "description": "Viewnear is a Snowflake Premier & Select Partner and CoCo Preferred Partner that builds two lasting capabilities with enterprises: a data practice that feeds real decisions and an AI practice that ships use cases into production, both on Snowflake and run by in-house teams. Delivery runs from Austin, Texas and Monterrey, Mexico."
   },
   "heroChips": [
-    "Snowflake Premier Partner",
+    "Snowflake Premier & Select Partner",
     "CoCo Preferred Partner",
     "SnowPro-certified",
     "USA and LATAM delivery"
@@ -21,7 +21,7 @@
   "whoWeAre": {
     "eyebrow": "Who we are",
     "title": "We build it alongside the team, and keep improving it with them",
-    "body": "Viewnear helps enterprises stand up two capabilities they keep: a data practice and an AI practice, built on Snowflake and run by in-house teams. We work alongside those teams from first workshop to production, across strategy, architecture, engineering, analytics, and governed AI, and we integrate what we build both ways: operational data flows in, and decisions, answers, and AI agents flow back into the systems where work happens. We grew from a specialist practice into a Snowflake Premier Partner by going deep on one platform, and that focus shapes how we hire, train, and deliver.",
+    "body": "Viewnear helps enterprises stand up two capabilities they keep: a data practice and an AI practice, built on Snowflake and run by in-house teams. We work alongside those teams from first workshop to production, across strategy, architecture, engineering, analytics, and governed AI, and we integrate what we build both ways: operational data flows in, and decisions, answers, and AI agents flow back into the systems where work happens. We grew from a specialist practice into a Snowflake Premier & Select Partner by going deep on one platform, and that focus shapes how we hire, train, and deliver.",
     "cta": "How we deliver",
     "imageAlt": "A collage of the Viewnear team across Snowflake events: the data + ai booth, Data for Breakfast, Snowflake Summit, and team meals"
   },
@@ -45,7 +45,7 @@
     },
     {
       "label": "Partner tier",
-      "title": "Snowflake Premier Partner",
+      "title": "Snowflake Premier & Select Partner",
       "body": "Certified delivery and a verified track record, measured on outcomes rather than breadth of logos."
     },
     {
@@ -61,8 +61,8 @@
   },
   "trackRecord": [
     {
-      "value": "Premier",
-      "label": "Snowflake Premier + CoCo Preferred Partner"
+      "value": "Premier + Select",
+      "label": "Snowflake Premier & Select + CoCo Preferred Partner"
     },
     {
       "value": "10",

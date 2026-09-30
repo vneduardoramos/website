@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Snowflake Premier Partner: Snowflake and Viewnear",
-    "description": "Viewnear is a Snowflake Premier Partner and CoCo Preferred Partner: governed data foundations, migrations, and the AI layer on Snowflake, from Cortex AI to Cortex AI Gateway, delivered nearshore across the USA and LATAM."
+    "title": "Snowflake Premier & Select Partner: Snowflake and Viewnear",
+    "description": "Viewnear is a Snowflake Premier & Select Partner and CoCo Preferred Partner: governed data foundations, migrations, and the AI layer on Snowflake, from Cortex AI to Cortex AI Gateway, delivered nearshore across the USA and LATAM."
   },
   "breadcrumb": {
     "home": "Home",
@@ -10,9 +10,9 @@
   },
   "hero": {
     "eyebrow": "Snowflake and Viewnear",
-    "kicker": "Premier Partner in the Snowflake Partner Network",
+    "kicker": "Premier & Select Partner in the Snowflake Partner Network",
     "title": "Governed data. The agentic control plane. <hl>One team that ships on Snowflake.</hl>",
-    "description": "Viewnear is a Snowflake Premier Partner and CoCo Preferred Partner, one of the specialist teams that takes an enterprise from a legacy warehouse to governed data on Snowflake and on to the AI layer above it: Cortex AI, Cortex Agents and Cortex AI Gateway. SnowPro-certified architects and engineers, working US hours from Austin and Monterrey, priced to the result.",
+    "description": "Viewnear is a Snowflake Premier & Select Partner and CoCo Preferred Partner, one of the specialist teams that takes an enterprise from a legacy warehouse to governed data on Snowflake and on to the AI layer above it: Cortex AI, Cortex Agents and Cortex AI Gateway. SnowPro-certified architects and engineers, working US hours from Austin and Monterrey, priced to the result.",
     "ctaPrimary": "Talk to a Snowflake architect",
     "ctaSecondary": "See the work"
   },
@@ -33,7 +33,7 @@
   "stack": {
     "eyebrow": "The surface we build on",
     "title": "The whole Snowflake stack, not a corner of it",
-    "intro": "What lands the data, what governs it, and what runs on top. Viewnear delivers all three, which is what Premier tier is meant to mean.",
+    "intro": "What lands the data, what governs it, and what runs on top. Viewnear delivers all three, which is what the Premier and Select tiers are meant to mean.",
     "groups": [
       {
         "label": "Foundation",
@@ -112,7 +112,7 @@
     "label": "About the Claude partnership"
   },
   "cta": {
-    "title": "Put a Premier Partner on the Snowflake work.",
+    "title": "Put a Premier & Select Partner on the Snowflake work.",
     "subtitle": "Tell us where the organization stands with Snowflake, whether that is procurement, a migration or the AI layer, and we'll bring the certified team, with Snowflake at the table."
   }
 }

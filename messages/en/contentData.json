@@ -39,7 +39,7 @@
         { "value": "FINRA · SEC · SOX", "label": "Aligned reporting" },
         { "value": "Full lineage", "label": "On every reported number" },
         { "value": "8–16 wks", "label": "To first value in production" },
-        { "value": "Premier", "label": "Snowflake Premier Partner" }
+        { "value": "Premier + Select", "label": "Snowflake Premier & Select Partner" }
       ],
       "bullets": [
         "A single governed warehouse consolidating fragmented banking, insurance, and asset data",
@@ -103,7 +103,7 @@
         { "value": "Usage + network", "label": "One governed source" },
         { "value": "Full-volume", "label": "Telemetry, query-ready" },
         { "value": "8–16 wks", "label": "To first value in production" },
-        { "value": "Premier", "label": "Snowflake Premier Partner" }
+        { "value": "Premier + Select", "label": "Snowflake Premier & Select Partner" }
       ],
       "bullets": [
         "Product usage, billing, and network telemetry unified and governed",

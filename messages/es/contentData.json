@@ -39,7 +39,7 @@
         { "value": "FINRA · SEC · SOX", "label": "Reportes alineados" },
         { "value": "Linaje completo", "label": "En cada número reportado" },
         { "value": "8–16 sem", "label": "Hasta el primer valor en producción" },
-        { "value": "Premier", "label": "Snowflake Premier Partner" }
+        { "value": "Premier + Select", "label": "Snowflake Premier & Select Partner" }
       ],
       "bullets": [
         "Un único almacén de datos gobernado que consolida datos fragmentados de banca, seguros y activos",
@@ -103,7 +103,7 @@
         { "value": "Uso + red", "label": "Una sola fuente gobernada" },
         { "value": "Volumen completo", "label": "Telemetría lista para consultar" },
         { "value": "8–16 sem", "label": "Hasta el primer valor en producción" },
-        { "value": "Premier", "label": "Snowflake Premier Partner" }
+        { "value": "Premier + Select", "label": "Snowflake Premier & Select Partner" }
       ],
       "bullets": [
         "Uso de producto, facturación y telemetría de red unificados y gobernados",
