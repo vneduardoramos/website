@@ -48,6 +48,11 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#29B5E8",
+  // Pinch-to-zoom disabled per owner request. This is a deliberate a11y
+  // trade-off (WCAG 1.4.4 wants zoom available) the site is choosing to
+  // make, not an oversight.
+  maximumScale: 1,
+  userScalable: false,
 };
 
 const orgJsonLd = (locale: string) => ({
