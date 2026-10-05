@@ -127,12 +127,15 @@ export function PartnerHero({
         {partner && (
           <div className="container-page pointer-events-none absolute inset-x-0 top-1/2 hidden -translate-y-1/2 justify-end lg:flex">
             <div className="pointer-events-auto w-fit max-w-64 xl:max-w-96">
-              {/* One size down at lg, where the headline runs close to the badge. */}
+              {/* One size down at lg, where the headline runs close to the badge.
+                  preferTall: the one spot a badge stands alone rather than
+                  paired against the other network's mark, so Claude's
+                  portrait cut fits here instead of the row-sized square. */}
               <span className="block xl:hidden">
-                <PartnerBadgeMark partner={partner} size="lg" />
+                <PartnerBadgeMark partner={partner} size="lg" preferTall />
               </span>
               <span className="hidden xl:block">
-                <PartnerBadgeMark partner={partner} size="xl" />
+                <PartnerBadgeMark partner={partner} size="xl" preferTall />
               </span>
               <div className="mt-5 font-mono text-xs uppercase tracking-[0.14em] text-muted">
                 <div>{partner.network}</div>

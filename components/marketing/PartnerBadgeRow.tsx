@@ -14,11 +14,13 @@ import { cn } from "@/lib/utils";
  * single white rectangle laid across the indigo panel, because there the page
  * behind them is dark.
  *
- * Sizing. The badges cannot share a height and look equal: Snowflake's is a
- * circle and the Claude Partner Network's is a wide lockup, which reads much
- * heavier at the same height. Each badge carries a `displayScale` in
- * config/partners.ts, and everything here multiplies the base height by it, so
- * the pair stays in proportion wherever it appears.
+ * Sizing. Snowflake's badge is a circle; Claude's (the Chip cut, square) was
+ * chosen specifically to match it, so the default case needs no
+ * `displayScale` correction to sit as an equal in a row. Snowflake's own
+ * second tier (`stackedBadge`) layers behind the primary circle instead of
+ * beside it; Claude's portrait cut (`badgeTall`) swaps in only where
+ * `preferTall` is passed, the one slot it stands alone rather than paired
+ * against the other network's mark.
  */
 // Floors, not decoration. Both badges carry type inside them, so a size is
 // only valid if the smallest words in it can be read: the Snowflake seal's
@@ -33,16 +35,47 @@ type Size = keyof typeof BASE_PX;
 // fraction of the front badge's own size, on both axes (bottom-right).
 const STACK_PEEK = 0.25;
 
+// next/image's built-in optimizer rejects local SVGs unless the project opts
+// into `dangerouslyAllowSVG` (a real risk for remote/untrusted sources, not
+// worth enabling site-wide for these three trusted local files). `unoptimized`
+// sidesteps the optimizer for just these images instead: Next serves the file
+// from /public as-is, which an SVG already is.
+const isSvg = (src: string) => src.toLowerCase().endsWith(".svg");
+
 export function PartnerBadgeMark({
   partner,
   size = "md",
+  preferTall = false,
   className,
 }: {
   partner: PartnerNetwork;
   size?: Size;
+  /**
+   * Use `badgeTall` instead of `badge` when the partner has one. For the one
+   * slot (the partnership-page hero credential) where the badge stands alone
+   * rather than paired in a row against the other network's mark.
+   */
+  preferTall?: boolean;
   className?: string;
 }) {
-  const h = Math.round(BASE_PX[size] * (partner.badge?.displayScale ?? 1));
+  const tall = preferTall ? partner.badgeTall : undefined;
+  const h = Math.round(BASE_PX[size] * ((tall ?? partner.badge)?.displayScale ?? 1));
+
+  if (tall) {
+    return (
+      <Image
+        src={tall.src}
+        alt={tall.alt}
+        width={tall.w}
+        height={tall.h}
+        sizes={`${Math.round(h * (tall.w / tall.h))}px`}
+        unoptimized={isSvg(tall.src) || undefined}
+        style={{ height: h }}
+        className={cn("w-auto object-contain", className)}
+      />
+    );
+  }
+
   if (!partner.badge) {
     return (
       <span className={cn("inline-flex items-center gap-2 font-display font-bold text-foreground", className)}>
@@ -94,6 +127,7 @@ export function PartnerBadgeMark({
       width={partner.badge.w}
       height={partner.badge.h}
       sizes={`${BASE_PX[size] * 4}px`}
+      unoptimized={isSvg(partner.badge.src) || undefined}
       style={{ height: h }}
       className={cn("w-auto object-contain", className)}
     />

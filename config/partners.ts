@@ -51,6 +51,13 @@ export type PartnerNetwork = {
    * credential, not two recognitions to read independently.
    */
   stackedBadge?: PartnerBadge;
+  /**
+   * A taller cut of the same badge, for the one spot it stands alone with
+   * real vertical room (the partnership-page hero credential, PartnerPageBlocks'
+   * `preferTall`) rather than paired in a row against the other network's mark,
+   * where a portrait shape next to a circle would read as mismatched.
+   */
+  badgeTall?: PartnerBadge;
   /** Further recognitions inside the same program (shown smaller, with the primary). */
   secondary: PartnerBadge[];
   /** Where a reader can verify the claim. */
@@ -82,21 +89,25 @@ export const ANTHROPIC: PartnerNetwork = {
   network: "Claude Partner Network",
   level: "Certified Partner",
   label: "Claude Certified Partner",
-  // Anthropic's artwork, with everything outside the rounded card made
-  // transparent so the badge sits on the page rather than carrying its own
-  // cream rectangle onto every surface. The file exactly as supplied is kept
-  // beside it as claude-partner-network-member-original.png.
+  // Anthropic's official SVGs (2026-10-05), replacing the old wide "Member"
+  // card and its raster successor: three cuts of the same "Certified Services
+  // Partner" badge, all already transparent outside the rounded card.
   //
-  // displayScale: the card is 1.87:1 where the Snowflake seal is 1:1, so at an
-  // equal height it reads much wider and heavier. Held at 0.82 so the two sit
-  // as equals in a row.
-  badge: {
-    src: "/assets/images/certs/claude-partner-network-member.png",
-    alt: "Claude Partner Network member badge",
-    w: 1021,
-    h: 546,
-    displayScale: 0.82,
-  },
+  // `badge`, the Chip cut (90x90, square): used everywhere this sits in a row
+  // beside Snowflake's circle (footer, home Recognition, the partnership hub,
+  // the standalone logo rows on /migrations, /data-ai, /case-studies,
+  // /snowflake-consulting-services). Square like the Snowflake seal, so no
+  // displayScale correction is needed to read as an equal (the old wide card
+  // held this below 1 to compensate for its 1.87:1 shape; this one does not).
+  badge: { src: "/assets/images/certs/claude-certified-chip.svg", alt: "Claude Certified Services Partner badge", w: 90, h: 90 },
+  // The Vertical cut (150x300, portrait): used only on the partnership-page
+  // hero credential, the one place the badge stands alone with no other
+  // network's mark beside it to match proportions against. A third cut,
+  // Horizontal (300x95, landscape), ships alongside these in
+  // public/assets/images/certs/ but has no slot that suits it yet: everywhere
+  // the badge appears is either paired with Snowflake's circle (wants square)
+  // or alone with vertical room to spare (wants portrait).
+  badgeTall: { src: "/assets/images/certs/claude-certified-vertical.svg", alt: "Claude Certified Services Partner badge", w: 150, h: 300 },
   secondary: [],
   directoryUrl: ANTHROPIC_DIRECTORY_URL,
   // Verified 2026-09-16: Q116758847 resolves to "Anthropic, American artificial

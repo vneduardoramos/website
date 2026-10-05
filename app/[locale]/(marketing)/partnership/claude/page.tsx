@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { Section, CtaBand } from "@/components/marketing/ui";
 import { Link } from "@/i18n/navigation";
 import { PRESS_HOME_QUOTE, PRIMARY_SPEAKER, getOutlet } from "@/lib/press";
+import { ANTHROPIC } from "@/config/partners";
 import {
   PartnerHero,
   TwoWays,
@@ -29,6 +30,7 @@ export default async function ClaudePartnershipPage({ params }: { params: { loca
   const { locale } = params;
   setRequestLocale(locale);
   const t = await getTranslations("partnershipClaude");
+  const u = await getTranslations("sharedUi");
   const outlet = getOutlet(PRESS_HOME_QUOTE.outlet);
 
   return (
@@ -48,12 +50,14 @@ export default async function ClaudePartnershipPage({ params }: { params: { loca
       />
 
       <PartnerHero
+        partner={ANTHROPIC}
         eyebrow={t("hero.eyebrow")}
         kicker={t("hero.kicker")}
         title={t.rich("hero.title", { hl })}
         description={t("hero.description")}
         ctaPrimary={t("hero.ctaPrimary")}
         ctaSecondary={t("hero.ctaSecondary")}
+        verify={u("partnerPlates.verify")}
       />
 
       <TwoWays eyebrow={t("ways.eyebrow")} title={t("ways.title")} items={t.raw("ways.items") as { title: string; body: string }[]} />
