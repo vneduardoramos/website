@@ -49,7 +49,7 @@ export const STATIC_ROUTES: StaticRoute[] = [
   { path: "/security", label: "Security and trust", group: "proof", blurb: "Governance, data handling and compliance posture" },
   { path: "/faq", label: "Frequently asked questions", group: "proof", blurb: "Partner status, pricing, timelines, security, contracting" },
   { path: "/press", label: "Press coverage", group: "proof", blurb: "Third-party press coverage quoting Viewnear" },
-  { path: "/snowflake-world-tour-mexico-city", label: "Snowflake World Tour Mexico City", group: "proof", blurb: "Viewnear at Snowflake World Tour Mexico City, October 13, 2026: booth details and a form to meet" },
+  { path: "/snowflake-world-tour-mexico-city", label: "Snowflake World Tour Mexico City", group: "proof", blurb: "Viewnear at Snowflake World Tour Mexico City, October 13, 2026, and a form to meet" },
   { path: "/blog", label: "Blog", group: "proof", blurb: "Field notes on Snowflake, data engineering and AI" },
   { path: "/resources", label: "Resources", group: "proof", blurb: "Case studies, blog and FAQ in one place" },
   { path: "/about", label: "About Viewnear", group: "company", blurb: "The company, the leadership team and the track record" },

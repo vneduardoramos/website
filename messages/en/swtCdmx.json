@@ -1,25 +1,23 @@
 {
   "meta": {
     "title": "Meet Viewnear at Snowflake World Tour Mexico City",
-    "description": "Viewnear is a Blue Square Partner at Snowflake World Tour Mexico City, October 13, 2026, with a booth on the floor. Come by, or book a time to meet."
+    "description": "Viewnear will be at Snowflake World Tour Mexico City, October 13, 2026. Come by, or book a time to meet."
   },
   "hero": {
     "eyebrow": "Snowflake World Tour · Mexico City",
     "title": "We'll be at Snowflake World Tour Mexico City, <hl>October 13</hl>.",
-    "description": "Viewnear is a Blue Square Partner this year, with a booth on the floor. Come by to talk Snowflake, Claude, or whatever you're building, or save a time below so we don't miss each other.",
+    "description": "Come by to talk Snowflake, Claude, or whatever you're building, or save a time below so we don't miss each other.",
     "ctaPrimary": "Save a time to meet",
     "ctaSecondary": "See the Snowflake partnership"
   },
   "details": {
     "dateLabel": "Date",
     "date": "October 13, 2026",
-    "roleLabel": "Viewnear's role",
-    "role": "Blue Square Partner, with a booth",
     "whereLabel": "Where",
     "where": "Mexico City"
   },
   "flyer": {
-    "alt": "Snowflake World Tour Mexico City, October 13. Viewnear, Blue Square Partner."
+    "alt": "Official flyer: Snowflake World Tour Mexico City, October 13."
   },
   "lastYear": {
     "eyebrow": "From last year",

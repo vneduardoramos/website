@@ -100,8 +100,8 @@ export default async function SwtCdmxPage({ params }: { params: { locale: string
             <div className="relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-3xl border border-border shadow-soft-lg">
               <Image src={FLYER} alt={t("flyer.alt")} fill sizes="(min-width: 1024px) 30vw, 80vw" className="object-cover" />
             </div>
-            <div className="grid gap-6 sm:grid-cols-3">
-              {(["date", "role", "where"] as const).map((key) => (
+            <div className="grid gap-6 sm:grid-cols-2">
+              {(["date", "where"] as const).map((key) => (
                 <div key={key} className="rounded-2xl border border-border bg-background p-5">
                   <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted">
                     {t(`details.${key}Label`)}
