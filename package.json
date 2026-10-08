@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && prisma db push --skip-generate --accept-data-loss && tsx scripts/content-sync.ts import && next build",
+    "build": "rm -rf .next/cache/images && prisma generate && prisma db push --skip-generate --accept-data-loss && tsx scripts/content-sync.ts import && next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
