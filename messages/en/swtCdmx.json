@@ -29,5 +29,38 @@
     "eyebrow": "Let's meet at the show",
     "title": "Tell us you're coming.",
     "body": "Leave your info and the team will find a time during the show, or just come find the booth."
+  },
+  "accelerators": {
+    "eyebrow": "At the booth",
+    "title": "Live demos of our agentic accelerators.",
+    "body": "Five of these already run in production. Come see them work on real documents.",
+    "pipeline": "Five more are in development, across operational and profitability intelligence.",
+    "items": {
+      "docLens": {
+        "name": "DocLens",
+        "category": "Intelligent Document Processing",
+        "desc": "Document packets into validated business records"
+      },
+      "statementIQ": {
+        "name": "StatementIQ",
+        "category": "Bank Statement Intelligence",
+        "desc": "Reconciled balances, income and traceable summaries"
+      },
+      "underwriteIQ": {
+        "name": "UnderwriteIQ",
+        "category": "Loan Review & Decision Support",
+        "desc": "Review-ready underwriting recommendations"
+      },
+      "invoiceMatch": {
+        "name": "InvoiceMatch",
+        "category": "Invoice & Payment Reconciliation",
+        "desc": "Duplicate charges, price gaps and unmatched payments"
+      },
+      "contractLens": {
+        "name": "ContractLens",
+        "category": "Contract Intelligence",
+        "desc": "Obligations, terms and renewals checked against records"
+      }
+    }
   }
 }

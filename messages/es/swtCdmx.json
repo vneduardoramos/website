@@ -29,5 +29,38 @@
     "eyebrow": "Agendar en el evento",
     "title": "Avisar que se asistirá.",
     "body": "Con estos datos, el equipo busca un horario durante el evento, o simplemente se puede pasar al stand."
+  },
+  "accelerators": {
+    "eyebrow": "En el stand",
+    "title": "Demos en vivo de los aceleradores agénticos.",
+    "body": "Cinco de ellos ya corren en producción. Se puede ver cómo trabajan sobre documentos reales.",
+    "pipeline": "Otros cinco están en desarrollo, en inteligencia operativa y de rentabilidad.",
+    "items": {
+      "docLens": {
+        "name": "DocLens",
+        "category": "Procesamiento Inteligente de Documentos",
+        "desc": "Paquetes de documentos convertidos en registros de negocio validados"
+      },
+      "statementIQ": {
+        "name": "StatementIQ",
+        "category": "Inteligencia de Estados de Cuenta",
+        "desc": "Saldos conciliados, ingresos y resúmenes trazables"
+      },
+      "underwriteIQ": {
+        "name": "UnderwriteIQ",
+        "category": "Revisión de Créditos y Soporte de Decisión",
+        "desc": "Recomendaciones de originación listas para revisión"
+      },
+      "invoiceMatch": {
+        "name": "InvoiceMatch",
+        "category": "Conciliación de Facturas y Pagos",
+        "desc": "Cargos duplicados, diferencias de precio y pagos sin conciliar"
+      },
+      "contractLens": {
+        "name": "ContractLens",
+        "category": "Inteligencia de Contratos",
+        "desc": "Obligaciones, términos y renovaciones verificados contra los registros"
+      }
+    }
   }
 }

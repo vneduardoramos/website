@@ -14,6 +14,10 @@ import { SwtCdmxLeadForm } from "@/components/marketing/events/SwtCdmxLeadForm";
 const PATH = "/snowflake-world-tour-mexico-city";
 const FLYER = "/assets/images/events/swt-cdmx-flyer.jpg";
 
+// The 5 accelerators already in production. 5 more exist but are still in
+// development, so they're named in the booth signage, not on the public page.
+const ACCELERATOR_KEYS = ["docLens", "statementIQ", "underwriteIQ", "invoiceMatch", "contractLens"] as const;
+
 /**
  * One dated event: Snowflake World Tour Mexico City, October 13, 2026. A
  * standalone page (not a "news" listing, which this site deliberately does
@@ -149,6 +153,30 @@ export default async function SwtCdmxPage({ params }: { params: { locale: string
             <figcaption className="mt-3 text-sm leading-relaxed text-muted">{t("lastYear.cocoCaption")}</figcaption>
           </figure>
         </RevealGroup>
+      </Section>
+
+      <Section>
+        <Reveal>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="eyebrow mb-3">{t("accelerators.eyebrow")}</p>
+            <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+              {t("accelerators.title")}
+            </h2>
+            <p className="mt-4 leading-relaxed text-muted">{t("accelerators.body")}</p>
+          </div>
+        </Reveal>
+        <RevealGroup className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" variant="fade-up">
+          {ACCELERATOR_KEYS.map((key) => (
+            <div key={key} className="rounded-2xl border border-border bg-background p-6">
+              <p className="font-display text-lg font-bold text-foreground">{t(`accelerators.items.${key}.name`)}</p>
+              <p className="mt-1 font-mono text-xs uppercase tracking-[0.1em] text-muted">
+                {t(`accelerators.items.${key}.category`)}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-muted">{t(`accelerators.items.${key}.desc`)}</p>
+            </div>
+          ))}
+        </RevealGroup>
+        <p className="mt-8 text-center text-sm text-muted">{t("accelerators.pipeline")}</p>
       </Section>
 
       <Section id="meet">
