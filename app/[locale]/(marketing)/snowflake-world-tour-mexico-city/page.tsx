@@ -10,6 +10,10 @@ import { Section } from "@/components/marketing/ui";
 import { Reveal, RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 import { SectionDecor } from "@/components/marketing/Decor";
 import { SwtCdmxLeadForm } from "@/components/marketing/events/SwtCdmxLeadForm";
+import { CoverCard } from "@/components/marketing/CoverCard";
+import { getBlogPostBySlug, getCaseStudyBySlug } from "@/lib/queries";
+import { coverForSector } from "@/lib/covers";
+import type { Locale } from "@/lib/i18n-content";
 
 const PATH = "/snowflake-world-tour-mexico-city";
 const FLYER = "/assets/images/events/swt-cdmx-flyer.jpg";
@@ -17,6 +21,13 @@ const FLYER = "/assets/images/events/swt-cdmx-flyer.jpg";
 // The 5 accelerators already in production. 5 more exist but are still in
 // development, so they're named in the booth signage, not on the public page.
 const ACCELERATOR_KEYS = ["docLens", "statementIQ", "underwriteIQ", "invoiceMatch", "contractLens"] as const;
+const WHY_VISIT_KEYS = ["seeIt", "talkShop", "leaveWithAStep"] as const;
+
+// The one published agentic case study, and the piece that lays out why
+// Snowflake and Claude sit together, both squarely on-topic for a visitor
+// deciding whether the booth is worth their time before the show.
+const DEEPER_CASE_SLUG = "magnolia-doors-installation-scheduling";
+const DEEPER_BLOG_SLUG = "snowflake-claude-enterprise-ai-stack";
 
 /**
  * One dated event: Snowflake World Tour Mexico City, October 13, 2026. A
@@ -36,6 +47,10 @@ export default async function SwtCdmxPage({ params }: { params: { locale: string
   const { locale } = params;
   setRequestLocale(locale);
   const t = await getTranslations("swtCdmx");
+  const [deeperCase, deeperPost] = await Promise.all([
+    getCaseStudyBySlug(DEEPER_CASE_SLUG, locale as Locale),
+    getBlogPostBySlug(DEEPER_BLOG_SLUG, locale as Locale),
+  ]);
 
   const localePath = locale === "es" ? "/es" : "";
   const url = `${theme.brand.url}${localePath}${PATH}`;
@@ -120,6 +135,25 @@ export default async function SwtCdmxPage({ params }: { params: { locale: string
         </Reveal>
       </Section>
 
+      <Section>
+        <Reveal>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="eyebrow mb-3">{t("whyVisit.eyebrow")}</p>
+            <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+              {t("whyVisit.title")}
+            </h2>
+          </div>
+        </Reveal>
+        <RevealGroup className="mt-12 grid gap-6 md:grid-cols-3" variant="fade-up">
+          {WHY_VISIT_KEYS.map((key) => (
+            <div key={key} className="rounded-2xl border border-border bg-background p-6">
+              <p className="font-display text-lg font-bold text-foreground">{t(`whyVisit.items.${key}.title`)}</p>
+              <p className="mt-3 text-sm leading-relaxed text-muted">{t(`whyVisit.items.${key}.desc`)}</p>
+            </div>
+          ))}
+        </RevealGroup>
+      </Section>
+
       <Section className="section-warm">
         <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow mb-3">{t("lastYear.eyebrow")}</p>
@@ -201,6 +235,42 @@ export default async function SwtCdmxPage({ params }: { params: { locale: string
           </div>
         </Reveal>
       </Section>
+
+      {(deeperCase || deeperPost) && (
+        <Section>
+          <Reveal>
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="eyebrow mb-3">{t("deeper.eyebrow")}</p>
+              <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+                {t("deeper.title")}
+              </h2>
+            </div>
+          </Reveal>
+          <RevealGroup className="mt-12 grid gap-6 sm:grid-cols-2" variant="fade-up">
+            {deeperCase && (
+              <CoverCard
+                href={`/case-studies/${deeperCase.slug}`}
+                image={deeperCase.heroImage ?? coverForSector(deeperCase.sector, deeperCase.slug)}
+                imageAlt={deeperCase.title}
+                kicker={t("deeper.kickerCase")}
+                title={deeperCase.title}
+                excerpt={deeperCase.summary}
+                meta={`${deeperCase.sector} · ${deeperCase.region}`}
+              />
+            )}
+            {deeperPost && (
+              <CoverCard
+                href={`/blog/${deeperPost.slug}`}
+                image={deeperPost.coverImageUrl}
+                imageAlt={deeperPost.title}
+                kicker={t("deeper.kickerBlog")}
+                title={deeperPost.title}
+                excerpt={deeperPost.excerpt}
+              />
+            )}
+          </RevealGroup>
+        </Section>
+      )}
 
       <Section id="meet">
         <Reveal>

@@ -68,5 +68,29 @@
     "title": "Regalos para quien se pase a saludar.",
     "body": "Bolsas, botellas de agua, soportes para teléfono, cables de carga y dulces mexicanos, mientras dure el inventario.",
     "alt": "Regalos de marca Viewnear: bolsa, botella de agua, soporte para teléfono y cable de carga."
+  },
+  "whyVisit": {
+    "eyebrow": "Razones para pasar",
+    "title": "Tres razones para buscar el stand.",
+    "items": {
+      "seeIt": {
+        "title": "Verlo funcionando",
+        "desc": "Demos en vivo de los aceleradores sobre documentos reales, no una presentación."
+      },
+      "talkShop": {
+        "title": "Platicar de arquitectura",
+        "desc": "Arquitectura de Snowflake, gobernanza o dónde entra Claude, con quienes lo construyen."
+      },
+      "leaveWithAStep": {
+        "title": "Salir con un siguiente paso",
+        "desc": "Una idea acotada para un primer caso de uso, no solo una presentación comercial."
+      }
+    }
+  },
+  "deeper": {
+    "eyebrow": "Antes del evento",
+    "title": "Profundizar en lo que se hace.",
+    "kickerCase": "Caso de éxito",
+    "kickerBlog": "Notas de campo"
   }
 }

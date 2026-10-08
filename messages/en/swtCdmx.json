@@ -68,5 +68,29 @@
     "title": "Swag for everyone who stops by.",
     "body": "Tote bags, water bottles, phone stands, charging cables, and Mexican candy, while supplies last.",
     "alt": "Viewnear-branded swag: tote bag, water bottle, phone stand and charging cable."
+  },
+  "whyVisit": {
+    "eyebrow": "Why stop by",
+    "title": "Three reasons to find the booth.",
+    "items": {
+      "seeIt": {
+        "title": "See it running",
+        "desc": "Live demos of the accelerators on real documents, not a slide deck."
+      },
+      "talkShop": {
+        "title": "Talk shop",
+        "desc": "Snowflake architecture, governance, or where Claude fits, with the people who build it."
+      },
+      "leaveWithAStep": {
+        "title": "Leave with a next step",
+        "desc": "A scoped idea for a first use case, not just a vendor pitch."
+      }
+    }
+  },
+  "deeper": {
+    "eyebrow": "Before the show",
+    "title": "Go deeper on what we do.",
+    "kickerCase": "Case study",
+    "kickerBlog": "Field notes"
   }
 }
