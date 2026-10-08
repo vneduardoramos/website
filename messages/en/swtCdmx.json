@@ -62,5 +62,11 @@
         "desc": "Obligations, terms and renewals checked against records"
       }
     }
+  },
+  "swag": {
+    "eyebrow": "Stop by",
+    "title": "Swag for everyone who stops by.",
+    "body": "Tote bags, water bottles, phone stands, charging cables, and Mexican candy, while supplies last.",
+    "alt": "Viewnear-branded swag: tote bag, water bottle, phone stand and charging cable."
   }
 }

@@ -62,5 +62,11 @@
         "desc": "Obligaciones, términos y renovaciones verificados contra los registros"
       }
     }
+  },
+  "swag": {
+    "eyebrow": "Pasar al stand",
+    "title": "Regalos para quien se pase a saludar.",
+    "body": "Bolsas, botellas de agua, soportes para teléfono, cables de carga y dulces mexicanos, mientras dure el inventario.",
+    "alt": "Regalos de marca Viewnear: bolsa, botella de agua, soporte para teléfono y cable de carga."
   }
 }

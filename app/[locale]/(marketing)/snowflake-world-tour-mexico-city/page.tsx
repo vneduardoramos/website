@@ -179,6 +179,29 @@ export default async function SwtCdmxPage({ params }: { params: { locale: string
         <p className="mt-8 text-center text-sm text-muted">{t("accelerators.pipeline")}</p>
       </Section>
 
+      <Section className="section-warm">
+        <Reveal>
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-16">
+            <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-3xl border border-border shadow-soft-lg">
+              <Image
+                src="/assets/images/events/swt-cdmx-swag.jpg"
+                alt={t("swag.alt")}
+                fill
+                sizes="(min-width: 1024px) 30vw, 80vw"
+                className="aspect-[3/4] object-cover"
+              />
+            </div>
+            <div>
+              <p className="eyebrow mb-3">{t("swag.eyebrow")}</p>
+              <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+                {t("swag.title")}
+              </h2>
+              <p className="mt-4 leading-relaxed text-muted">{t("swag.body")}</p>
+            </div>
+          </div>
+        </Reveal>
+      </Section>
+
       <Section id="meet">
         <Reveal>
           <div className="mx-auto grid max-w-4xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-16">
