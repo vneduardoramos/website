@@ -1,5 +1,10 @@
 {
   "twoClocks": {
     "tagline": "La misma jornada, todos los días hábiles."
+  },
+  "eventBanner": {
+    "message": "Viewnear estará en Snowflake World Tour Ciudad de México, 13 de octubre.",
+    "cta": "Agendar una cita",
+    "close": "Cerrar"
   }
 }

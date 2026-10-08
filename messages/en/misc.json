@@ -1,5 +1,10 @@
 {
   "twoClocks": {
     "tagline": "The same working day, every working day."
+  },
+  "eventBanner": {
+    "message": "We're at Snowflake World Tour Mexico City, October 13.",
+    "cta": "Meet us there",
+    "close": "Dismiss"
   }
 }

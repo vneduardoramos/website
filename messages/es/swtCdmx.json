@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "title": "Viewnear en Snowflake World Tour Ciudad de México",
+    "description": "Viewnear es Blue Square Partner en Snowflake World Tour Ciudad de México, el 13 de octubre de 2026, con stand en el piso de exhibición. Se puede pasar, o agendar un horario para platicar."
+  },
+  "hero": {
+    "eyebrow": "Snowflake World Tour · Ciudad de México",
+    "title": "Viewnear estará en Snowflake World Tour Ciudad de México, <hl>13 de octubre</hl>.",
+    "description": "Este año Viewnear es Blue Square Partner, con stand en el piso de exhibición. Se puede pasar a platicar de Snowflake, Claude o lo que se esté construyendo, o agendar un horario abajo para no perdernos.",
+    "ctaPrimary": "Agendar un horario",
+    "ctaSecondary": "Ver la alianza con Snowflake"
+  },
+  "details": {
+    "dateLabel": "Fecha",
+    "date": "13 de octubre de 2026",
+    "roleLabel": "Rol de Viewnear",
+    "role": "Blue Square Partner, con stand",
+    "whereLabel": "Dónde",
+    "where": "Ciudad de México"
+  },
+  "flyer": {
+    "alt": "Snowflake World Tour Ciudad de México, 13 de octubre. Viewnear, Blue Square Partner."
+  },
+  "lastYear": {
+    "eyebrow": "Del año pasado",
+    "title": "El piso de exhibición, la última vez.",
+    "boothCaption": "El stand de Viewnear en el World Tour Ciudad de México del año pasado, mostrando una demo en vivo de Cortex AI.",
+    "cocoCaption": "Viewnear nombrado en el muro CoCo Global Partner Momentum de Snowflake, entre los partners que construyen con el agente de código propio de Snowflake."
+  },
+  "form": {
+    "eyebrow": "Agendar en el evento",
+    "title": "Avisar que se asistirá.",
+    "body": "Con estos datos, el equipo busca un horario durante el evento, o simplemente se puede pasar al stand."
+  }
+}

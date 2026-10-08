@@ -32,5 +32,18 @@
     "error": "Something went wrong. Please try again or email us directly.",
     "submitting": "Submitting...",
     "submit": "Submit application"
+  },
+  "eventLead": {
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "company": "Company",
+    "messageLabel": "What would you like to talk about? (optional)",
+    "messagePlaceholder": "A use case, a question about the partnership, just want to say hi...",
+    "error": "Something went wrong. Please try again or email us directly.",
+    "sending": "Sending...",
+    "send": "Count me in",
+    "successTitle": "You're on the list.",
+    "successBody": "We'll follow up before the show to set a time, or just find us at the booth."
   }
 }

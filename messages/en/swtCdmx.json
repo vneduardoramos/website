@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "title": "Meet Viewnear at Snowflake World Tour Mexico City",
+    "description": "Viewnear is a Blue Square Partner at Snowflake World Tour Mexico City, October 13, 2026, with a booth on the floor. Come by, or book a time to meet."
+  },
+  "hero": {
+    "eyebrow": "Snowflake World Tour · Mexico City",
+    "title": "We'll be at Snowflake World Tour Mexico City, <hl>October 13</hl>.",
+    "description": "Viewnear is a Blue Square Partner this year, with a booth on the floor. Come by to talk Snowflake, Claude, or whatever you're building, or save a time below so we don't miss each other.",
+    "ctaPrimary": "Save a time to meet",
+    "ctaSecondary": "See the Snowflake partnership"
+  },
+  "details": {
+    "dateLabel": "Date",
+    "date": "October 13, 2026",
+    "roleLabel": "Viewnear's role",
+    "role": "Blue Square Partner, with a booth",
+    "whereLabel": "Where",
+    "where": "Mexico City"
+  },
+  "flyer": {
+    "alt": "Snowflake World Tour Mexico City, October 13. Viewnear, Blue Square Partner."
+  },
+  "lastYear": {
+    "eyebrow": "From last year",
+    "title": "The floor, last time around.",
+    "boothCaption": "The Viewnear booth at last year's World Tour Mexico City, walking attendees through a live Cortex AI demo.",
+    "cocoCaption": "Viewnear named on Snowflake's CoCo Global Partner Momentum wall, among the partners building with Snowflake's own coding agent."
+  },
+  "form": {
+    "eyebrow": "Let's meet at the show",
+    "title": "Tell us you're coming.",
+    "body": "Leave your info and the team will find a time during the show, or just come find the booth."
+  }
+}

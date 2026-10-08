@@ -32,5 +32,18 @@
     "error": "Algo salió mal. Se puede intentar de nuevo o escribirnos directamente por correo electrónico.",
     "submitting": "Enviando...",
     "submit": "Enviar postulación"
+  },
+  "eventLead": {
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Correo electrónico",
+    "company": "Empresa",
+    "messageLabel": "¿De qué se quiere hablar? (opcional)",
+    "messagePlaceholder": "Un caso de uso, una pregunta sobre la alianza, o solo saludar...",
+    "error": "Algo salió mal. Se puede intentar de nuevo o escribirnos directamente por correo electrónico.",
+    "sending": "Enviando...",
+    "send": "Apuntarme",
+    "successTitle": "Listo, ya quedó registrado.",
+    "successBody": "El equipo dará seguimiento antes del evento para agendar un horario, o se puede pasar directo al stand."
   }
 }
