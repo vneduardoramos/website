@@ -181,14 +181,14 @@ export default async function SwtCdmxPage({ params }: { params: { locale: string
 
       <Section className="section-warm">
         <Reveal>
-          <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:gap-16">
-            <div className="relative mx-auto aspect-[16/15] w-full max-w-xl overflow-hidden rounded-3xl border border-border shadow-soft-lg">
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-16">
+            <div className="relative mx-auto aspect-[11/12] w-full max-w-sm overflow-hidden rounded-3xl border border-border shadow-soft-lg">
               <Image
                 src="/assets/images/events/swt-cdmx-swag.jpg"
                 alt={t("swag.alt")}
                 fill
-                sizes="(min-width: 1024px) 45vw, 90vw"
-                className="aspect-[16/15] object-cover"
+                sizes="(min-width: 1024px) 30vw, 80vw"
+                className="aspect-[11/12] object-cover"
               />
             </div>
             <div>
