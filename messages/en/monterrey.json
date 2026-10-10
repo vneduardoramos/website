@@ -12,7 +12,12 @@
     "eyebrow": "Nearshore delivery center",
     "title": "Our nearshore delivery center in <hl>Monterrey, Mexico</hl>",
     "description": "Most of the engineers, architects, and strategists who build on Snowflake work from one office in Monterrey, Nuevo León, on Central Time and US business hours, with leadership in Austin, Texas.",
-    "chips": ["Monterrey, Nuevo León", "Central Time all year", "SnowPro-certified", "Bilingual team"]
+    "chips": [
+      "Monterrey, Nuevo León",
+      "Central Time all year",
+      "SnowPro-certified",
+      "Bilingual team"
+    ]
   },
   "office": {
     "eyebrow": "The office",
@@ -83,7 +88,7 @@
   "delivers": [
     "Data modernization and migration onto Snowflake, governed from the first table",
     "Governed pipelines, data quality, and the AI-ready foundation underneath them",
-    "Cortex use cases and AI agents, built with Claude as an Anthropic partner",
+    "Cortex use cases and AI agents, built inside Snowflake",
     "Analytics, data apps, and enablement that leaves the practice in-house"
   ],
   "visit": {

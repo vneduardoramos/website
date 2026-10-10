@@ -6,7 +6,7 @@
   "hero": {
     "eyebrow": "Snowflake World Tour · Mexico City",
     "title": "We'll be at Snowflake World Tour Mexico City, <hl>October 13</hl>.",
-    "description": "Come by to talk Snowflake, Claude, or whatever you're building, or save a time below so we don't miss each other.",
+    "description": "Come by to talk Snowflake, agentic AI, or whatever you're building, or save a time below so we don't miss each other.",
     "ctaPrimary": "Save a time to meet",
     "ctaSecondary": "See the Snowflake partnership"
   },
@@ -79,7 +79,7 @@
       },
       "talkShop": {
         "title": "Talk shop",
-        "desc": "Snowflake architecture, governance, or where Claude fits, with the people who build it."
+        "desc": "Snowflake architecture, governance, or where agents fit, with the people who build it."
       },
       "leaveWithAStep": {
         "title": "Leave with a next step",

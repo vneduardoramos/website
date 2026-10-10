@@ -58,7 +58,7 @@
     {
       "label": "07",
       "title": "IA, Cortex y agentes",
-      "body": "Cortex Analyst sobre Semantic Views gobernadas, Cortex Search para recuperación y agentes que ejecutan la siguiente acción dentro de permisos por agente. Construido con Claude como socio de Anthropic."
+      "body": "Cortex Analyst sobre Semantic Views gobernadas, Cortex Search para recuperación y agentes que ejecutan la siguiente acción dentro de permisos por agente, todo corriendo dentro de Snowflake."
     },
     {
       "label": "08",
@@ -193,7 +193,7 @@
     },
     {
       "q": "¿Implementan IA y Cortex o solo la base de datos?",
-      "a": "Ambos, en ese orden. Los datos gobernados van primero, porque la IA sobre datos sin gobierno produce respuestas equivocadas con mucha seguridad. De ahí implementamos Cortex Analyst sobre Semantic Views, Cortex Search para recuperación y agentes que actúan dentro de permisos por agente, construidos con Claude como socio de Anthropic y con evals que miden la precisión antes de escalar un caso de uso."
+      "a": "Ambos, en ese orden. Los datos gobernados van primero, porque la IA sobre datos sin gobierno produce respuestas equivocadas con mucha seguridad. De ahí implementamos Cortex Analyst sobre Semantic Views, Cortex Search para recuperación y agentes que actúan dentro de permisos por agente, todo corriendo dentro de Snowflake, con evals que miden la precisión antes de escalar un caso de uso."
     },
     {
       "q": "¿Usan herramientas de terceros o se mantienen nativos en Snowflake?",

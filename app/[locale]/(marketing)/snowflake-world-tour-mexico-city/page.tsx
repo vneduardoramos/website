@@ -23,11 +23,11 @@ const FLYER = "/assets/images/events/swt-cdmx-flyer.jpg";
 const ACCELERATOR_KEYS = ["docLens", "statementIQ", "underwriteIQ", "invoiceMatch", "contractLens"] as const;
 const WHY_VISIT_KEYS = ["seeIt", "talkShop", "leaveWithAStep"] as const;
 
-// The one published agentic case study, and the piece that lays out why
-// Snowflake and Claude sit together, both squarely on-topic for a visitor
+// The one published agentic case study, and a piece on Snowflake as the
+// control plane for agentic work, both squarely on-topic for a visitor
 // deciding whether the booth is worth their time before the show.
 const DEEPER_CASE_SLUG = "magnolia-doors-installation-scheduling";
-const DEEPER_BLOG_SLUG = "snowflake-claude-enterprise-ai-stack";
+const DEEPER_BLOG_SLUG = "snowflake-control-plane-agentic-enterprise";
 
 /**
  * One dated event: Snowflake World Tour Mexico City, October 13, 2026. A

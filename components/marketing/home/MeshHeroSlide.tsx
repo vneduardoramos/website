@@ -9,9 +9,9 @@ import { credentialLine } from "@/config/partners";
 
 /**
  * Home hero. The headline names the problem the business recognizes, not the
- * vendors behind the answer: Snowflake and Claude appear once each in the
- * subhead, as the how, and again in the mono credential line, as the proof.
- * The badges themselves get their showing further down the page.
+ * vendor behind the answer: Snowflake appears once in the subhead, as the
+ * how, and again in the mono credential line, as the proof. The badge itself
+ * gets its showing further down the page.
  *
  * The second sentence of the headline carries the site's display gradient, the
  * same on-brand teal to indigo sweep the Customers and partnership headings

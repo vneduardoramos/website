@@ -12,7 +12,12 @@
     "eyebrow": "Centro de entrega nearshore",
     "title": "Nuestro centro de entrega nearshore en <hl>Monterrey, México</hl>",
     "description": "La mayoría de los ingenieros, arquitectos y estrategas que construyen sobre Snowflake trabajan desde una oficina en Monterrey, Nuevo León, en horario del centro y en la jornada laboral de Estados Unidos, con la dirección en Austin, Texas.",
-    "chips": ["Monterrey, Nuevo León", "Horario del centro todo el año", "Certificados en SnowPro", "Equipo bilingüe"]
+    "chips": [
+      "Monterrey, Nuevo León",
+      "Horario del centro todo el año",
+      "Certificados en SnowPro",
+      "Equipo bilingüe"
+    ]
   },
   "office": {
     "eyebrow": "La oficina",
@@ -83,7 +88,7 @@
   "delivers": [
     "Modernización y migración de datos a Snowflake, gobernados desde la primera tabla",
     "Pipelines gobernados, calidad de datos y la base lista para IA que los sostiene",
-    "Casos de uso de Cortex y agentes de IA, construidos con Claude como socio de Anthropic",
+    "Casos de uso de Cortex y agentes de IA, construidos dentro de Snowflake",
     "Analítica, aplicaciones de datos y habilitación que deja la práctica del lado interno"
   ],
   "visit": {

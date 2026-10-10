@@ -58,7 +58,7 @@
     {
       "label": "07",
       "title": "AI, Cortex & agents",
-      "body": "Cortex Analyst over governed Semantic Views, Cortex Search for retrieval, and agents that take the next action inside per-agent permissions. Built with Claude as an Anthropic partner."
+      "body": "Cortex Analyst over governed Semantic Views, Cortex Search for retrieval, and agents that take the next action inside per-agent permissions, all running inside Snowflake."
     },
     {
       "label": "08",
@@ -193,7 +193,7 @@
     },
     {
       "q": "Do you implement AI and Cortex, or only the data foundation?",
-      "a": "Both, in that order. Governed data comes first because AI on ungoverned data produces confident wrong answers. From there we implement Cortex Analyst over Semantic Views, Cortex Search for retrieval, and agents that act inside per-agent permissions, built with Claude as an Anthropic partner and with evals that measure accuracy before a use case scales."
+      "a": "Both, in that order. Governed data comes first because AI on ungoverned data produces confident wrong answers. From there we implement Cortex Analyst over Semantic Views, Cortex Search for retrieval, and agents that act inside per-agent permissions, all running inside Snowflake, with evals that measure accuracy before a use case scales."
     },
     {
       "q": "Do you use third-party tools or stay native to Snowflake?",

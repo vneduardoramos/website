@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Viewnear en la prensa: Snowflake, Anthropic e IA",
-    "description": "Viewnear en la prensa tecnológica y del canal: cobertura que cita a Eduardo Ramos sobre Snowflake, Anthropic y la entrega de IA basada en resultados."
+    "title": "Viewnear en la prensa: Snowflake e IA",
+    "description": "Viewnear en la prensa tecnológica y del canal: cobertura que cita a Eduardo Ramos sobre Snowflake y la entrega de IA basada en resultados."
   },
   "eyebrow": "En la prensa",
   "heading": "Viewnear en la prensa tecnológica y del canal",
-  "intro": "El trabajo de Viewnear aparece en la prensa tecnológica y del canal, con Eduardo Ramos citado sobre Snowflake, Anthropic y cómo se vive en el campo la entrega de datos e IA basada en resultados.",
+  "intro": "El trabajo de Viewnear aparece en la prensa tecnológica y del canal, con Eduardo Ramos citado sobre Snowflake y cómo se vive en el campo la entrega de datos e IA basada en resultados.",
   "homeCta": "Leer nuestra cobertura",
   "readOn": "Leer en {outlet}",
   "latest": "Más reciente",

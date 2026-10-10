@@ -6,7 +6,7 @@
   "hero": {
     "eyebrow": "Snowflake World Tour · Ciudad de México",
     "title": "Viewnear estará en Snowflake World Tour Ciudad de México, <hl>13 de octubre</hl>.",
-    "description": "Se puede pasar a platicar de Snowflake, Claude o lo que se esté construyendo, o agendar un horario abajo para no perdernos.",
+    "description": "Se puede pasar a platicar de Snowflake, IA agéntica o lo que se esté construyendo, o agendar un horario abajo para no perdernos.",
     "ctaPrimary": "Agendar un horario",
     "ctaSecondary": "Ver la alianza con Snowflake"
   },
@@ -79,7 +79,7 @@
       },
       "talkShop": {
         "title": "Platicar de arquitectura",
-        "desc": "Arquitectura de Snowflake, gobernanza o dónde entra Claude, con quienes lo construyen."
+        "desc": "Arquitectura de Snowflake, gobernanza o dónde entran los agentes, con quienes lo construyen."
       },
       "leaveWithAStep": {
         "title": "Salir con un siguiente paso",

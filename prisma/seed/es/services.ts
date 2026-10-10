@@ -18,7 +18,7 @@ La estrategia aquí no es una presentación. Cada proyecto produce decisiones fi
 - **Evaluación de preparación para la IA.** Una lectura honesta de la calidad de los datos, el gobierno de datos y la arquitectura frente a los casos de uso que la organización quiere llevar a producción, para que la inversión llegue donde en realidad están las brechas.
 - **Un roadmap de IA listo para el consejo.** Casos de uso secuenciados por ROI y por preparación de los datos, cada uno costeado, con responsable y ligado a un número de negocio, no a una lista de deseos tecnológicos.
 - **Una estrategia de datos anclada en una base gobernada.** La arquitectura objetivo sobre Snowflake de la que depende la hoja de ruta: datos gobernados y confiables alimentando decisiones reales, con Horizon Catalog y Semantic Views dando a cada equipo y a cada agente un mismo contexto de negocio. La diseñamos junto con nuestro trabajo de [arquitectura en la nube y base gobernada](/es/services/cloud-architecture).
-- **Un camino claro hacia la empresa agéntica.** Dónde ganan su lugar en la hoja de ruta los agentes de IA (Cortex Analyst, Cortex Agents y Snowflake CoWork) y dónde todavía no. Como partner de Anthropic, Claude es nuestro modelo por defecto para el trabajo agéntico; vea cómo [la IA agéntica opera dentro y fuera de Snowflake](/es/data-ai).
+- **Un camino claro hacia la empresa agéntica.** Dónde ganan su lugar en la hoja de ruta los agentes de IA (Cortex Analyst, Cortex Agents y Snowflake CoWork) y dónde todavía no. Vea cómo [la IA agéntica opera dentro de Snowflake](/es/data-ai).
 - **Un modelo operativo que el equipo interno conserva.** Roles, gobierno de datos y un plan de capacidades para que ambas prácticas, la de datos y la de IA, operen con gente propia y sigan mejorando sin depender de nosotros.
 
 ## Cómo funciona un proyecto de estrategia
@@ -168,7 +168,7 @@ La primera ventaja es el arranque: el equipo ya trabaja en horario del cliente, 
 Cada proyecto construye la capa donde el negocio realmente trabaja con los datos, de forma nativa en Snowflake, para que el gobierno de datos acompañe cada respuesta:
 
 - **Implementación de Cortex Analyst.** Semantic Views que codifican las métricas, relaciones y términos de negocio, para que las preguntas en lenguaje natural regresen respuestas precisas y citadas, no aproximaciones.
-- **Agentes de IA sobre Snowflake.** Cortex Agents que razonan sobre datos estructurados y documentos, con Cortex Search a cargo de la búsqueda. Corren sobre Claude, el modelo en el centro de nuestra alianza con Anthropic.
+- **Agentes de IA sobre Snowflake.** Cortex Agents que razonan sobre datos estructurados y documentos, con Cortex Search a cargo de la búsqueda, corriendo dentro de Snowflake junto a los datos.
 - **Snowflake CoWork para usuarios de negocio.** El agente personal de IA, configurado sobre los datos gobernados, para que cualquier persona explore, pregunte y actúe en su propio lenguaje.
 - **Dashboards de Snowsight y apps de Streamlit in Snowflake.** La capa de visualización de datos que los equipos abren cada mañana: vistas y aplicaciones interactivas, sin copiar nada fuera del perímetro gobernado.
 - **Respuestas donde ocurre el trabajo.** Información entregada en los flujos que los líderes ya usan; cuando la analítica se vuelve parte del producto, nuestro servicio de [analítica embebida](/es/services/embedded-analytics) la lleva a las aplicaciones de los clientes.
@@ -273,7 +273,7 @@ Los cursos enseñan sintaxis. La capacidad se construye entregando. Nuestro acom
 
 - **Rutas de capacitación por rol.** Los directivos aprenden a leer, cuestionar y usar números gobernados; los analistas dominan Snowsight, Semantic Views y Cortex Analyst; los ingenieros profundizan en dbt, Snowpark y Dynamic Tables.
 - **Un programa de upskilling con estándares verificables.** Las habilidades se alinean con la certificación SnowPro, de modo que el avance es medible y comprobable, no un diploma de asistencia.
-- **Capacitación en IA para todo el equipo de datos.** La gente del equipo aprende a construir, evaluar y operar Cortex Analyst, Cortex Search y agentes de IA con Cortex Agents sobre datos gobernados, [la práctica de IA que ayudamos a establecer](/es/data-ai), con Snowflake CoCo acelerando el build. Como partner de Anthropic trabajamos con Claude por defecto y enseñamos al equipo interno a evaluar cualquier modelo con el mismo rigor.
+- **Capacitación en IA para todo el equipo de datos.** La gente del equipo aprende a construir, evaluar y operar Cortex Analyst, Cortex Search y agentes de IA con Cortex Agents sobre datos gobernados, [la práctica de IA que ayudamos a establecer](/es/data-ai), con Snowflake CoCo acelerando el build. Enseñamos al equipo interno a evaluar cualquier modelo que Cortex pueda invocar con el mismo rigor.
 - **Estándares que permanecen.** Estándares de código, rituales de revisión, runbooks y documentación en cada sprint, para que la práctica sobreviva la rotación del equipo.
 
 ## Cómo funciona el acompañamiento
