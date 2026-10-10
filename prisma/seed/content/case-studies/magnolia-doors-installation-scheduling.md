@@ -20,13 +20,13 @@ At 30 to 40 installations a week, that came to 13 to 17 hours every week spent g
 
 **Nothing reaches the ERP without a person approving it.** Speed never came at the cost of control over the calendar.
 
-## How Claude helps
+## How the agent helps
 
-Claude carries the request from arrival to a proposed booking, and stops there.
+The agent carries the request from arrival to a proposed booking, and stops there.
 
-It reads the request and confirms the order in the system of record, checks that the materials are actually ready, reads the calendar for who is available, works out the plan and the arrival window, groups the day geographically, and presents the proposed schedule for review. The coordinator approves, and only then do records change. Each Wednesday Claude produces the weekly operations summary in Spanish, from Magnolia's own format.
+It reads the request and confirms the order in the system of record, checks that the materials are actually ready, reads the calendar for who is available, works out the plan and the arrival window, groups the day geographically, and presents the proposed schedule for review. The coordinator approves, and only then do records change. Each Wednesday the agent produces the weekly operations summary in Spanish, from Magnolia's own format.
 
-The division of labour is the part worth copying. Fixed business rules handle everything that has to be exact, so those decisions come out identical every run. Claude handles the judgment rules cannot:
+The division of labour is the part worth copying. Fixed business rules handle everything that has to be exact, so those decisions come out identical every run. The agent handles the judgment rules cannot:
 
 - **Reading what a job actually involves** from the written scope of the request, rather than relying on form checkboxes alone.
 - **Explaining what a job is waiting on**, and who owns it, so nothing drops quietly out of the plan and every priority arrives with the reason behind it.

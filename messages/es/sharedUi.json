@@ -6,9 +6,7 @@
     "secondaryCta": "Explorar servicios"
   },
   "caseStudyCard": {
-    "readMore": "Leer el caso de éxito",
-    "builtWithClaude": "Construido con Claude",
-    "builtOnSnowflake": "Construido sobre Snowflake"
+    "readMore": "Leer el caso de éxito"
   },
   "industryCard": {
     "explore": "Explorar"

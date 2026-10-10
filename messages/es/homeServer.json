@@ -50,13 +50,13 @@
       "next": "Caso siguiente",
       "counter": "Caso {i} de {n}"
     },
-    "badgeAgentic": "Construido con Claude",
+    "badgeAgentic": "Compromiso agéntico",
     "agentic": {
       "client": "Magnolia Doors",
       "sector": "Manufactura",
       "region": "San Antonio, TX",
       "title": "El agendamiento de instalaciones, de 17 horas por semana a menos de dos",
-      "summary": "Agendar las cuadrillas exigía trabajo en cinco sistemas desconectados y costaba de 13 a 17 horas por semana. Claude recopila la información desde el sistema de registro a través de un conector, y un día completo de instalaciones se aprueba en cerca de un minuto.",
+      "summary": "Agendar las cuadrillas exigía trabajo en cinco sistemas desconectados y costaba de 13 a 17 horas por semana. Un agente de IA a la medida recopila la información desde el sistema de registro a través de un conector, y un día completo de instalaciones se aprueba en cerca de un minuto.",
       "metricLabel1": "Horas administrativas recuperadas por semana",
       "metricLabel2": "Antes, de 23 a 35 minutos por instalación",
       "metricValue1": "15–19 h",

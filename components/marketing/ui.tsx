@@ -2,7 +2,6 @@ import { getTranslations } from "next-intl/server";
 import { Img } from "@/components/marketing/Img";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { caseStackKey } from "@/lib/case-stack";
 
 export function Section({
   children,
@@ -84,11 +83,9 @@ export async function CaseStudyCard({
     sector: string;
     region: string;
     heroImage?: string | null;
-    stack?: unknown;
   };
 }) {
   const t = await getTranslations("sharedUi");
-  const stackKey = caseStackKey(cs.stack);
   return (
     <Link
       href={`/case-studies/${cs.slug}`}
@@ -115,11 +112,6 @@ export async function CaseStudyCard({
         </span>
         <h3 className="mt-4 font-display text-lg font-bold text-foreground">{cs.title}</h3>
         <p className="mt-2 line-clamp-4 text-sm leading-relaxed text-muted">{cs.summary}</p>
-        {stackKey && (
-          <span className="mt-4 font-mono text-xs uppercase tracking-widest text-muted">
-            {stackKey === "claude" ? t("caseStudyCard.builtWithClaude") : t("caseStudyCard.builtOnSnowflake")}
-          </span>
-        )}
         <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-semibold text-primaryDeep">
           <span className="link-underline">{t("caseStudyCard.readMore")}</span>
           <span className="transition-transform group-hover:translate-x-0.5">→</span>

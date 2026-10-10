@@ -20,7 +20,6 @@
   "about": "About",
   "partnership": "Partnerships",
   "partnershipSnowflake": "Snowflake partnership",
-  "partnershipClaude": "Claude partnership",
   "nearshore": "Nearshore Advantage",
   "lifeAtViewnear": "Life at Viewnear",
   "security": "Security & Trust",
@@ -83,8 +82,8 @@
   "featured": {
     "company": {
       "eyebrow": "Partnerships",
-      "title": "Two partner networks, one team",
-      "pitch": "Snowflake Premier & Select Partner for the governed data, Claude Certified Partner for the agents that act on it."
+      "title": "Snowflake partner network",
+      "pitch": "Snowflake Premier & Select Partner for governed data and the agents that run on it."
     },
     "industries": {
       "eyebrow": "Financial Services",

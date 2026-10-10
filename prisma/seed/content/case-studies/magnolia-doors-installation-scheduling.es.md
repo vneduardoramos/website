@@ -20,13 +20,13 @@ Con 30 a 40 instalaciones por semana, eso sumaba de 13 a 17 horas semanales dedi
 
 **Nada llega al ERP sin que una persona lo apruebe.** La velocidad nunca se pagó con el control del calendario.
 
-## Cómo ayuda Claude
+## Cómo ayuda el agente
 
-Claude lleva la solicitud desde que llega hasta una reserva propuesta, y ahí se detiene.
+El agente lleva la solicitud desde que llega hasta una reserva propuesta, y ahí se detiene.
 
-Lee la solicitud y confirma el pedido en el sistema de registro, comprueba que los materiales estén realmente listos, lee el calendario para ver quién está disponible, determina el plan y la ventana de llegada, agrupa el día geográficamente y presenta la programación propuesta para revisión. El coordinador aprueba, y solo entonces cambian los registros. Cada miércoles Claude produce el resumen semanal de operaciones en español, con el formato propio de Magnolia.
+Lee la solicitud y confirma el pedido en el sistema de registro, comprueba que los materiales estén realmente listos, lee el calendario para ver quién está disponible, determina el plan y la ventana de llegada, agrupa el día geográficamente y presenta la programación propuesta para revisión. El coordinador aprueba, y solo entonces cambian los registros. Cada miércoles el agente produce el resumen semanal de operaciones en español, con el formato propio de Magnolia.
 
-La división del trabajo es la parte que vale la pena copiar. Las reglas de negocio fijas resuelven todo lo que debe ser exacto, así que esas decisiones salen idénticas en cada corrida. Claude resuelve el criterio que las reglas no alcanzan:
+La división del trabajo es la parte que vale la pena copiar. Las reglas de negocio fijas resuelven todo lo que debe ser exacto, así que esas decisiones salen idénticas en cada corrida. El agente resuelve el criterio que las reglas no alcanzan:
 
 - **Leer lo que un trabajo realmente implica** a partir del alcance escrito en la solicitud, en lugar de depender solo de las casillas del formato.
 - **Explicar qué está esperando un trabajo**, y quién es responsable, para que nada desaparezca del plan en silencio y cada prioridad llegue con la razón detrás.

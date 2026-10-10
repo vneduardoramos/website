@@ -74,10 +74,10 @@ export const caseStudiesEs: Record<string, { title?: string; summary?: string; s
   "magnolia-doors-installation-scheduling": {
     sector: "Manufactura",
     seoTitle: "De 17 horas semanales de agendamiento a dos",
-    seoDescription: "Magnolia Doors recuperó de 15 a 19 horas administrativas por semana después de que Claude tomó el agendamiento de instalaciones sobre su ERP.",
+    seoDescription: "Magnolia Doors recuperó de 15 a 19 horas administrativas por semana después de que un agente de IA a la medida tomó el agendamiento de instalaciones sobre su ERP.",
     title: "El agendamiento de instalaciones, de 17 horas por semana a menos de dos",
     summary:
-      "Magnolia Doors fabrica herrería a medida para casas de alto nivel en la zona de San Antonio y la instala con sus propias cuadrillas, y agendar esas cuadrillas costaba de 13 a 17 horas por semana entre cinco sistemas desconectados. Viewnear puso a Claude en el trabajo mediante un conector Model Context Protocol a la medida hacia su sistema de registro. Agendar una instalación toma ahora unos tres minutos en vez de 23 a 35, un día completo se aprueba en cerca de un minuto, y regresan de 15 a 19 horas administrativas cada semana sin sumar una persona.",
+      "Magnolia Doors fabrica herrería a medida para casas de alto nivel en la zona de San Antonio y la instala con sus propias cuadrillas, y agendar esas cuadrillas costaba de 13 a 17 horas por semana entre cinco sistemas desconectados. Viewnear puso a un agente de IA a la medida en el trabajo mediante un conector directo hacia su sistema de registro. Agendar una instalación toma ahora unos tres minutos en vez de 23 a 35, un día completo se aprueba en cerca de un minuto, y regresan de 15 a 19 horas administrativas cada semana sin sumar una persona.",
     metrics: [
       { value: "15–19 hrs", label: "Horas administrativas recuperadas por semana" },
       { value: "~3 min", label: "Para agendar una instalación, antes 23 a 35" },
