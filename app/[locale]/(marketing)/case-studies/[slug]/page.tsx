@@ -15,7 +15,6 @@ import { coverForSector } from "@/lib/covers";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { Markdown } from "@/lib/content";
 import { asObjectArray, asStringArray, parseJson } from "@/lib/utils";
-import { productLogo } from "@/lib/product-logos";
 import { JsonLd } from "@/components/JsonLd";
 import { MaskReveal } from "@/components/marketing/Motion";
 import { theme } from "@/config/theme";
@@ -191,30 +190,15 @@ export default async function CaseStudyDetailPage({
             {stack.length > 0 && (
               <div className="mt-10">
                 <p className="eyebrow">{t("stackLabel")}</p>
-                {/* Products with a brand mark show it; everything else is a
-                    text chip, so the row stays honest about what we can and
-                    cannot render as a logo. */}
                 <div className="mt-4 flex flex-wrap items-center gap-x-8 gap-y-4">
-                  {stack.map((item) => {
-                    const logo = productLogo(item);
-                    return logo ? (
-                      <Image
-                        key={item}
-                        src={logo.src}
-                        alt={logo.alt}
-                        width={logo.w}
-                        height={logo.h}
-                        className="h-10 w-auto md:h-12"
-                      />
-                    ) : (
-                      <span
-                        key={item}
-                        className="rounded-full border border-border bg-background px-3 py-1 text-sm text-foreground"
-                      >
-                        {item}
-                      </span>
-                    );
-                  })}
+                  {stack.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-border bg-background px-3 py-1 text-sm text-foreground"
+                    >
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </div>
             )}
