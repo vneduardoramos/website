@@ -55,17 +55,6 @@ export type PressItem = {
 
 export const PRESS: PressItem[] = [
   {
-    slug: "anthropic-takes-step-toward-ipo-amid-channel-development",
-    title: "Anthropic Takes Step Toward IPO Amid Channel Development",
-    url: "https://www.crn.com/news/ai/2026/anthropic-takes-step-toward-ipo-amid-channel-development",
-    outlet: "crn",
-    author: "Wade Tyler Millward",
-    date: "2026-06-01T12:00:00Z",
-    quote:
-      "Organizations are investing in platforms they believe can support long-term, production-scale AI initiatives. We're seeing that demand firsthand across our customers.",
-    quoteBy: "Eduardo Ramos",
-  },
-  {
     slug: "snowflake-q1-earnings-5-channel-takeaways-on-ai-growth-data-product-consumption",
     title:
       "Snowflake Q1 Earnings: 5 Channel Takeaways On AI Growth, Data Product Consumption",
@@ -75,19 +64,6 @@ export const PRESS: PressItem[] = [
     date: "2026-06-01T12:00:00Z",
     quote:
       "Data and AI are coming together. And people, leaders are understanding now that if they want to do AI, they need to do data first.",
-    quoteBy: "Eduardo Ramos",
-  },
-  {
-    slug: "anthropic-raises-65b-as-it-scales-partnerships",
-    title: "Anthropic Raises $65B As It Scales Partnerships",
-    // NOTE: the live CRN URL slug reads "scale" (singular), not "scales" as in
-    // the headline; copied verbatim, do not "fix".
-    url: "https://www.crn.com/news/ai/2026/anthropic-raises-65b-as-it-scale-partnerships",
-    outlet: "crn",
-    author: "Wade Tyler Millward",
-    date: "2026-05-28T12:00:00Z",
-    quote:
-      "Anthropic, at the end of the day, they want partners that know Anthropic top to bottom. We can bring in new accounts, co-sell accounts through them.",
     quoteBy: "Eduardo Ramos",
   },
   {
@@ -119,14 +95,13 @@ export const PRESS: PressItem[] = [
 ];
 
 /**
- * The home strip's pull-quote. CRN's sentence is the reporter relaying Ramos
- * ("..., Ramos said"), so `attribution` credits him rather than letting the
- * outlet's byline stand as the source of the assessment. Links to the article.
+ * The home strip's pull-quote, verbatim from the Q1 earnings coverage, the
+ * CEO's own words in a national trade outlet.
  */
 export const PRESS_HOME_QUOTE = {
   quote:
-    "Viewnear has been building enterprise-grade production AI systems with governed Snowflake data anchored on Anthropic Claude.",
+    "Data and AI are coming together. And people, leaders are understanding now that if they want to do AI, they need to do data first.",
   outlet: "crn",
   attribution: "Eduardo Ramos, in CRN",
-  url: PRESS[1].url,
+  url: PRESS[0].url,
 } as const;

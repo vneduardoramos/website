@@ -1,27 +1,27 @@
 {
   "meta": {
-    "title": "Data + AI: put AI to work inside and around Snowflake",
-    "description": "AI that reasons over governed data inside Snowflake and acts in the tools teams already use, with a person deciding what matters. Built with Claude as an Anthropic partner, in production in 8-16 weeks."
+    "title": "Data + AI: put Snowflake's AI agents to work on governed data",
+    "description": "AI agents that reason over governed data inside Snowflake and act on it, with a person deciding what matters. In production in 8-16 weeks."
   },
   "hero": {
     "eyebrow": "Data + AI",
-    "title": "AI put to work where the work happens, <hl>on data teams can trust.</hl>",
-    "description": "Artificial intelligence earns its place when it reasons over governed data inside Snowflake and takes the next action in the tools teams already use, with a person deciding what matters. We build both, and the interplay between them, with Claude as an Anthropic partner. Proven small first, in production in 8-16 weeks."
+    "title": "AI put to work inside Snowflake, <hl>on data teams can trust.</hl>",
+    "description": "Artificial intelligence earns its place when it reasons over governed data inside Snowflake and takes the next action itself, with a person deciding what matters. Proven small first, in production in 8-16 weeks."
   },
   "heroChips": [
-    "Inside Snowflake + in the field",
+    "Native to Snowflake",
     "Grounded in governed data",
-    "Built with Claude",
+    "Agents with an audit trail",
     "In production, not a lab"
   ],
   "how": {
     "eyebrow": "How it works",
-    "title": "Two planes, one governed loop",
-    "intro": "An AI agent is software that reasons over governed data and then takes the next action itself, running as a verifiable identity with per-agent permissions and a full audit trail. Agent engineering runs in two places. Inside Snowflake, agents reason over governed data without moving it. In the flow of work, Claude takes the next action where teams already are. The point is the interplay: a request crosses both and comes back cited, in policy, and logged."
+    "title": "One governed loop, inside Snowflake",
+    "intro": "An AI agent is software that reasons over governed data and then takes the next action itself, running as a verifiable identity with per-agent permissions and a full audit trail. Cortex Agents run inside Snowflake, next to the data, so nothing is copied out, and every call stays inside the same governed perimeter. A request comes back cited, in policy, and logged."
   },
   "ship": {
     "eyebrow": "What we ship",
-    "title": "Six jobs, running across both planes.",
+    "title": "Six jobs, running inside Snowflake.",
     "intro": "Each one reasons over governed data inside Snowflake and shows up where teams work. Where a real engagement proves it, the numbers are on the card."
   },
   "runsOn": "Runs on",
@@ -76,11 +76,11 @@
   "useCasesFootnote": "A use case we haven't listed? If the data can carry it, we can ship it. <link>Tell us the job →</link>",
   "governed": {
     "eyebrow": "Governed by default",
-    "title": "One perimeter, one identity, both planes",
-    "body": "AI governance is not a separate layer here. Inference runs inside the business's Snowflake account, so prompts and results stay within the same perimeter as the data. Agents in the field reach it through governed endpoints, never raw copies, acting as verifiable identities with per-agent permissions. Access, masking, and lineage carry across both planes, and Cortex guardrails screen every call.",
+    "title": "One perimeter, one identity",
+    "body": "AI governance is not a separate layer here. Inference runs inside the business's Snowflake account, so prompts and results stay within the same perimeter as the data. Every agent acts as a verifiable identity with per-agent permissions, and access, masking, and lineage carry through, with Cortex guardrails screening every call.",
     "bullets": [
       "Models run next to governed data: no copies, no export",
-      "Every agent acts as one governed identity, inside or out",
+      "Every agent acts as one governed identity",
       "Access, masking, and lineage inherited from Snowflake Horizon",
       "Cortex Guard and AI guardrails on every call",
       "Evals that measure accuracy before a use case scales, not after"
@@ -91,12 +91,11 @@
   "credentials": {
     "eyebrow": "Credentials",
     "title": "Certified to run AI on enterprise data",
-    "intro": "Every model runs under Snowflake's independently audited controls, delivered by SnowPro-certified engineers who do this every day, and, as an Anthropic partner, builds with Claude.",
-    "anthropicLine": "Anthropic partner, building with Claude"
+    "intro": "Every model runs under Snowflake's independently audited controls, delivered by SnowPro-certified engineers who do this every day."
   },
   "cta": {
     "title": "Put AI to work where the manual work is.",
-    "subtitle": "Tell us the use case. We'll bring Claude, the governance, and the people to ship it into production with the team, inside Snowflake and in the flow of work."
+    "subtitle": "Tell us the use case. We'll bring the governance and the people to ship it into production with the team, inside Snowflake."
   },
   "breadcrumb": {
     "home": "Home",

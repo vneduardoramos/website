@@ -8,10 +8,8 @@ import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
 import { PageHero } from "@/components/marketing/PageHero";
 import { FeatureSplit } from "@/components/marketing/FeatureSplit";
 import { PartnerBadges } from "@/components/marketing/PartnerBadges";
-import { AnthropicMark } from "@/components/marketing/ProviderMark";
 import { LedgerCard } from "@/components/marketing/Cards";
-import { Interplay } from "@/components/marketing/data-ai/Interplay";
-import { BuiltWithAnthropic } from "@/components/marketing/data-ai/BuiltWithAnthropic";
+import { AgentLoop } from "@/components/marketing/data-ai/AgentLoop";
 import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 
@@ -94,7 +92,7 @@ export default async function DataAiPage({ params }: { params: { locale: string 
             intro={t("how.intro")}
           />
           <div className="mt-12">
-            <Interplay />
+            <AgentLoop />
           </div>
         </div>
         <WaveDivider position="bottom" fill="fill-background" />
@@ -184,11 +182,6 @@ export default async function DataAiPage({ params }: { params: { locale: string 
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
 
-      {/* The Anthropic moment: partner + Claude as default, on both planes */}
-      <Section>
-        <BuiltWithAnthropic />
-      </Section>
-
       {/* Proof */}
       <Section className="text-center">
         <SectionHeading
@@ -200,10 +193,6 @@ export default async function DataAiPage({ params }: { params: { locale: string 
         <div className="mt-12 flex justify-center">
           <PartnerBadges variant="logos" />
         </div>
-        <p className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-muted">
-          <AnthropicMark size={16} />
-          {t("credentials.anthropicLine")}
-        </p>
       </Section>
 
       <CtaBand

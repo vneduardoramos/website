@@ -13,7 +13,6 @@ import {
   InPractice,
   AroundIt,
   Leaders,
-  OtherHalf,
   hl,
 } from "@/components/marketing/partnership/PartnerPageBlocks";
 
@@ -105,8 +104,6 @@ export default async function SnowflakePartnershipPage({ params }: { params: { l
       <Leaders eyebrow={t("leaders.eyebrow")} title={t("leaders.title")} body={t("leaders.body")} />
 
       <FieldStrip items={["team-group", "team-stage", "team-dinner"]} />
-
-      <OtherHalf title={t("claudeLink.title")} label={t("claudeLink.label")} href="/partnership/claude" />
 
       <CtaBand title={t("cta.title")} subtitle={t("cta.subtitle")} />
     </>

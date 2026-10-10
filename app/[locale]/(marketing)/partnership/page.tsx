@@ -8,14 +8,14 @@ import { PageHero } from "@/components/marketing/PageHero";
 import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
 import { RevealGroup, ScrollHighlight } from "@/components/marketing/Motion";
 import { PartnerBadgeMark } from "@/components/marketing/PartnerBadgeRow";
-import { SNOWFLAKE, ANTHROPIC, type PartnerNetwork } from "@/config/partners";
+import { SNOWFLAKE, type PartnerNetwork } from "@/config/partners";
 import { Link } from "@/i18n/navigation";
 import { Img as Image } from "@/components/marketing/Img";
 import { cn } from "@/lib/utils";
 
 /**
- * The partnerships hub: both networks as equals, each handing off to its own
- * page, then the build-vs-partner comparison that applies to both.
+ * The partnership hub: the Snowflake network, then the build-vs-partner
+ * comparison.
  */
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
@@ -28,10 +28,8 @@ type Row = { dimension: string; inhouse: string; big3: string; viewnear: string 
 
 // Not a card: a column. A photograph carries the surface, the plate and the
 // level sit under it in a row, then the heading, the body and a text link.
-// Two of these split by one rule read as an editorial spread, not two boxes.
 const PHOTO: Record<PartnerNetwork["key"], { src: string; alt: string }> = {
   snowflake: { src: "/assets/images/life/partner-momentum.jpg", alt: "Snowflake's CoCo Global Partner Momentum wall at Summit 2026" },
-  anthropic: { src: "/assets/images/cases/magnolia-doors-installation-scheduling-detail.jpg", alt: "A craftsman measuring metalwork at Magnolia Doors" },
 };
 
 function NetworkColumn({
@@ -113,9 +111,9 @@ export default async function PartnershipPage({ params }: { params: { locale: st
         </div>
       </div>
 
-      {/* The two networks, as equals, each with its own page. */}
+      {/* The Snowflake network, handing off to its own page. */}
       <Section>
-        <RevealGroup className="grid gap-12 md:grid-cols-2 md:gap-0 md:divide-x md:divide-border" variant="fade-up">
+        <RevealGroup className="mx-auto max-w-xl" variant="fade-up">
           <NetworkColumn
             partner={SNOWFLAKE}
             title={t("networks.snowflake.title")}
@@ -123,21 +121,8 @@ export default async function PartnershipPage({ params }: { params: { locale: st
             cta={t("networks.snowflake.cta")}
             href="/partnership/snowflake"
             verify={verify}
-            className="md:pr-12"
-          />
-          <NetworkColumn
-            partner={ANTHROPIC}
-            title={t("networks.claude.title")}
-            body={t("networks.claude.body")}
-            cta={t("networks.claude.cta")}
-            href="/partnership/claude"
-            verify={verify}
-            className="md:pl-12"
           />
         </RevealGroup>
-        <p className="mx-auto mt-10 max-w-3xl text-center font-display text-xl font-medium leading-snug text-foreground md:text-2xl">
-          {t("networks.together")}
-        </p>
       </Section>
 
       {/* Build vs partner comparison */}

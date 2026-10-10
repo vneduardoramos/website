@@ -1,27 +1,27 @@
 {
   "meta": {
-    "title": "Datos + IA: poner la IA a trabajar dentro y alrededor de Snowflake",
-    "description": "IA que razona sobre datos gobernados dentro de Snowflake y actúa en las herramientas que los equipos ya usan, con una persona decidiendo lo que importa. Construido con Claude como partner de Anthropic, en producción en 8 a 16 semanas."
+    "title": "Datos + IA: poner a los agentes de Snowflake a trabajar sobre datos gobernados",
+    "description": "Agentes de IA que razonan sobre datos gobernados dentro de Snowflake y actúan sobre ellos, con una persona decidiendo lo que importa. En producción en 8 a 16 semanas."
   },
   "hero": {
     "eyebrow": "Data + AI",
-    "title": "IA puesta a trabajar donde ocurre el trabajo, <hl>sobre datos confiables.</hl>",
-    "description": "La inteligencia artificial se gana su lugar cuando razona sobre datos gobernados dentro de Snowflake y ejecuta el siguiente paso en las herramientas que los equipos ya usan, con una persona decidiendo lo que importa. Construimos ambas cosas, y la relación entre ellas, con Claude como partner de Anthropic. Se comprueba en pequeño primero, en producción en 8 a 16 semanas."
+    "title": "IA puesta a trabajar dentro de Snowflake, <hl>sobre datos confiables.</hl>",
+    "description": "La inteligencia artificial se gana su lugar cuando razona sobre datos gobernados dentro de Snowflake y ejecuta el siguiente paso, con una persona decidiendo lo que importa. Se comprueba en pequeño primero, en producción en 8 a 16 semanas."
   },
   "heroChips": [
-    "Dentro de Snowflake + en el campo",
+    "Nativo de Snowflake",
     "Anclado en datos gobernados",
-    "Construido con Claude",
+    "Agentes con registro de auditoría",
     "En producción, no en un laboratorio"
   ],
   "how": {
     "eyebrow": "Cómo funciona",
-    "title": "Dos planos, un solo ciclo gobernado",
-    "intro": "Un agente de IA es software que razona sobre datos gobernados y luego da el siguiente paso, actuando como una identidad verificable con permisos por agente y con un registro de auditoría completo. La ingeniería de agentes opera en dos lugares. Dentro de Snowflake, los agentes razonan sobre datos gobernados sin moverlos. En el flujo de trabajo, Claude ejecuta la siguiente acción donde los equipos ya están. Lo importante es la interacción: una solicitud cruza ambos planos y regresa citada, dentro de las políticas y registrada."
+    "title": "Un solo ciclo gobernado, dentro de Snowflake",
+    "intro": "Un agente de IA es software que razona sobre datos gobernados y luego da el siguiente paso, actuando como una identidad verificable con permisos por agente y con un registro de auditoría completo. Los Cortex Agents se ejecutan dentro de Snowflake, junto a los datos, de modo que nada se copia hacia afuera y cada llamada permanece dentro del mismo perímetro gobernado. Una solicitud regresa citada, dentro de las políticas y registrada."
   },
   "ship": {
     "eyebrow": "Lo que entregamos",
-    "title": "Seis tareas, funcionando en ambos planos.",
+    "title": "Seis tareas, funcionando dentro de Snowflake.",
     "intro": "Cada una razona sobre datos gobernados dentro de Snowflake y aparece donde trabajan los equipos. Donde un proyecto real lo demuestra, los números están en la tarjeta."
   },
   "runsOn": "Se ejecuta en",
@@ -76,11 +76,11 @@
   "useCasesFootnote": "¿Un caso de uso que no aparece en la lista? Si los datos lo permiten, podemos entregarlo. <link>Hablemos de la tarea →</link>",
   "governed": {
     "eyebrow": "Gobernado de forma predeterminada",
-    "title": "Un perímetro, una identidad, ambos planos",
-    "body": "El gobierno de la IA no es una capa aparte. La inferencia se ejecuta dentro de la cuenta de Snowflake del negocio, de modo que los prompts y los resultados permanecen dentro del mismo perímetro que los datos. Los agentes en el campo llegan a ellos a través de endpoints gobernados, nunca copias sin procesar, actuando como identidades verificables con permisos por agente. El acceso, el enmascaramiento y el linaje se mantienen en ambos planos, y las barreras de Cortex revisan cada llamada.",
+    "title": "Un perímetro, una identidad",
+    "body": "El gobierno de la IA no es una capa aparte. La inferencia se ejecuta dentro de la cuenta de Snowflake del negocio, de modo que los prompts y los resultados permanecen dentro del mismo perímetro que los datos. Cada agente actúa como una identidad verificable con permisos por agente, y el acceso, el enmascaramiento y el linaje se mantienen, con las barreras de Cortex revisando cada llamada.",
     "bullets": [
       "Los modelos se ejecutan junto a los datos gobernados: sin copias, sin exportación",
-      "Cada agente actúa como una única identidad gobernada, dentro o fuera",
+      "Cada agente actúa como una única identidad gobernada",
       "Acceso, enmascaramiento y linaje heredados de Snowflake Horizon",
       "Cortex Guard y barreras de IA en cada llamada",
       "Evals que miden la precisión antes de escalar un caso de uso, no después"
@@ -91,12 +91,11 @@
   "credentials": {
     "eyebrow": "Credenciales",
     "title": "Certificados para ejecutar IA sobre datos empresariales",
-    "intro": "Cada modelo se ejecuta bajo los controles auditados de forma independiente de Snowflake, entregado por ingenieros certificados en SnowPro que hacen esto todos los días y que, como socio de Anthropic, construye con Claude.",
-    "anthropicLine": "Socio de Anthropic, construyendo con Claude"
+    "intro": "Cada modelo se ejecuta bajo los controles auditados de forma independiente de Snowflake, entregado por ingenieros certificados en SnowPro que hacen esto todos los días."
   },
   "cta": {
     "title": "Poner la IA a trabajar donde está el trabajo manual.",
-    "subtitle": "Con el caso de uso definido, aportamos Claude, el gobierno y las personas para llevarlo a producción junto con el equipo, dentro de Snowflake y en el flujo de trabajo."
+    "subtitle": "Con el caso de uso definido, aportamos el gobierno y las personas para llevarlo a producción junto con el equipo, dentro de Snowflake."
   },
   "breadcrumb": {
     "home": "Inicio",

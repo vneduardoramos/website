@@ -12,20 +12,18 @@ import type { PartnerNetwork } from "@/config/partners";
 import { cn } from "@/lib/utils";
 
 /**
- * The shared skeleton of the two partnership pages, so Snowflake and Claude
- * are told in the same shape and a reader can compare them: the hero with
- * the network's plate and level, two numbered ways the partnership is put to
- * work, what it looks like in practice, what Viewnear engineers around the
- * partner's product, the people, and a hand-off to the other partnership.
- * Each page supplies its own copy from its own namespace; nothing here is
- * specific to either partner.
+ * The partnership page's skeleton: the hero with the network's plate and
+ * level, two numbered ways the partnership is put to work, what it looks
+ * like in practice, what Viewnear engineers around the partner's product,
+ * and the people. The page supplies its own copy from its own namespace;
+ * nothing here is specific to the partner.
  */
 
 /**
  * A point in a ruled list: a heading and a paragraph over a hairline, never a
  * tile. The site tried a shared primitive for this once and the card-shaped
- * result was rejected, so the two partnership pages keep their own, used
- * nowhere else.
+ * result was rejected, so the partnership page keeps its own, used nowhere
+ * else.
  */
 export type PartnerPoint = { title: string; body?: string };
 
@@ -128,9 +126,8 @@ export function PartnerHero({
           <div className="container-page pointer-events-none absolute inset-x-0 top-1/2 hidden -translate-y-1/2 justify-end lg:flex">
             <div className="pointer-events-auto w-fit max-w-64 xl:max-w-96">
               {/* One size down at lg, where the headline runs close to the badge.
-                  preferTall: the one spot a badge stands alone rather than
-                  paired against the other network's mark, so Claude's
-                  portrait cut fits here instead of the row-sized square. */}
+                  preferTall: the one spot a badge stands alone with real
+                  vertical room, rather than paired in a row. */}
               <span className="block xl:hidden">
                 <PartnerBadgeMark partner={partner} size="lg" preferTall />
               </span>
@@ -248,8 +245,7 @@ export function AroundIt({
 
 /**
  * The Snowflake product surface, grouped the way an architect thinks about it:
- * what lands the data, what governs it, what runs on top. Specific to this
- * partnership, and the reason the page is not a mirror of the Claude one.
+ * what lands the data, what governs it, what runs on top.
  *
  * Ruled columns, not tiles: the value is the list itself.
  */
@@ -289,54 +285,6 @@ export function StackGroups({
   );
 }
 
-/**
- * The write gate, step by step: the sequence a Claude agent runs before
- * anything reaches a record. Human-in-the-loop stated as the design it is,
- * and the one block on the site that shows how the approval actually works.
- */
-export function Sequence({
-  eyebrow,
-  title,
-  intro,
-  steps,
-  note,
-  className,
-}: {
-  eyebrow: string;
-  title: React.ReactNode;
-  intro?: string;
-  steps: { title: string; body: string }[];
-  note?: string;
-  className?: string;
-}) {
-  return (
-    <Section className={className}>
-      <SectionHeading eyebrow={eyebrow} title={title} intro={intro} />
-      <ol className="mt-12 grid gap-y-8 border-t border-border sm:grid-cols-2 lg:grid-cols-5 lg:gap-x-8">
-        {steps.map((step, i) => (
-          <li key={step.title} className="relative pt-6 lg:pr-4">
-            <span
-              className="font-mono text-sm font-semibold tracking-widest text-primaryDeep"
-              aria-hidden="true"
-            >
-              {String(i + 1).padStart(2, "0")}
-            </span>
-            <h3 className="mt-2 font-display text-lg font-bold leading-snug text-foreground">
-              {step.title}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted">{step.body}</p>
-          </li>
-        ))}
-      </ol>
-      {note && (
-        <p className="mt-10 max-w-3xl border-t border-border pt-6 font-display text-lg font-medium leading-snug text-foreground md:text-xl">
-          {note}
-        </p>
-      )}
-    </Section>
-  );
-}
-
 export async function Leaders({ eyebrow, title, body }: { eyebrow: string; title: string; body: string }) {
   const t = await getTranslations("strips");
   return (
@@ -345,20 +293,6 @@ export async function Leaders({ eyebrow, title, body }: { eyebrow: string; title
       <div className="relative grid items-center gap-8 md:grid-cols-[1fr_auto]">
         <SectionHeading eyebrow={eyebrow} title={title} intro={body} />
         <LeadershipStrip label={t("leadershipStrip.label")} />
-      </div>
-    </Section>
-  );
-}
-
-export function OtherHalf({ title, label, href }: { title: string; label: string; href: string }) {
-  return (
-    <Section>
-      <div className={cn("mx-auto flex max-w-3xl flex-col items-start justify-between gap-4 rounded-2xl border border-border bg-surface p-6 shadow-soft sm:flex-row sm:items-center")}>
-        <p className="font-display text-lg font-bold text-foreground">{title}</p>
-        <Link href={href} className="btn-ghost group shrink-0">
-          {label}
-          <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">→</span>
-        </Link>
       </div>
     </Section>
   );

@@ -26,7 +26,7 @@
       },
       {
         "title": "Correr la IA donde los datos ya están",
-        "body": "Cortex AISQL y Cortex Analyst sobre Semantic Views gobernadas, Cortex Agents que planean sobre datos estructurados y documentos, Snowflake CoWork para quienes hacen las preguntas, y Cortex AI Gateway gobernando qué agentes llegan a qué datos, modelos y herramientas. Claude está disponible dentro como modelo de Cortex, así que el razonamiento ocurre junto a los datos y nada se copia afuera."
+        "body": "Cortex AISQL y Cortex Analyst sobre Semantic Views gobernadas, Cortex Agents que planean sobre datos estructurados y documentos, Snowflake CoWork para quienes hacen las preguntas, y Cortex AI Gateway gobernando qué agentes llegan a qué datos, modelos y herramientas. Los modelos están disponibles dentro, así que el razonamiento ocurre junto a los datos y nada se copia afuera."
       }
     ]
   },
@@ -106,10 +106,6 @@
     "eyebrow": "Las personas",
     "title": "El equipo detrás de la práctica de Snowflake",
     "body": "Una práctica de arquitectos, ingenieros de datos e ingenieros de analítica con certificación SnowPro, liderada por personas que han llevado a empresas de un almacén heredado a datos gobernados e IA en producción."
-  },
-  "claudeLink": {
-    "title": "Claude corre dentro de Snowflake y a su alrededor. La otra mitad de la historia es la Claude Partner Network.",
-    "label": "Sobre la alianza con Claude"
   },
   "cta": {
     "title": "Un Premier & Select Partner para el trabajo en Snowflake.",

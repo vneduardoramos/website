@@ -27,11 +27,11 @@ export const theme = {
     bookingUrl: "https://calendly.com/eduardo-viewnear/30min",
     tagline: "Data & AI practice, up and running.",
     description:
-      "Viewnear helps enterprises stand up two capabilities they keep: a data practice that feeds real decisions with governed, trusted data on Snowflake, and an agentic practice that puts Claude to work in the systems the business already runs, with a person approving what matters. A Snowflake Premier & Select Partner and a Claude Certified Partner, working US hours from Austin and Monterrey, across the USA and LATAM.",
+      "Viewnear helps enterprises stand up two capabilities they keep: a data practice that feeds real decisions with governed, trusted data on Snowflake, and an agentic practice that puts agents to work in the systems the business already runs, with a person approving what matters. A Snowflake Premier & Select Partner, working US hours from Austin and Monterrey, across the USA and LATAM.",
     // Spanish twin of `description`, for the Organization JSON-LD on /es URLs:
     // the entity was describing itself in English on all 62 Spanish pages.
     descriptionEs:
-      "Viewnear ayuda a las empresas a poner en marcha dos capacidades que conservan: una práctica de datos que alimenta decisiones reales con datos gobernados y confiables sobre Snowflake, y una práctica agéntica que pone a Claude a trabajar en los sistemas que el negocio ya opera, con una persona que aprueba lo que importa. Snowflake Premier & Select Partner y Claude Certified Partner, en horario de Estados Unidos desde Austin y Monterrey, en Estados Unidos y LATAM.",
+      "Viewnear ayuda a las empresas a poner en marcha dos capacidades que conservan: una práctica de datos que alimenta decisiones reales con datos gobernados y confiables sobre Snowflake, y una práctica agéntica que pone agentes a trabajar en los sistemas que el negocio ya opera, con una persona que aprueba lo que importa. Snowflake Premier & Select Partner, en horario de Estados Unidos desde Austin y Monterrey, en Estados Unidos y LATAM.",
     // Region positioning: USA and LATAM, named rather than "the Americas".
     region: "the USA and LATAM",
     regions: ["Canada", "USA", "Mexico", "LATAM", "Caribbean"],

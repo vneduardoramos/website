@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "Snowflake Premier & Select Partner y Claude Certified Partner",
-    "description": "Snowflake Premier & Select Partner, CoCo Preferred Partner y Claude Certified Partner: profundidad certificada en datos gobernados, agentes de Claude que actúan sobre ellos y entrega en toda América."
+    "title": "Snowflake Premier & Select Partner",
+    "description": "Snowflake Premier & Select Partner y CoCo Preferred Partner: profundidad certificada en datos gobernados y los agentes que corren sobre ellos, con entrega en Estados Unidos y LATAM."
   },
   "hero": {
     "eyebrow": "Alianzas",
-    "title": "Dos redes de partners. <hl>Un solo equipo</hl> que responde por el proyecto.",
-    "description": "Snowflake es el plano de control agéntico: datos gobernados, Cortex AI y Cortex AI Gateway. Claude es el modelo que corre dentro de él y a su alrededor. Viewnear cuenta con un reconocimiento en ambas redes y construye soluciones agénticas que empiezan con los datos correctos."
+    "title": "Una red de partners. <hl>Un solo equipo</hl> que responde por el proyecto.",
+    "description": "Snowflake es la plataforma: datos gobernados, Cortex AI y Cortex Agents, todo dentro de un mismo perímetro. Viewnear cuenta con reconocimiento Premier & Select en esa red y construye soluciones agénticas que empiezan con los datos correctos."
   },
   "comparisonHeading": {
     "eyebrow": "Construir vs. asociarse",
@@ -43,10 +43,10 @@
       "viewnear": "Especialistas Premier & Select Partner, de extremo a extremo"
     },
     {
-      "dimension": "Experiencia en IA agéntica",
+      "dimension": "Entrega agéntica",
       "inhouse": "Pruebas con el modelo que el equipo ya conoce",
       "big3": "Una de varias prácticas de IA, asignada por cuenta",
-      "viewnear": "Claude Certified Partner, agentes de Claude en producción"
+      "viewnear": "Cortex Agents en producción, dentro del mismo perímetro gobernado"
     },
     {
       "dimension": "Responsabilidad",
@@ -74,12 +74,6 @@
       "title": "Datos gobernados y la capa de IA, en Snowflake",
       "body": "Premier & Select Partner y CoCo Preferred Partner. Migraciones, bases gobernadas y Cortex AI a través de Cortex AI Gateway, entregadas por arquitectos e ingenieros con certificación SnowPro.",
       "cta": "La alianza con Snowflake"
-    },
-    "claude": {
-      "title": "Soluciones agénticas, construidas con Claude",
-      "body": "Claude Certified Partner en la Claude Partner Network. Arquitectos con certificación Claude Certified Architect que ponen a Claude en el trabajo que todavía se hace a mano, con conectores MCP hacia el sistema de registro y una persona que aprueba lo que importa.",
-      "cta": "La alianza con Claude"
-    },
-    "together": "Construido en conjunto: soluciones agénticas que empiezan con los datos correctos, gobernados en Snowflake y razonando con Claude."
+    }
   }
 }

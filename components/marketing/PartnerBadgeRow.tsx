@@ -1,31 +1,22 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { PARTNERS, SNOWFLAKE, type PartnerNetwork } from "@/config/partners";
-import { AnthropicMark } from "@/components/marketing/ProviderMark";
 import { cn } from "@/lib/utils";
 
 /**
- * Partner badges, shown bare.
+ * Partner badges, shown bare: no plate, no tint, no frame. Official artwork is
+ * already a designed object, and putting one inside another rounded box makes
+ * it read as a card about a card.
  *
- * Everywhere except the home page's partner band, a badge sits directly on the
- * page: no plate, no tint, no frame. Official artwork is already a designed
- * object, and putting one inside another rounded box makes it read as a card
- * about a card. The one exception is the home band, where both badges share a
- * single white rectangle laid across the indigo panel, because there the page
- * behind them is dark.
- *
- * Sizing. Snowflake's badge is a circle; Claude's (the Chip cut, square) was
- * chosen specifically to match it, so the default case needs no
- * `displayScale` correction to sit as an equal in a row. Snowflake's own
- * second tier (`stackedBadge`) layers behind the primary circle instead of
- * beside it; Claude's portrait cut (`badgeTall`) swaps in only where
- * `preferTall` is passed, the one slot it stands alone rather than paired
- * against the other network's mark.
+ * Sizing. Snowflake's badge is a circle, so the default case needs no
+ * `displayScale` correction to sit at full weight. Snowflake's own second
+ * tier (`stackedBadge`) layers behind the primary circle instead of beside
+ * it; `badgeTall` swaps in only where `preferTall` is passed, for a slot
+ * where a badge stands alone with real vertical room.
  */
-// Floors, not decoration. Both badges carry type inside them, so a size is
+// A floor, not decoration. The badge carries type inside it, so a size is
 // only valid if the smallest words in it can be read: the Snowflake seal's
-// "AI DATA CLOUD SERVICES PARTNER" ring and the lockup's "Claude Partner
-// Network" line. Below roughly 80px neither survives.
+// "AI DATA CLOUD SERVICES PARTNER" ring. Below roughly 80px it doesn't survive.
 // xl is the partnership hero, where the badge is the page's credential and
 // carries real weight beside the headline.
 const BASE_PX = { sm: 80, md: 104, lg: 128, xl: 170 } as const;
@@ -79,7 +70,6 @@ export function PartnerBadgeMark({
   if (!partner.badge) {
     return (
       <span className={cn("inline-flex items-center gap-2 font-display font-bold text-foreground", className)}>
-        {partner.key === "anthropic" && <AnthropicMark size={Math.round(h * 0.55)} />}
         {partner.label}
       </span>
     );
