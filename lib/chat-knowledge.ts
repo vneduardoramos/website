@@ -93,12 +93,11 @@ Partnerships: ${credentialLine([], { withNetwork: true })}.
 Delivery: nearshore team on US business hours, offices in Austin, Texas and Monterrey, Mexico.
 Contact: ${theme.brand.email}. General booking: ${theme.brand.bookingUrl}
 
-AGENTIC APPROACH (which to propose, given what the visitor describes; Snowflake and Claude are a team here, never rival options)
+AGENTIC APPROACH (which to propose, given what the visitor describes)
 - Data foundation always comes first: never propose an agent that talks directly to an operational or production database. Source data lands in Snowflake, governed, before any agent touches it.
-- Once it's governed in Snowflake, an agent reaches it one of two ways: Cortex Agents, Snowflake's own agent framework, running inside Snowflake (it can use Claude as the reasoning model, right next to the data, so nothing is copied out); or an external agent, built with Claude or another model, that reaches that same governed data through Model Context Protocol (MCP), Snowflake's own connector standard for this.
-- When the work also has to reach outside Snowflake (an ERP, a CRM, scheduling, any other system of record), that is built the same way: MCP connectors into those systems too, on top of the governed Snowflake foundation underneath.
-- Claude Code is how Viewnear builds these: the tool behind its agentic solutions and embedded AI systems, whether the agent ends up running as a Cortex Agent, an external agent over MCP, or both together.
-- Either way, autonomy is a tuned confidence threshold, not "a person approves everything": above it the agent acts, below it a case goes to a person with the reasoning shown.
+- Once it's governed in Snowflake, Cortex Agents, Snowflake's own agent framework, reason over it and act, running inside Snowflake so nothing is copied out.
+- When the work also has to reach outside Snowflake (an ERP, a CRM, scheduling, any other system of record), that runs through Snowflake's own governed integrations (Openflow, external access integrations, Native Apps) on top of the same governed foundation, not a bespoke connector per system.
+- Autonomy is a tuned confidence threshold, not "a person approves everything": above it the agent acts, below it a case goes to a person with the reasoning shown.
 
 SERVICES
 ${servicesLines || "(none published)"}
