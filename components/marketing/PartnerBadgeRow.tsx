@@ -26,12 +26,17 @@ type Size = keyof typeof BASE_PX;
 // fraction of the front badge's own size, on both axes (bottom-right).
 const STACK_PEEK = 0.25;
 
-// next/image's built-in optimizer rejects local SVGs unless the project opts
-// into `dangerouslyAllowSVG` (a real risk for remote/untrusted sources, not
-// worth enabling site-wide for these three trusted local files). `unoptimized`
-// sidesteps the optimizer for just these images instead: Next serves the file
-// from /public as-is, which an SVG already is.
-const isSvg = (src: string) => src.toLowerCase().endsWith(".svg");
+// Every badge image is rendered `unoptimized`: Next's built-in optimizer
+// rejects local SVGs outright without `dangerouslyAllowSVG` (a real risk for
+// remote/untrusted sources, not worth enabling site-wide for a few trusted
+// local files), and on this deploy target its on-disk cache has twice now
+// corrupted into serving a cached empty response for a raster badge too
+// (content-length 0, served with a one-year cache-control, browsers fall back
+// to the alt text, which is exactly what reader sees instead of the badge).
+// These are small, fixed pieces of official artwork shown at a handful of
+// known sizes; they gain little from responsive multi-size optimization and
+// lose a lot when that pipeline fails. Serving every one of them straight
+// from /public sidesteps both failure modes.
 
 export function PartnerBadgeMark({
   partner,
@@ -60,7 +65,7 @@ export function PartnerBadgeMark({
         width={tall.w}
         height={tall.h}
         sizes={`${Math.round(h * (tall.w / tall.h))}px`}
-        unoptimized={isSvg(tall.src) || undefined}
+        unoptimized
         style={{ height: h }}
         className={cn("w-auto object-contain", className)}
       />
@@ -94,6 +99,7 @@ export function PartnerBadgeMark({
           width={partner.stackedBadge.w}
           height={partner.stackedBadge.h}
           sizes={`${h}px`}
+          unoptimized
           style={{ height: h, width: h }}
           className="absolute bottom-0 right-0 rounded-full object-contain"
         />
@@ -103,6 +109,7 @@ export function PartnerBadgeMark({
           width={partner.badge.w}
           height={partner.badge.h}
           sizes={`${h}px`}
+          unoptimized
           style={{ height: h, width: h }}
           className="absolute left-0 top-0 rounded-full object-contain ring-4 ring-background"
         />
@@ -117,7 +124,7 @@ export function PartnerBadgeMark({
       width={partner.badge.w}
       height={partner.badge.h}
       sizes={`${BASE_PX[size] * 4}px`}
-      unoptimized={isSvg(partner.badge.src) || undefined}
+      unoptimized
       style={{ height: h }}
       className={cn("w-auto object-contain", className)}
     />
@@ -175,6 +182,7 @@ export async function PartnerBadgeRow({
               width={b.w}
               height={b.h}
               sizes="160px"
+              unoptimized
               style={{ height: Math.round(BASE_PX[size] * 0.7) }}
               className="w-auto object-contain"
             />
