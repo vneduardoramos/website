@@ -115,6 +115,28 @@ export async function Recognition() {
                 </span>
               </figcaption>
             </figure>
+            {outlet && (
+              <p className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border pt-4 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-muted">
+                {outlet.logo && (
+                  <Image
+                    src={outlet.logo}
+                    alt={outlet.name}
+                    width={outlet.logoWidth ?? 200}
+                    height={outlet.logoHeight ?? 80}
+                    unoptimized
+                    sizes="48px"
+                    className="h-4 w-auto"
+                  />
+                )}
+                <span>{t("press.line", { outlet: outlet.name, count: PRESS.length })}</span>
+                <Link href="/press" className="group inline-flex items-center gap-1 font-semibold normal-case tracking-normal text-primaryDeep">
+                  <span className="link-underline">{t("press.cta")}</span>
+                  <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+                    &rarr;
+                  </span>
+                </Link>
+              </p>
+            )}
           </Reveal>
 
           <div className="min-w-0">
@@ -153,31 +175,6 @@ export async function Recognition() {
                   </span>
                 </Link>
               </div>
-              {outlet && (
-                <div className={cn(ROW_GRID, "mt-6")}>
-                  <span aria-hidden="true" />
-                  <p className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-muted">
-                    {outlet.logo && (
-                      <Image
-                        src={outlet.logo}
-                        alt={outlet.name}
-                        width={outlet.logoWidth ?? 200}
-                        height={outlet.logoHeight ?? 80}
-                        unoptimized
-                        sizes="48px"
-                        className="h-4 w-auto"
-                      />
-                    )}
-                    <span>{t("press.line", { outlet: outlet.name, count: PRESS.length })}</span>
-                    <Link href="/press" className="group inline-flex items-center gap-1 font-semibold normal-case tracking-normal text-primaryDeep">
-                      <span className="link-underline">{t("press.cta")}</span>
-                      <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
-                        &rarr;
-                      </span>
-                    </Link>
-                  </p>
-                </div>
-              )}
             </Reveal>
           </div>
         </div>
