@@ -76,10 +76,10 @@ export default async function HomePage({ params }: { params: { locale: string } 
       </section>
       <CustomersFeature bottomLogos={bands.bottom} />
 
-      {/* RECOGNITION: the two pieces of third-party proof, side by side. The
-          Summit wall with Viewnear's logo on it, and the one press line that
-          names both halves of the offer. A plain band between the customers
-          block and the warm services grid. */}
+      {/* RECOGNITION: the Summit wall with Viewnear's logo on it, beside a ruled
+          ledger of the Snowflake credentials behind it, the tier row linked to
+          Snowflake's directory. A plain band between the customers block and
+          the warm services grid. */}
       <Recognition />
 
       {/* 2) WHAT WE DO */}

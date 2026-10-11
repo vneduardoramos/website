@@ -93,15 +93,3 @@ export const PRESS: PressItem[] = [
     quoteBy: "Eduardo Ramos",
   },
 ];
-
-/**
- * The home strip's pull-quote, verbatim from the Q1 earnings coverage, the
- * CEO's own words in a national trade outlet.
- */
-export const PRESS_HOME_QUOTE = {
-  quote:
-    "Data and AI are coming together. And people, leaders are understanding now that if they want to do AI, they need to do data first.",
-  outlet: "crn",
-  attribution: "Eduardo Ramos, in CRN",
-  url: PRESS[0].url,
-} as const;

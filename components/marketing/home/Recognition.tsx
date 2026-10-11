@@ -1,180 +1,159 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { Reveal, ScrollHighlight } from "@/components/marketing/Motion";
+import { Reveal, RevealGroup } from "@/components/marketing/Motion";
 import { SectionDecor } from "@/components/marketing/Decor";
-import { PRESS, PRESS_HOME_QUOTE, getOutlet } from "@/lib/press";
 import { PartnerBadgeMark } from "@/components/marketing/PartnerBadgeRow";
-import { SNOWFLAKE, type PartnerNetwork } from "@/config/partners";
+import { SNOWFLAKE, type PartnerBadge } from "@/config/partners";
+import { cn } from "@/lib/utils";
 
 /**
- * Recognition: the two pieces of third-party proof the site owns, side by side.
- *
- * Left, the photograph: Snowflake's CoCo Global Partner Momentum wall at Summit
- * 2026, shot from the floor, with Viewnear's logo among the 41 named. A wall of
- * logos in front of a keynote audience says something a badge cannot, which is
- * that somebody else put the name up there.
- *
- * Right, the quote: a line of real press, verbatim and untranslated, credited
- * to the speaker and the outlet.
- *
- * The photograph is 1600x1200 and the frame is 4:3, so `object-cover` crops
- * nothing and a hover zoom can center on Viewnear's logo as a percentage of
- * the image and stay put at every width, rather than a ring calling it out
- * permanently. Measured from the source file: the logo sits at x 696-808,
- * y 673-698 of 1600x1200, so its center is 47.25%/56.9%.
- *
- * The credential the photograph names sits beside the headline, not stacked
- * below both proof points as a third, separately-labeled block: a bare
- * badge and a one-line way to the partnership page, paired with the one
- * headline that's already about Snowflake naming Viewnear. One section, one
- * story, instead of a proof section with a credential footer bolted under it.
+ * The photograph is 1600x1200 in a 4:3 frame, so object-cover crops nothing.
+ * Viewnear's logo sits at x 696-808, y 673-698, so LOGO_CENTER is 47.25% / 56.9%.
  */
-
 const LOGO_CENTER = { left: "47.25%", top: "56.9%" } as const;
 
-// Compact badge-plus-link, sized to sit beside the headline rather than
-// stand alone as its own labeled block.
-function CredentialPlate({
-  partner,
-  title,
-  href,
-  cta,
-}: {
-  partner: PartnerNetwork;
-  title: string;
-  href: string;
-  cta: string;
-}) {
-  return (
-    <Link href={href} className="group flex shrink-0 items-center gap-4">
-      <PartnerBadgeMark partner={partner} size="sm" className="shrink-0" />
-      <div className="min-w-0">
-        <p className="font-display text-base font-bold leading-snug text-foreground">{title}</p>
-        <span className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep">
-          <span className="link-underline">{cta}</span>
-          <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
-            &rarr;
-          </span>
-        </span>
-      </div>
-    </Link>
-  );
+// Shared tracks so every row and the CTA share one left edge.
+const ROW_GRID =
+  "grid grid-cols-[6.25rem_minmax(0,1fr)] gap-x-5 sm:grid-cols-[8.125rem_minmax(0,1fr)] sm:gap-x-6";
+
+function secondaryBadge(slug: string): PartnerBadge {
+  const badge = SNOWFLAKE.secondary.find((b) => b.src.includes(slug));
+  if (!badge) throw new Error(`config/partners.ts: no Snowflake secondary badge matching "${slug}"`);
+  return badge;
 }
 
-// The phrase in the quote worth a subtle accent. Split at render time so the
-// surrounding text is never hand-copied; the quote itself stays verbatim and
-// untranslated.
-const HIGHLIGHT_PHRASE = "data first";
+const COCO = secondaryBadge("coco-preferred");
+const SNOWPRO = secondaryBadge("snowpro-core");
 
-function splitOnPhrase(text: string, phrase: string): [string, string, string] {
-  const idx = text.indexOf(phrase);
-  if (idx === -1) return [text, "", ""];
-  return [text.slice(0, idx), phrase, text.slice(idx + phrase.length)];
+function Shield({ badge }: { badge: PartnerBadge }) {
+  return (
+    <Image
+      src={badge.src}
+      alt={badge.alt}
+      width={badge.w}
+      height={badge.h}
+      unoptimized
+      sizes="130px"
+      className="h-[4.75rem] w-auto object-contain sm:h-24 lg:h-20 xl:h-24"
+    />
+  );
 }
 
 export async function Recognition() {
   const t = await getTranslations("homeServer.recognition");
-  const p = await getTranslations("press");
-  const [before, highlight, after] = splitOnPhrase(PRESS_HOME_QUOTE.quote, HIGHLIGHT_PHRASE);
-  const outlet = getOutlet(PRESS_HOME_QUOTE.outlet);
+  const ui = await getTranslations("sharedUi");
+
+  const rows = [
+    {
+      key: "tier",
+      // Shift by half the Select peek so the Premier disc, not the composite, centers under the shields.
+      badge: (
+        <>
+          <span className="flex translate-x-2.5 sm:hidden">
+            <PartnerBadgeMark partner={SNOWFLAKE} size="sm" />
+          </span>
+          <span className="hidden sm:flex sm:translate-x-[0.8125rem]">
+            <PartnerBadgeMark partner={SNOWFLAKE} size="md" />
+          </span>
+        </>
+      ),
+      name: SNOWFLAKE.level ?? SNOWFLAKE.label,
+      meaning: t("ledger.tier.meaning"),
+      verify: SNOWFLAKE.directoryUrl,
+    },
+    {
+      key: "coco",
+      badge: <Shield badge={COCO} />,
+      name: t("ledger.coco.name"),
+      meaning: t("ledger.coco.meaning"),
+      verify: null,
+    },
+    {
+      key: "snowpro",
+      badge: <Shield badge={SNOWPRO} />,
+      name: t("ledger.snowpro.name"),
+      meaning: t("ledger.snowpro.meaning"),
+      verify: null,
+    },
+  ];
 
   return (
     <section className="section relative overflow-hidden">
       <SectionDecor variant="dots" />
       <div className="container-page relative">
         <Reveal>
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-3xl">
-              <p className="eyebrow mb-3">{t("eyebrow")}</p>
-              <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-[2.6rem] md:leading-[1.1]">
-                {t.rich("title", { hl: (c) => <span className="text-gradient">{c}</span> })}
-              </h2>
-            </div>
-            <CredentialPlate
-              partner={SNOWFLAKE}
-              title={t("partners.snowflake.title")}
-              href="/partnership/snowflake"
-              cta={t("partners.cta")}
-            />
+          <div className="max-w-3xl">
+            <p className="eyebrow mb-3">{t("eyebrow")}</p>
+            <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-[2.6rem] md:leading-[1.1]">
+              {t.rich("title", { hl: (c) => <span className="text-gradient">{c}</span> })}
+            </h2>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{t("intro")}</p>
           </div>
+        </Reveal>
 
-          <div className="mt-12 grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-            {/* The photograph, uncropped, with Viewnear ringed on the wall. */}
+        <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
+          <Reveal variant="left">
             <figure className="m-0">
-              <div className="group relative aspect-[4/3] w-full cursor-zoom-in overflow-hidden rounded-2xl border border-border shadow-soft-lg">
+              <div className="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-border shadow-soft-lg">
                 <Image
                   src="/assets/images/life/partner-momentum.jpg"
                   alt={t("imageAlt")}
                   fill
-                  sizes="(min-width: 1024px) 52vw, 100vw"
-                  className="aspect-[4/3] object-cover transition-transform duration-700 ease-out group-hover:scale-[2.2] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                  sizes="(min-width: 1280px) 584px, (min-width: 1024px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[2.2] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                   style={{ transformOrigin: `${LOGO_CENTER.left} ${LOGO_CENTER.top}` }}
                 />
               </div>
               <figcaption className="mt-3 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-muted">
                 {t("caption")}
+                <span className="hidden [@media(hover:hover)]:inline">
+                  {" "}
+                  {t("hoverHint")}
+                </span>
               </figcaption>
             </figure>
+          </Reveal>
 
-            {/* The press line, with the outlet and the way to the rest of it. */}
-            <div className="min-w-0">
-              <div
-                aria-hidden="true"
-                className="select-none font-display text-[4.5rem] leading-none text-primary/15 md:text-[6rem]"
-              >
-                &ldquo;
-              </div>
-              <blockquote className="-mt-7 text-balance font-display text-2xl font-medium italic leading-snug text-foreground md:-mt-10 md:text-[1.75rem]">
-                &ldquo;{before}
-                <ScrollHighlight>{highlight}</ScrollHighlight>
-                {after}&rdquo;
-              </blockquote>
-              <div className="mt-6 flex flex-wrap items-center gap-3 font-mono text-xs text-muted">
-                <a
-                  href={PRESS_HOME_QUOTE.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={p("readOn", { outlet: outlet.name })}
-                  className={
-                    outlet.logo
-                      ? "inline-flex items-center rounded-lg border border-border bg-white px-3 py-1.5 shadow-soft transition-shadow hover:shadow-soft-lg"
-                      : "pill-chip transition-colors hover:bg-primaryDeep/15"
-                  }
-                >
-                  {outlet.logo ? (
-                    <Image
-                      src={outlet.logo}
-                      alt={outlet.name}
-                      width={outlet.logoWidth ?? 200}
-                      height={outlet.logoHeight ?? 80}
-                      sizes="96px"
-                      className="h-5 w-auto md:h-6"
-                    />
-                  ) : (
-                    outlet.name
-                  )}
-                </a>
-                <span aria-hidden="true">&middot;</span>
-                <span>{PRESS_HOME_QUOTE.attribution}</span>
-              </div>
-              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2">
+          <div className="min-w-0">
+            <RevealGroup as="ul" className="border-t border-border">
+              {rows.map((row) => (
+                <li key={row.key} className={cn(ROW_GRID, "items-center border-b border-border py-5 lg:py-4 xl:py-5")}>
+                  <div className="flex items-center justify-center">{row.badge}</div>
+                  <div className="min-w-0 max-w-xl">
+                    <p className="font-display text-lg font-bold leading-snug text-foreground">{row.name}</p>
+                    <p className="mt-1.5 text-sm leading-relaxed text-muted">{row.meaning}</p>
+                    {row.verify && (
+                      <a
+                        href={row.verify}
+                        target="_blank"
+                        rel="noopener"
+                        className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep underline-offset-4 hover:underline"
+                      >
+                        {ui("partnerPlates.verify")}
+                        <span aria-hidden="true">↗</span>
+                      </a>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </RevealGroup>
+            <Reveal delay={210}>
+              <div className={cn(ROW_GRID, "pt-5 lg:pt-4 xl:pt-5")}>
+                <span aria-hidden="true" />
                 <Link
-                  href="/press"
-                  className="group inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep"
+                  href="/partnership/snowflake"
+                  className="group inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-primaryDeep"
                 >
-                  <span className="link-underline">{p("homeCta")}</span>
+                  <span className="link-underline">{t("cta")}</span>
                   <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
                     &rarr;
                   </span>
                 </Link>
-                <span className="font-mono text-xs text-muted">
-                  {p("storiesCount", { count: PRESS.length })}
-                </span>
               </div>
-            </div>
+            </Reveal>
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

@@ -64,18 +64,26 @@
     }
   },
   "recognition": {
-    "eyebrow": "Reconocimiento",
+    "eyebrow": "Reconocidos por Snowflake",
     "title": "Snowflake puso a 41 socios en el muro de Summit. <hl>Viewnear logró un lugar.</hl>",
+    "intro": "El muro fue un momento en Summit. Estos son los registros que lo respaldan.",
     "caption": "CoCo Global Partner Momentum, Snowflake Summit 2026. Viewnear entre los 41 nombrados, de una red de más de 14,000.",
+    "hoverHint": "Pasar el cursor para ubicar el logotipo.",
     "imageAlt": "El muro CoCo Global Partner Momentum de Snowflake en Summit 2026, con 41 logotipos de socios incluido Viewnear, frente al público de la keynote",
-    "partners": {
-      "eyebrow": "Certificado por Snowflake",
-      "cta": "Ver la alianza",
-      "snowflake": {
-        "title": "Snowflake Premier & Select Partner",
-        "body": "Cimientos de datos gobernados y la capa de IA de Cortex que corre sobre ellos, de principio a fin."
+    "ledger": {
+      "tier": {
+        "meaning": "Los niveles Premier y Select de socios de servicios del Snowflake Partner Network, vigentes en Estados Unidos y LATAM."
+      },
+      "coco": {
+        "name": "CoCo Preferred Partner",
+        "meaning": "CoCo es el agente de código propio de Snowflake. El programa Preferred nombra a los socios que construyen con él."
+      },
+      "snowpro": {
+        "name": "Equipo con certificación SnowPro",
+        "meaning": "Arquitectos e ingenieros certificados por Snowflake, que entregan cimientos de datos gobernados y, sobre ellos, la capa de IA de Cortex, de principio a fin."
       }
-    }
+    },
+    "cta": "Ver la alianza"
   },
   "hero": {
     "ariaLabel": "Introducción"
