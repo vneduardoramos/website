@@ -24,50 +24,40 @@ import { SNOWFLAKE, type PartnerNetwork } from "@/config/partners";
  * permanently. Measured from the source file: the logo sits at x 696-808,
  * y 673-698 of 1600x1200, so its center is 47.25%/56.9%.
  *
- * Below both, the credential the photograph names: a bare badge, one line on
- * what the network is for, and the way to the partnership page that goes
- * deep on it. Not a repeat of the hero's credential line; a reader who
- * scrolled this far gets the "so what."
+ * The credential the photograph names sits beside the headline, not stacked
+ * below both proof points as a third, separately-labeled block: a bare
+ * badge and a one-line way to the partnership page, paired with the one
+ * headline that's already about Snowflake naming Viewnear. One section, one
+ * story, instead of a proof section with a credential footer bolted under it.
  */
 
 const LOGO_CENTER = { left: "47.25%", top: "56.9%" } as const;
 
-// The one credential, as a full-width statement rather than a card: with a
-// single partner network to name, a narrow bordered card left-aligned in a
-// wide section reads as a slot missing its other half. A row that spans the
-// section, badge at a size that can carry the statement alone, reads as
-// deliberate instead.
-function PartnerRow({
+// Compact badge-plus-link, sized to sit beside the headline rather than
+// stand alone as its own labeled block.
+function CredentialPlate({
   partner,
   title,
-  body,
   href,
   cta,
 }: {
   partner: PartnerNetwork;
   title: string;
-  body: string;
   href: string;
   cta: string;
 }) {
   return (
-    <Link
-      href={href}
-      className="group flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-10"
-    >
-      <div className="flex items-center gap-6">
-        <PartnerBadgeMark partner={partner} size="md" className="shrink-0" />
-        <div className="min-w-0">
-          <h3 className="font-display text-xl font-bold leading-snug text-foreground md:text-2xl">{title}</h3>
-          <p className="mt-2 max-w-md text-sm leading-relaxed text-muted">{body}</p>
-        </div>
-      </div>
-      <span className="inline-flex shrink-0 items-center gap-1 self-start text-sm font-semibold text-primaryDeep sm:self-auto">
-        <span className="link-underline">{cta}</span>
-        <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
-          &rarr;
+    <Link href={href} className="group flex shrink-0 items-center gap-4">
+      <PartnerBadgeMark partner={partner} size="sm" className="shrink-0" />
+      <div className="min-w-0">
+        <p className="font-display text-base font-bold leading-snug text-foreground">{title}</p>
+        <span className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep">
+          <span className="link-underline">{cta}</span>
+          <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+            &rarr;
+          </span>
         </span>
-      </span>
+      </div>
     </Link>
   );
 }
@@ -94,11 +84,19 @@ export async function Recognition() {
       <SectionDecor variant="dots" />
       <div className="container-page relative">
         <Reveal>
-          <div className="max-w-3xl">
-            <p className="eyebrow mb-3">{t("eyebrow")}</p>
-            <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-[2.6rem] md:leading-[1.1]">
-              {t.rich("title", { hl: (c) => <span className="text-gradient">{c}</span> })}
-            </h2>
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-3xl">
+              <p className="eyebrow mb-3">{t("eyebrow")}</p>
+              <h2 className="text-balance font-display text-3xl font-bold tracking-tight text-foreground md:text-[2.6rem] md:leading-[1.1]">
+                {t.rich("title", { hl: (c) => <span className="text-gradient">{c}</span> })}
+              </h2>
+            </div>
+            <CredentialPlate
+              partner={SNOWFLAKE}
+              title={t("partners.snowflake.title")}
+              href="/partnership/snowflake"
+              cta={t("partners.cta")}
+            />
           </div>
 
           <div className="mt-12 grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
@@ -175,18 +173,6 @@ export async function Recognition() {
                 </span>
               </div>
             </div>
-          </div>
-
-          {/* The credential, as a summary a reader can act on right here. */}
-          <div className="mt-16 border-t border-border pt-12 md:mt-20 md:pt-14">
-            <p className="eyebrow mb-6">{t("partners.eyebrow")}</p>
-            <PartnerRow
-              partner={SNOWFLAKE}
-              title={t("partners.snowflake.title")}
-              body={t("partners.snowflake.body")}
-              href="/partnership/snowflake"
-              cta={t("partners.cta")}
-            />
           </div>
         </Reveal>
       </div>
