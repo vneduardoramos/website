@@ -671,10 +671,17 @@ export function Nav({ navData }: { navData?: NavData }) {
                 <div
                   id={`mega-${item.label}`}
                   className={cn(
-                    // `fixed inset-x-0` breaks the panel out of the centered nav
-                    // container so the surface runs flush to both viewport edges
-                    // (full-bleed), anchored just under the 4.8rem nav bar.
-                    "fixed inset-x-0 top-[4.8rem] z-50 transition-all duration-300 ease-out",
+                    // `absolute inset-x-0 top-full`, anchored to <header> (which
+                    // is `sticky`, a valid containing block for `absolute`
+                    // descendants), breaks the panel out of the centered nav
+                    // container so the surface runs flush to both viewport
+                    // edges (full-bleed) while still tracking the nav's actual
+                    // bottom edge. A hardcoded `fixed top-[4.8rem]` here used to
+                    // assume the nav always sat at the viewport's very top; the
+                    // event announcement bar above it pushes the nav down while
+                    // unscrolled, which made the panel open over the banner and
+                    // the nav bar instead of below them.
+                    "absolute inset-x-0 top-full z-50 transition-all duration-300 ease-out",
                     isOpen
                       ? "visible translate-y-0 opacity-100"
                       : "pointer-events-none invisible -translate-y-2 opacity-0"
@@ -828,13 +835,18 @@ export function Nav({ navData }: { navData?: NavData }) {
       {/* Scrim: when a mega-panel is open, darken + de-focus the whole page
           behind it so the bright panel reads as the single focal surface. The
           nav bar (z-50) stays crisp above it; the panel paints with the nav.
-          Sits below the panel, above all page content. Closes on hover/click. */}
+          Sits below the panel, above all page content. Closes on hover/click.
+          `absolute ... top-full h-screen` (anchored to <header>, see the
+          mega-panel above for why) instead of `fixed ... top-[4.8rem]`: a
+          `h-screen` height comfortably overshoots the remaining viewport from
+          wherever the nav's bottom edge actually is, so it still fully covers
+          the page without needing to know the exact pixel offset. */}
       <div
         aria-hidden="true"
         onMouseEnter={scheduleClose}
         onClick={() => setOpenMenu(null)}
         className={cn(
-          "fixed inset-x-0 bottom-0 top-[4.8rem] z-40 hidden bg-foreground/45 backdrop-blur-[2px] transition-opacity duration-300 ease-out lg:block",
+          "absolute inset-x-0 top-full z-40 hidden h-screen bg-foreground/45 backdrop-blur-[2px] transition-opacity duration-300 ease-out lg:block",
           openMenu ? "opacity-100" : "pointer-events-none opacity-0"
         )}
       />
