@@ -83,7 +83,11 @@
         "meaning": "Architects and engineers certified by Snowflake, delivering governed data foundations and the Cortex AI layer above them, end to end."
       }
     },
-    "cta": "See the partnership"
+    "cta": "See the partnership",
+    "press": {
+      "line": "Quoted in {outlet}, {count, plural, one {# story} other {# stories}}",
+      "cta": "Read the coverage"
+    }
   },
   "hero": {
     "ariaLabel": "Intro"

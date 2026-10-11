@@ -83,7 +83,11 @@
         "meaning": "Arquitectos e ingenieros certificados por Snowflake, que entregan cimientos de datos gobernados y, sobre ellos, la capa de IA de Cortex, de principio a fin."
       }
     },
-    "cta": "Ver la alianza"
+    "cta": "Ver la alianza",
+    "press": {
+      "line": "Citados en {outlet}, {count, plural, one {# artículo} other {# artículos}}",
+      "cta": "Leer la cobertura"
+    }
   },
   "hero": {
     "ariaLabel": "Introducción"

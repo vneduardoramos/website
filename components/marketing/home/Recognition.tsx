@@ -5,6 +5,7 @@ import { Reveal, RevealGroup } from "@/components/marketing/Motion";
 import { SectionDecor } from "@/components/marketing/Decor";
 import { PartnerBadgeMark } from "@/components/marketing/PartnerBadgeRow";
 import { SNOWFLAKE, type PartnerBadge } from "@/config/partners";
+import { PRESS, getOutlet } from "@/lib/press";
 import { cn } from "@/lib/utils";
 
 /**
@@ -43,6 +44,7 @@ function Shield({ badge }: { badge: PartnerBadge }) {
 export async function Recognition() {
   const t = await getTranslations("homeServer.recognition");
   const ui = await getTranslations("sharedUi");
+  const outlet = PRESS.length > 0 ? getOutlet(PRESS[0].outlet) : null;
 
   const rows = [
     {
@@ -151,6 +153,31 @@ export async function Recognition() {
                   </span>
                 </Link>
               </div>
+              {outlet && (
+                <div className={cn(ROW_GRID, "mt-6")}>
+                  <span aria-hidden="true" />
+                  <p className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-muted">
+                    {outlet.logo && (
+                      <Image
+                        src={outlet.logo}
+                        alt={outlet.name}
+                        width={outlet.logoWidth ?? 200}
+                        height={outlet.logoHeight ?? 80}
+                        unoptimized
+                        sizes="48px"
+                        className="h-4 w-auto"
+                      />
+                    )}
+                    <span>{t("press.line", { outlet: outlet.name, count: PRESS.length })}</span>
+                    <Link href="/press" className="group inline-flex items-center gap-1 font-semibold normal-case tracking-normal text-primaryDeep">
+                      <span className="link-underline">{t("press.cta")}</span>
+                      <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+                        &rarr;
+                      </span>
+                    </Link>
+                  </p>
+                </div>
+              )}
             </Reveal>
           </div>
         </div>
