@@ -32,7 +32,12 @@ import { SNOWFLAKE, type PartnerNetwork } from "@/config/partners";
 
 const LOGO_CENTER = { left: "47.25%", top: "56.9%" } as const;
 
-function PartnerCard({
+// The one credential, as a full-width statement rather than a card: with a
+// single partner network to name, a narrow bordered card left-aligned in a
+// wide section reads as a slot missing its other half. A row that spans the
+// section, badge at a size that can carry the statement alone, reads as
+// deliberate instead.
+function PartnerRow({
   partner,
   title,
   body,
@@ -48,19 +53,21 @@ function PartnerCard({
   return (
     <Link
       href={href}
-      className="group flex items-start gap-5 rounded-2xl border border-border bg-background p-6 transition-colors hover:border-primary/50"
+      className="group flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-10"
     >
-      <PartnerBadgeMark partner={partner} size="sm" className="mt-0.5 shrink-0" />
-      <div className="min-w-0">
-        <h3 className="font-display text-lg font-bold leading-snug text-foreground">{title}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-muted">{body}</p>
-        <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primaryDeep">
-          <span className="link-underline">{cta}</span>
-          <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
-            &rarr;
-          </span>
-        </span>
+      <div className="flex items-center gap-6">
+        <PartnerBadgeMark partner={partner} size="md" className="shrink-0" />
+        <div className="min-w-0">
+          <h3 className="font-display text-xl font-bold leading-snug text-foreground md:text-2xl">{title}</h3>
+          <p className="mt-2 max-w-md text-sm leading-relaxed text-muted">{body}</p>
+        </div>
       </div>
+      <span className="inline-flex shrink-0 items-center gap-1 self-start text-sm font-semibold text-primaryDeep sm:self-auto">
+        <span className="link-underline">{cta}</span>
+        <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+          &rarr;
+        </span>
+      </span>
     </Link>
   );
 }
@@ -173,15 +180,13 @@ export async function Recognition() {
           {/* The credential, as a summary a reader can act on right here. */}
           <div className="mt-16 border-t border-border pt-12 md:mt-20 md:pt-14">
             <p className="eyebrow mb-6">{t("partners.eyebrow")}</p>
-            <div className="max-w-xl">
-              <PartnerCard
-                partner={SNOWFLAKE}
-                title={t("partners.snowflake.title")}
-                body={t("partners.snowflake.body")}
-                href="/partnership/snowflake"
-                cta={t("partners.cta")}
-              />
-            </div>
+            <PartnerRow
+              partner={SNOWFLAKE}
+              title={t("partners.snowflake.title")}
+              body={t("partners.snowflake.body")}
+              href="/partnership/snowflake"
+              cta={t("partners.cta")}
+            />
           </div>
         </Reveal>
       </div>
