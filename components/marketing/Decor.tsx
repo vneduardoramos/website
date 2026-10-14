@@ -11,39 +11,6 @@
 
 type DecorVariant = "blobs" | "dots" | "grid" | "swoosh" | "mesh" | "flow" | "crystal";
 
-/**
- * One arm of a stellar dendrite, the snow crystal that grows a main shaft with
- * paired side branches at 60 degrees. Drawn once and rotated six times, so the
- * figure's symmetry is exact rather than hand-placed.
- */
-const CRYSTAL_ARM = [
-  "M0 0V-336",
-  "M0 -104l64 -37M0 -104l-64 -37",
-  "M0 -170l88 -51M0 -170l-88 -51",
-  "M0 -170l88 -51l-10 32M0 -170l-88 -51l10 32",
-  "M0 -238l62 -36M0 -238l-62 -36",
-  "M0 -294l40 -23M0 -294l-40 -23",
-  "M0 -336l26 -15M0 -336l-26 -15",
-].join("");
-
-function CrystalFigure({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="-360 -360 720 720" fill="none" aria-hidden="true">
-      <g
-        stroke="rgb(var(--color-primary) / 0.30)"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        {[0, 60, 120, 180, 240, 300].map((angle) => (
-          <path key={angle} d={CRYSTAL_ARM} transform={`rotate(${angle})`} />
-        ))}
-        <path d="M0 -30L26 -15L26 15L0 30L-26 15L-26 -15Z" />
-      </g>
-    </svg>
-  );
-}
-
 export function SectionDecor({
   variant = "blobs",
   className = "",
@@ -117,7 +84,7 @@ export function SectionDecor({
         <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
           <defs>
             <pattern id="vn-crystal" width="60" height="103.92" patternUnits="userSpaceOnUse">
-              <g fill="none" stroke="rgb(var(--color-primary) / 0.30)" strokeWidth="1">
+              <g fill="none" stroke="rgb(var(--color-primary) / 0.20)" strokeWidth="1">
                 <path d="M0 0H60M0 51.96H60" />
                 <path d="M0 103.92L60 0" />
                 <path d="M0 0L60 103.92" />
@@ -136,13 +103,34 @@ export function SectionDecor({
         </svg>
       )}
 
-      {/* The figures over the field: two crystals at different scales, each
-          bleeding off an edge so neither reads as an icon dropped on the band. */}
+      {/* Planes of cold light, cut on the lattice's own 60 degree axes and
+          crossed so they read as facets rather than stripes. Stretched to
+          the band at any width, lightest where the content sits. */}
       {variant === "crystal" && (
-        <>
-          <CrystalFigure className="absolute -top-[30rem] right-[-16rem] hidden h-[52rem] w-[52rem] [mask-image:radial-gradient(circle_at_69%_58%,#000_18%,transparent_62%)] lg:block" />
-          <CrystalFigure className="absolute -bottom-28 -left-24 h-[28rem] w-[28rem] [mask-image:radial-gradient(circle_at_20%_78%,#000_15%,transparent_58%)] sm:h-[34rem] sm:w-[34rem]" />
-        </>
+        <svg
+          className="absolute inset-0 h-full w-full [mask-image:radial-gradient(90%_75%_at_46%_46%,#0000004d_8%,#000_70%)]"
+          viewBox="0 0 1440 900"
+          preserveAspectRatio="none"
+          fill="none"
+          aria-hidden="true"
+        >
+          <g>
+            <path d="M-820 900L-300 0L50 0L-470 900Z" fill="rgb(var(--color-primary) / 0.11)" />
+            <path d="M-470 900L50 0L350 0L-170 900Z" fill="rgb(var(--color-primary) / 0.025)" />
+            <path d="M-170 900L350 0L630 0L110 900Z" fill="rgb(var(--color-primary) / 0.085)" />
+            <path d="M110 900L630 0L1040 0L520 900Z" fill="rgb(var(--color-primary) / 0.015)" />
+            <path d="M520 900L1040 0L1460 0L940 900Z" fill="rgb(var(--color-primary) / 0.1)" />
+            <path d="M940 900L1460 0L1840 0L1320 900Z" fill="rgb(var(--color-primary) / 0.035)" />
+            <path d="M240 900L-280 0L180 0L700 900Z" fill="rgb(var(--color-primary) / 0.05)" />
+            <path d="M700 900L180 0L660 0L1180 900Z" fill="rgb(var(--color-primary) / 0.015)" />
+            <path d="M1180 900L660 0L1180 0L1700 900Z" fill="rgb(var(--color-primary) / 0.06)" />
+            <path d="M-470 900L50 0" stroke="rgb(var(--color-primary) / 0.26)" strokeWidth="1.5" />
+            <path d="M110 900L630 0" stroke="rgb(var(--color-primary) / 0.2)" strokeWidth="1" />
+            <path d="M940 900L1460 0" stroke="rgb(var(--color-primary) / 0.24)" strokeWidth="1.5" />
+            <path d="M700 900L180 0" stroke="rgb(var(--color-primary) / 0.14)" strokeWidth="1" />
+            <path d="M1700 900L1180 0" stroke="rgb(var(--color-primary) / 0.16)" strokeWidth="1" />
+          </g>
+        </svg>
       )}
 
       {variant === "flow" && (
