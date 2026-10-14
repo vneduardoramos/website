@@ -9,7 +9,7 @@
  * Use <WaveDivider/> at a section edge to transition between section colors.
  */
 
-type DecorVariant = "blobs" | "dots" | "grid" | "swoosh" | "mesh" | "flow";
+type DecorVariant = "blobs" | "dots" | "grid" | "swoosh" | "mesh" | "flow" | "crystal";
 
 export function SectionDecor({
   variant = "blobs",
@@ -73,6 +73,33 @@ export function SectionDecor({
             </mask>
           </defs>
           <rect width="100%" height="100%" fill="url(#vn-grid)" mask="url(#vn-grid-mask)" />
+        </svg>
+      )}
+
+      {/* Three line families 60 degrees apart: the axis system a snow crystal
+          actually grows on. Tile 60 wide and 60*tan(60) tall so every family
+          wraps, and masked out of the middle so it only ever reads at the
+          margins. */}
+      {variant === "crystal" && (
+        <svg className="absolute inset-0 h-full w-full" aria-hidden="true">
+          <defs>
+            <pattern id="vn-crystal" width="60" height="103.92" patternUnits="userSpaceOnUse">
+              <g fill="none" stroke="rgb(var(--color-primary) / 0.22)" strokeWidth="1">
+                <path d="M0 0H60M0 51.96H60" />
+                <path d="M0 103.92L60 0" />
+                <path d="M0 0L60 103.92" />
+              </g>
+            </pattern>
+            <radialGradient id="vn-crystal-fade" cx="50%" cy="45%" r="78%">
+              <stop offset="0%" stopColor="white" stopOpacity="0" />
+              <stop offset="55%" stopColor="white" stopOpacity="0.25" />
+              <stop offset="100%" stopColor="white" stopOpacity="1" />
+            </radialGradient>
+            <mask id="vn-crystal-mask">
+              <rect width="100%" height="100%" fill="url(#vn-crystal-fade)" />
+            </mask>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#vn-crystal)" mask="url(#vn-crystal-mask)" />
         </svg>
       )}
 

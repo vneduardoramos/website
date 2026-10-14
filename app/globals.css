@@ -277,6 +277,19 @@ select:focus-visible,
     border-top: 1px solid rgb(var(--color-border) / 0.7);
     border-bottom: 1px solid rgb(var(--color-border) / 0.7);
   }
+  /* Glacier band: the coldest ground on the site, for the one section about
+     the Snowflake partnership itself. Snowflake's own sky-blue falls from the
+     top right across a cool vertical wash, with the logo's royal blue weighting
+     the bottom left so the band reads as depth rather than a flat tint. Blue
+     hairlines instead of neutral ones, the way .section-warm wears accent ones. */
+  .section-glacier {
+    background:
+      radial-gradient(115% 95% at 100% 0%, rgb(var(--color-primary) / 0.16), transparent 62%),
+      radial-gradient(85% 75% at 0% 100%, rgb(var(--color-royal) / 0.07), transparent 58%),
+      linear-gradient(180deg, rgb(var(--color-surface)), rgb(var(--color-surface2)));
+    border-top: 1px solid rgb(var(--color-primary) / 0.22);
+    border-bottom: 1px solid rgb(var(--color-primary) / 0.22);
+  }
   /* Warm tinted band: the counterpoint to .section-tint. Warm cream base with
      gold + orange glows; warm hairlines. Retints eyebrows/chips inside to the
      legible burnt-orange so warm sections feel cohesive automatically. */

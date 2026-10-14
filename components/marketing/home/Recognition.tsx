@@ -81,8 +81,8 @@ export async function Recognition() {
   ];
 
   return (
-    <section className="section relative overflow-hidden">
-      <SectionDecor variant="dots" />
+    <section className="section section-glacier relative overflow-hidden">
+      <SectionDecor variant="crystal" />
       <div className="container-page relative">
         <Reveal>
           <div className="max-w-3xl">
