@@ -28,6 +28,7 @@ export async function BookACall({
   className = "",
   variant = "band",
   tone = "light",
+  pillsLayout = "pills",
 }: {
   slugs?: string[];
   className?: string;
@@ -44,6 +45,8 @@ export async function BookACall({
   variant?: "band" | "compact" | "inline";
   /** Text colors for placement on a dark scrim. Applies to "inline" only. */
   tone?: "light" | "dark";
+  /** Layout of the pills in the "inline" variant only; the band and compact variants ignore it. */
+  pillsLayout?: "pills" | "rows";
 }) {
   const locale = (await getLocale()) as Locale;
   const t = await getTranslations("booking");
@@ -100,6 +103,7 @@ export async function BookACall({
             label={t("pills.label")}
             fallbackLabel={t("cta")}
             tone={tone}
+            layout={pillsLayout}
           />
         </div>
       </div>

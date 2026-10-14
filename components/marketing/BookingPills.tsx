@@ -54,6 +54,7 @@ export function BookingPills({
   fallbackLabel,
   tone = "light",
   size = "sm",
+  layout = "pills",
 }: {
   people: BookablePerson[];
   /** Used when nobody shown has a calendar of their own. */
@@ -73,6 +74,12 @@ export function BookingPills({
    * the point of the screen rather than a footer widget.
    */
   size?: "sm" | "lg";
+  /**
+   * "rows" is a hairline ledger for a column that is only this list (the home
+   * careers close): full-width rows under a border-t, no card chrome. "pills"
+   * stays for the band, compact and dark-scrim hosts.
+   */
+  layout?: "pills" | "rows";
 }) {
   const wrapper = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
@@ -165,88 +172,130 @@ export function BookingPills({
         {label}
       </p>
 
-      <div className={size === "lg" ? "mt-5 flex flex-col gap-3" : "mt-4 flex flex-wrap gap-3"}>
-        {hasPeople ? (
-          people.map((p, i) => (
-            <a
-              key={p.slug}
-              href={p.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={open(p.url)}
-              aria-label={p.ariaLabel}
-              className={
-                size === "lg"
-                  ? "group flex items-center gap-4 rounded-2xl border border-border bg-surface p-4 text-left shadow-soft transition hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-soft-lg"
-                  : [
-                      "group flex items-center gap-3 border border-border bg-surface py-2 pl-2 pr-5 text-left shadow-soft transition hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-soft-lg",
-                      // A topics line makes the pill two lines taller, so soften the
-                      // radius rather than keeping a full pill shape.
-                      p.topics ? "max-w-sm rounded-2xl" : "rounded-full",
-                    ].join(" ")
-              }
-            >
-              {p.photo ? (
-                <Image
-                  src={p.photo}
-                  alt=""
-                  width={size === "lg" ? 56 : 36}
-                  height={size === "lg" ? 56 : 36}
-                  sizes={size === "lg" ? "56px" : "36px"}
-                  className={
-                    size === "lg"
-                      ? // The logo's own hues, one per card, round-robin: a small,
-                        // repeated brand touch rather than a flat gray avatar ring.
-                        `h-14 w-14 shrink-0 rounded-full object-cover ring-2 ring-offset-2 ring-offset-surface ${
-                          ["ring-royal/50", "ring-primary/60", "ring-accent/60"][i % 3]
-                        }`
-                      : "h-9 w-9 rounded-full object-cover"
-                  }
-                />
-              ) : null}
-              <span className="min-w-0 flex-1 leading-tight">
-                <span
-                  className={
-                    size === "lg"
-                      ? "block font-display text-base font-bold text-foreground group-hover:text-primaryDeep"
-                      : "block text-sm font-semibold text-foreground group-hover:text-primaryDeep"
-                  }
-                >
-                  {p.name}
+      {layout === "rows" && hasPeople ? (
+        <ul className="mt-4 border-t border-border">
+          {people.map((p) => (
+            <li key={p.slug}>
+              <a
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={open(p.url)}
+                aria-label={p.ariaLabel}
+                className="group grid grid-cols-[2.25rem_minmax(0,1fr)_auto] items-center gap-x-4 border-b border-border py-5 text-left transition-colors"
+              >
+                {p.photo ? (
+                  <Image
+                    src={p.photo}
+                    alt=""
+                    width={36}
+                    height={36}
+                    sizes="36px"
+                    className="h-9 w-9 rounded-full object-cover"
+                  />
+                ) : (
+                  <span aria-hidden="true" className="h-9 w-9" />
+                )}
+                <span className="min-w-0 flex-1 leading-tight">
+                  <span className="block text-sm font-semibold text-foreground group-hover:text-primaryDeep">
+                    {p.name}
+                  </span>
+                  <span className="block text-xs text-muted">{p.title}</span>
+                  {p.topics && (
+                    <span className="mt-1 block text-xs leading-snug text-muted/90">
+                      {p.topics}
+                    </span>
+                  )}
                 </span>
-                <span className={size === "lg" ? "block text-sm text-muted" : "block text-xs text-muted"}>
-                  {p.title}
-                </span>
-                {p.topics && (
+                <CalendarIcon />
+              </a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className={size === "lg" ? "mt-5 flex flex-col gap-3" : "mt-4 flex flex-wrap gap-3"}>
+          {hasPeople ? (
+            people.map((p, i) => (
+              <a
+                key={p.slug}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={open(p.url)}
+                aria-label={p.ariaLabel}
+                className={
+                  size === "lg"
+                    ? "group flex items-center gap-4 rounded-2xl border border-border bg-surface p-4 text-left shadow-soft transition hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-soft-lg"
+                    : [
+                        "group flex items-center gap-3 border border-border bg-surface py-2 pl-2 pr-5 text-left shadow-soft transition hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-soft-lg",
+                        // A topics line makes the pill two lines taller, so soften the
+                        // radius rather than keeping a full pill shape.
+                        p.topics ? "max-w-sm rounded-2xl" : "rounded-full",
+                      ].join(" ")
+                }
+              >
+                {p.photo ? (
+                  <Image
+                    src={p.photo}
+                    alt=""
+                    width={size === "lg" ? 56 : 36}
+                    height={size === "lg" ? 56 : 36}
+                    sizes={size === "lg" ? "56px" : "36px"}
+                    className={
+                      size === "lg"
+                        ? // The logo's own hues, one per card, round-robin: a small,
+                          // repeated brand touch rather than a flat gray avatar ring.
+                          `h-14 w-14 shrink-0 rounded-full object-cover ring-2 ring-offset-2 ring-offset-surface ${
+                            ["ring-royal/50", "ring-primary/60", "ring-accent/60"][i % 3]
+                          }`
+                        : "h-9 w-9 rounded-full object-cover"
+                    }
+                  />
+                ) : null}
+                <span className="min-w-0 flex-1 leading-tight">
                   <span
                     className={
                       size === "lg"
-                        ? "mt-1.5 block text-sm leading-snug text-muted/90"
-                        : "mt-1 block text-xs leading-snug text-muted/90"
+                        ? "block font-display text-base font-bold text-foreground group-hover:text-primaryDeep"
+                        : "block text-sm font-semibold text-foreground group-hover:text-primaryDeep"
                     }
                   >
-                    {p.topics}
+                    {p.name}
                   </span>
-                )}
+                  <span className={size === "lg" ? "block text-sm text-muted" : "block text-xs text-muted"}>
+                    {p.title}
+                  </span>
+                  {p.topics && (
+                    <span
+                      className={
+                        size === "lg"
+                          ? "mt-1.5 block text-sm leading-snug text-muted/90"
+                          : "mt-1 block text-xs leading-snug text-muted/90"
+                      }
+                    >
+                      {p.topics}
+                    </span>
+                  )}
+                </span>
+                <CalendarIcon large={size === "lg"} />
+              </a>
+            ))
+          ) : (
+            <a
+              href={fallbackUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={open(fallbackUrl)}
+              className="btn-primary group inline-flex"
+            >
+              {fallbackLabel}
+              <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">
+                →
               </span>
-              <CalendarIcon large={size === "lg"} />
             </a>
-          ))
-        ) : (
-          <a
-            href={fallbackUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={open(fallbackUrl)}
-            className="btn-primary group inline-flex"
-          >
-            {fallbackLabel}
-            <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">
-              →
-            </span>
-          </a>
-        )}
-      </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

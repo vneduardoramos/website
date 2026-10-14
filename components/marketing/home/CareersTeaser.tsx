@@ -124,7 +124,7 @@ export async function CareersTeaser({ locale }: { locale: Locale }) {
                 lg:contents lets BookACall's h2, body and pills become rows 2-4. */}
             <div className="border-t border-border pt-10 lg:row-span-4 lg:grid lg:grid-rows-subgrid lg:border-l lg:border-t-0 lg:pl-16 lg:pt-0">
               <span aria-hidden="true" className="hidden lg:block" />
-              <BookACall variant="inline" className="lg:contents" />
+              <BookACall variant="inline" pillsLayout="rows" className="lg:contents" />
             </div>
           </div>
         </Reveal>
