@@ -3,7 +3,7 @@
 export const blogPostsEs: Record<string, { title?: string; excerpt?: string; keyTakeaways?: string[]; seoTitle?: string; seoDescription?: string }> = {
   "snowflake-world-tour-mexico-city-2026": {
     title: "Notas del Snowflake World Tour Ciudad de México",
-    excerpt: "Pasamos el 13 de octubre en el Hilton Reforma, parados en un stand desde las ocho de la mañana hasta que prendieron las luces. Cinco aceleradores sobre una mesa, documentos que nos dieron desconocidos y la misma pregunta todo el día: por dónde empiezo. Nuestras notas desde el piso del Snowflake World Tour Ciudad de México.",
+    excerpt: "Pasamos el 13 de octubre en el Hilton Reforma, parados en un stand desde las ocho de la mañana hasta que prendieron las luces. Cinco aceleradores sobre una mesa, documentos reales de quien se acercaba y la misma pregunta todo el día: por dónde empiezo. Nuestras notas desde el piso del Snowflake World Tour Ciudad de México.",
     seoTitle: "Notas del Snowflake World Tour Ciudad de México",
     seoDescription: "Notas de campo del Snowflake World Tour Ciudad de México, 13 de octubre de 2026: el keynote sobre la empresa agéntica, lo que mostramos en el stand y la pregunta que de verdad hizo cada visitante.",
     keyTakeaways: [
