@@ -2,6 +2,10 @@ El 13 de octubre el Snowflake World Tour llegó a la Ciudad de México, en el Hi
 
 Viewnear estuvo como patrocinador, con stand en el piso de exhibición. Estas son nuestras notas.
 
+La sala principal pasó nuestro spot entre sesiones. Medio minuto de un salón en la Ciudad de México con Viewnear en una pantalla del tamaño de una pared, algo raro y bonito de ver desde el fondo.
+
+![La pantalla principal del Snowflake World Tour Ciudad de México, con el spot de Viewnear y la lámina True Blue del evento](/assets/video/swt-cdmx-2026-main-screen.mp4 "/assets/images/blog/swt-cdmx-2026/main-screen-poster.jpg")
+
 ## La era de la empresa agéntica
 
 ![El escenario principal del Snowflake World Tour Ciudad de México, con "The Era of the Agentic Enterprise" en las pantallas](/assets/images/blog/swt-cdmx-2026/keynote-agentic-enterprise.jpg)
@@ -47,10 +51,6 @@ La mejor parte del día no estaba en la agenda. Fue reencontrarse con los equipo
 ![El equipo de Viewnear frente al backdrop del Snowflake World Tour Ciudad de México](/assets/images/blog/swt-cdmx-2026/world-tour-backdrop.jpg)
 
 Viewnear es Snowflake Premier y Select Services Partner y CoCo Preferred Partner, y construye sobre Snowflake y nada más. True blue no es un eslogan aquí, es la forma de la práctica: una sola plataforma, aprendida a fondo, con un equipo certificado que vive dentro de ella cada semana.
-
-La sala principal pasó nuestro spot entre sesiones. Medio minuto de un salón en la Ciudad de México con Viewnear en una pantalla del tamaño de una pared, algo raro y bonito de ver desde el fondo.
-
-![La pantalla principal del Snowflake World Tour Ciudad de México, con el spot de Viewnear y la lámina True Blue del evento](/assets/video/swt-cdmx-2026-main-screen.mp4 "/assets/images/blog/swt-cdmx-2026/main-screen-poster.jpg")
 
 ![Dos integrantes del equipo de Viewnear con el oso de Snowflake](/assets/images/blog/swt-cdmx-2026/snowflake-bear.jpg)
 

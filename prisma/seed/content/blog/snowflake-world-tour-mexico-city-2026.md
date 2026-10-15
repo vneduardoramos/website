@@ -2,6 +2,10 @@ On October 13 the Snowflake World Tour came to Mexico City, at the Hilton Reform
 
 Viewnear was there as a sponsor, with a booth on the floor. These are our notes.
 
+The main hall ran our spot between sessions. Half a minute of a room in Mexico City with Viewnear on a screen the size of a wall, which is a strange and good thing to watch from the back.
+
+![The main hall screen at Snowflake World Tour Mexico City, running the Viewnear spot and the show's True Blue slide](/assets/video/swt-cdmx-2026-main-screen.mp4 "/assets/images/blog/swt-cdmx-2026/main-screen-poster.jpg")
+
 ## The era of the agentic enterprise
 
 ![The main stage at Snowflake World Tour Mexico City, with "The Era of the Agentic Enterprise" on the screens](/assets/images/blog/swt-cdmx-2026/keynote-agentic-enterprise.jpg)
@@ -47,10 +51,6 @@ The best part of the day was not on the agenda. It was catching up with the Snow
 ![The Viewnear team in front of the Snowflake World Tour Mexico City backdrop](/assets/images/blog/swt-cdmx-2026/world-tour-backdrop.jpg)
 
 Viewnear is a Snowflake Premier and Select Services Partner and a CoCo Preferred Partner, and we build on Snowflake and nothing else. True blue is not a slogan for us, it is the shape of the practice: one platform, learned deeply, with a team that is certified on it and spends every week inside it.
-
-The main hall ran our spot between sessions. Half a minute of a room in Mexico City with Viewnear on a screen the size of a wall, which is a strange and good thing to watch from the back.
-
-![The main hall screen at Snowflake World Tour Mexico City, running the Viewnear spot and the show's True Blue slide](/assets/video/swt-cdmx-2026-main-screen.mp4 "/assets/images/blog/swt-cdmx-2026/main-screen-poster.jpg")
 
 ![Two members of the Viewnear team with the Snowflake bear](/assets/images/blog/swt-cdmx-2026/snowflake-bear.jpg)
 
