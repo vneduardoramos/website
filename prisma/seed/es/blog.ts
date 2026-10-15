@@ -1,6 +1,19 @@
 // Spanish (es) overlay. Keyed by slug. Optional: empty means the row falls back to English. Filled by the content-translation phase.
 // Body comes from prisma/seed/content/blog/<slug>.es.md, NOT here.
 export const blogPostsEs: Record<string, { title?: string; excerpt?: string; keyTakeaways?: string[]; seoTitle?: string; seoDescription?: string }> = {
+  "snowflake-world-tour-mexico-city-2026": {
+    title: "Notas del Snowflake World Tour Ciudad de México",
+    excerpt: "Snowflake trajo el World Tour a la Ciudad de México el 13 de octubre con una sola promesa: hacer que la IA sea real para el negocio. Viewnear estuvo en el piso con stand y cinco aceleradores corriendo sobre documentos reales. Esto es lo que planteó el keynote, lo que mostramos y la pregunta que casi todos hicieron en lugar de preguntar qué modelo usamos.",
+    seoTitle: "Notas del Snowflake World Tour Ciudad de México",
+    seoDescription: "Notas de campo del Snowflake World Tour Ciudad de México, 13 de octubre de 2026: el keynote sobre la empresa agéntica, lo que mostramos en el stand y la pregunta que de verdad hizo cada visitante.",
+    keyTakeaways: [
+      "Snowflake ordenó el día alrededor de la empresa agéntica: un plano de control agéntico al centro, con la elección de modelo, los datos y el contexto de la empresa, y las aplicaciones y agentes donde ocurre el trabajo alrededor.",
+      "El diagrama es honesto sobre el orden. El agente no es el producto: va encima de datos gobernados, definiciones de negocio y permisos que ya significan algo.",
+      "Cinco aceleradores de Viewnear corrieron en vivo sobre documentos que entregaron los visitantes: DocLens, StatementIQ, UnderwriteIQ, InvoiceMatch y ContractLens.",
+      "Casi nadie preguntó qué modelo usamos. La pregunta recurrente fue por dónde empezar, y la respuesta es elegir el flujo por fricción y valor medible, y fijar la línea base antes de construir.",
+      "La segunda pregunta más común fue sobre confianza de auditoría más que confianza en el modelo: quién aprobó esto, qué leyó y si se puede mostrar el camino del documento origen a la cifra reportada.",
+    ],
+  },
   "how-to-choose-a-snowflake-partner": {
     title: "Cómo elegir un partner de Snowflake: una checklist para el comprador",
     excerpt: "Las certificaciones son el piso, no la respuesta. Lo que separa a un buen partner de Snowflake de uno doloroso casi nunca está en la presentación de ventas: quién construye con el equipo interno, quién sigue siendo responsable después del go-live y quién cobra por terminar en lugar de por facturar. Una checklist práctica para llevar a cada conversación.",
