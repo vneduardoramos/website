@@ -2,7 +2,7 @@ Pasamos el 13 de octubre en el Hilton Reforma, parados en un stand, desde las oc
 
 La frase de Snowflake para el día fue "Making AI Real for Business". La nuestra era más simple: llevar lo que ya funciona, ponerlo sobre una mesa y dejar que la gente intente romperlo.
 
-A media tarde nuestro spot apareció en la pantalla principal, que es una cosa rarísima de ver desde el fondo del salón.
+A media tarde nuestro spot apareció en la pantalla principal, algo extraño de ver desde el fondo del salón.
 
 ![La pantalla principal del Snowflake World Tour Ciudad de México, con el spot de Viewnear y la lámina True Blue del evento](/assets/video/swt-cdmx-2026-main-screen.mp4 "/assets/images/blog/swt-cdmx-2026/main-screen-poster.jpg")
 
@@ -12,7 +12,7 @@ Estas son las notas desde el piso de exhibición.
 
 ![El escenario principal del Snowflake World Tour Ciudad de México, con "The Era of the Agentic Enterprise" en las pantallas](/assets/images/blog/swt-cdmx-2026/keynote-agentic-enterprise.jpg)
 
-Snowflake lo llamó la era de la empresa agéntica, y luego dedicó casi todo el keynote a la parte que nadie pone en un cartel: qué tiene que ser cierto por debajo antes de que un agente se acerque a algo que de verdad importa.
+Snowflake lo llamó la era de la empresa agéntica, y dedicó casi todo el keynote a qué tiene que ser cierto por debajo antes de que un agente se acerque a algo que de verdad importa.
 
 Una lámina hizo el trabajo pesado.
 
@@ -30,7 +30,7 @@ Si suena conocido, lo escribimos en junio, en [Snowflake es ahora el plano de co
 
 Sin presentaciones. Llevamos los cinco aceleradores que ya corren en producción y pedimos que nos pasaran algo real.
 
-Y lo hicieron. Estados de cuenta, facturas, contratos, expedientes de crédito. Ese papeleo que vive en una carpeta compartida y le arruina el jueves a alguien.
+Y lo hicieron. Estados de cuenta, facturas, contratos, expedientes de crédito. Ese papeleo que vive en una carpeta compartida y le toma a alguien casi todo un día.
 
 | Acelerador | Qué lee | Qué deja |
 | --- | --- | --- |
@@ -40,7 +40,7 @@ Y lo hicieron. Estados de cuenta, facturas, contratos, expedientes de crédito. 
 | InvoiceMatch | Facturas y pagos | Cargos duplicados, diferencias de precio y pagos sin conciliar |
 | ContractLens | Contratos | Obligaciones, términos y renovaciones verificados contra los registros |
 
-La explicación tomaba como un minuto. Esto lee los documentos, escribe registros validados dentro de Snowflake y deja el rastro de dónde salió cada cifra. Después lo corríamos y nos callábamos, que es la mejor mitad de una demo.
+La explicación tomaba como un minuto. Esto lee los documentos, escribe registros validados dentro de Snowflake y deja el rastro de dónde salió cada cifra. Después lo corríamos y dejábamos que el resultado hablara.
 
 ![Viewnear en la pantalla principal del Snowflake World Tour Ciudad de México, con las insignias de partner y certificación de Snowflake](/assets/images/blog/swt-cdmx-2026/viewnear-on-screen.jpg)
 
@@ -48,7 +48,7 @@ La explicación tomaba como un minuto. Esto lee los documentos, escribe registro
 
 Casi nadie preguntó qué modelo usamos.
 
-Lo que preguntaban, una y otra vez con palabras distintas, era por dónde empezar. Alguien describía un proceso que claramente lo tiene harto, casi siempre documentos más una hoja de cálculo más una persona que lleva tres años haciéndolo a mano, y luego preguntaba si eso era demasiado chico para contar como proyecto de IA, o si primero hacía falta un programa de cimientos de dos años.
+Lo que preguntaban, una y otra vez con palabras distintas, era por dónde empezar. Alguien describía un proceso que lleva tiempo desgastando a su equipo, casi siempre documentos más una hoja de cálculo más una persona que lleva tres años haciéndolo a mano, y luego preguntaba si eso era demasiado chico para contar como proyecto de IA, o si primero hacía falta un programa de cimientos de dos años.
 
 Para la tarde la respuesta ya cabía en tres frases, así que aquí queda por escrito.
 
@@ -62,7 +62,7 @@ La otra pregunta, casi igual de frecuente, era sobre pruebas. No "confías en el
 
 La verdad, lo mejor no estaba en la agenda.
 
-Los colegas de Snowflake de México y de Estados Unidos coincidieron en el mismo edificio por una vez, cosa que casi nunca pasa, y varias personas que hasta entonces eran solo un correo resultaron tener cara.
+Los colegas de Snowflake de México y de Estados Unidos estuvieron en la misma sala al mismo tiempo, y por fin conocimos en persona a varias personas con las que llevábamos meses trabajando por correo.
 
 ![El equipo de Viewnear frente al backdrop del Snowflake World Tour Ciudad de México](/assets/images/blog/swt-cdmx-2026/world-tour-backdrop.jpg)
 
@@ -72,8 +72,8 @@ En la práctica eso es menos un eslogan que una decisión sobre profundidad. Una
 
 ![Dos integrantes del equipo de Viewnear con el oso de Snowflake](/assets/images/blog/swt-cdmx-2026/snowflake-bear.jpg)
 
-Y sí, hicimos fila para la foto con el oso.
+También nos dimos tiempo para la foto con el oso.
 
-Gracias a Snowflake por el día, por la alianza y por el equipo que mantuvo todo a tiempo. Gracias a quienes se pararon en el stand y nos dieron algo incómodo de leer.
+Gracias a Snowflake por el día, por la alianza y por el equipo que mantuvo todo a tiempo. Gracias a quienes se pararon en el stand y nos dieron un documento real para correr.
 
 Nos vemos en el siguiente. Si hay un proceso que duele, vale la pena traerlo y decimos con honestidad si es un buen primero. La página de la [alianza con Snowflake](/es/partnership/snowflake) tiene el detalle de lo que significan los niveles en la entrega, y se puede [iniciar una conversación](/es/contact) cuando el momento sea el adecuado.

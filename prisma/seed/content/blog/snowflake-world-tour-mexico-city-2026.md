@@ -2,7 +2,7 @@ We spent October 13 at the Hilton Reforma, standing at a booth, from eight in th
 
 Snowflake's line for the day was "Making AI Real for Business". Ours was simpler: bring the things that already work, put them on a table, and let people try to break them.
 
-Somewhere in the middle of the afternoon our spot came up on the main screen, which is a very odd thing to watch from the back of a room.
+Somewhere in the middle of the afternoon our spot came up on the main screen, which is a strange thing to watch from the back of the room.
 
 ![The main hall screen at Snowflake World Tour Mexico City, running the Viewnear spot and the show's True Blue slide](/assets/video/swt-cdmx-2026-main-screen.mp4 "/assets/images/blog/swt-cdmx-2026/main-screen-poster.jpg")
 
@@ -12,7 +12,7 @@ These are our notes from the floor.
 
 ![The main stage at Snowflake World Tour Mexico City, with "The Era of the Agentic Enterprise" on the screens](/assets/images/blog/swt-cdmx-2026/keynote-agentic-enterprise.jpg)
 
-Snowflake called it the era of the agentic enterprise, then spent most of the keynote on the part nobody puts on a poster: what has to be true underneath before an agent gets anywhere near anything that matters.
+Snowflake called it the era of the agentic enterprise, and spent most of the keynote on what has to be true underneath before an agent goes anywhere near anything that matters.
 
 One slide did the heavy lifting.
 
@@ -30,7 +30,7 @@ If that sounds familiar, we wrote it down in June, in [Snowflake is now the cont
 
 No slides. We brought the five accelerators that already run in production and asked people to hand us something real.
 
-They did. Statements, invoices, contracts, loan files. The kind of paperwork that lives in a shared drive and ruins somebody's Thursday.
+They did. Statements, invoices, contracts, loan files. The kind of paperwork that sits in a shared drive and takes someone most of a day.
 
 | Accelerator | What it reads | What it leaves behind |
 | --- | --- | --- |
@@ -40,7 +40,7 @@ They did. Statements, invoices, contracts, loan files. The kind of paperwork tha
 | InvoiceMatch | Invoices and payments | Duplicate charges, price gaps and unmatched payments |
 | ContractLens | Contracts | Obligations, terms and renewals checked against records |
 
-The pitch took about a minute. This reads your documents, it writes validated records into Snowflake, and it leaves a trail showing where every number came from. Then we would run it and stop talking, which is the better half of a demo.
+The pitch took about a minute. This reads your documents, it writes validated records into Snowflake, and it leaves a trail showing where every number came from. Then we would run it and let the output do the rest.
 
 ![Viewnear on the main screen at Snowflake World Tour Mexico City, with the Snowflake partner and certification badges](/assets/images/blog/swt-cdmx-2026/viewnear-on-screen.jpg)
 
@@ -48,7 +48,7 @@ The pitch took about a minute. This reads your documents, it writes validated re
 
 Almost nobody asked which model we use.
 
-What they asked, over and over in slightly different words, was where to start. Someone would describe a process that clearly drives them up the wall, usually documents plus a spreadsheet plus a person who has been doing it by hand for three years, and then ask whether that was too small to count as an AI project, or whether a two year foundation program had to come first.
+What they asked, over and over in slightly different words, was where to start. Someone would describe a process that has been wearing their team down, usually documents plus a spreadsheet plus a person who has been doing it by hand for three years, and then ask whether that was too small to count as an AI project, or whether a two year foundation program had to come first.
 
 By the afternoon we had an answer down to three sentences, so here it is in writing.
 
@@ -62,7 +62,7 @@ The other question, nearly as common, was about proof. Not "do you trust the mod
 
 Honestly, the best part was not on the agenda.
 
-Our Snowflake counterparts from Mexico and the United States were all in the same building for once, which hardly ever happens, and a good number of people we had only ever dealt with over email turned out to have faces.
+Our Snowflake counterparts from Mexico and the United States were in the same room at the same time, and we finally met several people in person after months of working with them over email.
 
 ![The Viewnear team in front of the Snowflake World Tour Mexico City backdrop](/assets/images/blog/swt-cdmx-2026/world-tour-backdrop.jpg)
 
@@ -72,8 +72,8 @@ In practice that is less a slogan than a decision about depth. One platform mean
 
 ![Two members of the Viewnear team with the Snowflake bear](/assets/images/blog/swt-cdmx-2026/snowflake-bear.jpg)
 
-And yes, we queued for a photo with the bear.
+We made time for a photo with the bear.
 
-Thank you to Snowflake for the day, for the partnership, and for the team that kept the whole thing running on time. Thank you to everyone who stopped at the booth and handed us something awkward to read.
+Thank you to Snowflake for the day, for the partnership, and for the team that kept the whole thing running on time. Thank you to everyone who stopped at the booth and gave us a real document to run.
 
 See you at the next one. If you have a process that hurts, bring it to us and we will tell you honestly whether it makes a good first one. The [Snowflake partnership](/partnership/snowflake) page has the detail on what our tiers mean in delivery, and you can [start a conversation](/contact) whenever the timing suits.
