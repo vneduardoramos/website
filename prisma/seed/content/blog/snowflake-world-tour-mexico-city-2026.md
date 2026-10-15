@@ -48,6 +48,10 @@ The best part of the day was not on the agenda. It was catching up with the Snow
 
 Viewnear is a Snowflake Premier and Select Services Partner and a CoCo Preferred Partner, and we build on Snowflake and nothing else. True blue is not a slogan for us, it is the shape of the practice: one platform, learned deeply, with a team that is certified on it and spends every week inside it.
 
+The main hall ran our spot between sessions. Half a minute of a room in Mexico City with Viewnear on a screen the size of a wall, which is a strange and good thing to watch from the back.
+
+![The main hall screen at Snowflake World Tour Mexico City, running the Viewnear spot and the show's True Blue slide](/assets/video/swt-cdmx-2026-main-screen.mp4 "/assets/images/blog/swt-cdmx-2026/main-screen-poster.jpg")
+
 ![Two members of the Viewnear team with the Snowflake bear](/assets/images/blog/swt-cdmx-2026/snowflake-bear.jpg)
 
 Thank you to Snowflake for the event, for the partnership, and for the people who made the day run. Thank you to everyone who stopped by the booth, handed us a document, and asked a hard question.
