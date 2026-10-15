@@ -1,61 +1,79 @@
-On October 13 the Snowflake World Tour came to Mexico City, at the Hilton Reforma on Avenida Juárez, and ran from eight in the morning until the room finally emptied in the evening. The line Snowflake put on the invitation was "Making AI Real for Business". That is a high bar for a one day event, and it is the right one, because the gap between an AI demo and an AI system somebody depends on every Monday is most of the work.
+We spent October 13 at the Hilton Reforma, standing at a booth, from eight in the morning until the lights came up.
 
-Viewnear was there as a sponsor, with a booth on the floor. These are our notes.
+Snowflake's line for the day was "Making AI Real for Business". Ours was simpler: bring the things that already work, put them on a table, and let people try to break them.
 
-The main hall ran our spot between sessions. Half a minute of a room in Mexico City with Viewnear on a screen the size of a wall, which is a strange and good thing to watch from the back.
+Somewhere in the middle of the afternoon our spot came up on the main screen, which is a very odd thing to watch from the back of a room.
 
 ![The main hall screen at Snowflake World Tour Mexico City, running the Viewnear spot and the show's True Blue slide](/assets/video/swt-cdmx-2026-main-screen.mp4 "/assets/images/blog/swt-cdmx-2026/main-screen-poster.jpg")
 
-## The era of the agentic enterprise
+These are our notes from the floor.
+
+## What the day was about
 
 ![The main stage at Snowflake World Tour Mexico City, with "The Era of the Agentic Enterprise" on the screens](/assets/images/blog/swt-cdmx-2026/keynote-agentic-enterprise.jpg)
 
-The keynote did not open with a model. It opened with an argument about shape: that the interesting question is no longer which assistant you use, but what an enterprise has to look like underneath for agents to be allowed to do real work.
+Snowflake called it the era of the agentic enterprise, then spent most of the keynote on the part nobody puts on a poster: what has to be true underneath before an agent gets anywhere near anything that matters.
 
-One slide made the case better than the talk track did.
+One slide did the heavy lifting.
 
-![A keynote slide titled "Pillars of a Successful Agentic Enterprise", showing an agentic control plane at the centre of the AI Data Cloud, AI model choice, enterprise data and context, and enterprise apps and agents](/assets/images/blog/swt-cdmx-2026/pillars-agentic-enterprise.jpg)
+![A keynote slide titled "Pillars of a Successful Agentic Enterprise", showing an agentic control plane at the center of the AI Data Cloud, with AI model choice, enterprise data and context, and software and apps around it](/assets/images/blog/swt-cdmx-2026/pillars-agentic-enterprise.jpg)
 
-Snowflake's framing puts an agentic control plane at the centre, with the AI Data Cloud around it and three things orbiting: model choice, enterprise data and context, and the applications and agents where the work actually happens.
+An agentic control plane sits in the middle of the AI Data Cloud, with three pillars around it: AI model choice, enterprise data and context, and software and apps.
 
-What we like about the diagram is what it refuses to say. It does not say the agent is the product. The agent sits on top of a foundation, and every arrow into it comes from governed data, business context, and permissions that already mean something. Put an agent on data nobody trusts and you have automated the argument instead of the work.
+We liked it for what it leaves out. There is no agent anywhere on that slide. The thing in the middle is a control plane, and the pillar holding up the side nearest the actual work is enterprise data and context, which is the unglamorous way of saying governed data, business definitions and permissions that already mean something. Put an agent on data nobody trusts and all you have automated is an argument.
 
-That matches what we see in delivery. The order is almost always the same: get the data into Snowflake, give it definitions and governance that hold up, then let agents act on it. Teams that skip the first two steps do not move faster, they just find out later.
+If that sounds familiar, we wrote it down in June, in [Snowflake is now the control plane for the agentic enterprise](/blog/snowflake-control-plane-agentic-enterprise), four months before it was the theme of a keynote.
 
-## What we brought to the booth
+## The booth
 
 ![The Viewnear booth at Snowflake World Tour Mexico City](/assets/images/blog/swt-cdmx-2026/booth.jpg)
 
-We did not bring slides. We brought the accelerators we already run in production and let people hand us documents.
+No slides. We brought the five accelerators that already run in production and asked people to hand us something real.
 
-Five of them were live on the floor: DocLens for document packets, StatementIQ for bank statements, UnderwriteIQ for loan review, InvoiceMatch for invoice and payment reconciliation, and ContractLens for obligations, terms and renewals. Each one does the unglamorous version of the agentic promise: take the paperwork a team is drowning in, turn it into validated records sitting in Snowflake, and leave a trace of how every number got there.
+They did. Statements, invoices, contracts, loan files. The kind of paperwork that lives in a shared drive and ruins somebody's Thursday.
+
+| Accelerator | What it reads | What it leaves behind |
+| --- | --- | --- |
+| DocLens | Mixed document packets | Validated business records |
+| StatementIQ | Bank statements | Reconciled balances, income and traceable summaries |
+| UnderwriteIQ | Loan files | Review-ready underwriting recommendations |
+| InvoiceMatch | Invoices and payments | Duplicate charges, price gaps and unmatched payments |
+| ContractLens | Contracts | Obligations, terms and renewals checked against records |
+
+The pitch took about a minute. This reads your documents, it writes validated records into Snowflake, and it leaves a trail showing where every number came from. Then we would run it and stop talking, which is the better half of a demo.
 
 ![Viewnear on the main screen at Snowflake World Tour Mexico City, with the Snowflake partner and certification badges](/assets/images/blog/swt-cdmx-2026/viewnear-on-screen.jpg)
 
-## The question everyone asked
+## The question we kept answering
 
-Almost nobody asked us which model we use.
+Almost nobody asked which model we use.
 
-The question that kept coming back, in different words all day, was where to start. People arrived with a real process that hurts, usually something involving documents and a spreadsheet and a person who has been doing it manually for years, and they wanted to know whether that was a sensible first use case or whether they needed a two year foundation program first.
+What they asked, over and over in slightly different words, was where to start. Someone would describe a process that clearly drives them up the wall, usually documents plus a spreadsheet plus a person who has been doing it by hand for three years, and then ask whether that was too small to count as an AI project, or whether a two year foundation program had to come first.
 
-Our answer has not changed: pick the workflow by friction and measurable value, set the baseline before building anything, and make the first use case pay for the second. The foundation gets built either way. It just gets built in service of something a business actually asked for, which is what keeps it funded.
+By the afternoon we had an answer down to three sentences, so here it is in writing.
 
-The second question, almost as common, was about trust. Not model trust, audit trust. Who approved this, what did it read, can we show the regulator the path from the source document to the number in the report. That is a governance question, and it is the reason the data has to land in Snowflake before anything clever happens to it.
+Start where it hurts and where somebody can already put a number on it, whether that is hours a week, an error rate, or days added to the close. If nobody can measure the pain, nobody will be able to prove the fix, and the project dies at the next budget review. Pick the one whose data you can actually reach this quarter rather than the one that needs four systems nobody has ever joined, and when it is finished, keep the governed tables and definitions it required, because that is your foundation, built in the course of doing something useful instead of ahead of it.
 
-## True blue
+The other question, nearly as common, was about proof. Not "do you trust the model" but "can I show this to an auditor". Who approved it, what did it read, can a number in a report be traced back to the page it came from. That is the reason the data goes into Snowflake first and the clever part comes second. There is more on how that gets built in [data and AI, agents in production](/data-ai), and the [case studies](/case-studies) show it finished.
+
+## The people part
 
 ![The Viewnear team at the booth](/assets/images/blog/swt-cdmx-2026/team-at-the-booth.jpg)
 
-The best part of the day was not on the agenda. It was catching up with the Snowflake teams from Mexico and the United States, comparing notes on what is landing with customers, and meeting people who had only ever been a name on a thread.
+Honestly, the best part was not on the agenda.
+
+Our Snowflake counterparts from Mexico and the United States were all in the same building for once, which hardly ever happens, and a good number of people we had only ever dealt with over email turned out to have faces.
 
 ![The Viewnear team in front of the Snowflake World Tour Mexico City backdrop](/assets/images/blog/swt-cdmx-2026/world-tour-backdrop.jpg)
 
-Viewnear is a Snowflake Premier and Select Services Partner and a CoCo Preferred Partner, and we build on Snowflake and nothing else. True blue is not a slogan for us, it is the shape of the practice: one platform, learned deeply, with a team that is certified on it and spends every week inside it.
+Viewnear is a Snowflake Premier and Select Services Partner and a CoCo Preferred Partner, and we do not build on anything else. True blue, as the screens kept saying all day.
+
+In practice that is less a slogan than a decision about depth. One platform means the team knows its failure modes, the ones that only turn up in year two, and that one team stays accountable for the whole path, from the data landing in Snowflake to what finally acts on it, instead of a boundary between vendors to argue across.
 
 ![Two members of the Viewnear team with the Snowflake bear](/assets/images/blog/swt-cdmx-2026/snowflake-bear.jpg)
 
-Thank you to Snowflake for the event, for the partnership, and for the people who made the day run. Thank you to everyone who stopped by the booth, handed us a document, and asked a hard question.
+And yes, we queued for a photo with the bear.
 
-See you at the next one.
+Thank you to Snowflake for the day, for the partnership, and for the team that kept the whole thing running on time. Thank you to everyone who stopped at the booth and handed us something awkward to read.
 
-If you want to pick up where the booth conversation left off, the [Snowflake partnership](/partnership/snowflake) page goes deeper on what the tiers mean in delivery, and you can [start a conversation](/contact) whenever the timing is right.
+See you at the next one. If you have a process that hurts, bring it to us and we will tell you honestly whether it makes a good first one. The [Snowflake partnership](/partnership/snowflake) page has the detail on what our tiers mean in delivery, and you can [start a conversation](/contact) whenever the timing suits.

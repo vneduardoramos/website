@@ -219,7 +219,10 @@ async function main() {
   for (const t of team) {
     const data = {
       ...t,
-      published: true,
+      // Default on, but an entry may opt out: a byline account such as the
+      // field marketing team is a valid blog author without being a person
+      // on /about.
+      published: (t as { published?: boolean }).published ?? true,
       titleEs: teamEs[t.slug]?.title ?? null,
       bioEs: teamEs[t.slug]?.bio ?? null,
       bookingTopicsEs: teamEs[t.slug]?.bookingTopics ?? null,

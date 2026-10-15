@@ -55,6 +55,14 @@ export async function generateMetadata({
   });
 }
 
+/**
+ * Byline accounts that stand for a team rather than a person. They carry a
+ * blog post the way any author does, but they get no Person node on /about,
+ * so structured data publishes them as the organization.
+ */
+const TEAM_BYLINES = new Set(["viewnear-field-marketing"]);
+const isTeamByline = (slug: string) => TEAM_BYLINES.has(slug);
+
 export default async function BlogPostPage({
   params,
 }: {
@@ -102,14 +110,18 @@ export default async function BlogPostPage({
     // is one described human across every post rather than a name string
     // repeated per article.
     author: author
-      ? {
-          "@type": "Person",
-          "@id": personId(author.slug),
-          name: author.name,
-          ...(author.title ? { jobTitle: author.title } : {}),
-          worksFor: ORG_REF,
-          ...(author.linkedinUrl ? { sameAs: [author.linkedinUrl] } : {}),
-        }
+      ? isTeamByline(author.slug)
+        ? // A team account, not a human: no Person node exists for it on
+          // /about, so it is published as the organization itself.
+          { "@type": "Organization", name: author.name, parentOrganization: ORG_REF }
+        : {
+            "@type": "Person",
+            "@id": personId(author.slug),
+            name: author.name,
+            ...(author.title ? { jobTitle: author.title } : {}),
+            worksFor: ORG_REF,
+            ...(author.linkedinUrl ? { sameAs: [author.linkedinUrl] } : {}),
+          }
       : {
           "@type": post.author?.name ? "Person" : "Organization",
           name: post.author?.name ?? theme.brand.name,

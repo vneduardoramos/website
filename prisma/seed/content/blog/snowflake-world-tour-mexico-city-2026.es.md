@@ -1,61 +1,79 @@
-El 13 de octubre el Snowflake World Tour llegó a la Ciudad de México, en el Hilton Reforma sobre Avenida Juárez, y corrió desde las ocho de la mañana hasta que la sala se vació por la tarde. La frase que Snowflake puso en la invitación fue "Making AI Real for Business". Es una vara alta para un evento de un día, y es la correcta, porque la distancia entre una demo de IA y un sistema de IA del que alguien depende cada lunes es casi todo el trabajo.
+Pasamos el 13 de octubre en el Hilton Reforma, parados en un stand, desde las ocho de la mañana hasta que prendieron las luces.
 
-Viewnear estuvo como patrocinador, con stand en el piso de exhibición. Estas son nuestras notas.
+La frase de Snowflake para el día fue "Making AI Real for Business". La nuestra era más simple: llevar lo que ya funciona, ponerlo sobre una mesa y dejar que la gente intente romperlo.
 
-La sala principal pasó nuestro spot entre sesiones. Medio minuto de un salón en la Ciudad de México con Viewnear en una pantalla del tamaño de una pared, algo raro y bonito de ver desde el fondo.
+A media tarde nuestro spot apareció en la pantalla principal, que es una cosa rarísima de ver desde el fondo del salón.
 
 ![La pantalla principal del Snowflake World Tour Ciudad de México, con el spot de Viewnear y la lámina True Blue del evento](/assets/video/swt-cdmx-2026-main-screen.mp4 "/assets/images/blog/swt-cdmx-2026/main-screen-poster.jpg")
 
-## La era de la empresa agéntica
+Estas son las notas desde el piso de exhibición.
+
+## De qué se trató el día
 
 ![El escenario principal del Snowflake World Tour Ciudad de México, con "The Era of the Agentic Enterprise" en las pantallas](/assets/images/blog/swt-cdmx-2026/keynote-agentic-enterprise.jpg)
 
-El keynote no abrió con un modelo. Abrió con un argumento sobre la forma: que la pregunta interesante ya no es qué asistente se usa, sino cómo tiene que verse una empresa por debajo para que a los agentes se les permita hacer trabajo real.
+Snowflake lo llamó la era de la empresa agéntica, y luego dedicó casi todo el keynote a la parte que nadie pone en un cartel: qué tiene que ser cierto por debajo antes de que un agente se acerque a algo que de verdad importa.
 
-Una lámina lo explicó mejor que el guion.
+Una lámina hizo el trabajo pesado.
 
-![Lámina del keynote titulada "Pillars of a Successful Agentic Enterprise", con un plano de control agéntico al centro del AI Data Cloud, la elección de modelo, los datos y el contexto de la empresa, y las aplicaciones y agentes](/assets/images/blog/swt-cdmx-2026/pillars-agentic-enterprise.jpg)
+![Lámina del keynote titulada "Pillars of a Successful Agentic Enterprise", con un plano de control agéntico al centro del AI Data Cloud, y alrededor la elección de modelo de IA, los datos y el contexto de la empresa, y el software y las aplicaciones](/assets/images/blog/swt-cdmx-2026/pillars-agentic-enterprise.jpg)
 
-El planteamiento de Snowflake pone un plano de control agéntico al centro, con el AI Data Cloud alrededor y tres elementos en órbita: la elección de modelo, los datos y el contexto de la empresa, y las aplicaciones y agentes donde ocurre el trabajo.
+Un plano de control agéntico va al centro del AI Data Cloud, con tres pilares alrededor: la elección de modelo de IA, los datos y el contexto de la empresa, y el software y las aplicaciones.
 
-Lo valioso del diagrama es lo que se niega a decir. No dice que el agente sea el producto. El agente va encima de unos cimientos, y cada flecha que entra viene de datos gobernados, contexto de negocio y permisos que ya significan algo. Poner un agente sobre datos en los que nadie confía automatiza la discusión, no el trabajo.
+Nos gustó por lo que deja fuera. En esa lámina no aparece ningún agente. Lo que está al centro es un plano de control, y el pilar que sostiene el lado más cercano al trabajo real son los datos y el contexto de la empresa, que es la forma poco glamorosa de decir datos gobernados, definiciones de negocio y permisos que ya significan algo. Poner un agente sobre datos en los que nadie confía solo automatiza una discusión.
 
-Eso coincide con lo que se ve en la entrega. El orden casi siempre es el mismo: llevar los datos a Snowflake, darles definiciones y gobierno que aguanten, y después dejar que los agentes actúen sobre ellos. Los equipos que se saltan los dos primeros pasos no avanzan más rápido, solo se enteran más tarde.
+Si suena conocido, lo escribimos en junio, en [Snowflake es ahora el plano de control de la empresa agéntica](/es/blog/snowflake-control-plane-agentic-enterprise), cuatro meses antes de que fuera el tema de un keynote.
 
-## Lo que llevamos al stand
+## El stand
 
 ![El stand de Viewnear en el Snowflake World Tour Ciudad de México](/assets/images/blog/swt-cdmx-2026/booth.jpg)
 
-No llevamos presentaciones. Llevamos los aceleradores que ya corren en producción y dejamos que la gente nos pasara documentos.
+Sin presentaciones. Llevamos los cinco aceleradores que ya corren en producción y pedimos que nos pasaran algo real.
 
-Cinco estuvieron en vivo en el piso: DocLens para paquetes de documentos, StatementIQ para estados de cuenta, UnderwriteIQ para revisión de créditos, InvoiceMatch para conciliación de facturas y pagos, y ContractLens para obligaciones, términos y renovaciones. Cada uno hace la versión poco glamorosa de la promesa agéntica: tomar el papeleo en el que un equipo se ahoga, convertirlo en registros validados dentro de Snowflake y dejar el rastro de cómo se llegó a cada cifra.
+Y lo hicieron. Estados de cuenta, facturas, contratos, expedientes de crédito. Ese papeleo que vive en una carpeta compartida y le arruina el jueves a alguien.
+
+| Acelerador | Qué lee | Qué deja |
+| --- | --- | --- |
+| DocLens | Paquetes de documentos mixtos | Registros de negocio validados |
+| StatementIQ | Estados de cuenta | Saldos conciliados, ingresos y resúmenes trazables |
+| UnderwriteIQ | Expedientes de crédito | Recomendaciones listas para revisión |
+| InvoiceMatch | Facturas y pagos | Cargos duplicados, diferencias de precio y pagos sin conciliar |
+| ContractLens | Contratos | Obligaciones, términos y renovaciones verificados contra los registros |
+
+La explicación tomaba como un minuto. Esto lee los documentos, escribe registros validados dentro de Snowflake y deja el rastro de dónde salió cada cifra. Después lo corríamos y nos callábamos, que es la mejor mitad de una demo.
 
 ![Viewnear en la pantalla principal del Snowflake World Tour Ciudad de México, con las insignias de partner y certificación de Snowflake](/assets/images/blog/swt-cdmx-2026/viewnear-on-screen.jpg)
 
-## La pregunta que hizo todo el mundo
+## La pregunta que contestamos todo el día
 
 Casi nadie preguntó qué modelo usamos.
 
-La pregunta que volvió todo el día, con distintas palabras, fue por dónde empezar. La gente llegaba con un proceso real que duele, casi siempre con documentos, una hoja de cálculo y una persona que lleva años haciéndolo a mano, y quería saber si ese era un primer caso de uso sensato o si antes hacía falta un programa de cimientos de dos años.
+Lo que preguntaban, una y otra vez con palabras distintas, era por dónde empezar. Alguien describía un proceso que claramente lo tiene harto, casi siempre documentos más una hoja de cálculo más una persona que lleva tres años haciéndolo a mano, y luego preguntaba si eso era demasiado chico para contar como proyecto de IA, o si primero hacía falta un programa de cimientos de dos años.
 
-La respuesta no ha cambiado: elegir el flujo por fricción y por valor medible, fijar la línea base antes de construir nada, y hacer que el primer caso de uso pague el segundo. Los cimientos se construyen de todos modos. Solo que se construyen al servicio de algo que el negocio sí pidió, que es lo que mantiene el presupuesto vivo.
+Para la tarde la respuesta ya cabía en tres frases, así que aquí queda por escrito.
 
-La segunda pregunta, casi igual de frecuente, fue sobre confianza. No confianza en el modelo, confianza de auditoría. Quién aprobó esto, qué leyó, se le puede mostrar al regulador el camino desde el documento origen hasta la cifra del reporte. Esa es una pregunta de gobierno, y es la razón por la que los datos tienen que aterrizar en Snowflake antes de que les pase algo ingenioso.
+Empezar donde duele y donde alguien ya le puede poner número, sean horas a la semana, tasa de error o días que le agrega al cierre. Si nadie puede medir el dolor, nadie va a poder probar la mejora, y el proyecto se muere en la siguiente revisión de presupuesto. Elegir aquel cuyos datos se alcanzan este trimestre y no el que necesita cuatro sistemas que nadie ha unido nunca, y al terminar, conservar las tablas gobernadas y las definiciones que hicieron falta, porque esos son los cimientos, construidos mientras se hacía algo útil en vez de antes de hacerlo.
 
-## True blue
+La otra pregunta, casi igual de frecuente, era sobre pruebas. No "confías en el modelo" sino "esto se lo puedo mostrar a un auditor". Quién lo aprobó, qué leyó, si una cifra del reporte se puede rastrear hasta la página de donde salió. Por eso los datos entran a Snowflake primero y lo ingenioso viene después. Hay más sobre cómo se construye eso en [datos e IA, agentes en producción](/es/data-ai), y los [casos de éxito](/es/case-studies) lo muestran ya terminado.
+
+## La parte de la gente
 
 ![El equipo de Viewnear en el stand](/assets/images/blog/swt-cdmx-2026/team-at-the-booth.jpg)
 
-La mejor parte del día no estaba en la agenda. Fue reencontrarse con los equipos de Snowflake de México y de Estados Unidos, comparar notas sobre lo que está funcionando con los clientes y conocer en persona a gente que hasta entonces era un nombre en un hilo de correo.
+La verdad, lo mejor no estaba en la agenda.
+
+Los colegas de Snowflake de México y de Estados Unidos coincidieron en el mismo edificio por una vez, cosa que casi nunca pasa, y varias personas que hasta entonces eran solo un correo resultaron tener cara.
 
 ![El equipo de Viewnear frente al backdrop del Snowflake World Tour Ciudad de México](/assets/images/blog/swt-cdmx-2026/world-tour-backdrop.jpg)
 
-Viewnear es Snowflake Premier y Select Services Partner y CoCo Preferred Partner, y construye sobre Snowflake y nada más. True blue no es un eslogan aquí, es la forma de la práctica: una sola plataforma, aprendida a fondo, con un equipo certificado que vive dentro de ella cada semana.
+Viewnear es Snowflake Premier y Select Services Partner y CoCo Preferred Partner, y no construye sobre nada más. True blue, como decían las pantallas todo el día.
+
+En la práctica eso es menos un eslogan que una decisión sobre profundidad. Una sola plataforma significa que el equipo conoce sus fallas, las que solo aparecen en el segundo año, y que un mismo equipo responde por todo el camino, desde que los datos aterrizan en Snowflake hasta lo que termina actuando sobre ellos, en lugar de una frontera entre proveedores por la cual discutir.
 
 ![Dos integrantes del equipo de Viewnear con el oso de Snowflake](/assets/images/blog/swt-cdmx-2026/snowflake-bear.jpg)
 
-Gracias a Snowflake por el evento, por la alianza y por la gente que hizo que el día corriera. Gracias a quienes pasaron por el stand, nos dieron un documento y preguntaron algo difícil.
+Y sí, hicimos fila para la foto con el oso.
 
-Nos vemos en el siguiente.
+Gracias a Snowflake por el día, por la alianza y por el equipo que mantuvo todo a tiempo. Gracias a quienes se pararon en el stand y nos dieron algo incómodo de leer.
 
-Para retomar la conversación del stand, la página de la [alianza con Snowflake](/es/partnership/snowflake) profundiza en lo que significan los niveles en la entrega, y se puede [iniciar una conversación](/es/contact) cuando el momento sea el adecuado.
+Nos vemos en el siguiente. Si hay un proceso que duele, vale la pena traerlo y decimos con honestidad si es un buen primero. La página de la [alianza con Snowflake](/es/partnership/snowflake) tiene el detalle de lo que significan los niveles en la entrega, y se puede [iniciar una conversación](/es/contact) cuando el momento sea el adecuado.

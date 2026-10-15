@@ -5,5 +5,6 @@ export const teamEs: Record<string, { title?: string; bio?: string; bookingTopic
   "carlos-egremy": { title: "Director de Operaciones" },
   "karen-berber": { title: "Directora de Personas y Recursos Humanos" },
   "aydhe-mota": { title: "Directora de Finanzas" },
+  "viewnear-field-marketing": { title: "Field marketing" },
   "eduardo-ramos": { title: "CEO" , bookingTopics: "Estrategia, secuencia del roadmap, alianza y términos comerciales" },
 };
