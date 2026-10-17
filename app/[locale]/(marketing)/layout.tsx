@@ -11,7 +11,6 @@ import { ImageOverrideProvider } from "@/components/marketing/ImageOverrideProvi
 import { EditModeProvider } from "@/components/marketing/EditModeProvider";
 import { ChatWidget } from "@/components/marketing/ChatWidget";
 import { RetroEasterEgg } from "@/components/marketing/RetroEasterEgg";
-import { EventAnnouncementBar } from "@/components/marketing/events/EventAnnouncementBar";
 import { theme } from "@/config/theme";
 
 // Small content-aware bits surfaced in the mega-menu featured tiles. Fetched
@@ -121,7 +120,6 @@ export default async function MarketingLayout({
       >
         {t("skipToContent")}
       </a>
-      <EventAnnouncementBar />
       <Nav navData={navData} />
       <main id="main-content" className="flex-1">{children}</main>
       <Footer />

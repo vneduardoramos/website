@@ -73,6 +73,13 @@ const nextConfig = {
       // (app/[locale]/(marketing)/careers/page.tsx) so the URL serves real
       // content. That old rule was a 301, so clients which cached it will keep
       // redirecting until their cache expires.
+      // The Oct 13 2026 event page, now past. It was in the sitemap, in
+      // llms.txt and shared around, so the URL points at the recap.
+      {
+        source: "/snowflake-world-tour-mexico-city",
+        destination: "/blog/snowflake-world-tour-mexico-city-2026",
+        permanent: true,
+      },
       { source: "/solutions", destination: "/services", permanent: true },
       { source: "/team", destination: "/about", permanent: true },
       { source: "/why-viewnear", destination: "/partnership", permanent: true },
