@@ -126,7 +126,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
             <FaceStack slugs={["eduardo-ramos", "jc-rodriguez", "rene-trevino"]} />
             <div className="flex flex-wrap gap-3">
               <Link href="/contact" className="btn-primary">{t("derisk.panel.ctaPrimary")}</Link>
-              <Link href="/partnership/snowflake" className="btn-ghost">{t("derisk.panel.ctaGhost")}</Link>
+              <Link href="/partnership/snowflake#comparison" className="btn-ghost">{t("derisk.panel.ctaGhost")}</Link>
             </div>
           </div>
         </div>

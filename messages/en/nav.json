@@ -18,8 +18,7 @@
   "technologyTelco": "Technology & Telco",
   "mediaEntertainmentAdvertising": "Media, Entertainment & Advertising",
   "about": "About",
-  "partnership": "Partnerships",
-  "partnershipSnowflake": "Snowflake partnership",
+  "partnership": "Snowflake partnership",
   "nearshore": "Nearshore Advantage",
   "lifeAtViewnear": "Life at Viewnear",
   "security": "Security & Trust",
@@ -54,7 +53,7 @@
   },
   "descriptions": {
     "about": "Who we are",
-    "partnership": "Two networks, one team",
+    "partnership": "Snowflake Premier & Select Partner",
     "nearshore": "In-time-zone Snowflake delivery",
     "security": "Governance & compliance",
     "lifeAtViewnear": "Culture, roles & benefits",
@@ -81,9 +80,9 @@
   },
   "featured": {
     "company": {
-      "eyebrow": "Partnerships",
-      "title": "Snowflake partner network",
-      "pitch": "Snowflake Premier & Select Partner for governed data and the agents that run on it."
+      "eyebrow": "Partnership",
+      "title": "The Snowflake partnership",
+      "pitch": "Premier & Select Partner for governed data and the agents that run on it."
     },
     "industries": {
       "eyebrow": "Financial Services",
