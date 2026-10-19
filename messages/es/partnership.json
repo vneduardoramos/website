@@ -69,6 +69,10 @@
     "home": "Inicio",
     "current": "Alianzas"
   },
+  "fieldPhoto": {
+    "caption": "Snowflake Data for Breakfast, presentando junto al equipo de Snowflake",
+    "alt": "El equipo de Viewnear en el escenario de Snowflake Data for Breakfast, bajo una pantalla que dice Data for Breakfast"
+  },
   "networks": {
     "snowflake": {
       "title": "Datos gobernados y la capa de IA, en Snowflake",

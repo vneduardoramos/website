@@ -69,6 +69,10 @@
     "home": "Home",
     "current": "Partnerships"
   },
+  "fieldPhoto": {
+    "caption": "Snowflake Data for Breakfast, presenting alongside the Snowflake team",
+    "alt": "The Viewnear team on stage at Snowflake Data for Breakfast, under a screen reading Data for Breakfast"
+  },
   "networks": {
     "snowflake": {
       "title": "Governed data and the AI layer, on Snowflake",

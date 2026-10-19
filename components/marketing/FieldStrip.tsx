@@ -15,6 +15,9 @@ type MomentKey =
   | "team-booth"
   | "team-stage"
   | "team-dinner"
+  | "team-dfb"
+  | "team-dfb-backdrop"
+  | "dfb-room"
   | "partner-momentum";
 
 const MOMENT_SRC: Record<MomentKey, string> = {
@@ -22,6 +25,9 @@ const MOMENT_SRC: Record<MomentKey, string> = {
   "team-booth": "/assets/images/life/team-booth.jpg",
   "team-stage": "/assets/images/life/team-stage.jpg",
   "team-dinner": "/assets/images/life/team-dinner.jpg",
+  "team-dfb": "/assets/images/life/team-dfb.jpg",
+  "team-dfb-backdrop": "/assets/images/life/team-dfb-backdrop.jpg",
+  "dfb-room": "/assets/images/life/dfb-room.jpg",
   "partner-momentum": "/assets/images/life/partner-momentum.jpg",
 };
 

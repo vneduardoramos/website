@@ -33,6 +33,18 @@
         "caption": "Cena con el equipo",
         "alt": "El equipo de Viewnear y sus partners reunidos en una cena de equipo"
       },
+      "team-dfb": {
+        "caption": "En el escenario de Data for Breakfast",
+        "alt": "El equipo de Viewnear en el escenario de un evento Snowflake Data for Breakfast"
+      },
+      "team-dfb-backdrop": {
+        "caption": "Snowflake Data for Breakfast, México",
+        "alt": "El equipo de Viewnear frente al backdrop de Snowflake Data for Breakfast"
+      },
+      "dfb-room": {
+        "caption": "Un tablero en vivo durante el desayuno",
+        "alt": "Asistentes a una sesión de Snowflake Data for Breakfast con un tablero en vivo en la pantalla detrás"
+      },
       "partner-momentum": {
         "caption": "Entre los partners CoCo de Snowflake",
         "alt": "El muro Snowflake CoCo Global Partner Momentum que incluye a Viewnear entre los partners de Snowflake"

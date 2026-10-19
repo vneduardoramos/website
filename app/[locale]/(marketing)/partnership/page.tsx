@@ -123,6 +123,24 @@ export default async function PartnershipPage({ params }: { params: { locale: st
             verify={verify}
           />
         </RevealGroup>
+
+        {/* One wide photograph under the network column: the partnership is a
+            thing the team actually turns up to, so the page shows that before
+            it argues the case in a table. Row and hairline, not a card. */}
+        <figure className="mt-14 border-t border-border pt-10">
+          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+            <Image
+              src="/assets/images/life/team-dfb.jpg"
+              alt={t("fieldPhoto.alt")}
+              fill
+              sizes="(min-width: 1024px) 1024px, 100vw"
+              className="aspect-[16/9] object-cover"
+            />
+          </div>
+          <figcaption className="mt-3 font-mono text-[0.66rem] uppercase tracking-[0.14em] text-muted">
+            {t("fieldPhoto.caption")}
+          </figcaption>
+        </figure>
       </Section>
 
       {/* Build vs partner comparison */}
@@ -177,7 +195,7 @@ export default async function PartnershipPage({ params }: { params: { locale: st
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
 
-      <FieldStrip items={["team-group", "team-stage", "team-dinner"]} />
+      <FieldStrip items={["team-dfb-backdrop", "dfb-room", "team-group", "team-dinner"]} />
 
       <CtaBand title={t("cta.title")} subtitle={t("cta.subtitle")} />
     </>
