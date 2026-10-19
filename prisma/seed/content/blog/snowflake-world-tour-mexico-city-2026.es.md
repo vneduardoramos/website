@@ -26,7 +26,7 @@ Una lámina hizo el trabajo pesado.
 
 Un plano de control agéntico va al centro del AI Data Cloud, con tres pilares alrededor: la elección de modelo de IA, los datos y el contexto de la empresa, y el software y las aplicaciones.
 
-Nos gustó por lo que deja fuera. En esa lámina no aparece ningún agente. Lo que está al centro es un plano de control, y el pilar que sostiene el lado más cercano al trabajo real son los datos y el contexto de la empresa, que es la forma poco glamorosa de decir datos gobernados, definiciones de negocio y permisos que ya significan algo. Poner un agente sobre datos en los que nadie confía solo automatiza una discusión.
+Nos gustó dónde pone el peso. Lo que está al centro es un plano de control, y el pilar que sostiene el lado más cercano al trabajo real son los datos y el contexto de la empresa, que es la forma llana de decir datos gobernados, definiciones de negocio y permisos que ya significan algo. Un agente toma su criterio de los datos que tiene debajo, así que ahí empieza el trabajo.
 
 Si suena conocido, lo escribimos en junio, en [Snowflake es ahora el plano de control de la empresa agéntica](/es/blog/snowflake-control-plane-agentic-enterprise), cuatro meses antes de que fuera el tema de un keynote.
 
@@ -62,7 +62,7 @@ Lo que preguntaban, una y otra vez con palabras distintas, era por dónde empeza
 
 Para la tarde la respuesta ya cabía en tres frases, así que aquí queda por escrito.
 
-Empezar donde duele y donde alguien ya le puede poner número, sean horas a la semana, tasa de error o días que le agrega al cierre. Si nadie puede medir el dolor, nadie va a poder probar la mejora, y el proyecto se muere en la siguiente revisión de presupuesto. Elegir aquel cuyos datos se alcanzan este trimestre y no el que necesita cuatro sistemas que nadie ha unido nunca, y al terminar, conservar las tablas gobernadas y las definiciones que hicieron falta, porque esos son los cimientos, construidos mientras se hacía algo útil en vez de antes de hacerlo.
+Empezar donde duele y donde alguien ya le puede poner número, sean horas a la semana, tasa de error o días que le agrega al cierre. Un punto de partida medible es lo que permite demostrar la mejora y ganarse la siguiente. Elegir aquel cuyos datos se alcanzan este trimestre, y al terminar, conservar las tablas gobernadas y las definiciones que hicieron falta, porque esos son los cimientos, construidos mientras se hacía algo útil.
 
 La otra pregunta, casi igual de frecuente, era sobre pruebas. No "confías en el modelo" sino "esto se lo puedo mostrar a un auditor". Quién lo aprobó, qué leyó, si una cifra del reporte se puede rastrear hasta la página de donde salió. Por eso los datos entran a Snowflake primero y lo ingenioso viene después. Hay más sobre cómo se construye eso en [datos e IA, agentes en producción](/es/data-ai), y los [casos de éxito](/es/case-studies) lo muestran ya terminado.
 
@@ -76,9 +76,9 @@ Los colegas de Snowflake de México y de Estados Unidos estuvieron en la misma s
 
 ![El equipo de Viewnear frente al backdrop del Snowflake World Tour Ciudad de México](/assets/images/blog/swt-cdmx-2026/world-tour-backdrop.jpg)
 
-Viewnear es Snowflake Premier y Select Services Partner y CoCo Preferred Partner, y no construye sobre nada más. True blue, como decían las pantallas todo el día.
+Viewnear es Snowflake Premier y Select Services Partner y CoCo Preferred Partner, y construye soluciones agénticas dentro y alrededor de Snowflake. True blue, como decían las pantallas todo el día.
 
-En la práctica eso es menos un eslogan que una decisión sobre profundidad. Una sola plataforma significa que el equipo conoce sus fallas, las que solo aparecen en el segundo año, y que un mismo equipo responde por todo el camino, desde que los datos aterrizan en Snowflake hasta lo que termina actuando sobre ellos, en lugar de una frontera entre proveedores por la cual discutir.
+En la práctica eso es una decisión sobre profundidad. Apostar de lleno por una plataforma le da al equipo el conocimiento que solo se gana viviendo en ella, el que aparece en el segundo año, y hace que un mismo equipo responda por todo el camino, desde que los datos aterrizan en Snowflake hasta los agentes que actúan sobre ellos.
 
 ![Dos integrantes del equipo de Viewnear con el oso de Snowflake](/assets/images/blog/swt-cdmx-2026/snowflake-bear.jpg)
 

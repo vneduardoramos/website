@@ -26,7 +26,7 @@ One slide did the heavy lifting.
 
 An agentic control plane sits in the middle of the AI Data Cloud, with three pillars around it: AI model choice, enterprise data and context, and software and apps.
 
-We liked it for what it leaves out. There is no agent anywhere on that slide. The thing in the middle is a control plane, and the pillar holding up the side nearest the actual work is enterprise data and context, which is the unglamorous way of saying governed data, business definitions and permissions that already mean something. Put an agent on data nobody trusts and all you have automated is an argument.
+We liked where it puts the weight. The thing in the middle is a control plane, and the pillar holding up the side nearest the actual work is enterprise data and context, which is the plain way of saying governed data, business definitions and permissions that already mean something. An agent takes its judgment from the data underneath it, so that is where the work starts.
 
 If that sounds familiar, we wrote it down in June, in [Snowflake is now the control plane for the agentic enterprise](/blog/snowflake-control-plane-agentic-enterprise), four months before it was the theme of a keynote.
 
@@ -62,7 +62,7 @@ What they asked, over and over in slightly different words, was where to start. 
 
 By the afternoon we had an answer down to three sentences, so here it is in writing.
 
-Start where it hurts and where somebody can already put a number on it, whether that is hours a week, an error rate, or days added to the close. If nobody can measure the pain, nobody will be able to prove the fix, and the project dies at the next budget review. Pick the one whose data you can actually reach this quarter rather than the one that needs four systems nobody has ever joined, and when it is finished, keep the governed tables and definitions it required, because that is your foundation, built in the course of doing something useful instead of ahead of it.
+Start where it hurts and where somebody can already put a number on it, whether that is hours a week, an error rate, or days added to the close. A measurable starting point is what lets you prove the improvement and earn the next one. Pick the one whose data you can reach this quarter, and when it is finished, keep the governed tables and definitions it required, because that is your foundation, built in the course of doing something useful.
 
 The other question, nearly as common, was about proof. Not "do you trust the model" but "can I show this to an auditor". Who approved it, what did it read, can a number in a report be traced back to the page it came from. That is the reason the data goes into Snowflake first and the clever part comes second. There is more on how that gets built in [data and AI, agents in production](/data-ai), and the [case studies](/case-studies) show it finished.
 
@@ -76,9 +76,9 @@ Our Snowflake counterparts from Mexico and the United States were in the same ro
 
 ![The Viewnear team in front of the Snowflake World Tour Mexico City backdrop](/assets/images/blog/swt-cdmx-2026/world-tour-backdrop.jpg)
 
-Viewnear is a Snowflake Premier and Select Services Partner and a CoCo Preferred Partner, and we do not build on anything else. True blue, as the screens kept saying all day.
+Viewnear is a Snowflake Premier and Select Services Partner and a CoCo Preferred Partner, and we build agentic solutions in and around Snowflake. True blue, as the screens kept saying all day.
 
-In practice that is less a slogan than a decision about depth. One platform means the team knows its failure modes, the ones that only turn up in year two, and that one team stays accountable for the whole path, from the data landing in Snowflake to what finally acts on it, instead of a boundary between vendors to argue across.
+In practice that is a decision about depth. Going all in on one platform gives the team the kind of knowledge you earn by living in it, the sort that shows up in year two, and it keeps one team accountable for the whole path, from the data landing in Snowflake to the agents that act on it.
 
 ![Two members of the Viewnear team with the Snowflake bear](/assets/images/blog/swt-cdmx-2026/snowflake-bear.jpg)
 
