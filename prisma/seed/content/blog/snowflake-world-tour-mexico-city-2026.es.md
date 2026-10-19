@@ -10,6 +10,12 @@ Estas son las notas desde el piso de exhibición.
 
 ## De qué se trató el día
 
+![El salón principal del Snowflake World Tour Ciudad de México, lleno para el keynote de la mañana](/assets/images/blog/swt-cdmx-2026/keynote-room.jpg)
+
+El salón se llenó rápido. Snowflake puso el día en una lámina antes de que empezara el keynote: más de 500 asistentes, 25 sesiones, 46 ponentes y 10 partners.
+
+![Lámina del Snowflake World Tour Ciudad de México del 13 de octubre de 2026, con más de 500 asistentes, 10 partners, 25 sesiones y 46 ponentes](/assets/images/blog/swt-cdmx-2026/by-the-numbers.jpg)
+
 ![El escenario principal del Snowflake World Tour Ciudad de México, con "The Era of the Agentic Enterprise" en las pantallas](/assets/images/blog/swt-cdmx-2026/keynote-agentic-enterprise.jpg)
 
 Snowflake lo llamó la era de la empresa agéntica, y dedicó casi todo el keynote a qué tiene que ser cierto por debajo antes de que un agente se acerque a algo que de verdad importa.
@@ -26,7 +32,7 @@ Si suena conocido, lo escribimos en junio, en [Snowflake es ahora el plano de co
 
 ## El stand
 
-![El stand de Viewnear en el Snowflake World Tour Ciudad de México](/assets/images/blog/swt-cdmx-2026/booth.jpg)
+![Asistentes agrupados frente a la pantalla del stand de Viewnear](/assets/images/blog/swt-cdmx-2026/booth-crowd.jpg)
 
 Sin presentaciones. Llevamos los cinco aceleradores que ya corren en producción y pedimos que nos pasaran algo real.
 
@@ -42,11 +48,15 @@ Y lo hicieron. Estados de cuenta, facturas, contratos, expedientes de crédito. 
 
 La explicación tomaba como un minuto. Esto lee los documentos, escribe registros validados dentro de Snowflake y deja el rastro de dónde salió cada cifra. Después lo corríamos y dejábamos que el resultado hablara.
 
+![Un ingeniero de Viewnear corriendo una demo en vivo en el stand mientras un grupo observa la pantalla](/assets/images/blog/swt-cdmx-2026/booth-demo.jpg)
+
 ![Viewnear en la pantalla principal del Snowflake World Tour Ciudad de México, con las insignias de partner y certificación de Snowflake](/assets/images/blog/swt-cdmx-2026/viewnear-on-screen.jpg)
 
 ## La pregunta que contestamos todo el día
 
 Casi nadie preguntó qué modelo usamos.
+
+![Conversaciones en el stand de Viewnear en el piso de exhibición](/assets/images/blog/swt-cdmx-2026/booth-conversation.jpg)
 
 Lo que preguntaban, una y otra vez con palabras distintas, era por dónde empezar. Alguien describía un proceso que lleva tiempo desgastando a su equipo, casi siempre documentos más una hoja de cálculo más una persona que lleva tres años haciéndolo a mano, y luego preguntaba si eso era demasiado chico para contar como proyecto de IA, o si primero hacía falta un programa de cimientos de dos años.
 
@@ -73,6 +83,8 @@ En la práctica eso es menos un eslogan que una decisión sobre profundidad. Una
 ![Dos integrantes del equipo de Viewnear con el oso de Snowflake](/assets/images/blog/swt-cdmx-2026/snowflake-bear.jpg)
 
 También nos dimos tiempo para la foto con el oso.
+
+![Un integrante del equipo de Viewnear levantado del piso por el oso de Snowflake con capa](/assets/images/blog/swt-cdmx-2026/bear-hug.jpg)
 
 Gracias a Snowflake por el día, por la alianza y por el equipo que mantuvo todo a tiempo. Gracias a quienes se pararon en el stand y nos dieron un documento real para correr.
 

@@ -10,6 +10,12 @@ These are our notes from the floor.
 
 ## What the day was about
 
+![The main hall at Snowflake World Tour Mexico City, full for the morning keynote](/assets/images/blog/swt-cdmx-2026/keynote-room.jpg)
+
+The room filled fast. Snowflake put the day on a slide before the keynote started: more than 500 attendees, 25 sessions, 46 speakers and 10 partners.
+
+![A Snowflake World Tour slide for Mexico City on October 13 2026, counting 500+ attendees, 10 partners, 25 sessions and 46 speakers](/assets/images/blog/swt-cdmx-2026/by-the-numbers.jpg)
+
 ![The main stage at Snowflake World Tour Mexico City, with "The Era of the Agentic Enterprise" on the screens](/assets/images/blog/swt-cdmx-2026/keynote-agentic-enterprise.jpg)
 
 Snowflake called it the era of the agentic enterprise, and spent most of the keynote on what has to be true underneath before an agent goes anywhere near anything that matters.
@@ -26,7 +32,7 @@ If that sounds familiar, we wrote it down in June, in [Snowflake is now the cont
 
 ## The booth
 
-![The Viewnear booth at Snowflake World Tour Mexico City](/assets/images/blog/swt-cdmx-2026/booth.jpg)
+![Attendees standing several deep around the Viewnear booth screen](/assets/images/blog/swt-cdmx-2026/booth-crowd.jpg)
 
 No slides. We brought the five accelerators that already run in production and asked people to hand us something real.
 
@@ -42,11 +48,15 @@ They did. Statements, invoices, contracts, loan files. The kind of paperwork tha
 
 The pitch took about a minute. This reads your documents, it writes validated records into Snowflake, and it leaves a trail showing where every number came from. Then we would run it and let the output do the rest.
 
+![A Viewnear engineer running a live demo at the booth while a group watches the screen](/assets/images/blog/swt-cdmx-2026/booth-demo.jpg)
+
 ![Viewnear on the main screen at Snowflake World Tour Mexico City, with the Snowflake partner and certification badges](/assets/images/blog/swt-cdmx-2026/viewnear-on-screen.jpg)
 
 ## The question we kept answering
 
 Almost nobody asked which model we use.
+
+![Conversations at the Viewnear stand on the expo floor](/assets/images/blog/swt-cdmx-2026/booth-conversation.jpg)
 
 What they asked, over and over in slightly different words, was where to start. Someone would describe a process that has been wearing their team down, usually documents plus a spreadsheet plus a person who has been doing it by hand for three years, and then ask whether that was too small to count as an AI project, or whether a two year foundation program had to come first.
 
@@ -73,6 +83,8 @@ In practice that is less a slogan than a decision about depth. One platform mean
 ![Two members of the Viewnear team with the Snowflake bear](/assets/images/blog/swt-cdmx-2026/snowflake-bear.jpg)
 
 We made time for a photo with the bear.
+
+![A Viewnear team member being lifted off the ground by the caped Snowflake bear](/assets/images/blog/swt-cdmx-2026/bear-hug.jpg)
 
 Thank you to Snowflake for the day, for the partnership, and for the team that kept the whole thing running on time. Thank you to everyone who stopped at the booth and gave us a real document to run.
 
