@@ -78,7 +78,7 @@ Los colegas de Snowflake de México y de Estados Unidos estuvieron en la misma s
 
 Viewnear es Snowflake Premier y Select Services Partner y CoCo Preferred Partner, y construye soluciones agénticas dentro y alrededor de Snowflake. True blue, como decían las pantallas todo el día.
 
-En la práctica eso es una decisión sobre profundidad. Apostar de lleno por una plataforma le da al equipo el conocimiento que solo se gana viviendo en ella, el que aparece en el segundo año, y hace que un mismo equipo responda por todo el camino, desde que los datos aterrizan en Snowflake hasta los agentes que actúan sobre ellos.
+En la práctica eso es una decisión sobre profundidad. Apostar de lleno por Snowflake le da al equipo el conocimiento que solo se gana viviendo dentro, el que aparece en el segundo año, y hace que un mismo equipo responda por todo el camino, desde que aterrizan los datos hasta los agentes que actúan sobre ellos.
 
 ![Dos integrantes del equipo de Viewnear con el oso de Snowflake](/assets/images/blog/swt-cdmx-2026/snowflake-bear.jpg)
 
