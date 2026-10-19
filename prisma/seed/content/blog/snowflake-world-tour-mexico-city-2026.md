@@ -78,7 +78,7 @@ Our Snowflake counterparts from Mexico and the United States were in the same ro
 
 Viewnear is a Snowflake Premier and Select Services Partner and a CoCo Preferred Partner, and we build agentic solutions in and around Snowflake. True blue, as the screens kept saying all day.
 
-In practice that is a decision about depth. Going all in with Snowflake gives the team the kind of knowledge you earn by living in it, the sort that shows up in year two, and it keeps one team accountable for the whole path, from the data landing to the agents that act on it.
+In practice that is a decision about depth. Going all in with Snowflake gives the team the kind of knowledge you earn by living in it, how it behaves at cost, at scale and under governance once something has been running a while, and it keeps one team accountable for the whole path, from the data landing to the agents that act on it.
 
 ![Two members of the Viewnear team with the Snowflake bear](/assets/images/blog/swt-cdmx-2026/snowflake-bear.jpg)
 
