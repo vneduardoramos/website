@@ -60,7 +60,30 @@ export default async function SnowflakePartnershipPage({ params }: { params: { l
         verify={u("partnerPlates.verify")}
       />
 
+      {/* Proof before argument: the partnership is a thing the team turns up to,
+          so one wide frame sits directly under the hero where it gets seen.
+          Row and caption, not a card. */}
+      <Section>
+        <figure>
+          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+            <Image
+              src="/assets/images/life/team-dfb.jpg"
+              alt={t("fieldPhoto.alt")}
+              fill
+              priority
+              sizes="(min-width: 1024px) 1024px, 100vw"
+              className="aspect-[16/9] object-cover"
+            />
+          </div>
+          <figcaption className="mt-3 font-mono text-[0.66rem] uppercase tracking-[0.14em] text-muted">
+            {t("fieldPhoto.caption")}
+          </figcaption>
+        </figure>
+      </Section>
+
       <TwoWays eyebrow={t("ways.eyebrow")} title={t("ways.title")} items={t.raw("ways.items") as { title: string; body: string }[]} />
+
+      <FieldStrip items={["team-dfb-backdrop", "dfb-room", "team-group", "team-dinner"]} />
 
       <StackGroups
         eyebrow={t("stack.eyebrow")}
@@ -158,26 +181,6 @@ export default async function SnowflakePartnershipPage({ params }: { params: { l
         <WaveDivider position="bottom" fill="fill-background" />
       </Section>
 
-      {/* The partnership is a thing the team turns up to: one wide frame, a
-          caption under it, hairline above. Row, not a card. */}
-      <Section>
-        <figure className="border-t border-border pt-10">
-          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
-            <Image
-              src="/assets/images/life/team-dfb.jpg"
-              alt={t("fieldPhoto.alt")}
-              fill
-              sizes="(min-width: 1024px) 1024px, 100vw"
-              className="aspect-[16/9] object-cover"
-            />
-          </div>
-          <figcaption className="mt-3 font-mono text-[0.66rem] uppercase tracking-[0.14em] text-muted">
-            {t("fieldPhoto.caption")}
-          </figcaption>
-        </figure>
-      </Section>
-
-      <FieldStrip items={["team-dfb-backdrop", "dfb-room", "team-group", "team-dinner"]} />
 
       <CtaBand title={t("cta.title")} subtitle={t("cta.subtitle")} />
     </>
