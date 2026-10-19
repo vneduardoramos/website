@@ -301,7 +301,7 @@ export default async function AboutPage({ params }: { params: { locale: string }
                 <Link href="/contact" className="btn-primary btn-lg hover-sheen">
                   {t("close.primaryCta")}
                 </Link>
-                <Link href="/partnership" className="btn-ghost btn-lg">
+                <Link href="/partnership/snowflake" className="btn-ghost btn-lg">
                   {t("close.secondaryCta")}
                 </Link>
               </div>

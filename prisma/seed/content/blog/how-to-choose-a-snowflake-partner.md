@@ -51,4 +51,4 @@ Anyone can say they are experienced. Ask for the specifics:
 
 ## The honest version
 
-There is no perfect partner, only the right fit for how your team works and what you are trying to ship. The firms worth hiring will answer these questions plainly, show you real work, and stay accountable after the invoice clears. If you want to see how we answer them, our [partnership page](/partnership) lays out the credentials, and the rest of this site shows the work. Either way, take this list into every conversation. The partner who welcomes the hard questions is usually the one worth choosing.
+There is no perfect partner, only the right fit for how your team works and what you are trying to ship. The firms worth hiring will answer these questions plainly, show you real work, and stay accountable after the invoice clears. If you want to see how we answer them, our [partnership page](/partnership/snowflake) lays out the credentials, and the rest of this site shows the work. Either way, take this list into every conversation. The partner who welcomes the hard questions is usually the one worth choosing.

@@ -51,4 +51,4 @@ El proyecto se califica en dos ejes:
 
 Si cae en el cuadrante de "cambiante y denso en decisiones", donde caen la mayoría de los builds de Snowflake e IA, priorice el traslape sobre la tarifa. Si cae en "estable e intensivo en ejecución", la ventaja de tarifa offshore es real.
 
-Cualquiera sea la elección, conviene ver más allá del tarifario: costo por resultado, estabilidad del equipo y quién queda como responsable después del go-live. Para ver cómo funciona un modelo nearshore en la práctica, nuestra [página nearshore](/es/nearshore) detalla el modelo de entrega, y nuestras credenciales de [alianza](/es/partnership) muestran la profundidad en Snowflake que lo respalda.
+Cualquiera sea la elección, conviene ver más allá del tarifario: costo por resultado, estabilidad del equipo y quién queda como responsable después del go-live. Para ver cómo funciona un modelo nearshore en la práctica, nuestra [página nearshore](/es/nearshore) detalla el modelo de entrega, y nuestras credenciales de [alianza](/es/partnership/snowflake) muestran la profundidad en Snowflake que lo respalda.

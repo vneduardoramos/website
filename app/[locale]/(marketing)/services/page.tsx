@@ -389,7 +389,7 @@ export default async function ServicesPage({ params }: { params: { locale: strin
             <Link href="/contact" className="btn-primary btn-sm">
               {t("engagement.footer.contactCta")}
             </Link>
-            <Link href="/partnership#comparison" className="btn-ghost btn-sm">
+            <Link href="/partnership/snowflake#comparison" className="btn-ghost btn-sm">
               {t("engagement.footer.partnerCta")}
             </Link>
           </div>

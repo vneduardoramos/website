@@ -51,4 +51,4 @@ Score your engagement on two axes:
 
 If you land in the "evolving and decision-dense" quadrant, which most Snowflake and AI builds do, prioritize overlap over rate. If you land in "stable and execution-heavy," the offshore rate advantage is real.
 
-Whatever you choose, look past the rate card to cost-to-outcome, team stability, and who stays accountable after go-live. If you want to see how a nearshore model works in practice, our [nearshore page](/nearshore) lays out the delivery model, and our [partnership](/partnership) credentials show the Snowflake depth behind it.
+Whatever you choose, look past the rate card to cost-to-outcome, team stability, and who stays accountable after go-live. If you want to see how a nearshore model works in practice, our [nearshore page](/nearshore) lays out the delivery model, and our [partnership](/partnership/snowflake) credentials show the Snowflake depth behind it.

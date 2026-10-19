@@ -23,7 +23,7 @@ export const PAGE_UPDATED: Record<string, string> = {
   "/migrations": "2026-07-26",
   "/nearshore": "2026-07-26",
   "/nearshore/monterrey": "2026-07-26",
-  "/partnership": "2026-07-26",
+  "/partnership/snowflake": "2026-07-26",
   "/platform": "2026-07-26",
   "/press": "2026-07-26",
   "/pricing": "2026-07-26",

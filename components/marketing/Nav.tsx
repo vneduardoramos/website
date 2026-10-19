@@ -26,7 +26,7 @@ type NavItem = {
 // Copy for these tiles lives in the `nav.featured.*` message namespace; only the
 // structural href→section association stays in code.
 const NAV_FEATURED_HREF: Record<string, string> = {
-  Company: "/partnership",
+  Company: "/partnership/snowflake",
   Services: "/data-ai",
   Industries: "/industries/financial-services",
   Resources: "/case-studies",
@@ -216,7 +216,7 @@ const NAV_ICONS: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   "/approach": CompassIcon,
   "/pricing": TagIcon,
   "/about": UsersIcon,
-  "/partnership": LinkRingsIcon,
+  "/partnership/snowflake": LinkRingsIcon,
   "/nearshore": MapPinIcon,
   "/life-at-viewnear": SunIcon,
   "/careers": UsersIcon,

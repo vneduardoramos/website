@@ -60,7 +60,7 @@ export async function PartnershipHighlight({
           </dl>
 
           {showCta && (
-            <Link href="/partnership" className="btn-primary group mt-8">
+            <Link href="/partnership/snowflake" className="btn-primary group mt-8">
               {t("highlight.cta")}
               <span className="transition-transform group-hover:translate-x-0.5">→</span>
             </Link>

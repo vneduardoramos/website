@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMeta, breadcrumbLd, webPageLd } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
-import { CtaBand } from "@/components/marketing/ui";
+import { Section, SectionHeading, CtaBand } from "@/components/marketing/ui";
+import { SectionDecor, WaveDivider } from "@/components/marketing/Decor";
+import { Img as Image } from "@/components/marketing/Img";
 import { PartnershipHighlight } from "@/components/marketing/PartnershipHighlight";
 import { FieldStrip } from "@/components/marketing/FieldStrip";
 import { SNOWFLAKE } from "@/config/partners";
@@ -18,11 +20,14 @@ import {
 
 const PATH = "/partnership/snowflake";
 
+/** One row of the build-vs-partner comparison, moved here from the old hub. */
+type Row = { dimension: string; inhouse: string; big3: string; viewnear: string };
+
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const { locale } = params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "partnershipSnowflake.meta" });
-  return pageMeta({ title: t("title"), description: t("description"), path: PATH, locale });
+  return pageMeta({ title: t("title"), description: t("description"), path: PATH, locale, ownOgFile: true });
 }
 
 export default async function SnowflakePartnershipPage({ params }: { params: { locale: string } }) {
@@ -30,6 +35,7 @@ export default async function SnowflakePartnershipPage({ params }: { params: { l
   setRequestLocale(locale);
   const t = await getTranslations("partnershipSnowflake");
   const u = await getTranslations("sharedUi");
+  const comparison = t.raw("comparison") as Row[];
 
   return (
     <>
@@ -37,11 +43,7 @@ export default async function SnowflakePartnershipPage({ params }: { params: { l
         data={[
           webPageLd({ path: PATH, name: t("meta.title"), description: t("meta.description"), locale }),
           breadcrumbLd(
-            [
-              { name: t("breadcrumb.home"), url: "/" },
-              { name: t("breadcrumb.partnership"), url: "/partnership" },
-              { name: t("breadcrumb.current") },
-            ],
+            [{ name: t("breadcrumb.home"), url: "/" }, { name: t("breadcrumb.current") }],
             locale,
           ),
         ]}
@@ -103,7 +105,79 @@ export default async function SnowflakePartnershipPage({ params }: { params: { l
 
       <Leaders eyebrow={t("leaders.eyebrow")} title={t("leaders.title")} body={t("leaders.body")} />
 
-      <FieldStrip items={["team-group", "team-stage", "team-dinner"]} />
+      {/* Build vs partner. Moved here when the partnership hub folded into this
+          page; /services still links straight to #comparison. */}
+      <Section id="comparison" className="section-warm relative overflow-hidden">
+        <SectionDecor variant="grid" />
+        <div className="relative">
+          <SectionHeading eyebrow={t("comparisonHeading.eyebrow")} title={t("comparisonHeading.title")} intro={t("comparisonHeading.intro")} />
+          <div className="mt-12 hidden overflow-hidden rounded-2xl border border-border bg-background md:block">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-border bg-surface text-left">
+                  <th className="px-5 py-4 font-medium text-muted">&nbsp;</th>
+                  <th className="px-5 py-4 font-display font-bold text-foreground">{t("comparisonHeaders.inhouse")}</th>
+                  <th className="px-5 py-4 font-display font-bold text-foreground">{t("comparisonHeaders.big3")}</th>
+                  <th className="px-5 py-4 font-display font-bold text-primaryDeep">{t("comparisonHeaders.viewnear")}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparison.map((r) => (
+                  <tr key={r.dimension} className="border-t border-border align-top">
+                    <td className="px-5 py-4 font-semibold text-foreground">{r.dimension}</td>
+                    <td className="px-5 py-4 text-muted">{r.inhouse}</td>
+                    <td className="px-5 py-4 text-muted">{r.big3}</td>
+                    <td className="bg-surface2/60 px-5 py-4 font-medium text-foreground">{r.viewnear}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-10 space-y-4 md:hidden">
+            {comparison.map((r) => (
+              <div key={r.dimension} className="card bg-background">
+                <h3 className="font-display text-base font-bold text-foreground">{r.dimension}</h3>
+                <dl className="mt-3 space-y-2 text-sm">
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-muted">{t("comparisonMobile.inhouse")}</dt>
+                    <dd className="text-right text-muted">{r.inhouse}</dd>
+                  </div>
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-muted">{t("comparisonMobile.big3")}</dt>
+                    <dd className="text-right text-muted">{r.big3}</dd>
+                  </div>
+                  <div className="flex justify-between gap-4 border-t border-border pt-2">
+                    <dt className="font-semibold text-primaryDeep">{t("comparisonMobile.viewnear")}</dt>
+                    <dd className="text-right font-medium text-foreground">{r.viewnear}</dd>
+                  </div>
+                </dl>
+              </div>
+            ))}
+          </div>
+        </div>
+        <WaveDivider position="bottom" fill="fill-background" />
+      </Section>
+
+      {/* The partnership is a thing the team turns up to: one wide frame, a
+          caption under it, hairline above. Row, not a card. */}
+      <Section>
+        <figure className="border-t border-border pt-10">
+          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+            <Image
+              src="/assets/images/life/team-dfb.jpg"
+              alt={t("fieldPhoto.alt")}
+              fill
+              sizes="(min-width: 1024px) 1024px, 100vw"
+              className="aspect-[16/9] object-cover"
+            />
+          </div>
+          <figcaption className="mt-3 font-mono text-[0.66rem] uppercase tracking-[0.14em] text-muted">
+            {t("fieldPhoto.caption")}
+          </figcaption>
+        </figure>
+      </Section>
+
+      <FieldStrip items={["team-dfb-backdrop", "dfb-room", "team-group", "team-dinner"]} />
 
       <CtaBand title={t("cta.title")} subtitle={t("cta.subtitle")} />
     </>

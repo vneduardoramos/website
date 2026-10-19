@@ -5,8 +5,7 @@
   },
   "breadcrumb": {
     "home": "Home",
-    "partnership": "Partnerships",
-    "current": "Snowflake"
+    "current": "Snowflake partnership"
   },
   "hero": {
     "eyebrow": "Snowflake and Viewnear",
@@ -110,5 +109,62 @@
   "cta": {
     "title": "Put a Premier & Select Partner on the Snowflake work.",
     "subtitle": "Tell us where the organization stands with Snowflake, whether that is procurement, a migration or the AI layer, and we'll bring the certified team, with Snowflake at the table."
+  },
+  "comparisonHeading": {
+    "eyebrow": "Build vs. partner",
+    "title": "Three ways to get there",
+    "intro": "Every leader weighs building in-house, hiring a global systems integrator, or partnering with a specialist. Here is where the three models differ."
+  },
+  "comparisonHeaders": {
+    "inhouse": "In-house build",
+    "big3": "Global systems integrator",
+    "viewnear": "Viewnear"
+  },
+  "comparisonMobile": {
+    "inhouse": "In-house",
+    "big3": "Global SI",
+    "viewnear": "Viewnear"
+  },
+  "comparison": [
+    {
+      "dimension": "Time to production",
+      "inhouse": "Hiring and ramping a team before the build starts",
+      "big3": "Mobilization through a large delivery process",
+      "viewnear": "8–16 weeks to first value, demos every sprint"
+    },
+    {
+      "dimension": "Who does the work",
+      "inhouse": "Whoever can be hired and retained",
+      "big3": "Staffed from a large bench, often in layers",
+      "viewnear": "Certified, versed at every level"
+    },
+    {
+      "dimension": "Snowflake expertise",
+      "inhouse": "Learned on the job, funded in-house",
+      "big3": "One of many platforms they cover",
+      "viewnear": "Premier & Select Partner specialists, end to end"
+    },
+    {
+      "dimension": "Agentic delivery",
+      "inhouse": "Pilots on whichever model the team already knows",
+      "big3": "One of several AI practices, staffed per account",
+      "viewnear": "Cortex Agents in production, inside the same governed perimeter"
+    },
+    {
+      "dimension": "Accountability",
+      "inhouse": "Split across internal teams",
+      "big3": "Often split across practices and subcontractors",
+      "viewnear": "One team, owned start to finish"
+    },
+    {
+      "dimension": "After go-live",
+      "inhouse": "Knowledge walks out with attrition",
+      "big3": "The engagement continues at day rates",
+      "viewnear": "Documented and run: by the team, or by Viewnear as a managed service"
+    }
+  ],
+  "fieldPhoto": {
+    "caption": "Snowflake Data for Breakfast, presenting alongside the Snowflake team",
+    "alt": "The Viewnear team on stage at Snowflake Data for Breakfast, under a screen reading Data for Breakfast"
   }
 }

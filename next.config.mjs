@@ -82,7 +82,15 @@ const nextConfig = {
       },
       { source: "/solutions", destination: "/services", permanent: true },
       { source: "/team", destination: "/about", permanent: true },
-      { source: "/why-viewnear", destination: "/partnership", permanent: true },
+      { source: "/why-viewnear", destination: "/partnership/snowflake", permanent: true },
+      // Snowflake is the only partnership, so the hub folded into its page. The
+      // old URL was in the nav, the sitemap and llms.txt, and is linked from
+      // two blog posts, so it points at the survivor.
+      { source: "/partnership", destination: "/partnership/snowflake", permanent: true },
+      // The Spanish URL was a live page too, and next-intl's "as-needed" prefix
+      // means it needs its own rule: the es- prefixed path is not covered by
+      // the rule above.
+      { source: "/es/partnership", destination: "/es/partnership/snowflake", permanent: true },
       { source: "/videos", destination: "/resources", permanent: true },
       { source: "/learning", destination: "/resources", permanent: true },
     ];

@@ -14,7 +14,7 @@ const groups = [
     title: "Company",
     links: [
       { linkKey: "about", label: "About", href: "/about" },
-      { linkKey: "partnership", label: "Partnerships", href: "/partnership" },
+      { linkKey: "partnership", label: "Snowflake Partnership", href: "/partnership/snowflake" },
       { linkKey: "lifeAtViewnear", label: "Life at Viewnear", href: "/life-at-viewnear" },
       { linkKey: "careers", label: "Careers", href: "/careers" },
       { linkKey: "security", label: "Security & Trust", href: "/security" },
